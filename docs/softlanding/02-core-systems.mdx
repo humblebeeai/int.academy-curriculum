@@ -6,10 +6,20 @@ description: The Core Engineering Roadmap for Soft Landing
 
 # Core Systems Roadmap
 
+```mermaid
+graph LR
+    A[Toolkit & ML] --> B[Deep Learning]
+    B --> C[Systems & Deploy]
+    
+    style A fill:#FFF500,color:#111,stroke:#333,stroke-width:2px
+    style B fill:#FFF500,color:#111,stroke:#333,stroke-width:2px
+    style C fill:#FFF500,color:#111,stroke:#333,stroke-width:2px
+```
+
 ## 🗺️ Phase 1: The Engineer's Toolkit (Weeks 1-4)
 *Build the systems that build the models.*
 
-### 🛠️ Module 1: ML Foundations & Clean Code
+### 🛠️ Module 1: ML Fundamentals & Clean Code
 **Goal**: Stop writing "notebook scripts" and start writing **software**.
 
 #### 1. Base ML Models from Scratch
@@ -19,7 +29,7 @@ description: The Core Engineering Roadmap for Soft Landing
         *   **Why it's important**: You cannot debug a neural net if you don't understand how a single neuron (Linear Regression) learns.
         *   **What to expect**: You will understand "fitting a line" not as magic, but as minimizing a specific error function.
     *   **[StatQuest: Logistic Regression](https://www.youtube.com/watch?v=yIYKR4sgzI8&list=PLblh5JKOoLUKxzEP5HA2d-Li7IJkHfXSe)**
-        *   **Why it's important**: The foundation of classification and the sigmoid activation function.
+        *   **Why it's important**: The basis of classification and the sigmoid activation function.
         *   **What to expect**: You will learn how to map continuous math to binary (Yes/No) decisions.
 
 #### 2. Classical ML & Evaluation

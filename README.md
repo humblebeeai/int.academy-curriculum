@@ -19,7 +19,7 @@ The curriculum is divided into two main stages:
 
 ### [1. School Program](./docs/school/01-intro.mdx)
 *   **Goal**: Build absolute foundations (Math, Coding, Problem Solving).
-*   **Duration**: 6 Months.
+*   **Duration**: up to 6 Months.
 *   **Outcome**: Ready for Soft Landing.
 
 ### [2. Soft Landing Program](./docs/softlanding/01-intro.mdx)
