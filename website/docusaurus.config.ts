@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'HumblebeeAI Academy',
   tagline: 'Transforming students into technical junior engineers',
-  favicon: 'img/favicon.ico',
+  favicon: 'https://humblebee.ai/images/misc/logo.svg',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -41,12 +41,12 @@ const config: Config = {
           path: '../docs',
           sidebarPath: './sidebars.ts',
           editUrl:
-            'https://github.com/HumblebeeAI/academy-curriculum/tree/main/',
+            'https://github.com/humblebeeai/int.academy-curriculum/pulls',
         },
         blog: {
           showReadingTime: true,
           editUrl:
-            'https://github.com/HumblebeeAI/academy-curriculum/tree/main/',
+            'https://github.com/humblebeeai/int.academy-curriculum/pulls',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -83,7 +83,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/HumblebeeAI',
+          href: 'https://github.com/humblebeeai',
           label: 'GitHub',
           position: 'right',
         },
@@ -127,7 +127,7 @@ const config: Config = {
             // },
             {
               label: 'GitHub',
-              href: 'https://github.com/HumblebeeAI',
+              href: 'https://github.com/humblebeeai',
             },
           ],
         },

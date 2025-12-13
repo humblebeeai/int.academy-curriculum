@@ -1,0 +1,10 @@
+services:
+  docs-site:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: internal-academy-docs:latest
+    container_name: internal-academy-docs
+    ports:
+      - "${PORT:-8000}:80"
+    restart: unless-stopped
