@@ -1,0 +1,183 @@
+/**
+ * HumblebeeAI Academy - Clean, Minimalist Styling
+ * No complex color overlaps. High contrast. Professional.
+ */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap');
+
+/* =========================================
+   LIGHT MODE (Default)
+   ========================================= */
+:root {
+  /* Typography */
+  --ifm-font-family-base: 'Inter', sans-serif;
+  --ifm-heading-font-family: 'Space Grotesk', sans-serif;
+
+  /* Simple Color Palette - NO YELLOW */
+  --ifm-color-primary: #1a1a1a;
+  /* Near Black - Primary Actions */
+  --ifm-color-primary-dark: #000000;
+  --ifm-color-primary-darker: #000000;
+  --ifm-color-primary-darkest: #000000;
+  --ifm-color-primary-light: #333333;
+  --ifm-color-primary-lighter: #555555;
+  --ifm-color-primary-lightest: #777777;
+
+  /* Backgrounds */
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #f9f9f9;
+
+  /* Text */
+  --ifm-font-color-base: #1a1a1a;
+  --ifm-font-color-secondary: #555555;
+
+  /* Navbar - Clean White */
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-navbar-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --ifm-navbar-link-color: #1a1a1a;
+  --ifm-navbar-link-hover-color: #555555;
+
+  /* Footer - Dark */
+  --ifm-footer-background-color: #1a1a1a;
+  --ifm-footer-color: #ffffff;
+  --ifm-footer-link-color: #cccccc;
+
+  /* Links */
+  --ifm-link-color: #1a1a1a;
+  --ifm-link-hover-color: #555555;
+
+  /* Code */
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================
+   DARK MODE
+   ========================================= */
+[data-theme='dark'] {
+  /* Simple Dark Palette - NO YELLOW */
+  --ifm-color-primary: #ffffff;
+  /* White - Primary in Dark Mode */
+  --ifm-color-primary-dark: #e0e0e0;
+  --ifm-color-primary-darker: #cccccc;
+  --ifm-color-primary-darkest: #aaaaaa;
+  --ifm-color-primary-light: #ffffff;
+  --ifm-color-primary-lighter: #ffffff;
+  --ifm-color-primary-lightest: #ffffff;
+
+  /* Backgrounds */
+  --ifm-background-color: #1a1a1a;
+  --ifm-background-surface-color: #2a2a2a;
+
+  /* Text */
+  --ifm-font-color-base: #f0f0f0;
+  --ifm-font-color-secondary: #aaaaaa;
+
+  /* Navbar */
+  --ifm-navbar-background-color: #1a1a1a;
+  --ifm-navbar-link-color: #f0f0f0;
+  --ifm-navbar-link-hover-color: #ffffff;
+
+  /* Footer */
+  --ifm-footer-background-color: #0d0d0d;
+
+  /* Links */
+  --ifm-link-color: #ffffff;
+  --ifm-link-hover-color: #cccccc;
+
+  /* Code */
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+}
+
+/* =========================================
+   TYPOGRAPHY
+   ========================================= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+}
+
+.hero__title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--ifm-font-color-base);
+}
+
+.hero__subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color: var(--ifm-font-color-secondary);
+}
+
+/* =========================================
+   BUTTONS - Simple, High Contrast
+   ========================================= */
+.button--secondary {
+  border: 2px solid var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.button--secondary:hover {
+  background: var(--ifm-color-primary);
+  color: var(--ifm-background-color);
+  border-color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+/* =========================================
+   NAVIGATION & MENUS
+   ========================================= */
+.menu__link--active {
+  font-weight: 600;
+  background-color: var(--ifm-background-surface-color);
+}
+
+.menu__link:hover {
+  background: var(--ifm-background-surface-color);
+}
+
+/* =========================================
+   CONTENT ELEMENTS
+   ========================================= */
+
+/* Links in content */
+.markdown a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+/* Admonitions */
+.alert {
+  border-left: 4px solid var(--ifm-color-primary);
+  border-radius: 4px;
+}
+
+/* Pagination */
+.pagination-nav__link {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  transition: border-color 0.2s;
+}
+
+.pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+/* TOC */
+.table-of-contents__link--active {
+  font-weight: 600;
+}
+
+/* Focus States - Subtle but visible */
+*:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}

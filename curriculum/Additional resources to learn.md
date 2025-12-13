@@ -1,0 +1,30 @@
+# Additional Resources to Learn
+
+A curated list of high-quality resources to supplement the HBAI Academy curriculum.
+
+## Deep Learning & Machine Learning
+
+*   **[Hugging Face Learn](https://huggingface.co/learn)**: Excellent practical tutorials on Transformers, Diffusion models, and Deep RL.
+*   **[Fast.ai](https://www.fast.ai/)**: Top-down approach to Deep Learning.
+    *   [Fastbook Chapter 1](https://github.com/fastai/fastbook/blob/master/01_intro.ipynb): Intro to Deep Learning.
+*   **[Andrej Karpathy's YouTube Channel](https://www.youtube.com/@AndrejKarpathy)**: "Neural Networks: Zero to Hero" series. The gold standard for understanding LLMs and Backprop from scratch.
+*   **[Papers with Code](https://paperswithcode.com/)**: Browse the state-of-the-art in ML papers linked to their official code implementations.
+
+## Python & Software Engineering
+
+*   **[Real Python](https://realpython.com/)**: High-quality articles and tutorials on Python best practices.
+*   **[Full Stack Python](https://www.fullstackpython.com/)**: Guide to every part of the Python web application stack.
+*   **[The Missing Semester of Your CS Education](https://missing.csail.mit.edu/)**: MIT course on command line, editors, git, and other essential tools often not taught in class.
+*   **[System Design Primer](https://github.com/donnemartin/system-design-primer)**: Comprehensive guide for key systems design interviews and concepts.
+
+## Mathematics
+
+*   **[3Blue1Brown (Essence of Linear Algebra / Calculus)](https://www.3blue1brown.com/)**: Visual intuition for core math concepts.
+*   **[StatQuest with Josh Starmer](https://www.youtube.com/c/joshstarmer)**: Statistics and ML algorithms explained simply and clearly.
+*   **[Immersive Linear Algebra](http://immersivemath.com/ila/index.html)**: Interactive linear algebra textbook.
+
+## Specialized Tracks
+
+*   **Computer Vision**: [PyTorch Image Models (timm)](https://github.com/rwightman/pytorch-image-models) - Library of SOTA image classification models.
+*   **NLP**: [LangChain Documentation](https://python.langchain.com/en/latest/) - Learn to build applications with LLMs.
+*   **Data Science**: [Kaggle Learn](https://www.kaggle.com/learn) - Interactive micro-courses on Pandas, SQL, and ML.
