@@ -181,3 +181,7 @@ h6 {
   outline: 2px solid var(--ifm-color-primary);
   outline-offset: 2px;
 }
+
+.hero {
+  background-color: var(--ifm-background-color);
+}
