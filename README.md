@@ -7,22 +7,28 @@
 
 Welcome to the open-source curriculum of **HumblebeeAI Academy**. This repository contains the complete learning path from absolute beginner to specialized AI/Software Engineer.
 
-## 📚 Curriculum Structure
+## 📂 Repository Structure
+
+*   **/website**: The complete source code and content.
+    *   `/website/docs`: The **Source of Truth** for the curriculum.
+    *   `/website/src`: Frontend logic and components.
+
+## 📚 Curriculum Overview
 
 The curriculum is divided into two main stages:
 
-### [1. School Program](./website/docs/school/01-intro.mdx)
-* **Goal**: Build absolute foundations (Math, Coding, Problem Solving).
-* **Duration**: 6 Months.
-* **Outcome**: Ready for Soft Landing.
+### [1. School Program](./docs/school/01-intro.mdx)
+*   **Goal**: Build absolute foundations (Math, Coding, Problem Solving).
+*   **Duration**: 6 Months.
+*   **Outcome**: Ready for Soft Landing.
 
-### [2. Soft Landing Program](./website/docs/softlanding/01-intro.mdx)
-* **Goal**: Field-specific technical depth.
-* **Tracks**:
-    * 👁️ [Computer Vision](./website/docs/softlanding/tracks/01-computer-vision.mdx)
-    * 📊 [Data Science](./website/docs/softlanding/tracks/02-data-science.mdx)
-    * 🤖 [Natural Language Processing](./website/docs/softlanding/tracks/03-nlp.mdx)
-    * 💻 [Software Engineering](./website/docs/softlanding/tracks/04-software-engineering.mdx)
+### [2. Soft Landing Program](./docs/softlanding/01-intro.mdx)
+*   **Goal**: Field-specific technical depth.
+*   **Tracks**:
+    *   👁️ [Computer Vision](./docs/softlanding/tracks/01-computer-vision.mdx)
+    *   📊 [Data Science](./docs/softlanding/tracks/02-data-science.mdx)
+    *   🤖 [Natural Language Processing](./docs/softlanding/tracks/03-nlp.mdx)
+    *   💻 [Software Engineering](./docs/softlanding/tracks/04-software-engineering.mdx)
 
 ## 🚀 Getting Started
 
@@ -38,7 +44,7 @@ npm start
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-### Contribution
+## 🤝 Contribution
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for more details.
 

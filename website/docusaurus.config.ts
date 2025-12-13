@@ -38,6 +38,7 @@ const config: Config = {
       'classic',
       {
         docs: {
+          path: '../docs',
           sidebarPath: './sidebars.ts',
           editUrl:
             'https://github.com/HumblebeeAI/academy-curriculum/tree/main/',
