@@ -11,22 +11,529 @@ description: How the internet actually works
 
 > **"If you don't understand TCP/IP, you can't build distributed systems."**
 
-## Core Concepts
-Watch these in order to understand the plumbing of the internet.
+## Overview
 
-1.  **[What is a Network?](https://youtu.be/S7MNX_UD7vY?si=QsDqcc9oKARiMpsH)**
-2.  **[Understanding Network Switches](https://youtu.be/9eH16Fxeb9o?si=s7edRPPW0AmImORD)**
-3.  **[Routers Explained](https://youtu.be/p9ScLm9S3B4?si=-eOpM4m3i77t7ueV)**
-4.  **[TCP/IP vs. OSI Models](https://youtu.be/CRdL1PcherM?si=iHWLHjJ9f0xprSrV)**
-5.  **[Real-World Application of TCP/IP](https://youtu.be/3kfO61Mensg?si=hbbBid9mvzdD9VyW)**
-6.  **[Port Security Essentials](https://youtu.be/0W4JZIWtjLQ?si=MhFV4BBqIRghg53S)**
-7.  **[IP Addressing & Subnetting](https://youtu.be/5WfiTHiU4x8?si=6JwxFRZJbYfhPPLX)**
-8.  **[The IPv4 Exhaustion Problem](https://youtu.be/tcae4TSSMo8?si=RSjEonoxYdZt4fhk)**
-9.  **[Private IP Addressing](https://youtu.be/8bhvn9tQk8o?si=VR1o9SkNSLAs04ZX)**
+**Duration**: 1-2 weeks | **Prerequisites**: Module 1 (Computational Thinking) completed
 
-## Why this matters for AI?
-When you deploy a model, it lives on a server. It talks to clients via IPs and Ports. If you don't understand Subnetting or Port Forwarding, you can never deploy a secure API.
+This module reveals how computers communicate across the internet. Understanding networking is essential for deploying AI models, debugging connection issues, and building secure, scalable systems. You'll learn the foundational concepts that power every API call, model deployment, and distributed application.
+
+**Learning Outcomes:**
+- Explain how data travels from your computer to servers and back
+- Understand IP addressing, subnetting, and network segmentation
+- Configure secure port mappings for deployed applications
+- Troubleshoot network issues when deploying AI models
+- Design secure network architectures for production systems
+
+**Why This Matters for AI:**  
+When you deploy a model, it runs on a server with an IP address, listening on specific ports. Clients access it through network requests. Without understanding subnetting, firewalls, and port forwarding, you cannot deploy secure, accessible APIs or debug why "it works locally but not in production."
 
 ---
 
-### [Next: Fullstack Toolkit ->](./04-fullstack-ops.mdx)
+## Learning Path
+
+**All videos are from NetworkChuck's excellent series. Watch them sequentially-each builds on previous concepts.**
+
+### Module 1: Network Fundamentals
+
+#### 1.1 Networks & Hardware
+
+**Resource**: [What is a Network? (NetworkChuck)](https://youtu.be/S7MNX_UD7vY?si=QsDqcc9oKARiMpsH)  
+**Type**: Video | **Duration**: 15 minutes
+
+**Why This Resource**  
+Start with the absolute basics: what connects computers together and enables communication. NetworkChuck's visual style makes abstract concepts tangible.
+
+**What You'll Learn**
+- Definition of a network (2+ connected devices)
+- LAN (Local Area Network) vs WAN (Wide Area Network)
+- Network topologies (star, mesh, bus)
+- Physical vs logical networks
+- Basic network components overview
+
+**How to Use**
+1. Watch without pausing for the big picture
+2. Rewatch and pause to diagram the network topologies
+3. **Practice checkpoint**: Draw your home network (router, devices, internet connection)
+4. Identify which devices are on your LAN vs accessed via WAN
+
+**AI Application Context**  
+Your deployed model is a device on a network. Understanding networks helps you decide: Should it be accessible from the internet (WAN) or only within your company (LAN)?
+
+---
+
+#### 1.2 Network Switches
+
+**Resource**: [Understanding Network Switches (NetworkChuck)](https://youtu.be/9eH16Fxeb9o?si=s7edRPPW0AmImORD)  
+**Type**: Video | **Duration**: 12 minutes
+
+**What You'll Learn**
+- How switches differ from hubs (intelligent forwarding)
+- MAC addresses and the MAC address table
+- How switches learn which devices are on which ports
+- Broadcast vs unicast traffic
+- Switches in enterprise networks
+
+**How to Use**
+1. Focus on the MAC address table concept-this is critical
+2. **Practice**: Run `arp -a` on your computer to see MAC addresses of devices on your network
+3. **Checkpoint**: Explain in your own words how a switch decides where to send a packet
+
+**Connection to Previous Concepts**  
+Switches operate at Layer 2 (Data Link) in the networking model-you'll see how this fits into the bigger picture in section 1.4.
+
+---
+
+#### 1.3 Routers & Routing
+
+**Resource**: [Routers Explained (NetworkChuck)](https://youtu.be/p9ScLm9S3B4?si=-eOpM4m3i77t7ueV)  
+**Type**: Video | **Duration**: 14 minutes
+
+**What You'll Learn**
+- Routers vs switches (Layer 3 vs Layer 2)
+- How routers connect different networks
+- Default gateway concept
+- Routing tables and path selection
+- NAT (Network Address Translation) basics
+
+**How to Use**
+1. Pay special attention to the default gateway explanation
+2. **Practice**: Find your default gateway with `ipconfig` (Windows) or `ip route` (Linux/Mac)
+3. **Checkpoint**: Trace a packet's path from your computer to google.com
+
+**AI Deployment Context**  
+When you deploy an API to a cloud server, routers direct traffic from users' requests across the internet to your specific server. Understanding routing helps you diagnose "can't reach server" issues.
+
+---
+
+### Module 2: Network Models & Protocols
+
+#### 2.1 The OSI & TCP/IP Models
+
+**Resource**: [TCP/IP vs. OSI Models (NetworkChuck)](https://youtu.be/CRdL1PcherM?si=iHWLHjJ9f0xprSrV)  
+**Type**: Video | **Duration**: 18 minutes
+
+**Why This Resource**  
+These models are the mental framework for understanding how networks actually work. Every networking conversation references these layers.
+
+**What You'll Learn**
+- OSI 7-layer model (Physical → Application)
+- TCP/IP 4-layer model (more practical)
+- What happens at each layer when you request a webpage
+- How protocols at different layers work together
+- Troubleshooting using the layer model
+
+**How to Use**
+1. **Critical**: Create a reference chart of both models side-by-side
+2. For each layer, write one real-world example
+3. **Practice checkpoint**: Identify which layer handles:
+   - Ethernet cables (Physical - Layer 1)
+   - IP addresses (Network - Layer 3)
+   - HTTP requests (Application - Layer 7)
+4. Memorize at least the TCP/IP model layers
+
+**The Layers (TCP/IP Model)**
+1. **Link Layer**: Hardware addressing (Ethernet, WiFi)
+2. **Internet Layer**: Routing across networks (IP)
+3. **Transport Layer**: Reliable delivery (TCP) or fast delivery (UDP)
+4. **Application Layer**: Your code (HTTP, HTTPS, SSH, FTP)
+
+**Why This Matters**  
+When debugging, you can isolate problems: "Is this a Layer 3 routing issue or a Layer 7 application error?"
+
+---
+
+#### 2.2 TCP/IP in Practice
+
+**Resource**: [Real-World Application of TCP/IP (NetworkChuck)](https://youtu.be/3kfO61Mensg?si=hbbBid9mvzdD9VyW)  
+**Type**: Video | **Duration**: 20 minutes
+
+**What You'll Learn**
+- TCP handshake (SYN, SYN-ACK, ACK)
+- How TCP ensures reliable delivery
+- UDP for speed over reliability
+- When to use TCP vs UDP
+- Packet structure and headers
+
+**How to Use**
+1. Focus on the TCP three-way handshake-you'll see this everywhere
+2. **Practice**: Use Wireshark (mentioned in video) to capture your own network traffic
+3. Filter for TCP handshakes: `tcp.flags.syn==1`
+4. **Checkpoint**: Observe a complete handshake when loading a website
+
+**AI Context**  
+Your FastAPI uses HTTP which runs on TCP. Understanding TCP helps you optimize request timeouts, diagnose slow responses, and choose appropriate protocols for real-time AI applications (WebSockets for streaming predictions).
+
+---
+
+### Module 3: Security & Addressing
+
+#### 3.1 Port Security Fundamentals
+
+**Resource**: [Port Security Essentials (NetworkChuck)](https://youtu.be/0W4JZIWtjLQ?si=MhFV4BBqIRghg53S)  
+**Type**: Video | **Duration**: 16 minutes
+
+**What You'll Learn**
+- What ports are (logical endpoints for services)
+- Well-known ports (80=HTTP, 443=HTTPS, 22=SSH, 3306=MySQL)
+- Port scanning and security implications
+- Firewall rules to block/allow ports
+- Port forwarding for accessing internal services
+
+**How to Use**
+1. **Critical section**: Port forwarding (latter half of video)
+2. **Practice**: Check open ports on your machine with `netstat -an`
+3. Run `nmap localhost` to scan your own open ports
+4. **Checkpoint**: Configure a simple firewall rule (allow port 8000, block all others)
+
+**AI Deployment Essentials**
+- Your FastAPI runs on port 8000 (or 80/443 in production)
+- Database on port 5432 (PostgreSQL) or 27017 (MongoDB)
+- **Security rule**: Only expose ports users need (80/443), keep databases internal
+- Port forwarding lets you access cloud services securely via SSH tunnel
+
+**Common Port Numbers to Remember**
+```
+22   - SSH (remote server access)
+80   - HTTP (unencrypted web traffic)
+443  - HTTPS (encrypted web traffic)
+3000 - React development server
+5432 - PostgreSQL database
+6379 - Redis cache
+8000 - FastAPI/Django development server
+27017- MongoDB database
+```
+
+---
+
+#### 3.2 IP Addressing & Subnetting
+
+**Resource**: [IP Addressing & Subnetting (NetworkChuck)](https://youtu.be/5WfiTHiU4x8?si=6JwxFRZJbYfhPPLX)  
+**Type**: Video | **Duration**: 25 minutes
+
+**What You'll Learn**
+- IPv4 address structure (32 bits, dotted decimal)
+- Network vs host portions of an IP
+- Subnet masks and CIDR notation (192.168.1.0/24)
+- Calculating network ranges
+- Subnetting for network segmentation
+
+**How to Use**
+1. **This is dense material**-pause frequently and work through examples
+2. **Critical skill**: Practice CIDR notation conversions
+3. Use an online subnet calculator to verify your work initially
+4. **Practice checkpoint**: Given 192.168.1.0/24, identify:
+   - How many hosts? (254)
+   - What's the broadcast address? (192.168.1.255)
+   - What's the range? (192.168.1.1 - 192.168.1.254)
+
+**Why Subnetting Matters**
+- Cloud providers (AWS, GCP) require you to define subnets
+- You need to calculate how many IPs your AI infrastructure needs
+- Segmenting networks improves security (ML models in one subnet, databases in another)
+
+**Practical Exercise**  
+Your company needs:
+- 50 web servers
+- 20 database servers
+- 10 ML model servers
+
+Design three subnets with appropriate CIDR blocks.
+
+---
+
+#### 3.3 IPv4 Exhaustion
+
+**Resource**: [The IPv4 Exhaustion Problem (NetworkChuck)](https://youtu.be/tcae4TSSMo8?si=RSjEonoxYdZt4fhk)  
+**Type**: Video | **Duration**: 12 minutes
+
+**What You'll Learn**
+- Why we're running out of IPv4 addresses
+- IPv6 as the solution (128-bit addresses)
+- NAT (Network Address Translation) as a workaround
+- How one public IP can serve many private devices
+- Future of internet addressing
+
+**How to Use**
+1. Understand the scarcity problem context
+2. Focus on NAT explanation-this is how your home network works
+3. **Checkpoint**: Check your public IP vs private IP to see NAT in action
+4. Visit `whatismyip.com` (public) vs `ipconfig`/`ifconfig` (private)
+
+**AI Deployment Impact**  
+Cloud providers charge for public IPs. Using private IPs + load balancers is cheaper and more secure-understanding IPv4 scarcity helps you design cost-effective architectures.
+
+---
+
+#### 3.4 Private IP Addressing
+
+**Resource**: [Private IP Addressing (NetworkChuck)](https://youtu.be/8bhvn9tQk8o?si=VR1o9SkNSLAs04ZX)  
+**Type**: Video | **Duration**: 13 minutes
+
+**What You'll Learn**
+- Reserved private IP ranges (10.x.x.x, 172.16-31.x.x, 192.168.x.x)
+- Why private IPs can't be routed on the internet
+- How NAT translates private to public IPs
+- Designing internal networks with private addressing
+- Security benefits of private networks
+
+**How to Use**
+1. **Memorize the three private IP ranges**-you'll use these constantly
+2. Identify which private range your home/school network uses
+3. **Practice checkpoint**: Design a private network for a small company
+4. **Verification**: Explain why 192.168.1.100 can't be accessed from the internet
+
+**Production Architecture Pattern**
+```
+Internet
+    ↓
+Load Balancer (Public IP: 54.123.45.67)
+    ↓
+Web Servers (Private: 10.0.1.x)
+    ↓
+API Servers (Private: 10.0.2.x)
+    ↓
+Databases (Private: 10.0.3.x)
+```
+
+Only the load balancer has a public IP-everything else is private and secure.
+
+---
+
+## Practical Integration Project
+
+### Project: Secure AI Model Deployment Architecture
+
+**Duration**: 4-6 hours
+
+Design and document a network architecture for a production AI system.
+
+**Requirements:**
+1. **Network Diagram** showing:
+   - Public subnet (load balancer)
+   - Private subnet (API servers)
+   - Private subnet (database)
+   - CIDR blocks for each subnet
+
+2. **Security Configuration**:
+   - Which ports are open on each component
+   - Firewall rules (who can talk to whom)
+   - Public vs private IP assignments
+
+3. **Traffic Flow Documentation**:
+   - User request → Load balancer → API → Database
+   - Show which layer of TCP/IP handles each step
+
+**Example Architecture**:
+```
+Public Subnet (10.0.1.0/24)
+- Load Balancer: 10.0.1.10
+- Ports: 80 (HTTP), 443 (HTTPS)
+
+Private Subnet - App Tier (10.0.2.0/24)
+- FastAPI Server 1: 10.0.2.10:8000
+- FastAPI Server 2: 10.0.2.11:8000
+- No external access (only from load balancer)
+
+Private Subnet - Data Tier (10.0.3.0/24)
+- PostgreSQL: 10.0.3.10:5432
+- Redis: 10.0.3.11:6379
+- No external access (only from app tier)
+```
+
+**Verification Checklist**
+- [ ] Subnets are properly sized (not too many wasted IPs)
+- [ ] No database ports exposed to internet
+- [ ] Load balancer can reach all app servers
+- [ ] App servers can reach database
+- [ ] Users can only access load balancer (port 80/443)
+
+---
+
+## Completion Checklist
+
+Before moving to the next module, verify you can:
+
+- [ ] Draw a network diagram from memory (devices, switches, routers, internet)
+- [ ] Explain the difference between switches and routers
+- [ ] List all 7 OSI layers or 4 TCP/IP layers with examples
+- [ ] Identify which layer handles IP addresses (Layer 3/Internet)
+- [ ] Describe the TCP three-way handshake
+- [ ] List at least 5 common port numbers and their services
+- [ ] Calculate the number of hosts in a /24 subnet (254)
+- [ ] Identify if an IP address is private or public
+- [ ] Explain how NAT allows multiple devices to share one public IP
+- [ ] Design a basic secure network architecture for an application
+
+**Hands-On Verification:**
+- [ ] Use `ping` to test connectivity to a server
+- [ ] Use `traceroute` to see the path packets take
+- [ ] Use `netstat` to view open ports on your machine
+- [ ] Use `nmap` to scan ports on a server (only your own!)
+- [ ] Use `ipconfig`/`ifconfig` to find your IP and gateway
+
+---
+
+## Common Pitfalls & Troubleshooting
+
+**Understanding Issues**
+- ⚠️ **Confusing switches and routers**
+  - ✅ Switches connect devices in the same network (Layer 2), routers connect different networks (Layer 3)
+
+- ⚠️ **Forgetting which layer does what**
+  - ✅ Keep a reference chart: Physical cables → Data link (MAC) → Network (IP) → Transport (TCP/UDP) → Application (HTTP)
+
+**Practical Issues**
+- ⚠️ **"My API works locally but not after deploying"**
+  - ✅ Check: Firewall blocking port? Listening on 0.0.0.0 not 127.0.0.1? Security group rules?
+
+- ⚠️ **"Database connection refused"**
+  - ✅ Check: Port 5432/3306/27017 open? Database on same network? Connection string has correct IP?
+
+- ⚠️ **"Slow API responses"**
+  - ✅ Check: Network latency (use `ping`), TCP connection overhead, geographic distance
+
+**Security Mistakes**
+- ⚠️ **Exposing database ports to internet**
+  - ✅ Databases should only accept connections from application servers (private subnet)
+
+- ⚠️ **Using default ports without firewall**
+  - ✅ Change default ports or restrict access with firewall rules
+
+---
+
+## Real-World Networking Scenarios
+
+### Scenario 1: Deploying to AWS
+**Problem**: You've deployed your FastAPI to EC2, but can't access it.
+
+**Debugging Steps**:
+1. Check security group (AWS firewall): Is port 8000 open?
+2. Verify app is listening on 0.0.0.0 not 127.0.0.1: `netstat -tlnp | grep 8000`
+3. Test from EC2 itself: `curl localhost:8000` works? → Firewall issue
+4. Check route table: Is subnet's traffic routed to internet gateway?
+
+---
+
+### Scenario 2: Database Won't Connect
+**Problem**: Your app can't reach PostgreSQL.
+
+**Debugging Steps**:
+1. Layer 1: Physical connection exists? (Cloud: instances in same VPC?)
+2. Layer 3: Can you ping the database server? If not, routing issue
+3. Layer 4: Is PostgreSQL listening on 5432? `netstat -tlnp | grep 5432`
+4. Layer 4: Is port 5432 open in firewall? `telnet db-server 5432`
+5. Layer 7: Check connection string (correct host, user, password)
+
+---
+
+### Scenario 3: Designing Multi-Region Architecture
+**Problem**: Users in Asia experience slow API responses (you're in US).
+
+**Solution Using Networking Concepts**:
+1. Deploy API servers in Asia region (reduce latency)
+2. Use GeoDNS to route users to nearest server
+3. Implement CDN for static assets (Layer 7 optimization)
+4. Use database replication across regions
+5. Monitor with `traceroute` to verify path optimization
+
+---
+
+## Additional Resources & Tools
+
+**Network Diagnostic Tools**
+- `ping` - Test connectivity and measure latency
+- `traceroute` - Show path packets take to destination
+- `nmap` - Scan ports (use responsibly, only on your own systems)
+- `netstat` - Show active connections and listening ports
+- `tcpdump`/`Wireshark` - Capture and analyze network traffic
+- `curl` - Test HTTP endpoints with full control
+- `dig` - DNS lookup tool
+
+**Practice Environments**
+- [Packet Tracer (Cisco)](https://www.netacad.com/courses/packet-tracer) - Simulate networks
+- [GNS3](https://www.gns3.com/) - Advanced network simulation
+- [TryHackMe Networking Rooms](https://tryhackme.com/) - Hands-on labs
+
+**Reference Materials**
+- [Subnet Calculator](https://www.subnet-calculator.com/) - Verify your subnetting
+- [TCP/IP Guide](http://www.tcpipguide.com/) - Comprehensive reference
+- [RFC 1918](https://www.rfc-editor.org/rfc/rfc1918) - Private address specification
+
+---
+
+## Support & Next Steps
+
+**Need Help?**
+- Networking concepts: #networking-help channel
+- Deployment issues: #devops channel
+- Architecture design review: Office hours Tuesdays 4-6 PM
+
+**Next Module**: [Fullstack Toolkit →](./04-fullstack-ops.mdx)
+
+You'll apply your networking knowledge to:
+- Configure CORS for API access across domains
+- Expose FastAPI on correct ports in Docker
+- Deploy to cloud servers with proper security groups
+- Debug connection issues between frontend and backend
+
+**Connection to Future Learning**:
+Every deployment challenge in the Fullstack module involves networking:
+- "CORS error" → Understanding cross-origin requests (Layer 7)
+- "Connection refused" → Port not open (Layer 4) or wrong IP (Layer 3)
+- "Timeout" → Network latency or routing issues (Layer 3)
+
+---
+
+## Quick Reference
+
+**Private IP Ranges** (memorize these)
+```
+10.0.0.0    - 10.255.255.255   (10.0.0.0/8)
+172.16.0.0  - 172.31.255.255   (172.16.0.0/12)
+192.168.0.0 - 192.168.255.255  (192.168.0.0/16)
+```
+
+**Common Port Numbers**
+```
+SSH:        22
+HTTP:       80
+HTTPS:      443
+PostgreSQL: 5432
+MySQL:      3306
+MongoDB:    27017
+Redis:      6379
+FastAPI:    8000 (development)
+```
+
+**TCP/IP Layers**
+```
+4. Application  → HTTP, HTTPS, SSH, FTP
+3. Transport    → TCP (reliable), UDP (fast)
+2. Internet     → IP routing
+1. Link         → Ethernet, WiFi
+```
+
+**Essential Commands**
+```bash
+# Test connectivity
+ping google.com
+
+# Show route to destination
+traceroute google.com  # Linux/Mac
+tracert google.com     # Windows
+
+# View open ports
+netstat -tuln          # Linux
+netstat -an            # Windows
+
+# Find your IPs
+ip addr                # Linux
+ipconfig               # Windows
+ifconfig               # Mac
+
+# Test specific port
+telnet server-ip 8000
+nc -zv server-ip 8000  # netcat alternative
+```
+
+Save this reference for quick lookup during deployment and debugging.

@@ -6,34 +6,505 @@ description: Distributed Systems and Scalability
 
 # Software Engineering Track
 
-### 🏗️ Goal
-**Focus**: Robust, scalable systems.
+## Overview
 
-### Curriculum
-*   **Networking**:
-    *   **[Part 1](https://www.youtube.com/playlist?list=PLIhvC56v63IJVXv0GJcl9vO5Z6znCVb1P)** and **[Part 2](https://www.youtube.com/playlist?list=PLIhvC56v63IKrRHh3gvZZBAGvsvOhwrRF)**
-*   **Architecture Principles**:
-    *   **[The 12-Factor App](https://12factor.net/)**
-    *   **[The 15-Factor App](https://www.oreilly.com/library/view/beyond-the-twelve-factor/9781492042631/)**
-*   **API Design**:
-    *   **[REST API Principles](https://restfulapi.net/)**
-    *   **[FastAPI](https://fastapi.tiangolo.com/learn/)**
-*   **Database**:
-    *   ERD Design (Normalization)
-    *   SQL Language
-    *   SQL/NoSQL Service (Postgres/MongoDB)
-    *   Migrations
-*   **Testing**: Unit-test implementation.
-*   **Mobile**:
-    *   Flutter | Swift
-    *   *Optional*: Deployment to Play/App Store
-*   **DevOps**:
-    *   CI/CD: GitHub Actions
-    *   Multi-container application with secure port map implementation.
-*   **Full Stack**:
-    *   React | Vue | Pinia
-    *   UI/UX Design (Figma, Sketch)
+**Duration**: 12-16 weeks | **Prerequisites**: Phase 3 (Applied Engineering) completed
 
-### 🎓 Capstone
-*   **Project**: Provided by Mentor.
-*   **Status**: *Not open source yet (Coming Soon)*
+This track prepares you to build production-grade, scalable systems that serve millions of users. You'll learn the architecture patterns, tools, and practices that distinguish hobby projects from enterprise software.
+
+**Learning Outcomes:**
+- Design and implement RESTful APIs that handle high traffic
+- Build distributed systems with proper security and monitoring
+- Create full-stack applications with modern frameworks
+- Deploy and maintain applications using CI/CD pipelines
+- Apply architectural principles for maintainable, scalable code
+
+**Track Structure:**  
+Complete modules 1-6 sequentially, then choose mobile OR full-stack specialization based on your career goals.
+
+---
+
+## Module 1: Networking Fundamentals
+
+### Purpose
+Understand how data travels between computers—essential knowledge for debugging distributed systems, optimizing API performance, and securing applications.
+
+### Resources
+
+**Video Series: Computer Networking Course**  
+- [Part 1: Fundamentals](https://www.youtube.com/playlist?list=PLIhvC56v63IJVXv0GJcl9vO5Z6znCVb1P)  
+- [Part 2: Advanced Topics](https://www.youtube.com/playlist?list=PLIhvC56v63IKrRHh3gvZZBAGvsvOhwrRF)  
+**Type**: Video Lectures | **Duration**: 12-15 hours total
+
+**Why These Resources**  
+This comprehensive course covers networking from the ground up, using practical examples and visualizations that make abstract concepts concrete.
+
+**What You'll Learn**
+- **Part 1**: OSI model layers, TCP/IP protocols, DNS resolution, HTTP/HTTPS
+- **Part 2**: Load balancing, CDNs, WebSockets, network security (SSL/TLS)
+- How packets travel from your code to users across the internet
+- Common bottlenecks and how to diagnose network issues
+
+**How to Use**
+1. Watch Part 1 videos 1-10 (focus on layers 3-7 of OSI model)
+2. After each 2-3 videos, use `ping`, `traceroute`, and `curl` to observe concepts
+3. Complete Part 2 videos 1-8 (focus on application-layer protocols)
+4. **Practice checkpoint**: Use browser DevTools Network tab to analyze a website's requests
+5. Document your learning: Create a one-page diagram showing how an HTTP request travels
+
+**Real-World Application**  
+When your API is slow, you'll know whether it's DNS lookup, SSL handshake, server processing, or response size—and how to fix each.
+
+---
+
+## Module 2: Architecture Principles
+
+### Purpose
+Learn the battle-tested patterns that make applications scalable, maintainable, and cloud-ready. These principles prevent technical debt and enable team collaboration.
+
+### 2.1 Core Architecture Patterns
+
+**Resource**: [The 12-Factor App](https://12factor.net/)  
+**Type**: Documentation | **Duration**: 2-3 hours
+
+**Why This Resource**  
+Created by Heroku engineers, these 12 principles define modern cloud-native application architecture—used by companies from startups to Fortune 500.
+
+**What You'll Learn**
+- Codebase management (one repo, many deploys)
+- Configuration via environment variables (never hardcode secrets)
+- Stateless processes for horizontal scaling
+- Log aggregation and monitoring strategies
+- Dev/prod parity to prevent "works on my machine" issues
+
+**How to Use**
+1. Read all 12 factors sequentially
+2. For each factor, identify which you're already following and which you're violating
+3. **Critical**: Take notes on factors III (Config), VI (Processes), and XI (Logs)—most commonly violated
+4. Review your most recent project against this checklist
+
+---
+
+### 2.2 Extended Principles
+
+**Resource**: [Beyond the Twelve-Factor App](https://www.oreilly.com/library/view/beyond-the-twelve-factor/9781492042631/)  
+**Type**: Book | **Duration**: 4-6 hours
+
+**Why This Resource**  
+Extends the original 12 factors with 3 modern additions for microservices, containerization, and cloud-native environments.
+
+**What You'll Learn**
+- API-first design for service integration
+- Telemetry and observability patterns
+- Authentication and authorization strategies
+
+**How to Use**
+1. Read chapters on factors 13-15
+2. Compare these to the original 12—understand the evolution
+3. **Practice checkpoint**: Write a one-page architecture doc for your next project using these principles
+
+**Connection to Previous Learning**  
+These principles will guide every decision in modules 3-7. Refer back when designing APIs, databases, and deployment strategies.
+
+---
+
+## Module 3: API Design & Implementation
+
+### Purpose
+Master RESTful API design and build high-performance endpoints using modern Python frameworks.
+
+### 3.1 REST Principles
+
+**Resource**: [REST API Tutorial](https://restfulapi.net/)  
+**Type**: Tutorial Series | **Duration**: 3-4 hours
+
+**What You'll Learn**
+- REST architectural constraints (stateless, cacheable, uniform interface)
+- Resource naming conventions (`/users/123/orders` not `/getUserOrders`)
+- HTTP methods semantics (GET, POST, PUT, DELETE, PATCH)
+- Status codes: When to use 200 vs 201 vs 204 vs 400 vs 404 vs 500
+- Versioning strategies (`/v1/users` vs `Accept: application/vnd.api+json;version=1`)
+
+**How to Use**
+1. Read sections: "REST Architectural Constraints" through "HTTP Status Codes"
+2. For each section, write an example endpoint following the principle
+3. **Practice checkpoint**: Design a REST API for a simple domain (e.g., blog, library) on paper first
+
+---
+
+### 3.2 FastAPI Framework
+
+**Resource**: [FastAPI Official Tutorial](https://fastapi.tiangolo.com/learn/)  
+**Type**: Interactive Documentation | **Duration**: 8-10 hours
+
+**Why This Resource**  
+FastAPI is the fastest-growing Python web framework, with automatic OpenAPI docs, type validation, and async support—ideal for ML model serving.
+
+**What You'll Learn**
+- Path operations and route parameters
+- Request validation using Pydantic models
+- Automatic API documentation (Swagger UI)
+- Async endpoints for high concurrency
+- Dependency injection for database connections, authentication
+- Error handling and custom exceptions
+
+**How to Use**
+1. Complete the tutorial sequentially (User Guide sections 1-20)
+2. Type every example—don't copy-paste—to build muscle memory
+3. After section 10, build a mini-project: CRUD API for a todo app
+4. **Verification**: Your API should have auto-generated docs at `/docs`
+5. Test your endpoints using `curl` or Postman
+
+**Project Requirement**  
+Build a REST API with these features:
+- At least 3 resources (e.g., users, posts, comments)
+- CRUD operations for each resource
+- Input validation with Pydantic
+- Proper HTTP status codes
+- Authentication (JWT tokens)
+
+---
+
+## Module 4: Database Design & Management
+
+### Purpose
+Design efficient database schemas and implement them using SQL and NoSQL systems—the backbone of any application.
+
+### 4.1 Database Design
+
+**Topic**: Entity-Relationship Diagrams & Normalization  
+**Resources**: 
+- [Database Normalization (1NF to 3NF)](https://www.studytonight.com/dbms/database-normalization.php)
+- [ERD Tutorial](https://www.lucidchart.com/pages/er-diagrams)  
+**Duration**: 4-5 hours
+
+**What You'll Learn**
+- Entity-Relationship modeling (entities, attributes, relationships)
+- Primary keys, foreign keys, and referential integrity
+- Normalization forms (1NF, 2NF, 3NF) to eliminate redundancy
+- When to denormalize for performance
+- Indexing strategies for query optimization
+
+**How to Use**
+1. Study normalization examples—identify violations in poorly designed schemas
+2. Practice: Design an ERD for an e-commerce system (users, products, orders, reviews)
+3. Apply normalization rules to your design
+4. **Checkpoint**: Have a peer or mentor review your ERD
+
+---
+
+### 4.2 SQL Mastery
+
+**Topic**: SQL Language & Query Optimization  
+**Resources**: 
+- [SQLBolt Interactive Tutorial](https://sqlbolt.com/)
+- [PostgreSQL Tutorial](https://www.postgresqltutorial.com/)  
+**Duration**: 8-10 hours
+
+**What You'll Learn**
+- SELECT queries with JOINs, GROUP BY, HAVING
+- Subqueries and CTEs (Common Table Expressions)
+- Transactions and ACID properties
+- Indexes: When and how to create them
+- Query optimization techniques
+
+**How to Use**
+1. Complete all SQLBolt lessons (Lessons 1-18)
+2. Install PostgreSQL locally
+3. Implement your ERD from 4.1 as actual tables
+4. Write queries: aggregations, complex joins, window functions
+5. **Practice checkpoint**: Analyze query performance with `EXPLAIN`
+
+---
+
+### 4.3 NoSQL Databases
+
+**Topic**: MongoDB for Document Storage  
+**Resource**: [MongoDB University (M001: Basics)](https://learn.mongodb.com/learning-paths/introduction-to-mongodb)  
+**Duration**: 6-8 hours
+
+**What You'll Learn**
+- Document model vs relational model
+- CRUD operations in MongoDB
+- Aggregation pipelines for analytics
+- When to use NoSQL vs SQL
+
+**How to Use**
+1. Complete the free M001 course
+2. Compare: Implement the same data model in both PostgreSQL and MongoDB
+3. **Decision framework**: SQL for structured, transactional data; NoSQL for flexible, rapidly-changing schemas
+
+---
+
+### 4.4 Database Migrations
+
+**Topic**: Schema Version Control  
+**Resource**: [Alembic Tutorial](https://alembic.sqlalchemy.org/en/latest/tutorial.html)  
+**Duration**: 3-4 hours
+
+**What You'll Learn**
+- Why migrations matter (tracking schema changes over time)
+- Auto-generating migrations from model changes
+- Rolling back failed deployments
+- Managing migrations across environments
+
+**How to Use**
+1. Install Alembic in your FastAPI project from Module 3
+2. Generate initial migration from your existing models
+3. Practice: Add a new column, create migration, apply it
+4. **Requirement**: All database changes must be migrations (never manual SQL)
+
+---
+
+## Module 5: Testing Strategies
+
+### Purpose
+Write automated tests that catch bugs before production and enable confident refactoring.
+
+**Topic**: Unit Testing & Test-Driven Development  
+**Resources**: 
+- [pytest Documentation](https://docs.pytest.org/en/stable/)
+- [FastAPI Testing Guide](https://fastapi.tiangolo.com/tutorial/testing/)  
+**Duration**: 6-8 hours
+
+**What You'll Learn**
+- Unit tests vs integration tests vs end-to-end tests
+- Test fixtures and mocking
+- Test coverage metrics
+- Testing APIs with TestClient
+- CI integration (tests run automatically on commits)
+
+**How to Use**
+1. Study pytest basics: assertions, fixtures, parametrize
+2. Write tests for your FastAPI endpoints from Module 3
+3. Aim for 80%+ code coverage
+4. **Practice**: Write tests BEFORE implementing a new feature (TDD)
+5. **Verification**: Tests run automatically in GitHub Actions (see Module 7)
+
+**Testing Checklist for Your API**
+- [ ] Test all CRUD operations
+- [ ] Test input validation (invalid data returns 400)
+- [ ] Test authentication (unauthorized returns 401)
+- [ ] Test database operations (use test database)
+- [ ] Test error handling (500 errors are logged)
+
+---
+
+## Module 6: DevOps & Deployment
+
+### Purpose
+Automate your deployment pipeline so every commit is tested, built, and deployable with confidence.
+
+### 6.1 CI/CD with GitHub Actions
+
+**Resource**: [GitHub Actions Documentation](https://docs.github.com/en/actions/quickstart)  
+**Duration**: 4-6 hours
+
+**What You'll Learn**
+- Workflow syntax (triggers, jobs, steps)
+- Running tests on every pull request
+- Building Docker images automatically
+- Deploying to staging/production environments
+- Secret management for credentials
+
+**How to Use**
+1. Create `.github/workflows/test.yml` in your project
+2. Configure workflow to run tests on push/PR
+3. Add linting and code formatting checks
+4. **Checkpoint**: Create a PR and watch tests run automatically
+5. Add deployment workflow for production
+
+**Minimal CI Workflow**
+```yaml
+name: Tests
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+      - run: pip install -r requirements.txt
+      - run: pytest
+```
+
+---
+
+### 6.2 Containerization & Orchestration
+
+**Topic**: Docker & Docker Compose  
+**Resources**: 
+- [Docker Getting Started](https://docs.docker.com/get-started/)
+- [Docker Compose Tutorial](https://docs.docker.com/compose/gettingstarted/)  
+**Duration**: 8-10 hours
+
+**What You'll Learn**
+- Writing Dockerfiles for reproducible builds
+- Multi-stage builds for smaller images
+- Docker Compose for multi-container apps
+- Secure port mapping and environment variables
+- Volume management for persistent data
+
+**How to Use**
+1. Containerize your FastAPI application
+2. Create docker-compose.yml with app + database + Redis
+3. Implement secure networking (internal vs exposed ports)
+4. **Project**: Run entire stack with `docker-compose up`
+5. **Verification**: No ports except 80/443 exposed externally
+
+**Multi-Container Architecture Example**
+- Web app (FastAPI) - port 8000 (internal only)
+- Nginx reverse proxy - ports 80, 443 (public)
+- PostgreSQL - port 5432 (internal only)
+- Redis cache - port 6379 (internal only)
+
+---
+
+## Module 7: Specialization (Choose One)
+
+### Option A: Mobile Development
+
+**Frameworks**: Flutter (cross-platform) OR Swift (iOS native)
+
+**Flutter Track**  
+**Resource**: [Flutter Official Codelabs](https://docs.flutter.dev/codelabs)  
+**Duration**: 12-15 hours
+
+**What You'll Learn**
+- Dart language basics
+- Widget composition (Stateless vs Stateful)
+- API integration (calling your FastAPI backend)
+- State management (Provider or Riverpod)
+- Platform-specific features (camera, location)
+
+**Project Requirement**
+- Mobile app consuming your REST API from Module 3
+- Authentication flow (login, signup)
+- Offline-first with local caching
+- Push notifications (optional)
+
+**Deployment (Optional)**
+- [Publishing to Google Play](https://docs.flutter.dev/deployment/android)
+- [Publishing to App Store](https://docs.flutter.dev/deployment/ios)
+
+---
+
+### Option B: Full-Stack Web Development
+
+**Frameworks**: React OR Vue.js
+
+**React Track**  
+**Resource**: [React Official Tutorial](https://react.dev/learn)  
+**Duration**: 12-15 hours
+
+**What You'll Learn**
+- JSX syntax and component composition
+- State management with hooks (useState, useEffect)
+- React Router for navigation
+- API integration with fetch/axios
+- Form handling and validation
+
+**Vue Track**  
+**Resource**: [Vue 3 Official Guide](https://vuejs.org/guide/introduction.html)  
+**Duration**: 12-15 hours
+
+**What You'll Learn**
+- Vue templates and reactivity
+- Composition API
+- Pinia for state management
+- Vue Router
+- Component communication (props, events)
+
+**UI/UX Design Skills**  
+**Resources**: 
+- [Figma Tutorial](https://www.youtube.com/watch?v=FTFaQWZBqQ8)
+- [Material Design Principles](https://m3.material.io/)  
+**Duration**: 4-6 hours
+
+**Project Requirement**
+- Design mockups in Figma first
+- Implement responsive web app
+- Connected to your FastAPI backend
+- Deployed to Vercel/Netlify
+
+---
+
+## Capstone Project
+
+### Structure
+**Mentor-Assigned Project** | **Duration**: 4-6 weeks
+
+You'll work directly with a mentor to build a production-grade application that combines all modules:
+- Networked microservices architecture
+- REST API following 12-factor principles
+- SQL database with proper normalization
+- Comprehensive test coverage
+- Docker containerization
+- CI/CD pipeline
+- Mobile OR web frontend
+
+**Evaluation Criteria**
+- Code quality and architectural patterns
+- Test coverage (>80%)
+- Documentation (README, API docs, architecture diagrams)
+- Deployment automation
+- Performance under load (basic load testing)
+
+**Status**: Capstone projects are currently mentor-led and not open-source. Selected projects may be published as case studies with permission.
+
+---
+
+## Track Completion Checklist
+
+You've mastered Software Engineering when you can:
+
+- [ ] Explain how an HTTP request travels from browser to server and back
+- [ ] Design a scalable API following REST and 12-factor principles
+- [ ] Normalize a database schema to 3NF
+- [ ] Write complex SQL queries with joins and aggregations
+- [ ] Achieve 80%+ test coverage on a project
+- [ ] Deploy a multi-container application with Docker Compose
+- [ ] Set up CI/CD that automatically tests and deploys code
+- [ ] Build a complete frontend (mobile or web) consuming your API
+- [ ] Debug production issues using logs and monitoring
+
+---
+
+## Recommended Study Schedule
+
+**Weeks 1-2**: Networking + Architecture (Modules 1-2)  
+**Weeks 3-5**: API Design + Implementation (Module 3)  
+**Weeks 6-8**: Database Design + Implementation (Module 4)  
+**Weeks 9-10**: Testing + DevOps (Modules 5-6)  
+**Weeks 11-12**: Specialization (Module 7)  
+**Weeks 13-16**: Capstone Project
+
+**Time Commitment**: 15-20 hours per week
+
+---
+
+## Support & Resources
+
+**Need Help?**
+- Architecture questions: #software-arch channel
+- API/Database help: #backend-dev channel
+- DevOps issues: #devops-help channel
+- Mentor office hours: Wednesdays 3-6 PM
+
+**Additional Learning Resources**
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Web Security Academy](https://portswigger.net/web-security)
+- [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/)
+
+**Career Path**
+This track prepares you for roles:
+- Backend Engineer
+- Full-Stack Developer
+- DevOps Engineer
+- Solutions Architect
+- Mobile Developer
+
+**Next Steps After Completion**
+- [Cloud Certifications](https://aws.amazon.com/certification/) (AWS/GCP/Azure)
+- Open source contribution
+- Technical interviewing prep ([LeetCode System Design](https://leetcode.com/discuss/interview-question/system-design))
