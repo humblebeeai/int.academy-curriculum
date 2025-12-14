@@ -4,18 +4,47 @@ title: Math & ML Foundations
 description: Linear Algebra, Calculus, and Basic Models
 ---
 
-# 🧮 Math & ML Fundamentals
-
-> **"You cannot debug a neural network if you don't understand how a single neuron learns."**
+# Math & ML Foundations
 
 ## 1. Mathematics
-Before diving into code, you need the language of AI.
 
-*   **Linear Algebra**:
-    *   **[Khan Academy: Linear Algebra](https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces)**
-    *   **Focus**: Vectors, Matrix Multiplication, Spaces.
-*   **Deep Learning Primitives**:
-    *   **[Andrew Ng: Neural Networks and Deep Learning](https://www.youtube.com/watch?v=CS4cs9xVecg&list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0&index=1)** (Course 1 & 2)
+**Before diving into code, you need the language of AI.**
+
+Machine learning models are built from mathematical operations.
+This section introduces the core mathematical ideas that explain how **a single neuron computes**, and how those computations scale to full neural networks.
+
+The focus here is on understanding structure and flow - not memorizing formulas.
+
+### Linear Algebra
+
+**Resource:**
+
+*   **[3Blue1Brown: Essence of Linear Algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)**
+
+**Focus:**
+Vectors, matrix multiplication, vector spaces.
+
+Learners will study how data is represented as vectors and transformed through matrix operations.
+This provides the mental model needed to understand how information moves through layers in a neural network.
+
+Emphasis is placed on **intuition and visualization**, so learners can reason about model behavior rather than treating it as a black box.
+
+### Deep Learning Primitives
+
+**Resource:**
+
+*   **[Andrew Ng: Neural Networks and Deep Learning](https://www.youtube.com/watch?v=CS4cs9xVecg&list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0&index=1)** (Course 1 & 2)
+
+This material connects mathematical concepts to actual learning systems.
+
+Learners will explore:
+
+*   How a single neuron performs a computation
+*   How weights, biases, and activation functions interact
+*   How multiple neurons combine into layers
+*   How error signals flow backward during training
+
+This section acts as a bridge between mathematics and machine learning models, preparing learners to understand and debug neural networks in practice.
 
 ## 2. Base ML Models
 Understand the "Old School" methods. They are often faster and cheaper than Deep Learning.
@@ -25,7 +54,38 @@ Understand the "Old School" methods. They are often faster and cheaper than Deep
 *   **[Random Forests](https://www.youtube.com/watch?v=J4Wdy0Wc_xQ&list=PLblh5JKOoLUIE96dI3U7oxHaCAbZgfhHk)** & **[Decision Trees](https://www.youtube.com/watch?v=_L39rN6gz7Y&list=PLblh5JKOoLUKAtDViTvRGFpphEc24M-QH)**
 
 ## 3. Evaluation Metrics
-How do you know if your model works?
-*   **Metrics**: Accuracy, Precision, Recall, F1-Score, RMSE, MAPE, R-Squared.
-*   **Confusion Matrix**: Learn to read it.
-*   **Resource**: **[Google ML Crash Course: Classification](https://developers.google.com/machine-learning/crash-course/classification)**
+
+**How do you know if your model works?**
+
+Training a model is only half the job.
+This section focuses on how to **measure model performance**, interpret results, and avoid being misled by seemingly “good” numbers.
+
+The emphasis is on understanding *what each metric actually tells you* — and when it should (or should not) be used.
+
+### Core Metrics
+
+**Metrics:**
+Accuracy, Precision, Recall, F1-Score, RMSE, MAPE, R-Squared
+
+Learners will study how different metrics capture different aspects of performance.
+Rather than treating metrics as interchangeable, this section shows how each one reflects a specific modeling goal, such as minimizing errors, avoiding false positives, or handling imbalanced data.
+
+### Confusion Matrix
+
+The confusion matrix is the foundation for most classification metrics.
+
+Learners will learn how to:
+
+*   Read and interpret confusion matrices
+*   Understand the relationship between predictions and actual outcomes
+*   Derive accuracy, precision, recall, and F1-score from raw counts
+
+This builds intuition for why metrics behave the way they do.
+
+### Resource
+
+*   **[Google ML Crash Course: Classification](https://developers.google.com/machine-learning/crash-course/classification)**
+
+This resource provides practical, model-agnostic explanations of evaluation metrics using real-world examples. It helps learners connect abstract metric definitions to concrete modeling decisions and trade-offs.
+
+By the end of this section, learners will be able to **choose appropriate metrics, interpret results correctly, and evaluate models beyond surface-level accuracy**.

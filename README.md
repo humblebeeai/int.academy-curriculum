@@ -9,16 +9,15 @@ Welcome to the open-source curriculum of **HumblebeeAI Academy**. This repositor
 
 ## 📂 Repository Structure
 
-*   **/website**: The complete source code and content.
-    *   `/website/docs`: The **Source of Truth** for the curriculum.
-    *   `/website/src`: Frontend logic and components.
+*   **/docs**: The **Source of Truth** for the curriculum.
+*   **/src**: Frontend logic and components.
 
 ## 📚 Curriculum Overview
 
 The curriculum is divided into two main stages:
 
 ### [1. School Program](./docs/school/01-intro.mdx)
-*   **Goal**: Build absolute foundations (Math, Coding, Problem Solving).
+*   **Goal**: Build absolute fundamentals (Math, Coding, Problem Solving).
 *   **Duration**: up to 6 Months.
 *   **Outcome**: Ready for Soft Landing.
 
@@ -37,7 +36,6 @@ This website is built using [Docusaurus 2](https://docusaurus.io/), a modern sta
 ### Installation
 
 ```bash
-cd website
 npm install
 npm start
 ```
