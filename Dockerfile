@@ -3,11 +3,16 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app/website
 
-COPY website/package.json website/package-lock.json ./
+COPY package.json package-lock.json ./
 RUN npm ci
 
-COPY website ./
-COPY docs ../docs
+COPY src ./src
+COPY docs ./docs
+COPY blog ./blog
+COPY static ./static
+COPY docusaurus.config.ts ./
+COPY sidebars.ts ./
+COPY tsconfig.json ./
 
 RUN npm run build
 
