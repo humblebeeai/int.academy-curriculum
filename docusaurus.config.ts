@@ -69,37 +69,23 @@ const config: Config = {
         alt: 'HumblebeeAI Logo',
         src: 'img/hbai-logo.png',
       },
-      hideOnScroll: false,
       items: [
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Curriculum',
-          className: 'navbar-curriculum-link',
         },
-        {
-          to: '/docs/school/intro',
-          label: 'School',
-          position: 'left',
-          className: 'navbar-school-link',
-        },
-        {
-          to: '/docs/softlanding/intro',
-          label: 'Soft Landing',
-          position: 'left',
-          className: 'navbar-softlanding-link',
-        },
+        // {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://humblebee.ai',
           label: 'HumblebeeAI',
           position: 'right',
         },
         {
-          href: 'https://github.com/humblebeeai/int.academy-curriculum',
+          href: 'https://github.com/humblebeeai',
           label: 'GitHub',
           position: 'right',
-          className: 'header-github-link',
         },
       ],
     },
@@ -107,71 +93,46 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Programs',
+          title: 'Curriculum',
           items: [
-            {
-              label: 'Curriculum Overview',
-              to: '/docs/curriculum-outline',
-            },
             {
               label: 'School Program',
               to: '/docs/school/intro',
             },
             {
-              label: 'Soft Landing Program',
+              label: 'Softlanding Program',
               to: '/docs/softlanding/intro',
             },
           ],
         },
         {
-          title: 'Specializations',
-          items: [
-            {
-              label: 'Computer Vision',
-              to: '/docs/softlanding/tracks/computer-vision',
-            },
-            {
-              label: 'Data Science',
-              to: '/docs/softlanding/tracks/data-science',
-            },
-            {
-              label: 'Natural Language Processing',
-              to: '/docs/softlanding/tracks/nlp',
-            },
-            {
-              label: 'Software Engineering',
-              to: '/docs/softlanding/tracks/software-engineering',
-            },
-          ],
-        },
-        {
-          title: 'Resources',
-          items: [
-            {
-              label: 'Learning Resources',
-              to: '/docs/resources',
-            },
-            {
-              label: 'Mentorship',
-              to: '/docs/mentorship',
-            },
-          ],
-        },
-        {
-          title: 'Connect',
+          title: 'Community',
           items: [
             {
               label: 'HumblebeeAI',
               href: 'https://humblebee.ai',
             },
             {
+              label: 'Academy',
+              href: 'https://academy.humblebee.ai',
+            },
+          ],
+        },
+        {
+          title: 'More',
+          items: [
+            // {
+            //   label: 'Blog',
+            //   to: '/blog',
+            // },
+            {
               label: 'GitHub',
-              href: 'https://github.com/humblebeeai/int.academy-curriculum',
+              href: 'https://github.com/humblebeeai',
             },
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} HumblebeeAI. Open source curriculum for aspiring engineers.`,
+      copyright: `Copyright © ${new Date().getFullYear()} HumblebeeAI. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
