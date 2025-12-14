@@ -360,3 +360,15 @@ h6 {
 [data-theme='light'] .footer__copyright {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+/* 16:9 Aspect Ratio for Images */
+.markdown img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+}
