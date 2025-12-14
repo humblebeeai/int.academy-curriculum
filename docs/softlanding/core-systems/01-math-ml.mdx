@@ -5,9 +5,9 @@ title: Math & ML Foundations
 description: Linear Algebra, Calculus, and Basic Models
 ---
 
-# Math & ML Foundations
+# 🎯 Math & ML Foundations
 
-![Placeholder: Banner Image for Math and ML - Linear Algebra and Graphs]
+![Math and ML - Linear Algebra and Graphs](/img/math_ml.jpg)
 
 ## 1. Mathematics
 
@@ -21,8 +21,7 @@ The focus here is on understanding structure and flow - not memorizing formulas.
 ### Linear Algebra
 
 **Resource:**
-
-*   **[3Blue1Brown: Essence of Linear Algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)**
+- **[3Blue1Brown: Essence of Linear Algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)**
 
 **Focus:**
 Vectors, matrix multiplication, vector spaces.
@@ -35,26 +34,89 @@ Emphasis is placed on **intuition and visualization**, so learners can reason ab
 ### Deep Learning Primitives
 
 **Resource:**
-
-*   **[Andrew Ng: Neural Networks and Deep Learning](https://www.youtube.com/watch?v=CS4cs9xVecg&list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0&index=1)** (Course 1 & 2)
+- **[Andrew Ng: Neural Networks and Deep Learning](https://www.youtube.com/watch?v=CS4cs9xVecg&list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0&index=1)** (Course 1 & 2)
 
 This material connects mathematical concepts to actual learning systems.
 
 Learners will explore:
-
-*   How a single neuron performs a computation
-*   How weights, biases, and activation functions interact
-*   How multiple neurons combine into layers
-*   How error signals flow backward during training
+- How a single neuron performs a computation
+- How weights, biases, and activation functions interact
+- How multiple neurons combine into layers
+- How error signals flow backward during training
 
 This section acts as a bridge between mathematics and machine learning models, preparing learners to understand and debug neural networks in practice.
 
+---
+
 ## 2. Base ML Models
-Understand the "Old School" methods. They are often faster and cheaper than Deep Learning.
-*   **[Linear Regression (StatQuest)](https://www.youtube.com/watch?v=2AQKmw14mHM&list=PLblh5JKOoLUIzaEkCLIUxQFjPIlapw8nU)**
-*   **[Logistic Regression (StatQuest)](https://www.youtube.com/watch?v=yIYKR4sgzI8&list=PLblh5JKOoLUKxzEP5HA2d-Li7IJkHfXSe)**
-*   **[Support Vector Machines (StatQuest)](https://www.youtube.com/watch?v=efR1C6CvhmE&list=PLblh5JKOoLUL3IJ4-yor0HzkqDQ3JmJkc)**
-*   **[Random Forests](https://www.youtube.com/watch?v=J4Wdy0Wc_xQ&list=PLblh5JKOoLUIE96dI3U7oxHaCAbZgfhHk)** & **[Decision Trees](https://www.youtube.com/watch?v=_L39rN6gz7Y&list=PLblh5JKOoLUKAtDViTvRGFpphEc24M-QH)**
+
+Understand the "old school" methods before deep learning.
+
+Not every problem needs a neural network.
+Many real-world tasks are solved more efficiently with classical machine learning models that are simpler, faster to train, and easier to interpret.
+This section introduces the foundational models that form the backbone of applied machine learning.
+
+### Linear Models
+
+**Models:**
+- Linear Regression
+- Logistic Regression
+
+**Resources:**
+- **[StatQuest: Linear Regression](https://www.youtube.com/watch?v=2AQKmw14mHM&list=PLblh5JKOoLUIzaEkCLIUxQFjPIlapw8nU)**
+- **[StatQuest: Logistic Regression](https://www.youtube.com/watch?v=yIYKR4sgzI8&list=PLblh5JKOoLUKxzEP5HA2d-Li7IJkHfXSe)**
+
+Learners will study how linear models:
+- Represent relationships between inputs and outputs
+- Use weighted combinations of features
+- Make predictions through simple, interpretable mathematical structures
+
+These models provide a clear view of how optimization, loss functions, and decision boundaries work in practice.
+
+### Margin-Based Models
+
+**Model:**
+- Support Vector Machines (SVM)
+
+**Resource:**
+- **[StatQuest: Support Vector Machines](https://www.youtube.com/watch?v=efR1C6CvhmE&list=PLblh5JKOoLUL3IJ4-yor0HzkqDQ3JmJkc)**
+
+Learners will explore how SVMs:
+- Separate data using decision boundaries
+- Maximize margins between classes
+- Handle non-linear data through kernel methods
+
+This introduces a different way of thinking about classification beyond probabilities.
+
+### Tree-Based Models
+
+**Models:**
+- Decision Trees
+- Random Forests
+
+**Resources:**
+- **[Decision Trees](https://www.youtube.com/watch?v=_L39rN6gz7Y&list=PLblh5JKOoLUKAtDViTvRGFpphEc24M-QH)**
+- **[Random Forests](https://www.youtube.com/watch?v=J4Wdy0Wc_xQ&list=PLblh5JKOoLUIE96dI3U7oxHaCAbZgfhHk)**
+
+Learners will study how tree-based models:
+- Split data based on feature decisions
+- Handle non-linear relationships naturally
+- Trade interpretability (trees) for performance and robustness (forests)
+
+These models are widely used in industry due to their strong performance on structured data.
+
+### Why These Models Matter
+
+Understanding base models helps learners:
+- Choose simpler solutions when appropriate
+- Build intuition before using deep learning
+- Recognize patterns that neural networks later generalize
+
+Many production systems rely on these models because they are faster, cheaper, and easier to maintain.
+
+By the end of this section, learners will be able to recognize when to use classical machine learning models, understand their behavior, and interpret their predictions with confidence.
+
+---
 
 ## 3. Evaluation Metrics
 
@@ -63,7 +125,7 @@ Understand the "Old School" methods. They are often faster and cheaper than Deep
 Training a model is only half the job.
 This section focuses on how to **measure model performance**, interpret results, and avoid being misled by seemingly “good” numbers.
 
-The emphasis is on understanding *what each metric actually tells you* — and when it should (or should not) be used.
+The emphasis is on understanding *what each metric actually tells you* - and when it should (or should not) be used.
 
 ### Core Metrics
 
@@ -78,16 +140,16 @@ Rather than treating metrics as interchangeable, this section shows how each one
 The confusion matrix is the foundation for most classification metrics.
 
 Learners will learn how to:
-
-*   Read and interpret confusion matrices
-*   Understand the relationship between predictions and actual outcomes
-*   Derive accuracy, precision, recall, and F1-score from raw counts
+- Read and interpret confusion matrices
+- Understand the relationship between predictions and actual outcomes
+- Derive accuracy, precision, recall, and F1-score from raw counts
 
 This builds intuition for why metrics behave the way they do.
 
 ### Resource
 
-*   **[Google ML Crash Course: Classification](https://developers.google.com/machine-learning/crash-course/classification)**
+**Resources:**
+- **[Google ML Crash Course: Classification](https://developers.google.com/machine-learning/crash-course/classification)**
 
 This resource provides practical, model-agnostic explanations of evaluation metrics using real-world examples. It helps learners connect abstract metric definitions to concrete modeling decisions and trade-offs.
 
