@@ -315,6 +315,7 @@
   text-decoration: none;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   margin-bottom: 2rem;
+  height: 100%;
 }
 
 .programCard:hover {
@@ -347,6 +348,8 @@
   gap: 1.5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+  min-height: 200px;
 }
 
 .programCard:hover .programCardContent {
@@ -397,7 +400,7 @@
 }
 
 .programTitle {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
   color: var(--ifm-font-color-base);
@@ -435,6 +438,35 @@
   transform: translateX(8px);
 }
 
+/* Coming Soon State */
+.programCard:has(.programCardComingSoon) {
+  cursor: not-allowed;
+}
+
+.programCard:has(.programCardComingSoon):hover {
+  transform: translateY(0) !important;
+}
+
+.programCardComingSoon {
+  opacity: 0.7;
+}
+
+.programCardComingSoon:hover {
+  border-color: var(--ifm-color-emphasis-200) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+.comingSoonBadge {
+  background: var(--ifm-color-emphasis-300) !important;
+  color: var(--ifm-font-color-secondary) !important;
+  font-style: italic;
+}
+
+[data-theme='dark'] .comingSoonBadge {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: var(--ifm-font-color-secondary) !important;
+}
+
 @media screen and (max-width: 996px) {
   .programCardContent {
     flex-direction: column;
@@ -448,7 +480,7 @@
   }
 
   .programTitle {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
   }
 
   .programArrow {
@@ -456,69 +488,3 @@
   }
 }
 
-/* ===================================
-   CTA SECTION
-   =================================== */
-.ctaSection {
-  padding: 6rem 0;
-  background: var(--ifm-background-surface-color);
-}
-
-@media screen and (max-width: 996px) {
-  .ctaSection {
-    padding: 4rem 1.5rem;
-  }
-}
-
-.ctaContent {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.ctaIcon {
-  color: var(--ifm-color-primary);
-  margin-bottom: 1.5rem;
-}
-
-.ctaTitle {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  color: var(--ifm-font-color-base);
-}
-
-@media screen and (max-width: 996px) {
-  .ctaTitle {
-    font-size: 2rem;
-  }
-}
-
-.ctaDescription {
-  font-size: 1.125rem;
-  line-height: 1.7;
-  color: var(--ifm-font-color-secondary);
-  margin-bottom: 2.5rem;
-}
-
-.ctaButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 2.5rem;
-  background: var(--ifm-color-primary);
-  color: var(--ifm-background-color) !important;
-  border-radius: 100px;
-  font-weight: 600;
-  font-size: 1.125rem;
-  text-decoration: none;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-
-.ctaButton:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
-  background: var(--ifm-color-primary-dark);
-  color: var(--ifm-background-color) !important;
-}

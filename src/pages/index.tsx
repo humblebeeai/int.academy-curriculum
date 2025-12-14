@@ -7,7 +7,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import { motion } from 'framer-motion';
-import { Sprout, Zap, Target, GraduationCap, Rocket, BookOpen, Code2, Brain } from 'lucide-react';
+import { Sprout, Zap, Target, GraduationCap, Rocket, BookOpen, Code2, Building2 } from 'lucide-react';
 
 import styles from './index.module.css';
 
@@ -113,7 +113,8 @@ function ProgramCard({
   description,
   Icon,
   link,
-  index
+  index,
+  comingSoon
 }: {
   title: string;
   duration: string;
@@ -121,33 +122,50 @@ function ProgramCard({
   Icon: any;
   link: string;
   index: number;
+  comingSoon?: boolean;
 }) {
-  return (
-    <motion.div
-      className={clsx('col col--6')}
-      initial={{ opacity: 0, x: index === 0 ? -30 : 30 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: 0.2 }}
-    >
-      <Link to={link} className={styles.programCard}>
-        <div className={styles.programCardShadow} />
-        <div className={styles.programCardContent}>
-          <div className={styles.programIcon}>
-            <Icon size={32} strokeWidth={1.5} />
+  const cardContent = (
+    <>
+      <div className={styles.programCardShadow} />
+      <div className={clsx(styles.programCardContent, comingSoon && styles.programCardComingSoon)}>
+        <div className={styles.programIcon}>
+          <Icon size={32} strokeWidth={1.5} />
+        </div>
+        <div className={styles.programInfo}>
+          <div className={styles.programHeader}>
+            <h3 className={styles.programTitle}>{title}</h3>
+            <span className={clsx(styles.programDuration, comingSoon && styles.comingSoonBadge)}>
+              {duration}
+            </span>
           </div>
-          <div className={styles.programInfo}>
-            <div className={styles.programHeader}>
-              <h3 className={styles.programTitle}>{title}</h3>
-              <span className={styles.programDuration}>{duration}</span>
-            </div>
-            <p className={styles.programDescription}>{description}</p>
-          </div>
+          <p className={styles.programDescription}>{description}</p>
+        </div>
+        {!comingSoon && (
           <div className={styles.programArrow}>
             <span>→</span>
           </div>
+        )}
+      </div>
+    </>
+  );
+
+  return (
+    <motion.div
+      className={clsx('col col--6')}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
+    >
+      {comingSoon ? (
+        <div className={styles.programCard}>
+          {cardContent}
         </div>
-      </Link>
+      ) : (
+        <Link to={link} className={styles.programCard}>
+          {cardContent}
+        </Link>
+      )}
     </motion.div>
   );
 }
@@ -207,7 +225,7 @@ function ProgramsSection() {
         >
           <h2 className={styles.sectionTitle}>Choose Your Journey</h2>
           <p className={styles.sectionSubtitle}>
-            Two comprehensive programs designed to take you from beginner to professional
+            Three comprehensive programs designed to take you from beginner to professional
           </p>
         </motion.div>
 
@@ -229,32 +247,19 @@ function ProgramsSection() {
             index={1}
           />
         </div>
-      </div>
-    </section>
-  );
-}
-
-function CTASection() {
-  return (
-    <section className={styles.ctaSection}>
-      <div className="container">
-        <motion.div
-          className={styles.ctaContent}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <Brain size={48} className={styles.ctaIcon} />
-          <h2 className={styles.ctaTitle}>Ready to Transform Your Future?</h2>
-          <p className={styles.ctaDescription}>
-            Join hundreds of students who have successfully transformed into technical professionals
-          </p>
-          <Link className={styles.ctaButton} to="/docs/curriculum-outline">
-            <BookOpen size={20} />
-            View Full Curriculum
-          </Link>
-        </motion.div>
+        <div className="row" style={{ marginTop: '2rem' }}>
+          <div className="col col--3"></div>
+          <ProgramCard
+            title="Foundation Program"
+            duration="Coming Soon"
+            description="Essential prerequisites and foundational skills. Perfect starting point for absolute beginners."
+            Icon={Building2}
+            link="#"
+            index={2}
+            comingSoon={true}
+          />
+          <div className="col col--3"></div>
+        </div>
       </div>
     </section>
   );
@@ -270,7 +275,6 @@ export default function Home(): ReactNode {
       <main>
         <HomepageFeatures />
         <ProgramsSection />
-        <CTASection />
       </main>
     </Layout>
   );
