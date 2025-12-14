@@ -11,18 +11,520 @@ description: Docker, FastAPI, and Frontend Basics
 
 > **"A model in a notebook is a prototype. A model in a Docker container is a product."**
 
-## 1. The Web Stack
-You need to build the interface for your AI.
-*   **[HTML/CSS/JS Basics](https://youtu.be/_GTMOmRrqkU?si=dseu6OPizoJzKUKY)**
-*   **[DOM Manipulation](https://youtu.be/y17RuWkWdn8?si=rOEQNB2ezsxwp2cq)**
+## Overview
 
-## 2. Serving AI
-*   **[FastAPI Tutorial](https://youtu.be/SORiTsvnU28?si=wsiLhTJ66QN_zZH3)**: The Gold Standard for Python APIs.
+**Duration**: 2-3 weeks | **Prerequisites**: Phase 3 (Applied Engineering) completed
 
-## 3. DevOps & Deployment
-*   **[Learn Docker](https://www.docker.com/101-tutorial/)**: Containerize everything.
-*   **[SSH Basics](https://youtu.be/P0Fk-K2eZF8?si=nBCJVP7NU4GU5UIQ)**: How to securely manage remote servers.
+This module bridges the gap between AI development and production deployment. You'll learn to wrap your models in APIs, create web interfaces, and deploy containerized applications-transforming research code into user-facing products.
+
+**Learning Outcomes:**
+- Build web interfaces that interact with AI models
+- Create production-ready APIs using FastAPI
+- Containerize applications for consistent deployment
+- Manage remote servers securely via SSH
+- Deploy AI models that users can actually access
 
 ---
 
-### [Next: Choose Specialization ->](../tracks/00-overview.mdx)
+## Module 1: The Web Stack
+
+### Purpose
+Learn the fundamental technologies that power every web application. Even if you primarily work in Python, understanding how browsers interpret HTML/CSS/JavaScript is essential for building AI-powered web apps.
+
+### 1.1 Web Fundamentals
+
+**Resource**: [HTML, CSS, JS Crash Course (Dave Gray)](https://youtu.be/_GTMOmRrqkU?si=dseu6OPizoJzKUKY)  
+**Type**: Video Tutorial | **Duration**: 4-5 hours (watch at 1.25x speed)
+
+**Why This Resource**  
+This comprehensive crash course covers all three web technologies in context, showing how they work together-HTML for structure, CSS for styling, JavaScript for interactivity.
+
+**What You'll Learn**
+- HTML: Semantic elements, forms, attributes (the skeleton)
+- CSS: Selectors, flexbox, grid, responsive design (the appearance)
+- JavaScript: Variables, functions, events, DOM interaction (the behavior)
+- How these three layers combine to create interactive pages
+
+**How to Use**
+1. Watch the video in segments (pause after each technology)
+2. Code along-type every example in a local HTML file
+3. Open your HTML file in a browser to see results immediately
+4. **Practice checkpoint**: Build a simple webpage with a form that displays user input
+5. Focus especially on JavaScript sections (timestamps 2:30:00 onwards)
+
+**AI-Specific Application**  
+Your AI model needs a user interface: input fields (HTML), styled buttons (CSS), and API calls (JavaScript) to send data to your model and display predictions.
+
+---
+
+### 1.2 DOM Manipulation & Interactivity
+
+**Resource**: [JavaScript DOM Manipulation (Web Dev Simplified)](https://youtu.be/y17RuWkWdn8?si=rOEQNB2ezsxwp2cq)  
+**Type**: Video Tutorial | **Duration**: 35 minutes
+
+**Why This Resource**  
+The DOM (Document Object Model) is how JavaScript modifies web pages dynamically. This skill is critical for displaying AI model predictions without page reloads.
+
+**What You'll Learn**
+- Selecting elements: `getElementById`, `querySelector`
+- Modifying content: `textContent`, `innerHTML`
+- Event listeners: Responding to clicks, inputs, form submissions
+- Creating/removing elements dynamically
+- Updating page content based on API responses
+
+**How to Use**
+1. Watch the entire tutorial first for overview
+2. Recreate each example in your own HTML file
+3. **Critical practice**: Build an interactive prediction display
+   - Input field for user data
+   - Button that triggers a function
+   - Result area that updates with "predictions" (use fake data for now)
+4. **Checkpoint**: User clicks button → JavaScript reads input → Updates result div
+
+**Connection to Next Module**  
+This DOM manipulation will display responses from your FastAPI endpoints in Module 2.
+
+---
+
+### 1.3 Practical Web Project
+
+**Project**: Build a Simple AI Interface (Front-End Only)  
+**Duration**: 3-4 hours
+
+Create a webpage with:
+- Input form (text area for user input, or file upload for images)
+- Submit button with loading state
+- Results section that displays formatted output
+- Basic styling (centered, readable, professional)
+
+**Requirements Checklist**
+- [ ] HTML form with appropriate input types
+- [ ] CSS styling (use flexbox for centering)
+- [ ] JavaScript event listener on submit button
+- [ ] DOM manipulation to show/hide loading state
+- [ ] Display mock prediction results in formatted div
+- [ ] Responsive design (works on mobile screens)
+
+**Why This Matters**  
+In Module 2, you'll replace the mock predictions with real API calls to your AI model.
+
+---
+
+## Module 2: Serving AI with FastAPI
+
+### Purpose
+Transform your Python AI models into production-ready web services that can be accessed by any application via HTTP requests.
+
+### 2.1 FastAPI Framework
+
+**Resource**: [FastAPI Full Course (Sanjeev Thiyagarajan)](https://youtu.be/SORiTsvnU28?si=wsiLhTJ66QN_zZH3)  
+**Type**: Video Tutorial | **Duration**: 6-7 hours (can be completed across multiple sessions)
+
+**Why This Resource**  
+FastAPI is the modern standard for Python APIs-automatic documentation, type validation, async support, and it's what companies use to serve AI models in production.
+
+**What You'll Learn**
+- Creating endpoints with path operations (GET, POST, PUT, DELETE)
+- Request/response models with Pydantic validation
+- Path parameters and query parameters
+- Request body handling (JSON data)
+- File uploads (for image/document processing)
+- CORS configuration (allowing frontend to call API)
+- Automatic API documentation (Swagger UI)
+- Error handling and status codes
+- Authentication basics (JWT tokens)
+
+**How to Use**
+1. **Phase 1** (Hours 0-2): Watch and code along with basic endpoints
+2. **Phase 2** (Hours 2-4): Focus on request validation and models
+3. **Phase 3** (Hours 4-6): File uploads and authentication
+4. **Phase 4** (Hour 6+): CORS and deployment sections
+5. Pause after each major section to experiment with modifications
+
+**Key Sections to Prioritize**
+- `0:00` - Setup and first endpoint (critical)
+- `0:45` - Request bodies and Pydantic models (critical)
+- `2:30` - File uploads (critical for CV/NLP models)
+- `4:15` - CORS configuration (critical for web frontend)
+- `5:30` - Authentication (important for production)
+
+---
+
+### 2.2 AI Model Integration
+
+**Project**: Wrap Your AI Model in an API  
+**Duration**: 4-6 hours
+
+**Step-by-Step Implementation**
+
+**Step 1: Create API Structure**
+```python
+from fastapi import FastAPI, File, UploadFile
+from pydantic import BaseModel
+
+app = FastAPI(title="My AI Model API")
+
+class PredictionRequest(BaseModel):
+    text: str  # or image_url, or other input type
+
+class PredictionResponse(BaseModel):
+    prediction: str
+    confidence: float
+```
+
+**Step 2: Load Your Trained Model**
+```python
+import torch  # or tensorflow, or your framework
+from your_model_file import YourModel
+
+# Load model once at startup (not per request!)
+model = YourModel.load("path/to/model.pth")
+```
+
+**Step 3: Create Prediction Endpoint**
+```python
+@app.post("/predict", response_model=PredictionResponse)
+async def predict(request: PredictionRequest):
+    # Preprocess input
+    processed = preprocess(request.text)
+    
+    # Run inference
+    prediction = model.predict(processed)
+    
+    # Return formatted response
+    return PredictionResponse(
+        prediction=prediction,
+        confidence=0.95
+    )
+```
+
+**Step 4: Test Your API**
+- Run server: `uvicorn main:app --reload`
+- Open auto-generated docs: `http://localhost:8000/docs`
+- Test endpoints directly in Swagger UI
+- Use `curl` or Postman for programmatic testing
+
+**Requirements Checklist**
+- [ ] Model loads once at startup (not per request)
+- [ ] Input validation with Pydantic models
+- [ ] Proper error handling (400 for invalid input, 500 for server errors)
+- [ ] Reasonable response times (&lt;2 seconds for simple models)
+- [ ] CORS enabled for your frontend domain
+- [ ] API documentation at `/docs` is clear and accurate
+
+---
+
+### 2.3 Connect Frontend to Backend
+
+**Project**: Full-Stack AI Application  
+**Duration**: 3-4 hours
+
+Update your webpage from Module 1 to call your FastAPI endpoint:
+
+```javascript
+async function getPrediction() {
+    const userInput = document.getElementById('input').value;
+    
+    // Show loading state
+    document.getElementById('loading').style.display = 'block';
+    
+    try {
+        const response = await fetch('http://localhost:8000/predict', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text: userInput })
+        });
+        
+        const result = await response.json();
+        
+        // Display prediction
+        document.getElementById('result').textContent = result.prediction;
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Prediction failed. Check console.');
+    } finally {
+        document.getElementById('loading').style.display = 'none';
+    }
+}
+```
+
+**Testing Your Full Stack**
+1. Start FastAPI server: `uvicorn main:app --reload`
+2. Open your HTML file in browser (or serve with `python -m http.server`)
+3. Enter input → Click predict → See real AI prediction
+
+**Common Issues & Fixes**
+- **CORS error**: Add `app.add_middleware(CORSMiddleware, allow_origins=["*"])` to FastAPI
+- **Connection refused**: Ensure FastAPI is running and URL matches
+- **Slow predictions**: Move model loading outside the endpoint function
+
+---
+
+## Module 3: DevOps & Deployment
+
+### Purpose
+Package your application so it runs identically on any machine, and deploy it to servers that users can access from anywhere.
+
+### 3.1 Docker Containerization
+
+**Resource**: [Docker 101 Tutorial (Official)](https://www.docker.com/101-tutorial/)  
+**Type**: Interactive Tutorial | **Duration**: 45-60 minutes
+
+**Why This Resource**  
+The official Docker tutorial is hands-on and browser-based-you'll run actual containers and learn by doing, not just reading.
+
+**What You'll Learn**
+- Containers vs virtual machines (efficiency and portability)
+- Dockerfile syntax (instructions to build images)
+- Building images: `docker build -t myapp .`
+- Running containers: `docker run -p 8000:8000 myapp`
+- Volume mounts for persistent data
+- Multi-container apps with Docker Compose
+
+**How to Use**
+1. Complete the entire tutorial in one sitting (it's progressive)
+2. After completion, install Docker Desktop on your machine
+3. **Practice checkpoint**: Run a simple Python container from Docker Hub
+4. Experiment with modifying Dockerfiles and rebuilding
+
+---
+
+### 3.2 Containerize Your AI Application
+
+**Project**: Dockerize Your FastAPI + Model  
+**Duration**: 2-3 hours
+
+**Step 1: Create Dockerfile**
+```dockerfile
+FROM python:3.10-slim
+
+WORKDIR /app
+
+# Install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
+COPY . .
+
+# Download model weights (or COPY if small)
+RUN python download_model.py
+
+# Expose port
+EXPOSE 8000
+
+# Run application
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+```
+
+**Step 2: Create requirements.txt**
+```
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+torch==2.1.0  # or tensorflow, etc.
+# ... other dependencies
+```
+
+**Step 3: Build and Run**
+```bash
+# Build image
+docker build -t my-ai-app .
+
+# Run container
+docker run -p 8000:8000 my-ai-app
+
+# Test
+curl http://localhost:8000/docs
+```
+
+**Requirements Checklist**
+- [ ] Image builds without errors
+- [ ] Container runs and serves API on port 8000
+- [ ] Model loads successfully inside container
+- [ ] Predictions work identically to local environment
+- [ ] Image size is reasonable (&lt;2GB if possible)
+
+**Optimization Tips**
+- Use slim Python base images
+- Install only production dependencies
+- Use `.dockerignore` to exclude unnecessary files
+- Consider multi-stage builds for smaller images
+
+---
+
+### 3.3 SSH & Remote Server Management
+
+**Resource**: [SSH Crash Course (NetworkChuck)](https://youtu.be/P0Fk-K2eZF8?si=nBCJVP7NU4GU5UIQ)  
+**Type**: Video Tutorial | **Duration**: 20 minutes
+
+**Why This Resource**  
+Concise, practical guide to SSH-exactly what you need to deploy and manage applications on cloud servers.
+
+**What You'll Learn**
+- SSH key generation and authentication
+- Connecting to remote servers: `ssh user@server-ip`
+- Secure file transfer with `scp` and `rsync`
+- Port forwarding for accessing services
+- SSH config for managing multiple servers
+- Basic security practices (disable password auth, use keys)
+
+**How to Use**
+1. Watch the full video once
+2. Generate your own SSH key pair: `ssh-keygen -t ed25519`
+3. If you have a cloud server (AWS, DigitalOcean), connect via SSH
+4. **Practice**: Transfer a file to a remote server using `scp`
+
+---
+
+### 3.4 Deploy Your Containerized App
+
+**Project**: Deploy to a Cloud Server  
+**Duration**: 2-3 hours
+
+**Deployment Options** (choose one):
+
+**Option A: DigitalOcean Droplet** (Recommended for beginners)
+1. Create Ubuntu droplet ($6/month tier)
+2. SSH into server
+3. Install Docker: `curl -fsSL https://get.docker.com | sh`
+4. Copy your code: `scp -r myapp/ user@server-ip:~/`
+5. Build and run: `docker build -t myapp . && docker run -d -p 80:8000 myapp`
+6. Access your API: `http://your-server-ip/docs`
+
+**Option B: Railway/Render** (Easier, but less control)
+1. Push code to GitHub
+2. Connect repository to Railway/Render
+3. Platform auto-detects Dockerfile and deploys
+4. Get a public URL automatically
+
+**Option C: AWS EC2** (More complex, industry-standard)
+1. Launch EC2 instance (t2.micro free tier)
+2. Configure security groups (allow ports 22, 80)
+3. SSH into instance
+4. Follow same Docker deployment steps as Option A
+
+**Verification Steps**
+- [ ] API is accessible from any internet-connected device
+- [ ] `/docs` endpoint shows Swagger UI
+- [ ] Predictions work via `curl` from your local machine
+- [ ] Server restarts don't lose your deployment (use Docker restart policies)
+- [ ] Basic monitoring setup (check logs with `docker logs`)
+
+---
+
+## Completion Checklist
+
+Before moving to specialization tracks, verify you can:
+
+- [ ] Build an HTML page with forms and interactive JavaScript
+- [ ] Manipulate the DOM to display dynamic content
+- [ ] Create a FastAPI application with multiple endpoints
+- [ ] Validate requests using Pydantic models
+- [ ] Serve an AI model via HTTP API
+- [ ] Build a Docker image from a Dockerfile
+- [ ] Run containers locally with proper port mapping
+- [ ] SSH into a remote server securely
+- [ ] Deploy a Dockerized application to a cloud server
+- [ ] Access your deployed API from any device
+
+**Capstone Exercise**: End-to-End Deployment
+
+Build and deploy a complete AI application:
+1. **Frontend**: Simple webpage for user input
+2. **Backend**: FastAPI serving your trained model
+3. **DevOps**: Dockerized application
+4. **Deployment**: Live on a public URL
+
+**Success Criteria**:
+- Anyone with the URL can use your AI model
+- Predictions return in &lt;3 seconds
+- Application handles errors gracefully
+- Code is in a GitHub repository with clear README
+
+---
+
+## Common Pitfalls & Solutions
+
+**Web Development**
+- ⚠️ **CORS errors when frontend calls API**
+  - ✅ Add CORS middleware in FastAPI with appropriate origins
+  
+- ⚠️ **JavaScript async/await confusion**
+  - ✅ Always use `async` keyword with `await`, wrap in try-catch
+
+**FastAPI**
+- ⚠️ **Model loads on every request (slow predictions)**
+  - ✅ Load model once at module level, not inside endpoint function
+  
+- ⚠️ **Large model files in repository**
+  - ✅ Download weights at container build time, don't commit to Git
+
+**Docker**
+- ⚠️ **"Permission denied" errors in container**
+  - ✅ Check file permissions, may need to run as non-root user
+  
+- ⚠️ **Image size is 5GB+**
+  - ✅ Use multi-stage builds, slim base images, .dockerignore
+
+**Deployment**
+- ⚠️ **Can't connect to server**
+  - ✅ Check security groups/firewall rules, ensure ports are open
+  
+- ⚠️ **Container stops after closing SSH session**
+  - ✅ Run with `-d` flag (detached mode) or use `tmux`/`screen`
+
+---
+
+## Support & Next Steps
+
+**Need Help?**
+- Web development: #frontend-help channel
+- FastAPI/backend: #api-development channel
+- Docker/deployment: #devops channel
+- Office hours: Thursdays 2-5 PM
+
+**Optional Advanced Topics**
+- [Nginx Reverse Proxy](https://www.nginx.com/resources/wiki/) - Production-grade web server
+- [Let's Encrypt SSL](https://letsencrypt.org/getting-started/) - HTTPS certificates
+- [Docker Compose](https://docs.docker.com/compose/) - Multi-container orchestration
+- [Kubernetes Basics](https://kubernetes.io/docs/tutorials/) - Container orchestration at scale
+- [CI/CD with GitHub Actions](https://docs.github.com/en/actions) - Automated deployment
+
+**Next Step**: [Choose Your Specialization Track →](../tracks/00-overview.mdx)
+
+Now that you can deploy AI models as products, choose a specialization:
+- **Computer Vision**: Build image recognition systems
+- **NLP**: Create language understanding applications
+- **Software Engineering**: Master distributed systems and architecture
+- **Research**: Dive deep into model development and experimentation
+
+Each track assumes you can deploy your work using the skills from this module.
+
+---
+
+## Quick Reference
+
+**Essential Commands**
+
+```bash
+# FastAPI
+uvicorn main:app --reload              # Run with auto-reload
+uvicorn main:app --host 0.0.0.0 --port 8000  # Production mode
+
+# Docker
+docker build -t myapp .                # Build image
+docker run -p 8000:8000 myapp         # Run container
+docker ps                              # List running containers
+docker logs <container-id>             # View logs
+docker exec -it <container-id> bash    # Shell into container
+
+# SSH
+ssh user@server-ip                     # Connect to server
+scp file.txt user@server:~/            # Copy file to server
+ssh-keygen -t ed25519                  # Generate SSH key
+
+# Deployment
+docker run -d -p 80:8000 --restart=always myapp  # Production container
+```
+
+Save this for quick reference during development and deployment.

@@ -1,25 +1,28 @@
 # Build stage
-FROM node:20-alpine AS builder
+FROM node:22-alpine AS builder
 
-WORKDIR /app/website
+WORKDIR /app
 
+# Copy dependency definitions
 COPY package.json package-lock.json ./
+
+# Install dependencies
 RUN npm ci
 
-COPY src ./src
-COPY docs ./docs
-COPY blog ./blog
-COPY static ./static
-COPY docusaurus.config.ts ./
-COPY sidebars.ts ./
-COPY tsconfig.json ./
+# Copy source code
+COPY . .
 
+# Build the Docusaurus site
 RUN npm run build
 
 # Runtime stage
 FROM nginx:alpine
+
+# Copy custom Nginx config
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=builder /app/website/build /usr/share/nginx/html
+
+# Copy build artifacts
+COPY --from=builder /app/build /usr/share/nginx/html
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
