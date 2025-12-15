@@ -171,7 +171,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} HumblebeeAI. Open source curriculum for aspiring engineers.`,
+      copyright: `© ${new Date().getFullYear()} HumblebeeAI. Open source curriculum for aspiring engineers.<br/>Powered by HumblebeeAI Academy`,
     },
     prism: {
       theme: prismThemes.github,
