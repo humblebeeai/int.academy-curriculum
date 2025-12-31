@@ -133,19 +133,19 @@ const config: Config = {
           items: [
             {
               label: 'Computer Vision',
-              to: '/docs/softlanding/tracks/computer-vision',
+              to: '/docs/softlanding/specializations/computer-vision',
             },
             {
               label: 'Data Science',
-              to: '/docs/softlanding/tracks/data-science',
+              to: '/docs/softlanding/specializations/data-science',
             },
             {
               label: 'Natural Language Processing',
-              to: '/docs/softlanding/tracks/nlp',
+              to: '/docs/softlanding/specializations/nlp',
             },
             {
               label: 'Software Engineering',
-              to: '/docs/softlanding/tracks/software-engineering',
+              to: '/docs/softlanding/specializations/software-engineering',
             },
           ],
         },
