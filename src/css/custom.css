@@ -445,3 +445,88 @@ h6 {
    - DifficultyTag.module.css
    - CodeComparison.module.css
 */
+
+/* ===================================
+   AUTO ICON STYLES (Boxed Minimalist / Bento)
+   =================================== */
+
+.auto-icon-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  /* Consistent spacing */
+}
+
+/* For headers, we might want inline-flex to keep flow */
+h1 .auto-icon-row,
+h2 .auto-icon-row,
+h3 .auto-icon-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.auto-icon-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Fixed size container for consistency in lists */
+  width: 2rem;
+  height: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background-color: transparent;
+  color: var(--ifm-font-color-base);
+  margin-right: 0;
+  /* Handled by gap in default row */
+  flex-shrink: 0;
+  vertical-align: middle;
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.auto-icon-box svg {
+  /* Scale relative to font size if needed, but fixed container usually prefers fixed icon size */
+  width: 1.2rem;
+  height: 1.2rem;
+  stroke-width: 2px;
+}
+
+/* Hover effect */
+li:hover .auto-icon-box,
+.auto-icon-row:hover .auto-icon-box {
+  border-color: var(--ifm-color-primary);
+  background-color: var(--ifm-background-surface-color);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Semantic Overrides */
+.auto-icon-color-success {
+  color: var(--ifm-color-success);
+}
+
+.auto-icon-color-danger {
+  color: var(--ifm-color-danger);
+}
+
+.auto-icon-color-warning {
+  color: var(--ifm-color-warning-dark);
+}
+
+.auto-icon-color-info {
+  color: var(--ifm-color-info);
+}
+
+/* Header Specific Sizing - Scale container */
+h1 .auto-icon-box,
+h2 .auto-icon-box {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-width: 1.5px;
+}
+
+h1 .auto-icon-box svg,
+h2 .auto-icon-box svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}

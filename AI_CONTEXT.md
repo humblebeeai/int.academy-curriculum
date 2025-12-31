@@ -1,124 +1,55 @@
-# AI Developer Context & Guidelines
+# AI & Contributor Context
 
-## 🧠 Project Overview
+## Project: HumbleBeeAI Academy Curriculum
 
-**HumblebeeAI Academy Curriculum** is an open-source educational platform built with **Docusaurus**.
-It provides a structured learning path for students moving from basic coding to advanced Full Stack and AI engineering.
+This project uses **Docusaurus** with **React** and **Tailwind-like CSS Modules**.
 
-**Mission:** Transform students into technical junior engineers through rigorous, project-based learning.
+### UI & Styling Standards
 
----
+#### 1. Components vs. "Stickers"
 
-## 🏗️ Architecture
+We strictly avoid raw "sticker" styles (inline CSS, emojis) in favor of semantic React components or CSS classes.
+**Do Not Use:**
 
-- **Framework:** Docusaurus (React + MDX)
-- **Styling:** CSS Modules + Custom Global CSS (No Tailwind dependency intentionally).
-- **State Management:** *None* (Stateless content site).
-- **Deployment:** Static site generation (`npm run build`).
+- `style={{ border: '1px solid red' }}`
+- Raw emojis in lists: `- ✅ Benefit`
 
-## 🎨 Design System
+**Use:**
 
-We enforce a **Strict Monochrome + Semantic Color** system.
+- CSS Modules: `styles.cardDanger`
+- Automated Icon Replacement: just write the emoji, and the system auto-converts it (see below).
 
-### 1. Color Palette (HSL)
+#### 2. Automated Emoji Replacement
 
-All colors are defined in `src/css/custom.css`.
+To make contributing easy, we have a system in `src/theme/MDXComponents.tsx` that intercepts common Markdown elements.
 
-- **Primary:** Black (Light Mode) / White (Dark Mode)
-- **Status Colors:**
-  - `Success`: Green (HSL 142)
-  - `Warning`: Amber (HSL 35)
-  - `Danger`: Red (HSL 0)
-  - `Info`: Blue (HSL 210)
-  
-**⚠️ Rule:** NEVER use hex codes in components. ALWAYS use semantic variables:
+**How it works:**
+If a user writes a list item starting with specific emojis, it is rendered as a `lucide-react` icon.
 
-- `var(--ifm-color-success-light)` (Backgrounds)
-- `var(--ifm-color-success)` (Borders)
-- `var(--ifm-color-success-dark)` (Text)
+| Markdown Input | Renders As |
+| :--- | :--- |
+| `- ✅ Working` | `<CheckCircle2 /> Working` (Green) |
+| `- ❌ Failed` | `<XCircle /> Failed` (Red) |
+| `- 📚 Books` | `<Library /> Books` (Blue) |
+| `- 🚀 Fast` | `<Rocket /> Fast` (Orange) |
+| `- 💡 Tip` | `<Lightbulb /> Tip` (Yellow) |
 
-### 2. Typography
+**Supported Emojis:**
+`✅`, `❌`, `📍`, `🗺️`, `📚`, `📖`, `🚀`, `💡`, `🎯`, `🏫`, `⚙️`, `📝`, `⚡`, `🧠`
 
-- **Headings:** 'Space Grotesk'
-- **Body:** 'Inter'
+### 3. CSS Architecture
 
----
+- **Global Variables**: Defined in `src/css/custom.css`. Use `var(--ifm-color-primary)`, `--duration-normal`, `--hover-lift-sm`.
+- **MDX Utilities**: We have global utility classes for MDX content:
+  - `.mdx-card`
+  - `.mdx-hero`
+  - `.mdx-grid`
 
-## 🧩 Component Library
+### 4. Contribution Workflow
 
-All components are located in `src/components/`.
+When adding new content:
 
-### `ResourceCard`
-
-Use for linking external resources or internal reference material.
-
-```tsx
-<ResourceCard 
-  title="React Docs" 
-  url="https://react.dev" 
-  type="documentation" 
-  difficulty="intermediate"
-  summary="Official documentation for React."
-/>
-```
-
-### `DifficultyTag`
-
-Visual indicator of content complexity.
-
-```tsx
-<DifficultyTag level="beginner" />
-<DifficultyTag level="intermediate" />
-<DifficultyTag level="advanced" />
-```
-
-### `ConceptMap` (Mermaid)
-
-Use for visualizing relationships between topics.
-
-```tsx
-<ConceptMap 
-  diagram={`
-    graph TD;
-    A[Start] --> B{Decision};
-    B -- Yes --> C[Result];
-  `}
-/>
-```
-
-### `SkillShowcase`
-
-Grid layout for displaying acquired skills.
-
-```tsx
-<SkillShowcase 
-  skills={[
-    { title: "Python", level: "Advanced", icon: "python" },
-    { title: "Docker", level: "Intermediate", icon: "docker" }
-  ]}
-/>
-```
-
----
-
-## 📝 Content Guidelines (MDX)
-
-- **Tone:** Professional, encouraging, technical but accessible.
-- **Structure:**
-  - Use `[TOC]` for long pages.
-  - Use standard Markdown headers (`#`, `##`, `###`).
-  - Use Admonitions (`:::info`, `:::tip`, `:::danger`) liberally to highlight key points.
-- **Checklists:** Use standard markdown `[ ]` / `[x]` for task tracking. *Do NOT use custom checkbox components.*
-
-## 🛠️ Contribution Workflow
-
-1. **Phase 0:** Plan changes via `implementation_plan.md`.
-2. **Phase 1:** Implement changes.
-3. **Phase 2:** Verify with `npm run build`.
-4. **Phase 3:** Update `task.md`.
-
-## 🤖 Automations
-
-- **Linting:** Standard Docusaurus/ESLint setup.
-- **Formatting:** Prettier is recommended.
-- **Accessibility:** Ensure WCAG 2.1 AA Compliance (Contrast ratios 4.5:1).
+1. Use `.mdx` files.
+2. Use standard Markdown for structure.
+3. Use the auto-emoji system for visual flair in lists.
+4. Use `.mdx-card` divs for block layouts.

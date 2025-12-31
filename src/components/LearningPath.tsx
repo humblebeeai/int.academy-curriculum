@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
-import { Milestone, CheckCircle2, Circle, ArrowRight } from 'lucide-react';
+import { Milestone, CheckCircle2, Circle } from 'lucide-react';
+import styles from './LearningPath.module.css';
 
 export interface ModuleStep {
     id: string;
@@ -19,55 +20,56 @@ export default function LearningPath({ currentModuleId, modules }: LearningPathP
     const currentIndex = modules.findIndex(m => m.id === currentModuleId);
 
     return (
-        <div className="learning-path my-10 relative">
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 relative z-10">
+        <div className={styles.container}>
+            <div className={styles.pathWrapper}>
                 {modules.map((module, index) => {
                     const isCompleted = index < currentIndex;
                     const isCurrent = index === currentIndex;
                     const isFuture = index > currentIndex;
 
                     return (
-                        <div key={module.id} className="flex-1 w-full md:w-auto relative group">
-                            {/* Connector Line (visible on desktop) */}
+                        <div key={module.id} className={styles.stepContainer}>
+                            {/* Connector Line (visible on desktop via CSS) */}
                             {index < modules.length - 1 && (
-                                <div className="hidden md:block absolute top-1/2 left-[50%] w-full h-[2px] -z-10 bg-[var(--ifm-color-emphasis-200)]">
+                                <div className={styles.connectorLine}>
                                     <motion.div
                                         initial={{ width: 0 }}
                                         animate={{ width: isCompleted ? '100%' : '0%' }}
-                                        className="h-full bg-[var(--ifm-color-primary)]"
+                                        className={styles.connectorProgress}
                                         transition={{ duration: 0.5, delay: 0.2 }}
                                     />
                                 </div>
                             )}
 
-                            <div className="flex items-center gap-4 md:flex-col md:gap-3 p-2 rounded-lg transition-colors hover:bg-[var(--ifm-background-surface-color)]">
-
+                            <div className={styles.stepContent}>
                                 {/* Icon Wrapper */}
                                 <div
                                     className={clsx(
-                                        "w-10 h-10 rounded-full flex items-center justify-center border-2 z-20 transition-all shadow-sm",
-                                        isCompleted ? "bg-[var(--ifm-color-primary)] border-[var(--ifm-color-primary)] text-white" :
-                                            isCurrent ? "bg-[var(--ifm-background-color)] border-[var(--ifm-color-primary)] text-[var(--ifm-color-primary)] ring-4 ring-[var(--ifm-color-primary-light)]/20" :
-                                                "bg-[var(--ifm-background-color)] border-[var(--ifm-color-emphasis-300)] text-[var(--ifm-color-emphasis-400)]"
+                                        styles.iconWrapper,
+                                        isCompleted && styles.isCompleted,
+                                        isCurrent && styles.isCurrent,
+                                        isFuture && styles.isFuture
                                     )}
                                 >
                                     {isCompleted ? <CheckCircle2 size={20} /> :
                                         isCurrent ? <Milestone size={20} /> :
-                                            <Circle size={12} fill="currentColor" className="opacity-50" />}
+                                            <Circle size={12} fill="currentColor" style={{ opacity: 0.5 }} />}
                                 </div>
 
                                 {/* Text Content */}
-                                <div className="text-left md:text-center">
+                                <div>
                                     <div className={clsx(
-                                        "text-xs uppercase tracking-wider font-bold mb-0.5",
-                                        isCompleted ? "text-[var(--ifm-color-primary)]" :
-                                            isCurrent ? "text-[var(--ifm-color-primary)]" : "text-[var(--ifm-color-emphasis-500)]"
+                                        styles.stepLabel,
+                                        isCompleted && styles.labelCompleted,
+                                        isCurrent && styles.labelCurrent,
+                                        isFuture && styles.labelFuture
                                     )}>
                                         Step {index + 1}
                                     </div>
                                     <h4 className={clsx(
-                                        "text-sm m-0 font-semibold leading-tight",
-                                        isFuture ? "text-[var(--ifm-color-emphasis-500)]" : "text-[var(--ifm-color-emphasis-900)]"
+                                        styles.stepTitle,
+                                        !isFuture && styles.titleActive,
+                                        isFuture && styles.titleFuture
                                     )}>
                                         {module.title}
                                     </h4>

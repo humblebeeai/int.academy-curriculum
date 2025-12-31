@@ -32,7 +32,7 @@ function EcosystemSection() {
   ];
 
   return (
-    <section className={styles.features} style={{ backgroundColor: 'var(--ifm-background-color)', borderTop: '1px solid var(--ifm-color-emphasis-200)' }}>
+    <section className={clsx(styles.features, styles.ecosystemSection)}>
       <div className="container">
         <motion.div
           className={styles.sectionHeader}
@@ -55,55 +55,30 @@ function EcosystemSection() {
             return (
               <div key={i} className="col col--4" style={{ marginBottom: '1.5rem' }}>
                 <div
-                  className={styles.featureCard}
-                  style={{
-                    display: 'block',
-                    height: '100%',
-                    cursor: hasLink ? 'pointer' : 'default',
-                    opacity: hasLink ? 1 : 0.8
-                  }}
+                  className={clsx(
+                    styles.featureCard,
+                    styles.projectCard,
+                    !hasLink && styles.projectCardDisabled
+                  )}
                   onClick={() => hasLink ? window.open(p.link, '_blank') : null}
                 >
-                  <div className={styles.cardMain} style={{ alignItems: 'flex-start', padding: '1.5rem', textAlign: 'left' }}>
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      width: '100%',
-                      marginBottom: '1rem'
-                    }}>
-                      <div style={{
-                        width: '48px',
-                        height: '48px',
-                        borderRadius: '12px',
-                        backgroundColor: 'var(--ifm-background-surface-color)',
-                        border: '1px solid var(--ifm-color-emphasis-200)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: 'var(--ifm-color-primary)'
-                      }}>
+                  <div className={clsx(styles.cardMain, styles.projectCardMain)}>
+                    <div className={styles.projectHeader}>
+                      <div className={styles.projectIconWrapper}>
                         <Icon size={24} />
                       </div>
                       {!hasLink && (
-                        <span style={{
-                          fontSize: '0.75rem',
-                          backgroundColor: 'var(--ifm-color-emphasis-200)',
-                          color: 'var(--ifm-color-emphasis-700)',
-                          padding: '2px 8px',
-                          borderRadius: '10px',
-                          fontWeight: '600'
-                        }}>Coming Soon</span>
+                        <span className={styles.statusBadge}>Coming Soon</span>
                       )}
                       {hasLink && (
-                        <span style={{ fontSize: '1rem', color: 'var(--ifm-color-emphasis-400)' }}>↗</span>
+                        <span className={styles.externalLinkIcon}>↗</span>
                       )}
                     </div>
 
-                    <h3 className={styles.featureTitle} style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>
+                    <h3 className={clsx(styles.featureTitle, styles.projectTitle)}>
                       {p.title}
                     </h3>
-                    <p className={styles.featureDescription} style={{ fontSize: '0.9rem' }}>{p.desc}</p>
+                    <p className={clsx(styles.featureDescription, styles.projectDescription)}>{p.desc}</p>
                   </div>
                 </div>
               </div>
@@ -111,8 +86,8 @@ function EcosystemSection() {
           })}
         </div>
 
-        <div style={{ textAlign: 'center', marginTop: '4rem' }}>
-          <p style={{ color: 'var(--ifm-font-color-secondary)', marginBottom: '1rem' }}>Part of the HumblebeeAI Family</p>
+        <div className={styles.ecosystemFooter}>
+          <p className={styles.ecosystemFooterText}>Part of the HumblebeeAI Family</p>
           <a href="https://humblebee.ai" target="_blank" rel="noopener noreferrer" className={styles.secondaryButton}>
             Visit Humblebee.ai
             <span className={styles.arrow}>→</span>
@@ -289,18 +264,7 @@ function ProgramCard({
         </div>
         <div className={styles.programInfo}>
           <div className={styles.programHeader}>
-            <span style={{
-              backgroundColor: 'var(--ifm-color-primary)',
-              color: '#fff',
-              borderRadius: '50%',
-              width: '24px',
-              height: '24px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '0.8rem',
-              fontWeight: 'bold'
-            }}>
+            <span className={styles.phaseBadge}>
               {phase || '?'}
             </span>
             <h3 className={styles.programTitle}>{title}</h3>

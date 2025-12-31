@@ -40,6 +40,7 @@ const config: Config = {
         docs: {
           path: 'docs',
           sidebarPath: './sidebars.ts',
+          remarkPlugins: [require('./src/plugins/remark-emoji')],
           editUrl:
             'https://github.com/humblebeeai/int.academy-curriculum/edit/main/docs/',
         },

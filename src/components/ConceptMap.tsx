@@ -1,6 +1,7 @@
 import React from 'react';
 // @ts-ignore - Docusaurus theme component might likely imply implicit types or standard JS import
 import Mermaid from '@theme/Mermaid';
+import styles from './ConceptMap.module.css';
 
 export interface Concept {
     id: string;
@@ -34,25 +35,25 @@ export default function ConceptMap({ concepts, connections }: ConceptMapProps) {
   `;
 
     return (
-        <div className="concept-map my-8 p-6 bg-[var(--ifm-background-surface-color)] border border-[var(--ifm-color-emphasis-200)] rounded-xl">
-            <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
+        <div className={styles.container}>
+            <h3 className={styles.title}>
                 📊 Concept Dependency Map
             </h3>
-            <div className="mermaid-wrapper flex justify-center">
+            <div className={styles.mermaidWrapper}>
                 <Mermaid value={mermaidChart} />
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4 mt-6 text-sm border-t border-[var(--ifm-color-emphasis-200)] pt-4">
-                <div className="flex items-center gap-2">
-                    <span className="w-3 h-3 rounded bg-[#e3f2fd] border border-[#1976d2]"></span>
+            <div className={styles.legend}>
+                <div className={styles.legendItem}>
+                    <span className={`${styles.colorDot} ${styles.prerequisite}`}></span>
                     <span>Prerequisites</span>
                 </div>
-                <div className="flex items-center gap-2">
-                    <span className="w-3 h-3 rounded bg-[#fff3e0] border border-[#f57c00]"></span>
+                <div className={styles.legendItem}>
+                    <span className={`${styles.colorDot} ${styles.current}`}></span>
                     <span>Current Module</span>
                 </div>
-                <div className="flex items-center gap-2">
-                    <span className="w-3 h-3 rounded bg-[#fce4ec] border border-[#c2185b]"></span>
+                <div className={styles.legendItem}>
+                    <span className={`${styles.colorDot} ${styles.advanced}`}></span>
                     <span>Builds On This</span>
                 </div>
             </div>
