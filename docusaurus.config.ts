@@ -91,8 +91,8 @@ const config: Config = {
           className: 'navbar-softlanding-link',
         },
         {
-          href: 'https://humblebee.ai',
-          label: 'HumblebeeAI',
+          href: 'https://academy.humblebee.ai',
+          label: 'Academy',
           position: 'right',
         },
         {
@@ -171,7 +171,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} HumblebeeAI. Open source curriculum for aspiring engineers.<br/>Powered by HumblebeeAI Academy`,
+      copyright: `© ${new Date().getFullYear()} HumblebeeAI Academy. Open source curriculum for aspiring engineers.<br/>Powered by HumblebeeAI Academy`,
     },
     prism: {
       theme: prismThemes.github,

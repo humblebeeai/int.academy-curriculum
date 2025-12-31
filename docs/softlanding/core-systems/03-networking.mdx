@@ -5,13 +5,35 @@ title: Systems & Networking
 description: How the internet actually works
 ---
 
+import ProgressBar from '@site/src/components/ProgressBar';
+import TimeEstimate from '@site/src/components/TimeEstimate';
+import ChecklistItem from '@site/src/components/ChecklistItem';
+import ResourceCard from '@site/src/components/ResourceCard';
+
 # Systems & Networking
+
+<ProgressBar 
+  phase="Soft Landing" 
+  module="3 of 4" 
+  estimatedHours={0}
+  completedBy={0}
+/>
 
 ![Networks and Servers Image](/img/systems.png)
 
 ## Goal
 
 This module reveals how computers communicate across the internet. Understanding networking is essential for deploying AI models, debugging connection issues, and building secure, scalable systems.
+
+<TimeEstimate 
+  minHours={0} 
+  maxHours={0} 
+  breakdownBy={{
+    'Networking Basics': 0,
+    'TCP/IP': 0,
+    'Security': 0
+  }}
+/>
 
 ## 1. Network Fundamentals
 
@@ -111,6 +133,19 @@ Ports are logical "doors" on a server. Only open the ones you absolutely need.
 - **Works Locally, Not in Prod**: You might be listening on `127.0.0.1` (localhost) instead of `0.0.0.0` (all interfaces).
 
 ---
+
+---
+
+## 📝 Module Assessment Rubric
+
+*(To be filled by the Evaluation Team)*
+
+| Criteria | Needs Improvement | Meets Expectations | Exceeds Expectations |
+| :--- | :--- | :--- | :--- |
+| **Topic 1** | ... | ... | ... |
+| **Topic 2** | ... | ... | ... |
+
+<!-- rubric_section_end -->
 
 ## Quick Reference
 

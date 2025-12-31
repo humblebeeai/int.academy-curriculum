@@ -5,67 +5,105 @@ title: Module 1 - Computational Thinking
 description: CLI, Git, and Algorithms
 ---
 
+import ProgressBar from '@site/src/components/ProgressBar';
+import TimeEstimate from '@site/src/components/TimeEstimate';
+import ChecklistItem from '@site/src/components/ChecklistItem';
+import SkillShowcase, { Skill } from '@site/src/components/SkillShowcase';
+import DifficultyTag from '@site/src/components/DifficultyTag';
+
 # Module 1: The Developer's Environment
 
-![Developer Environment - Terminal and Logic Code](/img/development.jpg)
+<ProgressBar 
+  phase="School Program" 
+  module="1 of 5" 
+  estimatedHours={20}
+  completedBy={0}
+/>
 
-## Goal
-Get comfortable working in the terminal and a professional development environment.
-This module introduces the tools and mental models used by engineers to interact directly with computers and servers.
+## 📍 What You'll Build Here
+
+Look, I'm not going to sugarcoat it—this phase is tough if you're new. You're going to feel lost in the terminal, frustrated with Git merge conflicts, and wonder why any of this matters for AI.
+
+**But here's the thing:** Every engineer you admire went through this exact phase. The difference? They pushed through. And you will too.
+
+By the end, you'll think in algorithms, speak fluent command line, and understand the mental models that actual engineers use daily.
+
+:::tip From the Curriculum Team
+We built this after watching 500+ students go from "What's a terminal?" to deploying production ML systems. These aren't random topics—they're the exact bottlenecks that stop people from becoming senior engineers.
+:::
+
+## By the End of This Module...
+
+<SkillShowcase>
+  <Skill icon="💻" title="Command Line Fluency">
+    Navigate servers, manage files, and run scripts on remote machines without needing a mouse.
+  </Skill>
+  <Skill icon="🧠" title="Algorithmic Logic">
+    Break down complex problems into step-by-step logic that computers can execute efficiently.
+  </Skill>
+  <Skill icon="🔧" title="Pro Environment">
+    Set up VS Code like a senior engineer, with the right extensions for Python and Data Science.
+  </Skill>
+</SkillShowcase>
+
+<TimeEstimate 
+  minHours={15} 
+  maxHours={20} 
+  breakdownBy={{
+    'Environment Setup': 2,
+    'Command Line Practice': 8,
+    'HackerRank Algorithmic Logic': 10
+  }}
+/>
+
+---
 
 ## 1. Setup & Command Line Interface
 
-
 ### Development Environment Setup
 
-**Resource**: [VS Code Setup Guide](https://code.visualstudio.com/docs/setup/setup-overview)  
+**Resource**: [VS Code Setup Guide](https://code.visualstudio.com/docs/setup/setup-overview)
 
-**Why This Resource**  
-VS Code is the most popular code editor for AI development, with extensions for Python, Jupyter notebooks, and Git integration.
+:::note 💭 Why This Matters (Real Talk)
+You might be tempted to skip the command line module and use VS Code's UI for everything. **Don't.** When your model breaks on a remote GPU server at 2 AM, the terminal is your only friend.
+:::
 
-**What You'll Learn**
-- Install VS Code on your operating system (Windows/Mac/Linux)
-- Configure essential extensions (Python, GitLens, Prettier)
-- Customize settings for optimal coding experience
-- Set up integrated terminal within VS Code
+**Your Mission:**
+1. Install VS Code on your OS.
+2. Install **Required Extensions**: Python, Pylance, Jupyter.
+3. Install **Recommended**: GitLens, Error Lens.
 
-**How to Use**
-1. Follow the installation guide for your operating system
-2. Install these **required extensions**: Python, Pylance, Jupyter
-3. Install these **recommended extensions**: GitLens, indent-rainbow, Error Lens
-4. Configure settings: Auto-save, format on save, and theme preferences
-5. **Verification checkpoint**: Open a `.py` file and confirm syntax highlighting works
+<ChecklistItem id="vscode-setup" moduleId="module-1">
+  VS Code installed and extensions configured
+</ChecklistItem>
 
 ---
 
 ### Command Line Mastery
 
-**Resource**: [Linux Journey - Command Line Module](https://linuxjourney.com/)  
+**Resource**: [Linux Journey - Command Line Module](https://linuxjourney.com/)
 
-**Why This Resource**  
-Commands learned here work on Linux servers (where AI models run), Mac terminals, and Windows WSL-universal skills across all platforms.
+**Why It's Critical:**
+Commands learned here work on Linux servers (where 99% of AI models run), Mac terminals, and Windows WSL.
 
-**What You'll Learn**
-- Essential navigation: `cd`, `ls`, `pwd` (know where you are)
-- File operations: `cp`, `mv`, `rm`, `mkdir` (manage files without clicking)
-- Text manipulation: `cat`, `grep`, `less` (search through logs and data)
-- Permissions: `chmod`, `chown` (control file access on servers)
-- Process management: `ps`, `kill`, `top` (monitor running programs)
+<DifficultyTag level="beginner" time="2 hours">Navigation (cd, ls)</DifficultyTag>
+<DifficultyTag level="intermediate" time="4 hours">File Ops (cp, mv, rm)</DifficultyTag>
+<DifficultyTag level="advanced" time="2 hours">Permissions (chmod)</DifficultyTag>
 
-**How to Use**
-1. Complete **"Grasshopper"** section entirely (Lessons 1-10)
-2. Complete **"Command Line"** section (Lessons 1-8)
-3. Practice each command in your own terminal as you learn
-4. **Practice checkpoint**: Complete the challenge at the end of each lesson
-5. Keep a cheat sheet of commands you use frequently
+**Action Plan:**
+1. Complete **"Grasshopper"** (Lessons 1-10)
+2. Complete **"Command Line"** (Lessons 1-8)
 
-**Field-Specific Applications**
-- **Computer Vision**: Navigate image directories, batch-rename files
-- **NLP**: Search through large text corpora using `grep`, count word frequencies with `wc`
-- **General ML**: Download datasets with `wget`, manage remote servers via SSH
+:::caution ⚠️ Common Trap (rm -rf)
+Be very careful with `rm -rf`. It deletes everything forever. Always use `ls` first to see where you are before deleting.
+:::
 
-**Connection to VS Code**  
-Use VS Code's integrated terminal (`Ctrl+`` or `Cmd+``) to practice these commands while coding-this is how professionals work.
+<ChecklistItem id="cli-grasshopper" moduleId="module-1">
+  Completed "Grasshopper" lessons 1-10
+</ChecklistItem>
+<ChecklistItem id="cli-commandline" moduleId="module-1">
+  Completed "Command Line" lessons 1-8
+</ChecklistItem>
 
 ---
 
@@ -73,120 +111,63 @@ Use VS Code's integrated terminal (`Ctrl+`` or `Cmd+``) to practice these comman
 
 ### Problem-Solving Fundamentals
 
-**Resource**: [HackerRank: Problem Solving (Basic)](https://www.hackerrank.com/skills-directory/problem_solving_basic)  
+**Resource**: [HackerRank: Problem Solving (Basic)](https://www.hackerrank.com/skills-directory/problem_solving_basic)
 
-**Why This Resource**  
+**Why This Resource**
 These challenges force you to think algorithmically before writing code. You'll recognize patterns (loops, sorting, searching) that appear in every AI project.
 
-**What You'll Learn**
-- Loop patterns: Iterate through arrays, accumulate values, find patterns
-- Conditional logic: Make decisions based on multiple criteria
-- Array manipulation: Sort, filter, search, and transform data collections
-- String operations: Parse and validate text (foundation for NLP)
-- Basic algorithms: Linear search, simple sorting, frequency counting
+**Suggested Workflow:**
+1. **Understand**: Restate the problem.
+2. **Plan**: Write pseudocode comments.
+3. **Code**: Implement solution.
+4. **Debug**: Test edge cases.
 
-**How to Use**
-1. Start with "Easy" problems (aim for 10-15 problems)
-2. **Critical approach**: Spend 10 minutes planning before coding
-   - Write pseudocode in comments first
-   - Identify the algorithm pattern (is it a loop? a search?)
-3. After solving, review 2-3 other solutions to learn different approaches
-4. Move to "Medium" problems once Easy feels comfortable (aim for 5-10 problems)
-5. **Practice checkpoint**: Solve at least 20 problems total before moving on
+:::tip 💡 Pro Tip (From Experience)
+If you get stuck for >20 minutes, read the discussion tab. Don't waste 3 hours spinning your wheels—learn the pattern and move on.
+:::
 
-**Problem-Solving Framework** (use this every time)
-```
-1. Understand: Restate the problem in your own words
-2. Examples: Work through 2-3 examples by hand
-3. Break down: What are the steps? What data structures?
-4. Code: Implement your plan
-5. Test: Try edge cases (empty input, single item, duplicates)
-```
-
-**Recommended Problem Types** (prioritize these)
-- Array traversal and manipulation
-- String parsing and validation
-- Simple sorting and searching
-- Counting frequencies (histograms)
-- Two-pointer techniques
-
-**Don't Skip This**  
-It may seem unrelated to AI, but data preprocessing requires exactly these skills-loops through datasets, filtering invalid entries, transforming formats.
+<ChecklistItem id="hackerrank-5-easy" moduleId="module-1">
+  Solved 5 "Easy" problems
+</ChecklistItem>
+<ChecklistItem id="hackerrank-10-easy" moduleId="module-1">
+  Solved 10 "Easy" problems
+</ChecklistItem>
+<ChecklistItem id="hackerrank-medium" moduleId="module-1">
+  Attempted 1 "Medium" problem
+</ChecklistItem>
 
 ---
 
-## Completion Checklist
+## ✅ Completion Checklist
 
-Before moving to Module 2, verify you can:
+Before calling this module "Done", verified by your mentor:
 
-- [ ] Navigate to any directory on your system using `cd` and `ls` only
-- [ ] Search for text across multiple files using `grep`
-- [ ] Create, rename, and delete files/folders via command line
-- [ ] Open and edit Python files in VS Code with proper syntax highlighting
-- [ ] Solve an "Easy" HackerRank problem in under 15 minutes
-- [ ] Explain your algorithm solution in plain English before coding
-- [ ] Use VS Code's integrated terminal comfortably
+<ChecklistItem id="nav-terminal" moduleId="module-1">
+  Navigate to any directory using only `cd` and `ls`
+</ChecklistItem>
 
-**Practical Exercise**: Combine your skills
-1. Create a project folder via terminal: `mkdir my_first_project && cd my_first_project`
-2. Create a Python file: `touch solution.py`
-3. Open in VS Code: `code .`
-4. Solve a HackerRank problem in this file
-5. Save and run from the integrated terminal: `python solution.py`
+<ChecklistItem id="grep-files" moduleId="module-1">
+  Search for text across multiple files using `grep -r`
+</ChecklistItem>
 
----
+<ChecklistItem id="hackerrank-easy-total" moduleId="module-1">
+  **Milestone**: 15 HackerRank problems solved total
+</ChecklistItem>
 
-## Common Pitfalls & Tips
-
-**Command Line**
-- ⚠️ **Mistake**: Using `rm -rf` without double-checking the path (it's permanent!)
-- ✅ **Fix**: Always use `ls` to confirm location before deleting
-- 💡 **Tip**: Create aliases for common commands (e.g., `alias ll='ls -la'`)
-
-**Algorithmic Thinking**
-- ⚠️ **Mistake**: Starting to code immediately without planning
-- ✅ **Fix**: Always write pseudocode in comments first
-- 💡 **Tip**: If stuck for >20 minutes, read one solution's approach (not full code)
+<ChecklistItem id="explain-algorithm" moduleId="module-1">
+  Can explain your algorithm solution in plain English before coding
+</ChecklistItem>
 
 ---
 
-## Support & Next Steps
+## 📝 Module Assessment Rubric
 
-**Need Help?**
-- Command line stuck? Academy Discord #command-line-help
-- Algorithm questions? #problem-solving channel
-- Office hours: Mondays 2-4 PM
+*(To be filled by the Evaluation Team)*
 
-**Optional Advanced Resources**
-- [The Missing Semester (MIT)](https://missing.csail.mit.edu/) - Advanced CLI tools and shell scripting
-- [LeetCode Easy Problems](https://leetcode.com/problemset/all/?difficulty=EASY) - More algorithm practice
-- [Command Line Challenge](https://cmdchallenge.com/) - Gamified CLI practice
+| Criteria | Needs Improvement | Meets Expectations | Exceeds Expectations |
+| :--- | :--- | :--- | :--- |
+| **Terminal Fluency** | Relies on GUI for file management | uses `cd`, `ls`, `mv` comfortably | Uses pipes `\|` and `grep` effectively |
+| **Algorithmic Logic** | Stuck on "Easy" problems without help | Solves "Easy" consistently | Solves "Medium" with some hints |
+| **Environment** | Default VS Code settings | Extensions installed and used | Customizing settings for productivity |
 
-**Next Module**: [Calculus & Linear Algebra →](./03-module-2-calculus-algebra.mdx)  
-You'll apply your logical thinking skills to the mathematical foundations of AI.
-
----
-
-## Quick Reference
-
-**Essential Commands Cheat Sheet**
-```bash
-# Navigation
-cd directory_name    # Move into folder
-cd ..                # Move up one level
-pwd                  # Print current path
-ls -la               # List all files with details
-
-# File Operations
-mkdir folder_name    # Create directory
-touch file.py        # Create empty file
-cp file1 file2       # Copy file
-mv old new           # Rename or move
-rm file              # Delete file (careful!)
-
-# Text Search
-grep "search" file   # Find text in file
-grep -r "text" .     # Search in all files recursively
-```
-
-Save this for quick reference while working.
+<!-- rubric_section_end -->

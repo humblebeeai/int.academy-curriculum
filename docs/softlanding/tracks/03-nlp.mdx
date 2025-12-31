@@ -4,7 +4,21 @@ title: NLP & LLMs
 description: Transformers, Agents, and Language Models
 ---
 
+import ProgressIndicator from '@site/src/components/ProgressIndicator';
+import ProgressBar from '@site/src/components/ProgressBar';
+import TimeEstimate from '@site/src/components/TimeEstimate';
+import ResourceCard from '@site/src/components/ResourceCard';
+
 # NLP & LLM Track
+
+<ProgressIndicator phase={3} totalPhases={3} />
+
+<ProgressBar 
+  phase="Specialization" 
+  module="NLP & LLMs" 
+  estimatedHours={120} 
+  completedBy={0} 
+/>
 
 ![NLP & LLM Track](/img/nlp.png)
 
@@ -87,3 +101,27 @@ You'll learn instruction-tuning for following user commands, Parameter-Efficient
 ### Capstone
 *   **Project**: Provided by Mentor.
 *   **Status**: *Not open source yet (Coming Soon)*
+
+<TimeEstimate 
+  minHours={100} 
+  maxHours={120} 
+  breakdownBy={{
+    'Embeddings & Transfomers': 40,
+    'RAG & Agents': 40,
+    'Fine-Tuning': 20,
+    'Capstone': 20
+  }}
+/>
+
+---
+
+## 📝 Module Assessment Rubric
+
+*(To be filled by the Evaluation Team)*
+
+| Criteria | Needs Improvement | Meets Expectations | Exceeds Expectations |
+| :--- | :--- | :--- | :--- |
+| **Topic 1** | ... | ... | ... |
+| **Topic 2** | ... | ... | ... |
+
+<!-- rubric_section_end -->

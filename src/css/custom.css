@@ -24,6 +24,14 @@
   --ifm-color-primary-lighter: #555555;
   --ifm-color-primary-lightest: #777777;
 
+  /* Card Colors */
+  --ifm-card-background-color: #ffffff;
+  --ifm-card-border-radius: 12px;
+
+  /* Card Colors */
+  --ifm-card-background-color: #ffffff;
+  --ifm-card-border-radius: 12px;
+
   /* Backgrounds */
   --ifm-background-color: #ffffff;
   --ifm-background-surface-color: #f9f9f9;
@@ -65,6 +73,8 @@
   --ifm-color-primary-light: #ffffff;
   --ifm-color-primary-lighter: #ffffff;
   --ifm-color-primary-lightest: #ffffff;
+
+  --ifm-card-background-color: #242526;
 
   /* Backgrounds */
   --ifm-background-color: #1a1a1a;
@@ -275,10 +285,34 @@ h6 {
   text-underline-offset: 2px;
 }
 
-/* Admonitions */
+/* Handcrafted Admonitions */
 .alert {
   border-left: 4px solid var(--ifm-color-primary);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.alert--secondary {
+  --ifm-alert-background-color: var(--ifm-color-emphasis-100);
+  --ifm-alert-border-color: var(--ifm-color-emphasis-300);
+}
+
+/* Component Styles */
+.resource-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.checklist-item input[type="checkbox"] {
+  width: 1.1em;
+  height: 1.1em;
   border-radius: 4px;
+  border: 2px solid var(--ifm-color-emphasis-400);
+  cursor: pointer;
+}
+
+.checklist-item:hover input[type="checkbox"] {
+  border-color: var(--ifm-color-primary);
 }
 
 /* Pagination */
@@ -359,4 +393,111 @@ h6 {
 
 [data-theme='light'] .footer__copyright {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================
+   ADVANCED COMPONENTS (Part 6 & 7 Adapation)
+   ========================================= */
+
+/* Custom heading styles */
+.markdown h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  /* Use Brand Color instead of Blue Gradient */
+  color: var(--ifm-color-primary);
+}
+
+.markdown h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--ifm-color-emphasis-200);
+}
+
+/* Handwritten-style annotations */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+
+.annotation {
+  font-family: 'Caveat', cursive;
+  font-size: 1.4rem;
+  color: var(--ifm-color-emphasis-700);
+  border-left: 3px dashed var(--ifm-color-emphasis-400);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+/* Concept Map Styling */
+.concept-map {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.map-legend {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  justify-content: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-item::before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.legend-item.prerequisite::before {
+  background: #e3f2fd;
+  border: 1px solid #1976d2;
+}
+
+.legend-item.current::before {
+  background: #fff3e0;
+  border: 1px solid #f57c00;
+}
+
+.legend-item.advanced::before {
+  background: #fce4ec;
+  border: 1px solid #c2185b;
+}
+
+/* Code Comparison (Tabs override) */
+.tabs {
+  border-bottom: 2px solid var(--ifm-color-emphasis-200);
+}
+
+.tabs__item--active {
+  background-color: var(--ifm-background-surface-color) !important;
+  border-bottom: 2px solid var(--ifm-color-primary) !important;
+}
+
+/* Personal Note (Neutral Tone) */
+.personal-note {
+  background: var(--ifm-color-emphasis-100);
+  border-left: 4px solid var(--ifm-color-emphasis-600);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.personal-note::before {
+  content: "📝 ";
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
 }

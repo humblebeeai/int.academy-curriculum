@@ -4,7 +4,21 @@ title: Software Engineering
 description: Distributed Systems and Scalability
 ---
 
+import ProgressIndicator from '@site/src/components/ProgressIndicator';
+import ProgressBar from '@site/src/components/ProgressBar';
+import TimeEstimate from '@site/src/components/TimeEstimate';
+import ResourceCard from '@site/src/components/ResourceCard';
+
 # Software Engineering Track
+
+<ProgressIndicator phase={3} totalPhases={3} />
+
+<ProgressBar 
+  phase="Specialization" 
+  module="Software Engineering" 
+  estimatedHours={150} 
+  completedBy={0} 
+/>
 
 ![Monitors and a laptop](/img/software_eng.png)
 
@@ -161,3 +175,27 @@ Build a production-grade application combining all modules:
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
 - Cloud Certifications (AWS/GCP)
 - Technical Interview Prep
+
+<TimeEstimate 
+  minHours={120} 
+  maxHours={150} 
+  breakdownBy={{
+    'Architecture & API': 40,
+    'Database & Testing': 40,
+    'DevOps & Deployment': 30,
+    'Capstone': 40
+  }}
+/>
+
+---
+
+## 📝 Module Assessment Rubric
+
+*(To be filled by the Evaluation Team)*
+
+| Criteria | Needs Improvement | Meets Expectations | Exceeds Expectations |
+| :--- | :--- | :--- | :--- |
+| **Topic 1** | ... | ... | ... |
+| **Topic 2** | ... | ... | ... |
+
+<!-- rubric_section_end -->

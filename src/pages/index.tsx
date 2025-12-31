@@ -7,9 +7,121 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import { motion } from 'framer-motion';
-import { Sprout, Zap, Target, GraduationCap, Rocket, BookOpen, Code2, Building2 } from 'lucide-react';
+import {
+  Sprout, Zap, Target, GraduationCap, Rocket, BookOpen, Code2, Building2, Globe, Cpu, Users, BarChart,
+  Mic, Briefcase, Heart, User, Activity, Terminal, Eye, Wifi, Box, Scale, FlaskConical, LayoutGrid
+} from 'lucide-react';
 
 import styles from './index.module.css';
+
+function EcosystemSection() {
+  const projects = [
+    { title: 'Smart Office', desc: 'Smart Workspace Solutions', link: 'https://smart-office.humblebee.ai/', icon: LayoutGrid },
+    { title: 'Wakil AI', desc: 'Legal tech NLP assistant that simplifies legal workflows.', link: 'https://wakil.ai/', icon: Scale },
+    { title: 'Kumush AI', desc: 'Voice-enabled natural language platform for conversational AI.', link: 'https://kumush.ai/', icon: Mic },
+    { title: 'bRide', desc: 'Data-driven talent growth and workforce matching.', link: 'https://bride.humblebee.ai/', icon: Briefcase },
+    { title: 'EnlightenQalb', desc: 'NLP-powered tool for culturally aligned mental wellness.', link: 'https://beeintel.ai/projects/enlighten-qalb', icon: Heart },
+    { title: 'AI Avatar', desc: 'Generative AI platform creating personalized educational avatars.', link: 'https://avatar.humblebee.ai/', icon: User },
+    { title: 'HStaff', desc: 'Team management dashboard with analytics for leaders.', link: 'https://hstaff.humblebee.ai/dashboard/talents', icon: Users },
+    { title: 'Infer', desc: 'Production-ready ML evaluation engine with confidence intervals.', link: 'https://infer.humblebee.ai/', icon: BarChart },
+    { title: 'LearnPrompting', desc: 'Comprehensive LLM prompting guide (Uzbek Translation).', link: 'http://learnprompting.uz/', icon: Terminal },
+    { title: 'RISE', desc: 'Analytics and AI system to boost science and engineering teams.', link: '-', icon: FlaskConical },
+    { title: 'AntvisionAI', desc: 'Concept AI platform for advanced analytics and visual intelligence.', link: 'https://AntVision.ai', icon: Eye },
+    { title: 'mPal', desc: 'Connected IoT lifestyle ecosystem.', link: '-', icon: Wifi },
+    { title: 'Customs', desc: 'NLP-driven tool for customs automation.', link: '-', icon: Box },
+  ];
+
+  return (
+    <section className={styles.features} style={{ backgroundColor: 'var(--ifm-background-color)', borderTop: '1px solid var(--ifm-color-emphasis-200)' }}>
+      <div className="container">
+        <motion.div
+          className={styles.sectionHeader}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className={styles.sectionTitle}>Humblebee Ecosystem</h2>
+          <p className={styles.sectionSubtitle}>
+            Real-world AI products built by our community and engineers.
+          </p>
+        </motion.div>
+
+        <div className="row">
+          {projects.map((p, i) => {
+            const hasLink = p.link && p.link !== '-' && p.link !== '#';
+            const Icon = p.icon || Zap;
+
+            return (
+              <div key={i} className="col col--4" style={{ marginBottom: '1.5rem' }}>
+                <div
+                  className={styles.featureCard}
+                  style={{
+                    display: 'block',
+                    height: '100%',
+                    cursor: hasLink ? 'pointer' : 'default',
+                    opacity: hasLink ? 1 : 0.8
+                  }}
+                  onClick={() => hasLink ? window.open(p.link, '_blank') : null}
+                >
+                  <div className={styles.cardMain} style={{ alignItems: 'flex-start', padding: '1.5rem', textAlign: 'left' }}>
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      width: '100%',
+                      marginBottom: '1rem'
+                    }}>
+                      <div style={{
+                        width: '48px',
+                        height: '48px',
+                        borderRadius: '12px',
+                        backgroundColor: 'var(--ifm-background-surface-color)',
+                        border: '1px solid var(--ifm-color-emphasis-200)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: 'var(--ifm-color-primary)'
+                      }}>
+                        <Icon size={24} />
+                      </div>
+                      {!hasLink && (
+                        <span style={{
+                          fontSize: '0.75rem',
+                          backgroundColor: 'var(--ifm-color-emphasis-200)',
+                          color: 'var(--ifm-color-emphasis-700)',
+                          padding: '2px 8px',
+                          borderRadius: '10px',
+                          fontWeight: '600'
+                        }}>Coming Soon</span>
+                      )}
+                      {hasLink && (
+                        <span style={{ fontSize: '1rem', color: 'var(--ifm-color-emphasis-400)' }}>↗</span>
+                      )}
+                    </div>
+
+                    <h3 className={styles.featureTitle} style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>
+                      {p.title}
+                    </h3>
+                    <p className={styles.featureDescription} style={{ fontSize: '0.9rem' }}>{p.desc}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div style={{ textAlign: 'center', marginTop: '4rem' }}>
+          <p style={{ color: 'var(--ifm-font-color-secondary)', marginBottom: '1rem' }}>Part of the HumblebeeAI Family</p>
+          <a href="https://humblebee.ai" target="_blank" rel="noopener noreferrer" className={styles.secondaryButton}>
+            Visit Humblebee.ai
+            <span className={styles.arrow}>→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -29,7 +141,7 @@ function HomepageHeader() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <GraduationCap size={20} />
-            <span>Open Source Curriculum</span>
+            <span>Open Source AI Curriculum</span>
           </motion.div>
 
           <motion.h1
@@ -38,8 +150,8 @@ function HomepageHeader() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Transform Into a<br />
-            <span className={styles.gradientText}>Technical Engineer</span>
+            Your Journey to Becoming a<br />
+            <span className={styles.gradientText}>Top 1% AI Engineer</span>
           </motion.h1>
 
           <motion.p
@@ -48,8 +160,8 @@ function HomepageHeader() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            From absolute beginner to specialized AI/Software Engineer.<br />
-            Master the fundamentals, build real projects, and choose your track.
+            Bridge the gap between theory and production. <br />
+            Democratizing access to world-class AI education for everyone, everywhere.
           </motion.p>
 
           <motion.div
@@ -58,12 +170,12 @@ function HomepageHeader() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <Link className={styles.primaryButton} to="/docs/curriculum-outline">
-              <BookOpen size={20} />
-              Explore Curriculum
+            <Link className={styles.primaryButton} to="/docs/school/intro">
+              <Rocket size={20} />
+              Start Phase 1
             </Link>
-            <Link className={styles.secondaryButton} to="/docs/school/intro">
-              Get Started
+            <Link className={styles.secondaryButton} to="/docs/curriculum-outline">
+              View Roadmap
               <span className={styles.arrow}>→</span>
             </Link>
           </motion.div>
@@ -73,7 +185,7 @@ function HomepageHeader() {
   );
 }
 
-function Feature({
+function ProblemCard({
   title,
   Icon,
   description,
@@ -96,7 +208,7 @@ function Feature({
         <div className={styles.cardShadowBottom} />
         <div className={styles.cardShadowMiddle} />
         <div className={styles.cardMain}>
-          <div className={styles.iconWrapper}>
+          <div className={styles.iconWrapper} style={{ color: 'var(--ifm-color-primary)' }}>
             <Icon size={40} strokeWidth={1.5} />
           </div>
           <Heading as="h3" className={styles.featureTitle}>{title}</Heading>
@@ -107,6 +219,48 @@ function Feature({
   );
 }
 
+function MissionSection() {
+  return (
+    <section className={styles.features}>
+      <div className="container">
+        <motion.div
+          className={styles.sectionHeader}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className={styles.sectionTitle}>The Problems We Solve</h2>
+          <p className={styles.sectionSubtitle}>
+            Most aspiring engineers get stuck. Here's why, and how we fix it.
+          </p>
+        </motion.div>
+
+        <div className="row">
+          <ProblemCard
+            title="The Theory-Practice Gap"
+            Icon={BookOpen}
+            description="Academic courses teach concepts, but not how to build production systems. We focus on engineering first."
+            index={0}
+          />
+          <ProblemCard
+            title="The Portfolio Paradox"
+            Icon={Code2}
+            description="You need experience to get a job, but need a job to get experience. We build a production-grade portfolio."
+            index={1}
+          />
+          <ProblemCard
+            title="Isolated Learning"
+            Icon={Building2}
+            description="Self-teaching is lonely and lacks feedback. We provide a community and structured mentorship path."
+            index={2}
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function ProgramCard({
   title,
   duration,
@@ -114,7 +268,8 @@ function ProgramCard({
   Icon,
   link,
   index,
-  comingSoon
+  comingSoon,
+  phase
 }: {
   title: string;
   duration: string;
@@ -123,6 +278,7 @@ function ProgramCard({
   link: string;
   index: number;
   comingSoon?: boolean;
+  phase?: number;
 }) {
   const cardContent = (
     <>
@@ -133,6 +289,20 @@ function ProgramCard({
         </div>
         <div className={styles.programInfo}>
           <div className={styles.programHeader}>
+            <span style={{
+              backgroundColor: 'var(--ifm-color-primary)',
+              color: '#fff',
+              borderRadius: '50%',
+              width: '24px',
+              height: '24px',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '0.8rem',
+              fontWeight: 'bold'
+            }}>
+              {phase || '?'}
+            </span>
             <h3 className={styles.programTitle}>{title}</h3>
             <span className={clsx(styles.programDuration, comingSoon && styles.comingSoonBadge)}>
               {duration}
@@ -170,48 +340,6 @@ function ProgramCard({
   );
 }
 
-function HomepageFeatures() {
-  return (
-    <section className={styles.features}>
-      <div className="container">
-        <motion.div
-          className={styles.sectionHeader}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className={styles.sectionTitle}>Why Choose This Path?</h2>
-          <p className={styles.sectionSubtitle}>
-            A comprehensive, battle-tested curriculum designed to transform beginners into professionals
-          </p>
-        </motion.div>
-
-        <div className="row">
-          <Feature
-            title="Zero to Hero"
-            Icon={Sprout}
-            description="Start from absolute basics. We build your foundation in Math, Logic, and Python from the ground up."
-            index={0}
-          />
-          <Feature
-            title="Engineering First"
-            Icon={Code2}
-            description="Code is just the tool. We teach Architecture, Docker, CI/CD, and Systems Thinking."
-            index={1}
-          />
-          <Feature
-            title="Specialized Tracks"
-            Icon={Target}
-            description="Master your craft. Deep dive into Computer Vision, NLP, Data Science, or Software Engineering."
-            index={2}
-          />
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function ProgramsSection() {
   return (
     <section className={styles.programsSection}>
@@ -223,25 +351,27 @@ function ProgramsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.sectionTitle}>Choose Your Journey</h2>
+          <h2 className={styles.sectionTitle}>Your Path to Mastery</h2>
           <p className={styles.sectionSubtitle}>
-            Three comprehensive programs designed to take you from beginner to professional
+            Three progressive phases designed to take you from hello world to production deployment.
           </p>
         </motion.div>
 
         <div className="row">
           <ProgramCard
+            phase={1}
             title="School Program"
-            duration="6 Months"
-            description="Build absolute engineering fundamentals. Master computational thinking, mathematics, and core programming skills."
+            duration="4-6 Months"
+            description="Build the foundation. Master the terminal, Git, Math, and core Python data engineering skills."
             Icon={GraduationCap}
             link="/docs/school/intro"
             index={0}
           />
           <ProgramCard
-            title="Soft Landing Program"
-            duration="Advanced"
-            description="Technical depth and systems engineering. Deep learning, advanced AI, and specialization tracks."
+            phase={2}
+            title="Soft Landing"
+            duration="4-6 Months"
+            description="Bridge to production. Deep learning, systems engineering, Docker, and full-stack AI applications."
             Icon={Rocket}
             link="/docs/softlanding/intro"
             index={1}
@@ -250,9 +380,9 @@ function ProgramsSection() {
         <div className="row" style={{ marginTop: '2rem' }}>
           <div className="col col--3"></div>
           <ProgramCard
-            title="Foundation Program"
+            title="Foundation Curriculum"
             duration="Coming Soon"
-            description="Essential prerequisites and foundational skills. Perfect starting point for absolute beginners."
+            description="Essential prerequisites and foundational skills. The perfect starting point for absolute beginners."
             Icon={Building2}
             link="#"
             index={2}
@@ -273,8 +403,9 @@ export default function Home(): ReactNode {
       description="HumblebeeAI Academy Curriculum - Transform into a Technical Junior Engineer">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <MissionSection />
         <ProgramsSection />
+        <EcosystemSection />
       </main>
     </Layout>
   );

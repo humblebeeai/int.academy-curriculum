@@ -1,45 +1,285 @@
 ---
-sidebar_position: 0
-sidebar_label: Curriculum Roadmap
-title: Curriculum Outline
-description: The complete roadmap for the HumblebeeAI Academy
+sidebar_position: 1
+title: Curriculum Roadmap
+description: Your open-source path to becoming a world-class AI Engineer
 ---
 
-# HumblebeeAI Academy Curriculum
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-Welcome to the **Academy**. This is a comprehensive, open-source path to becoming a world-class AI Engineer.
+# Your Journey to Becoming a Top 1% AI Engineer
 
-## Phase 1: School Program
-**Goal**: Build the absolute engineering fundamentals.
-
-| Phase | Module | Focus Areas | Action |
-| :--- | :--- | :--- | :--- |
-| **I. Fundamentals** | [**Computational Thinking**](./school/02-module-1-computational-thinking.mdx) | CLI, Vim, Git, Algorithmic Logic | [Start](./school/01-intro.mdx) |
-| | [**Math for AI**](./school/03-module-2-calculus-algebra.mdx) | Calculus, Linear Algebra, Probability | |
-| **II. Applied Skills** | [**Python Data Engineering**](./school/05-module-4-data-engineering.mdx) | Pandas, Data Cleaning, Software Tools | |
-| **III. Advanced** | [**IoT & Activation**](./school/06-module-5-iot-activation.mdx) | Teachable Machine, Simple IoT, Deployment | |
-| **Assessment** | [**Mentorship**](./03-mentorship.mdx) | Daily Evaluation, Capstone Project | **[Verify](./03-mentorship.mdx)** |
+<div className="hero-banner">
+  <p className="lead-text" style={{ fontSize: '1.2rem', color: 'var(--ifm-color-emphasis-700)', lineHeight: '1.6' }}>
+    Welcome, future AI innovator. You have the ambition to become a top-tier AI 
+    engineer, but the path forward can seem daunting.
+  </p>
+</div>
 
 ---
 
-## Phase 2: Soft Landing
-**Goal**: Technical depth and systems engineering.
+## 🌍 Our Mission: Democratizing AI Education
 
-| Phase | Topic | Key Skills | Action |
-| :--- | :--- | :--- | :--- |
-| **I. Foundations** | [**Math & ML Models**](./softlanding/core-systems/01-math-ml.mdx) | Linear Algebra, Regression, Trees | [Start](./softlanding/01-intro.mdx) |
-| **II. Deep Learning** | [**Advanced AI**](./softlanding/core-systems/02-advanced-ai.mdx) | LLMs, PyTorch, Clean Code | |
-| **III. Systems** | [**Networking & Ops**](./softlanding/core-systems/03-networking.mdx) | TCP/IP, Docker, FastAPI | |
+**The problem we're solving:**
+
+Most aspiring AI engineers face three critical barriers:
+
+1. **The Theory-Practice Gap** – Academic programs teach concepts, but not how to build production systems
+2. **Portfolio Paradox** – You need experience to get a job, but need a job to gain experience  
+3. **Isolated Learning** – Self-teaching is lonely, demotivating, and lacks feedback
+
+**HumbleBeeAI Academy was created to eliminate these barriers.**
+
+:::tip 💡 Why This Curriculum is Open Source
+We believe that **access to world-class AI education shouldn't be limited by geography 
+or financial resources**. This curriculum represents thousands of hours of refinement 
+from training 500+ students who went from "What's a terminal?" to deploying production 
+ML systems.
+
+Whether you join our paid Academy programs or learn independently, we want you to succeed. 
+This is our contribution to building the next generation of AI engineers.
+:::
 
 ---
 
-## Phase 3: Specialization Tracks
-**Goal**: Expert-level domain knowledge. Choose your path.
+## 🎯 What Makes This Path Different
 
-| Track | Focus | Capstone Project | Link |
-| :--- | :--- | :--- | :--- |
-| **Foundation Overview** | **Specialization & Demand-Driven Skills** | **Growth-3 Track** | [**Read Overview**](./04-foundation.mdx) |
-| **Computer Vision** | CNNs, Semantic Segmentation | **Coming Soon** | [View Track](./softlanding/tracks/01-computer-vision.mdx) |
-| **Data Science** | Statistics, Business Intelligence | **Coming Soon** | [View Track](./softlanding/tracks/02-data-science.mdx) |
-| **NLP** | Transformers, LLMs | **Coming Soon** | [View Track](./softlanding/tracks/03-nlp.mdx) |
-| **Software Eng** | Distributed Systems, Scalability | **Coming Soon** | [View Track](./softlanding/tracks/04-software-engineering.mdx) |
+<div className="comparison-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', margin: '2rem 0' }}>
+
+<div className="card" style={{ padding: '1.5rem', borderLeft: '4px solid var(--ifm-color-emphasis-400)' }}>
+
+### Traditional Universities
+- 📚 **4 years** of theory-heavy courses
+- 💰 **$100K+** in tuition debt
+- 🎓 Degree with weak hiring signal
+- ⏰ Outdated curriculum (2-3 years behind industry)
+</div>
+
+<div className="card" style={{ padding: '1.5rem', borderLeft: '4px solid var(--ifm-color-emphasis-400)' }}>
+
+### Online Bootcamps  
+- ⚡ **3-6 months** crash course
+- 💸 **$15-20K** upfront payment
+- 📜 Certificate with declining value
+- 🎯 Simplified toy problems, not real engineering
+</div>
+
+<div className="card" style={{ padding: '1.5rem', borderLeft: '4px solid var(--ifm-color-primary)', backgroundColor: 'var(--ifm-background-surface-color)' }}>
+
+### HumbleBeeAI Open Curriculum
+- 🚀 **Self-paced**, but structured progression
+- 💵 **Free** curriculum (paid mentorship optional)
+- 🏗️ **Portfolio** of production-grade projects
+- 🔄 **Live curriculum** updated with industry standards
+- 🤝 **Community-driven** learning (Discord, GitHub)
+</div>
+
+</div>
+
+---
+
+## 🗺️ Your Learning Path: Three Phases
+
+This curriculum is designed as a progressive journey, where each phase builds 
+upon the previous one. **You cannot skip phases** – each one develops critical 
+foundations for the next.
+
+<Tabs>
+<TabItem value="school" label="Phase 1: School Program" default>
+
+### Phase 1: School Program
+**Duration:** 2-4 months (self-paced)  
+**Goal:** Build the absolute engineering fundamentals
+
+**You'll Master:**
+- ✅ Command line fluency (the terminal is your workspace)
+- ✅ Git & version control (how real teams collaborate)  
+- ✅ Mathematical foundations (calculus, linear algebra, probability)
+- ✅ Python data engineering (pandas, data cleaning, visualization)
+- ✅ Algorithmic thinking (LeetCode-style problem solving)
+
+**Who This is For:**
+- Complete beginners to programming
+- Self-taught developers with gaps in fundamentals
+- CS students wanting to transition into AI
+
+**Outcome:** You'll think like an engineer and have the toolkit to start building.
+
+[Start School Program →](/docs/school/intro)
+
+</TabItem>
+
+<TabItem value="soft-landing" label="Phase 2: Soft Landing">
+
+### Phase 2: Soft Landing Program  
+**Duration:** 3-6 months (self-paced)  
+**Goal:** Master AI/ML fundamentals and systems engineering
+
+**You'll Master:**
+- 🧮 Classical ML models (regression, SVMs, decision trees)
+- 🧠 Deep learning & neural networks (PyTorch, CNNs, RNNs)
+- 🏗️ Systems engineering (Docker, FastAPI, cloud deployment)
+- 📊 Model evaluation & experimentation (MLOps basics)
+- 💻 Clean code & engineering practices
+
+**Who This is For:**
+- School Program graduates  
+- Experienced developers pivoting to AI
+- Bootcamp grads who want deeper understanding
+
+**Outcome:** You can build, train, and deploy ML models in production environments.
+
+[Start Soft Landing →](/docs/softlanding/intro)
+
+</TabItem>
+
+<TabItem value="specialization" label="Phase 3: Specializations">
+
+### Phase 3: Specialization Tracks
+**Duration:** 2-4 months per track  
+**Goal:** Expert-level domain knowledge
+
+**Choose Your Path:**
+- 👁️ **Computer Vision** – Image classification, object detection, semantic segmentation
+- 📊 **Data Science** – Statistical modeling, business intelligence, experimentation  
+- 💬 **NLP & LLMs** – Transformers, fine-tuning, RAG systems, agents
+- ⚙️ **Software Engineering** – Distributed systems, scalability, production architecture
+
+**Who This is For:**
+- Soft Landing graduates
+- Experienced engineers specializing in AI domains
+
+**Outcome:** You have a portfolio of domain-specific projects that prove expertise.
+
+[Explore Specializations →](/docs/softlanding/tracks/overview)
+
+</TabItem>
+</Tabs>
+
+---
+
+## 🏗️ The HumbleBeeAI Learning Philosophy
+
+### 1. **Learning by Doing, Not Just Watching**
+
+<details>
+<summary>🤔 <strong>Why most online courses fail</strong> (Click to expand)</summary>
+
+**The Tutorial Hell Problem:**  
+Many learners spend months watching videos, taking notes, and following tutorials. 
+Then when they try to build something themselves... nothing works. Sound familiar?
+
+**Why this happens:**  
+Passive learning creates the *illusion of understanding*. You nod along with the 
+tutorial, but haven't actually developed the problem-solving muscles needed for 
+real engineering.
+
+**Our approach:**  
+Every module includes:
+- ✅ Clear learning objectives
+- ✅ Hands-on exercises and challenges
+- ✅ Real-world project applications
+- ✅ Checkpoints to verify understanding
+- ✅ Common pitfalls and debugging tips
+
+**You'll spend 70% doing, 30% learning theory** – because that's how skills stick.
+
+</details>
+
+### 2. **Longitudinal Growth, Not Sprint Learning**
+
+AI engineering isn't learned in 12 weeks. Real expertise requires:
+- 📈 **Compounding knowledge** – Concepts build on each other over months
+- 🔄 **Spaced repetition** – You'll revisit core concepts in new contexts  
+- 🧗 **Progressive difficulty** – Each phase challenges you just beyond your comfort zone
+- 🎯 **Portfolio development** – Projects grow in complexity as you advance
+
+### 3. **Community-Driven, Not Isolated**
+
+:::note 💬 Join the Learning Community
+
+**Free Resources:**
+- 📱 [Discord Community](https://discord.gg/humblebeeai) – Get unstuck, share progress, find study partners
+- 💻 [GitHub Discussions](https://github.com/humblebeeai/curriculum/discussions) – Ask questions, contribute improvements
+- 📝 [Weekly Office Hours](https://humblebee.ai/office-hours) – Live Q&A with experienced engineers
+
+**Premium Options:**
+- 🎓 **HumbleBeeAI Academy** – Structured mentorship (1:4 mentor ratio), daily standups, professional feedback
+- 💼 **Career Track** – Portfolio reviews, mock interviews, job placement support
+
+Whether you learn for free or with mentorship, **you're not alone**.
+
+:::
+
+---
+
+## 📊 What Success Looks Like
+
+### After School Program (Phase 1):
+```python
+# You'll be comfortable writing code like this:
+
+def analyze_dataset(file_path):
+    """Load, clean, and analyze a CSV dataset."""
+    import pandas as pd
+    
+    df = pd.read_csv(file_path)
+    df = df.dropna()  # Handle missing values
+    df['category'] = df['category'].str.lower()  # Clean text
+    
+    summary = df.groupby('category')['value'].agg(['mean', 'std', 'count'])
+    return summary
+
+# And debugging it confidently when it breaks
+```
+
+### After Soft Landing (Phase 2):
+```python
+# You'll build production ML systems:
+
+import torch
+import torch.nn as nn
+from fastapi import FastAPI
+
+class ImageClassifier(nn.Module):
+    def __init__(self, num_classes=10):
+        super().__init__()
+        self.conv_layers = nn.Sequential(
+            nn.Conv2d(3, 64, kernel_size=3, padding=1),
+            nn.ReLU(),
+            nn.MaxPool2d(2),
+            # ... more layers
+        )
+        self.fc = nn.Linear(64 * 16 * 16, num_classes)
+    
+    def forward(self, x):
+        x = self.conv_layers(x)
+        x = x.view(x.size(0), -1)
+        return self.fc(x)
+```
+
+---
+
+## 🚀 Ready to Start Your Journey?
+
+<div className="cta-section" style={{ textAlign: 'center', padding: '2rem', backgroundColor: 'var(--ifm-background-surface-color)', borderRadius: '12px', marginTop: '2rem' }}>
+
+### Choose Your Starting Point:
+
+**🆕 Complete Beginner?**  
+[Phase 1: School Program →](/docs/school/intro)  
+*No prior programming experience needed*
+
+<div style={{ margin: '1rem 0' }} />
+
+**💻 Have Programming Experience?**  
+[Phase 2: Soft Landing →](/docs/softlanding/intro)  
+*Requires passing a placement test*
+
+<div style={{ margin: '1rem 0' }} />
+
+**🎓 Already Know ML Basics?**  
+[Phase 3: Specializations →](/docs/softlanding/tracks/overview)  
+*Requires demonstrating Phase 2 competency*
+
+</div>

@@ -5,13 +5,35 @@ title: Fullstack Toolkit
 description: Docker, FastAPI, and Frontend Basics
 ---
 
+import ProgressBar from '@site/src/components/ProgressBar';
+import TimeEstimate from '@site/src/components/TimeEstimate';
+import ChecklistItem from '@site/src/components/ChecklistItem';
+import ResourceCard from '@site/src/components/ResourceCard';
+
 # Fullstack & Operations Toolkit
+
+<ProgressBar 
+  phase="Soft Landing" 
+  module="4 of 4" 
+  estimatedHours={0}
+  completedBy={0}
+/>
 
 ![Fullstack Dev Environment](/img/fullstack.png)
 
 ## Goal
 
 Bridge the gap between AI development and production. Learn to wrap models in APIs, create web interfaces, and deploy containerized applications.
+
+<TimeEstimate 
+  minHours={0} 
+  maxHours={0} 
+  breakdownBy={{
+    'Web Stack': 0,
+    'FastAPI': 0,
+    'Docker/DevOps': 0
+  }}
+/>
 
 ## 1. The Web Stack
 
@@ -108,6 +130,19 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 - **Connection Issues**: Check security groups and port mappings.
 
 ---
+
+---
+
+## 📝 Module Assessment Rubric
+
+*(To be filled by the Evaluation Team)*
+
+| Criteria | Needs Improvement | Meets Expectations | Exceeds Expectations |
+| :--- | :--- | :--- | :--- |
+| **Topic 1** | ... | ... | ... |
+| **Topic 2** | ... | ... | ... |
+
+<!-- rubric_section_end -->
 
 ## Support & Next Steps
 
