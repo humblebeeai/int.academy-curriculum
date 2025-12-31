@@ -1,106 +1,95 @@
 # HumblebeeAI Academy Curriculum 🐝
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Docusaurus](https://img.shields.io/badge/build-docusaurus-green.svg)](https://docusaurus.io)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+[![License: MIT](https://img.shields.io/badge/code%20license-MIT-blue.svg)](LICENSE)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/humblebeeai/int.academy-curriculum/actions)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-> **"Transforming students into technical junior engineers."**
+> **"Democratizing AI education to create the top 1% of engineering talent."**
 
 Welcome to the open-source curriculum of **HumblebeeAI Academy**. This repository hosts the comprehensive learning path designed to take students from absolute beginners to specialized AI and Software Engineers.
 
-## 🧠 Pedagogy
+## 🌟 Mission
 
-The curriculum is structured into two distinct phases, designed to build a strong foundation before specializing:
+We believe that elite AI engineering education should be accessible to everyone, not just those who can afford expensive bootcamps or university degrees. This curriculum is designed to be:
 
-1.  **School Program**: A rigorous foundation in computational thinking, mathematics, and core engineering principles.
-2.  **Soft Landing Program**: Advanced specialization tracks where students apply their knowledge to build production-ready systems in specific domains.
+* **Rigorous:** We don't skip the math or the hard stuff.
+* **Project-Based:** You learn by building real systems.
+* **Mentor-Led:** Written with the voice of a senior engineer guiding you.
 
-## 📚 Curriculum
+## 📚 Curriculum Structure
+
+The journey consists of two main phases:
 
 ### Phase 1: School Program (Foundations)
 
-| Module | Topic | Description | Link |
-| :---: | :--- | :--- | :--- |
-| **01** | **Computational Thinking** | Problem-solving frameworks, algorithms, and logic. | [Start Module](./docs/school/02-module-1-computational-thinking.mdx) |
-| **02** | **Calculus & Algebra** | The mathematical language of Machine Learning. | [Start Module](./docs/school/03-module-2-calculus-algebra.mdx) |
-| **03** | **Probability & Statistics** | Understanding data, uncertainty, and statistical inference. | [Start Module](./docs/school/04-module-3-probability-statistics.mdx) |
-| **04** | **Data Engineering** | Pipelines, databases, and managing large-scale data. | [Start Module](./docs/school/05-module-4-data-engineering.mdx) |
-| **05** | **IoT Activation** | Interfacing with the physical world through sensors and embedded systems. | [Start Module](./docs/school/06-module-5-iot-activation.mdx) |
+Builds the unshakeable foundation in math, CS, and data.
 
-### Phase 2: Soft Landing Program (Specialization)
+* **Module 1:** Computational Thinking
+* **Module 2:** Calculus & Algebra
+* **Module 3:** Probability & Statistics
+* **Module 4:** Data Engineering
+* **Module 5:** IoT Activation
 
-After completing the foundations, students proceed to **Core Systems** followed by their chosen **Specialization Track**.
+### Phase 2: Soft Landing (Specialization)
 
-#### Core Systems
-| Module | Topic | key Concepts | Link |
-| :---: | :--- | :--- | :--- |
-| **I** | **Math & ML Foundations** | Advanced Linear Algebra, Optimization, Basic ML Models | [View](./docs/softlanding/core-systems/01-math-ml.mdx) |
-| **II** | **Advanced AI** | Deep Learning, Neural Networks, Model Architecture | [View](./docs/softlanding/core-systems/02-advanced-ai.mdx) |
-| **III** | **Networking** | Protocols, Distributed Systems, Cloud Infrastructure | [View](./docs/softlanding/core-systems/03-networking.mdx) |
-| **IV** | **Fullstack Ops** | Deployment, CI/CD, Containerization | [View](./docs/softlanding/core-systems/04-fullstack-ops.mdx) |
+Applied engineering in specific domains.
 
-#### Specialization Tracks
-| Track | Focus Area | Description | Link |
-| :---: | :--- | :--- | :--- |
-| 👁️ | **Computer Vision** | Image processing, CNNs, Object Detection, Segmentation. | [Start Track](./docs/softlanding/tracks/01-computer-vision.mdx) |
-| 📊 | **Data Science** | Analytics, Visualization, Predictive Modeling, Big Data. | [Start Track](./docs/softlanding/tracks/02-data-science.mdx) |
-| 🤖 | **NLP** | Text processing, Transformers, LLMs, Chatbots. | [Start Track](./docs/softlanding/tracks/03-nlp.mdx) |
-| 💻 | **Software Engineering** | System Design, Backend/Frontend Architecture, Scalability. | [Start Track](./docs/softlanding/tracks/04-software-engineering.mdx) |
-
-## 🛠️ Technology Stack
-
-This documentation site is built with modern open-source tools:
--   **[Docusaurus 3](https://docusaurus.io/)**: Static site generator.
--   **[React](https://reactjs.org/)**: Components and interactivity.
--   **[MDX](https://mdxjs.com/)**: Markdown with JSX components.
--   **[TypeScript](https://www.typescriptlang.org/)**: Type safety.
+* 👁️ **Computer Vision**
+* 📊 **Data Science**
+* 🤖 **Natural Language Processing (NLP)**
+* 💻 **Software Engineering**
 
 ## 🚀 Getting Started
 
-To run this curriculum website locally for development or contribution:
+To run this curriculum website locally:
 
 ### Prerequisites
--   [Node.js](https://nodejs.org/en/download/) (version 18.0 or above)
--   [Git](https://git-scm.com/)
+
+* Node.js (v18+)
 
 ### Installation
 
-1.  **Clone the repository**
+1. **Clone the repo:**
+
     ```bash
     git clone https://github.com/humblebeeai/int.academy-curriculum.git
     cd int.academy-curriculum
     ```
 
-2.  **Install dependencies**
+2. **Install dependencies:**
+
     ```bash
     npm install
-    # or
-    yarn install
     ```
 
-3.  **Start the local server**
+3. **Start the dev server:**
+
     ```bash
     npm start
     ```
-    The site will open at `http://localhost:3000`.
 
-## 🤝 Contributing
+    Open `http://localhost:3000` in your browser.
 
-We welcome contributions from the community! Whether it's fixing a typo, adding a new lesson, or improving existing content.
+## 🤝 How to Contribute
 
-1.  Fork the Project
-2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4.  Push to the Branch (`git push origin feature/AmazingFeature`)
-5.  Open a Pull Request
+We are an Open Educational Resource (OER) and thrive on community contributions!
 
-## 📄 License
+* See [**CONTRIBUTING.md**](CONTRIBUTING.md) for guidelines on how to submit PRs.
+* See [**CODE_OF_CONDUCT.md**](CODE_OF_CONDUCT.md) for our community standards.
+* See [**ARCHITECTURE.md**](ARCHITECTURE.md) for technical details on the codebase.
 
-Distributed under the **Apache License, Version 2.0**. See `LICENSE` for more information.
+## 📄 Licensing
+
+This project follows a dual-licensing model:
+
+* **Educational Content** is licensed under **CC-BY-SA 4.0**.
+* **Source Code** is licensed under **MIT**.
+
+See [**LICENSE**](LICENSE) for full details.
 
 ---
-
 <p align="center">
   <strong>Powered by HumblebeeAI Academy</strong><br/>
-  Built with ❤️ by <a href="https://humblebee.ai">HumblebeeAI</a>
+  Built with ❤️ by the Open Source Community
 </p>

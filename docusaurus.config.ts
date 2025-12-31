@@ -171,7 +171,18 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} HumblebeeAI Academy. Open source curriculum for aspiring engineers.<br/>Powered by HumblebeeAI Academy`,
+      copyright: `
+        <div class="oer-license">
+          <p>
+            📚 <strong>Open Educational Resource</strong><br/>
+            Content licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>. 
+            Code licensed under <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">MIT</a>.
+          </p>
+          <p>
+            © ${new Date().getFullYear()} HumblebeeAI Academy. Built with ❤️ by the community.
+          </p>
+        </div>
+      `,
     },
     prism: {
       theme: prismThemes.github,
