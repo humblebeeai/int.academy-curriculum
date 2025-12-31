@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { ExternalLink, Video, FileText, BookOpen, Clock, BarChart, Link } from 'lucide-react';
+import React from 'react';
+import { ExternalLink, Video, FileText, BookOpen, Clock, Link } from 'lucide-react';
 import clsx from 'clsx';
-import ChecklistItem from './ChecklistItem';
 import styles from './ResourceCard.module.css';
 
 export interface ResourceCardProps {
@@ -11,9 +10,6 @@ export interface ResourceCardProps {
     duration?: string;
     description?: string;
     difficulty?: 'beginner' | 'intermediate' | 'advanced';
-    // Optional persistence props
-    id?: string;
-    moduleId?: string;
 }
 
 const TypeIcons = {
@@ -30,8 +26,6 @@ export default function ResourceCard({
     duration,
     description,
     difficulty,
-    id,
-    moduleId,
 }: ResourceCardProps) {
     const Icon = TypeIcons[type] || Link;
 
@@ -76,16 +70,6 @@ export default function ResourceCard({
                 <div className="resource-card-inner">
                     {CardContent}
                 </div>
-
-                {/* If ID and ModuleID are provided, show a checkbox overlay/integration */}
-                {id && moduleId && (
-                    <div className={styles.checklistArea} onClick={(e) => e.stopPropagation()}>
-                        <div className={styles.checklistLabel}>Mark Completed</div>
-                        <ChecklistItem id={id} moduleId={moduleId}>
-                            I have finished this resource
-                        </ChecklistItem>
-                    </div>
-                )}
             </div>
         </a>
     );
