@@ -24,7 +24,8 @@
 
 .active {
     background: var(--ifm-color-primary);
-    color: white;
+    color: var(--ifm-background-color);
+    font-weight: 800;
 }
 
 .content pre {

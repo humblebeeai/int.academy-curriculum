@@ -9,54 +9,106 @@
 /* =========================================
    LIGHT MODE (Default)
    ========================================= */
+/* =========================================
+   LIGHT MODE (Default)
+   ========================================= */
 :root {
+  /* Brand Constants */
+  --humblebee-brand-hue: 240;
+  /* Neutral Blue-Black base if needed, but we go monochrome */
+  --humblebee-link-color: #000000;
+
   /* Typography */
-  --ifm-font-family-base: 'Inter', sans-serif;
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
   --ifm-heading-font-family: 'Space Grotesk', sans-serif;
 
-  /* Simple Color Palette - NO YELLOW */
-  --ifm-color-primary: #1a1a1a;
-  /* Near Black - Primary Actions */
-  --ifm-color-primary-dark: #000000;
-  --ifm-color-primary-darker: #000000;
-  --ifm-color-primary-darkest: #000000;
-  --ifm-color-primary-light: #333333;
-  --ifm-color-primary-lighter: #555555;
-  --ifm-color-primary-lightest: #777777;
-
-  /* Card Colors */
-  --ifm-card-background-color: #ffffff;
-  --ifm-card-border-radius: 12px;
-
-  /* Card Colors */
-  --ifm-card-background-color: #ffffff;
-  --ifm-card-border-radius: 12px;
+  /* Colors - High Contrast Monochrome */
+  --ifm-color-primary: hsl(0, 0%, 0%);
+  --ifm-color-primary-dark: hsl(0, 0%, 10%);
+  --ifm-color-primary-darker: hsl(0, 0%, 15%);
+  --ifm-color-primary-darkest: hsl(0, 0%, 20%);
+  --ifm-color-primary-light: hsl(0, 0%, 30%);
+  --ifm-color-primary-lighter: hsl(0, 0%, 40%);
+  --ifm-color-primary-lightest: hsl(0, 0%, 50%);
 
   /* Backgrounds */
-  --ifm-background-color: #ffffff;
-  --ifm-background-surface-color: #f9f9f9;
+  --ifm-background-color: hsl(0, 0%, 100%);
+  --ifm-background-surface-color: hsl(0, 0%, 98%);
 
+  /* UI Elements */
+  --ifm-card-background-color: hsl(0, 0%, 100%);
+  --ifm-card-border-radius: 12px;
+  --ifm-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+
+  /* Text elements */
+  --ifm-font-color-base: hsl(0, 0%, 10%);
+  --ifm-font-color-secondary: hsl(0, 0%, 35%);
+
+  /* 
+     SEMANTIC TOKENS (WCAG Compliant)
+     Note: Backgrounds are light, text is dark for high contrast.
+  */
+
+  /* Emphasis Scale (Gray) */
+  --ifm-color-emphasis-0: hsl(0, 0%, 100%);
+  --ifm-color-emphasis-100: hsl(0, 0%, 96%);
+  --ifm-color-emphasis-200: hsl(0, 0%, 90%);
+  --ifm-color-emphasis-300: hsl(0, 0%, 80%);
+  --ifm-color-emphasis-400: hsl(0, 0%, 70%);
+  --ifm-color-emphasis-500: hsl(0, 0%, 60%);
+  --ifm-color-emphasis-600: hsl(0, 0%, 45%);
+  --ifm-color-emphasis-700: hsl(0, 0%, 30%);
+  --ifm-color-emphasis-800: hsl(0, 0%, 20%);
+  --ifm-color-emphasis-900: hsl(0, 0%, 10%);
+  --ifm-color-emphasis-1000: hsl(0, 0%, 0%);
+
+  /* Status Colors (Light Mode) */
+  /* Success: Green */
+  --ifm-color-success-light: hsl(142, 76%, 95%);
+  /* Background */
+  --ifm-color-success: hsl(142, 70%, 40%);
+  /* Border/Icon */
+  --ifm-color-success-dark: hsl(142, 76%, 20%);
   /* Text */
-  --ifm-font-color-base: #1a1a1a;
-  --ifm-font-color-secondary: #555555;
 
-  /* Navbar - Clean White */
-  --ifm-navbar-background-color: #ffffff;
-  --ifm-navbar-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  --ifm-navbar-link-color: #1a1a1a;
-  --ifm-navbar-link-hover-color: #555555;
+  /* Warning: Amber/Orange (Adjusted for Contrast) */
+  --ifm-color-warning-light: hsl(45, 90%, 96%);
+  /* Background */
+  --ifm-color-warning: hsl(35, 90%, 45%);
+  /* Border/Icon - Darker for visibility */
+  --ifm-color-warning-dark: hsl(30, 90%, 25%);
+  /* Text - Very dark orange */
 
-  /* Footer - Dark */
-  --ifm-footer-background-color: #1a1a1a;
-  --ifm-footer-color: #ffffff;
-  --ifm-footer-link-color: #cccccc;
+  /* Danger: Red */
+  --ifm-color-danger-light: hsl(0, 85%, 97%);
+  /* Background */
+  --ifm-color-danger: hsl(0, 75%, 55%);
+  /* Border/Icon */
+  --ifm-color-danger-dark: hsl(0, 75%, 35%);
+  /* Text */
 
-  /* Links */
-  --ifm-link-color: #1a1a1a;
-  --ifm-link-hover-color: #555555;
+  /* Info: Blue */
+  --ifm-color-info-light: hsl(210, 90%, 97%);
+  /* Background */
+  --ifm-color-info: hsl(210, 80%, 50%);
+  /* Border/Icon */
+  --ifm-color-info-dark: hsl(210, 80%, 30%);
+  /* Text */
 
-  /* Code */
-  --ifm-code-font-size: 95%;
+  /* Navigation */
+  --ifm-navbar-background-color: rgba(255, 255, 255, 0.9);
+  --ifm-navbar-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05);
+  /* Subtle border look */
+  --ifm-navbar-link-color: var(--ifm-font-color-base);
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary);
+
+  /* Footer */
+  --ifm-footer-background-color: hsl(0, 0%, 5%);
+  --ifm-footer-color: hsl(0, 0%, 100%);
+  --ifm-footer-link-color: hsl(0, 0%, 70%);
+
+  /* Global */
+  --ifm-code-font-size: 90%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.05);
 }
 
@@ -64,40 +116,87 @@
    DARK MODE
    ========================================= */
 [data-theme='dark'] {
-  /* Simple Dark Palette - NO YELLOW */
-  --ifm-color-primary: #ffffff;
-  /* White - Primary in Dark Mode */
-  --ifm-color-primary-dark: #e0e0e0;
-  --ifm-color-primary-darker: #cccccc;
-  --ifm-color-primary-darkest: #aaaaaa;
-  --ifm-color-primary-light: #ffffff;
-  --ifm-color-primary-lighter: #ffffff;
-  --ifm-color-primary-lightest: #ffffff;
-
-  --ifm-card-background-color: #242526;
+  /* Colors - Inverted Monochrome */
+  --ifm-color-primary: hsl(0, 0%, 100%);
+  --ifm-color-primary-dark: hsl(0, 0%, 90%);
+  --ifm-color-primary-darker: hsl(0, 0%, 85%);
+  --ifm-color-primary-darkest: hsl(0, 0%, 80%);
+  --ifm-color-primary-light: hsl(0, 0%, 70%);
+  --ifm-color-primary-lighter: hsl(0, 0%, 60%);
+  --ifm-color-primary-lightest: hsl(0, 0%, 50%);
 
   /* Backgrounds */
-  --ifm-background-color: #1a1a1a;
-  --ifm-background-surface-color: #2a2a2a;
+  --ifm-background-color: hsl(0, 0%, 7%);
+  --ifm-background-surface-color: hsl(0, 0%, 10%);
+
+  /* UI Elements */
+  --ifm-card-background-color: hsl(0, 0%, 12%);
+  --ifm-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
 
   /* Text */
-  --ifm-font-color-base: #f0f0f0;
-  --ifm-font-color-secondary: #aaaaaa;
+  --ifm-font-color-base: hsl(0, 0%, 95%);
+  --ifm-font-color-secondary: hsl(0, 0%, 70%);
 
-  /* Navbar */
-  --ifm-navbar-background-color: #1a1a1a;
-  --ifm-navbar-link-color: #f0f0f0;
-  --ifm-navbar-link-hover-color: #ffffff;
+  /* 
+     DARK MODE SEMANTIC TOKENS
+     Inverted logic: Backgrounds are dark, text is light(er).
+  */
+
+  /* Emphasis Scale (Inverted for Dark Mode) */
+  --ifm-color-emphasis-0: hsl(0, 0%, 10%);
+  --ifm-color-emphasis-100: hsl(0, 0%, 15%);
+  --ifm-color-emphasis-200: hsl(0, 0%, 20%);
+  --ifm-color-emphasis-300: hsl(0, 0%, 30%);
+  --ifm-color-emphasis-400: hsl(0, 0%, 40%);
+  --ifm-color-emphasis-500: hsl(0, 0%, 50%);
+  --ifm-color-emphasis-600: hsl(0, 0%, 60%);
+  --ifm-color-emphasis-700: hsl(0, 0%, 80%);
+  --ifm-color-emphasis-800: hsl(0, 0%, 90%);
+  --ifm-color-emphasis-900: hsl(0, 0%, 95%);
+  --ifm-color-emphasis-1000: hsl(0, 0%, 100%);
+
+  /* Status Colors (Dark Mode) - Muted backgrounds, bright text */
+  /* Success */
+  --ifm-color-success-light: hsl(142, 60%, 15%);
+  /* Background */
+  --ifm-color-success: hsl(142, 60%, 40%);
+  /* Border/Icon */
+  --ifm-color-success-dark: hsl(142, 60%, 85%);
+  /* Text */
+
+  /* Warning */
+  --ifm-color-warning-light: hsl(35, 60%, 15%);
+  /* Background */
+  --ifm-color-warning: hsl(35, 70%, 40%);
+  /* Border */
+  --ifm-color-warning-dark: hsl(35, 80%, 85%);
+  /* Text */
+
+  /* Danger */
+  --ifm-color-danger-light: hsl(0, 60%, 15%);
+  /* Background */
+  --ifm-color-danger: hsl(0, 70%, 50%);
+  /* Border */
+  --ifm-color-danger-dark: hsl(0, 80%, 90%);
+  /* Text */
+
+  /* Info */
+  --ifm-color-info-light: hsl(210, 60%, 15%);
+  /* Background */
+  --ifm-color-info: hsl(210, 70%, 50%);
+  /* Border */
+  --ifm-color-info-dark: hsl(210, 80%, 90%);
+  /* Text */
+
+  /* Navigation */
+  --ifm-navbar-background-color: rgba(18, 18, 18, 0.9);
+  --ifm-navbar-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05);
 
   /* Footer */
-  --ifm-footer-background-color: #0d0d0d;
+  --ifm-footer-background-color: hsl(0, 0%, 4%);
 
-  /* Links */
-  --ifm-link-color: #ffffff;
-  --ifm-link-hover-color: #cccccc;
-
-  /* Code */
-  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+  /* Global */
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.05);
 }
 
 /* =========================================
@@ -109,30 +208,50 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--ifm-heading-font-family);
   font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .hero__title {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 800;
   color: var(--ifm-font-color-base);
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
 }
 
 .hero__subtitle {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--ifm-font-family-base);
   font-weight: 400;
+  font-size: 1.25rem;
   color: var(--ifm-font-color-secondary);
+  line-height: 1.6;
+}
+
+.markdown h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: var(--ifm-color-primary);
+}
+
+.markdown h2 {
+  font-size: 1.8rem;
+  margin-top: 3rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
 }
 
 /* =========================================
-   BUTTONS - Simple, High Contrast
+   BUTTONS
    ========================================= */
 .button--secondary {
-  border: 2px solid var(--ifm-color-primary);
+  border: 1px solid var(--ifm-color-primary);
   color: var(--ifm-color-primary);
   background: transparent;
   transition: all 0.2s ease;
+  font-weight: 500;
 }
 
 .button--secondary:hover {
@@ -140,204 +259,62 @@ h6 {
   color: var(--ifm-background-color);
   border-color: var(--ifm-color-primary);
   text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.button--primary {
+  background: var(--ifm-color-primary);
+  color: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+.button--primary:hover {
+  background: var(--ifm-color-primary-light);
+  border-color: var(--ifm-color-primary-light);
+  transform: translateY(-1px);
 }
 
 /* =========================================
    NAVIGATION & MENUS
    ========================================= */
-
-/* Enhanced Navbar Styling */
 .navbar {
   background: var(--ifm-navbar-background-color);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  padding: 0.75rem 4rem;
-}
-
-@media screen and (max-width: 996px) {
-  .navbar {
-    padding: 0.5rem 1.5rem;
-  }
-}
-
-.navbar__brand {
-  transition: transform 0.2s ease;
-}
-
-.navbar__brand:hover {
-  transform: scale(1.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--ifm-navbar-shadow);
+  padding: 0.75rem 2rem;
 }
 
 .navbar__title {
   font-weight: 700;
-  font-size: 1.25rem;
-  letter-spacing: -0.02em;
-}
-
-.navbar__item {
-  font-weight: 500;
-  margin: 0 0.25rem;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
 }
 
 .navbar__link {
-  font-size: 0.95rem;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: all 0.2s ease;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
 }
 
-.navbar__link:hover {
+.navbar__link:hover,
+.navbar__link--active {
   background: var(--ifm-background-surface-color);
   color: var(--ifm-color-primary);
 }
 
-.navbar__link--active {
-  background: var(--ifm-background-surface-color);
-  color: var(--ifm-color-primary) !important;
-  font-weight: 600;
-}
-
-/* Navbar Link Icons using SVG */
-.navbar-curriculum-link::before,
-.navbar-school-link::before,
-.navbar-softlanding-link::before,
-.header-github-link::before {
-  content: '';
-  width: 18px;
-  height: 18px;
-  display: inline-block;
-  margin-right: 0.5rem;
-  vertical-align: middle;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-/* BookOpen Icon for Curriculum */
-.navbar-curriculum-link::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231a1a1a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z'%3E%3C/path%3E%3Cpath d='M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z'%3E%3C/path%3E%3C/svg%3E");
-}
-
-[data-theme='dark'] .navbar-curriculum-link::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z'%3E%3C/path%3E%3Cpath d='M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z'%3E%3C/path%3E%3C/svg%3E");
-}
-
-/* GraduationCap Icon for School */
-.navbar-school-link::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231a1a1a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 10v6M2 10l10-5 10 5-10 5z'%3E%3C/path%3E%3Cpath d='M6 12v5c3 3 9 3 12 0v-5'%3E%3C/path%3E%3C/svg%3E");
-}
-
-[data-theme='dark'] .navbar-school-link::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 10v6M2 10l10-5 10 5-10 5z'%3E%3C/path%3E%3Cpath d='M6 12v5c3 3 9 3 12 0v-5'%3E%3C/path%3E%3C/svg%3E");
-}
-
-/* Rocket Icon for Soft Landing */
-.navbar-softlanding-link::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231a1a1a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z'%3E%3C/path%3E%3Cpath d='m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z'%3E%3C/path%3E%3Cpath d='M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0'%3E%3C/path%3E%3Cpath d='M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5'%3E%3C/path%3E%3C/svg%3E");
-}
-
-[data-theme='dark'] .navbar-softlanding-link::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z'%3E%3C/path%3E%3Cpath d='m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z'%3E%3C/path%3E%3Cpath d='M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0'%3E%3C/path%3E%3Cpath d='M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5'%3E%3C/path%3E%3C/svg%3E");
-}
-
-/* GitHub Link with Icon */
-.header-github-link::before {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%231a1a1a' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E");
-}
-
-[data-theme='dark'] .header-github-link::before {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23ffffff' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E");
-}
-
-/* Mobile Menu Improvements */
+/* Sidebar */
 .navbar-sidebar {
   background: var(--ifm-background-color);
-  backdrop-filter: blur(10px);
-}
-
-.navbar-sidebar__brand {
-  padding: 1rem;
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
-}
-
-.navbar-sidebar__item {
-  padding: 0.5rem 1rem;
 }
 
 .menu__link--active {
-  font-weight: 600;
   background-color: var(--ifm-background-surface-color);
   border-left: 3px solid var(--ifm-color-primary);
-}
-
-.menu__link:hover {
-  background: var(--ifm-background-surface-color);
-}
-
-/* =========================================
-   CONTENT ELEMENTS
-   ========================================= */
-
-/* Links in content */
-.markdown a {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-}
-
-/* Handcrafted Admonitions */
-.alert {
-  border-left: 4px solid var(--ifm-color-primary);
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.alert--secondary {
-  --ifm-alert-background-color: var(--ifm-color-emphasis-100);
-  --ifm-alert-border-color: var(--ifm-color-emphasis-300);
-}
-
-/* Component Styles */
-.resource-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
-}
-
-.checklist-item input[type="checkbox"] {
-  width: 1.1em;
-  height: 1.1em;
-  border-radius: 4px;
-  border: 2px solid var(--ifm-color-emphasis-400);
-  cursor: pointer;
-}
-
-.checklist-item:hover input[type="checkbox"] {
-  border-color: var(--ifm-color-primary);
-}
-
-/* Pagination */
-.pagination-nav__link {
-  border: 1px solid var(--ifm-color-emphasis-300);
-  transition: border-color 0.2s;
-}
-
-.pagination-nav__link:hover {
-  border-color: var(--ifm-color-primary);
-}
-
-/* TOC */
-.table-of-contents__link--active {
+  color: var(--ifm-color-primary);
   font-weight: 600;
-}
-
-/* Focus States - Subtle but visible */
-*:focus-visible {
-  outline: 2px solid var(--ifm-color-primary);
-  outline-offset: 2px;
-}
-
-.hero {
-  background-color: var(--ifm-background-color);
 }
 
 /* =========================================
@@ -345,161 +322,65 @@ h6 {
    ========================================= */
 .footer {
   background: var(--ifm-footer-background-color);
-  padding: 3rem 4rem 2rem;
   border-top: 1px solid var(--ifm-color-emphasis-200);
-}
-
-@media screen and (max-width: 996px) {
-  .footer {
-    padding: 2rem 1.5rem 1.5rem;
-  }
+  padding: 4rem 2rem;
 }
 
 .footer__title {
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 1.25rem;
   color: var(--ifm-footer-color);
-}
-
-.footer__item {
-  margin-bottom: 0.75rem;
+  opacity: 0.4;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 .footer__link-item {
   color: var(--ifm-footer-link-color);
-  font-size: 0.95rem;
-  transition: all 0.2s ease;
-  opacity: 0.8;
+  transition: color 0.2s ease;
 }
 
 .footer__link-item:hover {
   color: var(--ifm-footer-color);
-  opacity: 1;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .footer__copyright {
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: center;
-  color: var(--ifm-footer-link-color);
-  font-size: 0.9rem;
-  opacity: 0.7;
-}
-
-[data-theme='light'] .footer__copyright {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 3rem;
+  opacity: 0.3;
+  font-size: 0.85rem;
 }
 
 /* =========================================
-   ADVANCED COMPONENTS (Part 6 & 7 Adapation)
+   UTILITIES & EXTRAS
    ========================================= */
 
-/* Custom heading styles */
-.markdown h1 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  /* Use Brand Color instead of Blue Gradient */
-  color: var(--ifm-color-primary);
-}
-
-.markdown h2 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 3px solid var(--ifm-color-emphasis-200);
-}
-
-/* Handwritten-style annotations */
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
-
+/* Annotation Style (Hand-drawn look) */
 .annotation {
   font-family: 'Caveat', cursive;
+  /* Ensure font is loaded if used */
   font-size: 1.4rem;
-  color: var(--ifm-color-emphasis-700);
-  border-left: 3px dashed var(--ifm-color-emphasis-400);
+  color: var(--ifm-font-color-secondary);
+  border-left: 2px dashed var(--ifm-color-emphasis-400);
   padding-left: 1rem;
   margin: 1.5rem 0;
-  font-style: italic;
+  opacity: 0.8;
 }
 
-/* Concept Map Styling */
-.concept-map {
-  background: var(--ifm-background-surface-color);
+/* Focus States */
+*:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+/* Pagination */
+.pagination-nav__link {
   border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin: 2rem 0;
-}
-
-.map-legend {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  justify-content: center;
-}
-
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.legend-item::before {
-  content: "";
-  display: block;
-  width: 12px;
-  height: 12px;
-  border-radius: 2px;
-}
-
-.legend-item.prerequisite::before {
-  background: #e3f2fd;
-  border: 1px solid #1976d2;
-}
-
-.legend-item.current::before {
-  background: #fff3e0;
-  border: 1px solid #f57c00;
-}
-
-.legend-item.advanced::before {
-  background: #fce4ec;
-  border: 1px solid #c2185b;
-}
-
-/* Code Comparison (Tabs override) */
-.tabs {
-  border-bottom: 2px solid var(--ifm-color-emphasis-200);
-}
-
-.tabs__item--active {
-  background-color: var(--ifm-background-surface-color) !important;
-  border-bottom: 2px solid var(--ifm-color-primary) !important;
-}
-
-/* Personal Note (Neutral Tone) */
-.personal-note {
-  background: var(--ifm-color-emphasis-100);
-  border-left: 4px solid var(--ifm-color-emphasis-600);
   border-radius: 8px;
-  padding: 1.5rem;
-  margin: 2rem 0;
 }
 
-.personal-note::before {
-  content: "📝 ";
-  font-size: 1.5rem;
-  display: block;
-  margin-bottom: 0.5rem;
+.pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-background-surface-color);
 }
 
 /* =========================================

@@ -21,28 +21,28 @@
 }
 
 .beginner {
-    background-color: #e6f4ea;
-    border-color: #bbf7d0;
+    background-color: var(--ifm-color-success-light);
+    border-color: var(--ifm-color-success);
 }
 
 .beginner .label {
-    color: #1e8e3e;
+    color: var(--ifm-color-success-dark);
 }
 
 .intermediate {
-    background-color: #fef7e0;
-    border-color: #fce8b2;
+    background-color: var(--ifm-color-warning-light);
+    border-color: var(--ifm-color-warning);
 }
 
 .intermediate .label {
-    color: #f9ab00;
+    color: var(--ifm-color-warning-dark);
 }
 
 .advanced {
-    background-color: #fce8e6;
-    border-color: #fad2cf;
+    background-color: var(--ifm-color-danger-light);
+    border-color: var(--ifm-color-danger);
 }
 
 .advanced .label {
-    color: #d93025;
+    color: var(--ifm-color-danger-dark);
 }
