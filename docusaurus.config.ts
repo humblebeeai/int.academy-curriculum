@@ -1,6 +1,7 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import remarkEmoji from './src/plugins/remark-emoji';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -40,7 +41,7 @@ const config: Config = {
         docs: {
           path: 'docs',
           sidebarPath: './sidebars.ts',
-          remarkPlugins: [require('./src/plugins/remark-emoji')],
+          remarkPlugins: [remarkEmoji],
           editUrl:
             'https://github.com/humblebeeai/int.academy-curriculum/edit/main/docs/',
         },
@@ -52,6 +53,12 @@ const config: Config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**', '/page/**', '/search', '/404'],
+          filename: 'sitemap.xml',
+        },
       } satisfies Preset.Options,
     ],
   ],
@@ -60,7 +67,8 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     metadata: [
-      { name: 'keywords', content: 'curriculum, coding, academy, humblebeeai, open-source, computer-science, engineering' },
+      { name: 'description', content: 'Open-source AI Engineering curriculum. Master Deep Learning, MLOps, Computer Vision, and NLP. From zero to production-grade AI engineer.' },
+      { name: 'keywords', content: 'AI curriculum, deep learning path, MLOps, computer vision course, NLP training, data science roadmap, HumblebeeAI, open source education' },
       { name: 'twitter:card', content: 'summary_large_image' },
     ],
     colorMode: {

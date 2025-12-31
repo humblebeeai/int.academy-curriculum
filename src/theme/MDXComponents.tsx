@@ -18,6 +18,7 @@ export default {
     h3: (props) => <AutoIcon as="h3" originalType="header" {...props} />,
 
     // Expose specific icons for manual use in MDX
+    AutoIcon, // Needed for remark-emoji plugin injections
     Icon: AutoIcon, // Generic usage <Icon>✅ Some text</Icon>
     CheckCircle2,
     XCircle,

@@ -1,8 +1,14 @@
 {
-  "name": "website",
-  "version": "0.0.0",
+  "name": "humblebeeai-academy-curriculum",
+  "version": "0.1.0",
   "private": true,
-  "license": "Apache-2.0",
+  "description": "Open Source AI Engineering Curriculum by HumblebeeAI Academy",
+  "author": "HumblebeeAI Academy",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/humblebeeai/int.academy-curriculum.git"
+  },
+  "license": "MIT",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",

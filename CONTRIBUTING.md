@@ -1,65 +1,97 @@
 # Contributing to HumblebeeAI Academy Curriculum
 
-Thank you for your interest in contributing to the HumblebeeAI Academy! We are an open-source educational project dedicated to democratizing AI engineering education.
+First off, thank you for considering contributing to HumblebeeAI Academy! It's people like you that make this open-source curriculum such a powerful tool for the community.
 
-## How to Contribute
+We welcome contributions from everyone. By participating in this project, you agree to abide by our [Code of Conduct](CODE_OF_CONDUCT.md).
 
-### 1. Types of Contributions Welcome
+## ⚡ Quick Start
 
-We welcome contributions of all sizes!
-
-* 🐛 **Bug fixes:** Typos, broken links, or code errors in examples.
-* 📚 **Content improvements:** clearer explanations, better analogies, or more robust examples.
-* 🌍 **Translations:** help us reach a global audience (e.g., Spanish, Korean, Mandarin).
-* 🎨 **UI/UX enhancements:** Improve the readability or accessibility of the learning platform.
-* 🔧 **Technical infrastructure:** Improvements to the Docusaurus build, plugins, or CI/CD.
-
-### 2. Contribution Process
-
-1. **Fork the repository** to your GitHub account.
-2. **Create a feature branch** for your specific change:
+1. **Fork** the repository.
+2. **Clone** your fork:
 
     ```bash
-    git checkout -b fix/module-1-typo
-    # or
-    git checkout -b feat/new-statistics-example
+    git clone https://github.com/YOUR_USERNAME/int.academy-curriculum.git
+    cd int.academy-curriculum
     ```
 
-3. **Make your changes**. Ensure you follow the specific guidelines below.
-4. **Test locally**:
+3. **Install dependencies**:
+
+    ```bash
+    npm ci
+    ```
+
+4. **Start the dev server**:
 
     ```bash
     npm start
     ```
 
-    Verify your changes look correct at `http://localhost:3000`.
-5. **Commit with clear, descriptive messages**:
+5. Open `http://localhost:3000`.
+
+## 🛠️ Development Workflow
+
+We follow a standard GitHub Flow.
+
+1. **Branching**: always create a new branch for your work.
+    * `feat/` for new content or features
+    * `fix/` for bug fixes or typo corrections
+    * `docs/` for documentation updates
 
     ```bash
-    git commit -m "docs: clarify gradient descent explanation in module 2"
+    git checkout -b feat/advanced-nlp-module
     ```
 
-    *(We follow Conventional Commits conventions)*
-6. **Push and create a Pull Request (PR)** against the `main` branch.
-7. **Wait for review**: A maintainer will review your PR within 7 days.
+2. **Committing**: We prefer [Conventional Commits](https://www.conventionalcommits.org/).
+    * `feat: add new vector database module`
+    * `fix: correct broken link in math primer`
+    * `docs: update installation guide`
 
-### 3. Content Guidelines & Style
+3. **Pull Requests**:
+    * Submit PRs to the `main` branch.
+    * Keep PRs small and focused. One concept per PR is best.
+    * Fill out the PR template completely.
 
-* **Tone:** Mentor-like. Supportive but honest. ("This is tough, but you can do it.")
-* **Format:** Use standard Markdown/MDX.
-* **Structure:** Follow the existing module templates.
-* **Code Examples:** Must be runnable and well-commented.
-* **Attribution:** If you use external resources/images, you **MUST** cite them.
-* **Licensing:** By contributing, you agree that your content contributions are licensed under **CC-BY-SA 4.0** and code contributions under **MIT**.
+## 📝 Content Guidelines
 
-### 4. Review Process
+### Writing Style
 
-* All PRs require at least one approval from a maintainer.
-* Automated checks (linting, link validation) must pass.
-* Be ready for feedback! Code review is a conversation.
+* **Voice**: Senior Engineer Mentor. Supportive, authoritative, direct.
+* **Clarity**: Explain "Why" before "How".
+* **Brevity**: Respect the reader's time. Use bullets and diagrams.
 
-### 5. Recognition
+### Technical format
 
-Contributors are what make this project possible. All contributors will be listed in our `CONTRIBUTORS.md` file.
+* Use **MDX** for all content.
+* Use our **AutoIcon** system for lists (e.g., `- ✅ ...`).
+* **Images**: Place in `static/img/`. Use focused, high-res diagrams.
+* **Code**: Use fenced code blocks with language specification: ` ```python `.
 
-Thank you for helping us build the future of AI education! 🚀
+## 📐 Coding Standards
+
+This project uses:
+
+* **Prettier** for formatting.
+* **TypeScript** for config and components.
+* **Docusaurus v3** strict mode.
+
+Run checks before pushing:
+
+```bash
+npm run typecheck
+npm run build
+```
+
+## ⚖️ License & IP
+
+By contributing, you agree that:
+
+1. Your **content contributions** (guides, educational text) are licensed under **CC-BY-SA 4.0**.
+2. Your **code contributions** (components, scripts) are licensed under **MIT**.
+3. You have the right to contribute this work.
+
+## 🐛 Reporting Isues
+
+* **Security**: See [SECURITY.md](SECURITY.md).
+* **Bugs/Typos**: File a [GitHub Issue](https://github.com/humblebeeai/int.academy-curriculum/issues).
+
+Thank you for helping us build the world's best open-source AI engineering curriculum! 🐝

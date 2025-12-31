@@ -19,9 +19,9 @@ We believe that elite AI engineering education should be accessible to everyone,
 
 ## 📚 Curriculum Structure
 
-The journey consists of two main phases:
+The journey consists of three main phases:
 
-### Phase 1: School Program (Foundations)
+### Phase 1: Foundations (School Program)
 
 Builds the unshakeable foundation in math, CS, and data.
 
@@ -31,14 +31,23 @@ Builds the unshakeable foundation in math, CS, and data.
 * **Module 4:** Data Engineering
 * **Module 5:** IoT Activation
 
-### Phase 2: Soft Landing (Specialization)
+### Phase 2: Core Systems (Soft Landing)
 
-Applied engineering in specific domains.
+Master AI/ML fundamentals and systems engineering.
+
+* **Math & ML Foundations:** PyTorch, Gradient Descent
+* **Advanced AI:** Deep Learning, CNNs, Transformers
+* **Systems & Networking:** Docker, Kubernetes, Cloud
+* **Fullstack Toolkit:** FastAPI, React, DBs
+
+### Phase 3: Specializations
+
+Expert mastery in specific domains.
 
 * 👁️ **Computer Vision**
 * 📊 **Data Science**
-* 🤖 **Natural Language Processing (NLP)**
-* 💻 **Software Engineering**
+* 💬 **Natural Language Processing (NLP)**
+* ⚙️ **Software Engineering (MLOps)**
 
 ## 🚀 Getting Started
 
@@ -77,7 +86,9 @@ We are an Open Educational Resource (OER) and thrive on community contributions!
 
 * See [**CONTRIBUTING.md**](CONTRIBUTING.md) for guidelines on how to submit PRs.
 * See [**CODE_OF_CONDUCT.md**](CODE_OF_CONDUCT.md) for our community standards.
+* See [**SECURITY.md**](SECURITY.md) for vulnerability reporting policies.
 * See [**ARCHITECTURE.md**](ARCHITECTURE.md) for technical details on the codebase.
+* See [**CHANGELOG.md**](CHANGELOG.md) for release history.
 
 ## 📄 Licensing
 

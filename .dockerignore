@@ -1,6 +1,15 @@
 node_modules
 build
 .docusaurus
+node_modules
+build
+.docusaurus
 .git
+.github
 .DS_Store
 .env
+.env.local
+npm-debug.log
+Dockerfile
+compose.yml
+README.md
