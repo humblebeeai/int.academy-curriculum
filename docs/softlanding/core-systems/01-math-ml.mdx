@@ -5,19 +5,16 @@ title: Math & ML Foundations
 description: Linear Algebra, Calculus, and Basic Models
 ---
 
-import ProgressBar from '@site/src/components/ProgressBar';
-import TimeEstimate from '@site/src/components/TimeEstimate';
-import ResourceCard from '@site/src/components/ResourceCard';
-import ChecklistItem from '@site/src/components/ChecklistItem';
-import SkillShowcase, { Skill } from '@site/src/components/SkillShowcase';
+import { ModuleProgress, ChecklistItem, ResourceCard, TimeEstimate, SkillShowcase } from '@site/src/components';
+import { Skill } from '@site/src/components/SkillShowcase';
 
 # Math & ML Foundations
 
-<ProgressBar 
-  phase="Soft Landing" 
-  module="1 of 4" 
-  estimatedHours={25}
-  completedBy={0}
+<ModuleProgress 
+  moduleId="soft-math-ml" 
+  title="Math & ML Foundations" 
+  phase={2} 
+  totalItems={4} 
 />
 
 ## 🧠 What You'll Build Here
@@ -130,14 +127,12 @@ Production systems love Random Forests. They are robust, don't need scaled data,
   why="Interactive visualizations of Precision vs. Recall. Critical for imbalanced datasets (e.g., fraud detection)."
 />
 
-<SkillShowcase>
-  <Skill icon="📊" title="Beyond Accuracy">
-    Understand why 99% accuracy is bad if 99% of your data is "No Fraud".
-  </Skill>
-  <Skill icon="⚖️" title="Trade-offs">
-    Balance Precision (few false alarms) vs. Recall (catching every case).
-  </Skill>
-</SkillShowcase>
+<SkillShowcase
+  skills={[
+    { iconString: "BarChart", title: "Beyond Accuracy", description: "Understand why 99% accuracy is bad if 99% of your data is 'No Fraud'." },
+    { iconString: "Scale", title: "Trade-offs", description: "Balance Precision (few false alarms) vs. Recall (catching every case)." }
+  ]}
+/>
 
 ---
 

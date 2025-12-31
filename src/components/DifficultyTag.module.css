@@ -1,0 +1,48 @@
+.tag {
+    display: inline-block;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.375rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid transparent;
+}
+
+.label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.125rem;
+}
+
+.content {
+    font-size: 0.875rem;
+    color: var(--ifm-color-emphasis-700);
+}
+
+.beginner {
+    background-color: #e6f4ea;
+    border-color: #bbf7d0;
+}
+
+.beginner .label {
+    color: #1e8e3e;
+}
+
+.intermediate {
+    background-color: #fef7e0;
+    border-color: #fce8b2;
+}
+
+.intermediate .label {
+    color: #f9ab00;
+}
+
+.advanced {
+    background-color: #fce8e6;
+    border-color: #fad2cf;
+}
+
+.advanced .label {
+    color: #d93025;
+}

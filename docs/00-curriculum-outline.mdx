@@ -6,14 +6,15 @@ description: Your open-source path to becoming a world-class AI Engineer
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import { LearningPath, SkillShowcase, ResourceCard } from '@site/src/components';
 
 # Your Journey to Becoming a Top 1% AI Engineer
 
 <div className="hero-banner">
-  <p className="lead-text" style={{ fontSize: '1.2rem', color: 'var(--ifm-color-emphasis-700)', lineHeight: '1.6' }}>
+  <div className="lead-text" style={{ fontSize: '1.2rem', color: 'var(--ifm-color-emphasis-700)', lineHeight: '1.6' }}>
     Welcome, future AI innovator. You have the ambition to become a top-tier AI 
-    engineer, but the path forward can seem daunting.
-  </p>
+    engineer, but the path forward can seem daunting. We've mapped it out for you.
+  </div>
 </div>
 
 ---
@@ -23,7 +24,6 @@ import TabItem from '@theme/TabItem';
 **The problem we're solving:**
 
 Most aspiring AI engineers face three critical barriers:
-
 1. **The Theory-Practice Gap** – Academic programs teach concepts, but not how to build production systems
 2. **Portfolio Paradox** – You need experience to get a job, but need a job to gain experience  
 3. **Isolated Learning** – Self-teaching is lonely, demotivating, and lacks feedback
@@ -71,37 +71,44 @@ This is our contribution to building the next generation of AI engineers.
 - 💵 **Free** curriculum (paid mentorship optional)
 - 🏗️ **Portfolio** of production-grade projects
 - 🔄 **Live curriculum** updated with industry standards
-- 🤝 **Community-driven** learning (Discord, GitHub)
+- 🤝 **Community-driven** learning
 </div>
 
 </div>
 
 ---
 
-## 🗺️ Your Learning Path: Three Phases
+## 🗺️ Your Learning Path
 
-This curriculum is designed as a progressive journey, where each phase builds 
-upon the previous one. **You cannot skip phases** – each one develops critical 
-foundations for the next.
+This curriculum is designed as a progressive journey. **You cannot skip phases** – each one develops critical foundations for the next.
+
+<LearningPath 
+    currentModuleId="start"
+    modules={[
+        { id: 'start', title: 'Start Here', link: '#' },
+        { id: 'phase1', title: 'Phase 1: Foundations', link: '/docs/school/intro' },
+        { id: 'phase2', title: 'Phase 2: Core Systems', link: '/docs/softlanding/intro' },
+        { id: 'phase3', title: 'Phase 3: Specialization', link: '/docs/softlanding/tracks/overview' },
+        { id: 'job', title: 'Career Launch', link: '#' }
+    ]}
+/>
+
 
 <Tabs>
 <TabItem value="school" label="Phase 1: School Program" default>
 
-### Phase 1: School Program
+### 🏫 Phase 1: School Program
 **Duration:** 2-4 months (self-paced)  
 **Goal:** Build the absolute engineering fundamentals
 
-**You'll Master:**
-- ✅ Command line fluency (the terminal is your workspace)
-- ✅ Git & version control (how real teams collaborate)  
-- ✅ Mathematical foundations (calculus, linear algebra, probability)
-- ✅ Python data engineering (pandas, data cleaning, visualization)
-- ✅ Algorithmic thinking (LeetCode-style problem solving)
-
-**Who This is For:**
-- Complete beginners to programming
-- Self-taught developers with gaps in fundamentals
-- CS students wanting to transition into AI
+<SkillShowcase 
+    skills={[
+        { iconString: "Terminal", title: "Terminal Fluency", description: "The command line is your home." },
+        { iconString: "GitBranch", title: "Git & Version Control", description: "Collaborate like a pro." },
+        { iconString: "Sigma", title: "Math Foundations", description: "Calculus, Linear Algebra, Stats." },
+        { iconString: "Database", title: "Data Engineering", description: "Python, Pandas, SQL." }
+    ]} 
+/>
 
 **Outcome:** You'll think like an engineer and have the toolkit to start building.
 
@@ -111,21 +118,17 @@ foundations for the next.
 
 <TabItem value="soft-landing" label="Phase 2: Soft Landing">
 
-### Phase 2: Soft Landing Program  
+### 🚀 Phase 2: Soft Landing Program  
 **Duration:** 3-6 months (self-paced)  
 **Goal:** Master AI/ML fundamentals and systems engineering
 
-**You'll Master:**
-- 🧮 Classical ML models (regression, SVMs, decision trees)
-- 🧠 Deep learning & neural networks (PyTorch, CNNs, RNNs)
-- 🏗️ Systems engineering (Docker, FastAPI, cloud deployment)
-- 📊 Model evaluation & experimentation (MLOps basics)
-- 💻 Clean code & engineering practices
-
-**Who This is For:**
-- School Program graduates  
-- Experienced developers pivoting to AI
-- Bootcamp grads who want deeper understanding
+<SkillShowcase 
+    skills={[
+        { iconString: "BrainCircuit", title: "Deep Learning", description: "PyTorch, Neural Networks, CNNs." },
+        { iconString: "Server", title: "Systems Ops", description: "Docker, FastAPI, Cloud Deploy." },
+        { iconString: "Activity", title: "Model Eval", description: "Metrics, Testing, MLOps." }
+    ]} 
+/>
 
 **Outcome:** You can build, train, and deploy ML models in production environments.
 
@@ -135,19 +138,15 @@ foundations for the next.
 
 <TabItem value="specialization" label="Phase 3: Specializations">
 
-### Phase 3: Specialization Tracks
+### 🎯 Phase 3: Specialization Tracks
 **Duration:** 2-4 months per track  
 **Goal:** Expert-level domain knowledge
 
 **Choose Your Path:**
-- 👁️ **Computer Vision** – Image classification, object detection, semantic segmentation
-- 📊 **Data Science** – Statistical modeling, business intelligence, experimentation  
-- 💬 **NLP & LLMs** – Transformers, fine-tuning, RAG systems, agents
-- ⚙️ **Software Engineering** – Distributed systems, scalability, production architecture
-
-**Who This is For:**
-- Soft Landing graduates
-- Experienced engineers specializing in AI domains
+- 👁️ **Computer Vision** – Image classification, object detection
+- 📊 **Data Science** – Statistical modeling, business intelligence  
+- 💬 **NLP & LLMs** – Transformers, fine-tuning, Agents
+- ⚙️ **Software Engineering** – Distributed systems, scalability
 
 **Outcome:** You have a portfolio of domain-specific projects that prove expertise.
 
@@ -160,103 +159,37 @@ foundations for the next.
 
 ## 🏗️ The HumbleBeeAI Learning Philosophy
 
-### 1. **Learning by Doing, Not Just Watching**
+### 1. **Learning by Doing**
+We reject "Tutorial Hell". You will spend **70% of your time coding** and building real projects, not just watching videos.
 
-<details>
-<summary>🤔 <strong>Why most online courses fail</strong> (Click to expand)</summary>
+### 2. **Longitudinal Growth**
+Real expertise takes time. We focus on **compounding knowledge**, spaced repetition, and progressive difficulty.
 
-**The Tutorial Hell Problem:**  
-Many learners spend months watching videos, taking notes, and following tutorials. 
-Then when they try to build something themselves... nothing works. Sound familiar?
-
-**Why this happens:**  
-Passive learning creates the *illusion of understanding*. You nod along with the 
-tutorial, but haven't actually developed the problem-solving muscles needed for 
-real engineering.
-
-**Our approach:**  
-Every module includes:
-- ✅ Clear learning objectives
-- ✅ Hands-on exercises and challenges
-- ✅ Real-world project applications
-- ✅ Checkpoints to verify understanding
-- ✅ Common pitfalls and debugging tips
-
-**You'll spend 70% doing, 30% learning theory** – because that's how skills stick.
-
-</details>
-
-### 2. **Longitudinal Growth, Not Sprint Learning**
-
-AI engineering isn't learned in 12 weeks. Real expertise requires:
-- 📈 **Compounding knowledge** – Concepts build on each other over months
-- 🔄 **Spaced repetition** – You'll revisit core concepts in new contexts  
-- 🧗 **Progressive difficulty** – Each phase challenges you just beyond your comfort zone
-- 🎯 **Portfolio development** – Projects grow in complexity as you advance
-
-### 3. **Community-Driven, Not Isolated**
-
-:::note 💬 Join the Learning Community
-
-**Free Resources:**
-- 📱 [Discord Community](https://discord.gg/humblebeeai) – Get unstuck, share progress, find study partners
-- 💻 [GitHub Discussions](https://github.com/humblebeeai/curriculum/discussions) – Ask questions, contribute improvements
-- 📝 [Weekly Office Hours](https://humblebee.ai/office-hours) – Live Q&A with experienced engineers
-
-**Premium Options:**
-- 🎓 **HumbleBeeAI Academy** – Structured mentorship (1:4 mentor ratio), daily standups, professional feedback
-- 💼 **Career Track** – Portfolio reviews, mock interviews, job placement support
-
-Whether you learn for free or with mentorship, **you're not alone**.
-
-:::
+### 3. **Community-Driven**
+You are not alone. Join our Discord, contribute to this repo, and learn with peers.
 
 ---
 
-## 📊 What Success Looks Like
+## ❓ Frequently Asked Questions
 
-### After School Program (Phase 1):
-```python
-# You'll be comfortable writing code like this:
+:::details Is this curriculum really free?
+Yes! The entire curriculum content is open source (CC-BY-SA 4.0). You can read every lesson, do every project, and use every resource without paying a cent. We only charge for *human time* (mentorship, code reviews) in our paid Academy program.
+:::
 
-def analyze_dataset(file_path):
-    """Load, clean, and analyze a CSV dataset."""
-    import pandas as pd
-    
-    df = pd.read_csv(file_path)
-    df = df.dropna()  # Handle missing values
-    df['category'] = df['category'].str.lower()  # Clean text
-    
-    summary = df.groupby('category')['value'].agg(['mean', 'std', 'count'])
-    return summary
+:::details Do I need a powerful computer?
+For Phase 1, any laptop (Windows/Mac/Linux) released in the last 5-7 years is fine. For Phase 2 (Deep Learning), having an NVIDIA GPU is helpful but not required; we will show you how to use free cloud resources like Google Colab and Kaggle Kernels.
+:::
 
-# And debugging it confidently when it breaks
-```
+:::details Can I skip Phase 1 if I know Python?
+Maybe. We have a "Direct Entry" path for Phase 2, but it requires passing a rigorous placement test. We find that 80% of "experienced" self-taught developers still have critical gaps in data engineering or math that Phase 1 covers. When in doubt, don't skip foundation.
+:::
 
-### After Soft Landing (Phase 2):
-```python
-# You'll build production ML systems:
-
-import torch
-import torch.nn as nn
-from fastapi import FastAPI
-
-class ImageClassifier(nn.Module):
-    def __init__(self, num_classes=10):
-        super().__init__()
-        self.conv_layers = nn.Sequential(
-            nn.Conv2d(3, 64, kernel_size=3, padding=1),
-            nn.ReLU(),
-            nn.MaxPool2d(2),
-            # ... more layers
-        )
-        self.fc = nn.Linear(64 * 16 * 16, num_classes)
-    
-    def forward(self, x):
-        x = self.conv_layers(x)
-        x = x.view(x.size(0), -1)
-        return self.fc(x)
-```
+:::details How do I get help if I'm stuck?
+1. Check the documentation and FAQ.
+2. Search our Discord community history.
+3. Post a detailed question in the relevant Discord channel.
+4. Use the "Issues" tab on GitHub if you find a bug in the curriculum.
+:::
 
 ---
 
@@ -266,20 +199,14 @@ class ImageClassifier(nn.Module):
 
 ### Choose Your Starting Point:
 
-**🆕 Complete Beginner?**  
-[Phase 1: School Program →](/docs/school/intro)  
-*No prior programming experience needed*
-
-<div style={{ margin: '1rem 0' }} />
-
-**💻 Have Programming Experience?**  
-[Phase 2: Soft Landing →](/docs/softlanding/intro)  
-*Requires passing a placement test*
-
-<div style={{ margin: '1rem 0' }} />
-
-**🎓 Already Know ML Basics?**  
-[Phase 3: Specializations →](/docs/softlanding/tracks/overview)  
-*Requires demonstrating Phase 2 competency*
+<div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+  <a href="/docs/school/intro" className="button button--primary button--lg">
+    🆕 Start Phase 1 (Beginner)
+  </a>
+  
+  <a href="/docs/softlanding/intro" className="button button--secondary button--lg">
+    💻 Start Phase 2 (Experienced)
+  </a>
+</div>
 
 </div>

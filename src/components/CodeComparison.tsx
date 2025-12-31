@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import CodeBlock from '@theme/CodeBlock';
+import styles from './CodeComparison.module.css';
 
 export interface CodeComparisonProps {
     before: string;
@@ -19,31 +20,23 @@ export default function CodeComparison({
     const [showAfter, setShowAfter] = useState(false);
 
     return (
-        <div className="code-comparison my-8 border border-[var(--ifm-color-emphasis-200)] rounded-xl overflow-hidden">
-            <div className="flex border-b border-[var(--ifm-color-emphasis-200)]">
+        <div className={styles.card}>
+            <div className={styles.header}>
                 <button
                     onClick={() => setShowAfter(false)}
-                    className="flex-1 p-3 text-sm font-bold cursor-pointer transition-colors"
-                    style={{
-                        background: !showAfter ? 'var(--ifm-color-primary)' : 'var(--ifm-background-surface-color)',
-                        color: !showAfter ? '#fff' : 'var(--ifm-color-emphasis-700)',
-                    }}
+                    className={`${styles.tab} ${!showAfter ? styles.active : ''}`}
                 >
                     {titleA}
                 </button>
                 <button
                     onClick={() => setShowAfter(true)}
-                    className="flex-1 p-3 text-sm font-bold cursor-pointer transition-colors"
-                    style={{
-                        background: showAfter ? 'var(--ifm-color-primary)' : 'var(--ifm-background-surface-color)',
-                        color: showAfter ? '#fff' : 'var(--ifm-color-emphasis-700)',
-                    }}
+                    className={`${styles.tab} ${showAfter ? styles.active : ''}`}
                 >
                     {titleB}
                 </button>
             </div>
-            <div>
-                <CodeBlock language={language} className="!m-0 !rounded-none">
+            <div className={styles.content}>
+                <CodeBlock language={language}>
                     {showAfter ? after : before}
                 </CodeBlock>
             </div>

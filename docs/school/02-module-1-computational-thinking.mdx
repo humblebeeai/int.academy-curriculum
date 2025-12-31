@@ -5,19 +5,16 @@ title: Module 1 - Computational Thinking
 description: CLI, Git, and Algorithms
 ---
 
-import ProgressBar from '@site/src/components/ProgressBar';
-import TimeEstimate from '@site/src/components/TimeEstimate';
-import ChecklistItem from '@site/src/components/ChecklistItem';
-import SkillShowcase, { Skill } from '@site/src/components/SkillShowcase';
-import DifficultyTag from '@site/src/components/DifficultyTag';
+import { ModuleProgress, ChecklistItem, SkillShowcase, DifficultyTag, TimeEstimate } from '@site/src/components';
+import { Skill } from '@site/src/components/SkillShowcase';
 
 # Module 1: The Developer's Environment
 
-<ProgressBar 
-  phase="School Program" 
-  module="1 of 5" 
-  estimatedHours={20}
-  completedBy={0}
+<ModuleProgress
+  moduleId="school-m1"
+  title="Computational Thinking"
+  totalItems={8}
+  phase={1}
 />
 
 ## 📍 What You'll Build Here
@@ -34,17 +31,13 @@ We built this after watching 500+ students go from "What's a terminal?" to deplo
 
 ## By the End of This Module...
 
-<SkillShowcase>
-  <Skill icon="💻" title="Command Line Fluency">
-    Navigate servers, manage files, and run scripts on remote machines without needing a mouse.
-  </Skill>
-  <Skill icon="🧠" title="Algorithmic Logic">
-    Break down complex problems into step-by-step logic that computers can execute efficiently.
-  </Skill>
-  <Skill icon="🔧" title="Pro Environment">
-    Set up VS Code like a senior engineer, with the right extensions for Python and Data Science.
-  </Skill>
-</SkillShowcase>
+<SkillShowcase
+  skills={[
+    { iconString: "Terminal", title: "Command Line Fluency", description: "Navigate servers, manage files, and run scripts on remote machines without needing a mouse." },
+    { iconString: "BrainCircuit", title: "Algorithmic Logic", description: "Break down complex problems into step-by-step logic that computers can execute efficiently." },
+    { iconString: "Wrench", title: "Pro Environment", description: "Set up VS Code like a senior engineer, with the right extensions for Python and Data Science." }
+  ]}
+/>
 
 <TimeEstimate 
   minHours={15} 

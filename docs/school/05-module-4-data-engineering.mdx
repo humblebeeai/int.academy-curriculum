@@ -5,18 +5,15 @@ title: Module 4 - Data Engineering
 description: Python, Pandas, and Tools
 ---
 
-import ProgressBar from '@site/src/components/ProgressBar';
-import TimeEstimate from '@site/src/components/TimeEstimate';
-import ChecklistItem from '@site/src/components/ChecklistItem';
-import ResourceCard from '@site/src/components/ResourceCard';
+import { ModuleProgress, ChecklistItem, ResourceCard, TimeEstimate } from '@site/src/components';
 
 # Module 4: Python Data Engineering
 
-<ProgressBar 
-  phase="School Program" 
-  module="4 of 5" 
-  estimatedHours={0}
-  completedBy={0}
+<ModuleProgress 
+  moduleId="school-m4" 
+  title="Data Engineering" 
+  totalItems={8} 
+  phase={1} 
 />
 
 ![Data Engineering - Python Code and Data Pipelines](/img/data_engineering.png)

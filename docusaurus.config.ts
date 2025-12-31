@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'HumblebeeAI Academy',
   tagline: 'Transforming students into technical junior engineers',
-  favicon: 'https://humblebee.ai/images/misc/logo.svg',
+  favicon: 'img/logo.svg',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {

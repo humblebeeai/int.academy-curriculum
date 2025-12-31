@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
+import styles from './ChecklistItem.module.css';
 
 export interface ChecklistItemProps {
     id: string; // Unique ID within the module
@@ -33,20 +34,16 @@ export default function ChecklistItem({ id, moduleId, children }: ChecklistItemP
     return (
         <div
             className={clsx(
-                "checklist-item group flex items-start gap-4 p-4 rounded-lg my-3 transition-all duration-200 border cursor-pointer",
-                isChecked
-                    ? "bg-[var(--ifm-color-emphasis-100)] border-[var(--ifm-color-emphasis-300)]"
-                    : "bg-[var(--ifm-background-color)] border-[var(--ifm-color-emphasis-200)] hover:border-[var(--ifm-color-primary-light)] hover:shadow-sm"
+                styles.card,
+                isChecked ? styles.cardChecked : ""
             )}
             onClick={toggleCheck}
         >
-            <div className="relative mt-1 flex-shrink-0">
+            <div className={styles.checkboxWrapper}>
                 <div
                     className={clsx(
-                        "w-6 h-6 rounded border-2 flex items-center justify-center transition-colors",
-                        isChecked
-                            ? "bg-[var(--ifm-color-primary)] border-[var(--ifm-color-primary)]"
-                            : "bg-transparent border-[var(--ifm-color-emphasis-400)] group-hover:border-[var(--ifm-color-primary)]"
+                        styles.customCheckbox,
+                        isChecked ? styles.customCheckboxChecked : ""
                     )}
                 >
                     <motion.div
@@ -59,7 +56,7 @@ export default function ChecklistItem({ id, moduleId, children }: ChecklistItemP
                 </div>
             </div>
 
-            <div className={clsx("flex-1 text-base leading-relaxed select-none", isChecked ? "text-[var(--ifm-color-emphasis-600)] line-through opacity-80" : "text-[var(--ifm-font-color-base)]")}>
+            <div className={clsx(styles.content, isChecked ? styles.contentChecked : "")}>
                 {children}
             </div>
         </div>

@@ -5,18 +5,15 @@ title: Advanced AI & Coding
 description: Deep Learning, PyTorch, and Clean Code
 ---
 
-import ProgressBar from '@site/src/components/ProgressBar';
-import TimeEstimate from '@site/src/components/TimeEstimate';
-import ChecklistItem from '@site/src/components/ChecklistItem';
-import ResourceCard from '@site/src/components/ResourceCard';
+import { ModuleProgress, ChecklistItem, ResourceCard, TimeEstimate } from '@site/src/components';
 
 # Advanced AI & Coding
 
-<ProgressBar 
-  phase="Soft Landing" 
-  module="2 of 4" 
-  estimatedHours={0}
-  completedBy={0}
+<ModuleProgress 
+  moduleId="soft-advanced-ai" 
+  title="Advanced AI & Coding" 
+  phase={2} 
+  totalItems={4} 
 />
 
 ![Placeholder: Banner Image for Advanced AI - Neural Networks and Code](/img/advanced_ai.png)

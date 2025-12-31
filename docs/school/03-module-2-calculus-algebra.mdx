@@ -13,18 +13,15 @@ title: Module 2 - Calculus & Algebra
 description: Math for AI Part 1
 ---
 
-import ProgressBar from '@site/src/components/ProgressBar';
-import TimeEstimate from '@site/src/components/TimeEstimate';
-import ChecklistItem from '@site/src/components/ChecklistItem';
-import ResourceCard from '@site/src/components/ResourceCard';
+import { ModuleProgress, ChecklistItem, ResourceCard, TimeEstimate } from '@site/src/components';
 
 # Module 2: Calculus & Linear Algebra
 
-<ProgressBar 
-  phase="School Program" 
-  module="2 of 5" 
-  estimatedHours={0}
-  completedBy={0}
+<ModuleProgress 
+  moduleId="school-m2" 
+  title="Calculus & Linear Algebra" 
+  totalItems={8} 
+  phase={1} 
 />
 
 ![Calculus and Linear Algebra - Graphs and Vectors](/img/math_ml.jpg)

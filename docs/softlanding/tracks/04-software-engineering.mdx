@@ -4,20 +4,15 @@ title: Software Engineering
 description: Distributed Systems and Scalability
 ---
 
-import ProgressIndicator from '@site/src/components/ProgressIndicator';
-import ProgressBar from '@site/src/components/ProgressBar';
-import TimeEstimate from '@site/src/components/TimeEstimate';
-import ResourceCard from '@site/src/components/ResourceCard';
+import { ModuleProgress, ResourceCard, TimeEstimate } from '@site/src/components';
 
 # Software Engineering Track
 
-<ProgressIndicator phase={3} totalPhases={3} />
-
-<ProgressBar 
-  phase="Specialization" 
-  module="Software Engineering" 
-  estimatedHours={150} 
-  completedBy={0} 
+<ModuleProgress 
+  moduleId="track-sre" 
+  title="Software Engineering Specialization" 
+  phase={3} 
+  totalItems={4} 
 />
 
 ![Monitors and a laptop](/img/software_eng.png)

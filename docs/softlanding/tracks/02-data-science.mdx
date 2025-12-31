@@ -4,20 +4,15 @@ title: Data Science
 description: Statistics, Analytics, and ML
 ---
 
-import ProgressIndicator from '@site/src/components/ProgressIndicator';
-import ProgressBar from '@site/src/components/ProgressBar';
-import TimeEstimate from '@site/src/components/TimeEstimate';
-import ResourceCard from '@site/src/components/ResourceCard';
+import { ModuleProgress, ResourceCard, TimeEstimate } from '@site/src/components';
 
 # Data Science Track
 
-<ProgressIndicator phase={3} totalPhases={3} />
-
-<ProgressBar 
-  phase="Specialization" 
-  module="Data Science" 
-  estimatedHours={120} 
-  completedBy={0} 
+<ModuleProgress 
+  moduleId="track-data-science" 
+  title="Data Science Specialization" 
+  phase={3} 
+  totalItems={4} 
 />
 
 ![Data Science Track](/img/data_science.png)

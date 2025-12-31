@@ -1,18 +1,22 @@
 ---
 sidebar_position: 1
-title: School Program Introduction  
+title: Phase 1 Introduction  
 description: Build your engineering fundamentals from the ground up
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import ProgressIndicator from '@site/src/components/ProgressIndicator';
-import TimeEstimate from '@site/src/components/TimeEstimate';
+import { ModuleProgress, ChecklistItem, TimeEstimate } from '@site/src/components';
 
 # Phase 1: School Program
 ## Building Your Engineering Foundation
 
-<ProgressIndicator phase={1} totalPhases={3} />
+<ModuleProgress 
+  moduleId="phase1-intro" 
+  title="Phase 1 Entrance Check" 
+  phase={1} 
+  totalItems={4} 
+/>
 
 ---
 
@@ -116,116 +120,31 @@ Deploy simple ML models to real devices (edge computing).
 ### By the End of School Program, You Will:
 
 **🖥️ Terminal & Developer Tools**
-- [ ] Navigate any Linux/Mac system using only command line
-- [ ] Write shell scripts to automate repetitive tasks
-- [ ] Use Vim for quick file editing on remote servers
-- [ ] Set up VS Code with optimal extensions and workflows
-- [ ] Debug errors using stack traces and logs
+- Navigate any Linux/Mac system using only command line
+- Write shell scripts to automate repetitive tasks
+- Use Vim for quick file editing on remote servers
+- Set up VS Code with optimal extensions and workflows
+- Debug errors using stack traces and logs
 
 **🔧 Version Control (Git)**
-- [ ] Create repositories and manage branches
-- [ ] Write meaningful commit messages
-- [ ] Resolve merge conflicts confidently  
-- [ ] Collaborate on projects using GitHub
-- [ ] Understand `.gitignore`, `.env`, and best practices
+- Create repositories and manage branches
+- Write meaningful commit messages
+- Resolve merge conflicts confidently  
+- Collaborate on projects using GitHub
 
 **🧮 Mathematical Foundations**
-- [ ] Interpret derivatives as rates of change (why gradients matter)
-- [ ] Visualize vectors and matrices as transformations
-- [ ] Compute dot products and understand their meaning
-- [ ] Explain probability distributions and sampling
-- [ ] Calculate expected values and variance
+- Interpret derivatives as rates of change (why gradients matter)
+- Visualize vectors and matrices as transformations
+- Compute dot products and understand their meaning
+- Explain probability distributions and sampling
 
 **💻 Algorithmic Problem-Solving**
-- [ ] Solve 50+ LeetCode Easy problems
-- [ ] Recognize common patterns (two pointers, sliding window, etc.)
-- [ ] Analyze time and space complexity (Big O notation)
-- [ ] Write pseudocode before coding
-- [ ] Debug systematic errors efficiently
-
-**🐍 Python Data Skills**
-- [ ] Load and clean CSV/JSON datasets with Pandas
-- [ ] Handle missing values and outliers
-- [ ] Create visualizations with Matplotlib/Seaborn
-- [ ] Write modular, reusable functions
-- [ ] Use list comprehensions and lambda functions naturally
-
-**🚀 Deployment Basics**
-- [ ] Train a simple ML model (using Teachable Machine or Scikit-learn)
-- [ ] Deploy to a Raspberry Pi or Arduino
-- [ ] Understand edge computing vs. cloud computing
-- [ ] Debug hardware-software integration issues
-
-</TabItem>
-
-<TabItem value="projects" label="Portfolio Projects">
-
-### What You'll Build
-
-By the end of Phase 1, you'll have these projects in your portfolio:
-
-**Project 1: Data Analysis Pipeline** 📊  
-- Load a public dataset (e.g., Titanic, housing prices)
-- Clean and preprocess the data
-- Generate statistical insights
-- Create visualizations
-- Export results to CSV/HTML report
-
-**Project 2: Algorithm Visualizer** 🎨  
-- Implement 5 sorting algorithms (bubble, merge, quick, etc.)
-- Visualize each step-by-step
-- Compare performance with different input sizes
-- Write unit tests
-
-**Project 3: Git Collaboration Exercise** 🤝  
-- Fork an open-source project
-- Fix a bug or add a small feature
-- Submit a pull request
-- Respond to code review feedback
-
-**Project 4: IoT ML Demo** 🤖  
-- Train an image classifier (cats vs. dogs, or hand gestures)
-- Deploy to Raspberry Pi or Arduino
-- Create a physical interface (LED indicator, sound, etc.)
-- Document the entire process
-
-**Capstone: Personal Data Dashboard** 📈  
-- Choose a dataset you care about (fitness, finance, habits, etc.)
-- Build a data pipeline to clean and process it
-- Create an interactive dashboard with insights
-- Automate daily/weekly updates
-- Deploy online (GitHub Pages or Heroku)
+- Solve 50+ LeetCode Easy problems
+- Recognize common patterns (two pointers, sliding window, etc.)
+- Analyze time and space complexity (Big O notation)
 
 </TabItem>
 </Tabs>
-
----
-
-## 🛣️ Your Learning Path
-
-<div className="learning-roadmap">
-
-```mermaid
-graph LR
-    A[Module 1<br/>Computational Thinking] --> B[Module 2<br/>Math for AI]
-    B --> C[Module 3<br/>Probability]
-    C --> D[Module 4<br/>Data Engineering]
-    D --> E[Module 5<br/>IoT & Activation]
-    E --> F[Capstone Project]
-    F --> G[Phase 2:<br/>Soft Landing]
-    
-    style A fill:#e3f2fd,stroke:#1a1a1a
-    style B fill:#e3f2fd,stroke:#1a1a1a
-    style C fill:#e3f2fd,stroke:#1a1a1a
-    style D fill:#e3f2fd,stroke:#1a1a1a
-    style E fill:#e3f2fd,stroke:#1a1a1a
-    style F fill:#fff3e0,stroke:#1a1a1a
-    style G fill:#c8e6c9,stroke:#1a1a1a
-```
-
-**Important:** You must complete modules sequentially. Each builds on the previous one.
-
-</div>
 
 ---
 
@@ -243,82 +162,41 @@ graph LR
   }}
 />
 
-### Weekly Schedule Recommendations
-
-**Full-Time Track (40-50 hours/week):**
-```
-Monday-Friday:
-- Morning (3h): Video lectures + note-taking
-- Afternoon (3h): Hands-on coding exercises
-- Evening (2h): LeetCode practice or project work
-
-Weekend:
-- Saturday: Project building (4-6h)
-- Sunday: Review + planning next week (2-3h)
-```
-
-**Part-Time Track (20-25 hours/week):**
-```
-Weekdays (M-F):
-- Early morning or evening: 2-3 hours daily
-- Focus on one module per week
-
-Weekends:
-- Saturday: Deep work on projects (6-8h)
-- Sunday: Review + community engagement (2-3h)
-```
-
 ---
 
-## 🎓 Entrance Requirements
+## 🎓 Are You Ready?
 
-<div className="requirements-section">
+<div className="requirements-section card p-6 bg-[var(--ifm-background-surface-color)]">
 
-### Who Can Start School Program?
+### Self-Assessment Checklist
+Confirm you are ready to commit before starting.
 
-**Minimum Prerequisites:**
-- ✅ **Age:** 18+ (or parental consent if under 18)
-- ✅ **Education:** High school diploma or equivalent
-- ✅ **Math:** Comfortable with algebra (variables, equations, functions)
-- ✅ **English:** Reading comprehension (all materials in English)
-- ✅ **Computer:** Access to a laptop/desktop with internet
+<ChecklistItem id="commit-time" moduleId="phase1-intro">
+  **I can commit at least 10 hours/week** for the next 3-6 months.
+</ChecklistItem>
 
-**Technical Prerequisites:**
-- ❌ **NO** prior programming experience required
-- ❌ **NO** math beyond high school algebra
-- ❌ **NO** CS degree needed
+<ChecklistItem id="commit-struggle" moduleId="phase1-intro">
+  **I am willing to struggle** through confusion before breakthroughs happen.
+</ChecklistItem>
 
-**Personal Prerequisites (Most Important):**
-- ✅ **Growth mindset** – Willing to struggle and learn from mistakes
-- ✅ **Discipline** – Can commit 10-40 hours/week consistently
-- ✅ **Curiosity** – Want to understand HOW things work, not just use them
-- ✅ **Persistence** – Won't give up when things get hard
+<ChecklistItem id="commit-help" moduleId="phase1-intro">
+  **I will seek help** when stuck (Discord, documentation) rather than giving up.
+</ChecklistItem>
+
+<ChecklistItem id="commit-hard" moduleId="phase1-intro">
+  **I accept this will feel hard** initially, and that is normal.
+</ChecklistItem>
 
 </div>
 
-:::caution ⚠️ Self-Assessment: Are You Ready?
-
-**Ask yourself honestly:**
-
-1. Can I commit **at least 10 hours per week** for the next 3-6 months?
-2. Am I willing to **struggle through confusion** before breakthroughs happen?
-3. Can I **seek help when stuck** (Discord, forums, documentation)?
-4. Am I prepared for this to **feel hard** initially?
-
-If you answered "No" to any of these, **that's okay** – but you should reconsider your timeline or commitment level. Half-hearted effort leads to half-baked skills.
-
-**If you answered "Yes" to all four:** Welcome aboard. You're ready.
-
-:::
-
 ---
 
-## 🚀 Ready to Begin?
+## 🚀 Begin Your Journey
 
-<div className="cta-container">
+<div className="cta-container" style={{ marginTop: '2rem', textAlign: 'center' }}>
 
 <a href="/docs/school/module-1-computational-thinking" className="button button--primary button--lg">
-  Begin Module 1 →
+  Start Module 1: Computational Thinking →
 </a>
 
 </div>

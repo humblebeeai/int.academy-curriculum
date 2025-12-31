@@ -5,18 +5,15 @@ title: Fullstack Toolkit
 description: Docker, FastAPI, and Frontend Basics
 ---
 
-import ProgressBar from '@site/src/components/ProgressBar';
-import TimeEstimate from '@site/src/components/TimeEstimate';
-import ChecklistItem from '@site/src/components/ChecklistItem';
-import ResourceCard from '@site/src/components/ResourceCard';
+import { ModuleProgress, ChecklistItem, ResourceCard, TimeEstimate } from '@site/src/components';
 
 # Fullstack & Operations Toolkit
 
-<ProgressBar 
-  phase="Soft Landing" 
-  module="4 of 4" 
-  estimatedHours={0}
-  completedBy={0}
+<ModuleProgress 
+  moduleId="soft-fullstack" 
+  title="Fullstack & Operations Toolkit" 
+  phase={2} 
+  totalItems={4} 
 />
 
 ![Fullstack Dev Environment](/img/fullstack.png)
