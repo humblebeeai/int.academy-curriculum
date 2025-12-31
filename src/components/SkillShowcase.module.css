@@ -22,13 +22,13 @@
     border: 1px solid var(--ifm-color-emphasis-200);
     border-radius: 0.75rem;
     background: var(--ifm-card-background-color);
-    transition: all 0.3s ease;
+    transition: all var(--duration-normal) var(--ease-standard);
 }
 
 .card:hover {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--shadow-md);
     border-color: var(--ifm-color-primary-light);
-    transform: translateY(-2px);
+    transform: var(--hover-lift-sm);
 }
 
 .iconWrapper {

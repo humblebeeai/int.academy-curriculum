@@ -108,13 +108,13 @@
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all var(--duration-normal) var(--ease-standard);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
 }
 
 .primaryButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transform: var(--hover-lift-sm);
+  box-shadow: var(--shadow-xl);
   background: var(--ifm-color-primary-dark);
   color: var(--ifm-background-color) !important;
 }
@@ -132,12 +132,12 @@
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all var(--duration-normal) var(--ease-standard);
 }
 
 .secondaryButton:hover {
   background: var(--ifm-background-surface-color);
-  transform: translateY(-2px);
+  transform: var(--hover-lift-sm);
   color: var(--ifm-color-primary) !important;
 }
 
@@ -194,13 +194,13 @@
 .featureCard {
   position: relative;
   cursor: pointer;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--duration-slow) var(--ease-standard);
   height: 100%;
   margin-bottom: 2rem;
 }
 
 .featureCard:hover {
-  transform: translateY(-8px);
+  transform: var(--hover-lift-lg);
 }
 
 .cardShadowBottom {
@@ -211,7 +211,7 @@
   border-radius: 1.5rem;
   transform: translate(10px, 10px);
   z-index: 1;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all var(--duration-slow) var(--ease-standard);
 }
 
 .featureCard:hover .cardShadowBottom {
@@ -226,7 +226,7 @@
   border-radius: 1.5rem;
   transform: translate(5px, 5px);
   z-index: 2;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all var(--duration-slow) var(--ease-standard);
 }
 
 .featureCard:hover .cardShadowMiddle {
@@ -245,12 +245,12 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-lg);
+  transition: all var(--duration-slow) var(--ease-standard);
 }
 
 .featureCard:hover .cardMain {
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-xl);
 }
 
 [data-theme='dark'] .cardMain {
@@ -270,7 +270,7 @@
   border-radius: 1.25rem;
   margin-bottom: 1.5rem;
   color: var(--ifm-color-primary);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all var(--duration-slow) var(--ease-standard);
 }
 
 .featureCard:hover .iconWrapper {
@@ -313,13 +313,13 @@
   position: relative;
   display: block;
   text-decoration: none;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--duration-slow) var(--ease-standard);
   margin-bottom: 2rem;
   height: 100%;
 }
 
 .programCard:hover {
-  transform: translateY(-6px);
+  transform: var(--hover-lift-md);
 }
 
 .programCardShadow {
@@ -329,7 +329,7 @@
   opacity: 0.12;
   border-radius: 1.5rem;
   transform: translate(8px, 8px);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all var(--duration-slow) var(--ease-standard);
 }
 
 .programCard:hover .programCardShadow {
@@ -346,15 +346,15 @@
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-lg);
+  transition: all var(--duration-slow) var(--ease-standard);
   height: 100%;
   min-height: 200px;
 }
 
 .programCard:hover .programCardContent {
   border-color: var(--ifm-color-primary);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-xl);
 }
 
 [data-theme='dark'] .programCardContent {
@@ -377,7 +377,7 @@
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 1rem;
   color: var(--ifm-color-primary);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all var(--duration-slow) var(--ease-standard);
 }
 
 .programCard:hover .programIcon {
@@ -431,7 +431,7 @@
   flex-shrink: 0;
   font-size: 1.5rem;
   color: var(--ifm-color-primary);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--duration-slow) var(--ease-standard);
 }
 
 .programCard:hover .programArrow {
@@ -487,4 +487,3 @@
     display: none;
   }
 }
-

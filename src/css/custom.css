@@ -110,6 +110,40 @@
   /* Global */
   --ifm-code-font-size: 90%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.05);
+
+  /* =========================================
+     ANIMATION & INTERACTION TOKENS
+     ========================================= */
+
+  /* Durations */
+  --duration-fast: 0.2s;
+  /* Click feedback, color changes */
+  --duration-normal: 0.3s;
+  /* Hover lifts, standard UI transitions */
+  --duration-slow: 0.5s;
+  /* Entrance animations, large layout changes */
+
+  /* Easing */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  /* "Standard" material-like easing */
+  --ease-out: cubic-bezier(0.0, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  /* Subtle spring effect */
+
+  /* Hover Lifts */
+  --hover-lift-sm: translateY(-2px);
+  /* Buttons, small cards */
+  --hover-lift-md: translateY(-4px);
+  /* content cards */
+  --hover-lift-lg: translateY(-8px);
+  /* Feature/Hero cards */
+
+  /* Shadows (Standardized) */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 /* =========================================
@@ -250,7 +284,7 @@ h6 {
   border: 1px solid var(--ifm-color-primary);
   color: var(--ifm-color-primary);
   background: transparent;
-  transition: all 0.2s ease;
+  transition: all var(--duration-fast) var(--ease-standard);
   font-weight: 500;
 }
 
@@ -259,7 +293,13 @@ h6 {
   color: var(--ifm-background-color);
   border-color: var(--ifm-color-primary);
   text-decoration: none;
-  transform: translateY(-1px);
+  transform: var(--hover-lift-sm);
+  box-shadow: var(--shadow-md);
+}
+
+.button--secondary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
 }
 
 .button--primary {
@@ -267,12 +307,19 @@ h6 {
   color: var(--ifm-background-color);
   border: 1px solid var(--ifm-color-primary);
   font-weight: 600;
+  transition: all var(--duration-fast) var(--ease-standard);
 }
 
 .button--primary:hover {
   background: var(--ifm-color-primary-light);
   border-color: var(--ifm-color-primary-light);
-  transform: translateY(-1px);
+  transform: var(--hover-lift-sm);
+  box-shadow: var(--shadow-md);
+}
+
+.button--primary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
 }
 
 /* =========================================
