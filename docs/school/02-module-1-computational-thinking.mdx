@@ -5,7 +5,7 @@ title: Module 1 - Computational Thinking
 description: CLI, Git, and Algorithms
 ---
 
-import { SkillShowcase, DifficultyTag, TimeEstimate } from '@site/src/components';
+import { SkillShowcase, DifficultyTag, TimeEstimate, ResourceCard } from '@site/src/components';
 import { Skill } from '@site/src/components/SkillShowcase';
 import { Cpu, Target, ListChecks, TerminalSquare, BrainCircuit, ClipboardCheck } from 'lucide-react';
 
@@ -51,7 +51,14 @@ We built this after watching 500+ students go from "What's a terminal?" to deplo
 
 ### <Cpu size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> Development Environment Setup
 
-**Resource**: [VS Code Setup Guide](https://code.visualstudio.com/docs/setup/setup-overview)
+<ResourceCard 
+  type="article"
+  title="VS Code Setup Guide"
+  url="https://code.visualstudio.com/docs/setup/setup-overview"
+  duration="1 hour"
+  difficulty="beginner"
+  why="Quick walkthrough to install VS Code and core extensions so you can start coding without friction."
+/>
 
 :::note Why This Matters (Real Talk)
 You might be tempted to skip the command line module and use VS Code's UI for everything. **Don't.** When your model breaks on a remote GPU server at 2 AM, the terminal is your only friend.
@@ -73,7 +80,14 @@ You might be tempted to skip the command line module and use VS Code's UI for ev
 
 ### <TerminalSquare size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> Command Line Mastery
 
-**Resource**: [Linux Journey - Command Line Module](https://linuxjourney.com/)
+<ResourceCard 
+  type="course"
+  title="Linux Journey - Command Line"
+  url="https://linuxjourney.com/"
+  duration="3-4 hours"
+  difficulty="beginner"
+  why="Hands-on walkthrough of core commands you’ll use daily on servers: navigation, file ops, and permissions."
+/>
 
 **Why It's Critical:**
 Commands learned here work on Linux servers (where 99% of AI models run), Mac terminals, and Windows WSL.
@@ -110,7 +124,14 @@ Be very careful with `rm -rf`. It deletes everything forever. Always use `ls` fi
 
 ### <ListChecks size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> Problem-Solving Fundamentals
 
-**Resource**: [HackerRank: Problem Solving (Basic)](https://www.hackerrank.com/skills-directory/problem_solving_basic)
+<ResourceCard 
+  type="practice"
+  title="HackerRank: Problem Solving (Basic)"
+  url="https://www.hackerrank.com/skills-directory/problem_solving_basic"
+  duration="4-6 hours"
+  difficulty="beginner"
+  why="Structured practice to build algorithmic thinking with immediate feedback and test cases."
+/>
 
 **Why This Resource**
 These challenges force you to think algorithmically before writing code. You'll recognize patterns (loops, sorting, searching) that appear in every AI project.

@@ -3,5 +3,5 @@ label: "Core Systems"
 collapsible: true
 collapsed: false
 link:
-  type: generated-index
-  title: "Core Systems Overview"
+  type: doc
+  id: softlanding/core-systems

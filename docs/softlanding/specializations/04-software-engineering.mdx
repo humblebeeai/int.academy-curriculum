@@ -19,7 +19,14 @@ Build production-grade, scalable systems. Learn the architecture patterns, tools
 ## 1. Networking Fundamentals
 
 ### Core Concepts
-**Resource**: [Computer Networking Course](https://www.youtube.com/playlist?list=PLIhvC56v63IJVXv0GJcl9vO5Z6znCVb1P)
+<ResourceCard 
+  type="course"
+  title="Computer Networking Course"
+  url="https://www.youtube.com/playlist?list=PLIhvC56v63IJVXv0GJcl9vO5Z6znCVb1P"
+  duration="8-10 hours"
+  difficulty="intermediate"
+  why="Systematic walkthrough of OSI layers, protocols, and performance so you can reason about production traffic."
+/>
 
 Understand how data travels to debug and optimize effectively.
 
@@ -36,7 +43,23 @@ Understand how data travels to debug and optimize effectively.
 ## 2. Architecture Principles
 
 ### Core Concepts
-**Resource**: [The 12-Factor App](https://12factor.net/) | [Beyond the Twelve-Factor App](https://www.oreilly.com/library/view/beyond-the-twelve-factor/9781492042631/)
+<ResourceCard 
+  type="article"
+  title="The Twelve-Factor App"
+  url="https://12factor.net/"
+  duration="2-3 hours"
+  difficulty="beginner"
+  why="Canonical checklist for building cloud-native services that are easy to scale and operate."
+/>
+
+<ResourceCard 
+  type="book"
+  title="Beyond the Twelve-Factor App"
+  url="https://www.oreilly.com/library/view/beyond-the-twelve-factor/9781492042631/"
+  duration="6-8 hours"
+  difficulty="intermediate"
+  why="Modernizes 12-factor ideas with deeper coverage of observability, security, and cloud-native patterns."
+/>
 
 Learn the battle-tested patterns that make applications scalable, maintainable, and cloud-ready.
 
@@ -53,7 +76,23 @@ Learn the battle-tested patterns that make applications scalable, maintainable, 
 ## 3. API Design & Implementation
 
 ### Core Concepts
-**Resource**: [REST API Tutorial](https://restfulapi.net/) | [FastAPI Official Tutorial](https://fastapi.tiangolo.com/learn/)
+<ResourceCard 
+  type="guide"
+  title="REST API Tutorial"
+  url="https://restfulapi.net/"
+  duration="2-3 hours"
+  difficulty="beginner"
+  why="Clear reference for core REST concepts: resources, verbs, status codes, and versioning."
+/>
+
+<ResourceCard 
+  type="tutorial"
+  title="FastAPI Official Tutorial"
+  url="https://fastapi.tiangolo.com/learn/"
+  duration="4-6 hours"
+  difficulty="intermediate"
+  why="Authoritative guide to building typed, high-performance APIs in FastAPI."
+/>
 
 Master RESTful API design and build high-performance endpoints using modern Python frameworks.
 
@@ -70,7 +109,32 @@ Master RESTful API design and build high-performance endpoints using modern Pyth
 ## 4. Database Design & Management
 
 ### Core Concepts
-**Resource**: [SQLBolt](https://sqlbolt.com/) | [MongoDB University](https://learn.mongodb.com/learning-paths/introduction-to-mongodb) | [Alembic](https://alembic.sqlalchemy.org/en/latest/tutorial.html)
+<ResourceCard 
+  type="tutorial"
+  title="SQLBolt"
+  url="https://sqlbolt.com/"
+  duration="3-4 hours"
+  difficulty="beginner"
+  why="Interactive lessons to practice core SQL queries and joins."
+/>
+
+<ResourceCard 
+  type="course"
+  title="MongoDB University: Intro to MongoDB"
+  url="https://learn.mongodb.com/learning-paths/introduction-to-mongodb"
+  duration="4-6 hours"
+  difficulty="intermediate"
+  why="Introduces document databases and aggregation pipelines for modern data workloads."
+/>
+
+<ResourceCard 
+  type="docs"
+  title="Alembic Tutorial"
+  url="https://alembic.sqlalchemy.org/en/latest/tutorial.html"
+  duration="2-3 hours"
+  difficulty="intermediate"
+  why="Shows how to manage schema migrations safely in production using Alembic."
+/>
 
 Design efficient schemas and manage data integrity.
 
@@ -88,7 +152,23 @@ Design efficient schemas and manage data integrity.
 ## 5. Testing Strategies
 
 ### Core Concepts
-**Resource**: [pytest Documentation](https://docs.pytest.org/en/stable/) | [FastAPI Testing](https://fastapi.tiangolo.com/tutorial/testing/)
+<ResourceCard 
+  type="docs"
+  title="pytest Documentation"
+  url="https://docs.pytest.org/en/stable/"
+  duration="3-4 hours"
+  difficulty="intermediate"
+  why="Primary reference for writing expressive unit and integration tests in Python."
+/>
+
+<ResourceCard 
+  type="tutorial"
+  title="FastAPI Testing Tutorial"
+  url="https://fastapi.tiangolo.com/tutorial/testing/"
+  duration="1-2 hours"
+  difficulty="intermediate"
+  why="Shows how to structure API tests with FastAPI’s TestClient and pytest."
+/>
 
 Write automated tests to catch bugs early and refactor with confidence.
 
@@ -105,7 +185,23 @@ Write automated tests to catch bugs early and refactor with confidence.
 ## 6. DevOps & Deployment
 
 ### Core Concepts
-**Resource**: [GitHub Actions](https://docs.github.com/en/actions) | [Docker Compose](https://docs.docker.com/compose/)
+<ResourceCard 
+  type="docs"
+  title="GitHub Actions Documentation"
+  url="https://docs.github.com/en/actions"
+  duration="3-4 hours"
+  difficulty="intermediate"
+  why="Teaches you how to wire CI/CD pipelines for testing, linting, and deployment."
+/>
+
+<ResourceCard 
+  type="docs"
+  title="Docker Compose Documentation"
+  url="https://docs.docker.com/compose/"
+  duration="2-3 hours"
+  difficulty="intermediate"
+  why="Explains how to orchestrate multi-container stacks (API + DB + workers) in development and staging."
+/>
 
 Automate deployment and ensure reproducibility with containers.
 
@@ -122,12 +218,37 @@ Automate deployment and ensure reproducibility with containers.
 ## 7. Specialization (Choose One)
 
 ### Option A: Mobile Development (Flutter/Swift)
-**Resource**: [Flutter Codelabs](https://docs.flutter.dev/codelabs)
+
+<ResourceCard 
+  type="tutorial"
+  title="Flutter Codelabs"
+  url="https://docs.flutter.dev/codelabs"
+  duration="6-8 hours"
+  difficulty="beginner"
+  why="Guided labs for building mobile apps that consume your backend APIs."
+/>
 **Goal**: Build a mobile app consuming your API.
 **Key Topics**: Widgets, State Management, API Integration.
 
 ### Option B: Full-Stack Web (React/Vue)
-**Resource**: [React Tutorial](https://react.dev/learn) | [Vue Guide](https://vuejs.org/guide/introduction.html)
+
+<ResourceCard 
+  type="tutorial"
+  title="React Tutorial"
+  url="https://react.dev/learn"
+  duration="4-6 hours"
+  difficulty="beginner"
+  why="Modern introduction to React components, hooks, and state management."
+/>
+
+<ResourceCard 
+  type="guide"
+  title="Vue Guide"
+  url="https://vuejs.org/guide/introduction.html"
+  duration="3-4 hours"
+  difficulty="beginner"
+  why="Official Vue guide for building reactive frontends that talk to your APIs."
+/>
 **Goal**: Build a responsive web app consuming your API.
 **Key Topics**: Components, Hooks/Composition API, Routing.
 
@@ -162,7 +283,16 @@ Build a production-grade application combining all modules:
 **Office Hours**: Wednesdays 3-6 PM
 
 **Next Steps**:
-- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+
+<ResourceCard 
+  type="guide"
+  title="System Design Primer"
+  url="https://github.com/donnemartin/system-design-primer"
+  duration="8-10 hours"
+  difficulty="advanced"
+  why="Comprehensive guide to classic system design problems and patterns used in interviews and real systems."
+/>
+
 - Cloud Certifications (AWS/GCP)
 - Technical Interview Prep
 

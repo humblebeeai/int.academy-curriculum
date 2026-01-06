@@ -30,7 +30,14 @@ This module reveals how computers communicate across the internet. Understanding
 ## 1. Network Fundamentals
 
 ### Core Concepts: Switches & Routers
-**Resource**: [NetworkChuck: Networking Series](https://www.youtube.com/playlist?list=PLIhvC56v63IJVXv0GJcl9vO5Z6znCVb1P) (Videos 1-3)
+<ResourceCard 
+  type="video"
+  title="NetworkChuck: Networking Series (Videos 1–3)"
+  url="https://www.youtube.com/playlist?list=PLIhvC56v63IJVXv0GJcl9vO5Z6znCVb1P"
+  duration="2-3 hours"
+  difficulty="beginner"
+  why="Fast, visual intro to networks, switches, and routers so the rest of this module has a solid mental model underneath."
+/>
 
 **What You'll Learn**
 - **Network**: Two or more connected devices sharing resources.
@@ -47,7 +54,14 @@ This module reveals how computers communicate across the internet. Understanding
 ## 2. Models & Protocols
 
 ### The TCP/IP Model
-**Resource**: [TCP/IP vs OSI Models](https://youtu.be/CRdL1PcherM)
+<ResourceCard 
+  type="video"
+  title="TCP/IP vs OSI Models"
+  url="https://youtu.be/CRdL1PcherM"
+  duration="30-45 minutes"
+  difficulty="beginner"
+  why="Gives you the layer-by-layer framework you’ll use every time you debug a network issue in production."
+/>
 
 The mental framework for debugging. If you can't connect, check the layers from bottom to top.
 
@@ -57,7 +71,14 @@ The mental framework for debugging. If you can't connect, check the layers from 
 4. **Application Layer**: User-facing protocols (HTTP, SSH).
 
 ### TCP/IP in Practice
-**Resource**: [Real-World TCP/IP](https://youtu.be/3kfO61Mensg)
+<ResourceCard 
+  type="video"
+  title="Real-World TCP/IP"
+  url="https://youtu.be/3kfO61Mensg"
+  duration="30-45 minutes"
+  difficulty="intermediate"
+  why="Connects theory to real packets and traffic patterns so TCP handshakes and UDP trade-offs make sense."
+/>
 
 - **TCP Handshake**: SYN, SYN-ACK, ACK. Ensures reliable connections (used by HTTP/Web).
 - **UDP**: "Fire and forget". Faster but less reliable (used for video streaming).
@@ -71,7 +92,14 @@ The mental framework for debugging. If you can't connect, check the layers from 
 ## 3. Security & Addressing
 
 ### Ports & Security
-**Resource**: [Port Security Essentials](https://youtu.be/0W4JZIWtjLQ)
+<ResourceCard 
+  type="video"
+  title="Port Security Essentials"
+  url="https://youtu.be/0W4JZIWtjLQ"
+  duration="30-45 minutes"
+  difficulty="intermediate"
+  why="Shows how ports map to services and how to lock them down so your AI services are not accidentally exposed."
+/>
 
 Ports are logical "doors" on a server. Only open the ones you absolutely need.
 
@@ -86,7 +114,14 @@ Ports are logical "doors" on a server. Only open the ones you absolutely need.
 2. Configure a firewall rule to allow port 8000 but block others.
 
 ### IP Addressing & Subnetting
-**Resource**: [IP Addressing & Subnetting](https://youtu.be/5WfiTHiU4x8)
+<ResourceCard 
+  type="video"
+  title="IP Addressing & Subnetting"
+  url="https://youtu.be/5WfiTHiU4x8"
+  duration="45-60 minutes"
+  difficulty="advanced"
+  why="Builds the subnet and CIDR intuition you need to design secure VPCs and segment production traffic safely."
+/>
 
 - **IPv4**: 32-bit address (e.g., 192.168.1.1).
 - **Subnetting**: Dividing a network into smaller, secure segments.

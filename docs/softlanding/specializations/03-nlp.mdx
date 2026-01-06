@@ -20,7 +20,15 @@ Learn how language models understand, generate, and reason with text, and develo
 ## Curriculum
 
 ### **NLP Basics**
-*   **[Word2Vec Paper](https://arxiv.org/abs/1301.3781)**
+
+<ResourceCard 
+  type="paper"
+  title="Word2Vec: Efficient Estimation of Word Representations"
+  url="https://arxiv.org/abs/1301.3781"
+  duration="2-3 hours"
+  difficulty="intermediate"
+  why="Introduces dense word embeddings and shows how semantic relationships can be captured in vector space."
+/>
 
 **Why it's important:**
 Word2Vec introduced the concept of dense word embeddings that capture semantic relationships. While modern models use contextual embeddings, understanding Word2Vec provides insight into how meaning is represented numerically and forms the foundation for all modern embedding techniques.
@@ -29,8 +37,24 @@ Word2Vec introduced the concept of dense word embeddings that capture semantic r
 Learn about Skip-gram and CBOW architectures, negative sampling, and how words with similar meanings end up close in vector space. Classic examples like "king - man + woman = queen" demonstrate learned relationships. This is your introduction to representing language as numbers.
 
 ### **Transformers & Attention Mechanisms**
-*   **[Tutorial 6: Transformers and MHAttention](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial6/Transformers_and_MHAttention.html)**
-*   **[Attention is all you need](https://arxiv.org/abs/1706.03762)**
+
+<ResourceCard 
+  type="tutorial"
+  title="Transformers and Multi-Head Attention (UvA Tutorial 6)"
+  url="https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial6/Transformers_and_MHAttention.html"
+  duration="4-6 hours"
+  difficulty="intermediate"
+  why="Code-first walkthrough of transformer components with visualizations that make attention feel tangible."
+/>
+
+<ResourceCard 
+  type="paper"
+  title="Attention Is All You Need"
+  url="https://arxiv.org/abs/1706.03762"
+  duration="3-4 hours"
+  difficulty="advanced"
+  why="The seminal transformer paper that underpins all modern LLMs; essential for deep architectural understanding."
+/>
 
 **Why it's important:**
 The Transformer architecture revolutionized NLP and enabled models like GPT, BERT, and Claude. Understanding multi-head attention mechanisms is crucial for knowing how models process and relate information. This paper is the foundation of every modern LLM.
@@ -39,7 +63,15 @@ The Transformer architecture revolutionized NLP and enabled models like GPT, BER
 Interactive code walkthrough implementing transformers from scratch. You'll visualize attention patterns, understand positional encoding, and see how self-attention enables parallel processing of sequences. The paper provides the theoretical foundation with detailed explanations of encoder-decoder structure and why transformers replaced RNNs.
 
 ### **Neural Networks Fundamentals**
-*   **[Neural Networks: Zero to Hero](https://youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ&si=IaLn9SKculhENlak)**: From Chapter 7 to 10.
+
+<ResourceCard 
+  type="course"
+  title="Neural Networks: Zero to Hero (Ch. 7–10)"
+  url="https://youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ&si=IaLn9SKculhENlak"
+  duration="6-8 hours"
+  difficulty="intermediate"
+  why="Builds neural nets and small language models from scratch, giving you solid intuition for training dynamics."
+/>
 
 **Why it's important:**
 Andrej Karpathy builds neural networks from first principles with minimal dependencies. This foundation helps you understand what's happening under the hood of high-level libraries and modern LLMs.
@@ -48,8 +80,24 @@ Andrej Karpathy builds neural networks from first principles with minimal depend
 Step-by-step implementation of neural networks, backpropagation, and character-level language models. Expect to write lots of code and gain intuition for gradient descent and neural network training, LLMs.
 
 #### **Retrieval-Augmented Generation (RAG)**
-*   **[Build a RAG System with LangChain](https://python.langchain.com/docs/tutorials/)**
-*   **[Ragas: Automated Evaluation of Retrieval Augmented Generation](https://arxiv.org/pdf/2309.15217)**
+
+<ResourceCard 
+  type="tutorial"
+  title="Build a RAG System with LangChain"
+  url="https://python.langchain.com/docs/tutorials/"
+  duration="4-6 hours"
+  difficulty="intermediate"
+  why="Hands-on guide to building end-to-end RAG pipelines with embeddings, vector stores, and retrieval."
+/>
+
+<ResourceCard 
+  type="paper"
+  title="Ragas: Automated Evaluation of RAG"
+  url="https://arxiv.org/pdf/2309.15217"
+  duration="2-3 hours"
+  difficulty="advanced"
+  why="Introduces metrics and methodology to rigorously evaluate RAG systems beyond simple accuracy."
+/>
 
 **Why it's important:**
 Retrieval Augmented Generation (RAG) is one of the most practical applications of LLMs, enabling AI systems to answer questions using your own documents and data. LangChain provides the tools to build production-ready RAG systems, while RAGAS gives you the metrics to evaluate them properly.
@@ -58,7 +106,15 @@ Retrieval Augmented Generation (RAG) is one of the most practical applications o
 You'll build a complete RAG pipeline from scratch: loading documents, chunking text, creating embeddings, storing vectors, implementing retrieval, and generating answers. You'll learn about semantic search, vector databases, and how to handle large document collections. Then you'll master evaluation using metrics like context precision, answer relevancy, and faithfulness to benchmark retrieval quality and LLM response accuracy systematically.
 
 ### **Prompt Engineering**
-*   **[Basics Guide to Generative AI and Prompt Engineering!](https://learnprompting.org/docs/introduction)**
+
+<ResourceCard 
+  type="course"
+  title="Basics Guide to Generative AI and Prompt Engineering"
+  url="https://learnprompting.org/docs/introduction"
+  duration="3-4 hours"
+  difficulty="beginner"
+  why="Comprehensive guide to structuring prompts, using few-shot patterns, and reducing hallucinations."
+/>
 
 **Why it's important:**
 Effective prompting is the primary interface for controlling LLM behavior. Good prompt engineering dramatically improves output quality, consistency, and task success rates without model fine-tuning.
@@ -67,7 +123,15 @@ Effective prompting is the primary interface for controlling LLM behavior. Good 
 Comprehensive guide covering prompt structure, few-shot learning, chain-of-thought reasoning, role-playing, and advanced techniques. You'll learn to design prompts that minimize hallucinations and maximize reliability.
 
 ### **AI Agents Orchestration**
-*   **[Multi AI Agent Systems with crewAI](https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/)**
+
+<ResourceCard 
+  type="course"
+  title="Multi AI Agent Systems with crewAI"
+  url="https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/"
+  duration="3-4 hours"
+  difficulty="intermediate"
+  why="Short course showing how to orchestrate multiple LLM agents with distinct roles to solve complex tasks."
+/>
 
 **Why it's important:**
 Single-agent systems are limited. Multi-agent architectures enable collaboration, specialization, and more complex reasoning patterns. CrewAI demonstrates how to orchestrate multiple AI agents working together.
@@ -76,10 +140,42 @@ Single-agent systems are limited. Multi-agent architectures enable collaboration
 Short course covering agent roles, task delegation, inter-agent communication, and building systems where agents have different responsibilities. You'll build crews for research, writing, and analysis tasks.
 
 ### **Fine-Tuning Methods**
-*   **[Fine-Tuning Course by DeepLearning.AI](https://www.deeplearning.ai/short-courses/finetuning-large-language-models/)**
-*   **[LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685)**
-*   **[QLoRA: Efficient Finetuning of Quantized LLMs](https://arxiv.org/abs/2305.14314)**
-*   **[Unsloth: An open-source framework for LLM fine-tuning and reinforcement learning](https://docs.unsloth.ai/)**
+
+<ResourceCard 
+  type="course"
+  title="Fine-Tuning Large Language Models (DeepLearning.AI)"
+  url="https://www.deeplearning.ai/short-courses/finetuning-large-language-models/"
+  duration="4-6 hours"
+  difficulty="intermediate"
+  why="Hands-on introduction to instruction-tuning and PEFT methods for adapting LLMs to your domain."
+/>
+
+<ResourceCard 
+  type="paper"
+  title="LoRA: Low-Rank Adaptation of Large Language Models"
+  url="https://arxiv.org/abs/2106.09685"
+  duration="2-3 hours"
+  difficulty="advanced"
+  why="Explains a core parameter-efficient fine-tuning technique widely used in practice."
+/>
+
+<ResourceCard 
+  type="paper"
+  title="QLoRA: Efficient Finetuning of Quantized LLMs"
+  url="https://arxiv.org/abs/2305.14314"
+  duration="2-3 hours"
+  difficulty="advanced"
+  why="Shows how to fine-tune large models in 4-bit precision on limited hardware without losing performance."
+/>
+
+<ResourceCard 
+  type="docs"
+  title="Unsloth Documentation"
+  url="https://docs.unsloth.ai/"
+  duration="2-3 hours"
+  difficulty="intermediate"
+  why="Production-ready framework documentation for fine-tuning and RL on LLMs using modern techniques."
+/>
 
 **Why it's important:**
 Fine-tuning adapts pre-trained models to specific tasks and domains with limited compute. Techniques like LoRA and QLoRA make it feasible to customize billion-parameter models on consumer hardware, enabling personalized AI systems without training from scratch.
