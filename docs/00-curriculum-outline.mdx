@@ -7,6 +7,11 @@ description: Your open-source path to becoming a world-class AI Engineer
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import { LearningPath, SkillShowcase, ResourceCard } from '@site/src/components';
+import { motion } from 'framer-motion';
+import { BookOpen, Code2, Building2 } from 'lucide-react';
+import clsx from 'clsx';
+import Heading from '@theme/Heading';
+import problemCardStyles from '@site/src/components/ProblemCard.module.css';
 
 # Your Journey to Becoming a Top 1% AI Engineer
 
@@ -24,11 +29,72 @@ import { LearningPath, SkillShowcase, ResourceCard } from '@site/src/components'
 **The problem we're solving:**
 
 Most aspiring AI engineers face three critical barriers:
-1. **The Theory-Practice Gap** – Academic programs teach concepts, but not how to build production systems
-2. **Portfolio Paradox** – You need experience to get a job, but need a job to gain experience  
-3. **Isolated Learning** – Self-teaching is lonely, demotivating, and lacks feedback
+
+<div className="row">
+  <motion.div
+    className={clsx('col col--4')}
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: '-100px' }}
+    transition={{ duration: 0.6, delay: 0 }}
+  >
+    <div className={problemCardStyles.problemCard}>
+      <div className={problemCardStyles.cardShadowBottom} />
+      <div className={problemCardStyles.cardShadowMiddle} />
+      <div className={problemCardStyles.cardMain}>
+        <div className={problemCardStyles.iconWrapper} style={{ color: 'var(--ifm-color-primary)' }}>
+          <BookOpen size={32} strokeWidth={1.5} />
+        </div>
+        <Heading as="h3" className={problemCardStyles.problemTitle}>The Theory-Practice Gap</Heading>
+        <p className={problemCardStyles.problemDescription}>Academic programs teach concepts, but not how to build production systems</p>
+      </div>
+    </div>
+  </motion.div>
+  <motion.div
+    className={clsx('col col--4')}
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: '-100px' }}
+    transition={{ duration: 0.6, delay: 0.15 }}
+  >
+    <div className={problemCardStyles.problemCard}>
+      <div className={problemCardStyles.cardShadowBottom} />
+      <div className={problemCardStyles.cardShadowMiddle} />
+      <div className={problemCardStyles.cardMain}>
+        <div className={problemCardStyles.iconWrapper} style={{ color: 'var(--ifm-color-primary)' }}>
+          <Code2 size={32} strokeWidth={1.5} />
+        </div>
+        <Heading as="h3" className={problemCardStyles.problemTitle}>Portfolio Paradox</Heading>
+        <p className={problemCardStyles.problemDescription}>You need experience to get a job, but need a job to gain experience</p>
+      </div>
+    </div>
+  </motion.div>
+  <motion.div
+    className={clsx('col col--4')}
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: '-100px' }}
+    transition={{ duration: 0.6, delay: 0.3 }}
+  >
+    <div className={problemCardStyles.problemCard}>
+      <div className={problemCardStyles.cardShadowBottom} />
+      <div className={problemCardStyles.cardShadowMiddle} />
+      <div className={problemCardStyles.cardMain}>
+        <div className={problemCardStyles.iconWrapper} style={{ color: 'var(--ifm-color-primary)' }}>
+          <Building2 size={32} strokeWidth={1.5} />
+        </div>
+        <Heading as="h3" className={problemCardStyles.problemTitle}>Isolated Learning</Heading>
+        <p className={problemCardStyles.problemDescription}>Self-teaching is lonely, demotivating, and lacks feedback</p>
+      </div>
+    </div>
+  </motion.div>
+</div>
+
+<div style={{ marginTop: '1.5rem' }}>
 
 **HumbleBeeAI Academy was created to eliminate these barriers.**
+
+</div>
 
 :::tip 💡 Why This Curriculum is Open Source
 We believe that **access to world-class AI education shouldn't be limited by geography 
