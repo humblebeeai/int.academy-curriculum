@@ -738,6 +738,120 @@ h2 .auto-icon-box svg {
   display: block;
 }
 
+/* Mermaid GitGraph Monochrome Theme Customization */
+.mermaid svg,
+.mermaid-full-width svg {
+  background-color: var(--ifm-background-color) !important;
+}
+
+/* Light Mode - Monochrome Black/White/Gray */
+.mermaid svg path:not([fill="none"]),
+.mermaid-full-width svg path:not([fill="none"]) {
+  stroke: var(--ifm-color-emphasis-400) !important;
+  fill: var(--ifm-color-emphasis-200) !important;
+}
+
+.mermaid svg path[fill="none"],
+.mermaid-full-width svg path[fill="none"] {
+  stroke: var(--ifm-color-emphasis-400) !important;
+  stroke-width: 2px !important;
+}
+
+/* Commit nodes (circles) - keep these as primary color */
+.mermaid svg circle,
+.mermaid-full-width svg circle {
+  fill: var(--ifm-color-primary) !important;
+  stroke: var(--ifm-color-primary) !important;
+}
+
+.mermaid svg text,
+.mermaid-full-width svg text {
+  fill: var(--ifm-font-color-base) !important;
+}
+
+.mermaid svg .node rect,
+.mermaid-full-width svg .node rect,
+.mermaid svg .node circle,
+.mermaid-full-width svg .node circle {
+  fill: var(--ifm-color-primary) !important;
+  stroke: var(--ifm-color-primary) !important;
+}
+
+.mermaid svg .edgePath path,
+.mermaid-full-width svg .edgePath path {
+  stroke: var(--ifm-color-emphasis-400) !important;
+  fill: none !important;
+}
+
+/* Dark Mode - Monochrome White/Dark Gray */
+[data-theme='dark'] .mermaid svg path:not([fill="none"]),
+[data-theme='dark'] .mermaid-full-width svg path:not([fill="none"]) {
+  stroke: var(--ifm-color-emphasis-400) !important;
+  fill: var(--ifm-color-emphasis-200) !important;
+}
+
+[data-theme='dark'] .mermaid svg path[fill="none"],
+[data-theme='dark'] .mermaid-full-width svg path[fill="none"] {
+  stroke: var(--ifm-color-emphasis-400) !important;
+  stroke-width: 2px !important;
+}
+
+[data-theme='dark'] .mermaid svg circle,
+[data-theme='dark'] .mermaid-full-width svg circle {
+  fill: var(--ifm-color-primary) !important;
+  stroke: var(--ifm-color-primary) !important;
+}
+
+[data-theme='dark'] .mermaid svg text,
+[data-theme='dark'] .mermaid-full-width svg text {
+  fill: var(--ifm-font-color-base) !important;
+}
+
+[data-theme='dark'] .mermaid svg .node rect,
+[data-theme='dark'] .mermaid-full-width svg .node rect,
+[data-theme='dark'] .mermaid svg .node circle,
+[data-theme='dark'] .mermaid-full-width svg .node circle {
+  fill: var(--ifm-color-primary) !important;
+  stroke: var(--ifm-color-primary) !important;
+}
+
+[data-theme='dark'] .mermaid svg .edgePath path,
+[data-theme='dark'] .mermaid-full-width svg .edgePath path {
+  stroke: var(--ifm-color-emphasis-400) !important;
+  fill: none !important;
+}
+
+/* Mermaid GitGraph Branch Label Backgrounds and Text */
+/* Override ALL colored rectangle backgrounds (branch labels) to use monochrome theme */
+/* This targets branch labels like "Learning Path of Academy" and "softlanding" */
+.mermaid svg rect:not([fill="none"]),
+.mermaid-full-width svg rect:not([fill="none"]) {
+  fill: var(--ifm-background-surface-color) !important;
+  stroke: var(--ifm-color-emphasis-300) !important;
+}
+
+/* Light Mode - All text in Mermaid (including branch labels) */
+.mermaid svg text,
+.mermaid-full-width svg text,
+.mermaid svg tspan,
+.mermaid-full-width svg tspan {
+  fill: var(--ifm-font-color-base) !important;
+}
+
+/* Dark Mode - All text in Mermaid (including branch labels) */
+[data-theme='dark'] .mermaid svg rect:not([fill="none"]),
+[data-theme='dark'] .mermaid-full-width svg rect:not([fill="none"]) {
+  fill: var(--ifm-background-surface-color) !important;
+  stroke: var(--ifm-color-emphasis-300) !important;
+}
+
+[data-theme='dark'] .mermaid svg text,
+[data-theme='dark'] .mermaid-full-width svg text,
+[data-theme='dark'] .mermaid svg tspan,
+[data-theme='dark'] .mermaid-full-width svg tspan {
+  fill: var(--ifm-font-color-base) !important;
+}
+
 /* Tabs Styling - Center and Enlarge */
 .tabs {
   display: flex;
