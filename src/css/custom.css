@@ -634,10 +634,11 @@ h2 .auto-icon-box svg {
    MDX CHECKLIST (Self-assessment)
    ========================================= */
 .mdx-checklist {
-  margin-top: 0.75rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.25rem;
 }
 
 .mdx-checklist-item {
