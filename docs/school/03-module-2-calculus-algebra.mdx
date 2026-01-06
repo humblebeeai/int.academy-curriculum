@@ -14,6 +14,7 @@ description: Math for AI Part 1
 ---
 
 import { ResourceCard, TimeEstimate } from '@site/src/components';
+import { Calculator, Layers, ClipboardCheck, FileText } from 'lucide-react';
 
 # Module 2: Calculus & Linear Algebra
 
@@ -21,21 +22,21 @@ import { ResourceCard, TimeEstimate } from '@site/src/components';
 
 ![Calculus and Linear Algebra - Graphs and Vectors](/img/math_ml.jpg)
 
-## Goal
+## <Calculator /> Goal
 Understand the mathematical foundations behind how AI models learn from data and represent information.
 
 This module explains the core mechanics of neural networks: how they adjust themselves (calculus) and how they store and transform data (linear algebra).
 
 <TimeEstimate 
-  minHours={0} 
-  maxHours={0} 
+  minHours={160} 
+  maxHours={180} 
   breakdownBy={{
-    'Calculus': 0,
-    'Linear Algebra': 0
+    'Calculus': 110,
+    'Linear Algebra': 70
   }}
 />
 
-## 1. Primary Resources
+## <Layers /> 1. Primary Resources
 
 **Resources:**
 - **[Calculus 1 - Khan Academy](https://www.khanacademy.org/math/calculus-1)**
@@ -74,9 +75,28 @@ After completing this module, learners will understand how and why AI models lea
 
 ---
 
+## <ClipboardCheck /> Completion Checklist
+
+<div className="mdx-checklist">
+  <label className="mdx-checklist-item">
+    <input type="checkbox" />
+    <span>
+      Completed core units in <strong>Calculus 1 - Khan Academy</strong> (limits &amp; continuity, derivatives, applications of derivatives),
+      with a <strong>final exam score ≥ 80%.</strong>
+    </span>
+  </label>
+  <label className="mdx-checklist-item">
+    <input type="checkbox" />
+    <span>
+      Completed core units in <strong>Linear Algebra - Khan Academy</strong> (vectors, matrices, matrix multiplication, linear transformations),
+      with a <strong>final exam score ≥ 80%.</strong>
+    </span>
+  </label>
+</div>
+
 ---
 
-## 📝 Module Assessment Rubric
+## <FileText /> Module Assessment Rubric
 
 *(To be filled by the Evaluation Team)*
 
@@ -86,5 +106,3 @@ After completing this module, learners will understand how and why AI models lea
 | **Topic 2** | ... | ... | ... |
 
 <!-- rubric_section_end -->
-
-### [Next: Probability & Statistics ->](./04-module-3-probability-statistics.mdx)

@@ -7,12 +7,13 @@ description: CLI, Git, and Algorithms
 
 import { SkillShowcase, DifficultyTag, TimeEstimate } from '@site/src/components';
 import { Skill } from '@site/src/components/SkillShowcase';
+import { Cpu, Target, ListChecks, TerminalSquare, BrainCircuit, ClipboardCheck } from 'lucide-react';
 
 # Module 1: The Developer's Environment
 
 
 
-## What You'll Build Here
+## <Cpu /> What You'll Build Here
 
 Look, I'm not going to sugarcoat it—this phase is tough if you're new. You're going to feel lost in the terminal, frustrated with Git merge conflicts, and wonder why any of this matters for AI.
 
@@ -24,7 +25,7 @@ By the end, you'll think in algorithms, speak fluent command line, and understan
 We built this after watching 500+ students go from "What's a terminal?" to deploying production ML systems. These aren't random topics—they're the exact bottlenecks that stop people from becoming senior engineers.
 :::
 
-## By the End of This Module...
+## <Target /> By the End of This Module...
 
 <SkillShowcase
   skills={[
@@ -46,13 +47,13 @@ We built this after watching 500+ students go from "What's a terminal?" to deplo
 
 ---
 
-## 1. Setup & Command Line Interface
+## <TerminalSquare /> 1. Setup & Command Line Interface
 
-### Development Environment Setup
+### <Cpu size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> Development Environment Setup
 
 **Resource**: [VS Code Setup Guide](https://code.visualstudio.com/docs/setup/setup-overview)
 
-:::note 💭 Why This Matters (Real Talk)
+:::note Why This Matters (Real Talk)
 You might be tempted to skip the command line module and use VS Code's UI for everything. **Don't.** When your model breaks on a remote GPU server at 2 AM, the terminal is your only friend.
 :::
 
@@ -61,37 +62,53 @@ You might be tempted to skip the command line module and use VS Code's UI for ev
 2. Install **Required Extensions**: Python, Pylance, Jupyter.
 3. Install **Recommended**: GitLens, Error Lens.
 
-- [ ] VS Code installed and extensions configured
+<div className="mdx-checklist">
+  <label className="mdx-checklist-item">
+    <input type="checkbox" />
+    <span>VS Code installed and extensions configured.</span>
+  </label>
+</div>
 
 ---
 
-### Command Line Mastery
+### <TerminalSquare size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> Command Line Mastery
 
 **Resource**: [Linux Journey - Command Line Module](https://linuxjourney.com/)
 
 **Why It's Critical:**
 Commands learned here work on Linux servers (where 99% of AI models run), Mac terminals, and Windows WSL.
 
-<DifficultyTag level="beginner" time="2 hours">Navigation (cd, ls)</DifficultyTag>
-<DifficultyTag level="intermediate" time="4 hours">File Ops (cp, mv, rm)</DifficultyTag>
-<DifficultyTag level="advanced" time="2 hours">Permissions (chmod)</DifficultyTag>
+<div className="difficulty-tags-center">
+  <DifficultyTag level="beginner" time="2 hours">
+    Navigation (cd, ls)
+  </DifficultyTag>
+  <DifficultyTag level="intermediate" time="4 hours">
+    File Ops (cp, mv, rm)
+  </DifficultyTag>
+  <DifficultyTag level="advanced" time="2 hours">
+    Permissions (chmod)
+  </DifficultyTag>
+</div>
 
 **Action Plan:**
-1. Complete **"Grasshopper"** (Lessons 1-10)
-2. Complete **"Command Line"** (Lessons 1-8)
+1. Complete **"Command Line"** (Lessons 1-8)
 
-:::caution ⚠️ Common Trap (rm -rf)
+:::caution Common Trap (rm -rf)
 Be very careful with `rm -rf`. It deletes everything forever. Always use `ls` first to see where you are before deleting.
 :::
 
-- [ ] Completed "Grasshopper" lessons 1-10
-- [ ] Completed "Command Line" lessons 1-8
+<div className="mdx-checklist">
+  <label className="mdx-checklist-item">
+    <input type="checkbox" />
+    <span>Completed "Command Line" lessons 1-8.</span>
+  </label>
+</div>
 
 ---
 
-## 2. Algorithmic Thinking
+## <BrainCircuit /> 2. Algorithmic Thinking
 
-### Problem-Solving Fundamentals
+### <ListChecks size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> Problem-Solving Fundamentals
 
 **Resource**: [HackerRank: Problem Solving (Basic)](https://www.hackerrank.com/skills-directory/problem_solving_basic)
 
@@ -104,28 +121,53 @@ These challenges force you to think algorithmically before writing code. You'll 
 3. **Code**: Implement solution.
 4. **Debug**: Test edge cases.
 
-:::tip 💡 Pro Tip (From Experience)
+:::tip Pro Tip (From Experience)
 If you get stuck for >20 minutes, read the discussion tab. Don't waste 3 hours spinning your wheels—learn the pattern and move on.
 :::
 
-- [ ] Solved 5 "Easy" problems
-- [ ] Solved 10 "Easy" problems
-- [ ] Attempted 1 "Medium" problem
+<div className="mdx-checklist">
+  <label className="mdx-checklist-item">
+    <input type="checkbox" />
+    <span>Solved 5 "Easy" problems.</span>
+  </label>
+  <label className="mdx-checklist-item">
+    <input type="checkbox" />
+    <span>Solved 10 "Easy" problems.</span>
+  </label>
+  <label className="mdx-checklist-item">
+    <input type="checkbox" />
+    <span>Attempted 1 "Medium" problem.</span>
+  </label>
+</div>
 
 ---
 
-## Completion Checklist
+## <ClipboardCheck /> Completion Checklist
 
 Before calling this module "Done", verified by your mentor:
 
-- [ ] Navigate to any directory using only `cd` and `ls`
-- [ ] Search for text across multiple files using `grep -r`
-- [ ] **Milestone**: 15 HackerRank problems solved total
-- [ ] Can explain your algorithm solution in plain English before coding
+<div className="mdx-checklist">
+  <label className="mdx-checklist-item">
+    <input type="checkbox" />
+    <span>Navigate to any directory using only <code>cd</code> and <code>ls</code>.</span>
+  </label>
+  <label className="mdx-checklist-item">
+    <input type="checkbox" />
+    <span>Search for text across multiple files using <code>grep -r</code>.</span>
+  </label>
+  <label className="mdx-checklist-item">
+    <input type="checkbox" />
+    <span><strong>Milestone</strong>: 15 HackerRank problems solved total.</span>
+  </label>
+  <label className="mdx-checklist-item">
+    <input type="checkbox" />
+    <span>Can explain your algorithm solution in plain English before coding.</span>
+  </label>
+</div>
 
 ---
 
-## 📝 Module Assessment Rubric
+## Module Assessment Rubric
 
 *(To be filled by the Evaluation Team)*
 

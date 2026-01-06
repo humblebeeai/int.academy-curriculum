@@ -616,6 +616,15 @@ h2 .auto-icon-box svg {
 }
 
 /* =========================================
+   DIFFICULTY TAGS - CENTERED ROW
+   ========================================= */
+.difficulty-tags-center {
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+/* =========================================
    MDX CHECKLIST (Self-assessment)
    ========================================= */
 .mdx-checklist {
