@@ -385,6 +385,12 @@ h6 {
   font-weight: 600;
 }
 
+/* Hide duplicate \"Core Systems Overview\" doc link in sidebar, but keep
+   the \"Core Systems\" category header (which also links to the same doc). */
+.menu__link[href='/docs/softlanding/core-systems']:not(.menu__link--sublist) {
+  display: none;
+}
+
 /* =========================================
    FOOTER
    ========================================= */
