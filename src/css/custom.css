@@ -275,6 +275,27 @@ h6 {
   margin-top: 3rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.markdown h2 svg {
+  flex-shrink: 0;
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.markdown h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.markdown h3 svg {
+  flex-shrink: 0;
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 /* =========================================
