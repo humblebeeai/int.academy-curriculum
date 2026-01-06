@@ -615,6 +615,38 @@ h2 .auto-icon-box svg {
   border-bottom: none;
 }
 
+/* =========================================
+   MDX CHECKLIST (Self-assessment)
+   ========================================= */
+.mdx-checklist {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mdx-checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.mdx-checklist-item input[type='checkbox'] {
+  margin-top: 0.2rem;
+  cursor: pointer;
+}
+
+.mdx-checklist-item span {
+  flex: 1;
+}
+
+.mdx-checklist-item input[type='checkbox']:checked + span {
+  text-decoration: line-through;
+  color: var(--ifm-font-color-secondary);
+}
+
 .comparison-table-wrapper td {
   padding: 1.25rem 1.5rem;
   color: var(--ifm-font-color-secondary);
