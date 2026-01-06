@@ -530,3 +530,123 @@ h2 .auto-icon-box svg {
   width: 1.5rem;
   height: 1.5rem;
 }
+
+/* =========================================
+   COMPARISON TABLE
+   ========================================= */
+.comparison-table-wrapper {
+  margin: 2rem 0;
+  overflow-x: auto;
+}
+
+.comparison-table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: var(--ifm-background-color);
+}
+
+.comparison-table-wrapper thead {
+  background: var(--ifm-background-surface-color);
+}
+
+.comparison-table-wrapper th {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--ifm-font-color-base);
+  border-bottom: 2px solid var(--ifm-color-emphasis-200);
+}
+
+.comparison-table-wrapper th:first-child {
+  width: 20%;
+}
+
+.comparison-table-wrapper th:nth-child(4) {
+  background: var(--ifm-color-primary);
+  color: var(--ifm-background-color);
+  position: relative;
+}
+
+.comparison-table-wrapper th:nth-child(4)::after {
+  content: '★ Recommended';
+  position: absolute;
+  top: 0.25rem;
+  right: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.comparison-table-wrapper tbody tr {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.comparison-table-wrapper tbody tr:hover {
+  background: var(--ifm-background-surface-color);
+}
+
+.comparison-table-wrapper tbody tr:last-child {
+  border-bottom: none;
+}
+
+.comparison-table-wrapper td {
+  padding: 1.25rem 1.5rem;
+  color: var(--ifm-font-color-secondary);
+  line-height: 1.6;
+  vertical-align: top;
+}
+
+.comparison-table-wrapper td:first-child {
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+}
+
+.comparison-table-wrapper td:first-child svg {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  color: var(--ifm-color-primary);
+  flex-shrink: 0;
+}
+
+.comparison-table-wrapper td:nth-child(4) {
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  font-weight: 500;
+  border-left: 3px solid var(--ifm-color-primary);
+  position: relative;
+}
+
+[data-theme='dark'] .comparison-table-wrapper td:nth-child(4) {
+  background: rgba(255, 255, 255, 0.03);
+  border-left-color: var(--ifm-color-primary);
+}
+
+/* Responsive: horizontal scroll on small screens */
+@media screen and (max-width: 996px) {
+  .comparison-table-wrapper {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding: 0 1rem;
+  }
+
+  .comparison-table-wrapper table {
+    min-width: 600px;
+  }
+
+  .comparison-table-wrapper th,
+  .comparison-table-wrapper td {
+    padding: 0.875rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .comparison-table-wrapper th:nth-child(4)::after {
+    content: '★';
+    font-size: 0.7rem;
+  }
+}

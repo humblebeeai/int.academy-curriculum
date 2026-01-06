@@ -8,7 +8,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import { LearningPath, SkillShowcase, ResourceCard } from '@site/src/components';
 import { motion } from 'framer-motion';
-import { BookOpen, Code2, Building2 } from 'lucide-react';
+import { BookOpen, Code2, Building2, Clock, DollarSign, GraduationCap, FileText, Users } from 'lucide-react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import problemCardStyles from '@site/src/components/ProblemCard.module.css';
@@ -110,35 +110,50 @@ This is our contribution to building the next generation of AI engineers.
 
 ## 🎯 What Makes This Path Different
 
-<div className="mdx-grid">
+<div className="comparison-table-wrapper">
 
-<div className="mdx-card mdx-card-emphasis">
-
-### Traditional Universities
-- 📚 **4 years** of theory-heavy courses
-- 💰 **$100K+** in tuition debt
-- 🎓 Degree with weak hiring signal
-- ⏰ Outdated curriculum (2-3 years behind industry)
-</div>
-
-<div className="mdx-card mdx-card-emphasis">
-
-### Online Bootcamps  
-- ⚡ **3-6 months** crash course
-- 💸 **$15-20K** upfront payment
-- 📜 Certificate with declining value
-- 🎯 Simplified toy problems, not real engineering
-</div>
-
-<div className="mdx-card mdx-card-primary">
-
-### HumbleBeeAI Open Curriculum
-- 🚀 **Self-paced**, but structured progression
-- 💵 **Free** curriculum (paid mentorship optional)
-- 🏗️ **Portfolio** of production-grade projects
-- 🔄 **Live curriculum** updated with industry standards
-- 🤝 **Community-driven** learning
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Traditional Universities</th>
+      <th>Online Bootcamps</th>
+      <th>HumbleBeeAI Open Curriculum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><Clock size={16} /> Duration</strong></td>
+      <td>4 years</td>
+      <td>3-6 months</td>
+      <td>Self-paced, but structured progression</td>
+    </tr>
+    <tr>
+      <td><strong><DollarSign size={16} /> Cost</strong></td>
+      <td>$100K+ in tuition debt</td>
+      <td>$15-20K upfront payment</td>
+      <td>Free curriculum (paid mentorship optional)</td>
+    </tr>
+    <tr>
+      <td><strong><GraduationCap size={16} /> Credential</strong></td>
+      <td>Degree with weak hiring signal</td>
+      <td>Certificate with declining value</td>
+      <td>Portfolio of production-grade projects</td>
+    </tr>
+    <tr>
+      <td><strong><FileText size={16} /> Curriculum</strong></td>
+      <td>Outdated curriculum (2-3 years behind industry)</td>
+      <td>Simplified toy problems, not real engineering</td>
+      <td>Live curriculum updated with industry standards</td>
+    </tr>
+    <tr>
+      <td><strong><Users size={16} /> Learning</strong></td>
+      <td>Theory-heavy courses</td>
+      <td>Crash course</td>
+      <td>Community-driven learning</td>
+    </tr>
+  </tbody>
+</table>
 
 </div>
 
