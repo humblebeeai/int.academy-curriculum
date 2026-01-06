@@ -8,7 +8,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import { SkillShowcase, ResourceCard } from '@site/src/components';
 import { motion } from 'framer-motion';
-import { BookOpen, Code2, Building2, Clock, DollarSign, GraduationCap, FileText, Users } from 'lucide-react';
+import { BookOpen, Code2, Building2, Clock, DollarSign, GraduationCap, FileText, Users, Sparkles, Rocket } from 'lucide-react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import problemCardStyles from '@site/src/components/ProblemCard.module.css';
@@ -263,24 +263,36 @@ You are not alone. Join our Discord, contribute to this repo, and learn with pee
 
 ## ❓ Frequently Asked Questions
 
-:::details Is this curriculum really free?
+<details>
+<summary>Is this curriculum really free?</summary>
+
 Yes! The entire curriculum content is open source (CC-BY-SA 4.0). You can read every lesson, do every project, and use every resource without paying a cent. We only charge for *human time* (mentorship, code reviews) in our paid Academy program.
-:::
 
-:::details Do I need a powerful computer?
+</details>
+
+<details>
+<summary>Do I need a powerful computer?</summary>
+
 For Phase 1, any laptop (Windows/Mac/Linux) released in the last 5-7 years is fine. For Phase 2 (Deep Learning), having an NVIDIA GPU is helpful but not required; we will show you how to use free cloud resources like Google Colab and Kaggle Kernels.
-:::
 
-:::details Can I skip Phase 1 if I know Python?
+</details>
+
+<details>
+<summary>Can I skip Phase 1 if I know Python?</summary>
+
 Maybe. We have a "Direct Entry" path for Phase 2, but it requires passing a rigorous placement test. We find that 80% of "experienced" self-taught developers still have critical gaps in data engineering or math that Phase 1 covers. When in doubt, don't skip foundation.
-:::
 
-:::details How do I get help if I'm stuck?
+</details>
+
+<details>
+<summary>How do I get help if I'm stuck?</summary>
+
 1. Check the documentation and FAQ.
 2. Search our Discord community history.
 3. Post a detailed question in the relevant Discord channel.
 4. Use the "Issues" tab on GitHub if you find a bug in the curriculum.
-:::
+
+</details>
 
 ---
 
@@ -291,12 +303,14 @@ Maybe. We have a "Direct Entry" path for Phase 2, but it requires passing a rigo
 ### Choose Your Starting Point:
 
 <div className="mdx-cta-buttons">
-  <a href="/docs/school/intro" className="button button--primary button--lg">
-    🆕 Start Phase 1 (Beginner)
+  <a href="/docs/school/intro" className="button button--primary button--lg mdx-cta-button">
+    <Sparkles size={18} className="mdx-cta-button-icon" />
+    <span>Start Phase 1 (Beginner)</span>
   </a>
   
-  <a href="/docs/softlanding/intro" className="button button--secondary button--lg">
-    💻 Start Phase 2 (Experienced)
+  <a href="/docs/softlanding/intro" className="button button--primary button--lg mdx-cta-button">
+    <Rocket size={18} className="mdx-cta-button-icon" />
+    <span>Start Phase 2 (Experienced)</span>
   </a>
 </div>
 

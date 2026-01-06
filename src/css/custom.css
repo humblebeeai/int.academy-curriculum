@@ -700,3 +700,133 @@ h2 .auto-icon-box svg {
     font-size: 1rem;
   }
 }
+
+/* FAQ Details Component - Consistent Styling */
+details {
+  margin: 1rem 0;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 0.5rem;
+  background-color: var(--ifm-background-surface-color);
+}
+
+details summary {
+  padding: 0.875rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+details summary::-webkit-details-marker {
+  display: none !important;
+}
+
+details summary::marker {
+  display: none !important;
+  content: '';
+}
+
+details summary::before {
+  display: none;
+}
+
+details summary::after {
+  content: '▼';
+  font-size: 0.75rem;
+  color: var(--ifm-color-primary);
+  transition: transform var(--duration-normal) var(--ease-standard);
+  flex-shrink: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+details summary:hover {
+  color: var(--ifm-color-primary);
+}
+
+details[open] summary {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  margin-bottom: 0;
+}
+
+details > *:not(summary) {
+  padding: 0.75rem;
+}
+
+/* Responsive adjustments for FAQ */
+@media (max-width: 768px) {
+  details summary {
+    padding: 0.875rem 1rem;
+    font-size: 0.95rem;
+  }
+  
+  details > *:not(summary) {
+    padding: 1rem;
+  }
+}
+
+/* CTA Section - Center Aligned Buttons */
+.mdx-cta-section {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.mdx-cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.mdx-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-primary);
+  color: var(--ifm-font-color-base);
+  border-radius: var(--ifm-card-border-radius);
+  padding: 1rem 1.5rem;
+  min-width: 240px;
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.mdx-cta-button:hover {
+  background-color: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-font-color-base);
+  transform: var(--hover-lift-sm);
+  box-shadow: var(--shadow-md);
+}
+
+.mdx-cta-button-icon {
+  flex-shrink: 0;
+}
+
+/* Responsive adjustments for CTA buttons */
+@media (max-width: 768px) {
+  .mdx-cta-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .mdx-cta-button {
+    width: 100%;
+    max-width: 320px;
+  }
+}
