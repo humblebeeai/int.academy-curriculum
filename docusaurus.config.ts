@@ -187,7 +187,7 @@ const config: Config = {
       copyright: `
         <div class="oer-license">
           <p>
-            📚 <strong>Open Educational Resource</strong><br/>
+            <strong>Open Educational Resource</strong><br/>
             Content licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>. 
             Code licensed under <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">MIT</a>.
           </p>
