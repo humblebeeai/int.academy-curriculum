@@ -1,7 +1,6 @@
 export { default as ResourceCard } from './ResourceCard';
 export { default as TimeEstimate } from './TimeEstimate';
 export { default as SkillShowcase } from './SkillShowcase';
-export { default as LearningPath } from './LearningPath';
 export { default as ConceptMap } from './ConceptMap';
 export { default as DifficultyTag } from './DifficultyTag';
 export { default as CodeComparison } from './CodeComparison';

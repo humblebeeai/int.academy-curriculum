@@ -6,7 +6,7 @@ description: Your open-source path to becoming a world-class AI Engineer
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import { LearningPath, SkillShowcase, ResourceCard } from '@site/src/components';
+import { SkillShowcase, ResourceCard } from '@site/src/components';
 import { motion } from 'framer-motion';
 import { BookOpen, Code2, Building2, Clock, DollarSign, GraduationCap, FileText, Users } from 'lucide-react';
 import clsx from 'clsx';
@@ -163,16 +163,23 @@ This is our contribution to building the next generation of AI engineers.
 
 This curriculum is designed as a progressive journey. **You cannot skip phases** – each one develops critical foundations for the next.
 
-<LearningPath 
-    currentModuleId="start"
-    modules={[
-        { id: 'start', title: 'Start Here', link: '#' },
-        { id: 'phase1', title: 'School Program', link: '/docs/school/intro' },
-        { id: 'phase2', title: 'Soft Landing', link: '/docs/softlanding/intro' },
-        { id: 'phase3', title: 'Specializations', link: '/docs/softlanding/specializations/overview' },
-        { id: 'job', title: 'Career Launch', link: '#' }
-    ]}
-/>
+<div className="mermaid-full-width">
+
+```mermaid
+%%{init: {'gitGraph': {'mainBranchName': 'Learning Path of Academy'}}}%%
+gitGraph
+    commit id: "School Program"
+    commit id: "Soft Landing"
+    branch softlanding
+    checkout softlanding
+    commit id: "Core Systems"
+    commit id: "Specializations"
+    checkout "Learning Path of Academy"
+    merge softlanding
+    commit id: "Foundation"
+```
+
+</div>
 
 
 <Tabs>

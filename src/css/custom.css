@@ -650,3 +650,21 @@ h2 .auto-icon-box svg {
     font-size: 0.7rem;
   }
 }
+
+/* Mermaid Full Width Styling */
+.mermaid-full-width {
+  width: 100%;
+  margin: 2rem 0;
+  overflow-x: auto;
+}
+
+.mermaid-full-width svg {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 400px !important;
+}
+
+.mermaid-full-width .mermaid {
+  width: 100% !important;
+  display: block;
+}
