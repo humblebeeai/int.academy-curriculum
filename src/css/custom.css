@@ -102,10 +102,10 @@
   --ifm-navbar-link-color: var(--ifm-font-color-base);
   --ifm-navbar-link-hover-color: var(--ifm-color-primary);
 
-  /* Footer */
-  --ifm-footer-background-color: hsl(0, 0%, 5%);
-  --ifm-footer-color: hsl(0, 0%, 100%);
-  --ifm-footer-link-color: hsl(0, 0%, 70%);
+  /* Footer - Monochrome Theme */
+  --ifm-footer-background-color: var(--ifm-background-surface-color);
+  --ifm-footer-color: var(--ifm-font-color-base);
+  --ifm-footer-link-color: var(--ifm-font-color-secondary);
 
   /* Global */
   --ifm-code-font-size: 90%;
@@ -226,8 +226,10 @@
   --ifm-navbar-background-color: rgba(18, 18, 18, 0.9);
   --ifm-navbar-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05);
 
-  /* Footer */
-  --ifm-footer-background-color: hsl(0, 0%, 4%);
+  /* Footer - Monochrome Theme */
+  --ifm-footer-background-color: var(--ifm-background-surface-color);
+  --ifm-footer-color: var(--ifm-font-color-base);
+  --ifm-footer-link-color: var(--ifm-font-color-secondary);
 
   /* Global */
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.05);
@@ -394,34 +396,55 @@ h6 {
 /* =========================================
    FOOTER
    ========================================= */
+/* Override Docusaurus default dark footer theme to use monochrome colors */
 .footer {
-  background: var(--ifm-footer-background-color);
-  border-top: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-background-surface-color) !important;
+  border-top: 1px solid var(--ifm-color-emphasis-200) !important;
   padding: 4rem 2rem;
+  color: var(--ifm-font-color-base) !important;
 }
 
 .footer__title {
-  color: var(--ifm-footer-color);
-  opacity: 0.4;
+  color: var(--ifm-font-color-base) !important;
+  opacity: 0.6;
   font-size: 0.85rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
 .footer__link-item {
-  color: var(--ifm-footer-link-color);
+  color: var(--ifm-font-color-secondary) !important;
   transition: color 0.2s ease;
 }
 
 .footer__link-item:hover {
-  color: var(--ifm-footer-color);
+  color: var(--ifm-color-primary) !important;
   text-decoration: none;
 }
 
 .footer__copyright {
   margin-top: 3rem;
-  opacity: 0.3;
+  opacity: 0.5;
   font-size: 0.85rem;
+  color: var(--ifm-font-color-secondary) !important;
+}
+
+/* Override any default Docusaurus footer colors */
+.footer a {
+  color: var(--ifm-font-color-secondary) !important;
+}
+
+.footer a:hover {
+  color: var(--ifm-color-primary) !important;
+}
+
+.footer__col {
+  color: var(--ifm-font-color-base) !important;
+}
+
+/* Ensure no blue colors appear in footer */
+.footer * {
+  border-color: var(--ifm-color-emphasis-200) !important;
 }
 
 /* =========================================
