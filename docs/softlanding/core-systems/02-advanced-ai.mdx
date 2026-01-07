@@ -2,7 +2,7 @@
 sidebar_position: 2
 sidebar_label: 2. Advanced AI
 title: Advanced AI & Coding
-description: Deep Learning, PyTorch, and Clean Code
+description: Deep learning foundations, PyTorch fluency, and production-grade coding habits
 ---
 
 import { ResourceCard, TimeEstimate } from '@site/src/components';
@@ -16,21 +16,30 @@ import { BrainCircuit, Target, Sparkles, Code2, FileText } from 'lucide-react';
 
 ## <Target /> Goal
 
-Master the tools and practices used by professional AI engineers to build, train, and deploy production-grade AI systems.
+Master the tools and habits that separate "model demos" from production AI.
 
-This module bridges theory and engineering practice, teaching you to implement deep learning models with PyTorch, understand modern LLM architectures, and write clean, maintainable code that scales beyond research prototypes.
+You will build deep learning intuition (how training works and why it fails), gain practical LLM mental models, and develop PyTorch fluency. Alongside that, you'll practice clean coding so your ML codebases stay testable, debuggable, and easy to extend.
+
+By the end, you can:
+
+- Implement and train neural networks in PyTorch without copy-pasting templates.
+- Debug common training failures (overfitting, unstable loss, poor evaluation, data issues).
+- Explain the main moving parts of transformers and LLMs at a practical level.
+- Write ML code that stays readable as the project grows.
 
 <TimeEstimate 
-  minHours={0} 
-  maxHours={0} 
+  minHours={38} 
+  maxHours={53} 
   breakdownBy={{
-    'Deep Learning': 0,
-    'PyTorch': 0,
-    'Engineering': 0
+    'Deep Learning & LLMs': 9,
+    'PyTorch Engineering': 5,
+    'Engineering Excellence': 25
   }}
 />
 
 ## <BrainCircuit /> 1. Deep Learning & LLMs
+
+Learn the foundations behind modern deep learning, then build a practical mental model of transformers and LLM behavior.
 
 <ResourceCard 
   type="course"
@@ -59,7 +68,16 @@ This module bridges theory and engineering practice, teaching you to implement d
   why="Practical workflows for pairing with LLMs in real engineering work, not just toy examples."
 />
 
+**What You'll Learn**
+
+- Backprop and optimization: what training is actually doing.
+- Why models fail: underfitting, overfitting, instability, and bad data.
+- Transformer basics: tokens, attention, context, and next-token prediction.
+- How to reason about LLMs in practice: training vs inference vs fine-tuning.
+
 ## <Code2 /> 2. PyTorch Engineering
+
+Turn theory into implementation. Build real PyTorch fluency so you can write and debug training code confidently.
 
 <ResourceCard 
   type="tutorial"
@@ -69,7 +87,16 @@ This module bridges theory and engineering practice, teaching you to implement d
   difficulty="intermediate"
   why="Hands-on notebook series that builds real fluency with tensors, autograd, and model building in PyTorch."
 />
+
+**What You'll Learn**
+
+- Tensors, shapes, broadcasting, and device placement.
+- Autograd intuition and how gradients flow.
+- nn.Module structure and clean training/evaluation loops.
+- Debugging patterns: shapes, metrics, overfitting checks, and sanity tests.
 ## <Sparkles /> 3. Engineering Excellence
+
+Write ML code like an engineer: clean structure, readable logic, and maintainability as experiments scale.
 
 <ResourceCard 
   type="book"
@@ -88,6 +115,12 @@ This module bridges theory and engineering practice, teaching you to implement d
   difficulty="intermediate"
   why="Build algorithmic fluency so you can translate ideas into efficient code and debug complex logic quickly."
 />
+
+**What You'll Learn**
+
+- Naming and function design that keeps ML codebases understandable.
+- How to avoid "research spaghetti" as experiments multiply.
+- Building implementation fluency so you can translate ideas into correct code faster.
 
 ---
 
