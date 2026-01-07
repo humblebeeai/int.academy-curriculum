@@ -5,19 +5,39 @@ title: Module 4 - Data Engineering
 description: Python, Pandas, and Tools
 ---
 
+import { ResourceCard, TimeEstimate } from '@site/src/components';
+import { Database, GitBranch, FileText } from 'lucide-react';
+
 # Module 4: Python Data Engineering
+
+
 
 ![Data Engineering - Python Code and Data Pipelines](/img/data_engineering.png)
 
-## Goal
+## <Database /> Goal
 Manipulate and prepare real-world data for analysis and machine learning.
 
 This page focuses on the practical skills needed to turn raw, messy data into clean, structured inputs that models and analyses can actually use.
 
-## 1. Pandas & Data Cleaning
+<TimeEstimate 
+  minHours={10} 
+  maxHours={14} 
+  breakdownBy={{
+    'Pandas': 4,
+    'Git': 6
+  }}
+/>
 
-**Resources:**
-- **[Kaggle: Pandas Micro-Course](https://www.kaggle.com/learn/pandas)**
+## <Database /> 1. Pandas & Data Cleaning
+
+<ResourceCard 
+  type="course"
+  title="Kaggle: Pandas Micro-Course"
+  url="https://www.kaggle.com/learn/pandas"
+  duration="6-8 hours"
+  difficulty="beginner"
+  why="Hands-on notebooks to load, clean, and transform tabular data quickly with Pandas."
+/>
 
 **Why it matters:**
 
@@ -36,10 +56,16 @@ Learners will:
 
 By the end of this section, learners will be able to clean and manipulate real-world datasets with concise, readable code.
 
-## 2. Software Engineering Tools
+## <GitBranch /> 2. Software Engineering Tools
 
-**Resources:**
-- **[Git Branching Game](https://learngitbranching.js.org/)**
+<ResourceCard 
+  type="practice"
+  title="Git Branching Game"
+  url="https://learngitbranching.js.org/"
+  duration="2-3 hours"
+  difficulty="beginner"
+  why="Interactive puzzles that teach branching and merging so version control feels natural."
+/>
 
 **Why it matters:**
 
@@ -60,4 +86,34 @@ This section ensures learners can manage their code and data work reliably, both
 
 ---
 
-### [Next: IoT & AI Activation ->](./06-module-5-iot-activation.mdx)
+## <GitBranch /> Completion Checklist
+
+<div className="mdx-checklist">
+  <label className="mdx-checklist-item">
+    <input type="checkbox" />
+    <span>
+      Completed the <strong>Kaggle: Pandas Micro-Course</strong>, including all core lessons and exercises,
+      and earned the official course certificate from Kaggle.
+    </span>
+  </label>
+  <label className="mdx-checklist-item">
+    <input type="checkbox" />
+    <span>
+      Completed the <strong>W3Docs Git Basics Quiz</strong>
+      ([Git Basics Quiz](https://www.w3docs.com/quiz-start/git)) with a score of at least <strong>85%</strong> and earned the Git certificate.
+    </span>
+  </label>
+</div>
+
+---
+
+## <FileText /> Evaluation Rubric (Coming Soon)
+
+*(Assessment criteria will be provided by the evaluation team - Coming Soon)*
+
+| Criteria | Needs Improvement | Meets Expectations | Exceeds Expectations |
+| :--- | :--- | :--- | :--- |
+| **Topic 1** | ... | ... | ... |
+| **Topic 2** | ... | ... | ... |
+
+<!-- rubric_section_end -->

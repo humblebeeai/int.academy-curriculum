@@ -5,19 +5,39 @@ title: Module 5 - IoT & Activation
 description: Teachable Machine and Real-world AI
 ---
 
+import { ResourceCard, TimeEstimate } from '@site/src/components';
+import { Cpu, Rocket, FileText, Laptop } from 'lucide-react';
+
 # Module 5: IoT & AI Activation
+
+
 
 ![Placeholder: Banner Image for IoT and AI Activation - Robots and Sensors](/img/iot.png)
 
-## Goal
+## <Cpu /> Goal
 Connect code and machine learning models to the physical world.
 
 This page focuses on moving beyond notebooks and servers, showing how AI systems interact with real-world inputs like cameras, microphones, and sensors.
 
-## 1. Teachable Machine & Rapid Prototyping
+<TimeEstimate 
+  minHours={4} 
+  maxHours={7} 
+  breakdownBy={{
+    'Teachable Machine': 3,
+    'Edge Deployment': 4
+  }}
+/>
 
-**Resources:**
-- **[Google Teachable Machine](https://teachablemachine.withgoogle.com/)**
+## <Laptop /> 1. Teachable Machine & Rapid Prototyping
+
+<ResourceCard 
+  type="tool"
+  title="Google Teachable Machine"
+  url="https://teachablemachine.withgoogle.com/"
+  duration="2-3 hours"
+  difficulty="beginner"
+  why="Fast, code-free way to collect data, train a small model, and see live predictions to build intuition for the ML loop."
+/>
 
 **Why it matters:**
 
@@ -35,10 +55,16 @@ Learners will:
 
 This section emphasizes experimentation and immediate feedback.
 
-## 2. Edge AI & Simple IoT Deployment
+## <Rocket /> 2. Edge AI & Simple IoT Deployment
 
-**Resources:**
-- **Raspberry Pi / Simple IoT Setup**
+<ResourceCard 
+  type="guide"
+  title="Raspberry Pi / Simple IoT Setup"
+  url="https://www.raspberrypi.com/documentation/"
+  duration="3-4 hours"
+  difficulty="beginner"
+  why="Hands-on steps to deploy a trained model to a small device, connect sensors/cameras, and run inference at the edge."
+/>
 
 **Why it matters:**
 
@@ -58,10 +84,24 @@ By the end of this page, learners will see how AI systems transition from code t
 
 ---
 
-## Mentorship & Evaluation
-*   **Daily Rhythm**: 2 hours of mentorship daily (Start/End of day).
-*   **Success Metric**: Passing the **HackerRank Basic** certificate and deploying a working **Teachable Machine** project.
-
 ---
 
-### [Next: Mentorship & Evaluation ->](../03-mentorship.mdx)
+## <FileText /> Completion Checklist
+
+<div className="mdx-checklist">
+  <label className="mdx-checklist-item">
+    <input type="checkbox" />
+    <span>Project reviewed and approved by a mentor.</span>
+  </label>
+</div>
+
+## <FileText /> Evaluation Rubric (Coming Soon)
+
+*(Assessment criteria will be provided by the evaluation team - Coming Soon)*
+
+| Criteria | Needs Improvement | Meets Expectations | Exceeds Expectations |
+| :--- | :--- | :--- | :--- |
+| **Topic 1** | ... | ... | ... |
+| **Topic 2** | ... | ... | ... |
+
+<!-- rubric_section_end -->

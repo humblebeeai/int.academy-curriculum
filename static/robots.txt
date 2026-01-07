@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+# Explicitly allow high-value content paths (redundant but safe)
+Allow: /docs/
+Allow: /llms.txt
+Allow: /sitemap.xml
+
+# Exclude internal/generated pages
+Disallow: /build/
+
+Disallow: /tags/
+Disallow: /page/
+Disallow: /search
+Disallow: /404
+
+Sitemap: https://academy.humblebee.ai/sitemap.xml

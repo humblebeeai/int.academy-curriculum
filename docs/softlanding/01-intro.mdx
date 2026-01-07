@@ -1,47 +1,225 @@
 ---
 sidebar_position: 1
-title: Introduction
-description: Goal, outcomes, and prerequisites for Soft Landing
+title: Soft Landing Introduction
+description: Master AI fundamentals and systems engineering
 ---
 
-# Softlanding Program
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { TimeEstimate, SkillShowcase, ResourceCard } from '@site/src/components';
+import {
+  Zap,
+  Target,
+  BookOpen,
+  Hammer,
+  BarChart3,
+  Timer,
+  Image as ImageIcon,
+  MessageSquare,
+  Settings,
+  Layers,
+  Rocket
+} from 'lucide-react';
 
-## Goal
-Transform students with basic coding and math fundamentals into **technically capable junior engineers** with strong AI fundamentals, solid software engineering skills, and **field-specific technical depth**.
+# <Rocket /> Phase 2: Soft Landing Program
+## <Target /> From Fundamentals to Production-Ready AI Engineer
 
-## Outcomes
-* Deep understanding of ML/DL concepts.
-* Practical engineering skills (APIs, Docker, Testing).
-* Ability to implement models from scratch.
-* Readiness for specialization.
 
-## Prerequisites
 
-:::warning Entry Paths
-There are two main ways to enter the Soft Landing program.
-:::
+---
 
-```mermaid
-graph TD
-    A[Start] --> B{Entry Path?}
-    B -->|Default| C[School Graduate]
-    B -->|Fast Track| D[Entry Check]
-    
-    C --> E[Soft Landing]
-    D -->|Pass| E
-    D -->|Fail| F[Revisit Fundamentals]
-    
-    style E fill:#FFF500,color:#111,stroke:#333,stroke-width:2px
-```
+## <Zap /> Welcome to the Deep End
 
-### 1. School Completion (Default)
-* Completed **HumblebeeAI Academy – School** (up to 6 months).
+**If you're here, one of two things is true:**
 
-### 2. Equivalent Readiness (Fast Track)
-* Must pass the **Soft Landing Entry Check**.
-* **Requirements**:
-    * **English**: B2 Level.
-    * **Python**: Automate the Boring Stuff (Ch 12), Debugging skills.
-    * **Problem Solving**: HackerRank Basic, 20 LeetCode Easy.
-    * **Math**: Calculus, Linear Algebra, Stats intuition.
-    * **Tools**: Git, CLI, Pandas.
+1. ✅ You completed Phase 1 (School Program) and proved your foundations
+2. ✅ You're an experienced developer who tested into Phase 2 directly
+
+Either way: **congratulations**. You're about to transform from someone who *can code* to someone who *can build AI systems*.
+
+---
+
+## <BookOpen /> Why It's Called "Soft Landing"
+
+The name comes from aerospace engineering. When a spacecraft lands on another planet, a "soft landing" means:
+
+- **Controlled descent** – Not crashing, but not staying in orbit either
+- **Gradual adjustment** – Adapting to new gravity, atmosphere, conditions  
+- **Safe touchdown** – Ready to explore the new terrain
+
+**That's exactly what this phase does for you.**
+
+You've been in "orbit" – learning theory, following tutorials, building toy projects. Now you're **landing in the real world** of professional AI engineering:
+
+- Real datasets (messy, incomplete, biased)
+- Real constraints (time, compute, deployment)
+- Real systems (networking, Docker, cloud infrastructure)
+- Real expectations (code reviews, documentation, production quality)
+
+The "soft" part? **We guide you through it with structure and support** so you don't crash and burn.
+
+---
+
+## <BarChart3 /> What Makes Soft Landing Different
+
+<div className="comparison-section grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+
+<div className="card p-6 border-l-4 border-red-400 bg-[var(--ifm-background-surface-color)]">
+
+### Other Bootcamps: "Sprint to Employability"
+- <Zap size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> 12 weeks of cramming
+- <Target size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> Focus: Get hired fast
+- <BookOpen size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> Approach: Teach frameworks, not foundations
+- <Hammer size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> Projects: Portfolio pieces (look good, shallow depth)
+- <BarChart3 size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> **Outcome:** Junior roles, struggle with complexity
+</div>
+
+<div className="card p-6 border-l-4 border-green-500 bg-[var(--ifm-background-surface-color)]">
+
+### Soft Landing: "Build Unshakeable Competency"
+- <Timer size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> 3-6 months of deep learning
+- <Target size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> Focus: Become truly capable
+- <BookOpen size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> Approach: Master principles, frameworks follow naturally
+- <Hammer size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> Projects: Production-grade systems (real complexity)
+- <BarChart3 size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> **Outcome:** Mid-level+ roles, can handle real engineering
+</div>
+
+</div>
+
+**The difference:** We optimize for **long-term capability**, not short-term hiring.
+
+---
+
+## <Layers /> The Two Stages of Soft Landing
+
+<Tabs>
+<TabItem value="core-systems" label="Stage 1: Core Systems" default>
+
+### Stage 1: Core Systems (Months 1-3)
+**Goal:** Master the fundamental building blocks of AI engineering.
+
+<SkillShowcase 
+    skills={[
+        { iconString: "BrainCircuit", title: "Math & ML Foundations", description: "Linear algebra, Classical ML, Evaluation metrics." },
+        { iconString: "Network", title: "Deep Learning", description: "PyTorch, Transformers, Training loops." },
+        { iconString: "Server", title: "Systems & Networking", description: "Linux, Docker, API Design, HTTP." },
+        { iconString: "Globe", title: "Fullstack Toolkit", description: "FastAPI, Databases, CI/CD, Cloud." }
+    ]} 
+/>
+
+**Time Investment:** 120-150 hours  
+**Outcome:** You can build, train, and deploy ML models to production.
+
+</TabItem>
+
+<TabItem value="specialization" label="Stage 2: Specialization Tracks">
+
+### Stage 2: Specialization Tracks (Months 3-6)
+**Goal:** Deep expertise in one AI domain.
+
+**Choose Your Path:**
+- **<ImageIcon size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> Computer Vision** – Image classification, Object detection, GANs
+- **<BarChart3 size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> Data Science** – Statistical modeling, A/B testing, Analytics
+- **<MessageSquare size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> NLP & LLMs** – Transformers, RAG, Agents, Fine-tuning
+- **<Settings size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> Software Engineering** – Distributed systems, MLOps, Scalability
+
+**Time Investment:** 100-120 hours per track  
+**Outcome:** Portfolio of 3-5 domain-specific projects proving expertise.
+
+</TabItem>
+</Tabs>
+
+---
+
+## <Timer /> Time Commitment & Expectations
+
+<TimeEstimate
+  minHours={220}
+  maxHours={270}
+  breakdownBy={{
+    'Core Systems (Theory & Practice)': 120,
+    'Specialization Track': 100,
+    'Capstone Project': 30,
+    'Code Reviews & Iteration': 20
+  }}
+/>
+
+---
+
+## <BookOpen /> Suggested Prep (If You Feel Rusty)
+
+If it's been a while since you touched math or ML, these are **high‑leverage refreshers** you can work through alongside the early Core Systems modules.
+
+<ResourceCard 
+  type="video"
+  title="Essence of Linear Algebra"
+  url="https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab"
+  duration="3-4 hours"
+  difficulty="beginner"
+  why="Rebuilds your geometric intuition for vectors and matrices so PyTorch tensors stop feeling mysterious."
+/>
+
+<ResourceCard 
+  type="course"
+  title="Neural Networks and Deep Learning (Andrew Ng)"
+  url="https://www.youtube.com/watch?v=CS4cs9xVecg&list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0&index=1"
+  duration="8-10 hours"
+  difficulty="intermediate"
+  why="Connects gradients, loss, and backprop to the neural network code you’ll write in Advanced AI."
+/>
+
+---
+
+## <Settings /> Are You Ready?
+
+<div className="requirements-section card p-6 bg-[var(--ifm-background-surface-color)]">
+
+### Entrance Readiness Check
+Be honest. If you can't check these, go back to Phase 1.
+
+<div className="mdx-checklist">
+  <label className="mdx-checklist-item">
+    <input type="checkbox" />
+    <span>
+      <strong>I can explain gradient descent mathematically</strong> (not just conceptually).
+    </span>
+  </label>
+  <label className="mdx-checklist-item">
+    <input type="checkbox" />
+    <span>
+      <strong>I have implemented backpropagation</strong> or a simple neural net from scratch.
+    </span>
+  </label>
+  <label className="mdx-checklist-item">
+    <input type="checkbox" />
+    <span>
+      <strong>I can debug basic Python errors</strong> without instantly asking for help.
+    </span>
+  </label>
+  <label className="mdx-checklist-item">
+    <input type="checkbox" />
+    <span>
+      <strong>I am ready to treat this like a job</strong> (professionalism, discipline).
+    </span>
+  </label>
+</div>
+
+</div>
+
+---
+
+## <Rocket /> Ready to Start?
+
+<div className="cta-container" style={{ marginTop: '2rem', textAlign: 'center' }}>
+
+<a href="/docs/softlanding/core-systems/math-ml" className="button button--secondary button--lg">
+  Begin Stage 1: Core Systems →
+</a>
+
+<div style={{ marginTop: '1rem' }}>
+    <a href="/docs/softlanding/specializations/overview" className="button button--link">
+      Already finished Core Systems? Choose a Specialization →
+    </a>
+</div>
+
+</div>

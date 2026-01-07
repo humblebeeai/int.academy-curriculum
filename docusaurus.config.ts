@@ -1,13 +1,14 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import remarkEmoji from './src/plugins/remark-emoji';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
   title: 'HumblebeeAI Academy',
   tagline: 'Transforming students into technical junior engineers',
-  favicon: 'https://humblebee.ai/images/misc/logo.svg',
+  favicon: 'img/logo.svg',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -40,6 +41,7 @@ const config: Config = {
         docs: {
           path: 'docs',
           sidebarPath: './sidebars.ts',
+          remarkPlugins: [remarkEmoji],
           editUrl:
             'https://github.com/humblebeeai/int.academy-curriculum/edit/main/docs/',
         },
@@ -51,6 +53,12 @@ const config: Config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**', '/page/**', '/search', '/404'],
+          filename: 'sitemap.xml',
+        },
       } satisfies Preset.Options,
     ],
   ],
@@ -58,10 +66,15 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
+    metadata: [
+      { name: 'description', content: 'Open-source AI Engineering curriculum. Master Deep Learning, MLOps, Computer Vision, and NLP. From zero to production-grade AI engineer.' },
+      { name: 'keywords', content: 'AI curriculum, deep learning path, MLOps, computer vision course, NLP training, data science roadmap, HumblebeeAI, open source education' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+    ],
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: false,
-      respectPrefersColorScheme: false,
+      respectPrefersColorScheme: true,
     },
     navbar: {
       title: 'HumblebeeAI Academy',
@@ -91,8 +104,8 @@ const config: Config = {
           className: 'navbar-softlanding-link',
         },
         {
-          href: 'https://humblebee.ai',
-          label: 'HumblebeeAI',
+          href: 'https://academy.humblebee.ai',
+          label: 'Academy',
           position: 'right',
         },
         {
@@ -128,19 +141,19 @@ const config: Config = {
           items: [
             {
               label: 'Computer Vision',
-              to: '/docs/softlanding/tracks/computer-vision',
+              to: '/docs/softlanding/specializations/computer-vision',
             },
             {
               label: 'Data Science',
-              to: '/docs/softlanding/tracks/data-science',
+              to: '/docs/softlanding/specializations/data-science',
             },
             {
               label: 'Natural Language Processing',
-              to: '/docs/softlanding/tracks/nlp',
+              to: '/docs/softlanding/specializations/nlp',
             },
             {
               label: 'Software Engineering',
-              to: '/docs/softlanding/tracks/software-engineering',
+              to: '/docs/softlanding/specializations/software-engineering',
             },
           ],
         },
@@ -171,7 +184,18 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} HumblebeeAI. Open source curriculum for aspiring engineers.<br/>Powered by HumblebeeAI Academy`,
+      copyright: `
+        <div class="oer-license">
+          <p>
+            <strong>Open Educational Resource</strong><br/>
+            Content licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>. 
+            Code licensed under <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">MIT</a>.
+          </p>
+          <p>
+            © ${new Date().getFullYear()} HumblebeeAI Academy. Built with ❤️ by the community.
+          </p>
+        </div>
+      `,
     },
     prism: {
       theme: prismThemes.github,

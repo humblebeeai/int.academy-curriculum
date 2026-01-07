@@ -1,0 +1,34 @@
+.card {
+    margin: 2rem 0;
+    border: 1px solid var(--ifm-color-emphasis-200);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.tab {
+    flex: 1;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    background: var(--ifm-background-surface-color);
+    color: var(--ifm-color-emphasis-700);
+    transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.active {
+    background: var(--ifm-color-primary);
+    color: var(--ifm-background-color);
+    font-weight: 800;
+}
+
+.content pre {
+    margin: 0 !important;
+    border-radius: 0 !important;
+}

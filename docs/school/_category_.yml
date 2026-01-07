@@ -3,5 +3,5 @@ label: School Program
 collapsible: true
 collapsed: false
 link:
-  type: generated-index
-  title: School Program Overview
+  type: doc
+  id: school/intro
