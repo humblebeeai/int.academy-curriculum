@@ -5,13 +5,24 @@ title: Module 1 - Computational Thinking
 description: CLI, Git, and Algorithms
 ---
 
-import { SkillShowcase, DifficultyTag, TimeEstimate, ResourceCard } from '@site/src/components';
-import { Skill } from '@site/src/components/SkillShowcase';
-import { Cpu, Target, ListChecks, TerminalSquare, BrainCircuit, ClipboardCheck, FileText } from 'lucide-react';
+import {
+  SkillShowcase,
+  DifficultyTag,
+  TimeEstimate,
+  ResourceCard,
+} from "@site/src/components";
+import { Skill } from "@site/src/components/SkillShowcase";
+import {
+  Cpu,
+  Target,
+  ListChecks,
+  TerminalSquare,
+  BrainCircuit,
+  ClipboardCheck,
+  FileText,
+} from "lucide-react";
 
 # Module 1: The Developer's Environment
-
-
 
 ## <Cpu /> What You'll Build Here
 
@@ -29,19 +40,34 @@ We built this after watching 500+ students go from "What's a terminal?" to deplo
 
 <SkillShowcase
   skills={[
-    { iconString: "Terminal", title: "Command Line Fluency", description: "Navigate servers, manage files, and run scripts on remote machines without needing a mouse." },
-    { iconString: "BrainCircuit", title: "Algorithmic Logic", description: "Break down complex problems into step-by-step logic that computers can execute efficiently." },
-    { iconString: "Wrench", title: "Pro Environment", description: "Set up VS Code like a senior engineer, with the right extensions for Python and Data Science." }
+    {
+      iconString: "Terminal",
+      title: "Command Line Fluency",
+      description:
+        "Navigate servers, manage files, and run scripts on remote machines without needing a mouse.",
+    },
+    {
+      iconString: "BrainCircuit",
+      title: "Algorithmic Logic",
+      description:
+        "Break down complex problems into step-by-step logic that computers can execute efficiently.",
+    },
+    {
+      iconString: "Wrench",
+      title: "Pro Environment",
+      description:
+        "Set up VS Code like a senior engineer, with the right extensions for Python and Data Science.",
+    },
   ]}
 />
 
-<TimeEstimate 
-  minHours={15} 
-  maxHours={20} 
+<TimeEstimate
+  minHours={15}
+  maxHours={20}
   breakdownBy={{
-    'Environment Setup': 2,
-    'Command Line Practice': 8,
-    'HackerRank Algorithmic Logic': 10
+    "Environment Setup": 2,
+    "Command Line Practice": 8,
+    "HackerRank Algorithmic Logic": 10,
   }}
 />
 
@@ -51,7 +77,7 @@ We built this after watching 500+ students go from "What's a terminal?" to deplo
 
 ### <Cpu size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> Development Environment Setup
 
-<ResourceCard 
+<ResourceCard
   type="article"
   title="VS Code Setup Guide"
   url="https://code.visualstudio.com/docs/setup/setup-overview"
@@ -65,6 +91,7 @@ You might be tempted to skip the command line module and use VS Code's UI for ev
 :::
 
 **Your Mission:**
+
 1. Install VS Code on your OS.
 2. Install **Required Extensions**: Python, Pylance, Jupyter.
 3. Install **Recommended**: GitLens, Error Lens.
@@ -80,7 +107,7 @@ You might be tempted to skip the command line module and use VS Code's UI for ev
 
 ### <TerminalSquare size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> Command Line Mastery
 
-<ResourceCard 
+<ResourceCard
   type="course"
   title="Linux Journey - Command Line"
   url="https://linuxjourney.com/"
@@ -105,12 +132,19 @@ Commands learned here work on Linux servers (where 99% of AI models run), Mac te
 </div>
 
 **Action Plan:**
+
 1. Complete **"Command Line"** (Lessons 1-8)
 
 :::caution Common Trap (rm -rf)
 Be very careful with `rm -rf`. It deletes everything forever. Always use `ls` first to see where you are before deleting.
 :::
 
+:::tip Self-Check (Practical Skills)
+Linux Journey includes **built-in labs** for each lesson.  
+If you can complete those labs without hints, you already have real command-line skills.
+:::
+
+<br />
 <div className="mdx-checklist">
   <label className="mdx-checklist-item">
     <input type="checkbox" />
@@ -124,7 +158,7 @@ Be very careful with `rm -rf`. It deletes everything forever. Always use `ls` fi
 
 ### <ListChecks size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> Problem-Solving Fundamentals
 
-<ResourceCard 
+<ResourceCard
   type="practice"
   title="HackerRank: Problem Solving (Basic)"
   url="https://www.hackerrank.com/skills-directory/problem_solving_basic"
@@ -137,6 +171,7 @@ Be very careful with `rm -rf`. It deletes everything forever. Always use `ls` fi
 These challenges force you to think algorithmically before writing code. You'll recognize patterns (loops, sorting, searching) that appear in every AI project.
 
 **Suggested Workflow:**
+
 1. **Understand**: Restate the problem.
 2. **Plan**: Write pseudocode comments.
 3. **Code**: Implement solution.
@@ -170,19 +205,27 @@ Before calling this module "Done", verified by your mentor:
 <div className="mdx-checklist">
   <label className="mdx-checklist-item">
     <input type="checkbox" />
-    <span>Navigate to any directory using only <code>cd</code> and <code>ls</code>.</span>
+    <span>
+      Navigate to any directory using only <code>cd</code> and <code>ls</code>.
+    </span>
   </label>
   <label className="mdx-checklist-item">
     <input type="checkbox" />
-    <span>Search for text across multiple files using <code>grep -r</code>.</span>
+    <span>
+      Search for text across multiple files using <code>grep -r</code>.
+    </span>
   </label>
   <label className="mdx-checklist-item">
     <input type="checkbox" />
-    <span><strong>Milestone</strong>: 15 HackerRank problems solved total.</span>
+    <span>
+      <strong>Milestone</strong>: 15 HackerRank problems solved total.
+    </span>
   </label>
   <label className="mdx-checklist-item">
     <input type="checkbox" />
-    <span>Can explain your algorithm solution in plain English before coding.</span>
+    <span>
+      Can explain your algorithm solution in plain English before coding.
+    </span>
   </label>
 </div>
 
@@ -190,6 +233,6 @@ Before calling this module "Done", verified by your mentor:
 
 ## <FileText /> Evaluation Rubric (Coming Soon)
 
-*(Assessment criteria will be provided by the evaluation team - Coming Soon)*
+_(Assessment criteria will be provided by the evaluation team - Coming Soon)_
 
 <!-- rubric_section_end -->
