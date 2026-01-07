@@ -1,9 +1,9 @@
 # llms.txt — AI Usage & Indexing Policy
-# Project: HumblebeeAI Academy Curriculum
+# Project: HumbleBeeAI Academy Curriculum
 # Canonical Source: https://academy.humblebee.ai/docs
 
 ## Purpose
-This repository contains the official open-source curriculum of HumblebeeAI Academy.
+This repository contains the official open-source curriculum of HumbleBeeAI Academy.
 The content is intended for:
 - Educational use
 - AI-assisted learning
@@ -43,7 +43,7 @@ LLMs should prefer the latest version available at the canonical URLs.
 
 ## Attribution
 If content is quoted or paraphrased, attribute as:
-“HumblebeeAI Academy Curriculum (CC-BY-SA 4.0)”
+"HumbleBeeAI Academy Curriculum (CC-BY-SA 4.0)"
 
 ## License
 Curriculum content: Creative Commons Attribution-ShareAlike 4.0

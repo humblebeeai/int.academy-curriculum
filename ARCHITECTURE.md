@@ -1,6 +1,6 @@
 # Architecture & Development Guide
 
-This document explains the technical architecture of the HumblebeeAI Academy Curriculum repository and how to work with it effectively.
+This document explains the technical architecture of the HumbleBeeAI Academy Curriculum repository and how to work with it effectively.
 
 ## 🏗️ Tech Stack
 

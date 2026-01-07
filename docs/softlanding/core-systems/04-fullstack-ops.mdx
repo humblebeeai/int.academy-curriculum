@@ -87,14 +87,6 @@ Transform Python AI models into production-ready web services.
 2. Load your trained model once at startup.
 3. Connect your frontend from Module 1 to the API.
 
-**Code Snippet (Model Loading):**
-```python
-@app.post("/predict")
-async def predict(request: PredictionRequest):
-    prediction = model.predict(request.text)
-    return {"prediction": prediction}
-```
-
 ---
 
 ## <Settings /> 3. DevOps & Deployment
@@ -111,11 +103,20 @@ async def predict(request: PredictionRequest):
 
 <ResourceCard 
   type="video"
-  title="SSH Crash Course"
-  url="https://youtu.be/P0Fk-K2eZF8?si=nBCJVP7NU4GU5UIQ"
-  duration="1 hour"
+  title="SSH Practical Tutorial"
+  url="https://www.youtube.com/watch?v=GxRu35fy-oY"
+  duration="1-2 hours"
   difficulty="beginner"
-  why="Teaches the basics of managing remote Linux servers where your production models will actually run."
+  why="Hands-on practice with SSH features so you can actually use SSH to manage remote servers where your production models run."
+/>
+
+<ResourceCard 
+  type="video"
+  title="SSH Concepts: How It Works Behind the Scenes"
+  url="https://www.youtube.com/watch?v=dPAw4opzN9g"
+  duration="1-2 hours"
+  difficulty="intermediate"
+  why="Deep dive into SSH internals—understand encryption, key exchange, and authentication mechanisms that keep your connections secure."
 />
 
 Package your application for consistency and deploy it to the cloud.
@@ -196,36 +197,4 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 
 *(Assessment criteria will be provided by the evaluation team - Coming Soon)*
 
-| Criteria | Needs Improvement | Meets Expectations | Exceeds Expectations |
-| :--- | :--- | :--- | :--- |
-| **Topic 1** | ... | ... | ... |
-| **Topic 2** | ... | ... | ... |
-
 <!-- rubric_section_end -->
-
-## <BookOpen /> Support & Next Steps
-
-**Channels**: `#frontend-help`, `#api-development`, `#devops`
-**Office Hours**: Thursdays 2-5 PM
-
-**Next Step**: [Choose Your Specialization Track →](../specializations/00-overview.mdx)
-
----
-
-## Quick Reference
-
-```bash
-# FastAPI
-uvicorn main:app --reload              # Dev
-uvicorn main:app --host 0.0.0.0        # Prod
-
-# Docker
-docker build -t myapp .                # Build
-docker run -p 8000:8000 myapp          # Run
-docker ps                              # List
-docker logs <id>                       # Logs
-
-# SSH
-ssh user@ip                            # Connect
-scp file.txt user@ip:~/                # Copy
-```

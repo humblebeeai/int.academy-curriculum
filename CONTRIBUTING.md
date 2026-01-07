@@ -1,6 +1,6 @@
-# Contributing to HumblebeeAI Academy Curriculum
+# Contributing to HumbleBeeAI Academy Curriculum
 
-First off, thank you for considering contributing to HumblebeeAI Academy! It's people like you that make this open-source curriculum such a powerful tool for the community.
+First off, thank you for considering contributing to HumbleBeeAI Academy! It's people like you that make this open-source curriculum such a powerful tool for the community.
 
 We welcome contributions from everyone. By participating in this project, you agree to abide by our [Code of Conduct](CODE_OF_CONDUCT.md).
 

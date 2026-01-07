@@ -41,7 +41,7 @@ function EcosystemSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.sectionTitle}>Humblebee Ecosystem</h2>
+          <h2 className={styles.sectionTitle}>HumbleBee Ecosystem</h2>
           <p className={styles.sectionSubtitle}>
             Real-world AI products built by our community and engineers.
           </p>
@@ -87,9 +87,9 @@ function EcosystemSection() {
         </div>
 
         <div className={styles.ecosystemFooter}>
-          <p className={styles.ecosystemFooterText}>Part of the HumblebeeAI Family</p>
+          <p className={styles.ecosystemFooterText}>Part of the HumbleBeeAI Family</p>
           <a href="https://humblebee.ai" target="_blank" rel="noopener noreferrer" className={styles.secondaryButton}>
-            Visit Humblebee.ai
+            Visit HumbleBee.ai
             <span className={styles.arrow}>→</span>
           </a>
         </div>
@@ -364,7 +364,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title={`Welcome to ${siteConfig.title}`}
-      description="HumblebeeAI Academy Curriculum - Transform into a Technical Junior Engineer">
+      description="HumbleBeeAI Academy Curriculum - Transform into a Technical Junior Engineer">
       <HomepageHeader />
       <main>
         <MissionSection />

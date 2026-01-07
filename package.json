@@ -2,8 +2,8 @@
   "name": "humblebeeai-academy-curriculum",
   "version": "0.1.0",
   "private": true,
-  "description": "Open Source AI Engineering Curriculum by HumblebeeAI Academy",
-  "author": "HumblebeeAI Academy",
+  "description": "Open Source AI Engineering Curriculum by HumbleBeeAI Academy",
+  "author": "HumbleBeeAI Academy",
   "repository": {
     "type": "git",
     "url": "https://github.com/humblebeeai/int.academy-curriculum.git"

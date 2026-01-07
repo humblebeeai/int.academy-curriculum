@@ -6,7 +6,7 @@ import remarkEmoji from './src/plugins/remark-emoji';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'HumblebeeAI Academy',
+  title: 'HumbleBeeAI Academy',
   tagline: 'Transforming students into technical junior engineers',
   favicon: 'img/logo.svg',
 
@@ -18,7 +18,7 @@ const config: Config = {
   url: 'https://academy.humblebee.ai',
   baseUrl: '/',
 
-  organizationName: 'HumblebeeAI',
+  organizationName: 'HumbleBeeAI',
   projectName: 'academy-curriculum',
 
   onBrokenLinks: 'throw',
@@ -68,7 +68,7 @@ const config: Config = {
     image: 'img/docusaurus-social-card.jpg',
     metadata: [
       { name: 'description', content: 'Open-source AI Engineering curriculum. Master Deep Learning, MLOps, Computer Vision, and NLP. From zero to production-grade AI engineer.' },
-      { name: 'keywords', content: 'AI curriculum, deep learning path, MLOps, computer vision course, NLP training, data science roadmap, HumblebeeAI, open source education' },
+      { name: 'keywords', content: 'AI curriculum, deep learning path, MLOps, computer vision course, NLP training, data science roadmap, HumbleBeeAI, open source education' },
       { name: 'twitter:card', content: 'summary_large_image' },
     ],
     colorMode: {
@@ -77,9 +77,9 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'HumblebeeAI Academy',
+      title: 'HumbleBeeAI Academy',
       logo: {
-        alt: 'HumblebeeAI Logo',
+        alt: 'HumbleBeeAI Logo',
         src: 'img/hbai-logo.png',
       },
       hideOnScroll: false,
@@ -174,7 +174,7 @@ const config: Config = {
           title: 'Connect',
           items: [
             {
-              label: 'HumblebeeAI',
+              label: 'HumbleBeeAI',
               href: 'https://humblebee.ai',
             },
             {
@@ -192,7 +192,7 @@ const config: Config = {
             Code licensed under <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">MIT</a>.
           </p>
           <p>
-            © ${new Date().getFullYear()} HumblebeeAI Academy. Built with ❤️ by the community.
+            © ${new Date().getFullYear()} HumbleBeeAI Academy. Built with ❤️ by the community.
           </p>
         </div>
       `,
