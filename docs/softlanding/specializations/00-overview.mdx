@@ -4,16 +4,23 @@ title: Specialization Tracks
 description: Choose your path to expert-level mastery
 ---
 
-
-
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import { CodeComparison, SkillShowcase } from '@site/src/components';
-import { Target, Award, Zap, Layers, Code2, Briefcase, Rocket } from 'lucide-react';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import { CodeComparison, SkillShowcase } from "@site/src/components";
+import {
+  Target,
+  Award,
+  Zap,
+  Layers,
+  Code2,
+  Briefcase,
+  Rocket,
+} from "lucide-react";
 
-# <Target /> Phase 3: Specialization Tracks
+# <Target /> Specialization Tracks
+
 ## <Award /> Deep Domain Mastery
 
 ---
@@ -23,7 +30,7 @@ import { Target, Award, Zap, Layers, Code2, Briefcase, Rocket } from 'lucide-rea
 You have mastered the core systems. You understand the math, the models, and the infrastructure.
 Now it's time to **go deep**.
 
-In Phase 3, you stop being a generalist and start becoming a **Subject Matter Expert (SME)**.
+In the Specialization stage, you stop being a generalist and start becoming a **Subject Matter Expert (SME)**.
 
 ---
 
@@ -34,85 +41,101 @@ In Phase 3, you stop being a generalist and start becoming a **Subject Matter Ex
 <div className="track-card" style={{ border: '1px solid var(--ifm-color-emphasis-200)', borderRadius: '12px', padding: '1.5rem', backgroundColor: 'var(--ifm-background-surface-color)' }}>
 
 ### Computer Vision (CV)
+
 **The Eye of AI**
 
 Teach machines to "see" the world. From analyzing medical X-rays to self-driving cars.
 
 **You Will Build:**
+
 - Object Detection Systems (YOLO)
 - Facial Recognition Pipelines
 - Image Generation (Stable Diffusion)
 - Video Analysis tools
 
 **Best For:**
+
 - Visual thinkers
 - Interest in robotics/hardware
 - Strong linear algebra skills
 
 [Explore CV Track →](./computer-vision)
+
 </div>
 
 <div className="track-card" style={{ border: '1px solid var(--ifm-color-emphasis-200)', borderRadius: '12px', padding: '1.5rem', backgroundColor: 'var(--ifm-background-surface-color)' }}>
 
 ### NLP & Generative AI
+
 **The Voice of AI**
 
 Master language models, chatbots, and text analysis. The hottest field in AI right now (LLMs).
 
 **You Will Build:**
+
 - Custom Chatbots (RAG)
 - Language Translation Models
 - Sentiment Analysis Tools
 - Fine-tuned LLMs for specific tasks
 
 **Best For:**
+
 - Interest in language/linguistics
 - Passion for cutting-edge tech (GPT/Claude)
 - Strong logic/reasoning skills
 
 [Explore NLP Track →](./nlp)
+
 </div>
 
 <div className="track-card" style={{ border: '1px solid var(--ifm-color-emphasis-200)', borderRadius: '12px', padding: '1.5rem', backgroundColor: 'var(--ifm-background-surface-color)' }}>
 
 ### Data Science
+
 **The Brain of Business**
 
 Turn raw data into actionable insights. The intersection of statistics, coding, and business strategy.
 
 **You Will Build:**
+
 - Predictive Churn Models
 - A/B Testing Frameworks
 - Interactive Dashboards
 - Recommendation Engines
 
 **Best For:**
+
 - Analytical thinkers
 - Business-minded engineers
 - Strong statistics foundation
 
 [Explore Data Science Track →](./data-science)
+
 </div>
 
 <div className="track-card" style={{ border: '1px solid var(--ifm-color-emphasis-200)', borderRadius: '12px', padding: '1.5rem', backgroundColor: 'var(--ifm-background-surface-color)' }}>
 
 ### Software Engineering (MLOps)
+
 **The Spine of AI**
 
 Build the infrastructure that makes AI possible. Scale models to millions of users.
 
 **You Will Build:**
+
 - Distributed Training Clusters
 - Model Serving APIs (High Scale)
 - Feature Stores
 - Automated CI/CD Pipelines for ML
 
 **Best For:**
+
 - Systems thinkers
 - Interest in backend/cloud
 - "I like code more than math"
 
 [Explore SWE Track →](./software-engineering)
+
 </div>
 
 </div>
@@ -128,7 +151,7 @@ Build the infrastructure that makes AI possible. Scale models to millions of use
 
 1. **"I love seeing my code interact with the physical world."** -> **Computer Vision**
 2. **"I'm fascinated by how ChatGPT works and want to build my own."** -> **NLP**
-3. **" I love finding patterns in chaos and predicting the future."** -> **Data Science**
+3. **"I love finding patterns in chaos and predicting the future."** -> **Data Science**
 4. **"I care about performance, scalability, and building robust systems."** -> **Software Engineering**
 
 </TabItem>
@@ -165,29 +188,32 @@ df = pd.read_csv("data.csv")
 model = train_model(df)
 
 # Quick visualization
+
 sns.barplot(x=df.columns[0], y=df.columns[1])
 print(f"Accuracy: {model.score(X_test, y_test)}")
 `}
   after={`
+
 # Focus: Reliability & Scale
+
 from fastapi import FastAPI
 from pydantic import BaseModel
 
 app = FastAPI()
 
 class InputData(BaseModel):
-    feature_1: float
-    feature_2: float
+feature_1: float
+feature_2: float
 
 @app.post("/predict")
 async def predict_endpoint(data: InputData):
-    try:
-        prediction = model.predict([data.feature_1, data.feature_2])
-        logger.info(f"Prediction served: {prediction}")
-        return {"result": prediction}
-    except Exception as e:
-        logger.error(f"Inference failed: {e}")
-        raise HTTPException(status_code=500)
+try:
+prediction = model.predict([data.feature_1, data.feature_2])
+logger.info(f"Prediction served: {prediction}")
+return {"result": prediction}
+except Exception as e:
+logger.error(f"Inference failed: {e}")
+raise HTTPException(status_code=500)
 `}
 />
 
@@ -197,10 +223,26 @@ async def predict_endpoint(data: InputData):
 
 <SkillShowcase
   skills={[
-    { iconString: "Cpu", title: "Computer Vision", description: "Robotics, Medical Imaging, Autonomous Vehicles." },
-    { iconString: "MessageSquare", title: "NLP", description: "Chatbots, Search Engines, Content Generation." },
-    { iconString: "BarChart", title: "Data Science", description: "Business Intelligence, Fraud Detection, Product Analytics." },
-    { iconString: "Server", title: "MLOps", description: "Infrastructure, Scalability, Reliable Systems." }
+    {
+      iconString: "Cpu",
+      title: "Computer Vision",
+      description: "Robotics, Medical Imaging, Autonomous Vehicles.",
+    },
+    {
+      iconString: "MessageSquare",
+      title: "NLP",
+      description: "Chatbots, Search Engines, Content Generation.",
+    },
+    {
+      iconString: "BarChart",
+      title: "Data Science",
+      description: "Business Intelligence, Fraud Detection, Product Analytics.",
+    },
+    {
+      iconString: "Server",
+      title: "MLOps",
+      description: "Infrastructure, Scalability, Reliable Systems.",
+    },
   ]}
 />
 
@@ -208,7 +250,7 @@ async def predict_endpoint(data: InputData):
 
 ## <Rocket /> The Capstone
 
-No matter which track you choose, you will finish Phase 3 with a **Capstone Project**.
+No matter which track you choose, you will finish the Specialization stage with a **Capstone Project**.
 
 - **Duration:** 4-6 weeks
 - **Scope:** Solving a real-world problem from end-to-end
