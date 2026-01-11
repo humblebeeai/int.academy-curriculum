@@ -4,17 +4,16 @@ title: NLP & LLMs
 description: Transformers, Agents, and Language Models
 ---
 
-import { ResourceCard, TimeEstimate } from '@site/src/components';
-import { MessageSquare, Target, BookOpen, FileText } from 'lucide-react';
+import { ResourceCard, TimeEstimate } from "@site/src/components";
+import { MessageSquare, Target, BookOpen, FileText } from "lucide-react";
 
 # <MessageSquare /> NLP & LLM Track
-
-
 
 ![NLP & LLM Track](/img/nlp.png)
 
 ## <Target /> Goal
-**Focus**: Master the complete lifecycle of Large Language Models-from foundational architectures and embeddings to building production-ready applications with RAG, agents, and fine-tuning. 
+
+**Focus**: Master the complete lifecycle of Large Language Models-from foundational architectures and embeddings to building production-ready applications with RAG, agents, and fine-tuning.
 
 Learn how language models understand, generate, and reason with text, and develop the skills to evaluate, optimize, and deploy LLM systems in real-world scenarios.
 
@@ -22,7 +21,7 @@ Learn how language models understand, generate, and reason with text, and develo
 
 ### **NLP Basics**
 
-<ResourceCard 
+<ResourceCard
   type="paper"
   title="Word2Vec: Efficient Estimation of Word Representations"
   url="https://arxiv.org/abs/1301.3781"
@@ -39,7 +38,7 @@ Learn about Skip-gram and CBOW architectures, negative sampling, and how words w
 
 ### **Transformers & Attention Mechanisms**
 
-<ResourceCard 
+<ResourceCard
   type="tutorial"
   title="Transformers and Multi-Head Attention (UvA Tutorial 6)"
   url="https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial6/Transformers_and_MHAttention.html"
@@ -48,7 +47,7 @@ Learn about Skip-gram and CBOW architectures, negative sampling, and how words w
   why="Code-first walkthrough of transformer components with visualizations that make attention feel tangible."
 />
 
-<ResourceCard 
+<ResourceCard
   type="paper"
   title="Attention Is All You Need"
   url="https://arxiv.org/abs/1706.03762"
@@ -65,7 +64,7 @@ Interactive code walkthrough implementing transformers from scratch. You'll visu
 
 ### **Neural Networks Fundamentals**
 
-<ResourceCard 
+<ResourceCard
   type="course"
   title="Neural Networks: Zero to Hero (Ch. 7–10)"
   url="https://youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ&si=IaLn9SKculhENlak"
@@ -82,7 +81,7 @@ Step-by-step implementation of neural networks, backpropagation, and character-l
 
 #### **Retrieval-Augmented Generation (RAG)**
 
-<ResourceCard 
+<ResourceCard
   type="tutorial"
   title="Build a RAG System with LangChain"
   url="https://python.langchain.com/docs/tutorials/"
@@ -91,7 +90,7 @@ Step-by-step implementation of neural networks, backpropagation, and character-l
   why="Hands-on guide to building end-to-end RAG pipelines with embeddings, vector stores, and retrieval."
 />
 
-<ResourceCard 
+<ResourceCard
   type="paper"
   title="Ragas: Automated Evaluation of RAG"
   url="https://arxiv.org/pdf/2309.15217"
@@ -108,7 +107,7 @@ You'll build a complete RAG pipeline from scratch: loading documents, chunking t
 
 ### **Prompt Engineering**
 
-<ResourceCard 
+<ResourceCard
   type="course"
   title="Basics Guide to Generative AI and Prompt Engineering"
   url="https://learnprompting.org/docs/introduction"
@@ -125,7 +124,7 @@ Comprehensive guide covering prompt structure, few-shot learning, chain-of-thoug
 
 ### **AI Agents Orchestration**
 
-<ResourceCard 
+<ResourceCard
   type="course"
   title="Multi AI Agent Systems with crewAI"
   url="https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/"
@@ -142,7 +141,7 @@ Short course covering agent roles, task delegation, inter-agent communication, a
 
 ### **Fine-Tuning Methods**
 
-<ResourceCard 
+<ResourceCard
   type="course"
   title="Fine-Tuning Large Language Models (DeepLearning.AI)"
   url="https://www.deeplearning.ai/short-courses/finetuning-large-language-models/"
@@ -151,7 +150,7 @@ Short course covering agent roles, task delegation, inter-agent communication, a
   why="Hands-on introduction to instruction-tuning and PEFT methods for adapting LLMs to your domain."
 />
 
-<ResourceCard 
+<ResourceCard
   type="paper"
   title="LoRA: Low-Rank Adaptation of Large Language Models"
   url="https://arxiv.org/abs/2106.09685"
@@ -160,7 +159,7 @@ Short course covering agent roles, task delegation, inter-agent communication, a
   why="Explains a core parameter-efficient fine-tuning technique widely used in practice."
 />
 
-<ResourceCard 
+<ResourceCard
   type="paper"
   title="QLoRA: Efficient Finetuning of Quantized LLMs"
   url="https://arxiv.org/abs/2305.14314"
@@ -169,7 +168,7 @@ Short course covering agent roles, task delegation, inter-agent communication, a
   why="Shows how to fine-tune large models in 4-bit precision on limited hardware without losing performance."
 />
 
-<ResourceCard 
+<ResourceCard
   type="docs"
   title="Unsloth Documentation"
   url="https://docs.unsloth.ai/"
@@ -184,19 +183,19 @@ Fine-tuning adapts pre-trained models to specific tasks and domains with limited
 **What to expect:**
 You'll learn instruction-tuning for following user commands, Parameter-Efficient Fine-Tuning (PEFT) methods that update only a small fraction of weights, LoRA's low-rank decomposition approach, and QLoRA's quantization for 4-bit fine-tuning. The DeepLearning.AI course provides hands-on practice, while papers explain the theory. Unsloth gives you a production-ready framework supporting multiple fine-tuning methods with optimized hyperparameters.
 
-
 ### Capstone
-*   **Project**: Provided by Mentor.
-*   **Status**: *Not open source yet (Coming Soon)*
 
-<TimeEstimate 
-  minHours={100} 
-  maxHours={120} 
+- **Project**: Provided by Mentor.
+- **Status**: _Not open source yet (Coming Soon)_
+
+<TimeEstimate
+  minHours={100}
+  maxHours={120}
   breakdownBy={{
-    'Embeddings & Transfomers': 40,
-    'RAG & Agents': 40,
-    'Fine-Tuning': 20,
-    'Capstone': 20
+    Transformers: 35,
+    "RAG & Agents": 35,
+    "Fine-Tuning": 20,
+    Capstone: 20,
   }}
 />
 
@@ -204,6 +203,6 @@ You'll learn instruction-tuning for following user commands, Parameter-Efficient
 
 ## <FileText /> Evaluation Rubric (Coming Soon)
 
-*(Assessment criteria will be provided by the evaluation team - Coming Soon)*
+_(Assessment criteria will be provided by the evaluation team - Coming Soon)_
 
 <!-- rubric_section_end -->

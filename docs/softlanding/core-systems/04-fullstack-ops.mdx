@@ -5,12 +5,20 @@ title: Fullstack Toolkit
 description: Docker, FastAPI, and Frontend Basics
 ---
 
-import { ResourceCard, TimeEstimate } from '@site/src/components';
-import { Code2, Target, Globe, Rocket, Settings, ClipboardCheck, HelpCircle, BookOpen, FileText } from 'lucide-react';
+import { ResourceCard, TimeEstimate } from "@site/src/components";
+import {
+  Code2,
+  Target,
+  Globe,
+  Rocket,
+  Settings,
+  ClipboardCheck,
+  HelpCircle,
+  BookOpen,
+  FileText,
+} from "lucide-react";
 
 # <Code2 /> Fullstack & Operations Toolkit
-
-
 
 ![Fullstack Dev Environment](/img/fullstack.png)
 
@@ -18,20 +26,21 @@ import { Code2, Target, Globe, Rocket, Settings, ClipboardCheck, HelpCircle, Boo
 
 Bridge the gap between AI development and production. Learn to wrap models in APIs, create web interfaces, and deploy containerized applications.
 
-<TimeEstimate 
-  minHours={12} 
-  maxHours={17} 
+<TimeEstimate
+  minHours={12}
+  maxHours={17}
   breakdownBy={{
-    'Web Stack': 5,
-    'FastAPI': 5,
-    'Docker/DevOps': 4.5
+    "Web Stack": 5,
+    FastAPI: 5,
+    "Docker/DevOps": 4.5,
   }}
 />
 
 ## <Globe /> 1. The Web Stack
 
 ### Core Concepts
-<ResourceCard 
+
+<ResourceCard
   type="video"
   title="HTML, CSS, JS Crash Course"
   url="https://youtu.be/_GTMOmRrqkU?si=dseu6OPizoJzKUKY"
@@ -40,7 +49,7 @@ Bridge the gap between AI development and production. Learn to wrap models in AP
   why="One-stop crash course on the core web primitives you’ll use to build UIs for your AI systems."
 />
 
-<ResourceCard 
+<ResourceCard
   type="video"
   title="DOM Manipulation Tutorial"
   url="https://youtu.be/y17RuWkWdn8?si=rOEQNB2ezsxwp2cq"
@@ -52,11 +61,13 @@ Bridge the gap between AI development and production. Learn to wrap models in AP
 Understand the technologies that power web applications to build interfaces for your AI models.
 
 **Key Topics:**
+
 - **HTML/CSS**: Structure and styling of web pages.
 - **JavaScript**: Interactivity and API calls.
 - **DOM**: Dynamically updating content without page reloads.
 
 **Action Items:**
+
 1. Build a simple HTML form for user input.
 2. Use JavaScript to handle form submission.
 3. Display mock results dynamically using DOM manipulation.
@@ -66,7 +77,8 @@ Understand the technologies that power web applications to build interfaces for 
 ## <Rocket /> 2. Serving AI with FastAPI
 
 ### Core Concepts
-<ResourceCard 
+
+<ResourceCard
   type="video"
   title="FastAPI Full Course"
   url="https://youtu.be/SORiTsvnU28?si=wsiLhTJ66QN_zZH3"
@@ -78,11 +90,13 @@ Understand the technologies that power web applications to build interfaces for 
 Transform Python AI models into production-ready web services.
 
 **Key Topics:**
+
 - **FastAPI**: Endpoints, Path Operations, Pydantic Models.
 - **Integration**: Loading models efficiently (startup event).
 - **CORS**: Allowing frontend communication.
 
 **Action Items:**
+
 1. Create a FastAPI app with a prediction endpoint.
 2. Load your trained model once at startup.
 3. Connect your frontend from Module 1 to the API.
@@ -92,7 +106,8 @@ Transform Python AI models into production-ready web services.
 ## <Settings /> 3. DevOps & Deployment
 
 ### Core Concepts
-<ResourceCard 
+
+<ResourceCard
   type="tutorial"
   title="Docker 101"
   url="https://www.docker.com/101-tutorial/"
@@ -101,7 +116,7 @@ Transform Python AI models into production-ready web services.
   why="Interactive intro to containers so you can package and ship your AI services consistently."
 />
 
-<ResourceCard 
+<ResourceCard
   type="video"
   title="SSH Practical Tutorial"
   url="https://www.youtube.com/watch?v=GxRu35fy-oY"
@@ -110,7 +125,7 @@ Transform Python AI models into production-ready web services.
   why="Hands-on practice with SSH features so you can actually use SSH to manage remote servers where your production models run."
 />
 
-<ResourceCard 
+<ResourceCard
   type="video"
   title="SSH Concepts: How It Works Behind the Scenes"
   url="https://www.youtube.com/watch?v=dPAw4opzN9g"
@@ -122,16 +137,19 @@ Transform Python AI models into production-ready web services.
 Package your application for consistency and deploy it to the cloud.
 
 **Key Topics:**
+
 - **Docker**: Containers, Dockerfiles, Docker Compose.
 - **SSH**: Secure remote server management.
 - **Deployment**: Cloud servers (DigitalOcean/AWS) vs. PaaS (Railway/Render).
 
 **Action Items:**
+
 1. Write a `Dockerfile` for your FastAPI app.
 2. Build and run the container locally.
 3. Deploy to a cloud provider (e.g., DigitalOcean Droplet or Railway).
 
 **Dockerfile Example:**
+
 ```dockerfile
 FROM python:3.10-slim
 WORKDIR /app
@@ -148,33 +166,23 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 <div className="mdx-checklist">
   <label className="mdx-checklist-item">
     <input type="checkbox" />
-    <span>
-      Build an HTML page with interactive JavaScript.
-    </span>
+    <span>Build an HTML page with interactive JavaScript.</span>
   </label>
   <label className="mdx-checklist-item">
     <input type="checkbox" />
-    <span>
-      Create a FastAPI app with Pydantic validation.
-    </span>
+    <span>Create a FastAPI app with Pydantic validation.</span>
   </label>
   <label className="mdx-checklist-item">
     <input type="checkbox" />
-    <span>
-      Serve an AI model via HTTP API.
-    </span>
+    <span>Serve an AI model via HTTP API.</span>
   </label>
   <label className="mdx-checklist-item">
     <input type="checkbox" />
-    <span>
-      Build and run a Docker container.
-    </span>
+    <span>Build and run a Docker container.</span>
   </label>
   <label className="mdx-checklist-item">
     <input type="checkbox" />
-    <span>
-      Deploy to a cloud server (or PaaS).
-    </span>
+    <span>Deploy to a cloud server (or PaaS).</span>
   </label>
 </div>
 
@@ -191,10 +199,8 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 
 ---
 
----
-
 ## <FileText /> Evaluation Rubric (Coming Soon)
 
-*(Assessment criteria will be provided by the evaluation team - Coming Soon)*
+_(Assessment criteria will be provided by the evaluation team - Coming Soon)_
 
 <!-- rubric_section_end -->
