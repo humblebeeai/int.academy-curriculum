@@ -8,7 +8,7 @@ import remarkEmoji from './src/plugins/remark-emoji';
 const config: Config = {
   title: 'HumbleBeeAI Academy',
   tagline: 'Transforming students into technical junior engineers',
-  favicon: 'img/logo.svg',
+  favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
