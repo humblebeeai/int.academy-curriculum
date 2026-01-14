@@ -5,13 +5,21 @@ title: Math & ML Foundations
 description: Linear Algebra, Calculus, and Basic Models
 ---
 
-import { ResourceCard, TimeEstimate, SkillShowcase } from '@site/src/components';
-import { Skill } from '@site/src/components/SkillShowcase';
-import { Calculator, Lightbulb, BookOpen, BarChart3, FileText } from 'lucide-react';
+import {
+  ResourceCard,
+  TimeEstimate,
+  SkillShowcase,
+} from "@site/src/components";
+import { Skill } from "@site/src/components/SkillShowcase";
+import {
+  Calculator,
+  Lightbulb,
+  BookOpen,
+  BarChart3,
+  FileText,
+} from "lucide-react";
 
 # <Calculator /> Math & ML Foundations
-
-
 
 ## <Lightbulb /> What You'll Build Here
 
@@ -23,14 +31,14 @@ This module peels back the layers of libraries like PyTorch. You will understand
 You can invoke `model.fit()` without knowing this. But you cannot **debug** a model that refuses to learn, or optimize an architecture, without speaking the language of Linear Algebra.
 :::
 
-<TimeEstimate 
-  minHours={20} 
-  maxHours={25} 
+<TimeEstimate
+  minHours={20}
+  maxHours={25}
   breakdownBy={{
-    'Linear Algebra Intuition': 5,
-    'Deep Learning Primitives': 7,
-    'Classical ML Models': 6,
-    'Evaluation Metrics': 5
+    "Linear Algebra Intuition": 5,
+    "Deep Learning Primitives": 7,
+    "Classical ML Models": 6,
+    "Evaluation Metrics": 5,
   }}
 />
 
@@ -42,7 +50,7 @@ You can invoke `model.fit()` without knowing this. But you cannot **debug** a mo
 
 ### Linear Algebra
 
-<ResourceCard 
+<ResourceCard
   type="video"
   title="3Blue1Brown: Essence of Linear Algebra"
   url="https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab"
@@ -52,11 +60,13 @@ You can invoke `model.fit()` without knowing this. But you cannot **debug** a mo
 />
 
 **Key Concepts:**
+
 - Vectors as arrows vs. data points
 - Matrix multiplication as linear transformation
 - Eigenvectors are just "invariant axes" of rotation/stretching
 
 **Action Items:**
+
 <div className="mdx-checklist">
   <label className="mdx-checklist-item">
     <input type="checkbox" />
@@ -68,7 +78,7 @@ You can invoke `model.fit()` without knowing this. But you cannot **debug** a mo
 
 ### Deep Learning Primitives
 
-<ResourceCard 
+<ResourceCard
   type="course"
   title="Andrew Ng: Neural Networks and Deep Learning (Course 1 & 2)"
   url="https://www.youtube.com/watch?v=CS4cs9xVecg&list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0&index=1"
@@ -78,6 +88,7 @@ You can invoke `model.fit()` without knowing this. But you cannot **debug** a mo
 />
 
 **Focus:**
+
 - How a neuron computes (Weights + Bias + Activation)
 - Forward Propagation (Prediction) vs. Backward Propagation (Learning)
 - Loss Functions (How wrong are we?)
@@ -90,7 +101,7 @@ Not every problem needs a billion-parameter Transformer. In fact, for tabular da
 
 ### Linear & Logistic Regression
 
-<ResourceCard 
+<ResourceCard
   type="video"
   title="StatQuest: Linear Models"
   url="https://www.youtube.com/watch?v=2AQKmw14mHM&list=PLblh5JKOoLUIzaEkCLIUxQFjPIlapw8nU"
@@ -101,7 +112,7 @@ Not every problem needs a billion-parameter Transformer. In fact, for tabular da
 
 ### Support Vector Machines (SVM) & Trees
 
-<ResourceCard 
+<ResourceCard
   type="video"
   title="StatQuest: Decision Trees & Random Forests"
   url="https://www.youtube.com/watch?v=_L39rN6gz7Y&list=PLblh5JKOoLUKAtDViTvRGFpphEc24M-QH"
@@ -120,7 +131,7 @@ Production systems love Random Forests. They are robust, don't need scaled data,
 
 **How do you know if your model works?** Accuracy is often a liar.
 
-<ResourceCard 
+<ResourceCard
   type="article"
   title="Google ML Crash Course: Classification"
   url="https://developers.google.com/machine-learning/crash-course/classification"
@@ -130,19 +141,31 @@ Production systems love Random Forests. They are robust, don't need scaled data,
 />
 
 **Action Items:**
+
 <div className="mdx-checklist">
   <label className="mdx-checklist-item">
     <input type="checkbox" />
     <span>
-      Completed the entire Classification metrics section (Precision, Recall, F1-Score, ROC-AUC, Confusion Matrix)
+      Completed the entire Classification metrics section (Precision, Recall,
+      F1-Score, ROC-AUC, Confusion Matrix)
     </span>
   </label>
 </div>
 
 <SkillShowcase
   skills={[
-    { iconString: "BarChart", title: "Beyond Accuracy", description: "Understand why 99% accuracy is bad if 99% of your data is 'No Fraud'." },
-    { iconString: "Scale", title: "Trade-offs", description: "Balance Precision (few false alarms) vs. Recall (catching every case)." }
+    {
+      iconString: "BarChart",
+      title: "Beyond Accuracy",
+      description:
+        "Understand why 99% accuracy is bad if 99% of your data is 'No Fraud'.",
+    },
+    {
+      iconString: "Scale",
+      title: "Trade-offs",
+      description:
+        "Balance Precision (few false alarms) vs. Recall (catching every case).",
+    },
   ]}
 />
 
@@ -150,6 +173,4 @@ Production systems love Random Forests. They are robust, don't need scaled data,
 
 ## <FileText /> Evaluation Rubric (Coming Soon)
 
-*(Assessment criteria will be provided by the evaluation team - Coming Soon)*
-
-<!-- rubric_section_end -->
+_(Assessment criteria will be provided by the evaluation team - Coming Soon)_
