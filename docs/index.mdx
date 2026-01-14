@@ -4,20 +4,43 @@ title: Curriculum Roadmap
 description: Your open-source path to becoming a world-class AI Engineer
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import { SkillShowcase, ResourceCard } from '@site/src/components';
-import { motion } from 'framer-motion';
-import { BookOpen, Code2, Building2, Clock, DollarSign, GraduationCap, FileText, Users, Sparkles, Rocket, Globe, Target, MapPin, Library, School, HelpCircle, Lightbulb, ArrowRight } from 'lucide-react';
-import clsx from 'clsx';
-import Heading from '@theme/Heading';
-import problemCardStyles from '@site/src/components/ProblemCard.module.css';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import { SkillShowcase, ResourceCard } from "@site/src/components";
+import { motion } from "framer-motion";
+import {
+  BookOpen,
+  Code2,
+  Building2,
+  Clock,
+  DollarSign,
+  GraduationCap,
+  FileText,
+  Users,
+  Sparkles,
+  Rocket,
+  Globe,
+  Target,
+  MapPin,
+  Library,
+  School,
+  HelpCircle,
+  Lightbulb,
+  ArrowRight,
+} from "lucide-react";
+import clsx from "clsx";
+import Heading from "@theme/Heading";
+import problemCardStyles from "@site/src/components/ProblemCard.module.css";
 
 # Your Journey to Becoming a Top 1% AI Engineer
 
 <div className="mdx-hero">
   <div className="mdx-lead-text">
-    You want to become a production-ready AI engineer, but the path is rarely clear. This roadmap is the exact learning sequence we use at HumbleBeeAI Academy. Follow it self-paced for free, or join the Academy to learn the same path with mentorship, reviews, and scenario-based projects running in parallel.
+    You want to become a production-ready AI engineer, but the path is rarely
+    clear. This roadmap is the exact learning sequence we use at HumbleBeeAI
+    Academy. Follow it self-paced for free, or join the Academy to learn the
+    same path with mentorship, reviews, and scenario-based projects running in
+    parallel.
   </div>
 </div>
 
@@ -29,59 +52,80 @@ Most aspiring AI engineers hit the same three barriers. We built HumbleBeeAI Aca
 
 <div className="row">
   <motion.div
-    className={clsx('col col--4')}
+    className={clsx("col col--4")}
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: '-100px' }}
+    viewport={{ once: true, margin: "-100px" }}
     transition={{ duration: 0.6, delay: 0 }}
   >
     <div className={problemCardStyles.problemCard}>
       <div className={problemCardStyles.cardShadowBottom} />
       <div className={problemCardStyles.cardShadowMiddle} />
       <div className={problemCardStyles.cardMain}>
-        <div className={problemCardStyles.iconWrapper} style={{ color: 'var(--ifm-color-primary)' }}>
+        <div
+          className={problemCardStyles.iconWrapper}
+          style={{ color: "var(--ifm-color-primary)" }}
+        >
           <BookOpen size={32} strokeWidth={1.5} />
         </div>
-        <Heading as="h3" className={problemCardStyles.problemTitle}>The Theory-Practice Gap</Heading>
-        <p className={problemCardStyles.problemDescription}>Concepts are taught, but production systems are not.</p>
+        <Heading as="h3" className={problemCardStyles.problemTitle}>
+          The Theory-Practice Gap
+        </Heading>
+        <p className={problemCardStyles.problemDescription}>
+          Concepts are taught, but production systems are not.
+        </p>
       </div>
     </div>
   </motion.div>
   <motion.div
-    className={clsx('col col--4')}
+    className={clsx("col col--4")}
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: '-100px' }}
+    viewport={{ once: true, margin: "-100px" }}
     transition={{ duration: 0.6, delay: 0.15 }}
   >
     <div className={problemCardStyles.problemCard}>
       <div className={problemCardStyles.cardShadowBottom} />
       <div className={problemCardStyles.cardShadowMiddle} />
       <div className={problemCardStyles.cardMain}>
-        <div className={problemCardStyles.iconWrapper} style={{ color: 'var(--ifm-color-primary)' }}>
+        <div
+          className={problemCardStyles.iconWrapper}
+          style={{ color: "var(--ifm-color-primary)" }}
+        >
           <Code2 size={32} strokeWidth={1.5} />
         </div>
-        <Heading as="h3" className={problemCardStyles.problemTitle}>Portfolio Paradox</Heading>
-        <p className={problemCardStyles.problemDescription}>Hiring wants proof, but beginners lack real proof.</p>
+        <Heading as="h3" className={problemCardStyles.problemTitle}>
+          Portfolio Paradox
+        </Heading>
+        <p className={problemCardStyles.problemDescription}>
+          Hiring wants proof, but beginners lack real proof.
+        </p>
       </div>
     </div>
   </motion.div>
   <motion.div
-    className={clsx('col col--4')}
+    className={clsx("col col--4")}
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: '-100px' }}
+    viewport={{ once: true, margin: "-100px" }}
     transition={{ duration: 0.6, delay: 0.3 }}
   >
     <div className={problemCardStyles.problemCard}>
       <div className={problemCardStyles.cardShadowBottom} />
       <div className={problemCardStyles.cardShadowMiddle} />
       <div className={problemCardStyles.cardMain}>
-        <div className={problemCardStyles.iconWrapper} style={{ color: 'var(--ifm-color-primary)' }}>
+        <div
+          className={problemCardStyles.iconWrapper}
+          style={{ color: "var(--ifm-color-primary)" }}
+        >
           <Building2 size={32} strokeWidth={1.5} />
         </div>
-        <Heading as="h3" className={problemCardStyles.problemTitle}>Isolated Learning</Heading>
-        <p className={problemCardStyles.problemDescription}>Without feedback, learning stalls and standards stay unclear.</p>
+        <Heading as="h3" className={problemCardStyles.problemTitle}>
+          Isolated Learning
+        </Heading>
+        <p className={problemCardStyles.problemDescription}>
+          Without feedback, learning stalls and standards stay unclear.
+        </p>
       </div>
     </div>
   </motion.div>
@@ -120,31 +164,51 @@ The curriculum is the map. The Academy is the applied layer on top of the same m
   </thead>
   <tbody>
     <tr>
-      <td><strong><Clock size={16} /> Duration</strong></td>
+      <td>
+        <strong>
+          <Clock size={16} /> Duration
+        </strong>
+      </td>
       <td>4 years</td>
       <td>3-6 months</td>
       <td>Self-paced, but structured progression</td>
     </tr>
     <tr>
-      <td><strong><DollarSign size={16} /> Cost</strong></td>
+      <td>
+        <strong>
+          <DollarSign size={16} /> Cost
+        </strong>
+      </td>
       <td>$100K+ in tuition debt</td>
       <td>$15-20K upfront payment</td>
       <td>Free curriculum (paid mentorship optional)</td>
     </tr>
     <tr>
-      <td><strong><GraduationCap size={16} /> Credential</strong></td>
+      <td>
+        <strong>
+          <GraduationCap size={16} /> Credential
+        </strong>
+      </td>
       <td>Degree with weak hiring signal</td>
       <td>Certificate with declining value</td>
       <td>Portfolio of production-grade projects</td>
     </tr>
     <tr>
-      <td><strong><FileText size={16} /> Curriculum</strong></td>
+      <td>
+        <strong>
+          <FileText size={16} /> Curriculum
+        </strong>
+      </td>
       <td>Outdated curriculum (2-3 years behind industry)</td>
       <td>Simplified toy problems, not real engineering</td>
       <td>Live curriculum updated with industry standards</td>
     </tr>
     <tr>
-      <td><strong><Users size={16} /> Learning</strong></td>
+      <td>
+        <strong>
+          <Users size={16} /> Learning
+        </strong>
+      </td>
       <td>Theory-heavy courses</td>
       <td>Crash course</td>
       <td>Community-driven learning</td>
@@ -188,55 +252,87 @@ Self-paced learners follow the roadmap directly. Academy learners follow the sam
 <TabItem value="school" label="School Program" default>
 
 ### <School /> School Program
+
 **Duration:** 2-4 months (self-paced)  
 **Goal:** Build the fundamentals that make every later phase faster and less painful.
 
-<SkillShowcase 
-    skills={[
-        { iconString: "Terminal", title: "Terminal Fluency", description: "The command line is your home." },
-        { iconString: "GitBranch", title: "Git & Version Control", description: "Collaborate like a pro." },
-        { iconString: "Sigma", title: "Math Foundations", description: "Calculus, Linear Algebra, Stats." },
-        { iconString: "Database", title: "Data Engineering", description: "Python, Pandas, SQL." }
-    ]} 
+<SkillShowcase
+  skills={[
+    {
+      iconString: "Terminal",
+      title: "Terminal Fluency",
+      description: "The command line is your home.",
+    },
+    {
+      iconString: "GitBranch",
+      title: "Git & Version Control",
+      description: "Collaborate like a pro.",
+    },
+    {
+      iconString: "Sigma",
+      title: "Math Foundations",
+      description: "Calculus, Linear Algebra, Stats.",
+    },
+    {
+      iconString: "Database",
+      title: "Data Engineering",
+      description: "Python, Pandas, SQL.",
+    },
+  ]}
 />
 
 **Outcome:** You can operate like an engineer: terminal, Git, data handling, and math basics strong enough to build without getting stuck.
 
 In the Academy, you apply these fundamentals immediately through mentor-led tasks and reviews from week one.
 
-[Start School Program →](/docs/school/intro)
+[Start School Program →](/docs/school)
 
 </TabItem>
 
 <TabItem value="soft-landing" label="Core Systems (Soft Landing)">
 
 ### <Rocket /> Core Systems
+
 **Duration:** 3-6 months (self-paced)  
 **Goal:** Master ML foundations and the engineering required to ship models reliably.
 
-<SkillShowcase 
-    skills={[
-        { iconString: "BrainCircuit", title: "Deep Learning", description: "PyTorch, Neural Networks, CNNs." },
-        { iconString: "Server", title: "Systems Ops", description: "Docker, FastAPI, Cloud Deploy." },
-        { iconString: "Activity", title: "Model Eval", description: "Metrics, Testing, MLOps." }
-    ]} 
+<SkillShowcase
+  skills={[
+    {
+      iconString: "BrainCircuit",
+      title: "Deep Learning",
+      description: "PyTorch, Neural Networks, CNNs.",
+    },
+    {
+      iconString: "Server",
+      title: "Systems Ops",
+      description: "Docker, FastAPI, Cloud Deploy.",
+    },
+    {
+      iconString: "Activity",
+      title: "Model Eval",
+      description: "Metrics, Testing, MLOps.",
+    },
+  ]}
 />
 
 **Outcome:** You can build end-to-end ML systems: training, evaluation, deployment, and reliability basics using modern tools.
 
 In the Academy, learners typically spend 35-70% on curriculum modules and the rest applying them inside scenario projects with mentor review.
 
-[Start Soft Landing →](/docs/softlanding/intro)
+[Start Soft Landing →](/docs/softlanding)
 
 </TabItem>
 
 <TabItem value="specialization" label="Specializations (Soft Landing)">
 
 ### <Target /> Specialization Tracks
+
 **Duration:** 2-4 months per track  
 **Goal:** Expert-level domain knowledge
 
 **Choose Your Path:**
+
 - **Computer Vision:** classification, detection, real deployment patterns
 - **Data Science:** modeling, experimentation, analytics for decisions
 - **NLP and LLMs:** transformers, fine-tuning, agents, evaluation
@@ -244,7 +340,7 @@ In the Academy, learners typically spend 35-70% on curriculum modules and the re
 
 **Outcome:** You produce domain-specific projects that show depth. Each track ends with a capstone that looks like real work: clear problem framing, measurable results, and a reproducible or deployable system.
 
-[Explore Specializations →](/docs/softlanding/specializations/overview)
+[Explore Specializations →](/docs/softlanding/specializations)
 
 </TabItem>
 </Tabs>
@@ -254,12 +350,15 @@ In the Academy, learners typically spend 35-70% on curriculum modules and the re
 ## <Lightbulb /> The HumbleBeeAI Academy Learning Philosophy
 
 ### 1. **Learning by Doing**
+
 We reject "tutorial-only" learning. The goal is to spend most of your time building. The Academy enforces this with scenario tasks and reviews so mistakes get corrected early.
 
 ### 2. **Longitudinal Growth**
+
 Expertise compounds. We revisit core ideas across phases in increasingly realistic settings, not once and done.
 
 ### 3. **Community-Driven**
+
 Learn with peers, get help, and contribute improvements. The roadmap stays alive because the community keeps raising the bar.
 
 ---
@@ -325,12 +424,18 @@ If you want the fastest route to job-ready skill, join the Academy and learn thi
 If you prefer self-paced learning, start the open curriculum. It is fully usable on its own.
 
 <div className="mdx-cta-buttons">
-  <a href="/docs/school/intro" className="button button--primary button--lg mdx-cta-button">
+  <a
+    href="/docs/school/index"
+    className="button button--primary button--lg mdx-cta-button"
+  >
     <Sparkles size={18} className="mdx-cta-button-icon" />
     <span>Start Phase 1 (Beginner)</span>
   </a>
-  
-  <a href="/docs/softlanding/intro" className="button button--primary button--lg mdx-cta-button">
+
+  <a
+    href="/docs/softlanding"
+    className="button button--primary button--lg mdx-cta-button"
+  >
     <Rocket size={18} className="mdx-cta-button-icon" />
     <span>Start Phase 2 (Experienced)</span>
   </a>

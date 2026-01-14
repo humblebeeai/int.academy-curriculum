@@ -1,63 +1,66 @@
-import { themes as prismThemes } from 'prism-react-renderer';
-import type { Config } from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
-import remarkEmoji from './src/plugins/remark-emoji';
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
+import remarkEmoji from "./src/plugins/remark-emoji";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'HumbleBeeAI Academy',
-  tagline: 'Transforming students into technical junior engineers',
-  favicon: 'img/favicon.ico',
+  title: "HumbleBeeAI Academy",
+  tagline: "Transforming students into technical junior engineers",
+  favicon: "img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
-  url: 'https://academy.humblebee.ai',
-  baseUrl: '/',
+  url: "https://academy.humblebee.ai",
+  baseUrl: "/",
 
-  organizationName: 'HumbleBeeAI',
-  projectName: 'academy-curriculum',
+  organizationName: "HumbleBeeAI",
+  projectName: "academy-curriculum",
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
-  },
+  onBrokenLinks: "throw",
 
   markdown: {
     mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
   },
-  themes: ['@docusaurus/theme-mermaid'],
+
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en"],
+  },
+
+  themes: ["@docusaurus/theme-mermaid"],
 
   presets: [
     [
-      'classic',
+      "classic",
       {
         docs: {
-          path: 'docs',
-          sidebarPath: './sidebars.ts',
+          path: "docs",
+          sidebarPath: "./sidebars.ts",
           remarkPlugins: [remarkEmoji],
           editUrl:
-            'https://github.com/humblebeeai/int.academy-curriculum/edit/main/docs/',
+            "https://github.com/humblebeeai/int.academy-curriculum/edit/main/docs/",
         },
         blog: {
           showReadingTime: true,
           editUrl:
-            'https://github.com/humblebeeai/int.academy-curriculum/edit/main/website/blog/',
+            "https://github.com/humblebeeai/int.academy-curriculum/edit/main/website/blog/",
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
         sitemap: {
-          changefreq: 'weekly',
+          changefreq: "weekly",
           priority: 0.5,
-          ignorePatterns: ['/tags/**', '/page/**', '/search', '/404'],
-          filename: 'sitemap.xml',
+          ignorePatterns: ["/tags/**", "/page/**", "/search", "/404"],
+          filename: "sitemap.xml",
         },
       } satisfies Preset.Options,
     ],
@@ -65,121 +68,129 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: "img/docusaurus-social-card.jpg",
     metadata: [
-      { name: 'description', content: 'Open-source AI Engineering curriculum. Master Deep Learning, MLOps, Computer Vision, and NLP. From zero to production-grade AI engineer.' },
-      { name: 'keywords', content: 'AI curriculum, deep learning path, MLOps, computer vision course, NLP training, data science roadmap, HumbleBeeAI, open source education' },
-      { name: 'twitter:card', content: 'summary_large_image' },
+      {
+        name: "description",
+        content:
+          "Open-source AI Engineering curriculum. Master Deep Learning, MLOps, Computer Vision, and NLP. From zero to production-grade AI engineer.",
+      },
+      {
+        name: "keywords",
+        content:
+          "AI curriculum, deep learning path, MLOps, computer vision course, NLP training, data science roadmap, HumbleBeeAI, open source education",
+      },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     colorMode: {
-      defaultMode: 'dark',
+      defaultMode: "dark",
       disableSwitch: false,
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'HumbleBeeAI Academy',
+      title: "HumbleBeeAI Academy",
       logo: {
-        alt: 'HumbleBeeAI Logo',
-        src: 'img/hbai-logo.png',
+        alt: "HumbleBeeAI Logo",
+        src: "img/hbai-logo.png",
       },
       hideOnScroll: false,
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Curriculum',
-          className: 'navbar-curriculum-link',
+          type: "docSidebar",
+          sidebarId: "tutorialSidebar",
+          position: "left",
+          label: "Curriculum",
+          className: "navbar-curriculum-link",
         },
         {
-          to: '/docs/school/intro',
-          label: 'School',
-          position: 'left',
-          className: 'navbar-school-link',
+          to: "/docs/school",
+          label: "School",
+          position: "left",
+          className: "navbar-school-link",
         },
         {
-          to: '/docs/softlanding/intro',
-          label: 'Soft Landing',
-          position: 'left',
-          className: 'navbar-softlanding-link',
+          to: "/docs/softlanding",
+          label: "Soft Landing",
+          position: "left",
+          className: "navbar-softlanding-link",
         },
         {
-          href: 'https://academy.humblebee.ai',
-          label: 'Academy',
-          position: 'right',
+          href: "https://academy.humblebee.ai",
+          label: "Academy",
+          position: "right",
         },
         {
-          href: 'https://github.com/humblebeeai/int.academy-curriculum',
-          label: 'GitHub',
-          position: 'right',
-          className: 'header-github-link',
+          href: "https://github.com/humblebeeai/int.academy-curriculum",
+          label: "GitHub",
+          position: "right",
+          className: "header-github-link",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Programs',
+          title: "Programs",
           items: [
             {
-              label: 'Curriculum Overview',
-              to: '/docs/curriculum-outline',
+              label: "Curriculum Overview",
+              to: "/docs",
             },
             {
-              label: 'School Program',
-              to: '/docs/school/intro',
+              label: "School Program",
+              to: "/docs/school",
             },
             {
-              label: 'Soft Landing Program',
-              to: '/docs/softlanding/intro',
+              label: "Soft Landing Program",
+              to: "/docs/softlanding",
             },
           ],
         },
         {
-          title: 'Specializations',
+          title: "Specializations",
           items: [
             {
-              label: 'Computer Vision',
-              to: '/docs/softlanding/specializations/computer-vision',
+              label: "Computer Vision",
+              to: "/docs/softlanding/specializations/computer-vision",
             },
             {
-              label: 'Data Science',
-              to: '/docs/softlanding/specializations/data-science',
+              label: "Data Science",
+              to: "/docs/softlanding/specializations/data-science",
             },
             {
-              label: 'Natural Language Processing',
-              to: '/docs/softlanding/specializations/nlp',
+              label: "Natural Language Processing",
+              to: "/docs/softlanding/specializations/nlp",
             },
             {
-              label: 'Software Engineering',
-              to: '/docs/softlanding/specializations/software-engineering',
+              label: "Software Engineering",
+              to: "/docs/softlanding/specializations/software-engineering",
             },
           ],
         },
         {
-          title: 'Resources',
+          title: "Resources",
           items: [
             {
-              label: 'Learning Resources',
-              to: '/docs/resources',
+              label: "Learning Resources",
+              to: "/docs/resources",
             },
             {
-              label: 'Mentorship',
-              to: '/docs/mentorship',
+              label: "Mentorship",
+              to: "/docs/mentorship",
             },
           ],
         },
         {
-          title: 'Connect',
+          title: "Connect",
           items: [
             {
-              label: 'HumbleBeeAI',
-              href: 'https://humblebee.ai',
+              label: "HumbleBeeAI",
+              href: "https://humblebee.ai",
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/humblebeeai/int.academy-curriculum',
+              label: "GitHub",
+              href: "https://github.com/humblebeeai/int.academy-curriculum",
             },
           ],
         },
