@@ -4,12 +4,21 @@ title: Software Engineering
 description: Distributed Systems and Scalability
 ---
 
-import { ResourceCard, TimeEstimate } from '@site/src/components';
-import { Code2, Target, Wifi, Layers, Rocket, Database, ClipboardCheck, Settings, HelpCircle, FileText } from 'lucide-react';
+import { ResourceCard, TimeEstimate } from "@site/src/components";
+import {
+  Code2,
+  Target,
+  Wifi,
+  Layers,
+  Rocket,
+  Database,
+  ClipboardCheck,
+  Settings,
+  HelpCircle,
+  FileText,
+} from "lucide-react";
 
 # <Code2 /> Software Engineering Track
-
-
 
 ![Monitors and a laptop](/img/software_eng.png)
 
@@ -20,7 +29,8 @@ Build production-grade, scalable systems. Learn the architecture patterns, tools
 ## <Wifi /> 1. Networking Fundamentals
 
 ### Core Concepts
-<ResourceCard 
+
+<ResourceCard
   type="course"
   title="Computer Networking Course"
   url="https://www.youtube.com/playlist?list=PLIhvC56v63IJVXv0GJcl9vO5Z6znCVb1P"
@@ -32,11 +42,13 @@ Build production-grade, scalable systems. Learn the architecture patterns, tools
 Understand how data travels to debug and optimize effectively.
 
 **Key Topics:**
+
 - **OSI Model**: Layers 3-7 (Network to Application).
 - **Protocols**: TCP/IP, DNS, HTTP/HTTPS.
 - **Performance**: Load balancing, CDNs, SSL/TLS.
 
 **Action Items:**
+
 1. Watch videos on OSI model and HTTP.
 2. Use `ping`, `traceroute`, and `curl` to trace requests.
 3. Analyze a website's traffic using Browser DevTools.
@@ -44,7 +56,8 @@ Understand how data travels to debug and optimize effectively.
 ## <Layers /> 2. Architecture Principles
 
 ### Core Concepts
-<ResourceCard 
+
+<ResourceCard
   type="article"
   title="The Twelve-Factor App"
   url="https://12factor.net/"
@@ -53,7 +66,7 @@ Understand how data travels to debug and optimize effectively.
   why="Canonical checklist for building cloud-native services that are easy to scale and operate."
 />
 
-<ResourceCard 
+<ResourceCard
   type="book"
   title="Beyond the Twelve-Factor App"
   url="https://www.oreilly.com/library/view/beyond-the-twelve-factor/9781492042631/"
@@ -65,11 +78,13 @@ Understand how data travels to debug and optimize effectively.
 Learn the battle-tested patterns that make applications scalable, maintainable, and cloud-ready.
 
 **Key Topics:**
+
 - **12-Factor App**: Config, Backing Services, Disposability, Dev/Prod Parity.
 - **Cloud-Native**: API-first design, Telemetry, Authentication strategies.
 - **Scalability**: Stateless processes, Horizontal scaling.
 
 **Action Items:**
+
 1. Read the 12-Factor App methodology.
 2. Audit a previous project against the 12 factors.
 3. Draft an architecture document for a new service.
@@ -77,7 +92,8 @@ Learn the battle-tested patterns that make applications scalable, maintainable, 
 ## <Rocket /> 3. API Design & Implementation
 
 ### Core Concepts
-<ResourceCard 
+
+<ResourceCard
   type="guide"
   title="REST API Tutorial"
   url="https://restfulapi.net/"
@@ -86,7 +102,7 @@ Learn the battle-tested patterns that make applications scalable, maintainable, 
   why="Clear reference for core REST concepts: resources, verbs, status codes, and versioning."
 />
 
-<ResourceCard 
+<ResourceCard
   type="tutorial"
   title="FastAPI Official Tutorial"
   url="https://fastapi.tiangolo.com/learn/"
@@ -98,11 +114,13 @@ Learn the battle-tested patterns that make applications scalable, maintainable, 
 Master RESTful API design and build high-performance endpoints using modern Python frameworks.
 
 **Key Topics:**
+
 - **REST**: Resources, HTTP Methods, Status Codes, Versioning.
 - **FastAPI**: Path operations, Pydantic models, Async endpoints.
 - **Documentation**: Automatic OpenAPI (Swagger UI) generation.
 
 **Action Items:**
+
 1. Design a REST API schema for a blog or library.
 2. Build a CRUD API using FastAPI with Pydantic validation.
 3. Implement JWT authentication and error handling.
@@ -110,7 +128,8 @@ Master RESTful API design and build high-performance endpoints using modern Pyth
 ## <Database /> 4. Database Design & Management
 
 ### Core Concepts
-<ResourceCard 
+
+<ResourceCard
   type="tutorial"
   title="SQLBolt"
   url="https://sqlbolt.com/"
@@ -119,7 +138,7 @@ Master RESTful API design and build high-performance endpoints using modern Pyth
   why="Interactive lessons to practice core SQL queries and joins."
 />
 
-<ResourceCard 
+<ResourceCard
   type="course"
   title="MongoDB University: Intro to MongoDB"
   url="https://learn.mongodb.com/learning-paths/introduction-to-mongodb"
@@ -128,7 +147,7 @@ Master RESTful API design and build high-performance endpoints using modern Pyth
   why="Introduces document databases and aggregation pipelines for modern data workloads."
 />
 
-<ResourceCard 
+<ResourceCard
   type="docs"
   title="Alembic Tutorial"
   url="https://alembic.sqlalchemy.org/en/latest/tutorial.html"
@@ -140,12 +159,14 @@ Master RESTful API design and build high-performance endpoints using modern Pyth
 Design efficient schemas and manage data integrity.
 
 **Key Topics:**
+
 - **Design**: ERD, Normalization (1NF-3NF), Indexing.
 - **SQL**: Joins, Transactions, ACID properties.
 - **NoSQL**: Document model, Aggregation pipelines.
 - **Migrations**: Version control for database schemas.
 
 **Action Items:**
+
 1. Create an ERD for an e-commerce system.
 2. Implement the schema in PostgreSQL and write complex queries.
 3. Set up Alembic for automated migrations.
@@ -153,7 +174,8 @@ Design efficient schemas and manage data integrity.
 ## <ClipboardCheck /> 5. Testing Strategies
 
 ### Core Concepts
-<ResourceCard 
+
+<ResourceCard
   type="docs"
   title="pytest Documentation"
   url="https://docs.pytest.org/en/stable/"
@@ -162,7 +184,7 @@ Design efficient schemas and manage data integrity.
   why="Primary reference for writing expressive unit and integration tests in Python."
 />
 
-<ResourceCard 
+<ResourceCard
   type="tutorial"
   title="FastAPI Testing Tutorial"
   url="https://fastapi.tiangolo.com/tutorial/testing/"
@@ -174,11 +196,13 @@ Design efficient schemas and manage data integrity.
 Write automated tests to catch bugs early and refactor with confidence.
 
 **Key Topics:**
+
 - **Types**: Unit, Integration, End-to-End.
 - **Tools**: pytest fixtures, mocking, coverage reports.
 - **TDD**: Writing tests before implementation.
 
 **Action Items:**
+
 1. Write unit tests for all API endpoints.
 2. Achieve 80%+ code coverage.
 3. Configure tests to run on every commit.
@@ -186,7 +210,8 @@ Write automated tests to catch bugs early and refactor with confidence.
 ## <Settings /> 6. DevOps & Deployment
 
 ### Core Concepts
-<ResourceCard 
+
+<ResourceCard
   type="docs"
   title="GitHub Actions Documentation"
   url="https://docs.github.com/en/actions"
@@ -195,7 +220,7 @@ Write automated tests to catch bugs early and refactor with confidence.
   why="Teaches you how to wire CI/CD pipelines for testing, linting, and deployment."
 />
 
-<ResourceCard 
+<ResourceCard
   type="docs"
   title="Docker Compose Documentation"
   url="https://docs.docker.com/compose/"
@@ -207,11 +232,13 @@ Write automated tests to catch bugs early and refactor with confidence.
 Automate deployment and ensure reproducibility with containers.
 
 **Key Topics:**
+
 - **CI/CD**: Automated testing, linting, and deployment pipelines.
 - **Docker**: Containerizing applications for consistency.
 - **Orchestration**: Managing multi-container apps with Docker Compose.
 
 **Action Items:**
+
 1. Create a GitHub Actions workflow to run tests on PRs.
 2. Containerize the FastAPI app and database.
 3. Deploy the stack using Docker Compose.
@@ -220,7 +247,7 @@ Automate deployment and ensure reproducibility with containers.
 
 ### Option A: Mobile Development (Flutter/Swift)
 
-<ResourceCard 
+<ResourceCard
   type="tutorial"
   title="Flutter Codelabs"
   url="https://docs.flutter.dev/codelabs"
@@ -228,12 +255,12 @@ Automate deployment and ensure reproducibility with containers.
   difficulty="beginner"
   why="Guided labs for building mobile apps that consume your backend APIs."
 />
-**Goal**: Build a mobile app consuming your API.
-**Key Topics**: Widgets, State Management, API Integration.
+**Goal**: Build a mobile app consuming your API. **Key Topics**: Widgets, State Management,
+API Integration.
 
 ### Option B: Full-Stack Web (React/Vue)
 
-<ResourceCard 
+<ResourceCard
   type="tutorial"
   title="React Tutorial"
   url="https://react.dev/learn"
@@ -242,7 +269,7 @@ Automate deployment and ensure reproducibility with containers.
   why="Modern introduction to React components, hooks, and state management."
 />
 
-<ResourceCard 
+<ResourceCard
   type="guide"
   title="Vue Guide"
   url="https://vuejs.org/guide/introduction.html"
@@ -250,10 +277,11 @@ Automate deployment and ensure reproducibility with containers.
   difficulty="beginner"
   why="Official Vue guide for building reactive frontends that talk to your APIs."
 />
-**Goal**: Build a responsive web app consuming your API.
-**Key Topics**: Components, Hooks/Composition API, Routing.
+**Goal**: Build a responsive web app consuming your API. **Key Topics**: Components,
+Hooks/Composition API, Routing.
 
 **Project Requirement:**
+
 - Implement a frontend (Mobile or Web) for your API.
 - Include authentication and data visualization.
 
@@ -262,6 +290,7 @@ Automate deployment and ensure reproducibility with containers.
 **Duration**: 4-6 weeks | **Mentor-Led**
 
 Build a production-grade application combining all modules:
+
 - Microservices architecture with REST APIs.
 - SQL database, Docker containerization, and CI/CD.
 - Mobile or Web frontend.
@@ -285,7 +314,7 @@ Build a production-grade application combining all modules:
 
 **Next Steps**:
 
-<ResourceCard 
+<ResourceCard
   type="guide"
   title="System Design Primer"
   url="https://github.com/donnemartin/system-design-primer"
@@ -297,21 +326,13 @@ Build a production-grade application combining all modules:
 - Cloud Certifications (AWS/GCP)
 - Technical Interview Prep
 
-<TimeEstimate 
-  minHours={120} 
-  maxHours={150} 
+<TimeEstimate
+  minHours={120}
+  maxHours={150}
   breakdownBy={{
-    'Architecture & API': 35,
-    'Database & Testing': 35,
-    'DevOps & Deployment': 25,
-    'Capstone': 40
+    "Architecture & API": 35,
+    "Database & Testing": 35,
+    "DevOps & Deployment": 25,
+    Capstone: 40,
   }}
 />
-
----
-
-## <FileText /> Evaluation Rubric (Coming Soon)
-
-*(Assessment criteria will be provided by the evaluation team - Coming Soon)*
-
-<!-- rubric_section_end -->
