@@ -26,7 +26,7 @@ import {
 
 ## <Cpu /> What You'll Build Here
 
-Look, I'm not going to sugarcoat it—this phase is tough if you're new. You're going to feel lost in the terminal, frustrated with Git merge conflicts, and wonder why any of this matters for AI.
+Look, I'm not going to sugarcoat it - this phase is tough if you're new. You're going to feel lost in the terminal, frustrated with Git merge conflicts, and wonder why any of this matters for AI.
 
 **But here's the thing:** Every engineer you admire went through this exact phase. The difference? They pushed through. And you will too.
 
@@ -56,7 +56,7 @@ We built this after watching 500+ students go from "What's a terminal?" to deplo
       iconString: "Wrench",
       title: "Pro Environment",
       description:
-        "Set up VS Code like a senior engineer, with the right extensions for Python and Data Science.",
+        "Set up a professional IDE environment with the right tools and extensions for Python and Data Science.",
     },
   ]}
 />
@@ -65,7 +65,7 @@ We built this after watching 500+ students go from "What's a terminal?" to deplo
   minHours={15}
   maxHours={20}
   breakdownBy={{
-    "Environment Setup": 2,
+    "Environment Setup": 4,
     "Command Line Practice": 6,
     "HackerRank Algorithmic Logic": 10,
   }}
@@ -77,29 +77,52 @@ We built this after watching 500+ students go from "What's a terminal?" to deplo
 
 ### <Cpu size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> Development Environment Setup
 
+Your Integrated Development Environment (IDE) is your primary workspace for writing, debugging, and organizing code. Choose based on your experience level and needs:
+
+- **Traditional IDEs** like VS Code offer versatility and extensive customization for experienced developers.
+- **AI-Integrated IDEs** like Cursor or Antigravity provide intelligent code assistance, making them ideal for beginners or those working on complex projects.
+
 <ResourceCard
   type="article"
   title="VS Code Setup Guide"
   url="https://code.visualstudio.com/docs/setup/setup-overview"
   duration="1 hour"
   difficulty="beginner"
-  why="Quick walkthrough to install VS Code and core extensions so you can start coding without friction."
+  why="Versatile, free IDE with thousands of extensions for Python, data science, and general development."
+/>
+
+<ResourceCard
+  type="article"
+  title="Cursor - AI-Powered Code Editor"
+  url="https://cursor.com/"
+  duration="1 hour"
+  difficulty="beginner"
+  why="VS Code-based IDE with built-in AI assistance for code completion, debugging, and learning - great for beginners."
+/>
+
+<ResourceCard
+  type="article"
+  title="Antigravity - AI-First IDE"
+  url="https://antigravity.codes/"
+  duration="1 hour"
+  difficulty="intermediate"
+  why="Google's AI-powered IDE with deep context understanding and custom agents for complex, multi-language projects."
 />
 
 :::note Why This Matters (Real Talk)
-You might be tempted to skip the command line module and use VS Code's UI for everything. **Don't.** When your model breaks on a remote GPU server at 2 AM, the terminal is your only friend.
+You might be tempted to skip the command line module and rely solely on your IDE's GUI. **Don't.** When your model breaks on a remote GPU server at 2 AM, the terminal is your only friend.
 :::
 
 **Your Mission:**
 
-1. Install VS Code on your OS.
-2. Install **Required Extensions**: Python, Pylance, Jupyter.
-3. Install **Recommended**: GitLens, Error Lens.
+1. Choose and install a suitable IDE (VS Code, Cursor, Antigravity, or another).
+2. Install **Required Extensions/Tools**: Python support, Jupyter integration, Git integration.
+3. Install **Recommended**: Linting tools, error highlighting, and AI assistance features if available.
 
 <div className="mdx-checklist">
   <label className="mdx-checklist-item">
     <input type="checkbox" />
-    <span>VS Code installed and extensions configured.</span>
+    <span>Professional IDE installed and configured with essential extensions.</span>
   </label>
 </div>
 
