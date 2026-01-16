@@ -75,6 +75,93 @@ Tracks:
 
 ---
 
+## Getting Started (Contributors)
+
+To work on the curriculum or docs locally, you can either run the Docusaurus site directly with Node or use Docker.
+
+### Run Locally with Node
+
+**Prerequisites**
+
+- **Node.js:** >= 20 (matches the `engines` field in `package.json`)
+- **npm:** Comes bundled with Node (this repo uses `npm` and `package-lock.json`)
+
+**Steps**
+
+1. **Clone the repo**
+
+   ```bash
+   git clone https://github.com/humblebeeai/int.academy-curriculum.git
+   cd int.academy-curriculum
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the dev server**
+
+   ```bash
+   npm start
+   ```
+
+   This runs `docusaurus start` and serves the site at `http://localhost:3000` with hot reload.
+
+4. **Build the static site**
+
+   ```bash
+   npm run build
+   ```
+
+5. **Preview the production build**
+
+   ```bash
+   npm run serve
+   ```
+
+   This serves the built site (by default on `http://localhost:3000`) so you can verify production output.
+
+### Run Locally with Docker
+
+If you prefer not to install Node locally, you can use the provided `Dockerfile` and `compose.yml`.
+
+From the repo root:
+
+1. **Build the image**
+
+   ```bash
+   docker compose build
+   ```
+
+2. **Run the container**
+
+   ```bash
+   docker compose up
+   ```
+
+   After startup, open `http://localhost:3000` in your browser (or whichever port is configured in `compose.yml`).
+
+3. **Stop the container**
+
+   ```bash
+   docker compose down
+   ```
+
+### Editing Curriculum Content
+
+- Most curriculum content lives under the `docs/` directory as `.mdx` files:
+  - School / Phase 1: `docs/school/index.mdx`, `docs/school/computational-thinking.mdx`, `docs/school/calculus-algebra.mdx`, etc.
+  - Softlanding / Core Systems: `docs/softlanding/core-systems/**/*.mdx`
+  - Specializations: `docs/softlanding/specializations/**/*.mdx`
+  - Shared resources: `docs/resources.mdx`, `docs/index.mdx`, etc.
+- With the dev server running, changes you make to these files will hot-reload in your browser (for example, editing `docs/school/computational-thinking.mdx` updates the corresponding School module page).
+- For style and component usage guidelines, see `AI_CONTEXT.md`.
+- For contribution workflow (issues/PRs, licensing), see the **Contributing** section below.
+
+---
+
 ## Learning Philosophy
 
 - **Learning by Doing**: We reject tutorial-only learning. Build continuously.  

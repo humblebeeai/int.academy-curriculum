@@ -19,135 +19,268 @@ Learn how language models understand, generate, and reason with text, and develo
 
 ## <BookOpen /> Curriculum
 
-### **NLP Basics**
+### Foundations of Natural Language Processing
+
+#### Text Representation & Classical NLP
+
+Topics:
+
+- Text preprocessing (tokenization, normalization, stopwords)
+- Bag-of-Words and TF-IDF
+- N-grams and statistical language intuition
+- Vocabulary construction and sparsity
+- Limitations of classical NLP approaches
 
 <ResourceCard
-  type="paper"
-  title="Word2Vec: Efficient Estimation of Word Representations"
-  url="https://arxiv.org/abs/1301.3781"
-  duration="2-3 hours"
-  difficulty="intermediate"
-  why="Introduces dense word embeddings and shows how semantic relationships can be captured in vector space."
+  type="course"
+  title="Stanford CS224N — NLP with Deep Learning (Classical NLP Parts) Lectures 1~2"
+  url="https://www.youtube.com/playlist?list=PLoROMvodv4rOSH4v6133s9LFPRHjEmbmJ"
+  duration="3-4 hours"
+  difficulty="beginner"
+  why="This section introduces the fundamental challenges of working with human language in machine learning. Learners understand how text is converted into numerical representations and why early NLP systems struggle with meaning, context, and generalization. Emphasis is placed on understanding: Why text is fundamentally different from images or tabular data, How statistical representations encode language information, Where classical NLP methods break down."
 />
-
-**Why it's important:**
-Word2Vec introduced the concept of dense word embeddings that capture semantic relationships. While modern models use contextual embeddings, understanding Word2Vec provides insight into how meaning is represented numerically and forms the foundation for all modern embedding techniques.
-
-**What to expect:**
-Learn about Skip-gram and CBOW architectures, negative sampling, and how words with similar meanings end up close in vector space. Classic examples like "king - man + woman = queen" demonstrate learned relationships. This is your introduction to representing language as numbers.
-
-### **Transformers & Attention Mechanisms**
 
 <ResourceCard
   type="tutorial"
-  title="Transformers and Multi-Head Attention (UvA Tutorial 6)"
-  url="https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial6/Transformers_and_MHAttention.html"
-  duration="4-6 hours"
+  title="scikit-learn Text Feature Extraction Guide"
+  url="https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction"
+  duration="3-4 hours"
+  difficulty="beginner"
+  why="This section introduces the fundamental challenges of working with human language in machine learning. Learners understand how text is converted into numerical representations and why early NLP systems struggle with meaning, context, and generalization. Emphasis is placed on understanding: Why text is fundamentally different from images or tabular data, How statistical representations encode language information, Where classical NLP methods break down."
+/>
+
+<ResourceCard
+  type="course"
+  title="Kaggle Micro-Course: Natural Language Processing"
+  url="https://www.kaggle.com/learn/natural-language-processing"
+  duration="3-4 hours"
+  difficulty="beginner"
+  why="This section introduces the fundamental challenges of working with human language in machine learning. Learners understand how text is converted into numerical representations and why early NLP systems struggle with meaning, context, and generalization. Emphasis is placed on understanding: Why text is fundamentally different from images or tabular data, How statistical representations encode language information, Where classical NLP methods break down."
+/>
+
+#### Word Embeddings & Distributional Semantics
+
+Topics:
+
+- Distributional hypothesis
+- Word2Vec (CBOW, Skip-gram)
+- Negative sampling
+- GloVe (conceptual overview)
+- Embedding geometry and semantic similarity
+- Biases in embeddings
+
+<ResourceCard
+  type="course"
+  title="Lecture 2: Word Vectors and Word Senses"
+  url="https://www.youtube.com/watch?v=ERibwqs9p38"
+  duration="2-3 hours"
   difficulty="intermediate"
-  why="Code-first walkthrough of transformer components with visualizations that make attention feel tangible."
+  why="This section explains how modern NLP moved from sparse counts to dense semantic representations. Learners develop intuition for how meaning emerges from context and why embeddings form the foundation of all modern language models. Emphasis is placed on understanding: Why embeddings capture semantics, How context shapes representation, Why cosine similarity works."
+/>
+
+<ResourceCard
+  type="paper"
+  title="Original Word2Vec Paper"
+  url="https://arxiv.org/abs/1301.3781"
+  duration="2-3 hours"
+  difficulty="intermediate"
+  why="This section explains how modern NLP moved from sparse counts to dense semantic representations. Learners develop intuition for how meaning emerges from context and why embeddings form the foundation of all modern language models. Emphasis is placed on understanding: Why embeddings capture semantics, How context shapes representation, Why cosine similarity works."
+/>
+
+<ResourceCard
+  type="paper"
+  title="GloVe Paper (Conceptual Overview)"
+  url="https://nlp.stanford.edu/pubs/glove.pdf"
+  duration="2-3 hours"
+  difficulty="intermediate"
+  why="This section explains how modern NLP moved from sparse counts to dense semantic representations. Learners develop intuition for how meaning emerges from context and why embeddings form the foundation of all modern language models. Emphasis is placed on understanding: Why embeddings capture semantics, How context shapes representation, Why cosine similarity works."
+/>
+
+<ResourceCard
+  type="tutorial"
+  title="Practical Word Embeddings with Gensim"
+  url="https://radimrehurek.com/gensim/models/word2vec.html"
+  duration="2-3 hours"
+  difficulty="intermediate"
+  why="This section explains how modern NLP moved from sparse counts to dense semantic representations. Learners develop intuition for how meaning emerges from context and why embeddings form the foundation of all modern language models. Emphasis is placed on understanding: Why embeddings capture semantics, How context shapes representation, Why cosine similarity works."
+/>
+
+#### Sequence Models & Context Modeling
+
+Topics:
+
+- Sequence modeling intuition
+- RNN architecture
+- Vanishing and exploding gradients
+- LSTM and GRU architectures
+- Bidirectional RNNs
+- Sequence-to-sequence models
+
+<ResourceCard
+  type="course"
+  title="Stanford CS231N Deep Learning for Computer Vision I 2025 (Lecture 7)"
+  url="https://www.youtube.com/playlist?list=PLoROMvodv4rOmsNzYBMe0gJY2XS8AQg16"
+  duration="3-4 hours"
+  difficulty="advanced"
+  why="This section introduces neural architectures designed to model sequences and temporal dependencies. Learners understand how models process language as ordered data and why early deep NLP models struggled with long-term context. Emphasis is placed on understanding: Why recurrence is needed for language, How memory mechanisms work, Why RNNs were eventually replaced by attention."
+/>
+
+<ResourceCard
+  type="tutorial"
+  title="Recurrent Neural Networks (RNNs), Clearly Explained!!!"
+  url="https://www.youtube.com/watch?v=AsNTP8Kwu80&t=683s"
+  duration="3-4 hours"
+  difficulty="advanced"
+  why="This section introduces neural architectures designed to model sequences and temporal dependencies. Learners understand how models process language as ordered data and why early deep NLP models struggled with long-term context. Emphasis is placed on understanding: Why recurrence is needed for language, How memory mechanisms work, Why RNNs were eventually replaced by attention."
+/>
+
+<ResourceCard
+  type="tutorial"
+  title="Long Short-Term Memory (LSTM), Clearly Explained"
+  url="https://www.youtube.com/watch?v=YCzL96nL7j0"
+  duration="3-4 hours"
+  difficulty="advanced"
+  why="This section introduces neural architectures designed to model sequences and temporal dependencies. Learners understand how models process language as ordered data and why early deep NLP models struggled with long-term context. Emphasis is placed on understanding: Why recurrence is needed for language, How memory mechanisms work, Why RNNs were eventually replaced by attention."
+/>
+
+#### Attention Mechanisms & Transformers
+
+Topics:
+
+- Attention mechanism intuition
+- Self-attention
+- Query, Key, Value formulation
+- Positional encoding
+- Transformer encoder/decoder architecture
+- Computational trade-offs vs RNNs
+
+<ResourceCard
+  type="course"
+  title="Stanford CS231N Deep Learning for Computer Vision I 2025 (Lecture 8)"
+  url="https://www.youtube.com/watch?v=RQowiOF_FvQ&list=PLoROMvodv4rOmsNzYBMe0gJY2XS8AQg16&index=8"
+  duration="2-3 hours"
+  difficulty="advanced"
+  why="This section explains the architectural shift that enabled large-scale language models. Learners gain a deep conceptual understanding of attention and why Transformers scale better than recurrent architectures. Emphasis is placed on understanding: Why attention enables parallelism, How context is modeled globally, Why Transformers dominate NLP."
 />
 
 <ResourceCard
   type="paper"
   title="Attention Is All You Need"
   url="https://arxiv.org/abs/1706.03762"
-  duration="3-4 hours"
+  duration="2-3 hours"
   difficulty="advanced"
-  why="The seminal transformer paper that underpins all modern LLMs; essential for deep architectural understanding."
+  why="This section explains the architectural shift that enabled large-scale language models. Learners gain a deep conceptual understanding of attention and why Transformers scale better than recurrent architectures. Emphasis is placed on understanding: Why attention enables parallelism, How context is modeled globally, Why Transformers dominate NLP."
 />
-
-**Why it's important:**
-The Transformer architecture revolutionized NLP and enabled models like GPT, BERT, and Claude. Understanding multi-head attention mechanisms is crucial for knowing how models process and relate information. This paper is the foundation of every modern LLM.
-
-**What to expect:**
-Interactive code walkthrough implementing transformers from scratch. You'll visualize attention patterns, understand positional encoding, and see how self-attention enables parallel processing of sequences. The paper provides the theoretical foundation with detailed explanations of encoder-decoder structure and why transformers replaced RNNs.
-
-### **Neural Networks Fundamentals**
-
-<ResourceCard
-  type="course"
-  title="Neural Networks: Zero to Hero (Ch. 7–10)"
-  url="https://youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ&si=IaLn9SKculhENlak"
-  duration="6-8 hours"
-  difficulty="intermediate"
-  why="Builds neural nets and small language models from scratch, giving you solid intuition for training dynamics."
-/>
-
-**Why it's important:**
-Andrej Karpathy builds neural networks from first principles with minimal dependencies. This foundation helps you understand what's happening under the hood of high-level libraries and modern LLMs.
-
-**What to expect:**
-Step-by-step implementation of neural networks, backpropagation, and character-level language models. Expect to write lots of code and gain intuition for gradient descent and neural network training, LLMs.
-
-#### **Retrieval-Augmented Generation (RAG)**
 
 <ResourceCard
   type="tutorial"
-  title="Build a RAG System with LangChain"
-  url="https://python.langchain.com/docs/tutorials/"
-  duration="4-6 hours"
-  difficulty="intermediate"
-  why="Hands-on guide to building end-to-end RAG pipelines with embeddings, vector stores, and retrieval."
-/>
-
-<ResourceCard
-  type="paper"
-  title="Ragas: Automated Evaluation of RAG"
-  url="https://arxiv.org/pdf/2309.15217"
+  title="Transformer Neural Networks, ChatGPT's foundation, Clearly Explained!!!"
+  url="https://www.youtube.com/watch?v=zxQyTK8quyY"
   duration="2-3 hours"
   difficulty="advanced"
-  why="Introduces metrics and methodology to rigorously evaluate RAG systems beyond simple accuracy."
+  why="This section explains the architectural shift that enabled large-scale language models. Learners gain a deep conceptual understanding of attention and why Transformers scale better than recurrent architectures. Emphasis is placed on understanding: Why attention enables parallelism, How context is modeled globally, Why Transformers dominate NLP."
 />
 
-**Why it's important:**
-Retrieval Augmented Generation (RAG) is one of the most practical applications of LLMs, enabling AI systems to answer questions using your own documents and data. LangChain provides the tools to build production-ready RAG systems, while RAGAS gives you the metrics to evaluate them properly.
+#### Large Language Models (LLMs)
 
-**What to expect:**
-You'll build a complete RAG pipeline from scratch: loading documents, chunking text, creating embeddings, storing vectors, implementing retrieval, and generating answers. You'll learn about semantic search, vector databases, and how to handle large document collections. Then you'll master evaluation using metrics like context precision, answer relevancy, and faithfulness to benchmark retrieval quality and LLM response accuracy systematically.
+Topics:
 
-### **Prompt Engineering**
+- Language modeling objective
+- Building and Training LLM from scratch
+- Pretraining vs fine-tuning
+- Causal vs masked language models
+- Scaling laws
+- Emergent behaviors in LLMs
+- Limitations and failure modes
 
 <ResourceCard
   type="course"
-  title="Basics Guide to Generative AI and Prompt Engineering"
-  url="https://learnprompting.org/docs/introduction"
+  title="Building GPT from scratch (Andrew Karpathy)"
+  url="https://www.youtube.com/watch?v=kCc8FmEb1nY"
   duration="3-4 hours"
-  difficulty="beginner"
-  why="Comprehensive guide to structuring prompts, using few-shot patterns, and reducing hallucinations."
+  difficulty="advanced"
+  why="This section demystifies large language models by breaking down how they are trained, scaled, and deployed. Learners understand what LLMs can and cannot do — and why. Emphasis is placed on understanding: Why scale matters, What LLMs actually learn, Why hallucinations occur."
 />
-
-**Why it's important:**
-Effective prompting is the primary interface for controlling LLM behavior. Good prompt engineering dramatically improves output quality, consistency, and task success rates without model fine-tuning.
-
-**What to expect:**
-Comprehensive guide covering prompt structure, few-shot learning, chain-of-thought reasoning, role-playing, and advanced techniques. You'll learn to design prompts that minimize hallucinations and maximize reliability.
-
-### **AI Agents Orchestration**
 
 <ResourceCard
   type="course"
-  title="Multi AI Agent Systems with crewAI"
+  title="Large Language Models from scratch (Book) (Chapter 3~5)"
+  url="https://github.com/rasbt/LLMs-from-scratch/tree/main"
+  duration="3-4 hours"
+  difficulty="advanced"
+  why="This section demystifies large language models by breaking down how they are trained, scaled, and deployed. Learners understand what LLMs can and cannot do — and why. Emphasis is placed on understanding: Why scale matters, What LLMs actually learn, Why hallucinations occur."
+/>
+
+#### LLM Orchestration & Applications
+
+Topics:
+
+- LLM application architectures
+- Retrieval-Augmented Generation (RAG)
+- Document chunking strategies
+- Embeddings and vector databases
+- Tool calling and agents
+- Context management and memory
+
+<ResourceCard
+  type="tutorial"
+  title="LangChain Tutorials (Orchestration Focus)"
+  url="https://docs.langchain.com/oss/python/langchain/overview"
+  duration="3-4 hours"
+  difficulty="advanced"
+  why="This section focuses on building real-world LLM-powered systems rather than standalone prompts. Learners design pipelines that combine LLMs with external data and tools. Emphasis is placed on understanding: Why LLMs need retrieval, How RAG reduces hallucination, How orchestration enables complex workflows."
+/>
+
+<ResourceCard
+  type="tutorial"
+  title="Learn RAG From Scratch – Python AI Tutorial from a LangChain Engineer"
+  url="https://www.youtube.com/watch?v=sVcwVQRHIc8"
+  duration="3-4 hours"
+  difficulty="advanced"
+  why="This section focuses on building real-world LLM-powered systems rather than standalone prompts. Learners design pipelines that combine LLMs with external data and tools. Emphasis is placed on understanding: Why LLMs need retrieval, How RAG reduces hallucination, How orchestration enables complex workflows."
+/>
+
+#### AI Agent Orchestration
+
+Topics:
+
+- Single-agent vs multi-agent architectures
+- Agent roles and specialization
+- Task decomposition and delegation
+- Inter-agent communication patterns
+- Memory and shared context
+- Coordination, planning, and execution loops
+- Failure modes in multi-agent systems
+- Human-in-the-loop orchestration
+
+<ResourceCard
+  type="course"
+  title="AI Agent Orchestration with CrewAI"
   url="https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/"
-  duration="3-4 hours"
-  difficulty="intermediate"
-  why="Short course showing how to orchestrate multiple LLM agents with distinct roles to solve complex tasks."
+  duration="4-6 hours"
+  difficulty="advanced"
+  why="This section introduces learners to the design and implementation of multi-agent AI systems, where multiple specialized agents collaborate to solve complex tasks. Learners move beyond single-prompt interactions to structured, role-based agent workflows that resemble real-world team collaboration. Using CrewAI-style orchestration, students learn how to design agents with distinct responsibilities, coordinate their interactions, and manage task execution across a system of cooperating AI components. Emphasis is placed on understanding: Why single-agent systems break down on complex tasks, How agent specialization improves reasoning and reliability, How tasks can be decomposed and delegated across agents, How communication and memory enable coordination, Where multi-agent systems fail and how to mitigate risks."
 />
 
-**Why it's important:**
-Single-agent systems are limited. Multi-agent architectures enable collaboration, specialization, and more complex reasoning patterns. CrewAI demonstrates how to orchestrate multiple AI agents working together.
+#### Fine-Tuning Methods
 
-**What to expect:**
-Short course covering agent roles, task delegation, inter-agent communication, and building systems where agents have different responsibilities. You'll build crews for research, writing, and analysis tasks.
+Topics:
 
-### **Fine-Tuning Methods**
+- Pretraining vs fine-tuning vs prompting
+- Full fine-tuning vs parameter-efficient fine-tuning (PEFT)
+- Low-Rank Adaptation (LoRA)
+- Quantized fine-tuning (QLoRA)
+- Memory and compute trade-offs
+- Training stability and overfitting
+- Deployment considerations for fine-tuned models
 
 <ResourceCard
   type="course"
-  title="Fine-Tuning Large Language Models (DeepLearning.AI)"
+  title="Foundations of LLM Fine-Tuning"
   url="https://www.deeplearning.ai/short-courses/finetuning-large-language-models/"
   duration="4-6 hours"
   difficulty="intermediate"
-  why="Hands-on introduction to instruction-tuning and PEFT methods for adapting LLMs to your domain."
+  why="This course introduces the practical and conceptual foundations of fine-tuning large language models. Learners understand when fine-tuning is necessary, how it differs from prompting and RAG, and what trade-offs it introduces in cost, performance, and maintainability. Emphasis is placed on understanding: When fine-tuning is the right solution, How task-specific adaptation works, Why naive fine-tuning is expensive and risky."
 />
 
 <ResourceCard
@@ -156,7 +289,7 @@ Short course covering agent roles, task delegation, inter-agent communication, a
   url="https://arxiv.org/abs/2106.09685"
   duration="2-3 hours"
   difficulty="advanced"
-  why="Explains a core parameter-efficient fine-tuning technique widely used in practice."
+  why="This section studies LoRA, a method that enables efficient adaptation of large models by injecting low-rank trainable matrices instead of updating all parameters. Learners understand why LoRA drastically reduces memory usage while preserving performance. Emphasis is placed on understanding: Why low-rank updates work, How LoRA modifies attention layers, Trade-offs between rank, performance, and cost, Why LoRA became the industry standard for LLM fine-tuning."
 />
 
 <ResourceCard
@@ -165,23 +298,17 @@ Short course covering agent roles, task delegation, inter-agent communication, a
   url="https://arxiv.org/abs/2305.14314"
   duration="2-3 hours"
   difficulty="advanced"
-  why="Shows how to fine-tune large models in 4-bit precision on limited hardware without losing performance."
+  why="This section extends LoRA by introducing fine-tuning on quantized models, enabling adaptation of very large LLMs on limited hardware. Learners understand how quantization and low-rank adaptation interact to make large-scale fine-tuning accessible. Emphasis is placed on understanding: Why quantization reduces memory footprint, How QLoRA maintains model quality, Practical implications for single-GPU and consumer hardware, Limitations and failure modes of quantized fine-tuning."
 />
 
 <ResourceCard
   type="docs"
-  title="Unsloth Documentation"
+  title="Practical Fine-Tuning with Unsloth"
   url="https://docs.unsloth.ai/"
   duration="2-3 hours"
   difficulty="intermediate"
-  why="Production-ready framework documentation for fine-tuning and RL on LLMs using modern techniques."
+  why="This section focuses on hands-on fine-tuning using modern tooling. Learners use Unsloth to implement LoRA and QLoRA fine-tuning pipelines efficiently, with a focus on speed, memory optimization, and reproducibility. Emphasis is placed on understanding: End-to-end fine-tuning workflows, Dataset preparation for instruction tuning, Training configuration and monitoring, Exporting and deploying fine-tuned models."
 />
-
-**Why it's important:**
-Fine-tuning adapts pre-trained models to specific tasks and domains with limited compute. Techniques like LoRA and QLoRA make it feasible to customize billion-parameter models on consumer hardware, enabling personalized AI systems without training from scratch.
-
-**What to expect:**
-You'll learn instruction-tuning for following user commands, Parameter-Efficient Fine-Tuning (PEFT) methods that update only a small fraction of weights, LoRA's low-rank decomposition approach, and QLoRA's quantization for 4-bit fine-tuning. The DeepLearning.AI course provides hands-on practice, while papers explain the theory. Unsloth gives you a production-ready framework supporting multiple fine-tuning methods with optimized hyperparameters.
 
 ### Capstone
 
