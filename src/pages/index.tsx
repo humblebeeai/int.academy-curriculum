@@ -259,7 +259,7 @@ function HomepageHeader() {
           >
             <Link className={styles.primaryButton} to="/docs/school">
               <Rocket size={20} />
-              Start Phase 1
+              Start School Program
             </Link>
             <Link className={styles.secondaryButton} to="/docs">
               View Roadmap
@@ -468,7 +468,7 @@ function ProgramsSection() {
         <div className="row" style={{ marginTop: "2rem" }}>
           <div className="col col--3"></div>
           <ProgramCard
-            title="Foundation Curriculum"
+            title="Basics Curriculum"
             duration="Coming Soon"
             description="Essential prerequisites and foundational skills. The perfect starting point for absolute beginners."
             Icon={Building2}

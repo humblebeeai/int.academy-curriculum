@@ -18,8 +18,8 @@ This project is a static site generator built with:
 /
 ├── .github/                # GitHub templates and workflows
 ├── docs/                   # 📚 THE CURRICULUM CONTENT
-│   ├── school/             # Phase 1: School Program content
-│   ├── softlanding/        # Phase 2: Soft Landing Program content
+│   ├── school/             # School Program content
+│   ├── softlanding/        # Soft Landing Program content
 │   └── ...
 ├── src/                    # ⚛️ Source code
 │   ├── components/         # Reusable React components (buttons, cards, etc.)
@@ -50,7 +50,7 @@ We use a custom set of MDX components to enhance the learning experience. These 
 * **`<Quiz />`**: Interactive quizzes (client-side).
 * **`<TerminalBlock />`**: Mimics a terminal window for code examples.
 
-*(Note: Component library expansion is planned for Phase 2)*
+*(Note: Component library expansion is planned for Soft Landing)*
 
 ## 🌍 Internationalization (i18n)
 
