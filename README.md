@@ -39,7 +39,7 @@ HumbleBeeAI was built to eliminate these barriers through structured learning, h
 
 ## Curriculum Structure
 
-### Phase 1: School Program (Foundations)
+### School Program
 **Duration:** 2-4 months (self-paced)  
 **Goal:** Build the engineering fundamentals that make everything else possible.  
 **Outcome:** Strong fundamentals in tools, math, and data workflows so you can build confidently without getting stuck on basics.
@@ -51,13 +51,13 @@ Modules:
 - Data Engineering
 - IoT Activation
 
-### Phase 2: Core Systems (Soft Landing)
+### Soft Landing
 **Duration:** 3-6 months (self-paced)  
 **Goal:** Master ML foundations and the system skills required to deploy reliably.  
 **Outcome:** Build end-to-end ML systems: training, evaluation, deployment, and reliability basics using modern tooling.
 
 Modules:
-- Math & ML Foundations (PyTorch, optimization, gradient descent)
+- Math & ML Fundamentals (PyTorch, optimization, gradient descent)
 - Advanced AI & Coding (deep learning, transformers/LLMs, clean code)
 - Systems & Networking (deployment fundamentals, security, cloud mental models)
 - Fullstack Toolkit (APIs, databases, product-shaped systems)
@@ -152,7 +152,7 @@ From the repo root:
 ### Editing Curriculum Content
 
 - Most curriculum content lives under the `docs/` directory as `.mdx` files:
-  - School / Phase 1: `docs/school/index.mdx`, `docs/school/computational-thinking.mdx`, `docs/school/calculus-algebra.mdx`, etc.
+  - School Program: `docs/school/index.mdx`, `docs/school/computational-thinking.mdx`, `docs/school/calculus-algebra.mdx`, etc.
   - Softlanding / Core Systems: `docs/softlanding/core-systems/**/*.mdx`
   - Specializations: `docs/softlanding/specializations/**/*.mdx`
   - Shared resources: `docs/resources.mdx`, `docs/index.mdx`, etc.
@@ -174,7 +174,7 @@ From the repo root:
 ## License
 
 - Curriculum content: **CC BY-SA 4.0**
-- Code in this repo: **MIT**
+- Code in this repo: **Unlicensed**
 
 ---
 
