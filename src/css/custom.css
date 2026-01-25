@@ -378,6 +378,13 @@ h6 {
 /* Sidebar */
 .navbar-sidebar {
   background: var(--ifm-background-color);
+  z-index: 200;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 300px;
+  overflow-y: auto;
 }
 
 .menu__link--active {
