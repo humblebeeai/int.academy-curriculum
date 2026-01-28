@@ -47,7 +47,7 @@ If content is quoted or paraphrased, attribute as:
 
 ## License
 Curriculum content: Creative Commons Attribution-ShareAlike 4.0
-Code and tooling: MIT License
+Code and tooling: Unlicensed
 
 ## Contact
 Project website: https://academy.humblebee.ai

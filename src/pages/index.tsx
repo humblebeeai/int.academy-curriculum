@@ -128,7 +128,7 @@ function EcosystemSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.sectionTitle}>HumbleBee Ecosystem</h2>
+          <h2 className={styles.sectionTitle}>HumbleBeeAI Ecosystem</h2>
           <p className={styles.sectionSubtitle}>
             Real-world AI products built by our community and engineers.
           </p>
@@ -149,7 +149,7 @@ function EcosystemSection() {
                   className={clsx(
                     styles.featureCard,
                     styles.projectCard,
-                    !hasLink && styles.projectCardDisabled
+                    !hasLink && styles.projectCardDisabled,
                   )}
                   onClick={() =>
                     hasLink ? window.open(p.link, "_blank") : null
@@ -178,7 +178,7 @@ function EcosystemSection() {
                     <p
                       className={clsx(
                         styles.featureDescription,
-                        styles.projectDescription
+                        styles.projectDescription,
                       )}
                     >
                       {p.desc}
@@ -259,7 +259,7 @@ function HomepageHeader() {
           >
             <Link className={styles.primaryButton} to="/docs/school">
               <Rocket size={20} />
-              Start Phase 1
+              Start School Program
             </Link>
             <Link className={styles.secondaryButton} to="/docs">
               View Roadmap
@@ -378,7 +378,7 @@ function ProgramCard({
       <div
         className={clsx(
           styles.programCardContent,
-          comingSoon && styles.programCardComingSoon
+          comingSoon && styles.programCardComingSoon,
         )}
       >
         <div className={styles.programIcon}>
@@ -391,7 +391,7 @@ function ProgramCard({
             <span
               className={clsx(
                 styles.programDuration,
-                comingSoon && styles.comingSoonBadge
+                comingSoon && styles.comingSoonBadge,
               )}
             >
               {duration}
@@ -468,7 +468,7 @@ function ProgramsSection() {
         <div className="row" style={{ marginTop: "2rem" }}>
           <div className="col col--3"></div>
           <ProgramCard
-            title="Foundation Curriculum"
+            title="Basics Curriculum"
             duration="Coming Soon"
             description="Essential prerequisites and foundational skills. The perfect starting point for absolute beginners."
             Icon={Building2}
