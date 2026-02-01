@@ -61,7 +61,7 @@ const roadmapTree: RoadmapNode[] = [
     position: { x: 50, y: 5 },
     color: "#3b82f6",
   },
-  
+
   // SCHOOL PROGRAM - Row 1
   {
     id: "computational-thinking",
@@ -75,7 +75,7 @@ const roadmapTree: RoadmapNode[] = [
     position: { x: 50, y: 15 },
     color: "#3b82f6",
   },
-  
+
   // SCHOOL PROGRAM - Row 2 (Split into 2)
   {
     id: "calculus-algebra",
@@ -101,7 +101,7 @@ const roadmapTree: RoadmapNode[] = [
     position: { x: 70, y: 28 },
     color: "#3b82f6",
   },
-  
+
   // SCHOOL PROGRAM - Row 3 (Split into 2)
   {
     id: "probability-statistics",
@@ -127,7 +127,7 @@ const roadmapTree: RoadmapNode[] = [
     position: { x: 70, y: 41 },
     color: "#3b82f6",
   },
-  
+
   // MERGE POINT
   {
     id: "school-complete",
@@ -139,7 +139,7 @@ const roadmapTree: RoadmapNode[] = [
     position: { x: 50, y: 53 },
     color: "#3b82f6",
   },
-  
+
   // SOFT LANDING CORE - Row 1 (Split into 2)
   {
     id: "math-ml",
@@ -148,7 +148,7 @@ const roadmapTree: RoadmapNode[] = [
     icon: Brain,
     duration: "20-30h",
     status: "available",
-    link: "/docs/softlanding/core-systems/01-math-ml",
+    link: "/docs/softlanding/core-systems/math-ml",
     skills: ["Linear Regression", "SVM", "Model Evaluation"],
     position: { x: 30, y: 63 },
     color: "#8b5cf6",
@@ -160,21 +160,21 @@ const roadmapTree: RoadmapNode[] = [
     icon: Server,
     duration: "12-16h",
     status: "available",
-    link: "/docs/softlanding/core-systems/03-networking",
+    link: "/docs/softlanding/core-systems/networking",
     skills: ["Linux", "Docker", "REST APIs", "HTTP"],
     position: { x: 70, y: 63 },
     color: "#8b5cf6",
   },
-  
+
   // SOFT LANDING CORE - Row 2 (Split into 2)
   {
     id: "deep-learning",
-    title: "Deep Learning",
+    title: "Advanced AI & Coding",
     description: "PyTorch, CNNs, Transformers",
     icon: Zap,
     duration: "30-40h",
     status: "available",
-    link: "/docs/softlanding/core-systems/02-advanced-ai",
+    link: "/docs/softlanding/core-systems/advanced-ai",
     skills: ["PyTorch", "Neural Nets", "CNNs", "Transformers"],
     position: { x: 30, y: 76 },
     color: "#8b5cf6",
@@ -191,7 +191,7 @@ const roadmapTree: RoadmapNode[] = [
     position: { x: 70, y: 76 },
     color: "#8b5cf6",
   },
-  
+
   // CORE COMPLETE
   {
     id: "core-complete",
@@ -203,7 +203,7 @@ const roadmapTree: RoadmapNode[] = [
     position: { x: 50, y: 88 },
     color: "#8b5cf6",
   },
-  
+
   // SPECIALIZATIONS - Final Row (4 branches)
   {
     id: "computer-vision",
@@ -259,31 +259,31 @@ const roadmapTree: RoadmapNode[] = [
 const connections = [
   // Start to first node
   { from: "start", to: "computational-thinking" },
-  
+
   // Computational thinking splits
   { from: "computational-thinking", to: "calculus-algebra" },
   { from: "computational-thinking", to: "data-engineering" },
-  
+
   // Second row to third row
   { from: "calculus-algebra", to: "probability-statistics" },
   { from: "data-engineering", to: "iot-activation" },
-  
+
   // Third row merges to school complete
   { from: "probability-statistics", to: "school-complete" },
   { from: "iot-activation", to: "school-complete" },
-  
+
   // School complete splits to soft landing
   { from: "school-complete", to: "math-ml" },
   { from: "school-complete", to: "networking" },
-  
+
   // Soft landing row 1 to row 2
   { from: "math-ml", to: "deep-learning" },
   { from: "networking", to: "fullstack-ops" },
-  
+
   // Row 2 merges to core complete
   { from: "deep-learning", to: "core-complete" },
   { from: "fullstack-ops", to: "core-complete" },
-  
+
   // Core complete to specializations
   { from: "core-complete", to: "computer-vision" },
   { from: "core-complete", to: "nlp-llms" },
@@ -293,7 +293,10 @@ const connections = [
 
 // Tree Node Component
 function TreeNode({ node, index }: { node: RoadmapNode; index: number }) {
-  const isMilestone = node.id === "start" || node.id === "school-complete" || node.id === "core-complete";
+  const isMilestone =
+    node.id === "start" ||
+    node.id === "school-complete" ||
+    node.id === "core-complete";
 
   const handleClick = () => {
     if (node.link) {
@@ -316,9 +319,9 @@ function TreeNode({ node, index }: { node: RoadmapNode; index: number }) {
       transform={`translate(${node.position.x}, ${node.position.y})`}
       onClick={handleClick}
       className={styles.treeNode}
-      style={{ 
+      style={{
         cursor: node.link ? "pointer" : "default",
-        animation: `nodeAppear 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) ${index * 0.1}s both`
+        animation: `nodeAppear 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) ${index * 0.1}s both`,
       }}
     >
       {/* Node Circle/Rectangle */}
@@ -343,7 +346,7 @@ function TreeNode({ node, index }: { node: RoadmapNode; index: number }) {
           className={styles.nodeShape}
         />
       )}
-      
+
       {/* Node Label */}
       <text
         x="0"
@@ -356,7 +359,7 @@ function TreeNode({ node, index }: { node: RoadmapNode; index: number }) {
       >
         {node.title}
       </text>
-      
+
       {/* Duration label */}
       {node.duration && (
         <text
@@ -374,23 +377,31 @@ function TreeNode({ node, index }: { node: RoadmapNode; index: number }) {
 }
 
 // Connection Line Component
-function ConnectionLine({ from, to, index }: { from: RoadmapNode; to: RoadmapNode; index: number }) {
+function ConnectionLine({
+  from,
+  to,
+  index,
+}: {
+  from: RoadmapNode;
+  to: RoadmapNode;
+  index: number;
+}) {
   const startX = from.position.x;
   const startY = from.position.y;
   const endX = to.position.x;
   const endY = to.position.y;
-  
+
   // Calculate control points for curved lines
   const midY = (startY + endY) / 2;
-  
+
   // Create a smooth curve
   const path = `M ${startX} ${startY + 3} Q ${startX} ${midY}, ${(startX + endX) / 2} ${midY} T ${endX} ${endY - 3}`;
-  
+
   return (
-    <g 
+    <g
       className={styles.connectionGroup}
-      style={{ 
-        animation: `lineAppear 0.6s ease-out ${index * 0.08}s both`
+      style={{
+        animation: `lineAppear 0.6s ease-out ${index * 0.08}s both`,
       }}
     >
       {/* Glow effect background */}
@@ -418,7 +429,7 @@ function ConnectionLine({ from, to, index }: { from: RoadmapNode; to: RoadmapNod
 // Interactive Tree Diagram
 function RoadmapTreeDiagram() {
   return (
-    <motion.div 
+    <motion.div
       className={styles.treeContainer}
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -438,27 +449,30 @@ function RoadmapTreeDiagram() {
             </feMerge>
           </filter>
         </defs>
-        
+
         {/* Render all connection lines first */}
         <g className={styles.connections}>
           {connections.map((conn, idx) => {
             const fromNode = roadmapTree.find((n) => n.id === conn.from);
             const toNode = roadmapTree.find((n) => n.id === conn.to);
             if (fromNode && toNode) {
-              return <ConnectionLine key={idx} from={fromNode} to={toNode} index={idx} />;
+              return (
+                <ConnectionLine
+                  key={idx}
+                  from={fromNode}
+                  to={toNode}
+                  index={idx}
+                />
+              );
             }
             return null;
           })}
         </g>
-        
+
         {/* Render all nodes on top */}
         <g className={styles.nodes}>
           {roadmapTree.map((node, index) => (
-            <TreeNode
-              key={node.id}
-              node={node}
-              index={index}
-            />
+            <TreeNode key={node.id} node={node} index={index} />
           ))}
         </g>
       </svg>
@@ -469,37 +483,46 @@ function RoadmapTreeDiagram() {
 // Legend Component
 function RoadmapLegend() {
   return (
-    <motion.div 
+    <motion.div
       className={styles.legend}
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <motion.div 
+      <motion.div
         className={styles.legendItem}
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <div className={styles.legendDot} style={{ backgroundColor: "#3b82f6" }} />
+        <div
+          className={styles.legendDot}
+          style={{ backgroundColor: "#3b82f6" }}
+        />
         <span>School Program (Foundation)</span>
       </motion.div>
-      <motion.div 
+      <motion.div
         className={styles.legendItem}
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
       >
-        <div className={styles.legendDot} style={{ backgroundColor: "#8b5cf6" }} />
+        <div
+          className={styles.legendDot}
+          style={{ backgroundColor: "#8b5cf6" }}
+        />
         <span>Soft Landing (Core Systems)</span>
       </motion.div>
-      <motion.div 
+      <motion.div
         className={styles.legendItem}
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        <div className={styles.legendDot} style={{ backgroundColor: "#10b981" }} />
+        <div
+          className={styles.legendDot}
+          style={{ backgroundColor: "#10b981" }}
+        />
         <span>Specializations</span>
       </motion.div>
     </motion.div>
@@ -535,7 +558,9 @@ function RoadmapHero() {
           >
             Your Path to Becoming a
             <br />
-            <span className={styles.gradientText}>Production-Ready AI Engineer</span>
+            <span className={styles.gradientText}>
+              Production-Ready AI Engineer
+            </span>
           </motion.h1>
 
           <motion.p
@@ -544,7 +569,8 @@ function RoadmapHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            A tree-based visualization of your learning journey from foundations to specializations.
+            A tree-based visualization of your learning journey from foundations
+            to specializations.
             <br />
             Click on any node to explore that module and start learning.
           </motion.p>
@@ -564,7 +590,7 @@ export default function RoadmapPage(): ReactNode {
       description="Your structured path to becoming a production-ready AI engineer - visualized as an interactive tree diagram"
     >
       <main className={styles.mainContent}>
-        <motion.section 
+        <motion.section
           className={styles.diagramSection}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -573,9 +599,9 @@ export default function RoadmapPage(): ReactNode {
           <div className="container">
             <RoadmapLegend />
             <RoadmapTreeDiagram />
-            
+
             {/* Info Box */}
-            <motion.div 
+            <motion.div
               className={styles.infoBox}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -586,11 +612,14 @@ export default function RoadmapPage(): ReactNode {
               <div className={styles.infoContent}>
                 <h3>How to Use This Roadmap</h3>
                 <p>
-                  This diagram shows the complete learning path from beginner to expert. Start at the top and work your way down. 
-                  Click any node to navigate to that module's content. The path branches and merges to show prerequisites and dependencies.
+                  This diagram shows the complete learning path from beginner to
+                  expert. Start at the top and work your way down. Click any
+                  node to navigate to that module's content. The path branches
+                  and merges to show prerequisites and dependencies.
                 </p>
                 <p className={styles.mobileHint}>
-                  <strong>On mobile?</strong> Scroll horizontally to explore the full diagram.
+                  <strong>On mobile?</strong> Scroll horizontally to explore the
+                  full diagram.
                 </p>
               </div>
             </motion.div>
@@ -612,8 +641,8 @@ export default function RoadmapPage(): ReactNode {
                 Ready to Start Your Journey?
               </Heading>
               <p className={styles.ctaDescription}>
-                Choose your starting point based on your current skill level. All materials are completely free and
-                open-source.
+                Choose your starting point based on your current skill level.
+                All materials are completely free and open-source.
               </p>
               <div className={styles.ctaButtons}>
                 <Link to="/docs/school" className={styles.primaryButton}>
