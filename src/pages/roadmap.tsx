@@ -318,7 +318,7 @@ function TreeNode({ node, index }: { node: RoadmapNode; index: number }) {
       className={styles.treeNode}
       style={{ 
         cursor: node.link ? "pointer" : "default",
-        animation: `nodeAppear 0.5s ease-out ${index * 0.05}s both`
+        animation: `nodeAppear 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) ${index * 0.1}s both`
       }}
     >
       {/* Node Circle/Rectangle */}
@@ -374,7 +374,7 @@ function TreeNode({ node, index }: { node: RoadmapNode; index: number }) {
 }
 
 // Connection Line Component
-function ConnectionLine({ from, to }: { from: RoadmapNode; to: RoadmapNode }) {
+function ConnectionLine({ from, to, index }: { from: RoadmapNode; to: RoadmapNode; index: number }) {
   const startX = from.position.x;
   const startY = from.position.y;
   const endX = to.position.x;
@@ -387,7 +387,12 @@ function ConnectionLine({ from, to }: { from: RoadmapNode; to: RoadmapNode }) {
   const path = `M ${startX} ${startY + 3} Q ${startX} ${midY}, ${(startX + endX) / 2} ${midY} T ${endX} ${endY - 3}`;
   
   return (
-    <g className={styles.connectionGroup}>
+    <g 
+      className={styles.connectionGroup}
+      style={{ 
+        animation: `lineAppear 0.6s ease-out ${index * 0.08}s both`
+      }}
+    >
       {/* Glow effect background */}
       <path
         d={path}
@@ -413,7 +418,12 @@ function ConnectionLine({ from, to }: { from: RoadmapNode; to: RoadmapNode }) {
 // Interactive Tree Diagram
 function RoadmapTreeDiagram() {
   return (
-    <div className={styles.treeContainer}>
+    <motion.div 
+      className={styles.treeContainer}
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+    >
       <svg
         viewBox="0 0 100 110"
         className={styles.treeSvg}
@@ -435,7 +445,7 @@ function RoadmapTreeDiagram() {
             const fromNode = roadmapTree.find((n) => n.id === conn.from);
             const toNode = roadmapTree.find((n) => n.id === conn.to);
             if (fromNode && toNode) {
-              return <ConnectionLine key={idx} from={fromNode} to={toNode} />;
+              return <ConnectionLine key={idx} from={fromNode} to={toNode} index={idx} />;
             }
             return null;
           })}
@@ -452,27 +462,47 @@ function RoadmapTreeDiagram() {
           ))}
         </g>
       </svg>
-    </div>
+    </motion.div>
   );
 }
 
 // Legend Component
 function RoadmapLegend() {
   return (
-    <div className={styles.legend}>
-      <div className={styles.legendItem}>
+    <motion.div 
+      className={styles.legend}
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <motion.div 
+        className={styles.legendItem}
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         <div className={styles.legendDot} style={{ backgroundColor: "#3b82f6" }} />
         <span>School Program (Foundation)</span>
-      </div>
-      <div className={styles.legendItem}>
+      </motion.div>
+      <motion.div 
+        className={styles.legendItem}
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
         <div className={styles.legendDot} style={{ backgroundColor: "#8b5cf6" }} />
         <span>Soft Landing (Core Systems)</span>
-      </div>
-      <div className={styles.legendItem}>
+      </motion.div>
+      <motion.div 
+        className={styles.legendItem}
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+      >
         <div className={styles.legendDot} style={{ backgroundColor: "#10b981" }} />
         <span>Specializations</span>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 
@@ -533,15 +563,25 @@ export default function RoadmapPage(): ReactNode {
       title="Interactive Learning Roadmap"
       description="Your structured path to becoming a production-ready AI engineer - visualized as an interactive tree diagram"
     >
-      <RoadmapHero />
       <main className={styles.mainContent}>
-        <section className={styles.diagramSection}>
+        <motion.section 
+          className={styles.diagramSection}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
           <div className="container">
             <RoadmapLegend />
             <RoadmapTreeDiagram />
             
             {/* Info Box */}
-            <div className={styles.infoBox}>
+            <motion.div 
+              className={styles.infoBox}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               <BookOpen size={24} />
               <div className={styles.infoContent}>
                 <h3>How to Use This Roadmap</h3>
@@ -553,9 +593,9 @@ export default function RoadmapPage(): ReactNode {
                   <strong>On mobile?</strong> Scroll horizontally to explore the full diagram.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
-        </section>
+        </motion.section>
 
         {/* CTA Section */}
         <section className={styles.ctaSection}>
