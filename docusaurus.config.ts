@@ -103,6 +103,12 @@ const config: Config = {
           className: "navbar-curriculum-link",
         },
         {
+          to: "/roadmap",
+          label: "Roadmap",
+          position: "left",
+          className: "navbar-roadmap-link",
+        },
+        {
           to: "/docs/school",
           label: "School",
           position: "left",
@@ -136,6 +142,10 @@ const config: Config = {
             {
               label: "Curriculum Overview",
               to: "/docs",
+            },
+            {
+              label: "Interactive Roadmap",
+              to: "/roadmap",
             },
             {
               label: "School Program",

@@ -1,40 +1,192 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { useState, useEffect, useRef } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import {
-  Sprout,
-  Zap,
-  Target,
   GraduationCap,
   Rocket,
+  Users,
   BookOpen,
   Code2,
+  Zap,
+  Target,
+  Github,
+  Award,
   Building2,
-  Globe,
-  Cpu,
-  Users,
-  BarChart,
+  FileText,
+  CheckCircle,
+  LayoutGrid,
+  Scale,
   Mic,
   Briefcase,
   Heart,
   User,
-  Activity,
+  BarChart,
   Terminal,
+  FlaskConical,
   Eye,
   Wifi,
   Box,
-  Scale,
-  FlaskConical,
-  LayoutGrid,
 } from "lucide-react";
 
 import styles from "./index.module.css";
+
+function CurriculumVsAcademySection() {
+  return (
+    <section className={clsx(styles.features, styles.curriculumVsAcademy)}>
+      <div className="container">
+        <motion.div
+          className={styles.sectionHeader}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className={styles.sectionTitle}>Curriculum vs. Academy</h2>
+          <p className={styles.sectionSubtitle}>
+            Understanding the difference between the open curriculum and the
+            full Academy program.
+          </p>
+        </motion.div>
+
+        <div className="row">
+          <motion.div
+            className="col col--6"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className={clsx(styles.featureCard, styles.comparisonCard)}>
+              <div className={styles.cardMain}>
+                <div
+                  className={styles.iconWrapper}
+                  style={{ color: "var(--ifm-color-primary)" }}
+                >
+                  <FileText size={40} strokeWidth={1.5} />
+                </div>
+                <Heading as="h3" className={styles.featureTitle}>
+                  The Curriculum (This Site)
+                </Heading>
+                <p className={styles.featureDescription}>
+                  Open educational resources: roadmaps, project specs, learning
+                  objectives, and skill gates. Anyone can access and use these
+                  materials for self-directed study.
+                </p>
+                <ul className={styles.comparisonList}>
+                  <li>
+                    <CheckCircle size={16} /> Free and open-source (CC BY-SA
+                    4.0)
+                  </li>
+                  <li>
+                    <CheckCircle size={16} /> Self-paced learning materials
+                  </li>
+                  <li>
+                    <CheckCircle size={16} /> Project specifications and
+                    milestones
+                  </li>
+                  <li>
+                    <CheckCircle size={16} /> Community contributions welcome
+                  </li>
+                </ul>
+                <Link to="/docs" className={styles.secondaryButton}>
+                  Browse Curriculum
+                  <span className={styles.arrow}>→</span>
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="col col--6"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <div
+              className={clsx(
+                styles.featureCard,
+                styles.comparisonCard,
+                styles.academyCard,
+              )}
+            >
+              <div className={styles.cardMain}>
+                <div
+                  className={styles.iconWrapper}
+                  style={{ color: "var(--ifm-color-success)" }}
+                >
+                  <Award size={40} strokeWidth={1.5} />
+                </div>
+                <Heading as="h3" className={styles.featureTitle}>
+                  The Academy
+                </Heading>
+                <p className={styles.featureDescription}>
+                  A full-time, offline training program (40 hrs/week,
+                  campus-based) that uses this curriculum as its foundation.
+                  Academy students receive structured mentorship and verified
+                  credentials.
+                </p>
+                <ul className={styles.comparisonList}>
+                  <li>
+                    <CheckCircle size={16} /> Structured mentorship and code
+                    reviews
+                  </li>
+                  <li>
+                    <CheckCircle size={16} /> Performance transcripts and
+                    verified portfolios
+                  </li>
+                  <li>
+                    <CheckCircle size={16} /> Tuition-based with scholarship
+                    options
+                  </li>
+                  <li>
+                    <CheckCircle size={16} /> Pathway to Growth-3 professional
+                    program
+                  </li>
+                </ul>
+                <a
+                  href="https://academy.humblebee.ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.primaryButton}
+                >
+                  <GraduationCap size={20} />
+                  Apply to Academy
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        <motion.div
+          className={styles.curriculumNote}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <p>
+            <strong>Key distinction:</strong> The Curriculum is the content
+            framework. The Academy is the full-service training environment with
+            credentials, mentorship, and professional placement support.
+          </p>
+          <p>
+            You can use the Curriculum materials independently. But if you want
+            mentored training, verified credentials, and structured career
+            pathways, the Academy provides that infrastructure.
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
 function EcosystemSection() {
   const projects = [
@@ -119,7 +271,9 @@ function EcosystemSection() {
   ];
 
   return (
-    <section className={clsx(styles.features, styles.ecosystemSection)}>
+    <section 
+      className={clsx(styles.features, styles.ecosystemSection)}
+    >
       <div className="container">
         <motion.div
           className={styles.sectionHeader}
@@ -220,16 +374,6 @@ function HomepageHeader() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <motion.div
-            className={styles.badge}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <GraduationCap size={20} />
-            <span>Open Source AI Curriculum</span>
-          </motion.div>
-
           <motion.h1
             className={styles.heroTitle}
             initial={{ opacity: 0, y: 20 }}
@@ -246,9 +390,10 @@ function HomepageHeader() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Bridge the gap between theory and production. <br />
-            Democratizing access to world-class AI education for everyone,
-            everywhere.
+            Structured learning materials for building production-ready AI
+            skills. <br />
+            Use them for self-study, or join the Academy's full-time program for
+            mentored training and verified credentials.
           </motion.p>
 
           <motion.div
@@ -257,11 +402,11 @@ function HomepageHeader() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <Link className={styles.primaryButton} to="/docs/school">
-              <Rocket size={20} />
-              Start School Program
+            <Link className={styles.primaryButton} to="/docs">
+              <BookOpen size={20} />
+              Browse the Curriculum
             </Link>
-            <Link className={styles.secondaryButton} to="/docs">
+            <Link className={styles.secondaryButton} to="/roadmap">
               View Roadmap
               <span className={styles.arrow}>→</span>
             </Link>
@@ -313,7 +458,7 @@ function ProblemCard({
 
 function MissionSection() {
   return (
-    <section className={styles.features}>
+    <section className={clsx(styles.features, styles.missionSection)}>
       <div className="container">
         <motion.div
           className={styles.sectionHeader}
@@ -353,147 +498,17 @@ function MissionSection() {
   );
 }
 
-function ProgramCard({
-  title,
-  duration,
-  description,
-  Icon,
-  link,
-  index,
-  comingSoon,
-  phase,
-}: {
-  title: string;
-  duration: string;
-  description: string;
-  Icon: any;
-  link: string;
-  index: number;
-  comingSoon?: boolean;
-  phase?: number;
-}) {
-  const cardContent = (
-    <>
-      <div className={styles.programCardShadow} />
-      <div
-        className={clsx(
-          styles.programCardContent,
-          comingSoon && styles.programCardComingSoon,
-        )}
-      >
-        <div className={styles.programIcon}>
-          <Icon size={32} strokeWidth={1.5} />
-        </div>
-        <div className={styles.programInfo}>
-          <div className={styles.programHeader}>
-            <span className={styles.phaseBadge}>{phase || "?"}</span>
-            <h3 className={styles.programTitle}>{title}</h3>
-            <span
-              className={clsx(
-                styles.programDuration,
-                comingSoon && styles.comingSoonBadge,
-              )}
-            >
-              {duration}
-            </span>
-          </div>
-          <p className={styles.programDescription}>{description}</p>
-        </div>
-        {!comingSoon && (
-          <div className={styles.programArrow}>
-            <span>→</span>
-          </div>
-        )}
-      </div>
-    </>
-  );
-
-  return (
-    <motion.div
-      className={clsx("col col--6")}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
-    >
-      {comingSoon ? (
-        <div className={styles.programCard}>{cardContent}</div>
-      ) : (
-        <Link to={link} className={styles.programCard}>
-          {cardContent}
-        </Link>
-      )}
-    </motion.div>
-  );
-}
-
-function ProgramsSection() {
-  return (
-    <section className={styles.programsSection}>
-      <div className="container">
-        <motion.div
-          className={styles.sectionHeader}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className={styles.sectionTitle}>Your Path to Mastery</h2>
-          <p className={styles.sectionSubtitle}>
-            Three progressive phases designed to take you from hello world to
-            production deployment.
-          </p>
-        </motion.div>
-
-        <div className="row">
-          <ProgramCard
-            phase={1}
-            title="School Program"
-            duration="4-6 Months"
-            description="Build the foundation. Master the terminal, Git, Math, and core Python data engineering skills."
-            Icon={GraduationCap}
-            link="/docs/school"
-            index={0}
-          />
-          <ProgramCard
-            phase={2}
-            title="Soft Landing"
-            duration="4-6 Months"
-            description="Bridge to production. Deep learning, systems engineering, Docker, and full-stack AI applications."
-            Icon={Rocket}
-            link="/docs/softlanding"
-            index={1}
-          />
-        </div>
-        <div className="row" style={{ marginTop: "2rem" }}>
-          <div className="col col--3"></div>
-          <ProgramCard
-            title="Basics Curriculum"
-            duration="Coming Soon"
-            description="Essential prerequisites and foundational skills. The perfect starting point for absolute beginners."
-            Icon={Building2}
-            link="#"
-            index={2}
-            comingSoon={true}
-          />
-          <div className="col col--3"></div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
       title={`Welcome to ${siteConfig.title}`}
-      description="HumbleBeeAI Academy Curriculum - Transform into a Technical Junior Engineer"
+      description="HumbleBeeAI Academy Curriculum - Open-source learning materials for production-ready AI engineering"
     >
       <HomepageHeader />
       <main>
         <MissionSection />
-        <ProgramsSection />
+        <CurriculumVsAcademySection />
         <EcosystemSection />
       </main>
     </Layout>

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Software 2.0
+title: Software Engineering
 description: Distributed Systems and Scalability
 ---
 
@@ -18,7 +18,7 @@ import {
   FileText,
 } from "lucide-react";
 
-# <Code2 /> Software 2.0 Track
+# <Code2 /> Software Engineering Track
 
 ![Monitors and a laptop](/img/software_eng.png)
 
@@ -39,7 +39,7 @@ Build production-grade, scalable systems. Learn the architecture patterns, tools
   why="Systematic walkthrough of OSI layers, protocols, and performance so you can reason about production traffic."
 />
 
-Alternatively, complete the full [Systems & Networking module](../core-systems/03-networking.mdx) for deeper understanding.
+Alternatively, complete the full [Systems & Networking module](docs/softlanding/core-systems/03-networking.mdx) for deeper understanding.
 
 Understand how data travels to debug and optimize effectively.
 
@@ -49,11 +49,47 @@ Understand how data travels to debug and optimize effectively.
 - **Protocols**: TCP/IP, DNS, HTTP/HTTPS.
 - **Performance**: Load balancing, CDNs, SSL/TLS.
 
+### The TCP/IP Model
+
+<ResourceCard
+  type="video"
+  title="TCP/IP vs OSI Models"
+  url="https://youtu.be/CRdL1PcherM"
+  duration="30-45 minutes"
+  difficulty="beginner"
+  why="Gives you the layer-by-layer framework you’ll use every time you debug a network issue in production."
+/>
+
+The mental framework for debugging. If you can't connect, check the layers from bottom to top.
+
+1. **Link Layer**: Physical hardware (Ethernet, WiFi).
+2. **Internet Layer**: Routing across networks (IP addresses).
+3. **Transport Layer**: Reliable delivery (TCP) or fast streaming (UDP).
+4. **Application Layer**: User-facing protocols (HTTP, SSH).
+
+### TCP/IP in Practice
+
+<ResourceCard
+  type="video"
+  title="Real-World TCP/IP"
+  url="https://youtu.be/3kfO61Mensg"
+  duration="30-45 minutes"
+  difficulty="intermediate"
+  why="Connects theory to real packets and traffic patterns so TCP handshakes and UDP trade-offs make sense."
+/>
+
+- **TCP Handshake**: SYN, SYN-ACK, ACK. Ensures reliable connections (used by HTTP/Web).
+- **UDP**: "Fire and forget". Faster but less reliable (used for video streaming).
+
 **Action Items:**
 
 1. Watch videos on OSI model and HTTP.
 2. Use `ping`, `traceroute`, and `curl` to trace requests.
 3. Analyze a website's traffic using Browser DevTools.
+4. Memorize the 4 layers of the TCP/IP model.
+5. Use **Wireshark** (optional) to observe a TCP handshake in real-time.
+
+---
 
 ## <Layers /> 2. Architecture Principles
 
@@ -272,7 +308,7 @@ Management, API Integration.
 **Goal**: Build a responsive web app consuming your API. **Key Topics**:
 Components, Hooks/Composition API, Routing.
 
-Note: For deeper integration and deployment practices, see the [Full-Stack Operations module](../core-systems/04-fullstack-ops.mdx).
+Note: For deeper integration and deployment practices, see the [Full-Stack Operations module](docs/softlanding/core-systems/04-fullstack-ops.mdx).
 
 **Project Requirement:**
 
@@ -283,7 +319,7 @@ Note: For deeper integration and deployment practices, see the [Full-Stack Opera
 
 Build a full-stack production application with microservices, databases, containerization, CI/CD, and a frontend.
 
-[View Detailed Capstone Requirements →](/docs/softlanding/specializations/capstones/software-engineering-capstone)
+[View Detailed Capstone Requirements →](/docs/softlanding/specializations/software-engineering/capstone)
 
 ## <ClipboardCheck /> Track Completion Checklist
 
