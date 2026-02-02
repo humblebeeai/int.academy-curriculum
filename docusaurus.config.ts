@@ -109,10 +109,10 @@ const config: Config = {
           className: "navbar-roadmap-link",
         },
         {
-          to: "/docs/school",
-          label: "School",
+          to: "/docs/engineering-fundamentals",
+          label: "Engineering Fundamentals",
           position: "left",
-          className: "navbar-school-link",
+          className: "navbar-engineering-fundamentals-link",
         },
         {
           to: "/docs/softlanding",
@@ -148,8 +148,8 @@ const config: Config = {
               to: "/roadmap",
             },
             {
-              label: "School Program",
-              to: "/docs/school",
+              label: "Engineering Fundamentals",
+              to: "/docs/engineering-fundamentals",
             },
             {
               label: "Soft Landing Program",

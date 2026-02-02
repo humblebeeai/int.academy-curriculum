@@ -18,7 +18,7 @@ This project is a static site generator built with:
 /
 ├── .github/                # GitHub templates and workflows
 ├── docs/                   # 📚 THE CURRICULUM CONTENT
-│   ├── school/             # School Program content
+│   ├── engineering-fundamentals/   # Engineering Fundamentals content
 │   ├── softlanding/        # Soft Landing Program content
 │   └── ...
 ├── src/                    # ⚛️ Source code

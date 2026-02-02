@@ -39,7 +39,7 @@ HumbleBeeAI was built to eliminate these barriers through structured learning, h
 
 ## Curriculum Structure
 
-### School Program
+### Engineering Fundamentals
 **Duration:** 2-4 months (self-paced)  
 **Goal:** Build the engineering fundamentals that make everything else possible.  
 **Outcome:** Strong fundamentals in tools, math, and data workflows so you can build confidently without getting stuck on basics.
@@ -152,11 +152,11 @@ From the repo root:
 ### Editing Curriculum Content
 
 - Most curriculum content lives under the `docs/` directory as `.mdx` files:
-  - School Program: `docs/school/index.mdx`, `docs/school/computational-thinking.mdx`, `docs/school/calculus-algebra.mdx`, etc.
+  - Engineering Fundamentals: `docs/engineering-fundamentals/index.mdx`, `docs/engineering-fundamentals/computational-thinking.mdx`, `docs/engineering-fundamentals/calculus-algebra.mdx`, etc.
   - Softlanding / Core Systems: `docs/softlanding/core-systems/**/*.mdx`
   - Specializations: `docs/softlanding/specializations/**/*.mdx`
   - Shared resources: `docs/resources.mdx`, `docs/index.mdx`, etc.
-- With the dev server running, changes you make to these files will hot-reload in your browser (for example, editing `docs/school/computational-thinking.mdx` updates the corresponding School module page).
+- With the dev server running, changes you make to these files will hot-reload in your browser (for example, editing `docs/engineering-fundamentals/computational-thinking.mdx` updates the corresponding Engineering Fundamentals module page).
 - For style and component usage guidelines, see `AI_CONTEXT.md`.
 - For contribution workflow (issues/PRs, licensing), see the **Contributing** section below.
 
