@@ -243,7 +243,7 @@ const roadmapTree: RoadmapNode[] = [
   },
   {
     id: "software-engineering",
-    title: "Software Engineering",
+    title: "MLOps",
     description: "Distributed Systems",
     icon: Settings,
     duration: "100-150h",

@@ -241,7 +241,7 @@ function EcosystemSection() {
     {
       title: "LearnPrompting",
       desc: "Comprehensive LLM prompting guide (Uzbek Translation).",
-      link: "http://learnprompting.uz/",
+      link: "https://learnprompting.uz/",
       icon: Terminal,
     },
     {
@@ -271,9 +271,7 @@ function EcosystemSection() {
   ];
 
   return (
-    <section 
-      className={clsx(styles.features, styles.ecosystemSection)}
-    >
+    <section className={clsx(styles.features, styles.ecosystemSection)}>
       <div className="container">
         <motion.div
           className={styles.sectionHeader}
@@ -354,7 +352,7 @@ function EcosystemSection() {
             rel="noopener noreferrer"
             className={styles.secondaryButton}
           >
-            Visit HumbleBee.ai
+            Visit HumbleBeeAI
             <span className={styles.arrow}>→</span>
           </a>
         </div>
@@ -380,8 +378,9 @@ function HomepageHeader() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Your Journey to Becoming a<br />
-            <span className={styles.gradientText}>Top 1% AI Engineer</span>
+            <span className={styles.gradientText}>
+              AI Engineering Curriculum
+            </span>
           </motion.h1>
 
           <motion.p
@@ -390,10 +389,9 @@ function HomepageHeader() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Structured learning materials for building production-ready AI
-            skills. <br />
-            Use them for self-study, or join the Academy's full-time program for
-            mentored training and verified credentials.
+            Free, open-source learning materials for building top-tier AI
+            skills. Self-paced, community-driven, and designed for real-world
+            engineering.
           </motion.p>
 
           <motion.div
@@ -502,8 +500,8 @@ export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Welcome to ${siteConfig.title}`}
-      description="HumbleBeeAI Academy Curriculum - Open-source learning materials for production-ready AI engineering"
+      title="Free & Open AI Engineering Curriculum"
+      description="Free, open-source AI engineering curriculum. Community-driven learning materials for production-ready skills in Deep Learning, MLOps, Computer Vision, and NLP."
     >
       <HomepageHeader />
       <main>
