@@ -7,7 +7,7 @@ import remarkEmoji from "./src/plugins/remark-emoji";
 
 const config: Config = {
   title: "HumbleBeeAI Academy",
-  tagline: "Transforming students into technical junior engineers",
+  tagline: "Community-Driven Open AI Curriculum",
   favicon: "img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -73,12 +73,12 @@ const config: Config = {
       {
         name: "description",
         content:
-          "Open-source AI Engineering curriculum. Master Deep Learning, MLOps, Computer Vision, and NLP. From zero to production-grade AI engineer.",
+          "Free, open-source AI Engineering curriculum. Community-driven learning materials for production-ready skills in Deep Learning, MLOps, Computer Vision, and NLP.",
       },
       {
         name: "keywords",
         content:
-          "AI curriculum, deep learning path, MLOps, computer vision course, NLP training, data science roadmap, HumbleBeeAI, open source education",
+          "open source AI curriculum, free AI education, deep learning path, MLOps, computer vision course, NLP training, data science roadmap, community-driven learning, HumbleBeeAI",
       },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -103,16 +103,10 @@ const config: Config = {
           className: "navbar-curriculum-link",
         },
         {
-          to: "/roadmap",
-          label: "Roadmap",
+          to: "/docs/engineering-fundamentals",
+          label: "Engineering Fundamentals",
           position: "left",
-          className: "navbar-roadmap-link",
-        },
-        {
-          to: "/docs/school",
-          label: "School",
-          position: "left",
-          className: "navbar-school-link",
+          className: "navbar-engineering-fundamentals-link",
         },
         {
           to: "/docs/softlanding",
@@ -148,8 +142,8 @@ const config: Config = {
               to: "/roadmap",
             },
             {
-              label: "School Program",
-              to: "/docs/school",
+              label: "Engineering Fundamentals",
+              to: "/docs/engineering-fundamentals",
             },
             {
               label: "Soft Landing Program",
@@ -173,7 +167,7 @@ const config: Config = {
               to: "/docs/softlanding/specializations/nlp",
             },
             {
-              label: "Software Engineering",
+              label: "MLOps",
               to: "/docs/softlanding/specializations/software-engineering",
             },
           ],

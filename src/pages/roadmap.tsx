@@ -62,7 +62,7 @@ const roadmapTree: RoadmapNode[] = [
     color: "#3b82f6",
   },
 
-  // SCHOOL PROGRAM - Row 1
+  // ENGINEERING FUNDAMENTALS - Row 1
   {
     id: "computational-thinking",
     title: "Computational Thinking",
@@ -70,13 +70,13 @@ const roadmapTree: RoadmapNode[] = [
     icon: Terminal,
     duration: "15-20h",
     status: "available",
-    link: "/docs/school/computational-thinking",
+    link: "/docs/engineering-fundamentals/computational-thinking",
     skills: ["Terminal", "Git", "VS Code", "Bash"],
     position: { x: 50, y: 15 },
     color: "#3b82f6",
   },
 
-  // SCHOOL PROGRAM - Row 2 (Split into 2)
+  // ENGINEERING FUNDAMENTALS - Row 2 (Split into 2)
   {
     id: "calculus-algebra",
     title: "Calculus & Linear Algebra",
@@ -84,7 +84,7 @@ const roadmapTree: RoadmapNode[] = [
     icon: Calculator,
     duration: "160-180h",
     status: "available",
-    link: "/docs/school/calculus-algebra",
+    link: "/docs/engineering-fundamentals/calculus-algebra",
     skills: ["Derivatives", "Gradients", "Matrices", "Vectors"],
     position: { x: 30, y: 28 },
     color: "#3b82f6",
@@ -96,13 +96,13 @@ const roadmapTree: RoadmapNode[] = [
     icon: Database,
     duration: "10-14h",
     status: "available",
-    link: "/docs/school/data-engineering",
+    link: "/docs/engineering-fundamentals/data-engineering",
     skills: ["Pandas", "NumPy", "SQL", "Data Cleaning"],
     position: { x: 70, y: 28 },
     color: "#3b82f6",
   },
 
-  // SCHOOL PROGRAM - Row 3 (Split into 2)
+  // ENGINEERING FUNDAMENTALS - Row 3 (Split into 2)
   {
     id: "probability-statistics",
     title: "Probability & Statistics",
@@ -110,7 +110,7 @@ const roadmapTree: RoadmapNode[] = [
     icon: BarChart,
     duration: "60-90h",
     status: "available",
-    link: "/docs/school/probability-statistics",
+    link: "/docs/engineering-fundamentals/probability-statistics",
     skills: ["Distributions", "Testing", "Bayesian", "Modeling"],
     position: { x: 30, y: 41 },
     color: "#3b82f6",
@@ -122,7 +122,7 @@ const roadmapTree: RoadmapNode[] = [
     icon: Cpu,
     duration: "4-7h",
     status: "available",
-    link: "/docs/school/iot-activation",
+    link: "/docs/engineering-fundamentals/iot-activation",
     skills: ["Raspberry Pi", "Edge Computing", "Sensors"],
     position: { x: 70, y: 41 },
     color: "#3b82f6",
@@ -130,8 +130,8 @@ const roadmapTree: RoadmapNode[] = [
 
   // MERGE POINT
   {
-    id: "school-complete",
-    title: "School Program Complete",
+    id: "engineering-fundamentals-complete",
+    title: "Engineering Fundamentals Complete",
     description: "Foundation skills mastered",
     icon: GraduationCap,
     duration: "",
@@ -243,7 +243,7 @@ const roadmapTree: RoadmapNode[] = [
   },
   {
     id: "software-engineering",
-    title: "Software Engineering",
+    title: "MLOps",
     description: "Distributed Systems",
     icon: Settings,
     duration: "100-150h",
@@ -268,13 +268,13 @@ const connections = [
   { from: "calculus-algebra", to: "probability-statistics" },
   { from: "data-engineering", to: "iot-activation" },
 
-  // Third row merges to school complete
-  { from: "probability-statistics", to: "school-complete" },
-  { from: "iot-activation", to: "school-complete" },
+  // Third row merges to engineering fundamentals complete
+  { from: "probability-statistics", to: "engineering-fundamentals-complete" },
+  { from: "iot-activation", to: "engineering-fundamentals-complete" },
 
-  // School complete splits to soft landing
-  { from: "school-complete", to: "math-ml" },
-  { from: "school-complete", to: "networking" },
+  // Engineering fundamentals complete splits to soft landing
+  { from: "engineering-fundamentals-complete", to: "math-ml" },
+  { from: "engineering-fundamentals-complete", to: "networking" },
 
   // Soft landing row 1 to row 2
   { from: "math-ml", to: "deep-learning" },
@@ -295,7 +295,7 @@ const connections = [
 function TreeNode({ node, index }: { node: RoadmapNode; index: number }) {
   const isMilestone =
     node.id === "start" ||
-    node.id === "school-complete" ||
+    node.id === "engineering-fundamentals-complete" ||
     node.id === "core-complete";
 
   const handleClick = () => {
@@ -499,7 +499,7 @@ function RoadmapLegend() {
           className={styles.legendDot}
           style={{ backgroundColor: "#3b82f6" }}
         />
-        <span>School Program (Foundation)</span>
+        <span>Engineering Fundamentals (Foundation)</span>
       </motion.div>
       <motion.div
         className={styles.legendItem}
@@ -645,9 +645,9 @@ export default function RoadmapPage(): ReactNode {
                 All materials are completely free and open-source.
               </p>
               <div className={styles.ctaButtons}>
-                <Link to="/docs/school" className={styles.primaryButton}>
+                <Link to="/docs/engineering-fundamentals" className={styles.primaryButton}>
                   <GraduationCap size={20} />
-                  Start School Program
+                  Start Engineering Fundamentals
                 </Link>
                 <Link to="/docs/softlanding" className={styles.secondaryButton}>
                   <Rocket size={20} />
