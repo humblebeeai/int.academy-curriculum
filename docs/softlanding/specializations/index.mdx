@@ -28,7 +28,7 @@ In the Specialization stage, you stop being a generalist and start becoming a **
 
 ---
 
-## <Layers /> The Four Tracks
+## <Layers /> The Five Tracks
 
 <div className="tracks-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
 
@@ -43,9 +43,9 @@ Teach machines to "see" the world. From analyzing medical X-rays to self-driving
 **You Will Build:**
 
 - Object Detection Systems (YOLO)
-- Facial Recognition Pipelines
-- Image Generation (Stable Diffusion)
-- Video Analysis tools
+- Image Classification Pipelines
+- Visual Recognition Systems
+- Video Analysis Tools
 
 **Best For:**
 
@@ -59,26 +59,51 @@ Teach machines to "see" the world. From analyzing medical X-rays to self-driving
 
 <div className="track-card" style={{ border: '1px solid var(--ifm-color-emphasis-200)', borderRadius: '12px', padding: '1.5rem', backgroundColor: 'var(--ifm-background-surface-color)' }}>
 
-### NLP & Generative AI
+### NLP & LLMs
 
 **The Voice of AI**
 
-Master language models, chatbots, and text analysis. The hottest field in AI right now (LLMs).
+Master language models, chatbots, and text analysis. Build RAG systems and fine-tune LLMs.
 
 **You Will Build:**
 
-- Custom Chatbots (RAG)
-- Language Translation Models
-- Sentiment Analysis Tools
+- Custom Chatbots with RAG
 - Fine-tuned LLMs for specific tasks
+- Multi-agent AI Systems
+- Semantic Search Engines
 
 **Best For:**
 
 - Interest in language/linguistics
-- Passion for cutting-edge tech (GPT/Claude)
+- Passion for LLM applications
 - Strong logic/reasoning skills
 
 [Explore NLP Track →](./nlp)
+
+</div>
+
+<div className="track-card" style={{ border: '1px solid var(--ifm-color-emphasis-200)', borderRadius: '12px', padding: '1.5rem', backgroundColor: 'var(--ifm-background-surface-color)' }}>
+
+### Generative AI
+
+**The Creator of AI**
+
+Build systems that generate content—images, audio, and video. Master diffusion models and speech technologies.
+
+**You Will Build:**
+
+- Image Generation with Stable Diffusion
+- Speech-to-Text (ASR) Pipelines
+- Text-to-Speech (TTS) Systems
+- Video Translation Tools
+
+**Best For:**
+
+- Interest in creative AI applications
+- Passion for multimodal systems
+- Want to work with cutting-edge generative tech
+
+[Explore Generative AI Track →](./generative-ai)
 
 </div>
 
@@ -144,9 +169,10 @@ Build the infrastructure that makes AI possible. Scale models to millions of use
 **Ask yourself:**
 
 1. **"I love seeing my code interact with the physical world."** -> **Computer Vision**
-2. **"I'm fascinated by how ChatGPT works and want to build my own."** -> **NLP**
-3. **"I love finding patterns in chaos and predicting the future."** -> **Data Science**
-4. **"I care about performance, scalability, and building robust systems."** -> **AI Software Engineering**
+2. **"I'm fascinated by how ChatGPT works and want to build my own."** -> **NLP & LLMs**
+3. **"I want to create images, audio, and video with AI."** -> **Generative AI**
+4. **"I love finding patterns in chaos and predicting the future."** -> **Data Science**
+5. **"I care about performance, scalability, and building robust systems."** -> **AI Software Engineering**
 
 </TabItem>
 
@@ -155,7 +181,7 @@ Build the infrastructure that makes AI possible. Scale models to millions of use
 **Current Market Trends (2025):**
 
 - **Highest Demand Volume:** AI Software Engineering (Everyone needs infrastructure)
-- **Highest Hype/Growth:** NLP / GenAI (Every company wants an LLM strategy)
+- **Highest Hype/Growth:** NLP & Generative AI (Every company wants an LLM/GenAI strategy)
 - **Most Stable:** Data Science (Every business needs analytics)
 - **Niche High Pay:** Computer Vision (Robotics, Medical Imaging, Specialized Tech)
 
@@ -224,8 +250,13 @@ raise HTTPException(status_code=500)
     },
     {
       iconString: "MessageSquare",
-      title: "NLP",
-      description: "Chatbots, Search Engines, Content Generation.",
+      title: "NLP & LLMs",
+      description: "Chatbots, Search Engines, RAG Systems, Agents.",
+    },
+    {
+      iconString: "Sparkles",
+      title: "Generative AI",
+      description: "Image Generation, Speech Synthesis, Video Dubbing.",
     },
     {
       iconString: "BarChart",
