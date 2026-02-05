@@ -63,14 +63,18 @@
 }
 
 .gradientText {
-  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-light) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--ifm-color-primary) 0%,
+    var(--ifm-color-primary-light) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   display: inline-block;
 }
 
-[data-theme='dark'] .gradientText {
+[data-theme="dark"] .gradientText {
   background: linear-gradient(135deg, #ffffff 0%, #aaaaaa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -259,7 +263,7 @@
   box-shadow: var(--shadow-xl);
 }
 
-[data-theme='dark'] .cardMain {
+[data-theme="dark"] .cardMain {
   background: rgba(42, 42, 42, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
@@ -283,7 +287,7 @@
   transform: scale(1.1) rotate(5deg);
 }
 
-[data-theme='dark'] .iconWrapper {
+[data-theme="dark"] .iconWrapper {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -363,12 +367,12 @@
   box-shadow: var(--shadow-xl);
 }
 
-[data-theme='dark'] .programCardContent {
+[data-theme="dark"] .programCardContent {
   background: rgba(42, 42, 42, 0.6);
   border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-[data-theme='dark'] .programCard:hover .programCardContent {
+[data-theme="dark"] .programCard:hover .programCardContent {
   border-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -390,7 +394,7 @@
   transform: scale(1.1) rotate(-5deg);
 }
 
-[data-theme='dark'] .programIcon {
+[data-theme="dark"] .programIcon {
   background: rgba(255, 255, 255, 0.05);
 }
 
@@ -423,7 +427,7 @@
   color: var(--ifm-color-primary);
 }
 
-[data-theme='dark'] .programDuration {
+[data-theme="dark"] .programDuration {
   background: rgba(255, 255, 255, 0.05);
 }
 
@@ -468,7 +472,7 @@
   font-style: italic;
 }
 
-[data-theme='dark'] .comingSoonBadge {
+[data-theme="dark"] .comingSoonBadge {
   background: rgba(255, 255, 255, 0.1) !important;
   color: var(--ifm-font-color-secondary) !important;
 }
@@ -615,18 +619,22 @@
 }
 
 [data-theme="dark"] .missionSection {
-  background: #0F0F0F;
+  background: #0f0f0f;
 }
 
 .missionSection::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 50%;
   height: 100%;
-  background: radial-gradient(circle, var(--ifm-color-primary-lightest) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    var(--ifm-color-primary-lightest) 0%,
+    transparent 70%
+  );
   opacity: 0.1;
   pointer-events: none;
 }
@@ -742,7 +750,7 @@
 
 /* Using the same 3D shadow technique as feature cards */
 .comparisonCard::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: var(--ifm-color-primary);
@@ -836,7 +844,7 @@
 }
 
 .curriculumNote::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: var(--ifm-color-primary);
