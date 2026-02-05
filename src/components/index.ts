@@ -4,3 +4,4 @@ export { default as SkillShowcase } from './SkillShowcase';
 export { default as ConceptMap } from './ConceptMap';
 export { default as DifficultyTag } from './DifficultyTag';
 export { default as CodeComparison } from './CodeComparison';
+export { default as ProblemCard } from './ProblemCard';

@@ -404,10 +404,6 @@ function HomepageHeader() {
               <BookOpen size={20} />
               Browse the Curriculum
             </Link>
-            <Link className={styles.secondaryButton} to="/roadmap">
-              View Roadmap
-              <span className={styles.arrow}>→</span>
-            </Link>
           </motion.div>
         </motion.div>
       </div>

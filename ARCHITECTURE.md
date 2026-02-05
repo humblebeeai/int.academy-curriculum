@@ -44,5 +44,5 @@ _(Note: Component library expansion is planned for Soft Landing)_
 ## 🤝 Key Configuration Files
 
 - **`docusaurus.config.ts`**: The brain of the site. Modify this to change the navbar, footer, site title, or add plugins.
-- **`sidebars.ts`**: Controls the left navigation menu. When adding a new module, you usually need to register it here.
+- **`sidebars.ts`**: Controls the left navigation menu. Uses auto-generation from the docs folder structure.
 - **`src/css/custom.css`**: Global CSS variables and utility classes. We use standard CSS variables for theming (dark/light mode).

@@ -133,10 +133,6 @@ const config: Config = {
               to: "/docs",
             },
             {
-              label: "Interactive Roadmap",
-              to: "/roadmap",
-            },
-            {
               label: "Engineering Fundamentals",
               to: "/docs/engineering-fundamentals",
             },
