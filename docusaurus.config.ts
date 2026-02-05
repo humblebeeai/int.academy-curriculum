@@ -89,25 +89,6 @@ const config: Config = {
       hideOnScroll: false,
       items: [
         {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
-          position: "left",
-          label: "Curriculum",
-          className: "navbar-curriculum-link",
-        },
-        {
-          to: "/docs/engineering-fundamentals",
-          label: "Engineering Fundamentals",
-          position: "left",
-          className: "navbar-engineering-fundamentals-link",
-        },
-        {
-          to: "/docs/softlanding",
-          label: "Soft Landing",
-          position: "left",
-          className: "navbar-softlanding-link",
-        },
-        {
           href: "https://academy.humblebee.ai",
           label: "Academy",
           position: "right",

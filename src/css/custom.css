@@ -4,7 +4,7 @@
  */
 
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap");
 
 /* =========================================
    LIGHT MODE (Default)
@@ -19,8 +19,8 @@
   --humblebee-link-color: #000000;
 
   /* Typography */
-  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
-  --ifm-heading-font-family: 'Space Grotesk', sans-serif;
+  --ifm-font-family-base: "Inter", system-ui, -apple-system, sans-serif;
+  --ifm-heading-font-family: "Space Grotesk", sans-serif;
 
   /* Colors - High Contrast Monochrome */
   --ifm-color-primary: hsl(0, 0%, 0%);
@@ -38,7 +38,8 @@
   /* UI Elements */
   --ifm-card-background-color: hsl(0, 0%, 100%);
   --ifm-card-border-radius: 12px;
-  --ifm-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --ifm-card-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 
   /* Text elements */
   --ifm-font-color-base: hsl(0, 0%, 10%);
@@ -126,7 +127,7 @@
   /* Easing */
   --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
   /* "Standard" material-like easing */
-  --ease-out: cubic-bezier(0.0, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
   --ease-in: cubic-bezier(0.4, 0, 1, 1);
   --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
   /* Subtle spring effect */
@@ -141,15 +142,18 @@
 
   /* Shadows (Standardized) */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 /* =========================================
    DARK MODE
    ========================================= */
-[data-theme='dark'] {
+[data-theme="dark"] {
   /* Colors - Inverted Monochrome */
   --ifm-color-primary: hsl(0, 0%, 100%);
   --ifm-color-primary-dark: hsl(0, 0%, 90%);
@@ -165,7 +169,8 @@
 
   /* UI Elements */
   --ifm-card-background-color: hsl(0, 0%, 12%);
-  --ifm-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+  --ifm-card-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
 
   /* Text */
   --ifm-font-color-base: hsl(0, 0%, 95%);
@@ -356,6 +361,13 @@ h6 {
   padding: 0.75rem 2rem;
 }
 
+/* Constrain navbar inner content width only on homepage (plugin-pages without docs-wrapper) */
+.plugin-pages:not(.docs-wrapper) .navbar > .navbar__inner {
+  max-width: 1500px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 .navbar__title {
   font-weight: 700;
   font-size: 1.1rem;
@@ -396,7 +408,7 @@ h6 {
 
 /* Hide duplicate \"Core Systems Overview\" doc link in sidebar, but keep
    the \"Core Systems\" category header (which also links to the same doc). */
-.menu__link[href='/docs/softlanding/core-systems']:not(.menu__link--sublist) {
+.menu__link[href="/docs/softlanding/core-systems"]:not(.menu__link--sublist) {
   display: none;
 }
 
@@ -460,7 +472,7 @@ h6 {
 
 /* Annotation Style (Hand-drawn look) */
 .annotation {
-  font-family: 'Caveat', cursive;
+  font-family: "Caveat", cursive;
   /* Ensure font is loaded if used */
   font-size: 1.4rem;
   color: var(--ifm-font-color-secondary);
@@ -629,7 +641,7 @@ h2 .auto-icon-box svg {
 }
 
 .comparison-table-wrapper th:nth-child(4)::after {
-  content: '★ Recommended';
+  content: "★ Recommended";
   position: absolute;
   top: 0.25rem;
   right: 0.5rem;
@@ -679,7 +691,7 @@ h2 .auto-icon-box svg {
   font-size: 0.95rem;
 }
 
-.mdx-checklist-item input[type='checkbox'] {
+.mdx-checklist-item input[type="checkbox"] {
   margin-top: 0.2rem;
   cursor: pointer;
 }
@@ -688,7 +700,7 @@ h2 .auto-icon-box svg {
   flex: 1;
 }
 
-.mdx-checklist-item input[type='checkbox']:checked + span {
+.mdx-checklist-item input[type="checkbox"]:checked + span {
   text-decoration: line-through;
   color: var(--ifm-font-color-secondary);
 }
@@ -721,7 +733,7 @@ h2 .auto-icon-box svg {
   position: relative;
 }
 
-[data-theme='dark'] .comparison-table-wrapper td:nth-child(4) {
+[data-theme="dark"] .comparison-table-wrapper td:nth-child(4) {
   background: rgba(255, 255, 255, 0.03);
   border-left-color: var(--ifm-color-primary);
 }
@@ -745,7 +757,7 @@ h2 .auto-icon-box svg {
   }
 
   .comparison-table-wrapper th:nth-child(4)::after {
-    content: '★';
+    content: "★";
     font-size: 0.7rem;
   }
 }
@@ -814,39 +826,39 @@ h2 .auto-icon-box svg {
 }
 
 /* Dark Mode - Monochrome White/Dark Gray */
-[data-theme='dark'] .mermaid svg path:not([fill="none"]),
-[data-theme='dark'] .mermaid-full-width svg path:not([fill="none"]) {
+[data-theme="dark"] .mermaid svg path:not([fill="none"]),
+[data-theme="dark"] .mermaid-full-width svg path:not([fill="none"]) {
   stroke: var(--ifm-color-emphasis-400) !important;
   fill: var(--ifm-color-emphasis-200) !important;
 }
 
-[data-theme='dark'] .mermaid svg path[fill="none"],
-[data-theme='dark'] .mermaid-full-width svg path[fill="none"] {
+[data-theme="dark"] .mermaid svg path[fill="none"],
+[data-theme="dark"] .mermaid-full-width svg path[fill="none"] {
   stroke: var(--ifm-color-emphasis-400) !important;
   stroke-width: 2px !important;
 }
 
-[data-theme='dark'] .mermaid svg circle,
-[data-theme='dark'] .mermaid-full-width svg circle {
+[data-theme="dark"] .mermaid svg circle,
+[data-theme="dark"] .mermaid-full-width svg circle {
   fill: var(--ifm-color-primary) !important;
   stroke: var(--ifm-color-primary) !important;
 }
 
-[data-theme='dark'] .mermaid svg text,
-[data-theme='dark'] .mermaid-full-width svg text {
+[data-theme="dark"] .mermaid svg text,
+[data-theme="dark"] .mermaid-full-width svg text {
   fill: var(--ifm-font-color-base) !important;
 }
 
-[data-theme='dark'] .mermaid svg .node rect,
-[data-theme='dark'] .mermaid-full-width svg .node rect,
-[data-theme='dark'] .mermaid svg .node circle,
-[data-theme='dark'] .mermaid-full-width svg .node circle {
+[data-theme="dark"] .mermaid svg .node rect,
+[data-theme="dark"] .mermaid-full-width svg .node rect,
+[data-theme="dark"] .mermaid svg .node circle,
+[data-theme="dark"] .mermaid-full-width svg .node circle {
   fill: var(--ifm-color-primary) !important;
   stroke: var(--ifm-color-primary) !important;
 }
 
-[data-theme='dark'] .mermaid svg .edgePath path,
-[data-theme='dark'] .mermaid-full-width svg .edgePath path {
+[data-theme="dark"] .mermaid svg .edgePath path,
+[data-theme="dark"] .mermaid-full-width svg .edgePath path {
   stroke: var(--ifm-color-emphasis-400) !important;
   fill: none !important;
 }
@@ -869,16 +881,16 @@ h2 .auto-icon-box svg {
 }
 
 /* Dark Mode - All text in Mermaid (including branch labels) */
-[data-theme='dark'] .mermaid svg rect:not([fill="none"]),
-[data-theme='dark'] .mermaid-full-width svg rect:not([fill="none"]) {
+[data-theme="dark"] .mermaid svg rect:not([fill="none"]),
+[data-theme="dark"] .mermaid-full-width svg rect:not([fill="none"]) {
   fill: var(--ifm-background-surface-color) !important;
   stroke: var(--ifm-color-emphasis-300) !important;
 }
 
-[data-theme='dark'] .mermaid svg text,
-[data-theme='dark'] .mermaid-full-width svg text,
-[data-theme='dark'] .mermaid svg tspan,
-[data-theme='dark'] .mermaid-full-width svg tspan {
+[data-theme="dark"] .mermaid svg text,
+[data-theme="dark"] .mermaid-full-width svg text,
+[data-theme="dark"] .mermaid svg tspan,
+[data-theme="dark"] .mermaid-full-width svg tspan {
   fill: var(--ifm-font-color-base) !important;
 }
 
@@ -908,7 +920,7 @@ h2 .auto-icon-box svg {
     padding: 0.875rem 1.25rem;
     margin: 0 0.25rem;
   }
-  
+
   .tabs__item-label {
     font-size: 1rem;
   }
@@ -942,7 +954,7 @@ details summary::-webkit-details-marker {
 
 details summary::marker {
   display: none !important;
-  content: '';
+  content: "";
 }
 
 details summary::before {
@@ -950,7 +962,7 @@ details summary::before {
 }
 
 details summary::after {
-  content: '▼';
+  content: "▼";
   font-size: 0.75rem;
   color: var(--ifm-color-primary);
   transition: transform var(--duration-normal) var(--ease-standard);
@@ -984,7 +996,7 @@ details > *:not(summary) {
     padding: 0.875rem 1rem;
     font-size: 0.95rem;
   }
-  
+
   details > *:not(summary) {
     padding: 1rem;
   }
@@ -1037,7 +1049,7 @@ details > *:not(summary) {
     flex-direction: column;
     gap: 0.75rem;
   }
-  
+
   .mdx-cta-button {
     width: 100%;
     max-width: 320px;
