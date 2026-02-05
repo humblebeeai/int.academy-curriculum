@@ -5,3 +5,5 @@ export { default as ConceptMap } from './ConceptMap';
 export { default as DifficultyTag } from './DifficultyTag';
 export { default as CodeComparison } from './CodeComparison';
 export { default as FAQSection } from './FAQSection';
+export { default as ParticleBackground } from './ParticleBackground';
+export { default as LearningRoadmap } from './LearningRoadmap';

@@ -17,6 +17,46 @@
   background: var(--ifm-background-color);
 }
 
+/* Gradient overlay for hero */
+.heroBanner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-hero-bg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Second gradient layer for depth */
+.heroBanner::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(
+    to top,
+    var(--ifm-background-surface-color) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Particle canvas container */
+.particleContainer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.particleContainer canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 @media screen and (max-width: 996px) {
   .heroBanner {
     min-height: auto;
@@ -27,6 +67,8 @@
 .heroContent {
   max-width: 900px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .badge {
@@ -34,55 +76,77 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1.25rem;
-  background: var(--ifm-background-surface-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
+  background: rgba(245, 184, 0, 0.1);
+  border: 1px solid var(--accent-gold);
   border-radius: 100px;
   font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--ifm-font-color-base);
+  font-weight: 600;
+  color: var(--accent-gold);
   margin-bottom: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 8px rgba(245, 184, 0, 0.15);
+  backdrop-filter: blur(4px);
 }
 
 .badge svg {
-  color: var(--ifm-color-primary);
+  color: var(--accent-gold);
 }
 
 .heroTitle {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.1;
   margin-bottom: 1.5rem;
   color: var(--ifm-font-color-base);
 }
 
 @media screen and (max-width: 996px) {
   .heroTitle {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .heroTitle {
+    font-size: 2rem;
   }
 }
 
 .gradientText {
-  background: linear-gradient(
-    135deg,
-    var(--ifm-color-primary) 0%,
-    var(--ifm-color-primary-light) 100%
-  );
+  background: var(--gradient-warm-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   display: inline-block;
+  animation: shimmer 3s ease-in-out infinite;
+  background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 [data-theme="dark"] .gradientText {
-  background: linear-gradient(135deg, #ffffff 0%, #aaaaaa 100%);
+  background: linear-gradient(
+    135deg,
+    var(--accent-gold-light) 0%,
+    var(--accent-amber) 40%,
+    var(--accent-gold) 60%,
+    var(--accent-orange) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
 }
 
 .heroDescription {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   line-height: 1.7;
   color: var(--ifm-font-color-secondary);
   margin-bottom: 2.5rem;
@@ -93,7 +157,7 @@
 
 @media screen and (max-width: 996px) {
   .heroDescription {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -105,27 +169,46 @@
   flex-wrap: wrap;
 }
 
-/* Primary Button */
+/* Primary Button - Warm gradient style */
 .primaryButton {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 1rem 2rem;
-  background: var(--ifm-color-primary);
+  background: var(--gradient-warm);
   color: var(--ifm-background-color) !important;
   border-radius: 100px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
   text-decoration: none;
   transition: all var(--duration-normal) var(--ease-standard);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 20px rgba(245, 184, 0, 0.3), var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.primaryButton::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 50%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .primaryButton:hover {
   transform: var(--hover-lift-sm);
-  box-shadow: var(--shadow-xl);
-  background: var(--ifm-color-primary-dark);
+  box-shadow: 0 8px 30px rgba(245, 184, 0, 0.4), var(--shadow-xl);
   color: var(--ifm-background-color) !important;
+}
+
+.primaryButton:hover::before {
+  opacity: 1;
 }
 
 /* Secondary Button */
@@ -135,8 +218,8 @@
   gap: 0.5rem;
   padding: 1rem 2rem;
   background: transparent;
-  color: var(--ifm-color-primary) !important;
-  border: 2px solid var(--ifm-color-primary);
+  color: var(--accent-gold) !important;
+  border: 2px solid var(--accent-gold);
   border-radius: 100px;
   font-weight: 600;
   font-size: 1rem;
@@ -145,9 +228,10 @@
 }
 
 .secondaryButton:hover {
-  background: var(--ifm-background-surface-color);
+  background: rgba(245, 184, 0, 0.1);
   transform: var(--hover-lift-sm);
-  color: var(--ifm-color-primary) !important;
+  color: var(--accent-gold) !important;
+  box-shadow: 0 0 20px rgba(245, 184, 0, 0.2);
 }
 
 .arrow {
@@ -166,6 +250,26 @@
   padding: 6rem 0;
   background: var(--ifm-background-surface-color);
   width: 100%;
+  position: relative;
+}
+
+/* Subtle pattern overlay */
+.features::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    var(--ifm-color-emphasis-200) 1px,
+    transparent 0
+  );
+  background-size: 40px 40px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+[data-theme="dark"] .features::before {
+  opacity: 0.2;
 }
 
 @media screen and (max-width: 996px) {
@@ -549,7 +653,8 @@
 
 .projectCard:hover:not(.projectCardDisabled) .projectIconWrapper {
   transform: scale(1.1);
-  border-color: var(--ifm-color-primary);
+  border-color: var(--accent-gold);
+  background: rgba(245, 184, 0, 0.1);
 }
 
 /* Badges */
@@ -570,7 +675,7 @@
 
 .projectCard:hover .externalLinkIcon {
   transform: translate(2px, -2px);
-  color: var(--ifm-color-primary);
+  color: var(--accent-gold);
 }
 
 .projectTitle {
@@ -753,7 +858,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--ifm-color-primary);
+  background: var(--accent-gold);
   opacity: 0.1;
   border-radius: 1.5rem;
   transform: translate(5px, 5px);
@@ -763,6 +868,7 @@
 
 .comparisonCard:hover::before {
   transform: translate(6px, 6px);
+  opacity: 0.15;
 }
 
 .comparisonCard .cardMain {
@@ -823,7 +929,7 @@
 }
 
 .comparisonList li svg {
-  color: var(--ifm-color-success);
+  color: var(--accent-gold);
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -837,9 +943,9 @@
   margin-top: 3rem;
   padding: 2rem 2.5rem;
   background: var(--ifm-background-color);
-  border: 2px solid var(--ifm-color-primary);
+  border: 2px solid var(--accent-gold);
   border-radius: 1.5rem;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(245, 184, 0, 0.1);
   position: relative;
 }
 
@@ -847,8 +953,8 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--ifm-color-primary);
-  opacity: 0.05;
+  background: var(--accent-gold);
+  opacity: 0.03;
   border-radius: 1.5rem;
   z-index: 0;
 }
@@ -871,13 +977,13 @@
 }
 
 .curriculumNote strong {
-  color: var(--ifm-color-primary);
+  color: var(--accent-gold);
   font-weight: 700;
 }
 
 [data-theme="dark"] .curriculumNote {
   background: rgba(42, 42, 42, 0.6);
-  border-color: var(--ifm-color-primary-light);
+  border-color: var(--accent-gold);
   backdrop-filter: blur(10px);
 }
 

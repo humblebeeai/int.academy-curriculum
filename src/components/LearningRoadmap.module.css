@@ -1,0 +1,545 @@
+/**
+ * Learning Roadmap Component Styles
+ * Interactive visual learning path with animations
+ */
+
+/* ===================================
+   SECTION CONTAINER
+   =================================== */
+.roadmapSection {
+  padding: 6rem 0;
+  background: var(--ifm-background-color);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background glow */
+.roadmapSection::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 60%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(245, 184, 0, 0.05) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+[data-theme="dark"] .roadmapSection::before {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(245, 184, 0, 0.08) 0%,
+    transparent 70%
+  );
+}
+
+/* ===================================
+   SECTION HEADER
+   =================================== */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--ifm-font-color-base);
+  background: var(--gradient-warm-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sectionSubtitle {
+  font-size: 1.125rem;
+  color: var(--ifm-font-color-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ===================================
+   ROADMAP CONTAINER
+   =================================== */
+.roadmapContainer {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Connecting SVG Path */
+.connectingPath {
+  position: absolute;
+  top: 85px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 996px) {
+  .connectingPath {
+    display: none;
+  }
+}
+
+/* ===================================
+   PHASES ROW
+   =================================== */
+.phasesRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (max-width: 996px) {
+  .phasesRow {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* ===================================
+   PHASE WRAPPER
+   =================================== */
+.phaseWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* ===================================
+   PHASE NODE (Circle Marker)
+   =================================== */
+.phaseNode {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--phase-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 1.5rem;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.15),
+    0 0 30px color-mix(in srgb, var(--phase-color) 30%, transparent);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.phaseNode::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid var(--phase-color);
+  opacity: 0.3;
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+}
+
+.phaseNumber {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ifm-background-color);
+}
+
+[data-theme="dark"] .phaseNumber {
+  color: var(--ifm-background-color);
+}
+
+/* ===================================
+   PHASE CARD
+   =================================== */
+.phaseCard {
+  width: 100%;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: var(--shadow-md);
+}
+
+.phaseCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--phase-color);
+  border-radius: 1.25rem 1.25rem 0 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.phaseCard:hover::before,
+.phaseCardActive::before {
+  opacity: 1;
+}
+
+.phaseCardActive {
+  border-color: var(--phase-color);
+  box-shadow:
+    var(--shadow-lg),
+    0 0 20px color-mix(in srgb, var(--phase-color) 15%, transparent);
+}
+
+[data-theme="dark"] .phaseCard {
+  background: rgba(30, 30, 30, 0.8);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .phaseCardActive {
+  border-color: var(--phase-color);
+}
+
+/* ===================================
+   PHASE CARD CONTENT
+   =================================== */
+.phaseCardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.phaseTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ifm-font-color-base);
+  margin: 0;
+}
+
+.phaseDuration {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ifm-font-color-secondary);
+  background: var(--ifm-background-color);
+  padding: 0.35rem 0.75rem;
+  border-radius: 100px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  white-space: nowrap;
+}
+
+.phaseSubtitle {
+  font-size: 0.95rem;
+  color: var(--ifm-font-color-secondary);
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+
+/* ===================================
+   SKILLS PREVIEW
+   =================================== */
+.skillsPreview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.skillBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ifm-font-color-secondary);
+  background: var(--ifm-background-color);
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: all 0.2s ease;
+}
+
+.skillBadge svg {
+  opacity: 0.7;
+}
+
+.phaseCard:hover .skillBadge {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme="dark"] .skillBadge {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ===================================
+   EXPAND INDICATOR
+   =================================== */
+.expandIndicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--ifm-color-emphasis-100);
+  color: var(--ifm-font-color-secondary);
+}
+
+.expandIndicator svg {
+  transition: transform 0.3s ease;
+}
+
+.expandIndicator .rotated {
+  transform: rotate(90deg);
+}
+
+[data-theme="dark"] .expandIndicator {
+  border-top-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ===================================
+   PHASE DETAILS (Expanded)
+   =================================== */
+.phaseDetails {
+  width: 100%;
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+[data-theme="dark"] .phaseDetails {
+  background: rgba(25, 25, 25, 0.9);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.phaseDescription {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ifm-font-color-secondary);
+  margin: 0 0 1.5rem 0;
+}
+
+.allSkills {
+  margin-bottom: 1.5rem;
+}
+
+.allSkills h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ifm-font-color-base);
+  margin: 0 0 0.75rem 0;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.skillItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--ifm-font-color-secondary);
+}
+
+.skillItem svg {
+  flex-shrink: 0;
+}
+
+/* ===================================
+   PHASE LINK
+   =================================== */
+.phaseLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent-gold) !important;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  background: rgba(245, 184, 0, 0.1);
+  border: 1px solid var(--accent-gold);
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+
+.phaseLink:hover {
+  background: var(--accent-gold);
+  color: var(--ifm-background-color) !important;
+  transform: translateX(4px);
+}
+
+.phaseLink svg {
+  transition: transform 0.3s ease;
+}
+
+.phaseLink:hover svg {
+  transform: translateX(4px);
+}
+
+/* ===================================
+   ROADMAP CTA
+   =================================== */
+.roadmapCTA {
+  text-align: center;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.roadmapCTA p {
+  font-size: 1.125rem;
+  color: var(--ifm-font-color-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  background: var(--gradient-warm);
+  color: var(--ifm-background-color) !important;
+  border-radius: 100px;
+  text-decoration: none;
+  box-shadow:
+    0 4px 20px rgba(245, 184, 0, 0.3),
+    var(--shadow-lg);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.ctaButton:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 8px 30px rgba(245, 184, 0, 0.4),
+    var(--shadow-xl);
+  color: var(--ifm-background-color) !important;
+}
+
+.ctaButton svg {
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover svg {
+  transform: translateX(4px);
+}
+
+[data-theme="dark"] .roadmapCTA {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ===================================
+   RESPONSIVE ADJUSTMENTS
+   =================================== */
+@media screen and (max-width: 996px) {
+  .roadmapSection {
+    padding: 4rem 0;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .sectionHeader {
+    margin-bottom: 3rem;
+  }
+
+  .phaseWrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .phaseNode {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .phaseCard {
+    flex: 1;
+  }
+
+  .phaseDetails {
+    margin-top: 1rem;
+    margin-left: calc(56px + 1.5rem);
+    width: calc(100% - 56px - 1.5rem);
+  }
+
+  /* Vertical connecting line for mobile */
+  .phaseWrapper:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 28px;
+    top: 56px;
+    width: 2px;
+    height: calc(100% + 3rem - 56px);
+    background: linear-gradient(
+      to bottom,
+      var(--phase-color),
+      var(--ifm-color-emphasis-200)
+    );
+    z-index: 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .phaseCardHeader {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .phaseDetails {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .phaseWrapper {
+    flex-direction: column;
+  }
+
+  .phaseWrapper:not(:last-child)::after {
+    display: none;
+  }
+}

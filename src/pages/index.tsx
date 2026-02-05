@@ -1,12 +1,13 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import {
   GraduationCap,
   Users,
@@ -27,15 +28,30 @@ import {
   Eye,
   Wifi,
   Box,
+  Sparkles,
+  ArrowRight,
 } from "lucide-react";
 
-import { FAQSection } from "@site/src/components";
+import { FAQSection, ParticleBackground, LearningRoadmap } from "@site/src/components";
 import styles from "./index.module.css";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <header className={styles.heroBanner}>
+      {/* Particle Background */}
+      {mounted && (
+        <div className={styles.particleContainer}>
+          <ParticleBackground />
+        </div>
+      )}
+
       <div className="container">
         <motion.div
           className={styles.heroContent}
@@ -43,6 +59,17 @@ function HomepageHeader() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          {/* Badge */}
+          <motion.div
+            className={styles.badge}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <Sparkles size={16} />
+            <span>Free & Open Source</span>
+          </motion.div>
+
           <motion.h1
             className={styles.heroTitle}
             initial={{ opacity: 0, y: 20 }}
@@ -75,6 +102,17 @@ function HomepageHeader() {
               <BookOpen size={20} />
               Browse the Curriculum
             </Link>
+            <a 
+              href="#roadmap" 
+              className={styles.secondaryButton}
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('roadmap')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              View Learning Path
+              <ArrowRight size={18} />
+            </a>
           </motion.div>
         </motion.div>
       </div>
@@ -108,11 +146,15 @@ function CurriculumVsAcademySection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className={clsx(styles.featureCard, styles.comparisonCard)}>
+            <motion.div 
+              className={clsx(styles.featureCard, styles.comparisonCard)}
+              whileHover={{ y: -8 }}
+              transition={{ duration: 0.3 }}
+            >
               <div className={styles.cardMain}>
                 <div
                   className={styles.iconWrapper}
-                  style={{ color: "var(--ifm-color-primary)" }}
+                  style={{ color: "var(--accent-gold)" }}
                 >
                   <FileText size={40} strokeWidth={1.5} />
                 </div>
@@ -145,7 +187,7 @@ function CurriculumVsAcademySection() {
                   <span className={styles.arrow}>→</span>
                 </Link>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
 
           <motion.div
@@ -155,12 +197,14 @@ function CurriculumVsAcademySection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <div
+            <motion.div
               className={clsx(
                 styles.featureCard,
                 styles.comparisonCard,
                 styles.academyCard,
               )}
+              whileHover={{ y: -8 }}
+              transition={{ duration: 0.3 }}
             >
               <div className={styles.cardMain}>
                 <div
@@ -206,7 +250,7 @@ function CurriculumVsAcademySection() {
                   Apply to Academy
                 </a>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
 
@@ -349,6 +393,31 @@ function EcosystemSection() {
     },
   ];
 
+  // Animation variants for staggered children
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
+      },
+    },
+  };
+
   return (
     <section className={clsx(styles.features, styles.ecosystemSection)}>
       <div className="container">
@@ -365,18 +434,25 @@ function EcosystemSection() {
           </p>
         </motion.div>
 
-        <div className="row">
+        <motion.div
+          className="row"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
           {projects.map((p, i) => {
             const hasLink = p.link && p.link !== "-" && p.link !== "#";
             const Icon = p.icon || Zap;
 
             return (
-              <div
+              <motion.div
                 key={i}
                 className="col col--4"
                 style={{ marginBottom: "1.5rem" }}
+                variants={itemVariants}
               >
-                <div
+                <motion.div
                   className={clsx(
                     styles.featureCard,
                     styles.projectCard,
@@ -385,6 +461,8 @@ function EcosystemSection() {
                   onClick={() =>
                     hasLink ? window.open(p.link, "_blank") : null
                   }
+                  whileHover={hasLink ? { y: -8, scale: 1.02 } : {}}
+                  transition={{ duration: 0.3 }}
                 >
                   <div
                     className={clsx(styles.cardMain, styles.projectCardMain)}
@@ -415,13 +493,19 @@ function EcosystemSection() {
                       {p.desc}
                     </p>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
-        <div className={styles.ecosystemFooter}>
+        <motion.div 
+          className={styles.ecosystemFooter}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
           <p className={styles.ecosystemFooterText}>
             Part of the HumbleBeeAI Family
           </p>
@@ -434,7 +518,7 @@ function EcosystemSection() {
             Visit HumbleBeeAI
             <span className={styles.arrow}>→</span>
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -448,6 +532,9 @@ export default function Home(): ReactNode {
     >
       <HomepageHeader />
       <main>
+        <section id="roadmap">
+          <LearningRoadmap />
+        </section>
         <CurriculumVsAcademySection />
         <FAQSection items={faqItems} />
         <EcosystemSection />

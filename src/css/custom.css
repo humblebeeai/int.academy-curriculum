@@ -113,6 +113,29 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.05);
 
   /* =========================================
+     WARM ACCENT COLORS (Gold/Amber Theme)
+     ========================================= */
+  
+  /* Primary warm accents */
+  --accent-gold: hsl(42, 95%, 55%);
+  --accent-gold-light: hsl(42, 95%, 65%);
+  --accent-gold-dark: hsl(42, 95%, 45%);
+  --accent-amber: hsl(35, 90%, 50%);
+  --accent-amber-light: hsl(35, 90%, 60%);
+  --accent-amber-dark: hsl(35, 90%, 40%);
+  --accent-orange: hsl(25, 85%, 55%);
+  
+  /* Warm gradients */
+  --gradient-warm: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-amber) 100%);
+  --gradient-warm-text: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-amber) 50%, var(--accent-orange) 100%);
+  --gradient-hero-bg: radial-gradient(ellipse at 50% 0%, rgba(245, 184, 0, 0.08) 0%, transparent 50%);
+  
+  /* Glow effects */
+  --glow-gold: 0 0 20px rgba(245, 184, 0, 0.3);
+  --glow-gold-intense: 0 0 40px rgba(245, 184, 0, 0.4), 0 0 80px rgba(245, 184, 0, 0.2);
+  --glow-amber: 0 0 20px rgba(230, 149, 0, 0.3);
+
+  /* =========================================
      ANIMATION & INTERACTION TOKENS
      ========================================= */
 
@@ -230,6 +253,25 @@
   /* Navigation */
   --ifm-navbar-background-color: rgba(18, 18, 18, 0.9);
   --ifm-navbar-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05);
+
+  /* Warm accents - enhanced for dark mode */
+  --accent-gold: hsl(42, 95%, 60%);
+  --accent-gold-light: hsl(42, 95%, 70%);
+  --accent-gold-dark: hsl(42, 95%, 50%);
+  --accent-amber: hsl(35, 90%, 55%);
+  --accent-amber-light: hsl(35, 90%, 65%);
+  --accent-amber-dark: hsl(35, 90%, 45%);
+  --accent-orange: hsl(25, 85%, 60%);
+  
+  /* Dark mode gradients - more vibrant */
+  --gradient-warm: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-amber) 100%);
+  --gradient-warm-text: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-amber) 50%, var(--accent-orange) 100%);
+  --gradient-hero-bg: radial-gradient(ellipse at 50% 0%, rgba(245, 184, 0, 0.12) 0%, transparent 50%);
+  
+  /* Dark mode glow effects - more prominent */
+  --glow-gold: 0 0 30px rgba(245, 184, 0, 0.4);
+  --glow-gold-intense: 0 0 50px rgba(245, 184, 0, 0.5), 0 0 100px rgba(245, 184, 0, 0.25);
+  --glow-amber: 0 0 30px rgba(230, 149, 0, 0.4);
 
   /* Footer - Monochrome Theme */
   --ifm-footer-background-color: var(--ifm-background-surface-color);
