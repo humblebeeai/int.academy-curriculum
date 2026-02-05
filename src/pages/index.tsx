@@ -429,26 +429,23 @@ function ProblemCard({
   return (
     <motion.div
       className={clsx("col col--4")}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 50, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6, delay: index * 0.15 }}
+      transition={{
+        duration: 0.7,
+        delay: index * 0.1,
+        ease: [0.25, 1, 0.5, 1],
+      }}
     >
-      <div className={styles.featureCard}>
-        <div className={styles.cardShadowBottom} />
-        <div className={styles.cardShadowMiddle} />
-        <div className={styles.cardMain}>
-          <div
-            className={styles.iconWrapper}
-            style={{ color: "var(--ifm-color-primary)" }}
-          >
-            <Icon size={40} strokeWidth={1.5} />
-          </div>
-          <Heading as="h3" className={styles.featureTitle}>
-            {title}
-          </Heading>
-          <p className={styles.featureDescription}>{description}</p>
+      <div className={styles.problemCard}>
+        <div className={styles.problemCardIconWrapper}>
+          <Icon size={32} strokeWidth={1.5} />
         </div>
+        <Heading as="h3" className={styles.problemCardTitle}>
+          {title}
+        </Heading>
+        <p className={styles.problemCardDescription}>{description}</p>
       </div>
     </motion.div>
   );
@@ -456,7 +453,7 @@ function ProblemCard({
 
 function MissionSection() {
   return (
-    <section className={clsx(styles.features, styles.missionSection)}>
+    <section className={styles.missionSection}>
       <div className="container">
         <motion.div
           className={styles.sectionHeader}
@@ -465,9 +462,9 @@ function MissionSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.sectionTitle}>The Problems We Solve</h2>
+          <h2 className={styles.sectionTitle}>Why We Exist</h2>
           <p className={styles.sectionSubtitle}>
-            Most aspiring engineers get stuck. Here's why, and how we fix it.
+            Most aspiring AI engineers get stuck. Here's why—and how we fix it.
           </p>
         </motion.div>
 
@@ -475,19 +472,19 @@ function MissionSection() {
           <ProblemCard
             title="The Theory-Practice Gap"
             Icon={BookOpen}
-            description="Academic courses teach concepts, but not how to build production systems. We focus on engineering first."
+            description="Academic courses teach concepts, not how to build production-ready systems. We focus on engineering first."
             index={0}
           />
           <ProblemCard
             title="The Portfolio Paradox"
             Icon={Code2}
-            description="You need experience to get a job, but need a job to get experience. We build a production-grade portfolio."
+            description="You need a job to get experience, but experience to get a job. Our curriculum builds a production-grade portfolio."
             index={1}
           />
           <ProblemCard
             title="Isolated Learning"
-            Icon={Building2}
-            description="Self-teaching is lonely and lacks feedback. We provide a community and structured mentorship path."
+            Icon={Users}
+            description="Self-teaching is lonely and lacks feedback. We provide a structured community and mentorship path."
             index={2}
           />
         </div>
@@ -501,7 +498,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title="Free & Open AI Engineering Curriculum"
-      description="Free, open-source AI engineering curriculum. Community-driven learning materials for production-ready skills in Deep Learning, MLOps, Computer Vision, and NLP."
+      description="Free, open-source AI engineering curriculum. Community-driven learning materials for production-ready skills in Deep Learning, AI Software Engineering, Computer Vision, and NLP."
     >
       <HomepageHeader />
       <main>

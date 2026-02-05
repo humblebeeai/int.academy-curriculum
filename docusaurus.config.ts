@@ -7,7 +7,7 @@ import remarkEmoji from "./src/plugins/remark-emoji";
 
 const config: Config = {
   title: "HumbleBeeAI Academy",
-  tagline: "Community-Driven Open AI Curriculum",
+  tagline: "Community-Driven Open-Source AI Curriculum",
   favicon: "img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -28,11 +28,6 @@ const config: Config = {
     hooks: {
       onBrokenMarkdownLinks: "warn",
     },
-  },
-
-  i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
   },
 
   themes: ["@docusaurus/theme-mermaid"],
@@ -73,12 +68,12 @@ const config: Config = {
       {
         name: "description",
         content:
-          "Free, open-source AI Engineering curriculum. Community-driven learning materials for production-ready skills in Deep Learning, MLOps, Computer Vision, and NLP.",
+          "Free, open-source AI Engineering curriculum. Community-driven learning materials for production-ready skills in Deep Learning, AI Software Engineering, Computer Vision, and NLP.",
       },
       {
         name: "keywords",
         content:
-          "open source AI curriculum, free AI education, deep learning path, MLOps, computer vision course, NLP training, data science roadmap, community-driven learning, HumbleBeeAI",
+          "open source AI curriculum, free AI education, deep learning path, AI Software Engineering, computer vision course, NLP training, data science roadmap, community-driven learning, HumbleBeeAI",
       },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -167,7 +162,7 @@ const config: Config = {
               to: "/docs/softlanding/specializations/nlp",
             },
             {
-              label: "MLOps",
+              label: "AI Software Engineering",
               to: "/docs/softlanding/specializations/software-engineering",
             },
           ],
