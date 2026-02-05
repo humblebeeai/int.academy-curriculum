@@ -7,11 +7,7 @@ description: Your open-source path to becoming a world-class AI Engineer
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import { SkillShowcase, ResourceCard } from "@site/src/components";
-import { motion } from "framer-motion";
 import {
-  BookOpen,
-  Code2,
-  Building2,
   Clock,
   DollarSign,
   GraduationCap,
@@ -24,13 +20,9 @@ import {
   MapPin,
   Library,
   School,
-  HelpCircle,
   Lightbulb,
   ArrowRight,
 } from "lucide-react";
-import clsx from "clsx";
-import Heading from "@theme/Heading";
-import problemCardStyles from "@site/src/components/ProblemCard.module.css";
 
 # Your Journey to Becoming a Top 1% AI Engineer
 
@@ -45,91 +37,6 @@ import problemCardStyles from "@site/src/components/ProblemCard.module.css";
 </div>
 
 ---
-
-## <Globe /> Our Mission: Democratizing AI Education
-
-Most aspiring AI engineers hit the same three barriers. We built HumbleBeeAI Academy to remove them with a structured roadmap and an applied training environment.
-
-<div className="row">
-  <motion.div
-    className={clsx("col col--4")}
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-100px" }}
-    transition={{ duration: 0.6, delay: 0 }}
-  >
-    <div className={problemCardStyles.problemCard}>
-      <div className={problemCardStyles.cardShadowBottom} />
-      <div className={problemCardStyles.cardShadowMiddle} />
-      <div className={problemCardStyles.cardMain}>
-        <div
-          className={problemCardStyles.iconWrapper}
-          style={{ color: "var(--ifm-color-primary)" }}
-        >
-          <BookOpen size={32} strokeWidth={1.5} />
-        </div>
-        <Heading as="h3" className={problemCardStyles.problemTitle}>
-          The Theory-Practice Gap
-        </Heading>
-        <p className={problemCardStyles.problemDescription}>
-          Concepts are taught, but production systems are not.
-        </p>
-      </div>
-    </div>
-  </motion.div>
-  <motion.div
-    className={clsx("col col--4")}
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-100px" }}
-    transition={{ duration: 0.6, delay: 0.15 }}
-  >
-    <div className={problemCardStyles.problemCard}>
-      <div className={problemCardStyles.cardShadowBottom} />
-      <div className={problemCardStyles.cardShadowMiddle} />
-      <div className={problemCardStyles.cardMain}>
-        <div
-          className={problemCardStyles.iconWrapper}
-          style={{ color: "var(--ifm-color-primary)" }}
-        >
-          <Code2 size={32} strokeWidth={1.5} />
-        </div>
-        <Heading as="h3" className={problemCardStyles.problemTitle}>
-          Portfolio Paradox
-        </Heading>
-        <p className={problemCardStyles.problemDescription}>
-          Hiring wants proof, but beginners lack real proof.
-        </p>
-      </div>
-    </div>
-  </motion.div>
-  <motion.div
-    className={clsx("col col--4")}
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-100px" }}
-    transition={{ duration: 0.6, delay: 0.3 }}
-  >
-    <div className={problemCardStyles.problemCard}>
-      <div className={problemCardStyles.cardShadowBottom} />
-      <div className={problemCardStyles.cardShadowMiddle} />
-      <div className={problemCardStyles.cardMain}>
-        <div
-          className={problemCardStyles.iconWrapper}
-          style={{ color: "var(--ifm-color-primary)" }}
-        >
-          <Building2 size={32} strokeWidth={1.5} />
-        </div>
-        <Heading as="h3" className={problemCardStyles.problemTitle}>
-          Isolated Learning
-        </Heading>
-        <p className={problemCardStyles.problemDescription}>
-          Without feedback, learning stalls and standards stay unclear.
-        </p>
-      </div>
-    </div>
-  </motion.div>
-</div>
 
 <div style={{ marginTop: '1.5rem' }}>
 
@@ -311,7 +218,7 @@ In the Academy, you apply these fundamentals immediately through mentor-led task
     {
       iconString: "Activity",
       title: "Model Eval",
-      description: "Metrics, Testing, MLOps.",
+      description: "Metrics, Testing, AI Software Engineering.",
     },
   ]}
 />
@@ -336,7 +243,7 @@ In the Academy, learners typically spend 35-70% on curriculum modules and the re
 - **Computer Vision:** classification, detection, real deployment patterns
 - **Data Science:** modeling, experimentation, analytics for decisions
 - **NLP and LLMs:** transformers, fine-tuning, agents, evaluation
-- **MLOps:** scalability, distributed systems, reliability
+- **AI Software Engineering:** scalability, distributed systems, reliability
 
 **Outcome:** You produce domain-specific projects that show depth. Each track ends with a capstone that looks like real work: clear problem framing, measurable results, and a reproducible or deployable system.
 
@@ -360,56 +267,6 @@ Expertise compounds. We revisit core ideas across phases in increasingly realist
 ### 3. **Community-Driven**
 
 Learn with peers, get help, and contribute improvements. The roadmap stays alive because the community keeps raising the bar.
-
----
-
-## <HelpCircle /> Frequently Asked Questions
-
-<details>
-<summary>What is the difference between the Open Curriculum and the Academy?</summary>
-
-The Open Curriculum is the full roadmap and learning content, self-paced and free.
-The Academy is an optional mentorship layer on top of the same roadmap: weekly structure, code and design reviews, and internal scenario projects guided by multiple mentors across domains.
-
-</details>
-
-<details>
-<summary>What are "scenario projects"?</summary>
-
-They are internal projects designed to mirror real work. As you finish a module, you apply it immediately in the scenario project, then iterate based on review until it meets a production bar.
-
-</details>
-
-<details>
-<summary>Is this curriculum really free?</summary>
-
-Yes. The entire curriculum is open source. We only charge for human time in the Academy: mentorship, reviews, and structured project guidance.
-
-</details>
-
-<details>
-<summary>Do I need a powerful computer?</summary>
-
-For Engineering Fundamentals, any laptop (Windows/Mac/Linux) released in the last 5-7 years is fine. For Soft Landing (Deep Learning), having an NVIDIA GPU is helpful but not required; we will show you how to use free cloud resources like Google Colab and Kaggle Kernels.
-
-</details>
-
-<details>
-  <summary>Can I skip Engineering Fundamentals if I know Python?</summary>
-
-  Maybe. We have a "Direct Entry" path for Soft Landing, but it requires passing a rigorous placement test. We find that 80% of "experienced" self-taught developers still have critical gaps in data engineering or math that Engineering Fundamentals covers. When in doubt, don't skip foundation.
-
-</details>
-
-<details>
-<summary>How do I get help if I'm stuck?</summary>
-
-1. Check the documentation and FAQ.
-2. Search our Discord community history.
-3. Post a detailed question in the relevant Discord channel.
-4. Use the "Issues" tab on GitHub if you find a bug in the curriculum.
-
-</details>
 
 ---
 

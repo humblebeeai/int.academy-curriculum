@@ -63,14 +63,18 @@
 }
 
 .gradientText {
-  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-light) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--ifm-color-primary) 0%,
+    var(--ifm-color-primary-light) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   display: inline-block;
 }
 
-[data-theme='dark'] .gradientText {
+[data-theme="dark"] .gradientText {
   background: linear-gradient(135deg, #ffffff 0%, #aaaaaa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -259,7 +263,7 @@
   box-shadow: var(--shadow-xl);
 }
 
-[data-theme='dark'] .cardMain {
+[data-theme="dark"] .cardMain {
   background: rgba(42, 42, 42, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
@@ -283,7 +287,7 @@
   transform: scale(1.1) rotate(5deg);
 }
 
-[data-theme='dark'] .iconWrapper {
+[data-theme="dark"] .iconWrapper {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -363,12 +367,12 @@
   box-shadow: var(--shadow-xl);
 }
 
-[data-theme='dark'] .programCardContent {
+[data-theme="dark"] .programCardContent {
   background: rgba(42, 42, 42, 0.6);
   border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-[data-theme='dark'] .programCard:hover .programCardContent {
+[data-theme="dark"] .programCard:hover .programCardContent {
   border-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -390,7 +394,7 @@
   transform: scale(1.1) rotate(-5deg);
 }
 
-[data-theme='dark'] .programIcon {
+[data-theme="dark"] .programIcon {
   background: rgba(255, 255, 255, 0.05);
 }
 
@@ -423,7 +427,7 @@
   color: var(--ifm-color-primary);
 }
 
-[data-theme='dark'] .programDuration {
+[data-theme="dark"] .programDuration {
   background: rgba(255, 255, 255, 0.05);
 }
 
@@ -468,7 +472,7 @@
   font-style: italic;
 }
 
-[data-theme='dark'] .comingSoonBadge {
+[data-theme="dark"] .comingSoonBadge {
   background: rgba(255, 255, 255, 0.1) !important;
   color: var(--ifm-font-color-secondary) !important;
 }
@@ -603,6 +607,120 @@
 }
 
 /* ===================================
+   MISSION (PROBLEMS) SECTION
+   =================================== */
+.missionSection {
+  padding: 6rem 0;
+  background: var(--ifm-background-color);
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .missionSection {
+  background: #0f0f0f;
+}
+
+.missionSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    var(--ifm-color-primary-lightest) 0%,
+    transparent 70%
+  );
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+[data-theme="dark"] .missionSection::before {
+  opacity: 0.07;
+}
+
+.problemCard {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 1.25rem;
+  padding: 2.5rem;
+  text-align: center;
+  height: 100%;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.problemCard:hover {
+  transform: translateY(-8px);
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .problemCard {
+  background: rgba(30, 30, 30, 0.5);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .problemCard:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+.problemCardIconWrapper {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-primary);
+  transition: all 0.3s ease;
+}
+
+.problemCard:hover .problemCardIconWrapper {
+  transform: scale(1.1) rotate(-5deg);
+  background: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-primary);
+}
+
+[data-theme="dark"] .problemCardIconWrapper {
+  background: rgba(45, 45, 45, 0.8);
+}
+
+.problemCardTitle {
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.problemCardDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ifm-font-color-secondary);
+}
+
+@media screen and (max-width: 996px) {
+  .missionSection {
+    padding: 4rem 1rem;
+  }
+  .problemCard {
+    margin-bottom: 2rem;
+    padding: 2rem;
+  }
+  .problemCardTitle {
+    font-size: 1.25rem;
+  }
+}
+
+/* ===================================
    CURRICULUM vs ACADEMY SECTION
    =================================== */
 
@@ -632,7 +750,7 @@
 
 /* Using the same 3D shadow technique as feature cards */
 .comparisonCard::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: var(--ifm-color-primary);
@@ -726,7 +844,7 @@
 }
 
 .curriculumNote::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: var(--ifm-color-primary);

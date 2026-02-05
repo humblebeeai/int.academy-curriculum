@@ -1,24 +1,18 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { useState, useEffect, useRef } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   GraduationCap,
-  Rocket,
   Users,
   BookOpen,
-  Code2,
   Zap,
-  Target,
-  Github,
   Award,
-  Building2,
   FileText,
   CheckCircle,
   LayoutGrid,
@@ -35,7 +29,58 @@ import {
   Box,
 } from "lucide-react";
 
+import { FAQSection } from "@site/src/components";
 import styles from "./index.module.css";
+
+function HomepageHeader() {
+  const { siteConfig } = useDocusaurusContext();
+  return (
+    <header className={styles.heroBanner}>
+      <div className="container">
+        <motion.div
+          className={styles.heroContent}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.h1
+            className={styles.heroTitle}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <span className={styles.gradientText}>
+              AI Engineering Curriculum
+            </span>
+          </motion.h1>
+
+          <motion.p
+            className={styles.heroDescription}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            Free, open-source learning materials for building top-tier AI
+            skills. Self-paced, community-driven, and designed for real-world
+            engineering.
+          </motion.p>
+
+          <motion.div
+            className={styles.heroButtons}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            <Link className={styles.primaryButton} to="/docs">
+              <BookOpen size={20} />
+              Browse the Curriculum
+            </Link>
+          </motion.div>
+        </motion.div>
+      </div>
+    </header>
+  );
+}
 
 function CurriculumVsAcademySection() {
   return (
@@ -72,7 +117,7 @@ function CurriculumVsAcademySection() {
                   <FileText size={40} strokeWidth={1.5} />
                 </div>
                 <Heading as="h3" className={styles.featureTitle}>
-                  The Curriculum (This Site)
+                  The Curriculum
                 </Heading>
                 <p className={styles.featureDescription}>
                   Open educational resources: roadmaps, project specs, learning
@@ -187,6 +232,40 @@ function CurriculumVsAcademySection() {
     </section>
   );
 }
+
+const faqItems = [
+  {
+    question:
+      "What is the difference between the Open Curriculum and the Academy?",
+    answer:
+      "The Open Curriculum is the full roadmap and learning content, self-paced and free. The Academy is an optional mentorship layer on top of the same roadmap: weekly structure, code and design reviews, and internal scenario projects guided by multiple mentors across domains.",
+  },
+  {
+    question: 'What are "capstone"s?',
+    answer:
+      "They are internal projects designed to mirror real work. As you finish a module, you apply it immediately in the scenario project, then iterate based on review until it meets a production bar.",
+  },
+  {
+    question: "Is this curriculum really free?",
+    answer:
+      "Yes. The entire curriculum is open source. We only charge for human time in the Academy: mentorship, reviews, and structured project guidance.",
+  },
+  {
+    question: "Do I need a powerful computer?",
+    answer:
+      "For Engineering Fundamentals, any laptop (Windows/Mac/Linux) released in the last 5-7 years is fine. For Soft Landing (Deep Learning), having an NVIDIA GPU is helpful but not required; we will show you how to use free cloud resources like Google Colab and Kaggle Kernels.",
+  },
+  {
+    question: "Can I skip Engineering Fundamentals if I know Python?",
+    answer:
+      'Maybe. We have a "Direct Entry" path for Soft Landing, but it requires passing a rigorous placement test. We find that 80% of "experienced" self-taught developers still have critical gaps in data engineering or math that Engineering Fundamentals covers. When in doubt, don\'t skip foundation.',
+  },
+  {
+    question: "How do I get help if I'm stuck?",
+    answer:
+      "Check the documentation and FAQ first. Then search our Discord community history. Post a detailed question in the relevant Discord channel. Use the Issues tab on GitHub if you find a bug in the curriculum.",
+  },
+];
 
 function EcosystemSection() {
   const projects = [
@@ -361,152 +440,16 @@ function EcosystemSection() {
   );
 }
 
-function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
-  return (
-    <header className={styles.heroBanner}>
-      <div className="container">
-        <motion.div
-          className={styles.heroContent}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <motion.h1
-            className={styles.heroTitle}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <span className={styles.gradientText}>
-              AI Engineering Curriculum
-            </span>
-          </motion.h1>
-
-          <motion.p
-            className={styles.heroDescription}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Free, open-source learning materials for building top-tier AI
-            skills. Self-paced, community-driven, and designed for real-world
-            engineering.
-          </motion.p>
-
-          <motion.div
-            className={styles.heroButtons}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-          >
-            <Link className={styles.primaryButton} to="/docs">
-              <BookOpen size={20} />
-              Browse the Curriculum
-            </Link>
-            <Link className={styles.secondaryButton} to="/roadmap">
-              View Roadmap
-              <span className={styles.arrow}>→</span>
-            </Link>
-          </motion.div>
-        </motion.div>
-      </div>
-    </header>
-  );
-}
-
-function ProblemCard({
-  title,
-  Icon,
-  description,
-  index,
-}: {
-  title: string;
-  Icon: any;
-  description: string;
-  index: number;
-}) {
-  return (
-    <motion.div
-      className={clsx("col col--4")}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6, delay: index * 0.15 }}
-    >
-      <div className={styles.featureCard}>
-        <div className={styles.cardShadowBottom} />
-        <div className={styles.cardShadowMiddle} />
-        <div className={styles.cardMain}>
-          <div
-            className={styles.iconWrapper}
-            style={{ color: "var(--ifm-color-primary)" }}
-          >
-            <Icon size={40} strokeWidth={1.5} />
-          </div>
-          <Heading as="h3" className={styles.featureTitle}>
-            {title}
-          </Heading>
-          <p className={styles.featureDescription}>{description}</p>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-
-function MissionSection() {
-  return (
-    <section className={clsx(styles.features, styles.missionSection)}>
-      <div className="container">
-        <motion.div
-          className={styles.sectionHeader}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className={styles.sectionTitle}>The Problems We Solve</h2>
-          <p className={styles.sectionSubtitle}>
-            Most aspiring engineers get stuck. Here's why, and how we fix it.
-          </p>
-        </motion.div>
-
-        <div className="row">
-          <ProblemCard
-            title="The Theory-Practice Gap"
-            Icon={BookOpen}
-            description="Academic courses teach concepts, but not how to build production systems. We focus on engineering first."
-            index={0}
-          />
-          <ProblemCard
-            title="The Portfolio Paradox"
-            Icon={Code2}
-            description="You need experience to get a job, but need a job to get experience. We build a production-grade portfolio."
-            index={1}
-          />
-          <ProblemCard
-            title="Isolated Learning"
-            Icon={Building2}
-            description="Self-teaching is lonely and lacks feedback. We provide a community and structured mentorship path."
-            index={2}
-          />
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export default function Home(): ReactNode {
-  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
       title="Free & Open AI Engineering Curriculum"
-      description="Free, open-source AI engineering curriculum. Community-driven learning materials for production-ready skills in Deep Learning, MLOps, Computer Vision, and NLP."
+      description="Free, open-source AI engineering curriculum. Community-driven learning materials for production-ready skills in Deep Learning, AI Software Engineering, Computer Vision, and NLP."
     >
       <HomepageHeader />
       <main>
-        <MissionSection />
         <CurriculumVsAcademySection />
+        <FAQSection items={faqItems} />
         <EcosystemSection />
       </main>
     </Layout>

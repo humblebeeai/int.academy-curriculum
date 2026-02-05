@@ -1,13 +1,12 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
-import remarkEmoji from "./src/plugins/remark-emoji";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
   title: "HumbleBeeAI Academy",
-  tagline: "Community-Driven Open AI Curriculum",
+  tagline: "Community-Driven Open-Source AI Curriculum",
   favicon: "img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -30,11 +29,6 @@ const config: Config = {
     },
   },
 
-  i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
-  },
-
   themes: ["@docusaurus/theme-mermaid"],
 
   presets: [
@@ -44,7 +38,6 @@ const config: Config = {
         docs: {
           path: "docs",
           sidebarPath: "./sidebars.ts",
-          remarkPlugins: [remarkEmoji],
           editUrl:
             "https://github.com/humblebeeai/int.academy-curriculum/edit/main/docs/",
         },
@@ -73,12 +66,12 @@ const config: Config = {
       {
         name: "description",
         content:
-          "Free, open-source AI Engineering curriculum. Community-driven learning materials for production-ready skills in Deep Learning, MLOps, Computer Vision, and NLP.",
+          "Free, open-source AI Engineering curriculum. Community-driven learning materials for production-ready skills in Deep Learning, AI Software Engineering, Computer Vision, and NLP.",
       },
       {
         name: "keywords",
         content:
-          "open source AI curriculum, free AI education, deep learning path, MLOps, computer vision course, NLP training, data science roadmap, community-driven learning, HumbleBeeAI",
+          "open source AI curriculum, free AI education, deep learning path, AI Software Engineering, computer vision course, NLP training, data science roadmap, community-driven learning, HumbleBeeAI",
       },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -138,10 +131,6 @@ const config: Config = {
               to: "/docs",
             },
             {
-              label: "Interactive Roadmap",
-              to: "/roadmap",
-            },
-            {
               label: "Engineering Fundamentals",
               to: "/docs/engineering-fundamentals",
             },
@@ -167,7 +156,7 @@ const config: Config = {
               to: "/docs/softlanding/specializations/nlp",
             },
             {
-              label: "MLOps",
+              label: "AI Software Engineering",
               to: "/docs/softlanding/specializations/software-engineering",
             },
           ],
