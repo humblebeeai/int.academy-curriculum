@@ -7,7 +7,7 @@
    SECTION CONTAINER
    =================================== */
 .roadmapSection {
-  padding: 6rem 0;
+  padding: var(--section-padding-y, 6rem) 0;
   background: var(--ifm-background-color);
   position: relative;
   overflow: hidden;
@@ -33,7 +33,7 @@
 [data-theme="dark"] .roadmapSection::before {
   background: radial-gradient(
     ellipse at center,
-    rgba(245, 184, 0, 0.08) 0%,
+    rgba(245, 184, 0, 0.1) 0%,
     transparent 70%
   );
 }
@@ -137,8 +137,16 @@
   margin-bottom: 1.5rem;
   box-shadow:
     0 4px 20px rgba(0, 0, 0, 0.15),
-    0 0 30px color-mix(in srgb, var(--phase-color) 30%, transparent);
+    0 0 40px color-mix(in srgb, var(--phase-color) 40%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.phaseNode:hover {
+  box-shadow:
+    0 6px 25px rgba(0, 0, 0, 0.2),
+    0 0 50px color-mix(in srgb, var(--phase-color) 50%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .phaseNode::before {
@@ -148,8 +156,19 @@
   border-radius: 50%;
   background: transparent;
   border: 2px solid var(--phase-color);
-  opacity: 0.3;
+  opacity: 0.4;
   animation: pulse-ring 2s ease-out infinite;
+}
+
+.phaseNode::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid var(--phase-color);
+  opacity: 0.2;
+  animation: pulse-ring 2s ease-out infinite 0.5s;
 }
 
 @keyframes pulse-ring {
@@ -182,8 +201,10 @@
    =================================== */
 .phaseCard {
   width: 100%;
-  background: var(--ifm-background-surface-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--glass-bg, rgba(255, 255, 255, 0.8));
+  backdrop-filter: blur(var(--glass-blur, 12px));
+  -webkit-backdrop-filter: blur(var(--glass-blur, 12px));
+  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.2));
   border-radius: 1.25rem;
   padding: 1.75rem;
   cursor: pointer;
@@ -210,20 +231,33 @@
   opacity: 1;
 }
 
+.phaseCard:hover {
+  border-color: color-mix(in srgb, var(--phase-color) 50%, transparent);
+  box-shadow:
+    var(--shadow-lg),
+    0 0 30px color-mix(in srgb, var(--phase-color) 15%, transparent);
+}
+
 .phaseCardActive {
   border-color: var(--phase-color);
   box-shadow:
     var(--shadow-lg),
-    0 0 20px color-mix(in srgb, var(--phase-color) 15%, transparent);
+    0 0 30px color-mix(in srgb, var(--phase-color) 20%, transparent);
 }
 
 [data-theme="dark"] .phaseCard {
-  background: rgba(30, 30, 30, 0.8);
-  border-color: rgba(255, 255, 255, 0.1);
+  background: var(--glass-bg-dark, rgba(30, 30, 35, 0.7));
+  border-color: var(--glass-border-dark, rgba(255, 255, 255, 0.08));
+}
+
+[data-theme="dark"] .phaseCard:hover {
+  background: rgba(35, 35, 40, 0.8);
+  border-color: color-mix(in srgb, var(--phase-color) 40%, transparent);
 }
 
 [data-theme="dark"] .phaseCardActive {
   border-color: var(--phase-color);
+  background: rgba(35, 35, 40, 0.9);
 }
 
 /* ===================================
@@ -250,11 +284,18 @@
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--ifm-font-color-secondary);
-  background: var(--ifm-background-color);
+  background: var(--glass-bg, rgba(255, 255, 255, 0.6));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   padding: 0.35rem 0.75rem;
   border-radius: 100px;
-  border: 1px solid var(--ifm-color-emphasis-200);
+  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.2));
   white-space: nowrap;
+}
+
+[data-theme="dark"] .phaseDuration {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .phaseSubtitle {
@@ -281,10 +322,12 @@
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--ifm-font-color-secondary);
-  background: var(--ifm-background-color);
+  background: var(--glass-bg, rgba(255, 255, 255, 0.6));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   padding: 0.35rem 0.65rem;
   border-radius: 6px;
-  border: 1px solid var(--ifm-color-emphasis-200);
+  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.2));
   transition: all 0.2s ease;
 }
 
@@ -293,12 +336,18 @@
 }
 
 .phaseCard:hover .skillBadge {
-  border-color: var(--ifm-color-emphasis-300);
+  border-color: color-mix(in srgb, var(--phase-color) 30%, transparent);
+  background: color-mix(in srgb, var(--phase-color) 8%, var(--glass-bg, rgba(255, 255, 255, 0.6)));
 }
 
 [data-theme="dark"] .skillBadge {
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .phaseCard:hover .skillBadge {
+  background: color-mix(in srgb, var(--phase-color) 10%, rgba(255, 255, 255, 0.05));
+  border-color: color-mix(in srgb, var(--phase-color) 30%, transparent);
 }
 
 /* ===================================
@@ -331,8 +380,10 @@
    =================================== */
 .phaseDetails {
   width: 100%;
-  background: var(--ifm-background-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--glass-bg, rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(var(--glass-blur, 12px));
+  -webkit-backdrop-filter: blur(var(--glass-blur, 12px));
+  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.2));
   border-radius: 1rem;
   padding: 1.5rem;
   margin-top: 1rem;
@@ -341,8 +392,8 @@
 }
 
 [data-theme="dark"] .phaseDetails {
-  background: rgba(25, 25, 25, 0.9);
-  border-color: rgba(255, 255, 255, 0.1);
+  background: var(--glass-bg-dark, rgba(25, 25, 30, 0.85));
+  border-color: var(--glass-border-dark, rgba(255, 255, 255, 0.08));
 }
 
 .phaseDescription {

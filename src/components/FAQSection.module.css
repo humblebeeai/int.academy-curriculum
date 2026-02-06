@@ -1,15 +1,41 @@
 /**
  * FAQ Section Styles
- * Reusable accordion-style FAQ component
+ * Reusable accordion-style FAQ component with glassmorphism
  */
 
 .faqSection {
-  padding: 6rem 0;
+  padding: var(--section-padding-y, 6rem) 0;
   background: var(--ifm-background-surface-color);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background accent */
+.faqSection::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  right: -10%;
+  width: 40%;
+  height: 60%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(245, 184, 0, 0.05) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
 }
 
 [data-theme="dark"] .faqSection {
-  background: rgba(30, 30, 30, 0.5);
+  background: rgba(20, 20, 22, 0.6);
+}
+
+[data-theme="dark"] .faqSection::before {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(245, 184, 0, 0.08) 0%,
+    transparent 70%
+  );
 }
 
 .sectionHeader {
@@ -23,16 +49,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--ifm-background-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--glass-bg, rgba(255, 255, 255, 0.8));
+  backdrop-filter: blur(var(--glass-blur, 12px));
+  -webkit-backdrop-filter: blur(var(--glass-blur, 12px));
+  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.2));
   border-radius: 1rem;
   margin: 0 auto 1.5rem;
-  color: var(--ifm-color-primary);
+  color: var(--accent-gold, #f5b800);
+  box-shadow: 
+    var(--shadow-md),
+    0 0 20px rgba(245, 184, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.sectionIconWrapper:hover {
+  box-shadow: 
+    var(--shadow-lg),
+    0 0 30px rgba(245, 184, 0, 0.2);
 }
 
 [data-theme="dark"] .sectionIconWrapper {
-  background: rgba(45, 45, 45, 0.8);
-  border-color: rgba(255, 255, 255, 0.1);
+  background: var(--glass-bg-dark, rgba(30, 30, 35, 0.7));
+  border-color: var(--glass-border-dark, rgba(255, 255, 255, 0.08));
 }
 
 .sectionTitle {
@@ -40,6 +78,10 @@
   font-weight: 800;
   margin-bottom: 1rem;
   color: var(--ifm-font-color-base);
+  background: var(--gradient-warm-text, linear-gradient(135deg, #f5b800 0%, #ff8c00 100%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .sectionSubtitle {
@@ -47,6 +89,7 @@
   color: var(--ifm-font-color-secondary);
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
 .faqContainer {
@@ -58,24 +101,33 @@
   margin-bottom: 1rem;
   border-radius: 1rem;
   overflow: hidden;
-  background: var(--ifm-background-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--glass-bg, rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(var(--glass-blur, 12px));
+  -webkit-backdrop-filter: blur(var(--glass-blur, 12px));
+  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.2));
   transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
 }
 
 .faqItem:hover {
-  border-color: var(--ifm-color-primary);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-color: color-mix(in srgb, var(--accent-gold, #f5b800) 40%, transparent);
+  box-shadow: 
+    var(--shadow-md),
+    0 0 20px rgba(245, 184, 0, 0.08);
+  transform: translateY(-2px);
 }
 
 [data-theme="dark"] .faqItem {
-  background: rgba(42, 42, 42, 0.6);
-  border-color: rgba(255, 255, 255, 0.1);
+  background: var(--glass-bg-dark, rgba(30, 30, 35, 0.6));
+  border-color: var(--glass-border-dark, rgba(255, 255, 255, 0.08));
 }
 
 [data-theme="dark"] .faqItem:hover {
-  border-color: var(--ifm-color-primary);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(35, 35, 40, 0.7);
+  border-color: color-mix(in srgb, var(--accent-gold, #f5b800) 35%, transparent);
+  box-shadow: 
+    var(--shadow-md),
+    0 0 25px rgba(245, 184, 0, 0.12);
 }
 
 .faqQuestion {
@@ -96,11 +148,11 @@
 }
 
 .faqQuestion:hover {
-  color: var(--ifm-color-primary);
+  color: var(--accent-gold, #f5b800);
 }
 
 .faqQuestionOpen {
-  color: var(--ifm-color-primary);
+  color: var(--accent-gold, #f5b800);
 }
 
 .faqChevron {
@@ -111,7 +163,7 @@
 
 .faqChevronOpen {
   transform: rotate(180deg);
-  color: var(--ifm-color-primary);
+  color: var(--accent-gold, #f5b800);
 }
 
 .faqAnswer {
@@ -126,9 +178,22 @@
   font-size: 0.95rem;
 }
 
+/* Active state - when answer is visible */
+.faqItem:has(.faqQuestionOpen) {
+  border-color: color-mix(in srgb, var(--accent-gold, #f5b800) 50%, transparent);
+  box-shadow: 
+    var(--shadow-md),
+    0 0 25px rgba(245, 184, 0, 0.1);
+}
+
+[data-theme="dark"] .faqItem:has(.faqQuestionOpen) {
+  background: rgba(35, 35, 40, 0.8);
+  border-color: color-mix(in srgb, var(--accent-gold, #f5b800) 40%, transparent);
+}
+
 @media screen and (max-width: 996px) {
   .faqSection {
-    padding: 4rem 1rem;
+    padding: var(--section-padding-y-mobile, 4rem) 1rem;
   }
 
   .sectionTitle {

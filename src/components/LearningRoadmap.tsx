@@ -257,10 +257,10 @@ export function LearningRoadmap() {
                   {activePhase === phase.id && (
                     <motion.div
                       className={styles.phaseDetails}
-                      initial={{ opacity: 0, height: 0, y: -10 }}
-                      animate={{ opacity: 1, height: "auto", y: 0 }}
-                      exit={{ opacity: 0, height: 0, y: -10 }}
-                      transition={{ duration: 0.3, ease: "easeOut" }}
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
                     >
                       <p className={styles.phaseDescription}>
                         {phase.description}

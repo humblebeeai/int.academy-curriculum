@@ -52,7 +52,7 @@ function FAQItemComponent({
           height: isOpen ? "auto" : 0,
           opacity: isOpen ? 1 : 0,
         }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
+        transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
       >
         <p>{answer}</p>
       </motion.div>

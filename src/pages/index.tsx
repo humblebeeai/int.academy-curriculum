@@ -30,9 +30,17 @@ import {
   Box,
   Sparkles,
   ArrowRight,
+  Code2,
+  Rocket,
+  Globe,
+  FolderGit2,
 } from "lucide-react";
 
-import { FAQSection, ParticleBackground, LearningRoadmap } from "@site/src/components";
+import {
+  FAQSection,
+  ParticleBackground,
+  LearningRoadmap,
+} from "@site/src/components";
 import styles from "./index.module.css";
 
 function HomepageHeader() {
@@ -52,6 +60,13 @@ function HomepageHeader() {
         </div>
       )}
 
+      {/* Animated gradient orbs */}
+      <div className={styles.heroGradientOrbs}>
+        <div className={styles.gradientOrb1} />
+        <div className={styles.gradientOrb2} />
+        <div className={styles.gradientOrb3} />
+      </div>
+
       <div className="container">
         <motion.div
           className={styles.heroContent}
@@ -59,36 +74,25 @@ function HomepageHeader() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Badge */}
-          <motion.div
-            className={styles.badge}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <Sparkles size={16} />
-            <span>Free & Open Source</span>
-          </motion.div>
-
           <motion.h1
             className={styles.heroTitle}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className={styles.gradientText}>
-              AI Engineering Curriculum
-            </span>
+            <span className={styles.gradientText}>AI Engineering</span>
+            <br />
+            <span className={styles.heroTitleSecondary}>Curriculum</span>
           </motion.h1>
 
           <motion.p
             className={styles.heroDescription}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Free, open-source learning materials for building top-tier AI
-            skills. Self-paced, community-driven, and designed for real-world
+            Free, open-source learning materials for building production-ready
+            AI skills. Self-paced, community-driven, and designed for real-world
             engineering.
           </motion.p>
 
@@ -96,18 +100,20 @@ function HomepageHeader() {
             className={styles.heroButtons}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
             <Link className={styles.primaryButton} to="/docs">
               <BookOpen size={20} />
-              Browse the Curriculum
+              Browse Curriculum
             </Link>
-            <a 
-              href="#roadmap" 
+            <a
+              href="#roadmap"
               className={styles.secondaryButton}
               onClick={(e) => {
                 e.preventDefault();
-                document.getElementById('roadmap')?.scrollIntoView({ behavior: 'smooth' });
+                document
+                  .getElementById("roadmap")
+                  ?.scrollIntoView({ behavior: "smooth" });
               }}
             >
               View Learning Path
@@ -116,7 +122,100 @@ function HomepageHeader() {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Bottom fade */}
+      <div className={styles.heroBottomFade} />
     </header>
+  );
+}
+
+// Feature Grid Component
+interface Feature {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+}
+
+const features: Feature[] = [
+  {
+    icon: Code2,
+    title: "Production-Ready Skills",
+    description:
+      "Learn practical skills used by professional AI engineers in real-world projects.",
+  },
+  {
+    icon: BookOpen,
+    title: "Free & Open Source",
+    description:
+      "All materials are freely available under CC BY-SA 4.0. Learn at your own pace.",
+  },
+  {
+    icon: Users,
+    title: "Community-Driven",
+    description:
+      "Built and improved by a global community of learners and engineers.",
+  },
+  {
+    icon: Rocket,
+    title: "Self-Paced Learning",
+    description:
+      "Progress at your own speed with clear milestones and checkpoints.",
+  },
+  {
+    icon: FolderGit2,
+    title: "Real Projects",
+    description:
+      "Build portfolio-worthy projects that demonstrate your skills to employers.",
+  },
+  {
+    icon: Globe,
+    title: "Career Pathways",
+    description:
+      "Clear progression from fundamentals to specialization with job-ready skills.",
+  },
+];
+
+function FeatureGrid() {
+  return (
+    <section className={styles.featureGridSection}>
+      <div className="container">
+        <motion.div
+          className={styles.sectionHeader}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className={styles.sectionTitle}>Why This Curriculum?</h2>
+          <p className={styles.sectionSubtitle}>
+            Everything you need to become a professional AI engineer, completely
+            free.
+          </p>
+        </motion.div>
+
+        <div className={styles.featureGrid}>
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              className={styles.featureGridCard}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -6, transition: { duration: 0.25 } }}
+            >
+              <div className={styles.featureGridIcon}>
+                <feature.icon size={24} />
+              </div>
+              <h3 className={styles.featureGridTitle}>{feature.title}</h3>
+              <p className={styles.featureGridDescription}>
+                {feature.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -146,7 +245,7 @@ function CurriculumVsAcademySection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <motion.div 
+            <motion.div
               className={clsx(styles.featureCard, styles.comparisonCard)}
               whileHover={{ y: -8 }}
               transition={{ duration: 0.3 }}
@@ -168,8 +267,7 @@ function CurriculumVsAcademySection() {
                 </p>
                 <ul className={styles.comparisonList}>
                   <li>
-                    <CheckCircle size={16} /> Free and open-source (CC BY-SA
-                    4.0)
+                    <CheckCircle size={16} /> Free and open-source
                   </li>
                   <li>
                     <CheckCircle size={16} /> Self-paced learning materials
@@ -499,7 +597,7 @@ function EcosystemSection() {
           })}
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className={styles.ecosystemFooter}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -532,6 +630,7 @@ export default function Home(): ReactNode {
     >
       <HomepageHeader />
       <main>
+        <FeatureGrid />
         <section id="roadmap">
           <LearningRoadmap />
         </section>
