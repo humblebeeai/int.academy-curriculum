@@ -30,10 +30,8 @@ import {
   Box,
   Sparkles,
   ArrowRight,
-  Code2,
-  Rocket,
-  Globe,
-  FolderGit2,
+  Hammer,
+  TrendingUp,
 } from "lucide-react";
 
 import {
@@ -136,42 +134,24 @@ interface Feature {
   description: string;
 }
 
-const features: Feature[] = [
+const philosophy: Feature[] = [
   {
-    icon: Code2,
-    title: "Production-Ready Skills",
+    icon: Hammer,
+    title: "Learning by Doing",
     description:
-      "Learn practical skills used by professional AI engineers in real-world projects.",
+      'We reject passive, "tutorial-only" learning. Every topic leads to hands-on exercises and real projects so you spend most of your time building, not just reading.',
   },
   {
-    icon: BookOpen,
-    title: "Free & Open Source",
+    icon: TrendingUp,
+    title: "Longitudinal Growth",
     description:
-      "All materials are freely available under CC BY-SA 4.0. Learn at your own pace.",
+      "Expertise compounds. We revisit core ideas across phases in increasingly realistic settings, not once and done.",
   },
   {
     icon: Users,
     title: "Community-Driven",
     description:
-      "Built and improved by a global community of learners and engineers.",
-  },
-  {
-    icon: Rocket,
-    title: "Self-Paced Learning",
-    description:
-      "Progress at your own speed with clear milestones and checkpoints.",
-  },
-  {
-    icon: FolderGit2,
-    title: "Real Projects",
-    description:
-      "Build portfolio-worthy projects that demonstrate your skills to employers.",
-  },
-  {
-    icon: Globe,
-    title: "Career Pathways",
-    description:
-      "Clear progression from fundamentals to specialization with job-ready skills.",
+      "Learn with peers, get help, and contribute improvements. The roadmap stays alive because the community keeps raising the bar.",
   },
 ];
 
@@ -186,15 +166,14 @@ function FeatureGrid() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.sectionTitle}>Why This Curriculum?</h2>
+          <h2 className={styles.sectionTitle}>Our Learning Philosophy</h2>
           <p className={styles.sectionSubtitle}>
-            Everything you need to become a professional AI engineer, completely
-            free.
+            The principles that guide how we teach and how you learn.
           </p>
         </motion.div>
 
         <div className={styles.featureGrid}>
-          {features.map((feature, index) => (
+          {philosophy.map((feature, index) => (
             <motion.div
               key={index}
               className={styles.featureGridCard}
