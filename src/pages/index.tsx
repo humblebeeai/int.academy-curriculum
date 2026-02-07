@@ -326,6 +326,13 @@ function CurriculumVsAcademySection() {
                     reviews
                   </li>
                   <li>
+                    <CheckCircle size={16} /> Multiple mentors across domains
+                  </li>
+                  <li>
+                    <CheckCircle size={16} /> Weekly structure with
+                    scenario-based projects
+                  </li>
+                  <li>
                     <CheckCircle size={16} /> Performance transcripts and
                     verified portfolios
                   </li>
@@ -377,12 +384,6 @@ function CurriculumVsAcademySection() {
 
 const faqItems = [
   {
-    question:
-      "What is the difference between the Open Curriculum and the Academy?",
-    answer:
-      "The Open Curriculum is the full roadmap and learning content, self-paced and free. The Academy is an optional mentorship layer on top of the same roadmap: weekly structure, code and design reviews, and internal scenario projects guided by multiple mentors across domains.",
-  },
-  {
     question: 'What are "capstone"s?',
     answer:
       "They are internal projects designed to mirror real work. As you finish a module, you apply it immediately in the scenario project, then iterate based on review until it meets a production bar.",
@@ -406,6 +407,11 @@ const faqItems = [
     question: "How do I get help if I'm stuck?",
     answer:
       "Check the documentation and FAQ first. Then search our Discord community history. Post a detailed question in the relevant Discord channel. Use the Issues tab on GitHub if you find a bug in the curriculum.",
+  },
+  {
+    question: "Why is this curriculum open source?",
+    answer:
+      "We keep this roadmap open because a world-class learning path should not be locked behind geography or budget. The open curriculum is valuable on its own: it gives self-learners structure, sequence, and a clear standard for what \"good\" looks like. The Academy builds on the same roadmap with what self-learning usually lacks: mentor feedback, code and design reviews, accountability, and internal scenario projects that force real-world application while you learn.",
   },
 ];
 
