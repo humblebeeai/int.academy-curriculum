@@ -64,7 +64,7 @@
 .gradientOrb1 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(245, 184, 0, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 245, 0, 0.15) 0%, transparent 70%);
   top: -20%;
   left: -10%;
   animation-delay: 0s;
@@ -73,7 +73,7 @@
 .gradientOrb2 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(230, 149, 0, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 185, 2, 0.12) 0%, transparent 70%);
   top: 40%;
   right: -15%;
   animation-delay: -7s;
@@ -82,7 +82,7 @@
 .gradientOrb3 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(245, 184, 0, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 245, 0, 0.1) 0%, transparent 70%);
   bottom: -10%;
   left: 30%;
   animation-delay: -14s;
@@ -242,13 +242,13 @@
   gap: 0.6rem;
   padding: 1rem 2rem;
   background: var(--gradient-warm);
-  color: hsl(0, 0%, 8%) !important;
+  color: #111111 !important;
   border-radius: 100px;
   font-weight: 700;
   font-size: 1rem;
   text-decoration: none;
   transition: all var(--duration-normal) var(--ease-standard);
-  box-shadow: 0 4px 20px rgba(245, 184, 0, 0.25), var(--shadow-lg);
+  box-shadow: 0 4px 20px rgba(255, 245, 0, 0.25), var(--shadow-lg);
   position: relative;
   overflow: hidden;
 }
@@ -269,8 +269,8 @@
 
 .primaryButton:hover {
   transform: var(--hover-lift-sm);
-  box-shadow: 0 8px 30px rgba(245, 184, 0, 0.35), var(--shadow-xl);
-  color: hsl(0, 0%, 8%) !important;
+  box-shadow: 0 8px 30px rgba(255, 245, 0, 0.35), var(--shadow-xl);
+  color: #111111 !important;
 }
 
 .primaryButton:hover::before {
@@ -301,7 +301,7 @@
 }
 
 .secondaryButton:hover {
-  background: rgba(245, 184, 0, 0.1);
+  background: rgba(255, 245, 0, 0.1);
   border-color: var(--accent-gold);
   color: var(--accent-gold) !important;
   transform: var(--hover-lift-sm);
@@ -430,8 +430,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(245, 184, 0, 0.1);
-  border: 1px solid rgba(245, 184, 0, 0.2);
+  background: rgba(255, 245, 0, 0.1);
+  border: 1px solid rgba(255, 245, 0, 0.2);
   border-radius: 14px;
   color: var(--accent-gold);
   margin-bottom: 1.25rem;
@@ -440,8 +440,8 @@
 
 .featureGridCard:hover .featureGridIcon {
   transform: scale(1.08);
-  background: rgba(245, 184, 0, 0.15);
-  border-color: rgba(245, 184, 0, 0.3);
+  background: rgba(255, 245, 0, 0.15);
+  border-color: rgba(255, 245, 0, 0.3);
 }
 
 .featureGridTitle {
@@ -583,8 +583,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(245, 184, 0, 0.08);
-  border: 1px solid rgba(245, 184, 0, 0.15);
+  background: rgba(255, 245, 0, 0.08);
+  border: 1px solid rgba(255, 245, 0, 0.15);
   border-radius: 1.25rem;
   margin-bottom: 1.5rem;
   color: var(--accent-gold);
@@ -593,13 +593,13 @@
 
 .featureCard:hover .iconWrapper {
   transform: scale(1.1) rotate(3deg);
-  background: rgba(245, 184, 0, 0.12);
-  border-color: rgba(245, 184, 0, 0.25);
+  background: rgba(255, 245, 0, 0.12);
+  border-color: rgba(255, 245, 0, 0.25);
 }
 
 [data-theme="dark"] .iconWrapper {
-  background: rgba(245, 184, 0, 0.1);
-  border: 1px solid rgba(245, 184, 0, 0.2);
+  background: rgba(255, 245, 0, 0.1);
+  border: 1px solid rgba(255, 245, 0, 0.2);
 }
 
 .featureTitle {
@@ -678,7 +678,7 @@
 }
 
 [data-theme="dark"] .programCardContent {
-  background: rgba(42, 42, 42, 0.6);
+  background: rgba(36, 36, 36, 0.6);
   border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -822,7 +822,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 100%, rgba(245, 184, 0, 0.04) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 50% 100%, rgba(255, 245, 0, 0.04) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -831,7 +831,7 @@
 }
 
 [data-theme="dark"] .ecosystemSection::before {
-  background: radial-gradient(ellipse at 50% 100%, rgba(245, 184, 0, 0.06) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 50% 100%, rgba(255, 245, 0, 0.06) 0%, transparent 60%);
 }
 
 .projectCard {
@@ -880,8 +880,8 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(245, 184, 0, 0.08);
-  border: 1px solid rgba(245, 184, 0, 0.15);
+  background: rgba(255, 245, 0, 0.08);
+  border: 1px solid rgba(255, 245, 0, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -891,8 +891,8 @@
 
 .projectCard:hover:not(.projectCardDisabled) .projectIconWrapper {
   transform: scale(1.08);
-  background: rgba(245, 184, 0, 0.12);
-  border-color: rgba(245, 184, 0, 0.25);
+  background: rgba(255, 245, 0, 0.12);
+  border-color: rgba(255, 245, 0, 0.25);
 }
 
 /* Badges */
@@ -971,7 +971,7 @@
 }
 
 [data-theme="dark"] .missionSection {
-  background: #0f0f0f;
+  background: #111111;
 }
 
 .missionSection::before {
@@ -1156,7 +1156,7 @@
 }
 
 .comparisonCard:hover .cardMain {
-  border-color: rgba(245, 184, 0, 0.3);
+  border-color: rgba(255, 245, 0, 0.3);
   box-shadow: var(--shadow-xl), var(--glow-gold-subtle);
 }
 
@@ -1216,7 +1216,7 @@
   margin-top: 3rem;
   padding: 2rem 2.5rem;
   background: var(--glass-bg);
-  border: 1px solid rgba(245, 184, 0, 0.25);
+  border: 1px solid rgba(255, 245, 0, 0.25);
   border-radius: 1.25rem;
   box-shadow: var(--shadow-lg), var(--glow-gold-subtle);
   position: relative;
@@ -1229,7 +1229,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(245, 184, 0, 0.05) 0%, transparent 100%);
+  background: linear-gradient(135deg, rgba(255, 245, 0, 0.05) 0%, transparent 100%);
   border-radius: 1.25rem;
   z-index: 0;
   pointer-events: none;
@@ -1237,7 +1237,7 @@
 
 [data-theme="dark"] .curriculumNote {
   background: var(--glass-bg);
-  border-color: rgba(245, 184, 0, 0.2);
+  border-color: rgba(255, 245, 0, 0.2);
 }
 
 .curriculumNote p {

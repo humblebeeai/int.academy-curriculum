@@ -20,20 +20,20 @@
   height: 60%;
   background: radial-gradient(
     ellipse at center,
-    rgba(245, 184, 0, 0.05) 0%,
+    rgba(255, 245, 0, 0.05) 0%,
     transparent 70%
   );
   pointer-events: none;
 }
 
 [data-theme="dark"] .faqSection {
-  background: rgba(20, 20, 22, 0.6);
+  background: rgba(17, 17, 17, 0.6);
 }
 
 [data-theme="dark"] .faqSection::before {
   background: radial-gradient(
     ellipse at center,
-    rgba(245, 184, 0, 0.08) 0%,
+    rgba(255, 245, 0, 0.08) 0%,
     transparent 70%
   );
 }
@@ -55,21 +55,21 @@
   border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.2));
   border-radius: 1rem;
   margin: 0 auto 1.5rem;
-  color: var(--accent-gold, #f5b800);
+  color: var(--accent-gold, #FFF500);
   box-shadow: 
     var(--shadow-md),
-    0 0 20px rgba(245, 184, 0, 0.1);
+    0 0 20px rgba(255, 245, 0, 0.1);
   transition: all 0.3s ease;
 }
 
 .sectionIconWrapper:hover {
   box-shadow: 
     var(--shadow-lg),
-    0 0 30px rgba(245, 184, 0, 0.2);
+    0 0 30px rgba(255, 245, 0, 0.2);
 }
 
 [data-theme="dark"] .sectionIconWrapper {
-  background: var(--glass-bg-dark, rgba(30, 30, 35, 0.7));
+  background: var(--glass-bg-dark, rgba(29, 29, 29, 0.7));
   border-color: var(--glass-border-dark, rgba(255, 255, 255, 0.08));
 }
 
@@ -78,7 +78,7 @@
   font-weight: 800;
   margin-bottom: 1rem;
   color: var(--ifm-font-color-base);
-  background: var(--gradient-warm-text, linear-gradient(135deg, #f5b800 0%, #ff8c00 100%));
+  background: var(--gradient-warm-text, linear-gradient(135deg, #FFF500 0%, #FFB902 100%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -110,24 +110,24 @@
 }
 
 .faqItem:hover {
-  border-color: color-mix(in srgb, var(--accent-gold, #f5b800) 40%, transparent);
+  border-color: color-mix(in srgb, var(--accent-gold, #FFF500) 40%, transparent);
   box-shadow: 
     var(--shadow-md),
-    0 0 20px rgba(245, 184, 0, 0.08);
+    0 0 20px rgba(255, 245, 0, 0.08);
   transform: translateY(-2px);
 }
 
 [data-theme="dark"] .faqItem {
-  background: var(--glass-bg-dark, rgba(30, 30, 35, 0.6));
+  background: var(--glass-bg-dark, rgba(29, 29, 29, 0.6));
   border-color: var(--glass-border-dark, rgba(255, 255, 255, 0.08));
 }
 
 [data-theme="dark"] .faqItem:hover {
-  background: rgba(35, 35, 40, 0.7);
-  border-color: color-mix(in srgb, var(--accent-gold, #f5b800) 35%, transparent);
+  background: rgba(36, 36, 36, 0.7);
+  border-color: color-mix(in srgb, var(--accent-gold, #FFF500) 35%, transparent);
   box-shadow: 
     var(--shadow-md),
-    0 0 25px rgba(245, 184, 0, 0.12);
+    0 0 25px rgba(255, 245, 0, 0.12);
 }
 
 .faqQuestion {
@@ -148,11 +148,11 @@
 }
 
 .faqQuestion:hover {
-  color: var(--accent-gold, #f5b800);
+  color: var(--accent-gold, #FFF500);
 }
 
 .faqQuestionOpen {
-  color: var(--accent-gold, #f5b800);
+  color: var(--accent-gold, #FFF500);
 }
 
 .faqChevron {
@@ -163,7 +163,7 @@
 
 .faqChevronOpen {
   transform: rotate(180deg);
-  color: var(--accent-gold, #f5b800);
+  color: var(--accent-gold, #FFF500);
 }
 
 .faqAnswer {
@@ -180,15 +180,15 @@
 
 /* Active state - when answer is visible */
 .faqItem:has(.faqQuestionOpen) {
-  border-color: color-mix(in srgb, var(--accent-gold, #f5b800) 50%, transparent);
+  border-color: color-mix(in srgb, var(--accent-gold, #FFF500) 50%, transparent);
   box-shadow: 
     var(--shadow-md),
-    0 0 25px rgba(245, 184, 0, 0.1);
+    0 0 25px rgba(255, 245, 0, 0.1);
 }
 
 [data-theme="dark"] .faqItem:has(.faqQuestionOpen) {
-  background: rgba(35, 35, 40, 0.8);
-  border-color: color-mix(in srgb, var(--accent-gold, #f5b800) 40%, transparent);
+  background: rgba(36, 36, 36, 0.8);
+  border-color: color-mix(in srgb, var(--accent-gold, #FFF500) 40%, transparent);
 }
 
 @media screen and (max-width: 996px) {

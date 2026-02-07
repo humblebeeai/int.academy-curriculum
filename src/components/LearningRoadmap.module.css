@@ -24,7 +24,7 @@
   height: 60%;
   background: radial-gradient(
     ellipse at center,
-    rgba(245, 184, 0, 0.05) 0%,
+    rgba(255, 245, 0, 0.05) 0%,
     transparent 70%
   );
   pointer-events: none;
@@ -33,7 +33,7 @@
 [data-theme="dark"] .roadmapSection::before {
   background: radial-gradient(
     ellipse at center,
-    rgba(245, 184, 0, 0.1) 0%,
+    rgba(255, 245, 0, 0.1) 0%,
     transparent 70%
   );
 }
@@ -246,18 +246,18 @@
 }
 
 [data-theme="dark"] .phaseCard {
-  background: var(--glass-bg-dark, rgba(30, 30, 35, 0.7));
+  background: var(--glass-bg-dark, rgba(29, 29, 29, 0.7));
   border-color: var(--glass-border-dark, rgba(255, 255, 255, 0.08));
 }
 
 [data-theme="dark"] .phaseCard:hover {
-  background: rgba(35, 35, 40, 0.8);
+  background: rgba(36, 36, 36, 0.8);
   border-color: color-mix(in srgb, var(--phase-color) 40%, transparent);
 }
 
 [data-theme="dark"] .phaseCardActive {
   border-color: var(--phase-color);
-  background: rgba(35, 35, 40, 0.9);
+  background: rgba(36, 36, 36, 0.9);
 }
 
 /* ===================================
@@ -392,7 +392,7 @@
 }
 
 [data-theme="dark"] .phaseDetails {
-  background: var(--glass-bg-dark, rgba(25, 25, 30, 0.85));
+  background: var(--glass-bg-dark, rgba(29, 29, 29, 0.85));
   border-color: var(--glass-border-dark, rgba(255, 255, 255, 0.08));
 }
 
@@ -444,7 +444,7 @@
   color: var(--accent-gold) !important;
   text-decoration: none;
   padding: 0.75rem 1.25rem;
-  background: rgba(245, 184, 0, 0.1);
+  background: rgba(255, 245, 0, 0.1);
   border: 1px solid var(--accent-gold);
   border-radius: 100px;
   transition: all 0.3s ease;
@@ -492,7 +492,7 @@
   border-radius: 100px;
   text-decoration: none;
   box-shadow:
-    0 4px 20px rgba(245, 184, 0, 0.3),
+    0 4px 20px rgba(255, 245, 0, 0.3),
     var(--shadow-lg);
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -500,7 +500,7 @@
 .ctaButton:hover {
   transform: translateY(-4px);
   box-shadow:
-    0 8px 30px rgba(245, 184, 0, 0.4),
+    0 8px 30px rgba(255, 245, 0, 0.4),
     var(--shadow-xl);
   color: var(--ifm-background-color) !important;
 }

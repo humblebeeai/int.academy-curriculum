@@ -138,12 +138,12 @@
 }
 
 [data-theme="dark"] .journeyCard {
-  background: var(--glass-bg-dark, rgba(25, 25, 30, 0.8));
+  background: var(--glass-bg-dark, rgba(29, 29, 29, 0.8));
   border-color: var(--glass-border-dark, rgba(255, 255, 255, 0.08));
 }
 
 [data-theme="dark"] .journeyCard:hover {
-  background: rgba(30, 30, 38, 0.9);
+  background: rgba(29, 29, 29, 0.9);
   border-color: color-mix(in srgb, var(--phase-color) 40%, transparent);
 }
 
@@ -279,7 +279,7 @@
   color: var(--accent-gold) !important;
   text-decoration: none;
   padding: 0.6rem 1.1rem;
-  background: rgba(245, 184, 0, 0.1);
+  background: rgba(255, 245, 0, 0.1);
   border: 1px solid var(--accent-gold);
   border-radius: 100px;
   transition: all 0.3s ease;

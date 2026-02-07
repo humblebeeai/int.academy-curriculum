@@ -46,7 +46,7 @@ export function ParticleBackground({ className }: ParticleBackgroundProps) {
             distance: 140,
             links: {
               opacity: 0.5,
-              color: "#f5b800",
+              color: "#FFF500",
             },
           },
           push: {
@@ -60,10 +60,10 @@ export function ParticleBackground({ className }: ParticleBackgroundProps) {
       },
       particles: {
         color: {
-          value: ["#f5b800", "#e69500", "#e67e22", "#ffd700"],
+          value: ["#FFF500", "#FFB902", "#E09500", "#fff84d"],
         },
         links: {
-          color: "#f5b800",
+          color: "#FFF500",
           distance: 150,
           enable: true,
           opacity: 0.15,

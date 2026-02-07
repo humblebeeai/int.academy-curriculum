@@ -12,8 +12,8 @@
    ========================================= */
 :root {
   /* Brand Constants */
-  --humblebee-brand-hue: 42;
-  --humblebee-link-color: #000000;
+  --humblebee-brand-hue: 59;
+  --humblebee-link-color: #111111;
 
   /* Typography */
   --ifm-font-family-base: "Inter", system-ui, -apple-system, sans-serif;
@@ -21,18 +21,18 @@
   --ifm-font-size-base: 16px;
   --ifm-line-height-base: 1.65;
 
-  /* Colors - Warm tinted light theme */
-  --ifm-color-primary: hsl(0, 0%, 8%);
-  --ifm-color-primary-dark: hsl(0, 0%, 15%);
+  /* Colors - Clean light theme */
+  --ifm-color-primary: #111111;
+  --ifm-color-primary-dark: #1d1d1d;
   --ifm-color-primary-darker: hsl(0, 0%, 20%);
   --ifm-color-primary-darkest: hsl(0, 0%, 25%);
   --ifm-color-primary-light: hsl(0, 0%, 35%);
   --ifm-color-primary-lighter: hsl(0, 0%, 45%);
   --ifm-color-primary-lightest: hsl(0, 0%, 55%);
 
-  /* Backgrounds - Slightly warm tinted */
-  --ifm-background-color: hsl(40, 20%, 99%);
-  --ifm-background-surface-color: hsl(40, 15%, 96%);
+  /* Backgrounds */
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #f1f1f1;
 
   /* UI Elements */
   --ifm-card-background-color: hsl(0, 0%, 100%);
@@ -40,13 +40,13 @@
   --ifm-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
 
   /* Text elements */
-  --ifm-font-color-base: hsl(0, 0%, 10%);
+  --ifm-font-color-base: #111111;
   --ifm-font-color-secondary: hsl(0, 0%, 40%);
 
   /* Emphasis Scale (Gray) */
-  --ifm-color-emphasis-0: hsl(0, 0%, 100%);
-  --ifm-color-emphasis-100: hsl(40, 10%, 96%);
-  --ifm-color-emphasis-200: hsl(40, 8%, 90%);
+  --ifm-color-emphasis-0: #ffffff;
+  --ifm-color-emphasis-100: #f1f1f1;
+  --ifm-color-emphasis-200: hsl(0, 0%, 90%);
   --ifm-color-emphasis-300: hsl(0, 0%, 80%);
   --ifm-color-emphasis-400: hsl(0, 0%, 70%);
   --ifm-color-emphasis-500: hsl(0, 0%, 60%);
@@ -74,8 +74,8 @@
   --ifm-color-info-dark: hsl(210, 80%, 30%);
 
   /* Navigation */
-  --ifm-navbar-background-color: rgba(255, 255, 255, 0.85);
-  --ifm-navbar-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.06);
+  --ifm-navbar-background-color: rgba(255, 255, 255, 0.9);
+  --ifm-navbar-shadow: 0 1px 0 0 rgba(17, 17, 17, 0.06);
   --ifm-navbar-link-color: var(--ifm-font-color-base);
   --ifm-navbar-link-hover-color: var(--accent-gold-dark);
 
@@ -89,30 +89,30 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.05);
 
   /* =========================================
-     WARM ACCENT COLORS (Gold/Amber Theme)
+     WARM ACCENT COLORS (Yellow/Orange Brand Theme)
      ========================================= */
   
   /* Primary warm accents */
-  --accent-gold: hsl(42, 95%, 50%);
-  --accent-gold-light: hsl(42, 95%, 60%);
-  --accent-gold-dark: hsl(42, 95%, 42%);
-  --accent-amber: hsl(35, 92%, 48%);
-  --accent-amber-light: hsl(35, 92%, 58%);
-  --accent-amber-dark: hsl(35, 92%, 38%);
-  --accent-orange: hsl(25, 88%, 52%);
+  --accent-gold: #FFF500;
+  --accent-gold-light: #fff84d;
+  --accent-gold-dark: #e0d800;
+  --accent-amber: #FFB902;
+  --accent-amber-light: #ffca40;
+  --accent-amber-dark: #e0a200;
+  --accent-orange: #E09500;
   
   /* Warm gradients */
   --gradient-warm: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-amber) 100%);
   --gradient-warm-subtle: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-amber-light) 100%);
   --gradient-warm-text: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-amber) 50%, var(--accent-orange) 100%);
-  --gradient-hero-bg: radial-gradient(ellipse at 50% 0%, rgba(245, 184, 0, 0.06) 0%, transparent 60%);
+  --gradient-hero-bg: radial-gradient(ellipse at 50% 0%, rgba(255, 245, 0, 0.06) 0%, transparent 60%);
   --gradient-section-divider: linear-gradient(90deg, transparent 0%, var(--ifm-color-emphasis-200) 50%, transparent 100%);
   
   /* Glow effects */
-  --glow-gold: 0 0 20px rgba(245, 184, 0, 0.25);
-  --glow-gold-intense: 0 0 40px rgba(245, 184, 0, 0.35), 0 0 80px rgba(245, 184, 0, 0.15);
-  --glow-gold-subtle: 0 0 30px rgba(245, 184, 0, 0.1);
-  --glow-amber: 0 0 20px rgba(230, 149, 0, 0.25);
+  --glow-gold: 0 0 20px rgba(255, 245, 0, 0.25);
+  --glow-gold-intense: 0 0 40px rgba(255, 245, 0, 0.35), 0 0 80px rgba(255, 245, 0, 0.15);
+  --glow-gold-subtle: 0 0 30px rgba(255, 245, 0, 0.1);
+  --glow-amber: 0 0 20px rgba(255, 185, 2, 0.25);
 
   /* =========================================
      GLASSMORPHISM TOKENS
@@ -164,39 +164,39 @@
    DARK MODE (Primary Theme)
    ========================================= */
 [data-theme="dark"] {
-  /* Colors - Warm tinted dark theme */
-  --ifm-color-primary: hsl(40, 10%, 95%);
-  --ifm-color-primary-dark: hsl(40, 8%, 85%);
-  --ifm-color-primary-darker: hsl(40, 6%, 80%);
-  --ifm-color-primary-darkest: hsl(40, 4%, 75%);
-  --ifm-color-primary-light: hsl(40, 6%, 70%);
-  --ifm-color-primary-lighter: hsl(40, 4%, 60%);
-  --ifm-color-primary-lightest: hsl(40, 2%, 50%);
+  /* Colors - Clean dark theme */
+  --ifm-color-primary: #f1f1f1;
+  --ifm-color-primary-dark: hsl(0, 0%, 85%);
+  --ifm-color-primary-darker: hsl(0, 0%, 80%);
+  --ifm-color-primary-darkest: hsl(0, 0%, 75%);
+  --ifm-color-primary-light: hsl(0, 0%, 70%);
+  --ifm-color-primary-lighter: hsl(0, 0%, 60%);
+  --ifm-color-primary-lightest: hsl(0, 0%, 50%);
 
-  /* Backgrounds - Rich dark with subtle warmth */
-  --ifm-background-color: hsl(240, 6%, 6%);
-  --ifm-background-surface-color: hsl(240, 5%, 9%);
+  /* Backgrounds */
+  --ifm-background-color: #111111;
+  --ifm-background-surface-color: #1d1d1d;
 
   /* UI Elements */
-  --ifm-card-background-color: hsl(240, 5%, 11%);
+  --ifm-card-background-color: #242424;
   --ifm-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 
   /* Text */
-  --ifm-font-color-base: hsl(40, 15%, 95%);
-  --ifm-font-color-secondary: hsl(40, 5%, 65%);
+  --ifm-font-color-base: #f1f1f1;
+  --ifm-font-color-secondary: hsl(0, 0%, 65%);
 
   /* Emphasis Scale (Inverted for Dark Mode) */
-  --ifm-color-emphasis-0: hsl(240, 6%, 8%);
-  --ifm-color-emphasis-100: hsl(240, 5%, 12%);
-  --ifm-color-emphasis-200: hsl(240, 4%, 18%);
-  --ifm-color-emphasis-300: hsl(240, 3%, 28%);
-  --ifm-color-emphasis-400: hsl(240, 2%, 38%);
-  --ifm-color-emphasis-500: hsl(240, 2%, 50%);
-  --ifm-color-emphasis-600: hsl(40, 2%, 62%);
-  --ifm-color-emphasis-700: hsl(40, 4%, 78%);
-  --ifm-color-emphasis-800: hsl(40, 6%, 88%);
-  --ifm-color-emphasis-900: hsl(40, 8%, 94%);
-  --ifm-color-emphasis-1000: hsl(40, 10%, 100%);
+  --ifm-color-emphasis-0: #111111;
+  --ifm-color-emphasis-100: #1d1d1d;
+  --ifm-color-emphasis-200: hsl(0, 0%, 18%);
+  --ifm-color-emphasis-300: hsl(0, 0%, 28%);
+  --ifm-color-emphasis-400: hsl(0, 0%, 38%);
+  --ifm-color-emphasis-500: hsl(0, 0%, 50%);
+  --ifm-color-emphasis-600: hsl(0, 0%, 62%);
+  --ifm-color-emphasis-700: hsl(0, 0%, 78%);
+  --ifm-color-emphasis-800: hsl(0, 0%, 88%);
+  --ifm-color-emphasis-900: #f1f1f1;
+  --ifm-color-emphasis-1000: #ffffff;
 
   /* Status Colors (Dark Mode) */
   --ifm-color-success-light: hsl(142, 50%, 12%);
@@ -216,41 +216,41 @@
   --ifm-color-info-dark: hsl(210, 80%, 85%);
 
   /* Navigation */
-  --ifm-navbar-background-color: rgba(14, 14, 16, 0.85);
+  --ifm-navbar-background-color: rgba(17, 17, 17, 0.9);
   --ifm-navbar-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.04);
   --ifm-navbar-link-hover-color: var(--accent-gold);
 
   /* Warm accents - vibrant for dark mode */
-  --accent-gold: hsl(42, 95%, 58%);
-  --accent-gold-light: hsl(42, 95%, 68%);
-  --accent-gold-dark: hsl(42, 95%, 48%);
-  --accent-amber: hsl(35, 92%, 53%);
-  --accent-amber-light: hsl(35, 92%, 63%);
-  --accent-amber-dark: hsl(35, 92%, 43%);
-  --accent-orange: hsl(25, 88%, 58%);
+  --accent-gold: #FFF500;
+  --accent-gold-light: #fff84d;
+  --accent-gold-dark: #e0d800;
+  --accent-amber: #FFB902;
+  --accent-amber-light: #ffca40;
+  --accent-amber-dark: #e0a200;
+  --accent-orange: #E09500;
   
   /* Dark mode gradients - more vibrant */
   --gradient-warm: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-amber) 100%);
-  --gradient-warm-subtle: linear-gradient(135deg, rgba(245, 184, 0, 0.15) 0%, rgba(230, 149, 0, 0.15) 100%);
+  --gradient-warm-subtle: linear-gradient(135deg, rgba(255, 245, 0, 0.15) 0%, rgba(255, 185, 2, 0.15) 100%);
   --gradient-warm-text: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-amber) 50%, var(--accent-orange) 100%);
-  --gradient-hero-bg: radial-gradient(ellipse at 50% 0%, rgba(245, 184, 0, 0.1) 0%, transparent 60%);
+  --gradient-hero-bg: radial-gradient(ellipse at 50% 0%, rgba(255, 245, 0, 0.1) 0%, transparent 60%);
   --gradient-section-divider: linear-gradient(90deg, transparent 0%, var(--ifm-color-emphasis-200) 50%, transparent 100%);
   
   /* Dark mode glow effects - more prominent */
-  --glow-gold: 0 0 30px rgba(245, 184, 0, 0.35);
-  --glow-gold-intense: 0 0 50px rgba(245, 184, 0, 0.45), 0 0 100px rgba(245, 184, 0, 0.2);
-  --glow-gold-subtle: 0 0 40px rgba(245, 184, 0, 0.15);
-  --glow-amber: 0 0 30px rgba(230, 149, 0, 0.35);
+  --glow-gold: 0 0 30px rgba(255, 245, 0, 0.35);
+  --glow-gold-intense: 0 0 50px rgba(255, 245, 0, 0.45), 0 0 100px rgba(255, 245, 0, 0.2);
+  --glow-gold-subtle: 0 0 40px rgba(255, 245, 0, 0.15);
+  --glow-amber: 0 0 30px rgba(255, 185, 2, 0.35);
 
   /* Glassmorphism tokens for dark mode */
-  --glass-bg: rgba(20, 20, 24, 0.75);
-  --glass-bg-solid: rgba(20, 20, 24, 0.92);
+  --glass-bg: rgba(17, 17, 17, 0.75);
+  --glass-bg-solid: rgba(17, 17, 17, 0.92);
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-border-subtle: rgba(255, 255, 255, 0.04);
-  --glass-border-accent: rgba(245, 184, 0, 0.2);
+  --glass-border-accent: rgba(255, 245, 0, 0.2);
 
   /* Footer */
-  --ifm-footer-background-color: hsl(240, 6%, 5%);
+  --ifm-footer-background-color: #0d0d0d;
   --ifm-footer-color: var(--ifm-font-color-base);
   --ifm-footer-link-color: var(--ifm-font-color-secondary);
 
