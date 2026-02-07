@@ -1,5 +1,5 @@
 /**
- * Roadmap Showcase - Tab Switcher & Shared Styles
+ * Roadmap Showcase - Shared Styles
  */
 
 /* ===================================
@@ -41,7 +41,7 @@
    =================================== */
 .sectionHeader {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .sectionTitle {
@@ -61,86 +61,6 @@
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
-}
-
-/* ===================================
-   TAB SWITCHER
-   =================================== */
-.tabSwitcher {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 3rem;
-  padding: 0.35rem;
-  background: var(--glass-bg, rgba(255, 255, 255, 0.6));
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.3));
-  border-radius: 100px;
-  display: inline-flex;
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
-}
-
-/* Center the inline-flex container */
-.tabSwitcher {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.25rem;
-  padding: 0.35rem;
-  margin: 0 auto 3rem;
-  background: var(--glass-bg, rgba(255, 255, 255, 0.6));
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.3));
-  border-radius: 100px;
-  width: fit-content;
-}
-
-[data-theme="dark"] .tabSwitcher {
-  background: rgba(30, 30, 35, 0.6);
-  border-color: rgba(255, 255, 255, 0.08);
-}
-
-.tab {
-  padding: 0.6rem 1.5rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--ifm-font-color-secondary);
-  background: transparent;
-  border: none;
-  border-radius: 100px;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  position: relative;
-  white-space: nowrap;
-}
-
-.tab:hover {
-  color: var(--ifm-font-color-base);
-  background: rgba(245, 184, 0, 0.08);
-}
-
-.tabActive {
-  color: var(--ifm-background-color) !important;
-  background: var(--gradient-warm) !important;
-  box-shadow:
-    0 2px 12px rgba(245, 184, 0, 0.3),
-    0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-[data-theme="dark"] .tab {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-[data-theme="dark"] .tab:hover {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-[data-theme="dark"] .tabActive {
-  color: var(--ifm-background-color) !important;
 }
 
 /* ===================================
@@ -206,17 +126,5 @@
 
   .sectionTitle {
     font-size: 2rem;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .tabSwitcher {
-    border-radius: 1rem;
-    gap: 0.25rem;
-  }
-
-  .tab {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
   }
 }
