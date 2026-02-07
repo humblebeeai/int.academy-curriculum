@@ -1,0 +1,342 @@
+/**
+ * Journey Map Variant
+ */
+
+.journeyContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  position: relative;
+  min-height: 500px;
+}
+
+/* ===================================
+   SVG PATH
+   =================================== */
+.pathSvg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 768px) {
+  .pathSvg {
+    left: 32px;
+    transform: none;
+  }
+}
+
+/* ===================================
+   PHASES COLUMN
+   =================================== */
+.phasesColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===================================
+   PHASE STOP
+   =================================== */
+.phaseStop {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 500px;
+}
+
+.phaseLeft {
+  align-self: flex-start;
+  flex-direction: row;
+  margin-left: 2rem;
+}
+
+.phaseRight {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+  margin-right: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .phaseLeft,
+  .phaseRight {
+    align-self: stretch;
+    flex-direction: row;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+  }
+}
+
+/* ===================================
+   PIN MARKER
+   =================================== */
+.pinMarker {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--phase-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.15),
+    0 0 24px color-mix(in srgb, var(--phase-color) 35%, transparent);
+  color: var(--ifm-background-color);
+  position: relative;
+  z-index: 2;
+}
+
+.pinMarker::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid var(--phase-color);
+}
+
+/* ===================================
+   JOURNEY CARD
+   =================================== */
+.journeyCard {
+  flex: 1;
+  background: var(--glass-bg, rgba(255, 255, 255, 0.8));
+  backdrop-filter: blur(var(--glass-blur, 12px));
+  -webkit-backdrop-filter: blur(var(--glass-blur, 12px));
+  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.3));
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.journeyCard:hover {
+  border-color: color-mix(in srgb, var(--phase-color) 50%, transparent);
+  box-shadow:
+    var(--shadow-lg),
+    0 0 25px color-mix(in srgb, var(--phase-color) 15%, transparent);
+}
+
+.journeyCardExpanded {
+  border-color: var(--phase-color);
+}
+
+[data-theme="dark"] .journeyCard {
+  background: var(--glass-bg-dark, rgba(25, 25, 30, 0.8));
+  border-color: var(--glass-border-dark, rgba(255, 255, 255, 0.08));
+}
+
+[data-theme="dark"] .journeyCard:hover {
+  background: rgba(30, 30, 38, 0.9);
+  border-color: color-mix(in srgb, var(--phase-color) 40%, transparent);
+}
+
+/* Accent bar */
+.cardAccent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--phase-color);
+  border-radius: 4px 0 0 4px;
+}
+
+/* ===================================
+   CARD CONTENT
+   =================================== */
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.phaseLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--phase-color);
+}
+
+.duration {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ifm-font-color-secondary);
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ifm-font-color-base);
+  margin: 0 0 0.25rem 0;
+}
+
+.cardSubtitle {
+  font-size: 0.9rem;
+  color: var(--ifm-font-color-secondary);
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+
+/* ===================================
+   SKILL TAGS
+   =================================== */
+.skillTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.skillTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--ifm-font-color-secondary);
+  background: var(--glass-bg, rgba(255, 255, 255, 0.5));
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.2));
+}
+
+.skillTag svg {
+  opacity: 0.7;
+}
+
+[data-theme="dark"] .skillTag {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ===================================
+   EXPANDED CONTENT
+   =================================== */
+.expandedContent {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--ifm-color-emphasis-100);
+  overflow: hidden;
+}
+
+[data-theme="dark"] .expandedContent {
+  border-top-color: rgba(255, 255, 255, 0.06);
+}
+
+.description {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--ifm-font-color-secondary);
+  margin: 0 0 1rem 0;
+}
+
+.skillChecks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.skillCheck {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--ifm-font-color-secondary);
+}
+
+.skillCheck svg {
+  flex-shrink: 0;
+}
+
+.exploreLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-gold) !important;
+  text-decoration: none;
+  padding: 0.6rem 1.1rem;
+  background: rgba(245, 184, 0, 0.1);
+  border: 1px solid var(--accent-gold);
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+
+.exploreLink:hover {
+  background: var(--accent-gold);
+  color: var(--ifm-background-color) !important;
+}
+
+.exploreLink svg {
+  transition: transform 0.3s ease;
+}
+
+.exploreLink:hover svg {
+  transform: translateX(3px);
+}
+
+/* ===================================
+   RESPONSIVE
+   =================================== */
+@media screen and (max-width: 768px) {
+  .journeyContainer {
+    padding: 1rem 0 1rem 2rem;
+  }
+
+  .phaseStop {
+    gap: 1rem;
+  }
+
+  .pinMarker {
+    width: 36px;
+    height: 36px;
+  }
+
+  .pinMarker svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .journeyCard {
+    padding: 1.25rem;
+  }
+
+  .cardTitle {
+    font-size: 1.05rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .journeyContainer {
+    padding-left: 1rem;
+  }
+
+  .cardTop {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+}

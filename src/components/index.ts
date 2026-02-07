@@ -7,3 +7,4 @@ export { default as CodeComparison } from './CodeComparison';
 export { default as FAQSection } from './FAQSection';
 export { default as ParticleBackground } from './ParticleBackground';
 export { default as LearningRoadmap } from './LearningRoadmap';
+export { default as RoadmapShowcase } from './roadmap/RoadmapShowcase';

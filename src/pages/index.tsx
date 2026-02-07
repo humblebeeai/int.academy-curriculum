@@ -39,7 +39,7 @@ import {
 import {
   FAQSection,
   ParticleBackground,
-  LearningRoadmap,
+  RoadmapShowcase,
 } from "@site/src/components";
 import styles from "./index.module.css";
 
@@ -632,7 +632,7 @@ export default function Home(): ReactNode {
       <main>
         <FeatureGrid />
         <section id="roadmap">
-          <LearningRoadmap />
+          <RoadmapShowcase />
         </section>
         <CurriculumVsAcademySection />
         <FAQSection items={faqItems} />
