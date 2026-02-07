@@ -363,24 +363,44 @@ function CurriculumVsAcademySection() {
 
 const faqItems = [
   {
-    question: 'What are "capstone"s?',
+    question: "Is this curriculum really free?",
+    answer:
+      "Yes. The curriculum is free to use. The entire curriculum is open source.",
+  },
+  {
+    question: "Is this the Academy?",
+    answer:
+      "No. The Academy is a separate program. This is the open-source curriculum that the Academy builds upon.",
+  },
+  {
+    question: 'What are "capstones"?',
     answer:
       "They are internal projects designed to mirror real work. As you finish a module, you apply it immediately in the scenario project, then iterate based on review until it meets a production bar.",
   },
   {
-    question: "Is this curriculum really free?",
+    question: "Does it guarantee a job?",
     answer:
-      "Yes. The entire curriculum is open source. We only charge for human time in the Academy: mentorship, reviews, and structured project guidance.",
+      "No. It helps you build inspectable proof of your skills, not completion claims.",
   },
   {
-    question: "Do I need a powerful computer?",
+    question: "Is there verification?",
     answer:
-      "For Engineering Fundamentals, any laptop (Windows/Mac/Linux) released in the last 5-7 years is fine. For Soft Landing (Deep Learning), having an NVIDIA GPU is helpful but not required; we will show you how to use free cloud resources like Google Colab and Kaggle Kernels.",
+      "Optional paid verification is available through exams and project reviews, but the curriculum itself stays free.",
+  },
+  {
+    question: "Can I get mentorship?",
+    answer:
+      "Optional hourly mentorship is available for blockers such as math, debugging, evaluation, and project design.",
   },
   {
     question: "Can I skip Engineering Fundamentals if I know Python?",
     answer:
       'Maybe. We have a "Direct Entry" path for Soft Landing, but it requires passing a rigorous placement test. We find that 80% of "experienced" self-taught developers still have critical gaps in data engineering or math that Engineering Fundamentals covers. When in doubt, don\'t skip foundation.',
+  },
+  {
+    question: "Do I need a powerful computer?",
+    answer:
+      "For Engineering Fundamentals, any laptop (Windows/Mac/Linux) released in the last 5-7 years is fine. For Soft Landing (Deep Learning), having an NVIDIA GPU is helpful but not required; we will show you how to use free cloud resources like Google Colab and Kaggle Kernels.",
   },
   {
     question: "How do I get help if I'm stuck?",
