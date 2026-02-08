@@ -14,15 +14,15 @@ The default progression:
 
 1. **Engineering Fundamentals** (4 months, 250-310 hours) — Python, math, data skills, tooling
 2. **Soft Landing** (6 months, 174-251 hours):
-   - **Core Systems** — shared foundations: ML math, deep learning, networking, fullstack toolkit
+   - **Core Systems** — shared foundations: ML math, deep learning, networking, production deployment
    - **Specialization Tracks** — role-based depth with capstone projects
 
 ## Documentation
 
 - [Curriculum Overview](https://academy.humblebee.ai/docs): Mission, target outcomes, architecture
-- [Engineering Fundamentals](https://academy.humblebee.ai/docs/engineering-fundamentals): Computational thinking, calculus, probability, data engineering, IoT
+- [Engineering Fundamentals](https://academy.humblebee.ai/docs/engineering-fundamentals): Computational thinking, calculus, probability, data manipulation, IoT
 - [Soft Landing Program](https://academy.humblebee.ai/docs/softlanding): Core Systems and Specialization Tracks
-- [Core Systems](https://academy.humblebee.ai/docs/softlanding/core-systems): Math & ML, Advanced AI, Networking, Fullstack Toolkit
+- [Core Systems](https://academy.humblebee.ai/docs/softlanding/core-systems): Math & ML, Intro to AI Engineering, Networking, Infra Basics
 - [Specialization Tracks](https://academy.humblebee.ai/docs/softlanding/specializations): Track overview and comparison
 - [Computer Vision Track](https://academy.humblebee.ai/docs/softlanding/specializations/computer-vision): CNNs, object detection, YOLO
 - [Data Science Track](https://academy.humblebee.ai/docs/softlanding/specializations/data-science): Statistics, evaluation, ML modeling

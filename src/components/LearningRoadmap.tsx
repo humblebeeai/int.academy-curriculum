@@ -44,12 +44,12 @@ const phases: Phase[] = [
     subtitle: "Build Your Foundation",
     duration: "2-4 months",
     description:
-      "Master terminal, Git, Python data engineering, and the math that powers AI. This phase builds the bedrock skills every professional AI engineer needs.",
+      "Master terminal, Git, Data Manipulation, and the math that powers AI. This phase builds the bedrock skills every professional AI engineer needs.",
     skills: [
       { icon: Terminal, name: "Terminal & CLI" },
       { icon: GitBranch, name: "Git & Version Control" },
       { icon: Calculator, name: "Math for AI" },
-      { icon: Database, name: "Data Engineering" },
+      { icon: Database, name: "Data Manipulation" },
     ],
     link: "/docs/engineering-fundamentals",
     color: "var(--accent-gold)",
@@ -115,8 +115,8 @@ export function LearningRoadmap() {
         >
           <h2 className={styles.sectionTitle}>Your Learning Journey</h2>
           <p className={styles.sectionSubtitle}>
-            A structured path from fundamentals to AI engineering mastery.
-            Click on each phase to learn more.
+            A structured path from fundamentals to AI engineering mastery. Click
+            on each phase to learn more.
           </p>
         </motion.div>
 
@@ -245,9 +245,7 @@ export function LearningRoadmap() {
                   <div className={styles.expandIndicator}>
                     <ChevronRight
                       size={18}
-                      className={
-                        activePhase === phase.id ? styles.rotated : ""
-                      }
+                      className={activePhase === phase.id ? styles.rotated : ""}
                     />
                   </div>
                 </motion.div>

@@ -27,10 +27,10 @@ Key dependencies:
 │   ├── engineering-fundamentals/            # Phase 1: Engineering Fundamentals
 │   │   ├── _category_.yml
 │   │   ├── index.mdx                        # EF introduction, prerequisites, time estimates
-│   │   ├── computational-thinking.mdx       # Module 1: CLI, Git, algorithms
+│   │   ├── terminal-algorithmic-basics.mdx  # Module 1: CLI, Git, algorithms
 │   │   ├── calculus-algebra.mdx             # Module 2: Calculus & Linear Algebra
 │   │   ├── probability-statistics.mdx       # Module 3: Probability & Statistics
-│   │   ├── data-engineering.mdx             # Module 4: Pandas, SQL, Git
+│   │   ├── data-manipulation.mdx            # Module 4: Pandas, SQL, Git
 │   │   └── iot-activation.mdx               # Module 5: IoT & Teachable Machine
 │   └── softlanding/                         # Phase 2: Soft Landing Program
 │       ├── _category_.yml
@@ -39,9 +39,9 @@ Key dependencies:
 │       ├── core-systems/                    # Stage 1: Core Systems
 │       │   ├── _category_.yml
 │       │   ├── 01-math-ml.mdx               # Math & ML Fundamentals
-│       │   ├── 02-advanced-ai.mdx           # Advanced AI & Coding
+│       │   ├── 02-intro-to-ai-engineering.mdx    # Intro to AI Engineering
 │       │   ├── 03-networking.mdx            # Systems & Networking
-│       │   └── 04-fullstack-ops.mdx         # Fullstack Toolkit
+│       │   └── 04-infra-basics.mdx          # Infra Basics
 │       └── specializations/                 # Stage 2: Specialization Tracks
 │           ├── _category_.yml
 │           ├── index.mdx                    # Track overview and comparison
