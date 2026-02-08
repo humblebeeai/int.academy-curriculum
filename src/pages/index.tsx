@@ -11,7 +11,7 @@ import {
   GraduationCap,
   Users,
   BookOpen,
-  Award,
+
   FileText,
   CheckCircle,
   Sparkles,
@@ -403,10 +403,10 @@ function OutcomesSection() {
   );
 }
 
-// Curriculum vs Academy Section (kept)
-function CurriculumVsAcademySection() {
+// On Demand Mentorship Section
+function OnDemandMentorshipSection() {
   return (
-    <section className={clsx(styles.features, styles.curriculumVsAcademy)}>
+    <section className={clsx(styles.features, styles.mentorshipSection)}>
       <div className="container">
         <motion.div
           className={styles.sectionHeader}
@@ -415,23 +415,69 @@ function CurriculumVsAcademySection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.sectionTitle}>Curriculum vs. Academy</h2>
+          <h2 className={styles.sectionTitle}>On-Demand Mentorship</h2>
           <p className={styles.sectionSubtitle}>
-            Understanding the difference between the open curriculum and the
-            full Academy program.
+            Stuck on a concept? Need code review or career guidance? Book a session with experienced AI practitioners.
           </p>
         </motion.div>
 
         <div className="row">
           <motion.div
-            className="col col--6"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="col col--4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <motion.div
-              className={clsx(styles.featureCard, styles.comparisonCard)}
+              className={clsx(styles.featureCard, styles.mentorshipCard)}
+              whileHover={{ y: -8 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className={styles.cardMain}>
+                <div
+                  className={styles.iconWrapper}
+                  style={{ color: "var(--accent-gold)" }}
+                >
+                  <Target size={40} strokeWidth={1.5} />
+                </div>
+                <Heading as="h3" className={styles.featureTitle}>
+                  Technical Deep Dives
+                </Heading>
+                <p className={styles.featureDescription}>
+                  Get unstuck on complex topics: transformer architectures, model debugging, evaluation metrics, or optimization techniques.
+                </p>
+                <ul className={styles.comparisonList}>
+                  <li>
+                    <CheckCircle size={16} /> 1-on-1 sessions with domain experts
+                  </li>
+                  <li>
+                    <CheckCircle size={16} /> Debug your model or pipeline
+                  </li>
+                  <li>
+                    <CheckCircle size={16} /> Clarify theoretical concepts
+                  </li>
+                </ul>
+                <p className={styles.mentorshipPrice}>Prices coming soon</p>
+                <a
+                  href="mailto:contact@humblebee.ai"
+                  className={styles.mentorshipButton}
+                >
+                  Get notified
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            className="col col--4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <motion.div
+              className={clsx(styles.featureCard, styles.mentorshipCard)}
               whileHover={{ y: -8 }}
               transition={{ duration: 0.3 }}
             >
@@ -443,125 +489,69 @@ function CurriculumVsAcademySection() {
                   <FileText size={40} strokeWidth={1.5} />
                 </div>
                 <Heading as="h3" className={styles.featureTitle}>
-                  The Curriculum
+                  Code & Project Review
                 </Heading>
                 <p className={styles.featureDescription}>
-                  Open educational resources: roadmaps, project specs, learning
-                  objectives, and skill gates. Anyone can access and use these
-                  materials for self-directed study.
+                  Submit your code or capstone project for expert feedback on architecture, best practices, and production readiness.
                 </p>
                 <ul className={styles.comparisonList}>
                   <li>
-                    <CheckCircle size={16} /> Free and open-source
+                    <CheckCircle size={16} /> Architecture feedback
                   </li>
                   <li>
-                    <CheckCircle size={16} /> Self-paced learning materials
+                    <CheckCircle size={16} /> Code quality review
                   </li>
                   <li>
-                    <CheckCircle size={16} /> Project specifications and
-                    milestones
-                  </li>
-                  <li>
-                    <CheckCircle size={16} /> Community contributions welcome
+                    <CheckCircle size={16} /> Production readiness check
                   </li>
                 </ul>
-                <Link to="/docs" className={styles.secondaryButton}>
-                  Browse Curriculum
-                  <span className={styles.arrow}>→</span>
-                </Link>
+                <p className={styles.mentorshipPrice}>Prices coming soon</p>
               </div>
             </motion.div>
           </motion.div>
 
           <motion.div
-            className="col col--6"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="col col--4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
           >
             <motion.div
-              className={clsx(
-                styles.featureCard,
-                styles.comparisonCard,
-                styles.academyCard,
-              )}
+              className={clsx(styles.featureCard, styles.mentorshipCard)}
               whileHover={{ y: -8 }}
               transition={{ duration: 0.3 }}
             >
               <div className={styles.cardMain}>
                 <div
                   className={styles.iconWrapper}
-                  style={{ color: "var(--ifm-color-success)" }}
+                  style={{ color: "var(--accent-gold)" }}
                 >
-                  <Award size={40} strokeWidth={1.5} />
+                  <Users size={40} strokeWidth={1.5} />
                 </div>
                 <Heading as="h3" className={styles.featureTitle}>
-                  The Academy
+                  Career Guidance
                 </Heading>
                 <p className={styles.featureDescription}>
-                  A full-time, offline training program (40 hrs/week,
-                  campus-based) that uses this curriculum as its foundation.
-                  Academy students receive structured mentorship and verified
-                  credentials.
+                  Navigate your AI career path: portfolio review, interview prep, specialization advice, and industry insights.
                 </p>
                 <ul className={styles.comparisonList}>
                   <li>
-                    <CheckCircle size={16} /> Structured mentorship and code
-                    reviews
+                    <CheckCircle size={16} /> Portfolio review
                   </li>
                   <li>
-                    <CheckCircle size={16} /> Multiple mentors across domains
+                    <CheckCircle size={16} /> Interview preparation
                   </li>
                   <li>
-                    <CheckCircle size={16} /> Weekly structure with
-                    scenario-based projects
-                  </li>
-                  <li>
-                    <CheckCircle size={16} /> Performance transcripts and
-                    verified portfolios
-                  </li>
-                  <li>
-                    <CheckCircle size={16} /> Tuition-based with scholarship
-                    options
-                  </li>
-                  <li>
-                    <CheckCircle size={16} /> Pathway to Growth-3 professional
-                    program
+                    <CheckCircle size={16} /> Career path planning
                   </li>
                 </ul>
-                <a
-                  href="https://academy.humblebee.ai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.primaryButton}
-                >
-                  <GraduationCap size={20} />
-                  Apply to Academy
-                </a>
+                <p className={styles.mentorshipPrice}>Prices coming soon</p>
               </div>
             </motion.div>
           </motion.div>
         </div>
 
-        <motion.div
-          className={styles.curriculumNote}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          <p>
-            <strong>Key distinction:</strong> The Curriculum is the content
-            framework. The Academy is the full-service training environment with
-            credentials, mentorship, and professional placement support.
-          </p>
-          <p>
-            You can use the Curriculum materials independently. But if you want
-            mentored training, verified credentials, and structured career
-            pathways, the Academy provides that infrastructure.
-          </p>
-        </motion.div>
       </div>
     </section>
   );
@@ -601,72 +591,6 @@ const faqItems = [
   },
 ];
 
-// Final CTA Section
-function FinalCTASection() {
-  return (
-    <section className={clsx(styles.features, styles.finalCtaSection)}>
-      <div className="container">
-        <div className="row">
-          <motion.div
-            className="col col--6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div className={styles.finalCtaCard}>
-              <div
-                className={styles.finalCtaIcon}
-                style={{ color: "var(--accent-gold)" }}
-              >
-                <Sparkles size={32} />
-              </div>
-              <h3 className={styles.finalCtaTitle}>Learners</h3>
-              <p className={styles.finalCtaDescription}>
-                Follow the structure. Build proof. Show real competence.
-              </p>
-              <Link to="/docs" className={styles.primaryButton}>
-                <BookOpen size={20} />
-                Start With the Curriculum
-              </Link>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="col col--6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <div className={styles.finalCtaCard}>
-              <div
-                className={styles.finalCtaIcon}
-                style={{ color: "var(--accent-gold)" }}
-              >
-                <GitPullRequest size={32} />
-              </div>
-              <h3 className={styles.finalCtaTitle}>Contributors</h3>
-              <p className={styles.finalCtaDescription}>
-                Help keep the pathway sharp, open, and evidence-based.
-              </p>
-              <a
-                href="https://github.com/humblebeeai/int.academy-curriculum/blob/main/CONTRIBUTING.md"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.secondaryButton}
-              >
-                Submit a Contribution
-                <span className={styles.arrow}>→</span>
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export default function Home(): ReactNode {
   return (
     <Layout
@@ -681,9 +605,8 @@ export default function Home(): ReactNode {
         <section id="roadmap">
           <RoadmapShowcase />
         </section>
-        <CurriculumVsAcademySection />
+        <OnDemandMentorshipSection />
         <FAQSection items={faqItems} />
-        <FinalCTASection />
       </main>
     </Layout>
   );
