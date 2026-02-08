@@ -3,7 +3,7 @@
  */
 
 .journeyContainer {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 0;
   position: relative;
@@ -18,7 +18,7 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 120px;
+  width: 200px;
   height: 100%;
   z-index: 0;
   pointer-events: none;
@@ -26,9 +26,41 @@
 
 @media screen and (max-width: 768px) {
   .pathSvg {
-    left: 32px;
+    left: 24px;
     transform: none;
+    width: 120px;
   }
+}
+
+/* ===================================
+   PINS CONTAINER
+   =================================== */
+.pinsContainer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 768px) {
+  .pinsContainer {
+    left: 24px;
+    transform: none;
+    width: 120px;
+  }
+}
+
+.pinWrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ===================================
@@ -48,29 +80,36 @@
 .phaseStop {
   display: flex;
   align-items: flex-start;
-  gap: 2rem;
-  max-width: 500px;
+  max-width: 650px;
+  width: 100%;
 }
 
 .phaseLeft {
+  margin-right: auto;
+  margin-left: 0;
   align-self: flex-start;
-  flex-direction: row;
-  margin-left: 2rem;
+  padding-right: calc(100px + 0.25rem);
 }
 
 .phaseRight {
+  margin-left: auto;
+  margin-right: 0;
   align-self: flex-end;
-  flex-direction: row-reverse;
-  margin-right: 2rem;
+  padding-left: calc(100px + 0.25rem);
 }
 
 @media screen and (max-width: 768px) {
+  .journeyContainer {
+    max-width: 100%;
+  }
+
   .phaseLeft,
   .phaseRight {
     align-self: stretch;
-    flex-direction: row;
-    margin-left: 0;
+    margin-left: calc(120px + 1.5rem);
     margin-right: 0;
+    padding-left: 0;
+    padding-right: 1rem;
     max-width: 100%;
   }
 }
@@ -118,7 +157,7 @@
   -webkit-backdrop-filter: blur(var(--glass-blur, 12px));
   border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.3));
   border-radius: 1.25rem;
-  padding: 1.5rem;
+  padding: 2rem;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -169,7 +208,7 @@
 }
 
 .phaseLabel {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -180,20 +219,21 @@
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 500;
   color: var(--ifm-font-color-secondary);
 }
 
 .cardTitle {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--ifm-font-color-base);
-  margin: 0 0 0.25rem 0;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
 }
 
 .cardSubtitle {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--ifm-font-color-secondary);
   margin: 0 0 1rem 0;
   line-height: 1.5;
@@ -205,18 +245,18 @@
 .skillTags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.6rem;
 }
 
 .skillTag {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
-  font-size: 0.72rem;
+  gap: 0.4rem;
+  font-size: 0.8rem;
   font-weight: 500;
   color: var(--ifm-font-color-secondary);
   background: var(--glass-bg, rgba(255, 255, 255, 0.5));
-  padding: 0.3rem 0.6rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 6px;
   border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.2));
 }
@@ -301,18 +341,67 @@
 /* ===================================
    RESPONSIVE
    =================================== */
+
+/* Tablet styles - hide road completely */
 @media screen and (max-width: 768px) {
   .journeyContainer {
-    padding: 1rem 0 1rem 2rem;
+    padding: 1rem;
+    max-width: 100%;
   }
 
-  .phaseStop {
-    gap: 1rem;
+  .pathSvg {
+    display: none;
+  }
+
+  .pinsContainer {
+    display: none;
+  }
+
+  .phaseLeft,
+  .phaseRight {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
+  }
+
+  .journeyCard {
+    padding: 1.5rem;
+    min-height: auto;
+  }
+
+  .cardTitle {
+    font-size: 1.15rem;
+  }
+
+  .cardSubtitle {
+    font-size: 0.95rem;
+  }
+
+  .skillTag {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* Mobile styles - hide road completely */
+@media screen and (max-width: 480px) {
+  .journeyContainer {
+    padding: 1rem;
+  }
+
+  .pathSvg {
+    display: none;
+  }
+
+  .pinsContainer {
+    display: none;
   }
 
   .pinMarker {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
   }
 
   .pinMarker svg {
@@ -320,23 +409,93 @@
     height: 16px;
   }
 
+  .phaseLeft,
+  .phaseRight {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
+  }
+
   .journeyCard {
     padding: 1.25rem;
+    border-radius: 1rem;
   }
 
   .cardTitle {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
   }
-}
 
-@media screen and (max-width: 480px) {
-  .journeyContainer {
-    padding-left: 1rem;
+  .cardSubtitle {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
   }
 
   .cardTop {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.35rem;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .phaseLabel {
+    font-size: 0.75rem;
+  }
+
+  .duration {
+    font-size: 0.8rem;
+  }
+
+  .skillTags {
+    gap: 0.4rem;
+  }
+
+  .skillTag {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.6rem;
+  }
+
+  .skillTag svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .description {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .exploreLink {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Small mobile styles */
+@media screen and (max-width: 360px) {
+  .pathSvg {
+    display: none;
+  }
+
+  .pinsContainer {
+    display: none;
+  }
+
+  .phaseLeft,
+  .phaseRight {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .journeyCard {
+    padding: 1rem;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
   }
 }

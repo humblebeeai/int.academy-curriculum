@@ -40,7 +40,7 @@ Prevents the most common long-term failure: specializing too early.
 
 **Prerequisites:** English CEFR B2, secondary-level math, Python basics (Automate the Boring Stuff)
 
-#### Module 1: Computational Thinking (15-20 hours)
+#### Module 1: Terminal & Algorithmic Basics (15-20 hours)
 - VS Code setup and configuration
 - Command line mastery (navigation, file ops, permissions) via Linux Journey
 - Algorithmic thinking via HackerRank Problem Solving
@@ -56,7 +56,7 @@ Prevents the most common long-term failure: specializing too early.
 - Khan Academy: distributions, inference, random variables, conditional probability, Bayes' rule
 - Deliverables: Khan Academy final exam >= 80%
 
-#### Module 4: Data Engineering (10-14 hours)
+#### Module 4: Data Manipulation (10-14 hours)
 - Pandas & data cleaning (Kaggle Micro-Course)
 - SQL (SELECT, JOIN, GROUP BY, subqueries, CTEs)
 - Git version control (Learn Git Branching)
@@ -91,7 +91,7 @@ Competence every AI engineer needs regardless of role.
 - Classical ML: Linear/Logistic Regression, Decision Trees, Random Forests, SVMs
 - Evaluation metrics (Google ML Crash Course): Precision, Recall, F1-Score, ROC-AUC, Confusion Matrix
 
-#### Module 2: Advanced AI & Coding (38-53 hours)
+#### Module 2: Intro to AI Engineering (38-53 hours)
 - Deep Learning & LLMs: CS231n Lectures 2-4, Karpathy's "A Deep Dive into LLMs"
 - PyTorch Engineering: UvA Deep Learning Tutorials (tensors, autograd, nn.Module, training loops)
 - Engineering Excellence: Clean Code (Ch. 1-10), LeetCode Programming Skills Study Plan
