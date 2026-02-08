@@ -809,139 +809,330 @@
 }
 
 /* ===================================
-   ECOSYSTEM & PROJECT CARDS
+   WHO THIS IS FOR SECTION
    =================================== */
-.ecosystemSection {
-  background-color: var(--ifm-background-color);
+.whoSection {
+  background: var(--ifm-background-surface-color);
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+[data-theme="dark"] .whoSection {
+  border-top-color: var(--glass-border);
+}
+
+.whoCard {
+  margin-bottom: 0;
+}
+
+.whoCard .cardMain {
+  min-height: 220px;
+}
+
+@media screen and (max-width: 996px) {
+  .whoCard .cardMain {
+    min-height: auto;
+  }
+}
+
+/* ===================================
+   ABOUT / WHY THIS EXISTS SECTION
+   =================================== */
+.aboutSection {
+  background: var(--ifm-background-color);
+}
+
+.aboutTextBlock {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.aboutTextBlock p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--ifm-font-color-secondary);
+  margin: 0;
+}
+
+.aboutCard {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border-subtle);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  height: 100%;
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+[data-theme="dark"] .aboutCard {
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
+}
+
+.aboutCardTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  margin: 0 0 0.75rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.aboutCardTitleNot {
+  color: var(--ifm-font-color-secondary);
+  margin-top: 1.5rem;
+}
+
+.aboutList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.aboutList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  color: var(--ifm-font-color-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.aboutList li svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--accent-gold);
+}
+
+.aboutCardTitleNot + .aboutList li svg {
+  color: var(--ifm-font-color-secondary);
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 996px) {
+  .aboutTextBlock {
+    padding: 1rem 0 0;
+  }
+}
+
+/* ===================================
+   OUTCOMES SECTION
+   =================================== */
+.outcomesSection {
+  background: var(--ifm-background-surface-color);
   border-top: 1px solid var(--ifm-color-emphasis-200);
   position: relative;
 }
 
-/* Subtle gradient background */
-.ecosystemSection::before {
+/* Subtle radial background */
+.outcomesSection::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 100%, rgba(255, 245, 0, 0.04) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(255, 245, 0, 0.04) 0%, transparent 60%);
   pointer-events: none;
 }
 
-[data-theme="dark"] .ecosystemSection {
+[data-theme="dark"] .outcomesSection {
   border-top-color: var(--glass-border);
 }
 
-[data-theme="dark"] .ecosystemSection::before {
-  background: radial-gradient(ellipse at 50% 100%, rgba(255, 245, 0, 0.06) 0%, transparent 60%);
+[data-theme="dark"] .outcomesSection::before {
+  background: radial-gradient(ellipse at 50% 0%, rgba(255, 245, 0, 0.06) 0%, transparent 60%);
 }
 
-.projectCard {
-  display: block;
-  height: 100%;
-  cursor: pointer;
-  transition: all var(--duration-normal) var(--ease-standard);
-  text-decoration: none !important;
-  color: inherit;
-}
-
-.projectCardDisabled {
-  opacity: 0.7;
-  cursor: default;
-}
-
-.projectCardMain {
-  align-items: flex-start;
-  padding: 1.5rem;
-  text-align: left;
+.outcomesCard {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border-subtle);
+  border-radius: 1.25rem;
+  padding: 2rem;
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  transition: all var(--duration-normal) var(--ease-standard);
 }
 
-[data-theme="dark"] .projectCardMain {
+[data-theme="dark"] .outcomesCard {
   background: var(--glass-bg);
   border-color: var(--glass-border);
 }
 
-.projectCard:hover:not(.projectCardDisabled) .projectCardMain {
+.outcomesCardTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  margin: 0 0 1.25rem 0;
+}
+
+.outcomesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.outcomesList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.65rem 0;
+  color: var(--ifm-font-color-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  border-bottom: 1px solid var(--glass-border-subtle);
+}
+
+.outcomesList li:last-child {
+  border-bottom: none;
+}
+
+.outcomesList li svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--accent-gold);
+}
+
+[data-theme="dark"] .outcomesList li {
+  border-bottom-color: var(--glass-border);
+}
+
+.roleBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.roleBadge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: rgba(255, 245, 0, 0.08);
+  border: 1px solid rgba(255, 245, 0, 0.2);
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.roleBadge:hover {
+  background: rgba(255, 245, 0, 0.15);
+  border-color: rgba(255, 245, 0, 0.35);
+  transform: translateY(-2px);
+}
+
+[data-theme="dark"] .roleBadge {
+  background: rgba(255, 245, 0, 0.1);
+  border-color: rgba(255, 245, 0, 0.25);
+}
+
+@media screen and (max-width: 996px) {
+  .outcomesCard {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* ===================================
+   FINAL CTA SECTION
+   =================================== */
+.finalCtaSection {
+  background: var(--ifm-background-color);
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gold gradient glow at top */
+.finalCtaSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 100%;
+  background: radial-gradient(ellipse at 50% 0%, rgba(255, 245, 0, 0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+[data-theme="dark"] .finalCtaSection {
+  border-top-color: var(--glass-border);
+}
+
+[data-theme="dark"] .finalCtaSection::before {
+  background: radial-gradient(ellipse at 50% 0%, rgba(255, 245, 0, 0.08) 0%, transparent 60%);
+}
+
+.finalCtaCard {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border-subtle);
+  border-radius: 1.25rem;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.finalCtaCard:hover {
   border-color: var(--glass-border-accent);
   box-shadow: var(--shadow-lg), var(--glow-gold-subtle);
 }
 
-.projectHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 1rem;
-}
-
-.projectIconWrapper {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: rgba(255, 245, 0, 0.08);
-  border: 1px solid rgba(255, 245, 0, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--accent-gold);
-  transition: all var(--duration-normal) var(--ease-standard);
-}
-
-.projectCard:hover:not(.projectCardDisabled) .projectIconWrapper {
-  transform: scale(1.08);
-  background: rgba(255, 245, 0, 0.12);
-  border-color: rgba(255, 245, 0, 0.25);
-}
-
-/* Badges */
-.statusBadge {
-  font-size: 0.7rem;
-  background: var(--glass-bg);
-  color: var(--ifm-font-color-secondary);
-  padding: 4px 10px;
-  border-radius: 100px;
-  font-weight: 600;
-  border: 1px solid var(--glass-border-subtle);
-}
-
-[data-theme="dark"] .statusBadge {
+[data-theme="dark"] .finalCtaCard {
   background: var(--glass-bg);
   border-color: var(--glass-border);
 }
 
-.externalLinkIcon {
+[data-theme="dark"] .finalCtaCard:hover {
+  border-color: var(--glass-border-accent);
+}
+
+.finalCtaIcon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 245, 0, 0.08);
+  border: 1px solid rgba(255, 245, 0, 0.15);
+  border-radius: 1.25rem;
+  margin-bottom: 1.5rem;
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.finalCtaCard:hover .finalCtaIcon {
+  transform: scale(1.1);
+  background: rgba(255, 245, 0, 0.12);
+  border-color: rgba(255, 245, 0, 0.25);
+}
+
+.finalCtaTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--ifm-font-color-base);
+  margin: 0 0 0.75rem 0;
+}
+
+.finalCtaDescription {
   font-size: 1rem;
-  color: var(--ifm-color-emphasis-400);
-  transition: all var(--duration-fast) var(--ease-standard);
-}
-
-.projectCard:hover .externalLinkIcon {
-  transform: translate(2px, -2px);
-  color: var(--accent-gold);
-}
-
-.projectTitle {
-  font-size: 1.15rem;
-  margin-bottom: 0.5rem;
-}
-
-.projectDescription {
-  font-size: 0.9rem;
-  line-height: 1.55;
-}
-
-.ecosystemFooter {
-  text-align: center;
-  margin-top: 4rem;
-  position: relative;
-  z-index: 1;
-}
-
-.ecosystemFooterText {
+  line-height: 1.6;
   color: var(--ifm-font-color-secondary);
-  margin-bottom: 1rem;
+  margin: 0 0 1.5rem 0;
+  flex: 1;
+}
+
+@media screen and (max-width: 996px) {
+  .finalCtaCard {
+    margin-bottom: 1.5rem;
+  }
 }
 
 /* Phase Badge */

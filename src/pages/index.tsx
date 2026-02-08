@@ -4,34 +4,20 @@ import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   GraduationCap,
   Users,
   BookOpen,
-  Zap,
   Award,
   FileText,
   CheckCircle,
-  LayoutGrid,
-  Scale,
-  Mic,
-  Briefcase,
-  Heart,
-  User,
-  BarChart,
-  Terminal,
-  FlaskConical,
-  Eye,
-  Wifi,
-  Box,
   Sparkles,
-  ArrowRight,
-  Hammer,
-  TrendingUp,
+  Target,
+  AlertTriangle,
+  GitPullRequest,
 } from "lucide-react";
 
 import {
@@ -42,7 +28,6 @@ import {
 import styles from "./index.module.css";
 
 function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -78,9 +63,13 @@ function HomepageHeader() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className={styles.gradientText}>AI Engineering</span>
+            <span className={styles.heroTitleSecondary}>
+              The Open Curriculum for Becoming an
+            </span>
             <br />
-            <span className={styles.heroTitleSecondary}>Curriculum</span>
+            <span className={styles.gradientText}>
+              Entry-Level AI Engineer
+            </span>
           </motion.h1>
 
           <motion.p
@@ -89,9 +78,10 @@ function HomepageHeader() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Free, open-source learning materials for building production-ready
-            AI skills. Self-paced, community-driven, and designed for real-world
-            engineering.
+            Stop guessing what to learn next. HumbleBeeAI Open Curriculum is a
+            structured, role-aligned pathway built from free and open resources,
+            designed to turn self-study into measurable progress and real proof
+            of skill.
           </motion.p>
 
           <motion.div
@@ -102,20 +92,16 @@ function HomepageHeader() {
           >
             <Link className={styles.primaryButton} to="/docs">
               <BookOpen size={20} />
-              Browse Curriculum
+              Explore the Curriculum
             </Link>
             <a
-              href="#roadmap"
+              href="https://github.com/humblebeeai/int.academy-curriculum/blob/main/CONTRIBUTING.md"
+              target="_blank"
+              rel="noopener noreferrer"
               className={styles.secondaryButton}
-              onClick={(e) => {
-                e.preventDefault();
-                document
-                  .getElementById("roadmap")
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }}
             >
-              View Learning Path
-              <ArrowRight size={18} />
+              <GitPullRequest size={18} />
+              Contribute a Module
             </a>
           </motion.div>
         </motion.div>
@@ -127,37 +113,10 @@ function HomepageHeader() {
   );
 }
 
-// Feature Grid Component
-interface Feature {
-  icon: React.ElementType;
-  title: string;
-  description: string;
-}
-
-const philosophy: Feature[] = [
-  {
-    icon: Hammer,
-    title: "Learning by Doing",
-    description:
-      'We reject passive, "tutorial-only" learning. Every topic leads to hands-on exercises and real projects so you spend most of your time building, not just reading.',
-  },
-  {
-    icon: TrendingUp,
-    title: "Longitudinal Growth",
-    description:
-      "Expertise compounds. We revisit core ideas across phases in increasingly realistic settings, not once and done.",
-  },
-  {
-    icon: Users,
-    title: "Community-Driven",
-    description:
-      "Learn with peers, get help, and contribute improvements. The roadmap stays alive because the community keeps raising the bar.",
-  },
-];
-
-function FeatureGrid() {
+// Who This Is For Section
+function WhoThisIsForSection() {
   return (
-    <section className={styles.featureGridSection}>
+    <section className={clsx(styles.features, styles.whoSection)}>
       <div className="container">
         <motion.div
           className={styles.sectionHeader}
@@ -166,38 +125,233 @@ function FeatureGrid() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.sectionTitle}>Our Learning Philosophy</h2>
-          <p className={styles.sectionSubtitle}>
-            The principles that guide how we teach and how you learn.
-          </p>
+          <h2 className={styles.sectionTitle}>Who This Is For</h2>
         </motion.div>
 
-        <div className={styles.featureGrid}>
-          {philosophy.map((feature, index) => (
+        <div className="row">
+          <motion.div
+            className="col col--6"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <motion.div
-              key={index}
-              className={styles.featureGridCard}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -6, transition: { duration: 0.25 } }}
+              className={clsx(styles.featureCard, styles.whoCard)}
+              whileHover={{ y: -8 }}
+              transition={{ duration: 0.3 }}
             >
-              <div className={styles.featureGridIcon}>
-                <feature.icon size={24} />
+              <div className={styles.cardMain}>
+                <div
+                  className={styles.iconWrapper}
+                  style={{ color: "var(--accent-gold)" }}
+                >
+                  <GraduationCap size={40} strokeWidth={1.5} />
+                </div>
+                <Heading as="h3" className={styles.featureTitle}>
+                  Learners
+                </Heading>
+                <p className={styles.featureDescription}>
+                  For high school grads, university students, and career
+                  switchers who want a clear plan and portfolio-grade outputs.
+                </p>
               </div>
-              <h3 className={styles.featureGridTitle}>{feature.title}</h3>
-              <p className={styles.featureGridDescription}>
-                {feature.description}
-              </p>
             </motion.div>
-          ))}
+          </motion.div>
+
+          <motion.div
+            className="col col--6"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <motion.div
+              className={clsx(styles.featureCard, styles.whoCard)}
+              whileHover={{ y: -8 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className={styles.cardMain}>
+                <div
+                  className={styles.iconWrapper}
+                  style={{ color: "var(--accent-gold)" }}
+                >
+                  <Users size={40} strokeWidth={1.5} />
+                </div>
+                <Heading as="h3" className={styles.featureTitle}>
+                  Contributors
+                </Heading>
+                <p className={styles.featureDescription}>
+                  For experienced practitioners (5+ years) who want to help
+                  democratize AI competence by improving modules, projects, and
+                  evaluation standards.
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
   );
 }
 
+// About Section
+function AboutSection() {
+  return (
+    <section className={clsx(styles.features, styles.aboutSection)}>
+      <div className="container">
+        <motion.div
+          className={styles.sectionHeader}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className={styles.sectionTitle}>Why This Exists</h2>
+          <p className={styles.sectionSubtitle}>
+            Free content is everywhere. Structure is not.
+          </p>
+        </motion.div>
+
+        <div className="row">
+          <motion.div
+            className="col col--6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className={styles.aboutTextBlock}>
+              <p>
+                Most learners waste months because sequencing is unclear and
+                progress is not tied to evidence. This curriculum defines{" "}
+                <strong>what</strong> to learn, <strong>in what order</strong>,
+                and <strong>what proof to produce</strong>.
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="col col--6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <div className={styles.aboutCard}>
+              <h4 className={styles.aboutCardTitle}>What this is</h4>
+              <ul className={styles.aboutList}>
+                <li>
+                  <CheckCircle size={16} />
+                  A curriculum map with outcomes, proof artifacts, and a
+                  contributor framework
+                </li>
+              </ul>
+
+              <h4
+                className={clsx(styles.aboutCardTitle, styles.aboutCardTitleNot)}
+              >
+                What this is not
+              </h4>
+              <ul className={styles.aboutList}>
+                <li>
+                  <AlertTriangle size={16} />
+                  A promise that watching content makes you job-ready
+                </li>
+                <li>
+                  <AlertTriangle size={16} />
+                  The HumbleBeeAI Academy program (that is separate)
+                </li>
+              </ul>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Outcomes Section
+function OutcomesSection() {
+  const capabilities = [
+    "Deliver role-aligned work end-to-end",
+    "Evaluate correctly (metrics, baselines, error analysis)",
+    "Produce reproducible results (runnable repos, clear setup)",
+    "Write practical documentation and a short technical report",
+  ];
+
+  const roles = [
+    "Data Science",
+    "Computer Vision",
+    "NLP / LLM",
+    "Generative AI",
+    "AI Software Engineering",
+  ];
+
+  return (
+    <section className={clsx(styles.features, styles.outcomesSection)}>
+      <div className="container">
+        <motion.div
+          className={styles.sectionHeader}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className={styles.sectionTitle}>Target Outcomes</h2>
+          <p className={styles.sectionSubtitle}>
+            What "entry-level competence" means in this curriculum.
+          </p>
+        </motion.div>
+
+        <div className="row">
+          <motion.div
+            className="col col--7"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className={styles.outcomesCard}>
+              <h4 className={styles.outcomesCardTitle}>You can:</h4>
+              <ul className={styles.outcomesList}>
+                {capabilities.map((cap, i) => (
+                  <li key={i}>
+                    <Target size={16} />
+                    {cap}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="col col--5"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <div className={styles.outcomesCard}>
+              <h4 className={styles.outcomesCardTitle}>Roles supported:</h4>
+              <div className={styles.roleBadges}>
+                {roles.map((role, i) => (
+                  <span key={i} className={styles.roleBadge}>
+                    {role}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+
+// Curriculum vs Academy Section (kept)
 function CurriculumVsAcademySection() {
   return (
     <section className={clsx(styles.features, styles.curriculumVsAcademy)}>
@@ -361,6 +515,7 @@ function CurriculumVsAcademySection() {
   );
 }
 
+// FAQ data
 const faqItems = [
   {
     question: "Why is this curriculum free and open source?",
@@ -394,214 +549,67 @@ const faqItems = [
   },
 ];
 
-function EcosystemSection() {
-  const projects = [
-    {
-      title: "Smart Office",
-      desc: "Smart Workspace Solutions",
-      link: "https://smart-office.humblebee.ai/",
-      icon: LayoutGrid,
-    },
-    {
-      title: "Wakil AI",
-      desc: "Legal tech NLP assistant that simplifies legal workflows.",
-      link: "https://wakil.ai/",
-      icon: Scale,
-    },
-    {
-      title: "Kumush AI",
-      desc: "Voice-enabled natural language platform for conversational AI.",
-      link: "https://kumush.ai/",
-      icon: Mic,
-    },
-    {
-      title: "bRide",
-      desc: "Data-driven talent growth and workforce matching.",
-      link: "https://bride.humblebee.ai/",
-      icon: Briefcase,
-    },
-    {
-      title: "EnlightenQalb",
-      desc: "NLP-powered tool for culturally aligned mental wellness.",
-      link: "https://beeintel.ai/projects/enlighten-qalb",
-      icon: Heart,
-    },
-    {
-      title: "AI Avatar",
-      desc: "Generative AI platform creating personalized educational avatars.",
-      link: "https://avatar.humblebee.ai/",
-      icon: User,
-    },
-    {
-      title: "HStaff",
-      desc: "Team management dashboard with analytics for leaders.",
-      link: "https://hstaff.humblebee.ai/dashboard/talents",
-      icon: Users,
-    },
-    {
-      title: "Infer",
-      desc: "Production-ready ML evaluation engine with confidence intervals.",
-      link: "https://infer.humblebee.ai/",
-      icon: BarChart,
-    },
-    {
-      title: "LearnPrompting",
-      desc: "Comprehensive LLM prompting guide (Uzbek Translation).",
-      link: "https://learnprompting.uz/",
-      icon: Terminal,
-    },
-    {
-      title: "RISE",
-      desc: "Analytics and AI system to boost science and engineering teams.",
-      link: "-",
-      icon: FlaskConical,
-    },
-    {
-      title: "AntvisionAI",
-      desc: "Concept AI platform for advanced analytics and visual intelligence.",
-      link: "https://AntVision.ai",
-      icon: Eye,
-    },
-    {
-      title: "mPal",
-      desc: "Connected IoT lifestyle ecosystem.",
-      link: "-",
-      icon: Wifi,
-    },
-    {
-      title: "Customs",
-      desc: "NLP-driven tool for customs automation.",
-      link: "-",
-      icon: Box,
-    },
-  ];
-
-  // Animation variants for staggered children
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.5,
-        ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
-      },
-    },
-  };
-
+// Final CTA Section
+function FinalCTASection() {
   return (
-    <section className={clsx(styles.features, styles.ecosystemSection)}>
+    <section className={clsx(styles.features, styles.finalCtaSection)}>
       <div className="container">
-        <motion.div
-          className={styles.sectionHeader}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className={styles.sectionTitle}>HumbleBeeAI Ecosystem</h2>
-          <p className={styles.sectionSubtitle}>
-            Real-world AI products built by our community and engineers.
-          </p>
-        </motion.div>
-
-        <motion.div
-          className="row"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-        >
-          {projects.map((p, i) => {
-            const hasLink = p.link && p.link !== "-" && p.link !== "#";
-            const Icon = p.icon || Zap;
-
-            return (
-              <motion.div
-                key={i}
-                className="col col--4"
-                style={{ marginBottom: "1.5rem" }}
-                variants={itemVariants}
-              >
-                <motion.div
-                  className={clsx(
-                    styles.featureCard,
-                    styles.projectCard,
-                    !hasLink && styles.projectCardDisabled,
-                  )}
-                  onClick={() =>
-                    hasLink ? window.open(p.link, "_blank") : null
-                  }
-                  whileHover={hasLink ? { y: -8, scale: 1.02 } : {}}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div
-                    className={clsx(styles.cardMain, styles.projectCardMain)}
-                  >
-                    <div className={styles.projectHeader}>
-                      <div className={styles.projectIconWrapper}>
-                        <Icon size={24} />
-                      </div>
-                      {!hasLink && (
-                        <span className={styles.statusBadge}>Coming Soon</span>
-                      )}
-                      {hasLink && (
-                        <span className={styles.externalLinkIcon}>↗</span>
-                      )}
-                    </div>
-
-                    <h3
-                      className={clsx(styles.featureTitle, styles.projectTitle)}
-                    >
-                      {p.title}
-                    </h3>
-                    <p
-                      className={clsx(
-                        styles.featureDescription,
-                        styles.projectDescription,
-                      )}
-                    >
-                      {p.desc}
-                    </p>
-                  </div>
-                </motion.div>
-              </motion.div>
-            );
-          })}
-        </motion.div>
-
-        <motion.div
-          className={styles.ecosystemFooter}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-        >
-          <p className={styles.ecosystemFooterText}>
-            Part of the HumbleBeeAI Family
-          </p>
-          <a
-            href="https://humblebee.ai"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondaryButton}
+        <div className="row">
+          <motion.div
+            className="col col--6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Visit HumbleBeeAI
-            <span className={styles.arrow}>→</span>
-          </a>
-        </motion.div>
+            <div className={styles.finalCtaCard}>
+              <div
+                className={styles.finalCtaIcon}
+                style={{ color: "var(--accent-gold)" }}
+              >
+                <Sparkles size={32} />
+              </div>
+              <h3 className={styles.finalCtaTitle}>Learners</h3>
+              <p className={styles.finalCtaDescription}>
+                Follow the structure. Build proof. Show real competence.
+              </p>
+              <Link to="/docs" className={styles.primaryButton}>
+                <BookOpen size={20} />
+                Start With the Curriculum
+              </Link>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="col col--6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <div className={styles.finalCtaCard}>
+              <div
+                className={styles.finalCtaIcon}
+                style={{ color: "var(--accent-gold)" }}
+              >
+                <GitPullRequest size={32} />
+              </div>
+              <h3 className={styles.finalCtaTitle}>Contributors</h3>
+              <p className={styles.finalCtaDescription}>
+                Help keep the pathway sharp, open, and evidence-based.
+              </p>
+              <a
+                href="https://github.com/humblebeeai/int.academy-curriculum/blob/main/CONTRIBUTING.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.secondaryButton}
+              >
+                Submit a Contribution
+                <span className={styles.arrow}>→</span>
+              </a>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -615,13 +623,15 @@ export default function Home(): ReactNode {
     >
       <HomepageHeader />
       <main>
-        <FeatureGrid />
+        <WhoThisIsForSection />
+        <AboutSection />
+        <OutcomesSection />
         <section id="roadmap">
           <RoadmapShowcase />
         </section>
         <CurriculumVsAcademySection />
         <FAQSection items={faqItems} />
-        <EcosystemSection />
+        <FinalCTASection />
       </main>
     </Layout>
   );
