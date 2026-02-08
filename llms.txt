@@ -1,0 +1,33 @@
+# HumbleBeeAI Academy — Open AI Engineering Curriculum
+
+> A structured, role-aligned pathway from fundamentals to entry-level AI engineering competence. Free, open-source (CC BY-SA 4.0), built from curated open resources.
+
+## About
+
+HumbleBeeAI exists to cultivate elite-level ethical AI talent and democratize access to real AI engineering competence. This open curriculum provides clear sequencing, measurable milestones, and proof artifacts at every stage.
+
+The curriculum targets five entry-level roles: Data Scientist, Computer Vision Engineer, NLP/LLM Engineer, GenAI Engineer, and AI Software Engineer.
+
+## Curriculum Structure
+
+The default progression:
+
+1. **Engineering Fundamentals** (4 months, 250-310 hours) — Python, math, data skills, tooling
+2. **Soft Landing** (6 months, 174-251 hours):
+   - **Core Systems** — shared foundations: ML math, deep learning, networking, fullstack toolkit
+   - **Specialization Tracks** — role-based depth with capstone projects
+
+## Documentation
+
+- [Curriculum Overview](https://academy.humblebee.ai/docs): Mission, target outcomes, architecture
+- [Engineering Fundamentals](https://academy.humblebee.ai/docs/engineering-fundamentals): Computational thinking, calculus, probability, data engineering, IoT
+- [Soft Landing Program](https://academy.humblebee.ai/docs/softlanding): Core Systems and Specialization Tracks
+- [Core Systems](https://academy.humblebee.ai/docs/softlanding/core-systems): Math & ML, Advanced AI, Networking, Fullstack Toolkit
+- [Specialization Tracks](https://academy.humblebee.ai/docs/softlanding/specializations): Track overview and comparison
+- [Computer Vision Track](https://academy.humblebee.ai/docs/softlanding/specializations/computer-vision): CNNs, object detection, YOLO
+- [Data Science Track](https://academy.humblebee.ai/docs/softlanding/specializations/data-science): Statistics, evaluation, ML modeling
+- [NLP & LLMs Track](https://academy.humblebee.ai/docs/softlanding/specializations/nlp): Embeddings, transformers, RAG, agents, fine-tuning
+- [Generative AI Track](https://academy.humblebee.ai/docs/softlanding/specializations/generative-ai): Diffusion models, speech (ASR/TTS), multimodal
+- [AI Software Engineering Track](https://academy.humblebee.ai/docs/softlanding/specializations/software-engineering): APIs, databases, testing, DevOps, CI/CD
+- [Learning Resources](https://academy.humblebee.ai/docs/resources): Curated external resources
+- [GitHub Repository](https://github.com/humblebeeai/int.academy-curriculum): Source code and content

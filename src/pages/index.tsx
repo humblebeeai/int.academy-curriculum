@@ -363,19 +363,14 @@ function CurriculumVsAcademySection() {
 
 const faqItems = [
   {
-    question: "Is this curriculum really free?",
+    question: "Why is this curriculum free and open source?",
     answer:
-      "Yes. The curriculum is free to use. The entire curriculum is open source.",
-  },
-  {
-    question: "Is this the Academy?",
-    answer:
-      "No. The Academy is a separate program. This is the open-source curriculum that the Academy builds upon.",
+      "A world-class learning path should not be locked behind geography or budget. The open curriculum gives self-learners structure, sequence, and a clear standard for what \"good\" looks like. The Academy builds on the same roadmap with what self-learning usually lacks: mentor feedback, code reviews, accountability, and scenario projects that force real-world application.",
   },
   {
     question: 'What are "capstones"?',
     answer:
-      "They are internal projects designed to mirror real work. As you finish a module, you apply it immediately in the scenario project, then iterate based on review until it meets a production bar.",
+      "They are projects designed to mirror real work. As you finish a module, you apply it immediately in a capstone project, then iterate based on review until it meets a production bar.",
   },
   {
     question: "Does it guarantee a job?",
@@ -383,34 +378,19 @@ const faqItems = [
       "No. It helps you build inspectable proof of your skills, not completion claims.",
   },
   {
-    question: "Is there verification?",
+    question: "Are there paid options?",
     answer:
-      "Optional paid verification is available through exams and project reviews, but the curriculum itself stays free.",
-  },
-  {
-    question: "Can I get mentorship?",
-    answer:
-      "Optional hourly mentorship is available for blockers such as math, debugging, evaluation, and project design.",
+      "The curriculum is free. Optional paid verification (exams and project reviews) is available for learners who need a credible signal. Hourly mentorship is also available for blockers such as math, debugging, evaluation, and project design.",
   },
   {
     question: "Can I skip Engineering Fundamentals if I know Python?",
     answer:
-      'Maybe. We have a "Direct Entry" path for Soft Landing, but it requires passing a rigorous placement test. We find that 80% of "experienced" self-taught developers still have critical gaps in data engineering or math that Engineering Fundamentals covers. When in doubt, don\'t skip foundation.',
+      'Maybe. We have a "Direct Entry" path for Soft Landing, but it requires passing a rigorous placement test. We find that 80% of "experienced" self-taught developers still have critical gaps in data engineering or math that Engineering Fundamentals covers. When in doubt, don\'t skip it.',
   },
   {
     question: "Do I need a powerful computer?",
     answer:
-      "For Engineering Fundamentals, any laptop (Windows/Mac/Linux) released in the last 5-7 years is fine. For Soft Landing (Deep Learning), having an NVIDIA GPU is helpful but not required; we will show you how to use free cloud resources like Google Colab and Kaggle Kernels.",
-  },
-  {
-    question: "How do I get help if I'm stuck?",
-    answer:
-      "Check the documentation and FAQ first. Then search our Discord community history. Post a detailed question in the relevant Discord channel. Use the Issues tab on GitHub if you find a bug in the curriculum.",
-  },
-  {
-    question: "Why is this curriculum open source?",
-    answer:
-      "We keep this roadmap open because a world-class learning path should not be locked behind geography or budget. The open curriculum is valuable on its own: it gives self-learners structure, sequence, and a clear standard for what \"good\" looks like. The Academy builds on the same roadmap with what self-learning usually lacks: mentor feedback, code and design reviews, accountability, and internal scenario projects that force real-world application while you learn.",
+      "For Engineering Fundamentals, any laptop (Windows/Mac/Linux) released in the last 5-7 years is fine. For Soft Landing (Deep Learning), having an NVIDIA GPU is helpful but not required; we show you how to use free cloud resources like Google Colab and Kaggle Kernels.",
   },
 ];
 

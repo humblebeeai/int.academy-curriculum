@@ -149,10 +149,7 @@ const config: Config = {
               label: "Learning Resources",
               to: "/docs/resources",
             },
-            {
-              label: "Mentorship",
-              to: "/docs/mentorship",
-            },
+
           ],
         },
         {
