@@ -1,0 +1,209 @@
+# HumbleBeeAI Academy — Open AI Engineering Curriculum (Full Reference)
+
+> A structured, role-aligned pathway from fundamentals to entry-level AI engineering competence. Free, open-source (CC BY-SA 4.0), built from curated open resources.
+
+## Mission
+
+HumbleBeeAI exists to cultivate elite-level ethical AI talent and help humanity make the Earth a better place for everyone. This open curriculum democratizes access to real AI engineering competence by providing a structured pathway built from free, open resources.
+
+## Target Outcomes
+
+This curriculum helps learners develop entry-level, role-aligned competence in one of five roles:
+
+- Data Scientist
+- Computer Vision Engineer
+- NLP/LLM Engineer
+- GenAI Engineer
+- AI Software Engineer
+
+A learner demonstrates entry-level competence when they can:
+
+- Deliver role-aligned work end-to-end (problem framing to implementation and results)
+- Explain key technical decisions and tradeoffs clearly
+- Evaluate models correctly using appropriate metrics, baselines, and error analysis
+- Produce reproducible results with runnable repositories and clear setup instructions
+- Write practical documentation communicating approach, results, and limitations
+
+## Who This Is For
+
+**Learners:** High school graduates preparing for AI roles, undergraduates wanting industry-aligned progression, career switchers needing structured plans with measurable milestones.
+
+**Contributors:** Experienced practitioners (5+ years) who can curate open resources, write clear outcomes, exercises, and project specs.
+
+---
+
+## Curriculum Architecture
+
+### Phase 1: Engineering Fundamentals (4 months, 250-310 hours)
+
+Prevents the most common long-term failure: specializing too early.
+
+**Prerequisites:** English CEFR B2, secondary-level math, Python basics (Automate the Boring Stuff)
+
+#### Module 1: Computational Thinking (15-20 hours)
+- VS Code setup and configuration
+- Command line mastery (navigation, file ops, permissions) via Linux Journey
+- Algorithmic thinking via HackerRank Problem Solving
+- Deliverables: 15 HackerRank problems solved, can navigate directories, search with grep
+
+#### Module 2: Calculus & Linear Algebra (160-180 hours)
+- Calculus 1 (Khan Academy): limits, continuity, derivatives, applications
+- Linear Algebra (Khan Academy): vectors, matrices, transformations
+- 3Blue1Brown visual series for intuition
+- Deliverables: Khan Academy final exams >= 80%
+
+#### Module 3: Probability & Statistics (60-90 hours)
+- Khan Academy: distributions, inference, random variables, conditional probability, Bayes' rule
+- Deliverables: Khan Academy final exam >= 80%
+
+#### Module 4: Data Engineering (10-14 hours)
+- Pandas & data cleaning (Kaggle Micro-Course)
+- SQL (SELECT, JOIN, GROUP BY, subqueries, CTEs)
+- Git version control (Learn Git Branching)
+- Deliverables: Kaggle Pandas certificate, Git quiz >= 85%
+
+#### Module 5: IoT & Activation (4-7 hours)
+- Google Teachable Machine: code-free model training, live predictions
+- Edge AI & IoT Deployment on Raspberry Pi
+- Deliverables: Project reviewed and approved by mentor
+
+**Recommended Proof Artifacts:**
+- Problem-solving repo: 20-40 solved problems with explanations and clean commits
+- Data cleaning case study: one messy dataset, cleaned and validated, with report
+- Baseline modeling project: simple prediction task with correct splits and metrics
+- Fundamentals notes repo: personal notes demonstrating understanding
+
+---
+
+### Phase 2: Soft Landing (6 months, 174-251 hours)
+
+Shifts learners from "learning topics" to "behaving like an engineer." Two stages: Core Systems (shared) then Specialization Tracks (role-based).
+
+---
+
+### Stage 1: Core Systems (74-101 hours)
+
+Competence every AI engineer needs regardless of role.
+
+#### Module 1: Math & ML Fundamentals (20-25 hours)
+- Linear algebra intuition (3Blue1Brown)
+- Deep learning primitives (Andrew Ng Course 1 & 2): neurons, forward/backward propagation, loss functions
+- Classical ML: Linear/Logistic Regression, Decision Trees, Random Forests, SVMs
+- Evaluation metrics (Google ML Crash Course): Precision, Recall, F1-Score, ROC-AUC, Confusion Matrix
+
+#### Module 2: Advanced AI & Coding (38-53 hours)
+- Deep Learning & LLMs: CS231n Lectures 2-4, Karpathy's "A Deep Dive into LLMs"
+- PyTorch Engineering: UvA Deep Learning Tutorials (tensors, autograd, nn.Module, training loops)
+- Engineering Excellence: Clean Code (Ch. 1-10), LeetCode Programming Skills Study Plan
+- Deliverables: Implement and train neural networks in PyTorch, debug training failures, write maintainable ML code
+
+#### Module 3: Systems & Networking (4-6 hours)
+- Network fundamentals: switches, routers, TCP/IP, NetworkChuck series
+- Security & addressing: ports, firewall rules, IP addressing, subnetting, CIDR
+- Deliverables: Secure AI network architecture diagram, debug with ping/telnet
+
+#### Module 4: Fullstack Toolkit (12-17 hours)
+- Web stack: HTML, CSS, JavaScript, DOM
+- FastAPI: endpoints, Pydantic models, CORS, model serving
+- DevOps: Docker, Docker Compose, SSH, cloud deployment
+- Deliverables: Build and deploy a complete AI app (frontend + backend + Docker)
+
+---
+
+### Stage 2: Specialization Tracks
+
+After Core Systems, learners choose one track. Each includes a skills map, projects that produce proof, and evaluation expectations. Time: 100-150 hours per track plus capstone.
+
+---
+
+#### Track 1: Computer Vision (100-120 hours)
+
+**Topics:**
+- Core CV & Deep Learning: image representation, CNNs, filters, feature extraction, transfer learning (CS231n Lectures 4-7)
+- Hands-on PyTorch: tensor ops, nn.Module, training/eval workflows, GPU acceleration (UvA Tutorials 3-6)
+- Object Detection: bounding boxes, IoU, anchor boxes, one-stage vs two-stage, mAP (CS231n Lectures 8-14)
+- YOLO family: YOLOv1/v2 theory, YOLOv11 with Ultralytics
+
+**Capstone: Pokemon Card Border Detection System (10-14 days)**
+Build an automated system that detects card borders (outer and inner), performs perspective correction, returns corner coordinates, with a web UI and Docker containerization.
+- Deliverables: working codebase, README with architecture diagram, technical write-up, 10+ test images with results
+- Evaluation: Sufficient / Good / Excellent tiers
+
+---
+
+#### Track 2: Data Science
+
+**Topics:**
+- Inferential Statistics: hypothesis testing, ANOVA (Business Statistics textbook)
+- Evaluation Metrics: Precision, Recall, F1-Score, Brier Score, MCC
+- Unsupervised Learning: K-Means, DBSCAN, distance measures, cluster shapes (ISLR)
+- Visualization: Matplotlib, Seaborn, Plotly
+- Machine Learning: Stanford CS229, PCA, t-SNE
+
+**Capstone: AI-Powered Dynamic Hotel Pricing System (10-14 days)**
+Build a dynamic pricing system that analyzes booking patterns, monitors competitors, integrates external data (weather, events, holidays), and recommends optimal prices.
+- Deliverables: cleaned dataset with quality report, EDA notebook, web scraper, Prophet forecasting model, REST API with Swagger docs, technical documentation
+- Evaluation: Sufficient / Good / Excellent tiers
+
+---
+
+#### Track 3: NLP & LLMs
+
+**Topics:**
+- Text Representation & Classical NLP: tokenization, BoW, TF-IDF, n-grams (CS224N Lectures 1-2)
+- Word Embeddings: Word2Vec, GloVe, embedding geometry, bias detection
+- Attention & Transformers: self-attention, QKV, positional encoding, encoder/decoder
+- Large Language Models: next-token prediction, scaling laws, emergent behaviors, hallucinations (Karpathy "Building GPT", Rasbt "LLMs from Scratch")
+- Fine-Tuning: LoRA, QLoRA, PEFT, full fine-tuning vs parameter-efficient (Unsloth)
+- RAG & AI Agents: RAG pipelines, document chunking, vector databases, tool calling, multi-agent systems (LangChain, CrewAI)
+
+**Capstone: Chat2Action — ERPNext Task Assistant with RAG (7-12 days)**
+Build a chat-based assistant that performs CRUD task operations in ERPNext via REST APIs and provides a RAG-powered helpdesk grounded in ERPNext documentation.
+- Deliverables: working code (backend, ERP adapter, RAG module, frontend UI, Docker Compose), README with architecture diagram, technical write-up, demo video/screenshots
+- Evaluation: Sufficient / Good / Excellent tiers
+
+---
+
+#### Track 4: Generative AI (90-110 hours)
+
+**Topics:**
+- NLP Foundations: text representation, embeddings, CS224N, Word2Vec, attention, transformers, LLMs, nanoGPT, HuggingFace NLP Course, LoRA
+- Diffusion Models: VAEs, GANs, DDPM, DDIM, noise schedules, score matching, Stable Diffusion, U-Net, CLIP, ControlNet
+- Speech Technologies: audio fundamentals (spectrograms, MFCCs, librosa), ASR (Whisper, CTC loss, WER/CER), TTS (Tacotron, FastSpeech, HiFi-GAN, VITS, Bark, Coqui TTS, voice cloning)
+
+**Capstone: Video Translation Tool — English to Russian Automated Dubbing (10-14 days)**
+Build an automated video dubbing pipeline: extract audio, transcribe speech (ASR), translate to Russian (LLM), generate dubbed audio (TTS), assemble final video with synchronized audio.
+- Deliverables: Docker-containerized codebase, README with architecture diagram, technical write-up, 2-3 sample dubbed videos (30-60s)
+- Evaluation: Sufficient / Good / Excellent tiers
+
+---
+
+#### Track 5: AI Software Engineering (120-150 hours)
+
+**Topics:**
+- Networking: OSI model, TCP/IP, DNS, HTTP/HTTPS, load balancing, CDNs, SSL/TLS
+- Architecture: 12-Factor App, Beyond 12-Factor, cloud-native patterns
+- API Design: REST, FastAPI, Pydantic, JWT auth, OpenAPI/Swagger
+- Database Design: ERD, normalization (1NF-3NF), indexing, SQL joins, transactions, ACID, Alembic migrations
+- Testing: pytest, unit/integration/e2e, TDD, 80%+ coverage
+- DevOps: GitHub Actions CI/CD, Docker, Docker Compose
+- Optional: Mobile (Flutter/Swift) or Full-Stack Web (React/Vue)
+
+**Capstone: Microservice-Based Blogging Platform (10-12 weeks)**
+Build a microservice-based blogging platform with customizable UI, group-based permissions, Markdown support, RESTful APIs, and NGINX load balancing.
+- Deliverables: source code (backend microservices, frontend, NGINX config), UI customization guide, database schema, README, technical write-up
+- Evaluation: Sufficient / Good / Excellent tiers across Architecture, Functionality, UI Customization, Code Quality, API Design, Documentation
+
+---
+
+## Licensing
+
+- HumbleBeeAI-authored curriculum content: CC BY-SA 4.0
+- Source code (React components, config, scripts): Unlicensed / All rights reserved
+- Third-party resources: owned by original creators under their respective licenses
+
+## Links
+
+- Website: https://academy.humblebee.ai
+- GitHub: https://github.com/humblebeeai/int.academy-curriculum
+- Organization: https://humblebee.ai

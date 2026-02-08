@@ -1,65 +1,161 @@
 # Architecture & Development Guide
 
-This document explains the technical architecture of the HumbleBeeAI Academy Curriculum repository and how to work with it effectively.
+This document describes the technical architecture of the HumbleBeeAI Academy Curriculum site and how to work with it.
 
-## 🏗️ Tech Stack
+## Tech Stack
 
-This project is a static site generator built with:
+- **[Docusaurus v3](https://docusaurus.io/)** — static site generator (React-based SPA)
+- **[React 19](https://react.dev/)** — UI components and custom pages
+- **[MDX](https://mdxjs.com/)** — Markdown with embedded React components for curriculum content
+- **[TypeScript ~5.6](https://www.typescriptlang.org/)** — type safety for config and components
+- **[Node.js >= 20](https://nodejs.org/)** — build-time runtime
+- **[Docker](https://www.docker.com/) + [Nginx](https://nginx.org/)** — production deployment (multi-stage build)
 
-* **[Docusaurus v3](https://docusaurus.io/)**: The core framework. It converts MDX files into a React-based single-page application (SPA).
-* **[React](https://react.dev/)**: Used for the UI components and custom pages.
-* **[MDX](https://mdxjs.com/)**: Allows us to write content in Markdown while embedding interactive React components.
-* **[TypeScript](https://www.typescriptlang.org/)**: Used for type safety in configuration and components.
-* **[Node.js](https://nodejs.org/)**: The runtime environment for building the site.
+Key dependencies:
+- `@docusaurus/theme-mermaid` — Mermaid diagram rendering
+- `framer-motion` — scroll and interaction animations
+- `lucide-react` — icon library
+- `@tsparticles/react` + `@tsparticles/slim` — particle background effects
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 /
-├── .github/                # GitHub templates and workflows
-├── docs/                   # 📚 THE CURRICULUM CONTENT
-│   ├── engineering-fundamentals/   # Engineering Fundamentals content
-│   ├── softlanding/        # Soft Landing Program content
-│   └── ...
-├── src/                    # ⚛️ Source code
-│   ├── components/         # Reusable React components (buttons, cards, etc.)
-│   ├── css/                # Global styles (custom.css)
-│   └── pages/              # Custom React pages (e.g., Landing Page)
-├── static/                 # Static assets (images, downloadable files)
-├── docusaurus.config.ts    # ⚙️ Main configuration file (nav, footer, plugins)
-├── sidebars.ts             # 🧭 Sidebar navigation structure
-└── package.json            # Dependencies and scripts
+├── docs/                                    # Curriculum content (MDX)
+│   ├── index.mdx                            # Curriculum Overview (landing page for /docs)
+│   ├── resources.mdx                        # Curated external learning resources
+│   ├── engineering-fundamentals/            # Phase 1: Engineering Fundamentals
+│   │   ├── _category_.yml
+│   │   ├── index.mdx                        # EF introduction, prerequisites, time estimates
+│   │   ├── computational-thinking.mdx       # Module 1: CLI, Git, algorithms
+│   │   ├── calculus-algebra.mdx             # Module 2: Calculus & Linear Algebra
+│   │   ├── probability-statistics.mdx       # Module 3: Probability & Statistics
+│   │   ├── data-engineering.mdx             # Module 4: Pandas, SQL, Git
+│   │   └── iot-activation.mdx               # Module 5: IoT & Teachable Machine
+│   └── softlanding/                         # Phase 2: Soft Landing Program
+│       ├── _category_.yml
+│       ├── index.mdx                        # SL introduction, prerequisites, two-stage overview
+│       ├── core-systems.mdx                 # Core Systems overview (4 modules)
+│       ├── core-systems/                    # Stage 1: Core Systems
+│       │   ├── _category_.yml
+│       │   ├── 01-math-ml.mdx               # Math & ML Fundamentals
+│       │   ├── 02-advanced-ai.mdx           # Advanced AI & Coding
+│       │   ├── 03-networking.mdx            # Systems & Networking
+│       │   └── 04-fullstack-ops.mdx         # Fullstack Toolkit
+│       └── specializations/                 # Stage 2: Specialization Tracks
+│           ├── _category_.yml
+│           ├── index.mdx                    # Track overview and comparison
+│           ├── computer-vision/
+│           │   ├── index.mdx                # CV track curriculum
+│           │   └── capstone.mdx             # Pokemon Card Border Detection
+│           ├── data-science/
+│           │   ├── index.mdx                # DS track curriculum
+│           │   └── capstone.mdx             # Hotel Dynamic Pricing
+│           ├── nlp/
+│           │   ├── index.mdx                # NLP & LLMs track curriculum
+│           │   └── capstone.mdx             # Chat2Action (ERPNext Assistant)
+│           ├── generative-ai/
+│           │   ├── index.mdx                # GenAI track curriculum
+│           │   └── capstone.mdx             # Video Translation (EN→RU)
+│           └── software-engineering/
+│               ├── index.mdx                # AI SWE track curriculum
+│               └── capstone.mdx             # Microservice Blogging Platform
+├── src/                                     # React source code
+│   ├── css/
+│   │   └── custom.css                       # Global CSS variables, theming
+│   ├── pages/
+│   │   ├── index.tsx                        # Custom landing page
+│   │   └── index.module.css
+│   └── components/                          # Reusable React components
+│       ├── index.ts                         # Barrel export
+│       └── ...                              # See Component Library below
+├── static/img/                              # Images (track banners, favicons, logos)
+├── docusaurus.config.ts                     # Site config (navbar, footer, plugins)
+├── sidebars.ts                              # Sidebar navigation (autogenerated)
+├── package.json                             # Dependencies and scripts
+├── tsconfig.json                            # TypeScript config
+├── Dockerfile                               # Multi-stage: node:22-alpine → nginx:alpine
+├── compose.yml                              # Docker Compose (port 8000)
+├── nginx.conf                               # SPA fallback + gzip
+├── LICENSE                                  # CC BY-SA 4.0 (content), unlicensed (code)
+├── llms.txt                                 # LLM-friendly project summary
+└── llms-full.txt                            # LLM-friendly full curriculum details
 ```
 
-## 🛠️ Build Process
+## Component Library
 
-1. **Development**: `npm start`
-    * Starts a local Webpack dev server with hot reloading.
-    * Files are served from memory.
+All components live in `src/components/` and are re-exported from `src/components/index.ts`.
 
-2. **Production Build**: `npm run build`
-    * Docusaurus generates static HTML files for every route in the `build/` directory.
-    * These files are ready to be served by any static hosting provider (Vercel, Netlify, GitHub Pages).
-    * Static files are optimized (minified, code-split).
+MDX files import them via:
+```tsx
+import { ResourceCard, TimeEstimate } from "@site/src/components";
+```
 
-## 🧩 Component Library
+### Content Components (used in MDX docs)
 
-We use a custom set of MDX components to enhance the learning experience. These are located in `src/components/`.
+| Component | Props | Purpose |
+|---|---|---|
+| `ResourceCard` | `title`, `type` (`video`/`article`/`course`/`documentation`), `url`, `duration?`, `description?`, `difficulty?` | Clickable card for an external learning resource with type icon, difficulty badge, and duration |
+| `TimeEstimate` | `minHours`, `maxHours`, `breakdownBy?` (Record<string, number>) | Time estimation card with proportional bar chart showing hour distribution |
+| `SkillShowcase` | `skills` (array of `{ iconString, title, description }`) | Grid of skill cards with dynamically-resolved lucide-react icons |
+| `CodeComparison` | `before`, `after`, `language?`, `titleA?`, `titleB?` | Tabbed before/after code comparison using Docusaurus CodeBlock |
+| `ConceptMap` | `concepts` (array of `{ id, name, type }`), `connections` (array of `{ from, to }`) | Mermaid diagram from structured data with color-coded nodes and legend |
+| `DifficultyTag` | `level?`, `time?`, `children?` | Inline colored tag indicating difficulty level |
 
-* **`<LearningPath />`**: Visualizes progress through modules.
-* **`<Quiz />`**: Interactive quizzes (client-side).
-* **`<TerminalBlock />`**: Mimics a terminal window for code examples.
+### Page Components (used on the homepage)
 
-*(Note: Component library expansion is planned for Soft Landing)*
+| Component | Purpose |
+|---|---|
+| `FAQSection` | Animated accordion FAQ with framer-motion entrance animations |
+| `ParticleBackground` | Interactive particle animation background using tsparticles |
+| `LearningRoadmap` | Horizontal 3-phase learning roadmap (superseded by RoadmapShowcase) |
+| `RoadmapShowcase` | Section wrapper for the learning journey map on the homepage |
+| `roadmap/JourneyMap` | Vertical winding SVG-path journey map with expandable phase cards |
+| `roadmap/roadmapData.ts` | Centralized phase data (titles, durations, skills, links) |
+| `HomepageFeatures` | Default Docusaurus scaffold feature grid (unused, retained as artifact) |
 
-## 🌍 Internationalization (i18n)
+## Key Configuration Files
 
-*Currently in Setup Phase.*
-Docusaurus supports i18n out of the box. We plan to support Spanish (es) and Korean (ko).
-Translations will live in `i18n/[locale]/docusaurus-plugin-content-docs/current`.
+- **`docusaurus.config.ts`** — site title, navbar, footer, plugins (mermaid, sitemap), metadata, color mode, edit URL
+- **`sidebars.ts`** — uses autogeneration from docs folder structure (`{ type: "autogenerated", dirName: "." }`)
+- **`src/css/custom.css`** — CSS variables for theming (dark/light mode), global utility classes
 
-## 🤝 Key Configuration Files
+## Development
 
-* **`docusaurus.config.ts`**: The brain of the site. Modify this to change the navbar, footer, site title, or add plugins.
-* **`sidebars.ts`**: Controls the left navigation menu. When adding a new module, you usually need to register it here.
-* **`src/css/custom.css`**: Global CSS variables and utility classes. We use standard CSS variables for theming (dark/light mode).
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm start
+
+# Production build
+npm run build
+
+# Serve production build locally
+npm run serve
+
+# Type check
+npm run typecheck
+```
+
+## Deployment
+
+The site is deployed as a Docker container behind Nginx:
+
+```bash
+# Build and run
+docker compose up --build -d
+
+# Access at http://localhost:8000
+```
+
+The Dockerfile uses a multi-stage build:
+1. **Build stage** (`node:22-alpine`) — runs `npm ci && npm run build`
+2. **Runtime stage** (`nginx:alpine`) — serves static output with SPA fallback routing and gzip
+
+## Licensing
+
+- **Educational content** (`docs/`, `.md`/`.mdx` files): [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- **Source code** (components, config, scripts): Unlicensed / All rights reserved
+- **Third-party resources** referenced in the curriculum: owned by their original creators under their respective licenses

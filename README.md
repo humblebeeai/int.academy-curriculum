@@ -71,7 +71,7 @@ Tracks:
 - Computer Vision (classification, detection)
 - Data Science (statistical modeling, BI)
 - NLP & LLMs (transformers, fine-tuning, agents)
-- MLOps (distributed systems, scalability, production ML)
+- AI Software Engineering (distributed systems, scalability, production ML)
 
 ---
 

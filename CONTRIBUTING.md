@@ -1,97 +1,128 @@
-# Contributing to HumbleBeeAI Academy Curriculum
+# Contributing to the HumbleBeeAI Open Curriculum
 
-First off, thank you for considering contributing to HumbleBeeAI Academy! It's people like you that make this open-source curriculum such a powerful tool for the community.
+Thank you for your interest in contributing. This curriculum is community-built and designed to stay current, high-quality, and useful for learners worldwide.
 
-We welcome contributions from everyone. By participating in this project, you agree to abide by our [Code of Conduct](CODE_OF_CONDUCT.md).
+## Who Can Contribute
 
-## ⚡ Quick Start
+We welcome contributions from experienced practitioners who can raise the quality of the curriculum:
 
-1. **Fork** the repository.
-2. **Clone** your fork:
+- **5+ years** relevant experience (industry or research)
+- Ability to curate open resources responsibly
+- Willingness to write clear outcomes, exercises, and project specs
 
-    ```bash
-    git clone https://github.com/YOUR_USERNAME/int.academy-curriculum.git
-    cd int.academy-curriculum
-    ```
+## What You Can Contribute
 
-3. **Install dependencies**:
+**In scope:**
 
-    ```bash
-    npm ci
-    ```
+- Content additions and module improvements
+- Projects and case studies
+- Exercises and rubrics
+- Templates for evaluation and reporting
+- Track improvements and restructuring
+- Bug fixes and corrections
 
-4. **Start the dev server**:
+**Out of scope:**
 
-    ```bash
-    npm start
-    ```
+- Certification answer keys or internal evaluation materials
+- Proprietary or paywalled resources
 
-5. Open `http://localhost:3000`.
+## Contribution Principles
 
-## 🛠️ Development Workflow
+1. **Outcome-first** — State what the learner can do after finishing.
+2. **Proof-first** — Every module needs exercises or a project, ideally both.
+3. **Role alignment** — Map additions to a specialization track or to Core Systems.
+4. **Maintainability** — Prefer clean structure and strong modules over long lists.
+5. **Respect creators** — Reference open resources correctly. Do not re-publish restricted content.
 
-We follow a standard GitHub Flow.
+## Quality Gates
 
-1. **Branching**: always create a new branch for your work.
-    * `feat/` for new content or features
-    * `fix/` for bug fixes or typo corrections
-    * `docs/` for documentation updates
+A contribution should satisfy all four gates:
 
-    ```bash
-    git checkout -b feat/advanced-nlp-module
-    ```
+### Gate A: Credible Authorship
 
-2. **Committing**: We prefer [Conventional Commits](https://www.conventionalcommits.org/).
-    * `feat: add new vector database module`
-    * `fix: correct broken link in math primer`
-    * `docs: update installation guide`
+5+ years relevant experience or equivalent research background.
 
-3. **Pull Requests**:
-    * Submit PRs to the `main` branch.
-    * Keep PRs small and focused. One concept per PR is best.
-    * Fill out the PR template completely.
+### Gate B: Open and Reusable Sources
 
-## 📝 Content Guidelines
+- Resources must be free and open.
+- HumbleBeeAI-authored text and structure is CC BY-SA 4.0.
+- Third-party resources remain under their own licenses.
 
-### Writing Style
+### Gate C: Exercises and Projects Included
 
-* **Voice**: Senior Engineer Mentor. Supportive, authoritative, direct.
-* **Clarity**: Explain "Why" before "How".
-* **Brevity**: Respect the reader's time. Use bullets and diagrams.
+- Clear deliverables
+- Acceptance criteria
+- Suggested evaluation approach
 
-### Technical format
+### Gate D: Evaluation Clarity
 
-* Use **MDX** for all content.
-* Use our **AutoIcon** system for lists (e.g., `- ✅ ...`).
-* **Images**: Place in `static/img/`. Use focused, high-res diagrams.
-* **Code**: Use fenced code blocks with language specification: ` ```python `.
+- Metrics or rubric
+- Common pitfalls and failure cases
 
-## 📐 Coding Standards
+## Module Submission Template
 
-This project uses:
+When proposing a new module or significant addition, use this structure:
 
-* **Prettier** for formatting.
-* **TypeScript** for config and components.
-* **Docusaurus v3** strict mode.
-
-Run checks before pushing:
-
-```bash
-npm run typecheck
-npm run build
+```
+Module title:
+Role mapping:          (Core Systems / CV / DS / NLP / GenAI / SWE)
+Prerequisites:
+Learning outcomes:     (measurable — what the learner can do)
+Open resources:        (with notes on why each is chosen)
+Exercises:             (expected outputs)
+Project spec:          (deliverables, acceptance criteria)
+Evaluation rubric:     (or checklist)
+Time estimate:         (rough hours)
+Common pitfalls:
 ```
 
-## ⚖️ License & IP
+## How to Submit
 
-By contributing, you agree that:
+### GitHub Pull Requests (preferred)
 
-1. Your **content contributions** (guides, educational text) are licensed under **CC-BY-SA 4.0**.
-2. Your **code contributions** (components, scripts) are licensed under **MIT**.
-3. You have the right to contribute this work.
+1. Fork the repository.
+2. Create a feature branch (`feat/module-name`).
+3. Make your changes following the template and principles above.
+4. Submit a pull request with a clear description of what you are adding and why.
 
-## 🐛 Reporting Isues
+### Proposals and Discussion
 
-* **Security**: See [SECURITY.md](SECURITY.md).
-* **Bugs/Typos**: File a [GitHub Issue](https://github.com/humblebeeai/int.academy-curriculum/issues).
+For larger additions or structural changes, open a GitHub Issue first to discuss scope and alignment before writing a full module.
 
-Thank you for helping us build the world's best open-source AI engineering curriculum! 🐝
+## Local Development Setup
+
+See [ARCHITECTURE.md](./ARCHITECTURE.md) for the full tech stack and project structure.
+
+**Quick start:**
+
+```bash
+git clone https://github.com/humblebeeai/int.academy-curriculum.git
+cd int.academy-curriculum
+npm install
+npm start
+```
+
+The site runs at `http://localhost:3000` with hot reload. Curriculum content lives in the `docs/` directory as `.mdx` files.
+
+## Content Guidelines
+
+- Curriculum content uses [MDX](https://mdxjs.com/) (Markdown with React components).
+- Use the existing custom components (`ResourceCard`, `TimeEstimate`, `SkillShowcase`, etc.) for consistency. See [ARCHITECTURE.md](./ARCHITECTURE.md) for the full component library.
+- Keep language direct and clear. Avoid filler.
+- Time estimates should be honest and based on real experience.
+
+## Review Process
+
+1. Submit a PR or open an issue with your proposal.
+2. Maintainers review for alignment with contribution principles and quality gates.
+3. Feedback and iteration as needed.
+4. Merge and publish with version notes.
+
+Final approvals are handled by HumbleBeeAI department heads and core maintainers.
+
+## Licensing
+
+- **Educational content** (`docs/`, `.md`/`.mdx` files): [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- **Source code** (components, config, scripts): Unlicensed / All rights reserved
+
+By submitting a contribution, you agree that your content contributions are licensed under CC BY-SA 4.0.
