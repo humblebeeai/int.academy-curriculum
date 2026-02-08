@@ -343,9 +343,10 @@ function OutcomesSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.sectionTitle}>What You'll Build</h2>
+          <h2 className={styles.sectionTitle}>Target Outcomes</h2>
           <p className={styles.sectionSubtitle}>
-            Each track produces specific, measurable outcomes and a capstone project.
+            Each track produces specific, measurable outcomes and a capstone
+            project.
           </p>
         </motion.div>
 
@@ -362,7 +363,7 @@ function OutcomesSection() {
                 key={track.id}
                 className={clsx(
                   styles.tabButton,
-                  activeTab === index && styles.tabButtonActive
+                  activeTab === index && styles.tabButtonActive,
                 )}
                 onClick={() => setActiveTab(index)}
               >
