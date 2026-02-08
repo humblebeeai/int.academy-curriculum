@@ -1008,6 +1008,7 @@
   overflow-x: auto;
   padding-bottom: 0.5rem;
   scrollbar-width: thin;
+  justify-content: center;
 }
 
 .tabBar::-webkit-scrollbar {

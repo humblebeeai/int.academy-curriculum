@@ -77,9 +77,7 @@ function HomepageHeader() {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             Stop guessing what to learn next. HumbleBeeAI Open Curriculum is a
-            structured, role-aligned pathway built from free and open resources,
-            designed to turn self-study into measurable progress and real proof
-            of skill.
+            structured, role-aligned pathway built from free and open resources.
           </motion.p>
 
           <motion.div
@@ -343,7 +341,7 @@ function OutcomesSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.sectionTitle}>Target Outcomes</h2>
+          <h2 className={styles.sectionTitle}>Expected Outcomes</h2>
           <p className={styles.sectionSubtitle}>
             Each track produces specific, measurable outcomes and a capstone
             project.
@@ -594,7 +592,7 @@ const faqItems = [
   {
     question: "Can I skip Engineering Fundamentals if I know Python?",
     answer:
-      'Maybe. We have a "Direct Entry" path for Soft Landing, but it requires passing a rigorous placement test. We find that 80% of "experienced" self-taught developers still have critical gaps in data engineering or math that Engineering Fundamentals covers. When in doubt, don\'t skip it.',
+      'Maybe. We have a "Direct Entry" path for Soft Landing, but it requires passing a rigorous placement test. We find that 80% of "experienced" self-taught developers still have critical gaps in data manipulation or math that Engineering Fundamentals covers. When in doubt, don\'t skip it.',
   },
   {
     question: "Do I need a powerful computer?",

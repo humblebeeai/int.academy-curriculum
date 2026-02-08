@@ -45,10 +45,10 @@ HumbleBeeAI was built to eliminate these barriers through structured learning, h
 **Outcome:** Strong fundamentals in tools, math, and data workflows so you can build confidently without getting stuck on basics.
 
 Modules:
-- Computational Thinking
+- Terminal & Algorithmic Basics
 - Calculus & Algebra
 - Probability & Statistics
-- Data Engineering
+- Data Manipulation
 - IoT Activation
 
 ### Soft Landing
@@ -58,7 +58,7 @@ Modules:
 
 Modules:
 - Math & ML Fundamentals (PyTorch, optimization, gradient descent)
-- Advanced AI & Coding (deep learning, transformers/LLMs, clean code)
+- Intro to AI Engineering (deep learning, transformers/LLMs, clean code)
 - Systems & Networking (deployment fundamentals, security, cloud mental models)
 - Fullstack Toolkit (APIs, databases, product-shaped systems)
 
@@ -152,11 +152,11 @@ From the repo root:
 ### Editing Curriculum Content
 
 - Most curriculum content lives under the `docs/` directory as `.mdx` files:
-  - Engineering Fundamentals: `docs/engineering-fundamentals/index.mdx`, `docs/engineering-fundamentals/computational-thinking.mdx`, `docs/engineering-fundamentals/calculus-algebra.mdx`, etc.
+  - Engineering Fundamentals: `docs/engineering-fundamentals/index.mdx`, `docs/engineering-fundamentals/terminal-algorithmic-basics.mdx`, `docs/engineering-fundamentals/calculus-algebra.mdx`, etc.
   - Softlanding / Core Systems: `docs/softlanding/core-systems/**/*.mdx`
   - Specializations: `docs/softlanding/specializations/**/*.mdx`
   - Shared resources: `docs/resources.mdx`, `docs/index.mdx`, etc.
-- With the dev server running, changes you make to these files will hot-reload in your browser (for example, editing `docs/engineering-fundamentals/computational-thinking.mdx` updates the corresponding Engineering Fundamentals module page).
+- With the dev server running, changes you make to these files will hot-reload in your browser (for example, editing `docs/engineering-fundamentals/terminal-algorithmic-basics.mdx` updates the corresponding Engineering Fundamentals module page).
 - For style and component usage guidelines, see `AI_CONTEXT.md`.
 - For contribution workflow (issues/PRs, licensing), see the **Contributing** section below.
 
