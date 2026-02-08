@@ -3,12 +3,7 @@
 import { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import Link from "@docusaurus/Link";
-import {
-  Clock,
-  CheckCircle,
-  ArrowRight,
-  MapPin,
-} from "lucide-react";
+import { Clock, CheckCircle, ArrowRight, MapPin } from "lucide-react";
 import { phases } from "./roadmapData";
 import styles from "./JourneyMap.module.css";
 
@@ -16,6 +11,9 @@ export function JourneyMap() {
   const [expandedPhase, setExpandedPhase] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, margin: "-80px" });
+
+  // Calculate positions for pins (based on 600 height with 3 phases)
+  const pinPositions = [5, 40, 67];
 
   return (
     <div className={styles.journeyContainer} ref={containerRef}>
@@ -39,26 +37,92 @@ export function JourneyMap() {
             <stop offset="100%" stopColor="var(--accent-orange)" />
           </linearGradient>
         </defs>
-        {/* Background path */}
+        {/* White border outline */}
         <path
+          className="road-border"
           d="M 50 0 C 80 80, 20 120, 50 200 C 80 280, 20 320, 50 400 C 80 480, 20 520, 50 600"
           fill="none"
-          stroke="var(--ifm-color-emphasis-200)"
-          strokeWidth="2"
-          strokeDasharray="8 4"
+          stroke="#ffffff"
+          strokeWidth="20"
+          strokeLinecap="round"
+          opacity="0.3"
         />
-        {/* Animated path */}
+        {/* Dark road base */}
+        <path
+          className="road-base"
+          d="M 50 0 C 80 80, 20 120, 50 200 C 80 280, 20 320, 50 400 C 80 480, 20 520, 50 600"
+          fill="none"
+          stroke="#2a2a2a"
+          strokeWidth="16"
+          strokeLinecap="round"
+        />
+        {/* White dashed line */}
+        <path
+          className="road-dashes"
+          d="M 50 0 C 80 80, 20 120, 50 200 C 80 280, 20 320, 50 400 C 80 480, 20 520, 50 600"
+          fill="none"
+          stroke="#ffffff"
+          strokeWidth="2"
+          strokeDasharray="6 10"
+          strokeLinecap="round"
+          opacity="0.9"
+        />
+        {/* Animated yellow dashed path */}
         <motion.path
+          className="road-animated"
           d="M 50 0 C 80 80, 20 120, 50 200 C 80 280, 20 320, 50 400 C 80 480, 20 520, 50 600"
           fill="none"
           stroke="url(#journeyGradient)"
-          strokeWidth="3"
+          strokeWidth="2"
+          strokeDasharray="6 10"
           strokeLinecap="round"
           initial={{ pathLength: 0 }}
           animate={isInView ? { pathLength: 1 } : {}}
           transition={{ duration: 2, ease: "easeOut", delay: 0.3 }}
         />
       </svg>
+
+      {/* Pin Markers on the Road */}
+      <div className={styles.pinsContainer}>
+        {phases.map((phase, index) => (
+          <motion.div
+            key={phase.id}
+            className={styles.pinWrapper}
+            style={
+              {
+                top: `${pinPositions[index]}%`,
+                "--phase-color": phase.color,
+              } as React.CSSProperties
+            }
+            initial={{ scale: 0, y: 30 }}
+            animate={isInView ? { scale: 1, y: 0 } : {}}
+            transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 12,
+              delay: 0.6 + index * 0.25,
+            }}
+          >
+            <motion.div
+              className={styles.pinMarker}
+              animate={
+                isInView
+                  ? {
+                      y: [0, -8, 0],
+                    }
+                  : {}
+              }
+              transition={{
+                duration: 0.6,
+                delay: 1.2 + index * 0.25,
+                ease: "easeOut",
+              }}
+            >
+              <MapPin size={24} />
+            </motion.div>
+          </motion.div>
+        ))}
+      </div>
 
       {/* Phase Stops */}
       <div className={styles.phasesColumn}>
@@ -78,26 +142,6 @@ export function JourneyMap() {
                 ease: [0.25, 0.46, 0.45, 0.94],
               }}
             >
-              {/* Pin marker on the path */}
-              <motion.div
-                className={styles.pinMarker}
-                style={
-                  {
-                    "--phase-color": phase.color,
-                  } as React.CSSProperties
-                }
-                initial={{ scale: 0 }}
-                animate={isInView ? { scale: 1 } : {}}
-                transition={{
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 20,
-                  delay: 0.6 + index * 0.25,
-                }}
-              >
-                <MapPin size={20} />
-              </motion.div>
-
               {/* Phase Card */}
               <motion.div
                 className={`${styles.journeyCard} ${isExpanded ? styles.journeyCardExpanded : ""}`}
@@ -106,9 +150,7 @@ export function JourneyMap() {
                     "--phase-color": phase.color,
                   } as React.CSSProperties
                 }
-                onClick={() =>
-                  setExpandedPhase(isExpanded ? null : phase.id)
-                }
+                onClick={() => setExpandedPhase(isExpanded ? null : phase.id)}
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.2 }}
               >
@@ -144,9 +186,7 @@ export function JourneyMap() {
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.25 }}
                     >
-                      <p className={styles.description}>
-                        {phase.description}
-                      </p>
+                      <p className={styles.description}>{phase.description}</p>
 
                       <div className={styles.skillChecks}>
                         {phase.skills.map((skill, i) => (

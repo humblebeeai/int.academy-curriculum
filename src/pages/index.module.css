@@ -845,14 +845,36 @@
   height: 100%;
   display: flex;
   align-items: center;
-  padding: 2rem 1rem;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, rgba(245, 197, 24, 0.08) 0%, rgba(245, 197, 24, 0.02) 100%);
+  border-left: 4px solid var(--accent-gold);
+  border-radius: 0 1.25rem 1.25rem 0;
+  position: relative;
+}
+
+.aboutTextBlock::before {
+  content: '"';
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-size: 4rem;
+  color: var(--accent-gold);
+  opacity: 0.3;
+  font-family: Georgia, serif;
+  line-height: 1;
 }
 
 .aboutTextBlock p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: var(--ifm-font-color-secondary);
+  font-size: 1.2rem;
+  line-height: 1.9;
+  color: var(--ifm-font-color-base);
   margin: 0;
+  font-weight: 500;
+}
+
+.aboutTextBlock strong {
+  color: var(--accent-gold);
+  font-weight: 700;
 }
 
 .aboutCard {
@@ -914,7 +936,19 @@
 
 @media screen and (max-width: 996px) {
   .aboutTextBlock {
-    padding: 1rem 0 0;
+    padding: 2rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .aboutTextBlock::before {
+    font-size: 3rem;
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .aboutTextBlock p {
+    font-size: 1.1rem;
+    line-height: 1.8;
   }
 }
 
@@ -1365,10 +1399,10 @@
 }
 
 /* ===================================
-   CURRICULUM vs ACADEMY SECTION
+   MENTORSHIP vs ACADEMY SECTION
    =================================== */
 
-.curriculumVsAcademy {
+.mentorshipVsAcademy {
   padding: var(--section-padding-y) 0;
   background: var(--ifm-background-surface-color);
   border-top: 1px solid var(--ifm-color-emphasis-200);
@@ -1376,7 +1410,7 @@
 }
 
 /* Subtle pattern overlay */
-.curriculumVsAcademy::before {
+.mentorshipVsAcademy::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -1390,16 +1424,16 @@
   pointer-events: none;
 }
 
-[data-theme="dark"] .curriculumVsAcademy {
+[data-theme="dark"] .mentorshipVsAcademy {
   border-top-color: var(--glass-border);
 }
 
-[data-theme="dark"] .curriculumVsAcademy::before {
+[data-theme="dark"] .mentorshipVsAcademy::before {
   opacity: 0.1;
 }
 
 @media screen and (max-width: 996px) {
-  .curriculumVsAcademy {
+  .mentorshipVsAcademy {
     padding: var(--section-padding-y-mobile) 0;
   }
 }
@@ -1504,7 +1538,7 @@
 }
 
 /* Note Box */
-.curriculumNote {
+.mentorshipNote {
   margin-top: 3rem;
   padding: 2rem 2.5rem;
   background: var(--glass-bg);
@@ -1517,7 +1551,7 @@
   z-index: 1;
 }
 
-.curriculumNote::before {
+.mentorshipNote::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -1527,12 +1561,12 @@
   pointer-events: none;
 }
 
-[data-theme="dark"] .curriculumNote {
+[data-theme="dark"] .mentorshipNote {
   background: var(--glass-bg);
   border-color: rgba(255, 245, 0, 0.2);
 }
 
-.curriculumNote p {
+.mentorshipNote p {
   position: relative;
   z-index: 1;
   margin: 0.75rem 0;
@@ -1541,15 +1575,15 @@
   font-size: 1rem;
 }
 
-.curriculumNote p:first-child {
+.mentorshipNote p:first-child {
   margin-top: 0;
 }
 
-.curriculumNote p:last-child {
+.mentorshipNote p:last-child {
   margin-bottom: 0;
 }
 
-.curriculumNote strong {
+.mentorshipNote strong {
   color: var(--accent-gold);
   font-weight: 700;
 }
@@ -1561,11 +1595,11 @@
     padding: 2rem 1.5rem;
   }
 
-  .curriculumNote {
+  .mentorshipNote {
     padding: 1.5rem;
   }
 
-  .curriculumNote p {
+  .mentorshipNote p {
     font-size: 0.95rem;
   }
 }
