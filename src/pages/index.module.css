@@ -1000,6 +1000,106 @@
   border-bottom-color: var(--glass-border);
 }
 
+/* Tab Switcher Styles */
+.tabBar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scrollbar-width: thin;
+}
+
+.tabBar::-webkit-scrollbar {
+  height: 4px;
+}
+
+.tabBar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tabBar::-webkit-scrollbar-thumb {
+  background: var(--glass-border-subtle);
+  border-radius: 2px;
+}
+
+.tabButton {
+  flex-shrink: 0;
+  padding: 0.75rem 1.25rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border-subtle);
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ifm-font-color-secondary);
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-standard);
+  white-space: nowrap;
+}
+
+.tabButton:hover {
+  background: rgba(255, 245, 0, 0.08);
+  border-color: rgba(255, 245, 0, 0.25);
+  color: var(--accent-gold);
+}
+
+.tabButtonActive {
+  background: rgba(255, 245, 0, 0.15);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+[data-theme="dark"] .tabButton {
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
+}
+
+[data-theme="dark"] .tabButton:hover {
+  background: rgba(255, 245, 0, 0.1);
+  border-color: rgba(255, 245, 0, 0.3);
+}
+
+[data-theme="dark"] .tabButtonActive {
+  background: rgba(255, 245, 0, 0.2);
+  border-color: var(--accent-gold);
+}
+
+.tabContent {
+  position: relative;
+}
+
+.tabPanel {
+  width: 100%;
+}
+
+.capstoneNote {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--glass-border-subtle);
+  font-size: 0.9rem;
+  color: var(--ifm-font-color-secondary);
+}
+
+.capstoneNote strong {
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+
+[data-theme="dark"] .capstoneNote {
+  border-top-color: var(--glass-border);
+}
+
+@media screen and (max-width: 576px) {
+  .tabBar {
+    gap: 0.4rem;
+  }
+
+  .tabButton {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
 .roleBadges {
   display: flex;
   flex-wrap: wrap;
