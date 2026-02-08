@@ -64,12 +64,10 @@ function HomepageHeader() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <span className={styles.heroTitleSecondary}>
-              The Open Curriculum for Becoming an
+              Open Curriculum for Becoming an
             </span>
             <br />
-            <span className={styles.gradientText}>
-              Entry-Level AI Engineer
-            </span>
+            <span className={styles.gradientText}>AI Engineer</span>
           </motion.h1>
 
           <motion.p
@@ -242,21 +240,23 @@ function AboutSection() {
               <h4 className={styles.aboutCardTitle}>What this is</h4>
               <ul className={styles.aboutList}>
                 <li>
-                  <CheckCircle size={16} />
-                  A curriculum map with outcomes, proof artifacts, and a
-                  contributor framework
+                  <CheckCircle size={16} />A curriculum map with outcomes, proof
+                  artifacts, and a contributor framework
                 </li>
               </ul>
 
               <h4
-                className={clsx(styles.aboutCardTitle, styles.aboutCardTitleNot)}
+                className={clsx(
+                  styles.aboutCardTitle,
+                  styles.aboutCardTitleNot,
+                )}
               >
                 What this is not
               </h4>
               <ul className={styles.aboutList}>
                 <li>
-                  <AlertTriangle size={16} />
-                  A promise that watching content makes you job-ready
+                  <AlertTriangle size={16} />A promise that watching content
+                  makes you job-ready
                 </li>
                 <li>
                   <AlertTriangle size={16} />
@@ -271,21 +271,66 @@ function AboutSection() {
   );
 }
 
-// Outcomes Section
+// Outcomes Section with Tabs
 function OutcomesSection() {
-  const capabilities = [
-    "Deliver role-aligned work end-to-end",
-    "Evaluate correctly (metrics, baselines, error analysis)",
-    "Produce reproducible results (runnable repos, clear setup)",
-    "Write practical documentation and a short technical report",
-  ];
+  const [activeTab, setActiveTab] = useState(0);
 
-  const roles = [
-    "Data Science",
-    "Computer Vision",
-    "NLP / LLM",
-    "Generative AI",
-    "AI Software Engineering",
+  const tracks = [
+    {
+      id: "nlp",
+      label: "NLP & LLM",
+      outcomes: [
+        "Build reliable NLP systems with proper evaluation",
+        "Create RAG-grounded LLM applications",
+        "Design multi-step agent/tool workflows",
+        "Know when to prompt vs RAG vs fine-tune",
+      ],
+      capstone: "Chat2Action — ERPNext Task Assistant with RAG Helpdesk",
+    },
+    {
+      id: "cv",
+      label: "Computer Vision",
+      outcomes: [
+        "Build/train/evaluate vision models with clean pipelines",
+        "Apply transfer learning systematically",
+        "Deliver practical CV applications with evidence",
+        "Modern detection and segmentation workflows",
+      ],
+      capstone: "Pokemon Card Border Detection",
+    },
+    {
+      id: "genai",
+      label: "Generative AI",
+      outcomes: [
+        "Build complete GenAI apps across text, image, audio",
+        "Work with diffusion models and efficiency techniques (LoRA)",
+        "Evaluate generative outputs for reliability",
+        "Optimize inference for real-time use",
+      ],
+      capstone: "Video Translation Tool — English to Russian",
+    },
+    {
+      id: "ds",
+      label: "Data Science",
+      outcomes: [
+        "Defensible statistical analysis and modeling",
+        "Choose correct metrics for real-world constraints",
+        "End-to-end pipelines with time series/forecasting",
+        "Communicate results to technical and non-technical audiences",
+      ],
+      capstone: "Hotel Dynamic Pricing Challenge",
+    },
+    {
+      id: "se",
+      label: "AI Software Engineering",
+      outcomes: [
+        "Deploy backend services with clean APIs and database design",
+        "Containerize multi-service systems",
+        "CI/CD, testing, and monitoring discipline",
+        "Ship production-grade systems",
+      ],
+      capstone: "Blogging Platform — Microservices with Customizable UI",
+    },
   ];
 
   return (
@@ -298,58 +343,66 @@ function OutcomesSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.sectionTitle}>Target Outcomes</h2>
+          <h2 className={styles.sectionTitle}>What You'll Build</h2>
           <p className={styles.sectionSubtitle}>
-            What "entry-level competence" means in this curriculum.
+            Each track produces specific, measurable outcomes and a capstone project.
           </p>
         </motion.div>
 
-        <div className="row">
-          <motion.div
-            className="col col--7"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div className={styles.outcomesCard}>
-              <h4 className={styles.outcomesCardTitle}>You can:</h4>
-              <ul className={styles.outcomesList}>
-                {capabilities.map((cap, i) => (
-                  <li key={i}>
-                    <Target size={16} />
-                    {cap}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          {/* Tab Bar */}
+          <div className={styles.tabBar}>
+            {tracks.map((track, index) => (
+              <button
+                key={track.id}
+                className={clsx(
+                  styles.tabButton,
+                  activeTab === index && styles.tabButtonActive
+                )}
+                onClick={() => setActiveTab(index)}
+              >
+                {track.label}
+              </button>
+            ))}
+          </div>
 
-          <motion.div
-            className="col col--5"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <div className={styles.outcomesCard}>
-              <h4 className={styles.outcomesCardTitle}>Roles supported:</h4>
-              <div className={styles.roleBadges}>
-                {roles.map((role, i) => (
-                  <span key={i} className={styles.roleBadge}>
-                    {role}
-                  </span>
-                ))}
+          {/* Tab Content */}
+          <div className={styles.tabContent}>
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+              className={styles.tabPanel}
+            >
+              <div className={styles.outcomesCard}>
+                <h4 className={styles.outcomesCardTitle}>
+                  {tracks[activeTab].label} — By the end, you can:
+                </h4>
+                <ul className={styles.outcomesList}>
+                  {tracks[activeTab].outcomes.map((outcome, i) => (
+                    <li key={i}>
+                      <Target size={16} />
+                      {outcome}
+                    </li>
+                  ))}
+                </ul>
+                <div className={styles.capstoneNote}>
+                  <strong>Capstone:</strong> {tracks[activeTab].capstone}
+                </div>
               </div>
-            </div>
-          </motion.div>
-        </div>
+            </motion.div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
 }
-
-
 
 // Curriculum vs Academy Section (kept)
 function CurriculumVsAcademySection() {
@@ -520,7 +573,7 @@ const faqItems = [
   {
     question: "Why is this curriculum free and open source?",
     answer:
-      "A world-class learning path should not be locked behind geography or budget. The open curriculum gives self-learners structure, sequence, and a clear standard for what \"good\" looks like. The Academy builds on the same roadmap with what self-learning usually lacks: mentor feedback, code reviews, accountability, and scenario projects that force real-world application.",
+      'A world-class learning path should not be locked behind geography or budget. The open curriculum gives self-learners structure, sequence, and a clear standard for what "good" looks like. The Academy builds on the same roadmap with what self-learning usually lacks: mentor feedback, code reviews, accountability, and scenario projects that force real-world application.',
   },
   {
     question: 'What are "capstones"?',
