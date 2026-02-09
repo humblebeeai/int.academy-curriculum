@@ -173,7 +173,7 @@ From the repo root:
 
 ## License
 
-- Curriculum content: **CC BY-SA 4.0**
+- Curriculum content: **CC BY-NC-SA 4.0**
 - Code in this repo: **Unlicensed**
 
 ---
