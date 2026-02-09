@@ -38,13 +38,9 @@ const config: Config = {
         docs: {
           path: "docs",
           sidebarPath: "./sidebars.ts",
-          editUrl:
-            "https://github.com/humblebeeai/int.academy-curriculum/edit/main/docs/",
         },
         blog: {
           showReadingTime: true,
-          editUrl:
-            "https://github.com/humblebeeai/int.academy-curriculum/edit/main/website/blog/",
         },
         theme: {
           customCss: "./src/css/custom.css",
