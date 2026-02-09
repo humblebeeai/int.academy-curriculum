@@ -38,13 +38,9 @@ const config: Config = {
         docs: {
           path: "docs",
           sidebarPath: "./sidebars.ts",
-          editUrl:
-            "https://github.com/humblebeeai/int.academy-curriculum/edit/main/docs/",
         },
         blog: {
           showReadingTime: true,
-          editUrl:
-            "https://github.com/humblebeeai/int.academy-curriculum/edit/main/website/blog/",
         },
         theme: {
           customCss: "./src/css/custom.css",
@@ -170,7 +166,7 @@ const config: Config = {
         <div class="oer-license">
           <p>
             <strong>Open Educational Resource</strong><br/>
-            Content licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>. 
+            Content licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. 
             Code is unlicensed.
           </p>
           <p>
