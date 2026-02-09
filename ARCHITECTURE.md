@@ -156,6 +156,6 @@ The Dockerfile uses a multi-stage build:
 
 ## Licensing
 
-- **Educational content** (`docs/`, `.md`/`.mdx` files): [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- **Educational content** (`docs/`, `.md`/`.mdx` files): [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 - **Source code** (components, config, scripts): Unlicensed / All rights reserved
 - **Third-party resources** referenced in the curriculum: owned by their original creators under their respective licenses
