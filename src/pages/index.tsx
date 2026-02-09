@@ -219,10 +219,9 @@ function AboutSection() {
           >
             <div className={styles.aboutTextBlock}>
               <p>
-                Most learners waste months because sequencing is unclear and
-                progress is not tied to evidence. This curriculum defines{" "}
-                <strong>what</strong> to learn, <strong>in what order</strong>,
-                and <strong>what proof to produce</strong>.
+                We turn scattered resources into a clear path by organizing what
+                to learn, in what order, and where hands-on projects help connect
+                theory to practice.
               </p>
             </div>
           </motion.div>
@@ -238,8 +237,8 @@ function AboutSection() {
               <h4 className={styles.aboutCardTitle}>What this is</h4>
               <ul className={styles.aboutList}>
                 <li>
-                  <CheckCircle size={16} />A curriculum map with outcomes, proof
-                  artifacts, and a contributor framework
+                  <CheckCircle size={16} />A structured AI learning roadmap with
+                  curated references and optional projects.
                 </li>
               </ul>
 
@@ -253,12 +252,19 @@ function AboutSection() {
               </h4>
               <ul className={styles.aboutList}>
                 <li>
-                  <AlertTriangle size={16} />A promise that watching content
-                  makes you job-ready
+                  <AlertTriangle size={16} />A job guarantee.
                 </li>
                 <li>
                   <AlertTriangle size={16} />
-                  The HumbleBeeAI Academy program (that is separate)
+                  Not the HumbleBeeAI Academy program (separate).
+                </li>
+              </ul>
+
+              <h4 className={styles.aboutCardTitle}>Contribute</h4>
+              <ul className={styles.aboutList}>
+                <li>
+                  <CheckCircle size={16} />Help us keep it sharp: improve
+                  modules, add resources, propose projects
                 </li>
               </ul>
             </div>
@@ -341,10 +347,10 @@ function OutcomesSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.sectionTitle}>Expected Outcomes</h2>
+          <h2 className={styles.sectionTitle}>Role-Based Tracks</h2>
           <p className={styles.sectionSubtitle}>
-            Each track produces specific, measurable outcomes and a capstone
-            project.
+            Each track builds role-specific capability through guided topics and
+            a final capstone project.
           </p>
         </motion.div>
 
@@ -403,7 +409,7 @@ function OutcomesSection() {
   );
 }
 
-// On Demand Mentorship Section
+// Mentorship & Programs Section
 function OnDemandMentorshipSection() {
   return (
     <section className={clsx(styles.features, styles.mentorshipSection)}>
@@ -415,15 +421,15 @@ function OnDemandMentorshipSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.sectionTitle}>On-Demand Mentorship</h2>
+          <h2 className={styles.sectionTitle}>Mentorship & Programs</h2>
           <p className={styles.sectionSubtitle}>
-            Stuck on a concept? Need code review or career guidance? Book a session with experienced AI practitioners.
+            Get the level of support you need - from a single expert session to an intensive, cohort-based training environment.
           </p>
         </motion.div>
 
         <div className="row">
           <motion.div
-            className="col col--4"
+            className="col col--6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -439,38 +445,32 @@ function OnDemandMentorshipSection() {
                   className={styles.iconWrapper}
                   style={{ color: "var(--accent-gold)" }}
                 >
-                  <Target size={40} strokeWidth={1.5} />
+                  <Users size={40} strokeWidth={1.5} />
                 </div>
                 <Heading as="h3" className={styles.featureTitle}>
-                  Technical Deep Dives
+                  On-Demand Mentorship
                 </Heading>
                 <p className={styles.featureDescription}>
-                  Get unstuck on complex topics: transformer architectures, model debugging, evaluation metrics, or optimization techniques.
+                  Book a 1-on-1 session with experienced AI practitioners to get unblocked, review your code, or plan your next steps.
                 </p>
                 <ul className={styles.comparisonList}>
                   <li>
-                    <CheckCircle size={16} /> 1-on-1 sessions with domain experts
+                    <CheckCircle size={16} /> Technical deep dives (LLMs, evaluation, debugging, optimization)
                   </li>
                   <li>
-                    <CheckCircle size={16} /> Debug your model or pipeline
+                    <CheckCircle size={16} /> Code and project review (architecture, best practices, production considerations)
                   </li>
                   <li>
-                    <CheckCircle size={16} /> Clarify theoretical concepts
+                    <CheckCircle size={16} /> Career guidance (portfolio review, interview prep, specialization direction)
                   </li>
                 </ul>
-                <p className={styles.mentorshipPrice}>Prices coming soon</p>
-                <a
-                  href="mailto:contact@humblebee.ai"
-                  className={styles.mentorshipButton}
-                >
-                  Get notified
-                </a>
+                <p className={styles.mentorshipNote}>Booking opens soon</p>
               </div>
             </motion.div>
           </motion.div>
 
           <motion.div
-            className="col col--4"
+            className="col col--6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -486,67 +486,36 @@ function OnDemandMentorshipSection() {
                   className={styles.iconWrapper}
                   style={{ color: "var(--accent-gold)" }}
                 >
-                  <FileText size={40} strokeWidth={1.5} />
+                  <GraduationCap size={40} strokeWidth={1.5} />
                 </div>
                 <Heading as="h3" className={styles.featureTitle}>
-                  Code & Project Review
+                  HumbleBeeAI Academy
                 </Heading>
                 <p className={styles.featureDescription}>
-                  Submit your code or capstone project for expert feedback on architecture, best practices, and production readiness.
+                  Apply for an intensive training environment with structured progression, mentorship, and guided project work.
                 </p>
                 <ul className={styles.comparisonList}>
                   <li>
-                    <CheckCircle size={16} /> Architecture feedback
+                    <CheckCircle size={16} /> Structured learning path and weekly cadence
                   </li>
                   <li>
-                    <CheckCircle size={16} /> Code quality review
+                    <CheckCircle size={16} /> Mentorship and continuous feedback loops
                   </li>
                   <li>
-                    <CheckCircle size={16} /> Production readiness check
+                    <CheckCircle size={16} /> Hands-on projects and case studies
+                  </li>
+                  <li>
+                    <CheckCircle size={16} /> Community and accountability
                   </li>
                 </ul>
-                <p className={styles.mentorshipPrice}>Prices coming soon</p>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          <motion.div
-            className="col col--4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <motion.div
-              className={clsx(styles.featureCard, styles.mentorshipCard)}
-              whileHover={{ y: -8 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className={styles.cardMain}>
-                <div
-                  className={styles.iconWrapper}
-                  style={{ color: "var(--accent-gold)" }}
-                >
-                  <Users size={40} strokeWidth={1.5} />
+                <div className={styles.mentorshipButtonWrapper}>
+                  <Link
+                    to="https://academy.humblebee.ai"
+                    className={styles.secondaryButton}
+                  >
+                    Apply to the Academy
+                  </Link>
                 </div>
-                <Heading as="h3" className={styles.featureTitle}>
-                  Career Guidance
-                </Heading>
-                <p className={styles.featureDescription}>
-                  Navigate your AI career path: portfolio review, interview prep, specialization advice, and industry insights.
-                </p>
-                <ul className={styles.comparisonList}>
-                  <li>
-                    <CheckCircle size={16} /> Portfolio review
-                  </li>
-                  <li>
-                    <CheckCircle size={16} /> Interview preparation
-                  </li>
-                  <li>
-                    <CheckCircle size={16} /> Career path planning
-                  </li>
-                </ul>
-                <p className={styles.mentorshipPrice}>Prices coming soon</p>
               </div>
             </motion.div>
           </motion.div>

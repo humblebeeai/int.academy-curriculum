@@ -852,17 +852,7 @@
   position: relative;
 }
 
-.aboutTextBlock::before {
-  content: '"';
-  position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
-  font-size: 4rem;
-  color: var(--accent-gold);
-  opacity: 0.3;
-  font-family: Georgia, serif;
-  line-height: 1;
-}
+
 
 .aboutTextBlock p {
   font-size: 1.2rem;
@@ -1586,6 +1576,49 @@
 .mentorshipNote strong {
   color: var(--accent-gold);
   font-weight: 700;
+}
+
+/* Mentorship section - left aligned body content only */
+.mentorshipCard .cardMain {
+  display: flex;
+  flex-direction: column;
+}
+
+.mentorshipCard .featureDescription,
+.mentorshipCard .comparisonList {
+  text-align: left;
+  width: 100%;
+}
+
+.mentorshipCard .comparisonList {
+  padding-left: 0;
+  list-style: none;
+  flex: 1;
+}
+
+.mentorshipButtonWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+.mentorshipNote {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background: var(--glass-bg);
+  color: var(--ifm-font-color-secondary) !important;
+  border: 1px solid var(--glass-border);
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  cursor: default;
+  user-select: none;
 }
 
 /* Responsive adjustments */
