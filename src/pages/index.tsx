@@ -11,7 +11,6 @@ import {
   GraduationCap,
   Users,
   BookOpen,
-
   FileText,
   CheckCircle,
   Sparkles,
@@ -220,8 +219,8 @@ function AboutSection() {
             <div className={styles.aboutTextBlock}>
               <p>
                 We turn scattered resources into a clear path by organizing what
-                to learn, in what order, and where hands-on projects help connect
-                theory to practice.
+                to learn, in what order, and where hands-on projects help
+                connect theory to practice.
               </p>
             </div>
           </motion.div>
@@ -263,8 +262,9 @@ function AboutSection() {
               <h4 className={styles.aboutCardTitle}>Contribute</h4>
               <ul className={styles.aboutList}>
                 <li>
-                  <CheckCircle size={16} />Help us keep it sharp: improve
-                  modules, add resources, propose projects
+                  <CheckCircle size={16} />
+                  Help us keep it sharp: improve modules, add resources, propose
+                  projects
                 </li>
               </ul>
             </div>
@@ -423,7 +423,8 @@ function OnDemandMentorshipSection() {
         >
           <h2 className={styles.sectionTitle}>Mentorship & Programs</h2>
           <p className={styles.sectionSubtitle}>
-            Get the level of support you need - from a single expert session to an intensive, cohort-based training environment.
+            Get the level of support you need - from a single expert session to
+            an intensive, cohort-based training environment.
           </p>
         </motion.div>
 
@@ -451,17 +452,21 @@ function OnDemandMentorshipSection() {
                   On-Demand Mentorship
                 </Heading>
                 <p className={styles.featureDescription}>
-                  Book a 1-on-1 session with experienced AI practitioners to get unblocked, review your code, or plan your next steps.
+                  Book a 1-on-1 session with experienced AI practitioners to get
+                  unblocked, review your code, or plan your next steps.
                 </p>
                 <ul className={styles.comparisonList}>
                   <li>
-                    <CheckCircle size={16} /> Technical deep dives (LLMs, evaluation, debugging, optimization)
+                    <CheckCircle size={16} /> Technical deep dives (LLMs,
+                    evaluation, debugging, optimization)
                   </li>
                   <li>
-                    <CheckCircle size={16} /> Code and project review (architecture, best practices, production considerations)
+                    <CheckCircle size={16} /> Code and project review
+                    (architecture, best practices, production considerations)
                   </li>
                   <li>
-                    <CheckCircle size={16} /> Career guidance (portfolio review, interview prep, specialization direction)
+                    <CheckCircle size={16} /> Career guidance (portfolio review,
+                    interview prep, specialization direction)
                   </li>
                 </ul>
                 <p className={styles.mentorshipNote}>Booking opens soon</p>
@@ -492,14 +497,17 @@ function OnDemandMentorshipSection() {
                   HumbleBeeAI Academy
                 </Heading>
                 <p className={styles.featureDescription}>
-                  Apply for an intensive training environment with structured progression, mentorship, and guided project work.
+                  Apply for an intensive training environment with structured
+                  progression, mentorship, and guided project work.
                 </p>
                 <ul className={styles.comparisonList}>
                   <li>
-                    <CheckCircle size={16} /> Structured learning path and weekly cadence
+                    <CheckCircle size={16} /> Structured learning path and
+                    weekly cadence
                   </li>
                   <li>
-                    <CheckCircle size={16} /> Mentorship and continuous feedback loops
+                    <CheckCircle size={16} /> Mentorship and continuous feedback
+                    loops
                   </li>
                   <li>
                     <CheckCircle size={16} /> Hands-on projects and case studies
@@ -520,7 +528,6 @@ function OnDemandMentorshipSection() {
             </motion.div>
           </motion.div>
         </div>
-
       </div>
     </section>
   );

@@ -1,8 +1,8 @@
 ---
 sidebar_position: 1
-sidebar_label: 1. Math & ML Fundamentals
-title: Math & ML Fundamentals
-description: Linear Algebra, Calculus, and Basic Models
+sidebar_label: 1. ML Fundamentals
+title: ML Fundamentals
+description: Deep Learning Primitives, Classical Models, and Evaluation
 ---
 
 import {
@@ -19,64 +19,29 @@ import {
   FileText,
 } from "lucide-react";
 
-# <Calculator /> Math & ML Fundamentals
+# <Calculator /> ML Fundamentals
 
 ## <Lightbulb /> What You'll Build Here
 
-Machine learning isn't magic; it's just math (mostly multiplication and derivatives) scaling up.
-
-This module peels back the layers of libraries like PyTorch. You will understand **how a single neuron thinks**, how it learns from mistakes (gradients), and why we structure data as vectors and matrices.
+This module introduces the core concepts behind machine learning. You'll understand **how a single neuron thinks**, how it learns from mistakes (gradients), and how classical ML models work under the hood.
 
 :::tip 💭 Real Talk
-You can invoke `model.fit()` without knowing this. But you cannot **debug** a model that refuses to learn, or optimize an architecture, without speaking the language of Linear Algebra.
+You can invoke `model.fit()` without knowing this. But you cannot **debug** a model that refuses to learn, or optimize an architecture, without understanding these fundamentals.
 :::
 
 <TimeEstimate
   minHours={20}
   maxHours={25}
   breakdownBy={{
-    "Linear Algebra Intuition": 5,
-    "Deep Learning Primitives": 7,
-    "Classical ML Models": 6,
+    "Deep Learning Primitives": 10,
+    "Classical ML Models": 8,
     "Evaluation Metrics": 5,
   }}
 />
 
 ---
 
-## <BookOpen /> 1. Mathematics: The Language of AI
-
-**Before diving into code, you need the language.** The focus here is on **intuition**, not manual calculation. You won't be solving 100 exercises on paper; you'll be building mental models of high-dimensional space.
-
-### Linear Algebra
-
-<ResourceCard
-  type="video"
-  title="3Blue1Brown: Essence of Linear Algebra"
-  url="https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab"
-  duration="3-4 hours"
-  difficulty="beginner"
-  why="The gold standard for visual intuition. You'll actually SEE how matrices transform space instead of just memorizing 'row times column'."
-/>
-
-**Key Concepts:**
-
-- Vectors as arrows vs. data points
-- Matrix multiplication as linear transformation
-- Eigenvectors are just "invariant axes" of rotation/stretching
-
-**Action Items:**
-
-<div className="mdx-checklist">
-  <label className="mdx-checklist-item">
-    <input type="checkbox" />
-    <span>
-      Watched the full playlist (don't skip the exercises in your head!)
-    </span>
-  </label>
-</div>
-
-### Deep Learning Primitives
+## <BookOpen /> 1. Deep Learning Primitives
 
 <ResourceCard
   type="course"
@@ -84,7 +49,7 @@ You can invoke `model.fit()` without knowing this. But you cannot **debug** a mo
   url="https://www.youtube.com/watch?v=CS4cs9xVecg&list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0&index=1"
   duration="8-10 hours"
   difficulty="intermediate"
-  why="Andrew Ng explains the 'magic' of Backpropagation better than anyone. This connects the math to the actual mechanism of learning."
+  why="Andrew Ng explains the 'magic' of Backpropagation better than anyone. This connects the theory to the actual mechanism of learning."
 />
 
 **Focus:**
@@ -92,10 +57,11 @@ You can invoke `model.fit()` without knowing this. But you cannot **debug** a mo
 - How a neuron computes (Weights + Bias + Activation)
 - Forward Propagation (Prediction) vs. Backward Propagation (Learning)
 - Loss Functions (How wrong are we?)
+- Gradient Descent and how models learn
 
 ---
 
-## <Calculator /> 2. Base ML Models ("Old School Cool")
+## <Calculator /> 2. Classical ML Models ("Old School Cool")
 
 Not every problem needs a billion-parameter Transformer. In fact, for tabular data, these "old school" models often win on speed and interpretability.
 
@@ -107,7 +73,7 @@ Not every problem needs a billion-parameter Transformer. In fact, for tabular da
   url="https://www.youtube.com/watch?v=2AQKmw14mHM&list=PLblh5JKOoLUIzaEkCLIUxQFjPIlapw8nU"
   duration="2 hours"
   difficulty="beginner"
-  why="Josh Starmer makes the math simpler than your high school algebra class. Understand 'fitting a line' before 'fitting a curve'."
+  why="Josh Starmer makes regression intuitive. Understand 'fitting a line' before 'fitting a curve'."
 />
 
 ### Support Vector Machines & Decision Trees
@@ -151,15 +117,7 @@ Production systems love Random Forests. They are robust, don't need scaled data,
 
 **Action Items:**
 
-<div className="mdx-checklist">
-  <label className="mdx-checklist-item">
-    <input type="checkbox" />
-    <span>
-      Completed the entire Classification metrics section (Precision, Recall,
-      F1-Score, ROC-AUC, Confusion Matrix)
-    </span>
-  </label>
-</div>
+- [ ] Completed the entire Classification metrics section (Precision, Recall, F1-Score, ROC-AUC, Confusion Matrix)
 
 <SkillShowcase
   skills={[
