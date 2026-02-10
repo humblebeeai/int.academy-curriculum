@@ -139,7 +139,7 @@ const config: Config = {
           ],
         },
         {
-          title: "Resources",
+          title: "Additional Resources",
           items: [
             {
               label: "Learning Resources",
