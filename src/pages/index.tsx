@@ -87,7 +87,7 @@ function HomepageHeader() {
           >
             <Link className={styles.primaryButton} to="/docs">
               <BookOpen size={20} />
-              Explore the Curriculum
+              Explore the Roadmap
             </Link>
             <Link
               to="/docs/contributors-guide"
