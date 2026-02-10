@@ -10,7 +10,7 @@ import {
   TimeEstimate,
   SkillShowcase,
 } from "@site/src/components";
-import { Skill } from "@site/src/components/SkillShowcase";
+
 import {
   Calculator,
   Lightbulb,
@@ -33,37 +33,26 @@ You can invoke `model.fit()` without knowing this. But you cannot **debug** a mo
   minHours={20}
   maxHours={25}
   breakdownBy={{
-    "Deep Learning Primitives": 10,
     "Classical ML Models": 8,
+    "Deep Learning Primitives": 10,
     "Evaluation Metrics": 5,
   }}
-/>
+ />
 
 ---
 
-## <BookOpen /> 1. Deep Learning Primitives
-
-<ResourceCard
-  type="course"
-  title="Andrew Ng: Neural Networks and Deep Learning (Course 1 & 2)"
-  url="https://www.youtube.com/watch?v=CS4cs9xVecg&list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0&index=1"
-  duration="8-10 hours"
-  difficulty="intermediate"
-  why="Andrew Ng explains the 'magic' of Backpropagation better than anyone. This connects the theory to the actual mechanism of learning."
-/>
-
-**Focus:**
-
-- How a neuron computes (Weights + Bias + Activation)
-- Forward Propagation (Prediction) vs. Backward Propagation (Learning)
-- Loss Functions (How wrong are we?)
-- Gradient Descent and how models learn
-
----
-
-## <Calculator /> 2. Classical ML Models ("Old School Cool")
+## <Calculator /> 1. Classical ML Models ("Old School Cool")
 
 Not every problem needs a billion-parameter Transformer. In fact, for tabular data, these "old school" models often win on speed and interpretability.
+
+<ResourceCard
+  type="article"
+  title="IBM: What is Machine Learning?"
+  url="https://www.ibm.com/think/topics/machine-learning"
+  duration="1-2 hours"
+  difficulty="beginner"
+  why="Comprehensive overview of ML concepts, types, and applications from IBM's authoritative think library."
+/>
 
 ### Linear & Logistic Regression
 
@@ -102,14 +91,34 @@ Production systems love Random Forests. They are robust, don't need scaled data,
 
 ---
 
+## <BookOpen /> 2. Deep Learning Primitives
+
+<ResourceCard
+  type="course"
+  title="Andrew Ng: Neural Networks and Deep Learning (Course 1 & 2)"
+  url="https://www.youtube.com/watch?v=CS4cs9xVecg&list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0&index=1"
+  duration="8-10 hours"
+  difficulty="intermediate"
+  why="Andrew Ng explains the 'magic' of Backpropagation better than anyone. This connects the theory to the actual mechanism of learning."
+/>
+
+**Focus:**
+
+- How a neuron computes (Weights + Bias + Activation)
+- Forward Propagation (Prediction) vs. Backward Propagation (Learning)
+- Loss Functions (How wrong are we?)
+- Gradient Descent and how models learn
+
+---
+
 ## <BarChart3 /> 3. Evaluation Metrics
 
 **How do you know if your model works?** Accuracy is often a liar.
 
 <ResourceCard
   type="article"
-  title="Google ML Crash Course: Classification"
-  url="https://developers.google.com/machine-learning/crash-course/classification"
+  title="12 Important Model Evaluation Metrics "
+  url="https://www.analyticsvidhya.com/blog/2019/08/11-important-model-evaluation-error-metrics/"
   duration="2 hours"
   difficulty="beginner"
   why="Interactive visualizations of Precision vs. Recall. Critical for imbalanced datasets (e.g., fraud detection)."
@@ -118,20 +127,3 @@ Production systems love Random Forests. They are robust, don't need scaled data,
 **Action Items:**
 
 - [ ] Completed the entire Classification metrics section (Precision, Recall, F1-Score, ROC-AUC, Confusion Matrix)
-
-<SkillShowcase
-  skills={[
-    {
-      iconString: "BarChart",
-      title: "Beyond Accuracy",
-      description:
-        "Understand why 99% accuracy is bad if 99% of your data is 'No Fraud'.",
-    },
-    {
-      iconString: "Scale",
-      title: "Trade-offs",
-      description:
-        "Balance Precision (few false alarms) vs. Recall (catching every case).",
-    },
-  ]}
-/>
