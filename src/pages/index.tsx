@@ -89,15 +89,13 @@ function HomepageHeader() {
               <BookOpen size={20} />
               Explore the Curriculum
             </Link>
-            <a
-              href="https://github.com/humblebeeai/int.academy-curriculum/blob/main/CONTRIBUTING.md"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/docs/contributors-guide"
               className={styles.secondaryButton}
             >
               <GitPullRequest size={18} />
               Contribute a Module
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
       </div>
