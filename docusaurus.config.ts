@@ -77,7 +77,7 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: "HumbleBeeAI Academy",
+      title: "AI Engineering Roadmap",
       logo: {
         alt: "HumbleBeeAI Logo",
         src: "img/hbai-logo.png",
@@ -104,7 +104,7 @@ const config: Config = {
           title: "Programs",
           items: [
             {
-              label: "Curriculum Overview",
+              label: "Roadmap Overview",
               to: "/docs",
             },
             {
@@ -139,13 +139,12 @@ const config: Config = {
           ],
         },
         {
-          title: "Resources",
+          title: "Additional Resources",
           items: [
             {
               label: "Learning Resources",
               to: "/docs/resources",
             },
-
           ],
         },
         {
