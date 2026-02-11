@@ -145,6 +145,10 @@ const config: Config = {
               label: "Learning Resources",
               to: "/docs/resources",
             },
+            {
+              label: "Contributors Guide",
+              to: "/docs/contributors-guide",
+            },
           ],
         },
         {
