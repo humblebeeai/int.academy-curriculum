@@ -480,10 +480,11 @@ function OnDemandMentorshipSection() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <motion.div
-              className={clsx(styles.featureCard, styles.mentorshipCard)}
+              className={clsx(styles.featureCard, styles.mentorshipCard, styles.academyCard)}
               whileHover={{ y: -8 }}
               transition={{ duration: 0.3 }}
             >
+              <span className={styles.academyFeaturedBadge}>Recommended</span>
               <div className={styles.cardMain}>
                 <div
                   className={styles.iconWrapper}

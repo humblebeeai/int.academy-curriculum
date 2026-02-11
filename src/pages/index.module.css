@@ -1476,22 +1476,63 @@
   box-shadow: var(--shadow-xl), var(--glow-gold-subtle);
 }
 
-/* Academy Card - special highlight */
+/* Academy Card - Featured highlight with warm gold accent */
 .academyCard::before {
-  background: linear-gradient(135deg, var(--ifm-color-success) 0%, hsl(142, 70%, 50%) 100%);
+  background: var(--gradient-warm);
+  opacity: 0.2;
+}
+
+.academyCard:hover::before {
+  opacity: 0.35;
 }
 
 .academyCard .cardMain {
-  border-color: rgba(82, 196, 26, 0.2);
+  border-color: rgba(255, 245, 0, 0.25);
+  background: linear-gradient(135deg, rgba(255, 245, 0, 0.03) 0%, var(--glass-bg-solid) 50%, var(--glass-bg-solid) 100%);
 }
 
 .academyCard:hover .cardMain {
-  border-color: rgba(82, 196, 26, 0.4);
-  box-shadow: var(--shadow-xl), 0 0 30px rgba(82, 196, 26, 0.15);
+  border-color: rgba(255, 245, 0, 0.45);
+  box-shadow: var(--shadow-xl), 0 0 40px rgba(255, 245, 0, 0.12);
 }
 
 [data-theme="dark"] .academyCard .cardMain {
-  border-color: rgba(82, 196, 26, 0.15);
+  border-color: rgba(255, 245, 0, 0.2);
+  background: linear-gradient(135deg, rgba(255, 245, 0, 0.05) 0%, var(--glass-bg) 50%, var(--glass-bg) 100%);
+}
+
+[data-theme="dark"] .academyCard:hover .cardMain {
+  border-color: rgba(255, 245, 0, 0.4);
+  box-shadow: var(--shadow-xl), 0 0 40px rgba(255, 245, 0, 0.15);
+}
+
+/* Featured badge for Academy card */
+.academyFeaturedBadge {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  background: var(--gradient-warm);
+  color: #111111;
+  padding: 0.4rem 1rem;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 15px rgba(255, 245, 0, 0.3);
+  z-index: 10;
+}
+
+/* Enhanced icon for Academy card */
+.academyCard .iconWrapper {
+  background: rgba(255, 245, 0, 0.12);
+  border-color: rgba(255, 245, 0, 0.25);
+}
+
+.academyCard:hover .iconWrapper {
+  background: rgba(255, 245, 0, 0.18);
+  border-color: rgba(255, 245, 0, 0.35);
+  transform: scale(1.12) rotate(5deg);
 }
 
 /* Comparison List */
