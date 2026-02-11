@@ -159,28 +159,30 @@ function WhoThisIsForSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <motion.div
-              className={clsx(styles.featureCard, styles.whoCard)}
-              whileHover={{ y: -8 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className={styles.cardMain}>
-                <div
-                  className={styles.iconWrapper}
-                  style={{ color: "var(--accent-gold)" }}
-                >
-                  <Users size={40} strokeWidth={1.5} />
+            <Link to="/docs/contributors-guide" className={styles.whoCardLink}>
+              <motion.div
+                className={clsx(styles.featureCard, styles.whoCard)}
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className={styles.cardMain}>
+                  <div
+                    className={styles.iconWrapper}
+                    style={{ color: "var(--accent-gold)" }}
+                  >
+                    <Users size={40} strokeWidth={1.5} />
+                  </div>
+                  <Heading as="h3" className={styles.featureTitle}>
+                    Contributors
+                  </Heading>
+                  <p className={styles.featureDescription}>
+                    For experienced practitioners (5+ years) who want to help
+                    democratize AI competence by improving modules, projects, and
+                    evaluation standards.
+                  </p>
                 </div>
-                <Heading as="h3" className={styles.featureTitle}>
-                  Contributors
-                </Heading>
-                <p className={styles.featureDescription}>
-                  For experienced practitioners (5+ years) who want to help
-                  democratize AI competence by improving modules, projects, and
-                  evaluation standards.
-                </p>
-              </div>
-            </motion.div>
+              </motion.div>
+            </Link>
           </motion.div>
         </div>
       </div>

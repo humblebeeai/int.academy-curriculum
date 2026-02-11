@@ -2,195 +2,158 @@
 sidebar_position: 5
 title: Contributors Guide
 slug: /contributors-guide
-description: How experienced practitioners can contribute to the HumbleBeeAI Open Curriculum.
+description: How experienced practitioners can contribute to the  AI Engineering Roadmap.
 ---
+
+import { ExternalLink } from "lucide-react";
 
 # Contributors Guide
 
-Help keep the HumbleBeeAI Open Curriculum sharp, current, and useful.
+Help keep the  AI Engineering Roadmap sharp, current, and useful.
 
-This curriculum is meant to be community-built and continuously improved. AI evolves fast. Roles change. Tooling changes. A static curriculum becomes outdated. Your contributions help reduce noise for learners worldwide and improve the quality of the pathway.
+The  AI Engineering Roadmap is designed to be community-built and continuously improved.
 
----
+AI evolves fast. Roles change. Tooling changes. A static roadmap becomes outdated. High-quality contributions help reduce noise for learners worldwide and keep the pathway aligned with real engineering standards.
 
-## Who should contribute
+This guide explains who should contribute, what can be contributed, and the quality standards required.
 
-This guide is for experienced practitioners who can add signal, not noise.
+## Who Should Contribute
 
-You are a good fit if you have:
-- 5+ years relevant experience (industry or research)
-- the ability to curate open resources responsibly
-- the ability to write clear learning outcomes, exercises, and project specs
+This roadmap is curated for signal, not volume.
 
-If you are a learner, you can still help by:
-- reporting broken links
-- suggesting improvements to clarity
-- proposing missing topics or better sequencing  
-(implementation PRs should still meet the quality gates below)
+You are a good fit to contribute if you have:
 
----
+- 5+ years of relevant industry or research experience
+- The ability to curate open resources responsibly
+- Experience writing clear learning outcomes, exercises, and project specifications
+- Familiarity with real-world AI engineering standards (evaluation, reproducibility, delivery)
 
-## What you can contribute
+### Learners and Early-Career Contributors
 
-In scope:
-- module improvements and restructuring
-- projects and case studies
-- exercises and rubrics
-- templates for evaluation and reporting
-- track improvements and curriculum mapping
-- translations (when enabled)
+Learners are welcome to contribute in limited but valuable ways, including:
 
-Out of scope:
-- certification answer keys
-- internal evaluation materials
+- Reporting broken or outdated links
+- Suggesting improvements to clarity or sequencing
+- Proposing missing topics or gaps in coverage
 
----
+Implementation-heavy contributions must still meet the quality gates below.
 
-## Contribution principles
+## What You Can Contribute
 
-**Outcome-first**  
-State what the learner can do after finishing.
+### In Scope
 
-**Proof-first**  
-Every module must produce proof (exercises or a project, ideally both).
+- New modules (Core Systems, specialization modules, or exploratory modules)
+- Improvements or restructuring of existing modules
+- Projects and case studies
+- Exercises, rubrics, and evaluation checklists
+- Templates for evaluation and reporting
+- Track improvements and roadmap mapping
+- Translations (when enabled)
 
-**Role alignment**  
-Map the contribution to Core Systems or a role track.
+### Out of Scope
 
-**Maintainability**  
-Prefer clean structure and strong modules over long lists.
+- Certification answer keys
+- Internal or private evaluation materials
+- Re-publishing restricted or paid content
 
-**Respect creators**  
-Reference open resources correctly. Do not re-publish restricted content.
+## Contribution Principles
 
----
+**Outcome-First**
 
-## Quality gates (required)
+State clearly what the learner can do after completing the contribution.
 
-A contribution should satisfy all gates:
+**Proof-First**
 
-### Gate A - Credible authorship
-- 5+ years relevant experience or equivalent research background.
+Every module must produce inspectable proof - exercises, a project, or ideally both.
 
-### Gate B - Open and reusable sources
-- Resources must be free and open.
-- HumbleBeeAI-authored writing and structure are CC BY-NC-SA 4.0.
-- Third-party resources stay under their original licenses.
+**Role Awareness (Not Role Lock-In)**
 
-### Gate C - Exercises and projects included
-- clear deliverables
-- acceptance criteria
-- suggested evaluation approach
+Most contributions should map to Core Systems or an existing role track.
+Proposing a new role or specialization is allowed. In that case, clearly explain:
 
-### Gate D - Evaluation clarity
-- a rubric or checklist
-- common pitfalls and failure cases
+- Why the role is needed
+- How it differs from existing tracks
+- What entry-level competence looks like for that role
 
----
+**Maintainability**
 
-## What “good” looks like
+Prefer clean structure and strong modules over long, shallow lists.
+
+**Respect Creators**
+
+Reference open resources correctly. Do not copy or re-publish restricted content.
+
+## Quality Gates (Required)
+
+Every contribution must satisfy all of the following gates.
+
+### Gate A - Credible Authorship
+
+- 5+ years of relevant experience or equivalent research background.
+
+### Gate B - Open and Reusable Sources
+
+- All referenced resources must be free and open.
+
+### Gate C - Exercises or Projects Included
+
+Each module must include:
+
+- Clear deliverables
+- Acceptance criteria
+- A suggested evaluation approach
+
+### Gate D - Evaluation Clarity
+
+- A rubric or checklist
+- Common pitfalls and failure cases
+
+If a contribution does not produce proof, it is not complete.
+
+## What "Good" Looks Like
 
 A strong module makes it easy for a learner to:
-- understand the goal
-- follow a coherent set of resources
-- produce outputs that can be inspected
-- evaluate results correctly
-- avoid common mistakes
 
-If your contribution does not produce proof, it is not done.
+- Understand the goal
+- Follow a coherent, curated set of resources
+- Produce outputs that can be inspected
+- Evaluate results correctly
+- Avoid common mistakes
 
----
+If the learner cannot show evidence, the module has failed.
 
-## Submission template (recommended)
+## Submission Template (Required)
 
-Copy and fill this template for any new module:
+Use the official contributor template: [Google Docs template (make a copy) <ExternalLink size={12} />](https://docs.google.com/document/d/1ZBFo39qVpmQCjwT4sxMaQcL0vwMEIo39lD2T6pYSmgI/edit?tab=t.0).
 
-### Module title
-- Short, specific, searchable.
+Please make a copy and fill it in. Do not reformat the template.
 
-### Role mapping
-- Core Systems or one of: Data Science, CV, NLP/LLM, GenAI, AI Software Engineering.
+## How to Submit Contributions (Current)
 
-### Prerequisites
-- What the learner must already know.
+At this stage, contributions are accepted only through direct contact.
 
-### Learning outcomes (measurable)
-Write outcomes as capabilities, not topics.  
-Examples:
-- “Implement a baseline and a comparison model with correct splits.”
-- “Run an ablation and write a short conclusion based on evidence.”
+Submission channel:
 
-### Open resources
-- List links plus 1 line each: why this resource is chosen.
+- Email: contact@humblebee.ai
 
-### Exercises (expected outputs)
-- What the learner must submit or produce.
-- Include acceptance criteria.
+Public access to the roadmap source code and GitHub-based contributions will be enabled later.
 
-### Project spec (deliverables and acceptance criteria)
-- required deliverables (repo, README, report, results)
-- run instructions (setup and execution)
-- evaluation criteria (metrics, baselines, error analysis expectations)
+## Suggested Workflow
 
-### Evaluation rubric or checklist
-- pass/fail checks
-- what “excellent” looks like
-- typical mistakes
-
-### Time estimate (rough hours)
-- Give a rough estimate for focused study.
-
-### Common pitfalls
-- List the most likely ways learners fail or misinterpret results.
-
----
-
-## How to submit contributions
-
-We accept proposals through:
-- Discord discussions: [Discord Community Placeholder]
-- Message or email: [Contact Placeholder]
-- GitHub PRs: [GitHub Repo Placeholder]
-
-Suggested workflow:
-1. Post a short proposal (outcomes, role mapping, resources).
-2. Align scope in discussion.
-3. Submit a full module using the template.
-4. Review by designated maintainers and department heads.
-5. Merge and publish with version notes.
-
----
-
-## PR checklist (before you open a PR)
-
-- [ ] Role mapping is clear (Core Systems or a track)
-- [ ] Outcomes are measurable (capabilities, not topics)
-- [ ] Sources are free/open and properly referenced
-- [ ] Exercises and/or project exist with deliverables
-- [ ] Evaluation rubric/checklist included
-- [ ] Common pitfalls included
-- [ ] No restricted content is copied into the repo
-- [ ] The module is structured for maintainability
-
----
+- Send a short proposal (outcomes, role mapping, resources).
+- Align scope and direction via discussion.
+- Submit a full module using the template.
+- Review by designated maintainers and department heads.
+- Merge and publish with version notes.
 
 ## Governance
 
-Final approvals are handled by HumbleBeeAI department heads and core maintainers, with academic oversight where relevant. The goal is consistent standards and a coherent pathway.
+Final approval is handled by HumbleBeeAI department heads and core maintainers, with academic oversight where relevant.
 
----
+The goal is consistent standards and a coherent AI engineering pathway.
 
 ## Licensing
 
-- HumbleBeeAI-authored curriculum writing, templates, and structure: **CC BY-NC-SA 4.0**
-- Third-party content: owned by original creators under their licenses
-- We reference and curate. We do not claim ownership of external materials.
-
----
-
-## Next step
-
-- If you want to contribute a module: start by writing a one-page proposal (outcomes, role mapping, resources).
-- If you want to improve an existing page: open a PR with a clear summary and checklist coverage.
-- If you want to add a project/case study: include deliverables and evaluation criteria from day one.
-
+This roadmap is provided under CC BY-NC-SA 4.0.
+Third-party content: owned by original creators under their licenses
+We reference and curate. We do not claim ownership of external materials.

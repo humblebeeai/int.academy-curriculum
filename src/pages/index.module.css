@@ -824,6 +824,16 @@
   margin-bottom: 0;
 }
 
+.whoCardLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.whoCardLink:hover {
+  color: inherit;
+}
+
 .whoCard .cardMain {
   min-height: 220px;
 }
