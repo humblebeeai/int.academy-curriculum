@@ -8,7 +8,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap");
 
 /* =========================================
-   LIGHT MODE
+   DARK THEME (Default - Only Theme)
    ========================================= */
 :root {
   /* Brand Constants */
@@ -21,149 +21,6 @@
   --ifm-font-size-base: 16px;
   --ifm-line-height-base: 1.65;
 
-  /* Colors - Clean light theme */
-  --ifm-color-primary: #111111;
-  --ifm-color-primary-dark: #1d1d1d;
-  --ifm-color-primary-darker: hsl(0, 0%, 20%);
-  --ifm-color-primary-darkest: hsl(0, 0%, 25%);
-  --ifm-color-primary-light: hsl(0, 0%, 35%);
-  --ifm-color-primary-lighter: hsl(0, 0%, 45%);
-  --ifm-color-primary-lightest: hsl(0, 0%, 55%);
-
-  /* Backgrounds */
-  --ifm-background-color: #ffffff;
-  --ifm-background-surface-color: #f1f1f1;
-
-  /* UI Elements */
-  --ifm-card-background-color: hsl(0, 0%, 100%);
-  --ifm-card-border-radius: 16px;
-  --ifm-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
-
-  /* Text elements */
-  --ifm-font-color-base: #111111;
-  --ifm-font-color-secondary: hsl(0, 0%, 40%);
-
-  /* Emphasis Scale (Gray) */
-  --ifm-color-emphasis-0: #ffffff;
-  --ifm-color-emphasis-100: #f1f1f1;
-  --ifm-color-emphasis-200: hsl(0, 0%, 90%);
-  --ifm-color-emphasis-300: hsl(0, 0%, 80%);
-  --ifm-color-emphasis-400: hsl(0, 0%, 70%);
-  --ifm-color-emphasis-500: hsl(0, 0%, 60%);
-  --ifm-color-emphasis-600: hsl(0, 0%, 45%);
-  --ifm-color-emphasis-700: hsl(0, 0%, 30%);
-  --ifm-color-emphasis-800: hsl(0, 0%, 20%);
-  --ifm-color-emphasis-900: hsl(0, 0%, 10%);
-  --ifm-color-emphasis-1000: hsl(0, 0%, 0%);
-
-  /* Status Colors (Light Mode) */
-  --ifm-color-success-light: hsl(142, 76%, 95%);
-  --ifm-color-success: hsl(142, 70%, 40%);
-  --ifm-color-success-dark: hsl(142, 76%, 20%);
-
-  --ifm-color-warning-light: hsl(45, 90%, 96%);
-  --ifm-color-warning: hsl(35, 90%, 45%);
-  --ifm-color-warning-dark: hsl(30, 90%, 25%);
-
-  --ifm-color-danger-light: hsl(0, 85%, 97%);
-  --ifm-color-danger: hsl(0, 75%, 55%);
-  --ifm-color-danger-dark: hsl(0, 75%, 35%);
-
-  --ifm-color-info-light: hsl(210, 90%, 97%);
-  --ifm-color-info: hsl(210, 80%, 50%);
-  --ifm-color-info-dark: hsl(210, 80%, 30%);
-
-  /* Navigation */
-  --ifm-navbar-background-color: rgba(255, 255, 255, 0.9);
-  --ifm-navbar-shadow: 0 1px 0 0 rgba(17, 17, 17, 0.06);
-  --ifm-navbar-link-color: var(--ifm-font-color-base);
-  --ifm-navbar-link-hover-color: var(--accent-gold-dark);
-
-  /* Footer */
-  --ifm-footer-background-color: var(--ifm-background-surface-color);
-  --ifm-footer-color: var(--ifm-font-color-base);
-  --ifm-footer-link-color: var(--ifm-font-color-secondary);
-
-  /* Global */
-  --ifm-code-font-size: 90%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.05);
-
-  /* =========================================
-     WARM ACCENT COLORS (Yellow/Orange Brand Theme)
-     ========================================= */
-  
-  /* Primary warm accents */
-  --accent-gold: #FFF500;
-  --accent-gold-light: #fff84d;
-  --accent-gold-dark: #e0d800;
-  --accent-amber: #FFB902;
-  --accent-amber-light: #ffca40;
-  --accent-amber-dark: #e0a200;
-  --accent-orange: #E09500;
-  
-  /* Warm gradients */
-  --gradient-warm: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-amber) 100%);
-  --gradient-warm-subtle: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-amber-light) 100%);
-  --gradient-warm-text: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-amber) 50%, var(--accent-orange) 100%);
-  --gradient-hero-bg: radial-gradient(ellipse at 50% 0%, rgba(255, 245, 0, 0.06) 0%, transparent 60%);
-  --gradient-section-divider: linear-gradient(90deg, transparent 0%, var(--ifm-color-emphasis-200) 50%, transparent 100%);
-  
-  /* Glow effects */
-  --glow-gold: 0 0 20px rgba(255, 245, 0, 0.25);
-  --glow-gold-intense: 0 0 40px rgba(255, 245, 0, 0.35), 0 0 80px rgba(255, 245, 0, 0.15);
-  --glow-gold-subtle: 0 0 30px rgba(255, 245, 0, 0.1);
-  --glow-amber: 0 0 20px rgba(255, 185, 2, 0.25);
-
-  /* =========================================
-     GLASSMORPHISM TOKENS
-     ========================================= */
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-bg-solid: rgba(255, 255, 255, 0.9);
-  --glass-border: rgba(255, 255, 255, 0.5);
-  --glass-border-subtle: rgba(0, 0, 0, 0.06);
-  --glass-blur: blur(12px);
-  --glass-blur-heavy: blur(20px);
-
-  /* =========================================
-     ANIMATION & INTERACTION TOKENS
-     ========================================= */
-
-  /* Durations */
-  --duration-fast: 0.15s;
-  --duration-normal: 0.25s;
-  --duration-slow: 0.4s;
-  --duration-slower: 0.6s;
-
-  /* Easing */
-  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-out: cubic-bezier(0, 0, 0.2, 1);
-  --ease-in: cubic-bezier(0.4, 0, 1, 1);
-  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-  /* Hover Lifts */
-  --hover-lift-sm: translateY(-2px);
-  --hover-lift-md: translateY(-4px);
-  --hover-lift-lg: translateY(-8px);
-
-  /* Shadows (Standardized) */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
-  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-
-  /* Section spacing */
-  --section-padding-y: 6rem;
-  --section-padding-y-mobile: 4rem;
-  --section-gap: 4rem;
-  --container-max-width: 1200px;
-}
-
-/* =========================================
-   DARK MODE (Primary Theme)
-   ========================================= */
-[data-theme="dark"] {
   /* Colors - Clean dark theme */
   --ifm-color-primary: #f1f1f1;
   --ifm-color-primary-dark: hsl(0, 0%, 85%);
@@ -179,6 +36,7 @@
 
   /* UI Elements */
   --ifm-card-background-color: #242424;
+  --ifm-card-border-radius: 16px;
   --ifm-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 
   /* Text */
@@ -218,6 +76,7 @@
   /* Navigation */
   --ifm-navbar-background-color: rgba(17, 17, 17, 0.9);
   --ifm-navbar-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.04);
+  --ifm-navbar-link-color: var(--ifm-font-color-base);
   --ifm-navbar-link-hover-color: var(--accent-gold);
 
   /* Warm accents - vibrant for dark mode */
@@ -228,14 +87,14 @@
   --accent-amber-light: #ffca40;
   --accent-amber-dark: #e0a200;
   --accent-orange: #E09500;
-  
+
   /* Dark mode gradients - more vibrant */
   --gradient-warm: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-amber) 100%);
   --gradient-warm-subtle: linear-gradient(135deg, rgba(255, 245, 0, 0.15) 0%, rgba(255, 185, 2, 0.15) 100%);
   --gradient-warm-text: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-amber) 50%, var(--accent-orange) 100%);
   --gradient-hero-bg: radial-gradient(ellipse at 50% 0%, rgba(255, 245, 0, 0.1) 0%, transparent 60%);
   --gradient-section-divider: linear-gradient(90deg, transparent 0%, var(--ifm-color-emphasis-200) 50%, transparent 100%);
-  
+
   /* Dark mode glow effects - more prominent */
   --glow-gold: 0 0 30px rgba(255, 245, 0, 0.35);
   --glow-gold-intense: 0 0 50px rgba(255, 245, 0, 0.45), 0 0 100px rgba(255, 245, 0, 0.2);
@@ -248,20 +107,51 @@
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-border-subtle: rgba(255, 255, 255, 0.04);
   --glass-border-accent: rgba(255, 245, 0, 0.2);
+  --glass-blur: blur(12px);
+  --glass-blur-heavy: blur(20px);
 
-  /* Footer */
-  --ifm-footer-background-color: #0d0d0d;
-  --ifm-footer-color: var(--ifm-font-color-base);
-  --ifm-footer-link-color: var(--ifm-font-color-secondary);
+  /* =========================================
+     ANIMATION & INTERACTION TOKENS
+     ========================================= */
 
-  /* Shadows for dark mode */
+  /* Durations */
+  --duration-fast: 0.15s;
+  --duration-normal: 0.25s;
+  --duration-slow: 0.4s;
+  --duration-slower: 0.6s;
+
+  /* Easing */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* Hover Lifts */
+  --hover-lift-sm: translateY(-2px);
+  --hover-lift-md: translateY(-4px);
+  --hover-lift-lg: translateY(-8px);
+
+  /* Shadows (Standardized) */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.25), 0 2px 4px -1px rgba(0, 0, 0, 0.15);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.25), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.15);
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
 
+  /* Section spacing */
+  --section-padding-y: 6rem;
+  --section-padding-y-mobile: 4rem;
+  --section-gap: 4rem;
+  --container-max-width: 1200px;
+
+  /* Footer */
+  --ifm-footer-background-color: #0d0d0d;
+  --ifm-footer-color: var(--ifm-font-color-base);
+  --ifm-footer-link-color: var(--ifm-font-color-secondary);
+
   /* Global */
+  --ifm-code-font-size: 90%;
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.06);
 }
 
@@ -431,8 +321,8 @@ h6 {
   font-weight: 600;
 }
 
-/* Hide duplicate \"Core Systems Overview\" doc link in sidebar, but keep
-   the \"Core Systems\" category header (which also links to the same doc). */
+/* Hide duplicate "Core Systems Overview" doc link in sidebar, but keep
+   the "Core Systems" category header (which also links to the same doc). */
 .menu__link[href="/docs/softlanding/core-systems"]:not(.menu__link--sublist) {
   display: none;
 }
@@ -528,8 +418,8 @@ h6 {
    CUSTOM COMPONENT STYLES (Refactored to CSS Modules)
    ========================================= */
 
-/* 
-   Note: All component-specific styles have been moved to their respective 
+/*
+   Note: All component-specific styles have been moved to their respective
    .module.css files in src/components/ to follow best practices.
    - ModuleProgress.module.css
    - SkillShowcase.module.css
@@ -688,48 +578,6 @@ h2 .auto-icon-box svg {
   border-bottom: none;
 }
 
-/* =========================================
-   DIFFICULTY TAGS - CENTERED ROW
-   ========================================= */
-.difficulty-tags-center {
-  margin-top: 0.75rem;
-  margin-bottom: 0.25rem;
-  text-align: center;
-}
-
-/* =========================================
-   MDX CHECKLIST (Self-assessment)
-   ========================================= */
-.mdx-checklist {
-  margin-top: 0.25rem;
-  margin-bottom: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.mdx-checklist-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.6rem;
-  cursor: pointer;
-  font-size: 0.95rem;
-}
-
-.mdx-checklist-item input[type="checkbox"] {
-  margin-top: 0.2rem;
-  cursor: pointer;
-}
-
-.mdx-checklist-item span {
-  flex: 1;
-}
-
-.mdx-checklist-item input[type="checkbox"]:checked + span {
-  text-decoration: line-through;
-  color: var(--ifm-font-color-secondary);
-}
-
 .comparison-table-wrapper td {
   padding: 1.25rem 1.5rem;
   color: var(--ifm-font-color-secondary);
@@ -751,16 +599,11 @@ h2 .auto-icon-box svg {
 }
 
 .comparison-table-wrapper td:nth-child(4) {
-  background: var(--ifm-background-surface-color);
+  background: rgba(255, 255, 255, 0.03);
   color: var(--ifm-font-color-base);
   font-weight: 500;
   border-left: 3px solid var(--ifm-color-primary);
   position: relative;
-}
-
-[data-theme="dark"] .comparison-table-wrapper td:nth-child(4) {
-  background: rgba(255, 255, 255, 0.03);
-  border-left-color: var(--ifm-color-primary);
 }
 
 /* Responsive: horizontal scroll on small screens */
@@ -811,7 +654,7 @@ h2 .auto-icon-box svg {
   background-color: var(--ifm-background-color) !important;
 }
 
-/* Light Mode - Monochrome Black/White/Gray */
+/* Dark Mode - Monochrome White/Dark Gray */
 .mermaid svg path:not([fill="none"]),
 .mermaid-full-width svg path:not([fill="none"]) {
   stroke: var(--ifm-color-emphasis-400) !important;
@@ -850,72 +693,17 @@ h2 .auto-icon-box svg {
   fill: none !important;
 }
 
-/* Dark Mode - Monochrome White/Dark Gray */
-[data-theme="dark"] .mermaid svg path:not([fill="none"]),
-[data-theme="dark"] .mermaid-full-width svg path:not([fill="none"]) {
-  stroke: var(--ifm-color-emphasis-400) !important;
-  fill: var(--ifm-color-emphasis-200) !important;
-}
-
-[data-theme="dark"] .mermaid svg path[fill="none"],
-[data-theme="dark"] .mermaid-full-width svg path[fill="none"] {
-  stroke: var(--ifm-color-emphasis-400) !important;
-  stroke-width: 2px !important;
-}
-
-[data-theme="dark"] .mermaid svg circle,
-[data-theme="dark"] .mermaid-full-width svg circle {
-  fill: var(--ifm-color-primary) !important;
-  stroke: var(--ifm-color-primary) !important;
-}
-
-[data-theme="dark"] .mermaid svg text,
-[data-theme="dark"] .mermaid-full-width svg text {
-  fill: var(--ifm-font-color-base) !important;
-}
-
-[data-theme="dark"] .mermaid svg .node rect,
-[data-theme="dark"] .mermaid-full-width svg .node rect,
-[data-theme="dark"] .mermaid svg .node circle,
-[data-theme="dark"] .mermaid-full-width svg .node circle {
-  fill: var(--ifm-color-primary) !important;
-  stroke: var(--ifm-color-primary) !important;
-}
-
-[data-theme="dark"] .mermaid svg .edgePath path,
-[data-theme="dark"] .mermaid-full-width svg .edgePath path {
-  stroke: var(--ifm-color-emphasis-400) !important;
-  fill: none !important;
-}
-
 /* Mermaid GitGraph Branch Label Backgrounds and Text */
-/* Override ALL colored rectangle backgrounds (branch labels) to use monochrome theme */
-/* This targets branch labels like "Learning Path of Academy" and "softlanding" */
 .mermaid svg rect:not([fill="none"]),
 .mermaid-full-width svg rect:not([fill="none"]) {
   fill: var(--ifm-background-surface-color) !important;
   stroke: var(--ifm-color-emphasis-300) !important;
 }
 
-/* Light Mode - All text in Mermaid (including branch labels) */
 .mermaid svg text,
 .mermaid-full-width svg text,
 .mermaid svg tspan,
 .mermaid-full-width svg tspan {
-  fill: var(--ifm-font-color-base) !important;
-}
-
-/* Dark Mode - All text in Mermaid (including branch labels) */
-[data-theme="dark"] .mermaid svg rect:not([fill="none"]),
-[data-theme="dark"] .mermaid-full-width svg rect:not([fill="none"]) {
-  fill: var(--ifm-background-surface-color) !important;
-  stroke: var(--ifm-color-emphasis-300) !important;
-}
-
-[data-theme="dark"] .mermaid svg text,
-[data-theme="dark"] .mermaid-full-width svg text,
-[data-theme="dark"] .mermaid svg tspan,
-[data-theme="dark"] .mermaid-full-width svg tspan {
   fill: var(--ifm-font-color-base) !important;
 }
 

@@ -176,16 +176,6 @@
   border-color: var(--phase-color);
 }
 
-[data-theme="dark"] .journeyCard {
-  background: var(--glass-bg-dark, rgba(29, 29, 29, 0.8));
-  border-color: var(--glass-border-dark, rgba(255, 255, 255, 0.08));
-}
-
-[data-theme="dark"] .journeyCard:hover {
-  background: rgba(29, 29, 29, 0.9);
-  border-color: color-mix(in srgb, var(--phase-color) 40%, transparent);
-}
-
 /* Accent bar */
 .cardAccent {
   position: absolute;
@@ -265,11 +255,6 @@
   opacity: 0.7;
 }
 
-[data-theme="dark"] .skillTag {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.08);
-}
-
 /* ===================================
    EXPANDED CONTENT
    =================================== */
@@ -278,10 +263,6 @@
   padding-top: 1.25rem;
   border-top: 1px solid var(--ifm-color-emphasis-100);
   overflow: hidden;
-}
-
-[data-theme="dark"] .expandedContent {
-  border-top-color: rgba(255, 255, 255, 0.06);
 }
 
 .description {
