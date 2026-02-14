@@ -562,7 +562,6 @@ function ReviewersSection() {
       image: "/img/maintainer-2.jpg",
       socials: {
         linkedin: "https://www.linkedin.com/in/oybek-eraliev-56884a213/",
-        github: "https://github.com/janesmith",
       },
     },
   ];
@@ -658,7 +657,8 @@ function ReviewersSection() {
         >
           <h2 className={styles.sectionTitle}>Reviewed by Professionals</h2>
           <p className={styles.sectionSubtitle}>
-            Expert-vetted by senior engineers and researchers from the world's leading technology companies and academic institutions.
+            Expert-vetted by senior engineers and researchers from the world's
+            leading technology companies and academic institutions.
           </p>
         </motion.div>
 
@@ -678,12 +678,32 @@ function ReviewersSection() {
             />
           </div>
           <div className={styles.reviewersCredits}>
-            <h4 className={styles.reviewersCreditsTitle}>Validated by Industry Leaders</h4>
+            <h4 className={styles.reviewersCreditsTitle}>
+              Validated by Industry Leaders
+            </h4>
             <p className={styles.reviewersParagraph}>
-              This curriculum has been thoroughly reviewed by senior practitioners from leading technology companies and research institutions. The validation panel includes engineering leaders from <span className={styles.highlightCompany}>NVIDIA</span> and <span className={styles.highlightCompany}>DP World</span>, AI researchers from <span className={styles.highlightCompany}>KRICT</span> and <span className={styles.highlightCompany}>DeltaX</span>, and senior engineers from <span className={styles.highlightCompany}>VCA Technology</span> and <span className={styles.highlightCompany}>skyve</span>.
+              This curriculum has been thoroughly reviewed by senior
+              practitioners from leading technology companies and research
+              institutions. The validation panel includes engineering leaders
+              from <span className={styles.highlightCompany}>NVIDIA</span> and{" "}
+              <span className={styles.highlightCompany}>DP World</span>, AI
+              researchers from{" "}
+              <span className={styles.highlightCompany}>KRICT</span> and{" "}
+              <span className={styles.highlightCompany}>DeltaX</span>, and
+              senior engineers from{" "}
+              <span className={styles.highlightCompany}>VCA Technology</span>{" "}
+              and <span className={styles.highlightCompany}>skyve</span>.
             </p>
             <p className={styles.reviewersParagraph}>
-              Academic guidance comes from PhD researchers and postdoctoral fellows at <span className={styles.highlightCompany}>Chungnam National University</span> and <span className={styles.highlightCompany}>Inha University</span>, bringing extensive experience in deploying real-world AI systems and advancing machine learning research.
+              Academic guidance comes from PhD researchers and postdoctoral
+              fellows at{" "}
+              <span className={styles.highlightCompany}>
+                Chungnam National University
+              </span>{" "}
+              and{" "}
+              <span className={styles.highlightCompany}>Inha University</span>,
+              bringing extensive experience in deploying real-world AI systems
+              and advancing machine learning research.
             </p>
           </div>
         </motion.div>
