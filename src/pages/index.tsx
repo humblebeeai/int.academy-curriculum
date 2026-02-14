@@ -17,6 +17,9 @@ import {
   Target,
   AlertTriangle,
   GitPullRequest,
+  Linkedin,
+  Github,
+  Twitter,
 } from "lucide-react";
 
 import {
@@ -177,8 +180,8 @@ function WhoThisIsForSection() {
                   </Heading>
                   <p className={styles.featureDescription}>
                     For experienced practitioners (5+ years) who want to help
-                    democratize AI competence by improving modules, projects, and
-                    evaluation standards.
+                    democratize AI competence by improving modules, projects,
+                    and evaluation standards.
                   </p>
                 </div>
               </motion.div>
@@ -482,7 +485,11 @@ function OnDemandMentorshipSection() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <motion.div
-              className={clsx(styles.featureCard, styles.mentorshipCard, styles.academyCard)}
+              className={clsx(
+                styles.featureCard,
+                styles.mentorshipCard,
+                styles.academyCard,
+              )}
               whileHover={{ y: -8 }}
               transition={{ duration: 0.3 }}
             >
@@ -534,6 +541,157 @@ function OnDemandMentorshipSection() {
   );
 }
 
+// Reviewers Section
+function ReviewersSection() {
+  const maintainers = [
+    {
+      name: "Jumabek Alikhanov",
+      role: "Lead Curriculum Developer",
+      bio: "PhD in Machine Learning with 8+ years teaching and industry experience.",
+      image: "/img/maintainer-1.jpg",
+      socials: {
+        linkedin: "https://www.linkedin.com/in/jumabek-alikhan-phd-1036a864/",
+        github: "https://github.com/Jumabek",
+        instagram: "https://twitter.com/johndoe",
+      },
+    },
+    {
+      name: "Oybek Eraliyev",
+      role: "Technical Reviewer",
+      bio: "Former AI engineer at major tech companies. Passionate about accessible education.",
+      image: "/img/maintainer-2.jpg",
+      socials: {
+        linkedin: "https://www.linkedin.com/in/oybek-eraliev-56884a213/",
+        github: "https://github.com/janesmith",
+      },
+    },
+  ];
+
+  return (
+    <section className={clsx(styles.features, styles.reviewersSection)}>
+      <div className="container">
+        {/* Main Builders Section */}
+        <motion.div
+          className={styles.sectionHeader}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className={styles.sectionTitle}>Meet the Builders</h2>
+          <p className={styles.sectionSubtitle}>
+            The core team building and maintaining the curriculum.
+          </p>
+        </motion.div>
+
+        {/* Individual Maintainers */}
+        <div className="row">
+          {maintainers.map((maintainer, index) => (
+            <motion.div
+              key={maintainer.name}
+              className="col col--6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+            >
+              <div className={styles.maintainerCard}>
+                <div className={styles.maintainerImageWrapper}>
+                  <img
+                    src={maintainer.image}
+                    alt={maintainer.name}
+                    className={styles.maintainerImage}
+                  />
+                </div>
+                <div className={styles.maintainerInfo}>
+                  <h3 className={styles.maintainerName}>{maintainer.name}</h3>
+                  <p className={styles.maintainerRole}>{maintainer.role}</p>
+                  <p className={styles.maintainerBio}>{maintainer.bio}</p>
+                  <div className={styles.maintainerSocials}>
+                    {maintainer.socials.linkedin && (
+                      <a
+                        href={maintainer.socials.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.socialLink}
+                        aria-label={`${maintainer.name} LinkedIn`}
+                      >
+                        <Linkedin size={20} />
+                      </a>
+                    )}
+                    {maintainer.socials.github && (
+                      <a
+                        href={maintainer.socials.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.socialLink}
+                        aria-label={`${maintainer.name} GitHub`}
+                      >
+                        <Github size={20} />
+                      </a>
+                    )}
+                    {maintainer.socials.twitter && (
+                      <a
+                        href={maintainer.socials.twitter}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.socialLink}
+                        aria-label={`${maintainer.name} Twitter`}
+                      >
+                        <Twitter size={20} />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Reviewed by Professionals Section */}
+        <motion.div
+          className={clsx(styles.sectionHeader, styles.reviewersHeader)}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className={styles.sectionTitle}>Reviewed by Professionals</h2>
+          <p className={styles.sectionSubtitle}>
+            Expert-vetted by senior engineers and researchers from the world's leading technology companies and academic institutions.
+          </p>
+        </motion.div>
+
+        {/* Group Photo with Credits */}
+        <motion.div
+          className={styles.reviewersGroupContainer}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <div className={styles.groupPhotoWrapper}>
+            <img
+              src="/img/team-photo.jpg"
+              alt="Professional Reviewers"
+              className={styles.groupPhoto}
+            />
+          </div>
+          <div className={styles.reviewersCredits}>
+            <h4 className={styles.reviewersCreditsTitle}>Validated by Industry Leaders</h4>
+            <p className={styles.reviewersParagraph}>
+              This curriculum has been thoroughly reviewed by senior practitioners from leading technology companies and research institutions. The validation panel includes engineering leaders from <span className={styles.highlightCompany}>NVIDIA</span> and <span className={styles.highlightCompany}>DP World</span>, AI researchers from <span className={styles.highlightCompany}>KRICT</span> and <span className={styles.highlightCompany}>DeltaX</span>, and senior engineers from <span className={styles.highlightCompany}>VCA Technology</span> and <span className={styles.highlightCompany}>skyve</span>.
+            </p>
+            <p className={styles.reviewersParagraph}>
+              Academic guidance comes from PhD researchers and postdoctoral fellows at <span className={styles.highlightCompany}>Chungnam National University</span> and <span className={styles.highlightCompany}>Inha University</span>, bringing extensive experience in deploying real-world AI systems and advancing machine learning research.
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 // FAQ data
 const faqItems = [
   {
@@ -579,6 +737,7 @@ export default function Home(): ReactNode {
         <WhoThisIsForSection />
         <AboutSection />
         <OutcomesSection />
+        <ReviewersSection />
         <section id="roadmap">
           <RoadmapShowcase />
         </section>

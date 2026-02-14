@@ -28,14 +28,6 @@
   pointer-events: none;
 }
 
-[data-theme="dark"] .roadmapSection::before {
-  background: radial-gradient(
-    ellipse at center,
-    rgba(255, 245, 0, 0.1) 0%,
-    transparent 70%
-  );
-}
-
 /* ===================================
    SECTION HEADER
    =================================== */
@@ -110,10 +102,6 @@
 
 .ctaButton:hover svg {
   transform: translateX(4px);
-}
-
-[data-theme="dark"] .roadmapCTA {
-  border-top-color: rgba(255, 255, 255, 0.1);
 }
 
 /* ===================================

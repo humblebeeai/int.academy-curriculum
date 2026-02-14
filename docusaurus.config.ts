@@ -73,8 +73,7 @@ const config: Config = {
     ],
     colorMode: {
       defaultMode: "dark",
-      disableSwitch: false,
-      respectPrefersColorScheme: true,
+      disableSwitch: true,
     },
     navbar: {
       title: "AI Engineering Roadmap",
@@ -179,8 +178,7 @@ const config: Config = {
       `,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
 };
