@@ -577,7 +577,7 @@ function ReviewersSection() {
     {
       name: "Oybek Eraliyev",
       role: "Senior Roadmap Architect",
-      bio: "PhD Candidate, AI engineer. Passionate about accessible education.",
+      bio: "PhD, AI engineer. Passionate about accessible education.",
       image: "/img/maintainer-2.jpg",
       socials: {
         linkedin: "https://www.linkedin.com/in/oybek-eraliev-56884a213/",
