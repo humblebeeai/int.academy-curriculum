@@ -171,6 +171,17 @@ From the repo root:
 
 ---
 
+## Community
+
+Join our Telegram community to connect with fellow learners and contributors:
+
+- **[AI Roadmap Community on Telegram](https://t.me/airoadmapcommunity)**
+- Ask questions, share resources, and collaborate on projects
+- Get support from the community and find accountability partners
+- Connect with contributors to suggest improvements
+
+---
+
 ## License
 
 - Curriculum content: **CC BY-NC-SA 4.0**

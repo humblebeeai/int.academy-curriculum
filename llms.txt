@@ -31,3 +31,4 @@ The default progression:
 - [AI Software Engineering Track](https://academy.humblebee.ai/docs/softlanding/specializations/software-engineering): APIs, databases, testing, DevOps, CI/CD
 - [Learning Resources](https://academy.humblebee.ai/docs/resources): Curated external resources
 - [GitHub Repository](https://github.com/humblebeeai/int.academy-curriculum): Source code and content
+- [Community (Telegram)](https://t.me/airoadmapcommunity): Join discussions, ask questions, collaborate with learners and contributors

@@ -126,3 +126,9 @@ Final approvals are handled by HumbleBeeAI department heads and core maintainers
 - **Source code** (components, config, scripts): Unlicensed / All rights reserved
 
 By submitting a contribution, you agree that your content contributions are licensed under CC BY-SA 4.0.
+
+---
+
+## Message for Learners
+
+> Just follow the mentors, do not miss the details because the details are the most important

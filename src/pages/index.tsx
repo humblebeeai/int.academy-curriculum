@@ -20,6 +20,7 @@ import {
   Linkedin,
   Github,
   Twitter,
+  MessageCircle,
 } from "lucide-react";
 
 import {
@@ -99,6 +100,24 @@ function HomepageHeader() {
               <GitPullRequest size={18} />
               Contribute to the Roadmap
             </Link>
+          </motion.div>
+
+          <motion.div
+            className={styles.heroCta}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            <Link
+              to="https://t.me/airoadmapcommunity"
+              className={styles.telegramButton}
+            >
+              <MessageCircle size={18} />
+              Join Community
+            </Link>
+            <span className={styles.heroCtaText}>
+              Connect with learners and contributors
+            </span>
           </motion.div>
         </motion.div>
       </div>
