@@ -30,6 +30,8 @@ A learner demonstrates entry-level competence when they can:
 
 **Contributors:** Experienced practitioners (5+ years) who can curate open resources, write clear outcomes, exercises, and project specs.
 
+**Community:** [Telegram Community](https://t.me/airoadmapcommunity) — Join discussions, ask questions, collaborate with fellow learners and contributors.
+
 ---
 
 ## Curriculum Architecture

@@ -94,6 +94,11 @@ const config: Config = {
           position: "right",
           className: "header-github-link",
         },
+        {
+          href: "https://t.me/airoadmapcommunity",
+          label: "Community",
+          position: "right",
+        },
       ],
     },
     footer: {
@@ -160,6 +165,10 @@ const config: Config = {
             {
               label: "GitHub",
               href: "https://github.com/humblebeeai/int.academy-curriculum",
+            },
+            {
+              label: "Community (Telegram)",
+              href: "https://t.me/airoadmapcommunity",
             },
           ],
         },
