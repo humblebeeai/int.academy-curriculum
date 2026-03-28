@@ -38,6 +38,15 @@ const config: Config = {
         docs: {
           path: "docs",
           sidebarPath: "./sidebars.ts",
+          lastVersion: "current",
+          versions: {
+            current: {
+              label: "Next",
+            },
+            "0.1.0": {
+              label: "0.1.0",
+            },
+          },
         },
         blog: {
           showReadingTime: true,
@@ -83,6 +92,10 @@ const config: Config = {
       },
       hideOnScroll: false,
       items: [
+        {
+          type: "docsVersionDropdown",
+          position: "right",
+        },
         {
           href: "https://academy.humblebee.ai",
           label: "Academy",

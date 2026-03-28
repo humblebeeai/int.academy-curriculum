@@ -1,0 +1,481 @@
+---
+sidebar_position: 1
+title: Resources
+description: NLP, Diffusion Models, and Speech Technologies
+---
+
+import { ResourceCard, TimeEstimate } from "@site/src/components";
+import { Sparkles, Target, BookOpen, Rocket } from "lucide-react";
+import Link from "@docusaurus/Link";
+
+# <Sparkles /> Generative AI Track
+
+![Generative AI Track](../../../assets/images/generative-ai.png)
+
+## <Target /> Goal
+
+**Focus**: Master the foundations of generative AI—from text representation and transformers to diffusion models and speech technologies. Build the skills to work with LLMs, image generation systems, and audio pipelines.
+
+## <BookOpen /> Curriculum
+
+### Foundations of Natural Language Processing
+
+#### 1. Text Representation & Embeddings
+
+Understand how text is converted to numerical representations, from classical methods to modern dense embeddings.
+
+**Key Topics:**
+
+- Text preprocessing: tokenization, normalization, subword tokenization (BPE)
+- Bag-of-Words, TF-IDF, and their limitations
+- Word2Vec (CBOW, Skip-gram) and GloVe intuition
+- Embedding geometry: similarity, analogies, bias
+- Contextual embeddings concept (leading to transformers)
+
+**Action Items:**
+
+- Build BoW and TF-IDF vectors and compare feature distributions
+- Train Word2Vec on a corpus, visualize with t-SNE
+- Explore pre-trained embeddings with Gensim
+
+<ResourceCard
+  type="course"
+  title="Stanford CS224N — NLP with Deep Learning (Lectures 1-2)"
+  url="https://www.youtube.com/playlist?list=PLoROMvodv4rOSH4v6133s9LFPRHjEmbmJ"
+  duration="3-4 hours"
+  difficulty="beginner"
+  why="Introduces fundamental challenges of working with human language in ML. Learn how text is converted to numerical representations and why early NLP systems struggle with meaning and context."
+/>
+
+<ResourceCard
+  type="tutorial"
+  title="scikit-learn Text Feature Extraction Guide"
+  url="https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction"
+  duration="2-3 hours"
+  difficulty="beginner"
+  why="Hands-on guide to implementing BoW and TF-IDF representations using industry-standard tools."
+/>
+
+<ResourceCard
+  type="paper"
+  title="Word2Vec Paper"
+  url="https://arxiv.org/abs/1301.3781"
+  duration="2-3 hours"
+  difficulty="intermediate"
+  why="The foundational paper that introduced efficient word embeddings and revolutionized NLP."
+/>
+
+<ResourceCard
+  type="tutorial"
+  title="Gensim Word Embeddings Tutorial"
+  url="https://www.geeksforgeeks.org/nlp/nlp-gensim-tutorial/"
+  duration="2-3 hours"
+  difficulty="beginner"
+  why="Practical tutorial for working with word embeddings using the Gensim library."
+/>
+
+#### 2. Attention & Transformers
+
+Master the transformer architecture that powers all modern language and diffusion models.
+
+**Key Topics:**
+
+- Self-attention mechanism and intuition
+- Query, Key, Value formulation
+- Multi-head attention and why it matters
+- Positional encoding strategies
+- Transformer encoder/decoder architecture
+- Layer normalization and residual connections
+
+**Action Items:**
+
+- Implement scaled dot-product attention from scratch in PyTorch
+- Visualize attention weights using a pre-trained model (bert-base-uncased)
+- Build a minimal self-attention layer as nn.Module
+
+<ResourceCard
+  type="blog"
+  title="The Illustrated Transformer (Jay Alammar)"
+  url="https://jalammar.github.io/illustrated-transformer/"
+  duration="2-3 hours"
+  difficulty="intermediate"
+  why="The best visual explanation of transformers. Essential reading for building intuition about attention mechanisms."
+/>
+
+<ResourceCard
+  type="blog"
+  title="Visualizing Neural Machine Translation"
+  url="https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/"
+  duration="1-2 hours"
+  difficulty="intermediate"
+  why="Builds intuition for attention in sequence-to-sequence models before diving into transformers."
+/>
+
+<ResourceCard
+  type="course"
+  title="Transformer Neural Networks Explained"
+  url="https://www.youtube.com/watch?v=zxQyTK8quyY"
+  duration="1-2 hours"
+  difficulty="intermediate"
+  why="Clear video walkthrough of transformer architecture and how it powers ChatGPT."
+/>
+
+<ResourceCard
+  type="paper"
+  title="Attention Is All You Need"
+  url="https://arxiv.org/abs/1706.03762"
+  duration="3-4 hours"
+  difficulty="advanced"
+  why="The original transformer paper. Understanding this architecture is essential for all modern generative AI."
+/>
+
+<ResourceCard
+  type="tutorial"
+  title="Harvard Annotated Transformer"
+  url="https://nlp.seas.harvard.edu/annotated-transformer/"
+  duration="4-5 hours"
+  difficulty="advanced"
+  why="Line-by-line implementation of the transformer with detailed explanations. Best resource for deep understanding."
+/>
+
+#### 3. Large Language Models
+
+Understand how LLMs work, from pretraining to inference, and learn to work with them effectively.
+
+**Key Topics:**
+
+- Language modeling: next-token prediction
+- Causal (GPT) vs masked (BERT) models
+- Scaling laws and emergent capabilities
+- Tokenizers: BPE, WordPiece, SentencePiece
+- Working with HuggingFace Transformers
+- Prompt engineering fundamentals
+- Fine-tuning basics: LoRA and PEFT concepts
+
+**Action Items:**
+
+- Follow Karpathy's nanoGPT to build a mini LLM
+- Run inference with various HuggingFace models
+- Design effective prompts for different tasks
+- Fine-tune a small model with LoRA
+
+<ResourceCard
+  type="course"
+  title="Let's Build GPT (Karpathy)"
+  url="https://www.youtube.com/watch?v=kCc8FmEb1nY"
+  duration="4-5 hours"
+  difficulty="intermediate"
+  why="Build a GPT from scratch. The best way to truly understand how language models work internally."
+/>
+
+<ResourceCard
+  type="course"
+  title="HuggingFace NLP Course (Ch 1-4)"
+  url="https://huggingface.co/learn/llm-course/en/chapter1/1"
+  duration="6-8 hours"
+  difficulty="intermediate"
+  why="Comprehensive practical course on working with transformers and LLMs using industry-standard libraries."
+/>
+
+<ResourceCard
+  type="paper"
+  title="LoRA Paper"
+  url="https://arxiv.org/abs/2106.09685"
+  duration="2-3 hours"
+  difficulty="advanced"
+  why="Understanding LoRA is essential for efficient fine-tuning of large models."
+/>
+
+---
+
+### Diffusion Models Foundations
+
+#### 4. Generative Model Foundations
+
+Build intuition for generative modeling before diving into diffusion-specific concepts.
+
+**Key Topics:**
+
+- Generative vs discriminative models
+- Latent space and representation learning
+- Variational Autoencoders (VAE) intuition
+- GANs overview: generator, discriminator, adversarial training
+- Limitations of VAEs and GANs leading to diffusion
+
+**Action Items:**
+
+- Implement a simple VAE on MNIST
+- Explore latent space interpolation
+- Understand mode collapse in GANs
+
+<ResourceCard
+  type="course"
+  title="Generating Sound with Neural Networks (VAE Explained)"
+  url="https://www.youtube.com/playlist?list=PL-wATfeyAMNpEyENTc-tVH5tfLGKtSWPp"
+  duration="3-4 hours"
+  difficulty="intermediate"
+  why="Excellent visual explanation of autoencoders and VAEs with practical applications."
+/>
+
+<ResourceCard
+  type="tutorial"
+  title="VAE Tutorial (UvA Deep Learning)"
+  url="https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial9/AE_CIFAR10.html"
+  duration="3-4 hours"
+  difficulty="intermediate"
+  why="Hands-on implementation of autoencoders and VAEs with detailed explanations."
+/>
+
+<ResourceCard
+  type="course"
+  title="Generative Adversarial Networks (GANs)"
+  url="https://www.youtube.com/playlist?list=PLhhyoLH6IjfwIp8bZnzX8QR30TRcHO8Va"
+  duration="4-5 hours"
+  difficulty="intermediate"
+  why="Comprehensive playlist covering GAN fundamentals, training dynamics, and common issues."
+/>
+
+#### 5. Diffusion Model Theory
+
+Understand the mathematical foundations of denoising diffusion probabilistic models.
+
+**Key Topics:**
+
+- Forward process: adding noise progressively
+- Reverse process: learning to denoise
+- Noise schedules and variance
+- Training objective: simplified loss function
+- Score matching and score-based models connection
+- Sampling: DDPM vs DDIM
+
+**Action Items:**
+
+- Implement forward diffusion process
+- Train a simple DDPM on a 2D dataset or MNIST
+- Experiment with different noise schedules
+
+<ResourceCard
+  type="course"
+  title="How AI Images Actually Work"
+  url="https://www.youtube.com/watch?v=iv-5mZ_9CPY"
+  duration="1-2 hours"
+  difficulty="beginner"
+  why="Accessible introduction to how diffusion models generate images from noise."
+/>
+
+<ResourceCard
+  type="course"
+  title="HuggingFace Diffusion Course (Unit 1-2)"
+  url="https://huggingface.co/learn/diffusion-course/en/unit0/1"
+  duration="4-5 hours"
+  difficulty="intermediate"
+  why="Practical course covering diffusion theory and implementation with modern tools."
+/>
+
+<ResourceCard
+  type="course"
+  title="A Practical Introduction to Diffusion Models"
+  url="https://www.youtube.com/playlist?list=PL_1TbuIu65A_G908tHHvTnyQsueR17rMh"
+  duration="6-8 hours"
+  difficulty="advanced"
+  why="Deep dive into diffusion model mathematics and implementation for thorough understanding."
+/>
+
+#### 6. Modern Diffusion Architectures
+
+Learn the architectures powering Stable Diffusion, DALL-E, and other state-of-the-art systems.
+
+**Key Topics:**
+
+- Stable Diffusion architecture
+- U-Net for denoising
+- Text conditioning with CLIP
+- ControlNet for image conditioning
+- Practical generation techniques
+
+**Action Items:**
+
+- Run Stable Diffusion with different prompts and settings
+- Experiment with guidance scale effects
+- Use ControlNet for structured generation
+- Fine-tune with LoRA on custom concepts
+
+<ResourceCard
+  type="course"
+  title="The U-Net Explained"
+  url="https://www.youtube.com/watch?v=NhdzGfB1q74"
+  duration="1-2 hours"
+  difficulty="intermediate"
+  why="Clear explanation of the U-Net architecture used in diffusion models."
+/>
+
+<ResourceCard
+  type="blog"
+  title="The Illustrated Stable Diffusion"
+  url="https://jalammar.github.io/illustrated-stable-diffusion/"
+  duration="2-3 hours"
+  difficulty="intermediate"
+  why="Visual deep dive into Stable Diffusion architecture and components."
+/>
+
+<ResourceCard
+  type="course"
+  title="Stable Diffusion and ControlNet"
+  url="https://www.youtube.com/playlist?list=PL8VDJoEXIjpo2S7X-1YKZnbHyLGyESDCe"
+  duration="3-4 hours"
+  difficulty="intermediate"
+  why="Practical tutorials on using Stable Diffusion and ControlNet for controlled generation."
+/>
+
+<ResourceCard
+  type="tutorial"
+  title="ControlNet Tutorial (HuggingFace)"
+  url="https://huggingface.co/docs/diffusers/en/using-diffusers/controlnet"
+  duration="2-3 hours"
+  difficulty="intermediate"
+  why="Official guide to using ControlNet for precise image generation control."
+/>
+
+<ResourceCard
+  type="tutorial"
+  title="LoRA Training for Diffusion"
+  url="https://huggingface.co/docs/diffusers/en/training/lora"
+  duration="2-3 hours"
+  difficulty="advanced"
+  why="Learn to fine-tune diffusion models efficiently with LoRA adapters."
+/>
+
+---
+
+### Speech Technologies
+
+#### 7. Audio Fundamentals
+
+Build essential knowledge of audio signal processing for speech applications.
+
+**Key Topics:**
+
+- Digital audio: sampling rate, bit depth
+- Time vs frequency domain representations
+- Spectrograms and Short-Time Fourier Transform
+- Mel scale and mel spectrograms
+- MFCCs for speech feature extraction
+- Audio preprocessing: normalization, VAD
+
+**Action Items:**
+
+- Load and visualize audio with librosa
+- Generate spectrograms and mel spectrograms
+- Extract MFCCs from speech samples
+- Build a basic preprocessing pipeline
+
+<ResourceCard
+  type="course"
+  title="HuggingFace Audio Course"
+  url="https://huggingface.co/learn/audio-course/en/chapter1/introduction"
+  duration="4-5 hours"
+  difficulty="beginner"
+  why="Comprehensive introduction to audio processing for ML with hands-on examples."
+/>
+
+<ResourceCard
+  type="course"
+  title="Audio Signal Processing for Machine Learning"
+  url="https://www.youtube.com/playlist?list=PL-wATfeyAMNqIee7cH3q1bh4QJFAaeNv0"
+  duration="6-8 hours"
+  difficulty="intermediate"
+  why="Deep dive into audio signal processing fundamentals essential for speech applications."
+/>
+
+#### 8. Speech-to-Text (ASR)
+
+Learn automatic speech recognition from fundamentals to modern end-to-end models.
+
+**Key Topics:**
+
+- ASR pipeline overview
+- CTC loss and alignment-free training
+- End-to-end ASR architectures
+- Whisper: architecture, capabilities, multilingual
+- Streaming vs offline recognition
+- Evaluation metrics: WER, CER
+- Domain adaptation and fine-tuning
+
+**Action Items:**
+
+- Set up Whisper transcription pipeline
+- Compare model sizes on accuracy/speed
+- Test on accented and noisy audio
+- Build a real-time transcription demo
+
+<ResourceCard
+  type="tutorial"
+  title="HuggingFace ASR Tutorial (Unit 5)"
+  url="https://huggingface.co/learn/audio-course/en/chapter5/introduction"
+  duration="3-4 hours"
+  difficulty="intermediate"
+  why="Practical guide to building ASR systems with modern tools and pretrained models."
+/>
+
+<ResourceCard
+  type="course"
+  title="End-to-End ASR System"
+  url="https://www.youtube.com/watch?v=3MjIkWxXigM"
+  duration="1-2 hours"
+  difficulty="intermediate"
+  why="Overview of modern end-to-end ASR architecture and design decisions."
+/>
+
+<ResourceCard
+  type="course"
+  title="Whisper Paper Explanation"
+  url="https://www.youtube.com/watch?v=AwJf8aQfChE"
+  duration="1-2 hours"
+  difficulty="intermediate"
+  why="Deep dive into OpenAI's Whisper model—the most capable open-source ASR system."
+/>
+
+#### 9. Text-to-Speech (TTS)
+
+Explore speech synthesis from text normalization to neural vocoders.
+
+**Key Topics:**
+
+- TTS pipeline: text → acoustic features → waveform
+- Text normalization and G2P conversion
+- Acoustic models: Tacotron, FastSpeech
+- Neural vocoders: WaveNet, HiFi-GAN
+- Modern TTS: VITS, Bark, Coqui TTS
+- Prosody control and expressive speech
+- Voice cloning with minimal samples
+
+**Action Items:**
+
+- Run inference with Coqui TTS / Bark
+- Compare quality across TTS models
+- Experiment with prosody and emotion
+- Try zero-shot voice cloning
+
+<ResourceCard
+  type="tutorial"
+  title="HuggingFace TTS Tutorial (Unit 6)"
+  url="https://huggingface.co/learn/audio-course/en/chapter6/introduction"
+  duration="3-4 hours"
+  difficulty="intermediate"
+  why="Hands-on guide to building TTS systems with modern neural approaches."
+/>
+
+<ResourceCard
+  type="course"
+  title="TTS Course"
+  url="https://www.youtube.com/playlist?list=PL-wATfeyAMNorsfMFg0ISfD0rPDpMHA4R"
+  duration="4-5 hours"
+  difficulty="intermediate"
+  why="Comprehensive video course covering TTS fundamentals and modern architectures."
+/>
+
+---
+
+## <Rocket /> Capstone Project
+
+Build an automated video translation pipeline that combines ASR, LLM translation, and TTS to dub English videos into Russian with synchronized audio.

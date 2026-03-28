@@ -1,0 +1,125 @@
+---
+sidebar_position: 5
+sidebar_label: 4. Data Manipulation
+title: Module 4 - Data Manipulation
+description: Python, Pandas, and Tools
+---
+
+import { ResourceCard, TimeEstimate } from "@site/src/components";
+import { Database, GitBranch, FileText } from "lucide-react";
+
+# Module 4: Data Manipulation
+
+![Data Manipulation - Python Code and Data Pipelines](../assets/images/data_engineering.png)
+
+## <Database /> Goal
+
+Manipulate and prepare real-world data for analysis and machine learning.
+
+This page focuses on the practical skills needed to turn raw, messy data into clean, structured inputs that models and analyses can actually use.
+
+<TimeEstimate
+  minHours={10}
+  maxHours={14}
+  breakdownBy={{
+    Pandas: 8,
+    SQL: 6,
+    Git: 4,
+  }}
+ />
+
+## <Database /> 1. Pandas & Data Cleaning
+
+<ResourceCard
+  type="course"
+  title="Kaggle: Pandas Micro-Course"
+  url="https://www.kaggle.com/learn/pandas"
+  duration="6-8 hours"
+  difficulty="beginner"
+  why="Hands-on notebooks to load, clean, and transform tabular data quickly with Pandas."
+/>
+
+**Why it matters:**
+
+Most real-world datasets are incomplete, inconsistent, and poorly formatted. Before any modeling or analysis can happen, data must be inspected, cleaned, and transformed.
+
+Pandas is the primary tool used in Python for working with tabular data at scale, and it forms the backbone of most data pipelines.
+
+**What to expect:**
+
+Learners will:
+
+- Load and explore large CSV and tabular datasets
+- Filter, sort, and aggregate data efficiently
+- Handle missing values and inconsistent formats
+- Create new features from existing columns
+- Apply vectorized operations for performance
+
+By the end of this section, learners will be able to clean and manipulate real-world datasets with concise, readable code.
+
+## <Database /> 2. SQL
+
+<ResourceCard
+  type="tutorial"
+  title="SQL Tutorial - Essential SQL For The Beginners"
+  url="https://www.sqltutorial.org/"
+  duration="8-10 hours"
+  difficulty="beginner"
+  why="Comprehensive SQL fundamentals covering queries, joins, aggregations, and data manipulation for working with relational databases."
+/>
+
+**Why it matters:**
+
+Most production data lives in relational databases. SQL is the universal language for querying, filtering, aggregating, and transforming data at scale.
+
+Whether extracting features for machine learning or generating reports, SQL fluency is essential for working with real-world data systems.
+
+**What to expect:**
+
+Learners will:
+
+- Write SELECT queries to retrieve and filter data
+- Use JOIN operations to combine data from multiple tables
+- Perform aggregations with GROUP BY and HAVING
+- Create, update, and delete records with INSERT, UPDATE, DELETE
+- Work with subqueries and common table expressions (CTEs)
+- Understand indexing and query optimization basics
+
+By completing this section, learners will be able to extract and manipulate data directly from databases used in production environments.
+
+## <GitBranch /> 3. Software Engineering Tools
+
+<ResourceCard
+  type="practice"
+  title="Git Branching Game"
+  url="https://learngitbranching.js.org/"
+  duration="2-3 hours"
+  difficulty="beginner"
+  why="Interactive puzzles that teach branching and merging so version control feels natural."
+/>
+
+**Why it matters:**
+
+Data work is collaborative and iterative. Without version control, experiments are lost, results are overwritten, and collaboration breaks down.
+
+Git is the industry-standard tool for tracking changes, experimenting safely, and working in teams.
+
+**What to expect:**
+
+Learners will:
+
+- Understand repositories, commits, and branches
+- Save and version their work using git
+- Push and pull changes from remote repositories
+- Merge branches and resolve simple conflicts
+- Develop safe workflows for experimentation
+
+This section ensures learners can manage their code and data work reliably, both individually and in team settings.
+
+---
+
+## <GitBranch /> Completion Checklist
+
+- [ ] Completed the **Kaggle: Pandas Micro-Course**, including all core lessons and exercises, and earned the official course certificate from Kaggle.
+- [ ] Completed the **SQL Tutorial - Essential SQL For The Beginners** ([SQL Tutorial](https://www.sqltutorial.org/)) and practiced all query types including JOINs, aggregations, and subqueries.
+- [ ] Completed the **W3Docs Git Basics Quiz** ([Git Basics Quiz](https://www.w3docs.com/quiz-start/git)) with a score of at least **85%** and earned the Git certificate.
