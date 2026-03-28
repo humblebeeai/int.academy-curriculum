@@ -215,3 +215,6 @@ dist
 
 # Valid Docusaurus build output
 build/
+
+# Local development notes
+developing_stage.md

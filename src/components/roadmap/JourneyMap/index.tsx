@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import Link from "@docusaurus/Link";
 import { Clock, CheckCircle, ArrowRight, MapPin } from "lucide-react";
-import { phases } from "./roadmapData";
+import { phases } from "../roadmapData";
 import styles from "./JourneyMap.module.css";
 
 export function JourneyMap() {

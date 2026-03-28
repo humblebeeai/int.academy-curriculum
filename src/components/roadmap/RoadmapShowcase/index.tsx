@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "@docusaurus/Link";
 import { ArrowRight } from "lucide-react";
-import { JourneyMap } from "./JourneyMap";
+import { JourneyMap } from "../JourneyMap";
 import styles from "./RoadmapShowcase.module.css";
 
 export function RoadmapShowcase() {

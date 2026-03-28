@@ -5,11 +5,23 @@ import styles from './ResourceCard.module.css';
 
 export interface ResourceCardProps {
     title: string;
-    type: 'video' | 'article' | 'course' | 'documentation';
+    type:
+        | "video"
+        | "article"
+        | "course"
+        | "documentation"
+        | "docs"
+        | "tutorial"
+        | "guide"
+        | "book"
+        | "paper"
+        | "blog"
+        | "practice"
+        | "talk";
     url: string;
     duration?: string;
     description?: string;
-    difficulty?: 'beginner' | 'intermediate' | 'advanced';
+    difficulty?: "beginner" | "intermediate" | "advanced";
 }
 
 const TypeIcons = {
@@ -17,6 +29,14 @@ const TypeIcons = {
     article: FileText,
     course: BookOpen,
     documentation: FileText,
+    docs: FileText,
+    tutorial: BookOpen,
+    guide: FileText,
+    book: BookOpen,
+    paper: FileText,
+    blog: FileText,
+    practice: FileText,
+    talk: Video,
 };
 
 export default function ResourceCard({
