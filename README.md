@@ -112,7 +112,7 @@ To work on the curriculum or docs locally, you can either run the Docusaurus sit
 4. **Build the static site**
 
    ```bash
-   npm run build
+   NODE_OPTIONS="--localstorage-file=/tmp/docusaurus-localstorage" npm run build
    ```
 
 5. **Preview the production build**
@@ -122,6 +122,31 @@ To work on the curriculum or docs locally, you can either run the Docusaurus sit
    ```
 
    This serves the built site (by default on `http://localhost:3000`) so you can verify production output.
+
+---
+
+## Docs Versioning
+
+This site uses Docusaurus docs versioning.
+
+**Create a new version snapshot**
+
+```bash
+npx docusaurus docs:version 0.1.0
+```
+
+This will generate:
+
+- `versioned_docs/version-0.1.0/`
+- `versioned_sidebars/version-0.1.0-sidebars.json`
+- `versions.json`
+
+**Config notes**
+
+- The current docs live in `docs/` (labeled as **Next**).
+- Released versions live under `versioned_docs/`.
+- The version dropdown is enabled in `docusaurus.config.ts` via
+  `docsVersionDropdown`.
 
 ### Run Locally with Docker
 
