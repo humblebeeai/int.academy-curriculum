@@ -90,10 +90,6 @@ const config: Config = {
       hideOnScroll: false,
       items: [
         {
-          type: "docsVersionDropdown",
-          position: "right",
-        },
-        {
           href: "https://academy.humblebee.ai",
           label: "Academy",
           position: "right",

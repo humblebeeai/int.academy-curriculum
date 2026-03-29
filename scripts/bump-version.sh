@@ -9,7 +9,7 @@ _BUMP_TYPE=""
 _DO_COMMIT=false
 _DO_TAG=false
 _DO_PUSH=false
-_DO_DOCS=true
+_DO_DOCS=false
 
 _usage_help() {
   cat <<EOF
@@ -20,7 +20,8 @@ OPTIONS:
     -c, --commit       Commit version changes
     -t, --tag          Create git tag vX.Y.Z
     -p, --push         Push commit and tag
-    -n, --no-docs      Skip docs version snapshot
+    -n, --no-docs      Skip docs version snapshot (default)
+    -d, --docs         Create docs version snapshot
     -h, --help         Show this help message
 EOF
 }
@@ -41,6 +42,9 @@ while [ $# -gt 0 ]; do
       shift;;
     -n|--no-docs)
       _DO_DOCS=false
+      shift;;
+    -d|--docs)
+      _DO_DOCS=true
       shift;;
     -h|--help)
       _usage_help

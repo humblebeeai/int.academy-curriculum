@@ -125,39 +125,15 @@ To work on the curriculum or docs locally, you can either run the Docusaurus sit
 
 ---
 
-## Docs Versioning
-
-This site uses Docusaurus docs versioning.
-
-**Create a new version snapshot**
-
-```bash
-npx docusaurus docs:version 0.1.0
-```
-
-This will generate:
-
-- `versioned_docs/version-0.1.0/`
-- `versioned_sidebars/version-0.1.0-sidebars.json`
-- `versions.json`
-
-**Config notes**
-
-- The current docs live in `docs/` (labeled as **Next**).
-- Released versions live under `versioned_docs/`.
-- The version dropdown is enabled in `docusaurus.config.ts` via
-  `docsVersionDropdown`.
-
----
-
 ## Versioning Workflow
 
 Use the GitHub Actions workflow **1. Bump Version** to create a release.
+Docs snapshots are optional and disabled by default.
 
 Steps:
 
 1. Run **1. Bump Version** and choose `patch`, `minor`, or `major`.
-2. The workflow bumps `package.json`, snapshots docs, commits, and tags `vX.Y.Z`.
+2. The workflow bumps `package.json`, commits, and tags `vX.Y.Z`.
 3. **2. Build and Publish** runs on the tag to build and create a GitHub release.
 4. **3. Update Changelog** updates `CHANGELOG.md` after the release.
 5. **Publish Docs** deploys the updated docs to GitHub Pages.
@@ -166,6 +142,8 @@ Local script (manual alternative):
 
 ```bash
 ./scripts/bump-version.sh -b=patch -c -t -p
+
+Optional: include docs snapshot by adding `-d`.
 ```
 
 ### Run Locally with Docker

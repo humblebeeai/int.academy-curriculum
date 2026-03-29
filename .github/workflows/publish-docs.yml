@@ -7,9 +7,6 @@ on:
       - main
     paths:
       - "docs/**"
-      - "versioned_docs/**"
-      - "versioned_sidebars/**"
-      - "versions.json"
       - "docusaurus.config.ts"
       - "sidebars.ts"
 

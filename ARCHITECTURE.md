@@ -74,9 +74,6 @@ Key dependencies:
 │       └── ui/                               # Shared UI primitives
 ├── static/img/                              # Site assets (favicons, logos, homepage photos)
 ├── docs/assets/images/                      # Curriculum illustrations used in docs
-├── versioned_docs/                          # Docusaurus versioned snapshots
-├── versioned_sidebars/                      # Docusaurus versioned sidebars
-├── versions.json                            # Docusaurus versions registry
 ├── .github/workflows/                       # CI workflows (versioning, build, docs publish)
 ├── scripts/                                 # Automation scripts (versioning, docs, changelog)
 ├── CHANGELOG.md                             # Release notes (Keep a Changelog)
