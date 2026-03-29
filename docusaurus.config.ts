@@ -43,9 +43,6 @@ const config: Config = {
             current: {
               label: "Next",
             },
-            "0.1.0": {
-              label: "0.1.0",
-            },
           },
         },
         blog: {
