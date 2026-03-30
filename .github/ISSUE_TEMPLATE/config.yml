@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Community Support
+    url: https://t.me/airoadmapcommunity
+    about: Join the AI Roadmap community channel for discussion and support
+  - name: Documentation
+    url: https://academy.humblebee.ai
+    about: Browse the curriculum and updates
