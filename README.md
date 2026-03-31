@@ -172,6 +172,29 @@ From the repo root:
    docker compose down
    ```
 
+---
+
+## Deployment & Ops Notes
+
+### Configuration
+
+Runtime configuration is handled via `docusaurus.config.ts`, `sidebars.ts`, and
+environment variables used by `compose.yml` (for example, `PORT`).
+
+### Health & Liveness
+
+In production (nginx), the following endpoints are available:
+
+- `GET /ping` returns `{ "status": "pong" }`
+- `GET /health` returns `{ "status": "ok", "services": { "docs": "ok" } }`
+
+### Troubleshooting
+
+- Verify dependencies: `npm install`
+- If build fails with localStorage errors, use the localstorage flag:
+  `NODE_OPTIONS="--localstorage-file=/tmp/docusaurus-localstorage" npm run build`
+- Check container logs: `docker compose logs`
+
 ### Editing Curriculum Content
 
 - Most curriculum content lives under the `docs/` directory as `.mdx` files:

@@ -68,7 +68,7 @@ Key dependencies:
 │   │   └── index.module.css
 │   └── components/                          # Reusable React components
 │       ├── index.ts                         # Barrel export
-│       ├── content/                          # MDX-facing UI blocks (cards, maps, tags)
+│       ├── doc-components/                   # MDX-facing UI blocks (cards, maps, tags)
 │       ├── home/                             # Homepage sections and layouts
 │       ├── roadmap/                          # Roadmap feature components + data
 │       └── ui/                               # Shared UI primitives

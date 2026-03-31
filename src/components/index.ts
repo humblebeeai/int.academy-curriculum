@@ -1,9 +1,9 @@
-export { default as ResourceCard } from "./content/ResourceCard";
-export { default as TimeEstimate } from "./content/TimeEstimate";
-export { default as SkillShowcase } from "./content/SkillShowcase";
-export { default as ConceptMap } from "./content/ConceptMap";
+export { default as ResourceCard } from "./doc-components/ResourceCard";
+export { default as TimeEstimate } from "./doc-components/TimeEstimate";
+export { default as SkillShowcase } from "./doc-components/SkillShowcase";
+export { default as ConceptMap } from "./doc-components/ConceptMap";
 export { default as DifficultyTag } from "./ui/DifficultyTag";
-export { default as CodeComparison } from "./content/CodeComparison";
+export { default as CodeComparison } from "./doc-components/CodeComparison";
 export { default as FAQSection } from "./home/FAQSection";
 export { default as ParticleBackground } from "./ui/ParticleBackground";
 export { default as LearningRoadmap } from "./home/LearningRoadmap";
