@@ -181,13 +181,6 @@ From the repo root:
 Runtime configuration is handled via `docusaurus.config.ts`, `sidebars.ts`, and
 environment variables used by `compose.yml` (for example, `PORT`).
 
-### Health & Liveness
-
-In production (nginx), the following endpoints are available:
-
-- `GET /ping` returns `{ "status": "pong" }`
-- `GET /health` returns `{ "status": "ok", "services": { "docs": "ok" } }`
-
 ### Troubleshooting
 
 - Verify dependencies: `npm install`
