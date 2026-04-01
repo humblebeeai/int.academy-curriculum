@@ -14,6 +14,8 @@ const config: Config = {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
+// The compatibility with Docusaurus v4 is currently being tested, but enabling the future flag causes some issues with the current version. We will enable it once we are ready to migrate to v4.
+
   url: "https://academy.humblebee.ai",
   baseUrl: "/",
 
@@ -24,9 +26,10 @@ const config: Config = {
 
   markdown: {
     mermaid: true,
-    hooks: {
-      onBrokenMarkdownLinks: "warn",
-    },
+    // hooks: {
+    //   onBrokenMarkdownLinks: "warn",
+    // },
+    // Note: The onBrokenMarkdownLinks hook is currently not working as expected, so we will rely on the onBrokenLinks config for now. We will revisit this once the issue is resolved.
   },
 
   themes: ["@docusaurus/theme-mermaid"],
@@ -182,9 +185,9 @@ const config: Config = {
       copyright: `
         <div class="oer-license">
           <p>
-            <strong>Open Educational Resource</strong><br/>
+            <strong>Open Educational Resource & Open Source Software</strong><br/>
             Content licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. 
-            Code is unlicensed.
+            Source code licensed under the <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">MIT License</a>.
           </p>
           <p>
             © ${new Date().getFullYear()} HumbleBeeAI Academy. Built with ❤️ by the community.
