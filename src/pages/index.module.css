@@ -64,7 +64,11 @@
 .gradientOrb1 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(255, 245, 0, 0.15) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 245, 0, 0.15) 0%,
+    transparent 70%
+  );
   top: -20%;
   left: -10%;
   animation-delay: 0s;
@@ -73,7 +77,11 @@
 .gradientOrb2 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(255, 185, 2, 0.12) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 185, 2, 0.12) 0%,
+    transparent 70%
+  );
   top: 40%;
   right: -15%;
   animation-delay: -7s;
@@ -82,14 +90,19 @@
 .gradientOrb3 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(255, 245, 0, 0.1) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 245, 0, 0.1) 0%,
+    transparent 70%
+  );
   bottom: -10%;
   left: 30%;
   animation-delay: -14s;
 }
 
 @keyframes floatOrb {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
   }
   25% {
@@ -124,23 +137,23 @@
     min-height: auto;
     padding: 6rem 1.5rem 4rem;
   }
-  
+
   .gradientOrb1,
   .gradientOrb2,
   .gradientOrb3 {
     filter: blur(60px);
   }
-  
+
   .gradientOrb1 {
     width: 350px;
     height: 350px;
   }
-  
+
   .gradientOrb2 {
     width: 300px;
     height: 300px;
   }
-  
+
   .gradientOrb3 {
     width: 250px;
     height: 250px;
@@ -191,7 +204,8 @@
 }
 
 @keyframes shimmer {
-  0%, 100% {
+  0%,
+  100% {
     background-position: 0% 50%;
   }
   50% {
@@ -236,7 +250,9 @@
   font-size: 1rem;
   text-decoration: none;
   transition: all var(--duration-normal) var(--ease-standard);
-  box-shadow: 0 4px 20px rgba(255, 245, 0, 0.25), var(--shadow-lg);
+  box-shadow:
+    0 4px 20px rgba(255, 245, 0, 0.25),
+    var(--shadow-lg);
   position: relative;
   overflow: hidden;
 }
@@ -257,7 +273,9 @@
 
 .primaryButton:hover {
   transform: var(--hover-lift-sm);
-  box-shadow: 0 8px 30px rgba(255, 245, 0, 0.35), var(--shadow-xl);
+  box-shadow:
+    0 8px 30px rgba(255, 245, 0, 0.35),
+    var(--shadow-xl);
   color: #111111 !important;
 }
 
@@ -324,7 +342,7 @@
   gap: 0.6rem;
   padding: 0.7rem 1.75rem;
   background: rgba(34, 158, 217, 0.18);
-  color: #7AC4E8 !important;
+  color: #7ac4e8 !important;
   border: 1.5px solid rgba(34, 158, 217, 0.55);
   border-radius: 100px;
   font-weight: 600;
@@ -342,7 +360,6 @@
   transform: translateY(-2px);
   box-shadow: 0 0 20px rgba(34, 158, 217, 0.35);
 }
-
 
 /* ===================================
    FEATURE GRID SECTION
@@ -825,13 +842,15 @@
   display: flex;
   align-items: center;
   padding: 2.5rem;
-  background: linear-gradient(135deg, rgba(245, 197, 24, 0.08) 0%, rgba(245, 197, 24, 0.02) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(245, 197, 24, 0.08) 0%,
+    rgba(245, 197, 24, 0.02) 100%
+  );
   border-left: 4px solid var(--accent-gold);
   border-radius: 0 1.25rem 1.25rem 0;
   position: relative;
 }
-
-
 
 .aboutTextBlock p {
   font-size: 1.2rem;
@@ -930,7 +949,11 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(255, 245, 0, 0.04) 0%, transparent 60%);
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(255, 245, 0, 0.04) 0%,
+    transparent 60%
+  );
   pointer-events: none;
 }
 
@@ -1112,7 +1135,11 @@
   transform: translateX(-50%);
   width: 60%;
   height: 100%;
-  background: radial-gradient(ellipse at 50% 0%, rgba(255, 245, 0, 0.06) 0%, transparent 60%);
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(255, 245, 0, 0.06) 0%,
+    transparent 60%
+  );
   pointer-events: none;
 }
 
@@ -1486,8 +1513,6 @@
     inset 0 0 15px rgba(255, 245, 0, 0.08);
 }
 
-
-
 .groupPhotoWrapper {
   border-radius: 1rem;
   overflow: hidden;
@@ -1540,7 +1565,7 @@
 }
 
 .highlightCompany::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -2px;
   left: 0;
@@ -1691,12 +1716,19 @@
 
 .academyCard .cardMain {
   border-color: rgba(255, 245, 0, 0.25);
-  background: linear-gradient(135deg, rgba(255, 245, 0, 0.03) 0%, var(--glass-bg-solid) 50%, var(--glass-bg-solid) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 245, 0, 0.03) 0%,
+    var(--glass-bg-solid) 50%,
+    var(--glass-bg-solid) 100%
+  );
 }
 
 .academyCard:hover .cardMain {
   border-color: rgba(255, 245, 0, 0.45);
-  box-shadow: var(--shadow-xl), 0 0 40px rgba(255, 245, 0, 0.12);
+  box-shadow:
+    var(--shadow-xl),
+    0 0 40px rgba(255, 245, 0, 0.12);
 }
 
 /* Featured badge for Academy card */
@@ -1775,7 +1807,11 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255, 245, 0, 0.05) 0%, transparent 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 245, 0, 0.05) 0%,
+    transparent 100%
+  );
   border-radius: 1.25rem;
   z-index: 0;
   pointer-events: none;

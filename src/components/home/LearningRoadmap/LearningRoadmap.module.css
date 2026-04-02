@@ -305,7 +305,11 @@
 
 .phaseCard:hover .skillBadge {
   border-color: color-mix(in srgb, var(--phase-color) 30%, transparent);
-  background: color-mix(in srgb, var(--phase-color) 8%, var(--glass-bg, rgba(255, 255, 255, 0.6)));
+  background: color-mix(
+    in srgb,
+    var(--phase-color) 8%,
+    var(--glass-bg, rgba(255, 255, 255, 0.6))
+  );
 }
 
 /* ===================================
