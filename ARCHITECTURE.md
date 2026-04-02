@@ -71,7 +71,7 @@ Key dependencies:
 │       ├── doc-components/                   # MDX-facing UI blocks (cards, maps, tags)
 │       ├── home/                             # Homepage sections and layouts
 │       ├── roadmap/                          # Roadmap feature components + data
-│       └── ui/                               # Shared UI primitives
+│       └── primitives/                       # Shared UI primitives
 ├── static/img/                              # Site assets (favicons, logos, homepage photos)
 ├── docs/assets/images/                      # Curriculum illustrations used in docs
 ├── .github/workflows/                       # CI workflows (versioning, build, docs publish)
