@@ -37,7 +37,8 @@
   /* UI Elements */
   --ifm-card-background-color: #242424;
   --ifm-card-border-radius: 16px;
-  --ifm-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --ifm-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 2px 4px -1px rgba(0, 0, 0, 0.2);
 
   /* Text */
   --ifm-font-color-base: #f1f1f1;
@@ -80,24 +81,47 @@
   --ifm-navbar-link-hover-color: var(--accent-gold);
 
   /* Warm accents - vibrant for dark mode */
-  --accent-gold: #FFF500;
+  --accent-gold: #fff500;
   --accent-gold-light: #fff84d;
   --accent-gold-dark: #e0d800;
-  --accent-amber: #FFB902;
+  --accent-amber: #ffb902;
   --accent-amber-light: #ffca40;
   --accent-amber-dark: #e0a200;
-  --accent-orange: #E09500;
+  --accent-orange: #e09500;
 
   /* Dark mode gradients - more vibrant */
-  --gradient-warm: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-amber) 100%);
-  --gradient-warm-subtle: linear-gradient(135deg, rgba(255, 245, 0, 0.15) 0%, rgba(255, 185, 2, 0.15) 100%);
-  --gradient-warm-text: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-amber) 50%, var(--accent-orange) 100%);
-  --gradient-hero-bg: radial-gradient(ellipse at 50% 0%, rgba(255, 245, 0, 0.1) 0%, transparent 60%);
-  --gradient-section-divider: linear-gradient(90deg, transparent 0%, var(--ifm-color-emphasis-200) 50%, transparent 100%);
+  --gradient-warm: linear-gradient(
+    135deg,
+    var(--accent-gold) 0%,
+    var(--accent-amber) 100%
+  );
+  --gradient-warm-subtle: linear-gradient(
+    135deg,
+    rgba(255, 245, 0, 0.15) 0%,
+    rgba(255, 185, 2, 0.15) 100%
+  );
+  --gradient-warm-text: linear-gradient(
+    135deg,
+    var(--accent-gold-light) 0%,
+    var(--accent-amber) 50%,
+    var(--accent-orange) 100%
+  );
+  --gradient-hero-bg: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(255, 245, 0, 0.1) 0%,
+    transparent 60%
+  );
+  --gradient-section-divider: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--ifm-color-emphasis-200) 50%,
+    transparent 100%
+  );
 
   /* Dark mode glow effects - more prominent */
   --glow-gold: 0 0 30px rgba(255, 245, 0, 0.35);
-  --glow-gold-intense: 0 0 50px rgba(255, 245, 0, 0.45), 0 0 100px rgba(255, 245, 0, 0.2);
+  --glow-gold-intense: 0 0 50px rgba(255, 245, 0, 0.45),
+    0 0 100px rgba(255, 245, 0, 0.2);
   --glow-gold-subtle: 0 0 40px rgba(255, 245, 0, 0.15);
   --glow-amber: 0 0 30px rgba(255, 185, 2, 0.35);
 
@@ -134,9 +158,12 @@
 
   /* Shadows (Standardized) */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.25), 0 2px 4px -1px rgba(0, 0, 0, 0.15);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.25), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.25),
+    0 2px 4px -1px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.25),
+    0 4px 6px -2px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3),
+    0 10px 10px -5px rgba(0, 0, 0, 0.15);
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
 
   /* Section spacing */

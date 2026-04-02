@@ -1,0 +1,37 @@
+name: Question / Help
+description: Ask questions or get help with the curriculum site
+title: "[Question]: "
+labels: ["question", "help-wanted"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please check docs and existing issues before asking.
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Question Category
+      options:
+        - Setup/Installation
+        - Content/Structure
+        - Contribution Process
+        - Deployment
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your Question
+      description: Be specific about what you need help with.
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Any background that helps answer the question.
+      required: false

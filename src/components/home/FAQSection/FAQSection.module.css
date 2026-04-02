@@ -1,0 +1,192 @@
+/**
+ * FAQ Section Styles
+ * Reusable accordion-style FAQ component with glassmorphism
+ */
+
+.faqSection {
+  padding: var(--section-padding-y, 6rem) 0;
+  background: var(--ifm-background-surface-color);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background accent */
+.faqSection::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  right: -10%;
+  width: 40%;
+  height: 60%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 245, 0, 0.05) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionIconWrapper {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass-bg, rgba(255, 255, 255, 0.8));
+  backdrop-filter: blur(var(--glass-blur, 12px));
+  -webkit-backdrop-filter: blur(var(--glass-blur, 12px));
+  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.2));
+  border-radius: 1rem;
+  margin: 0 auto 1.5rem;
+  color: var(--accent-gold, #fff500);
+  box-shadow:
+    var(--shadow-md),
+    0 0 20px rgba(255, 245, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.sectionIconWrapper:hover {
+  box-shadow:
+    var(--shadow-lg),
+    0 0 30px rgba(255, 245, 0, 0.2);
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--ifm-font-color-base);
+  background: var(
+    --gradient-warm-text,
+    linear-gradient(135deg, #fff500 0%, #ffb902 100%)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sectionSubtitle {
+  font-size: 1.125rem;
+  color: var(--ifm-font-color-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.faqContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faqItem {
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--glass-bg, rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(var(--glass-blur, 12px));
+  -webkit-backdrop-filter: blur(var(--glass-blur, 12px));
+  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.2));
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.faqItem:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--accent-gold, #fff500) 40%,
+    transparent
+  );
+  box-shadow:
+    var(--shadow-md),
+    0 0 20px rgba(255, 245, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.faqQuestion {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+  transition: all 0.2s ease;
+}
+
+.faqQuestion:hover {
+  color: var(--accent-gold, #fff500);
+}
+
+.faqQuestionOpen {
+  color: var(--accent-gold, #fff500);
+}
+
+.faqChevron {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  color: var(--ifm-font-color-secondary);
+}
+
+.faqChevronOpen {
+  transform: rotate(180deg);
+  color: var(--accent-gold, #fff500);
+}
+
+.faqAnswer {
+  overflow: hidden;
+}
+
+.faqAnswer p {
+  padding: 0 1.5rem 1.25rem;
+  margin: 0;
+  color: var(--ifm-font-color-secondary);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* Active state - when answer is visible */
+.faqItem:has(.faqQuestionOpen) {
+  border-color: color-mix(
+    in srgb,
+    var(--accent-gold, #fff500) 50%,
+    transparent
+  );
+  box-shadow:
+    var(--shadow-md),
+    0 0 25px rgba(255, 245, 0, 0.1);
+}
+
+@media screen and (max-width: 996px) {
+  .faqSection {
+    padding: var(--section-padding-y-mobile, 4rem) 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1rem;
+  }
+
+  .faqQuestion {
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .faqAnswer p {
+    padding: 0 1.25rem 1rem;
+    font-size: 0.9rem;
+  }
+}

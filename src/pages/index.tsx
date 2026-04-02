@@ -98,7 +98,7 @@ function HomepageHeader() {
               className={styles.secondaryButton}
             >
               <GitPullRequest size={18} />
-              Contribute a Module
+              Contribute to the Roadmap
             </Link>
           </motion.div>
 
@@ -562,8 +562,8 @@ function ReviewersSection() {
   const maintainers = [
     {
       name: "Jumabek Alikhanov",
-      role: "Lead Curriculum Developer",
-      bio: "PhD in Machine Learning with 8+ years teaching and industry experience.",
+      role: "Executive Sponsor & Roadmap Reviewer",
+      bio: "Founder of HumbleBeeAI, PhD in Machine Learning with 10+ years of teaching and industry experience.",
       image: "/img/maintainer-1.jpg",
       socials: {
         linkedin: "https://www.linkedin.com/in/jumabek-alikhan-phd-1036a864/",
@@ -573,8 +573,8 @@ function ReviewersSection() {
     },
     {
       name: "Oybek Eraliyev",
-      role: "Technical Reviewer",
-      bio: "Former AI engineer at major tech companies. Passionate about accessible education.",
+      role: "Senior Roadmap Architect",
+      bio: "PhD, AI engineer. Passionate about accessible education.",
       image: "/img/maintainer-2.jpg",
       socials: {
         linkedin: "https://www.linkedin.com/in/oybek-eraliev-56884a213/",
@@ -701,8 +701,7 @@ function ReviewersSection() {
               This curriculum has been thoroughly reviewed by senior
               practitioners from leading technology companies and research
               institutions. The validation panel includes engineering leaders
-              from <span className={styles.highlightCompany}>NVIDIA</span> and{" "}
-              <span className={styles.highlightCompany}>DP World</span>, AI
+              from <span className={styles.highlightCompany}>DP World</span>, AI
               researchers from{" "}
               <span className={styles.highlightCompany}>KRICT</span> and{" "}
               <span className={styles.highlightCompany}>DeltaX</span>, and

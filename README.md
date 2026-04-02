@@ -25,6 +25,7 @@ HumbleBeeAI was built to eliminate these barriers through structured learning, h
 **The curriculum is the map. The Academy is the applied layer.**
 
 - **Open Curriculum (this repo)**:
+
   - Self-paced learning path and resources
   - Clear sequencing and project-driven progression
   - Community discussion and contributions
@@ -40,11 +41,13 @@ HumbleBeeAI was built to eliminate these barriers through structured learning, h
 ## Curriculum Structure
 
 ### Engineering Fundamentals
-**Duration:** 2-4 months (self-paced)  
-**Goal:** Build the engineering fundamentals that make everything else possible.  
+
+**Duration:** 2-4 months (self-paced)
+**Goal:** Build the engineering fundamentals that make everything else possible.
 **Outcome:** Strong fundamentals in tools, math, and data workflows so you can build confidently without getting stuck on basics.
 
 Modules:
+
 - Terminal & Algorithmic Basics
 - Calculus & Algebra
 - Probability & Statistics
@@ -52,22 +55,26 @@ Modules:
 - IoT Activation
 
 ### Soft Landing
-**Duration:** 3-6 months (self-paced)  
-**Goal:** Master ML foundations and the system skills required to deploy reliably.  
+
+**Duration:** 3-6 months (self-paced)
+**Goal:** Master ML foundations and the system skills required to deploy reliably.
 **Outcome:** Build end-to-end ML systems: training, evaluation, deployment, and reliability basics using modern tooling.
 
 Modules:
+
 - Math & ML Fundamentals (PyTorch, optimization, gradient descent)
 - Intro to AI Engineering (deep learning, transformers/LLMs, clean code)
 - Systems & Networking (deployment fundamentals, security, cloud mental models)
 - Fullstack Toolkit (APIs, databases, product-shaped systems)
 
 ### Phase 3: Specializations (Soft Landing)
-**Duration:** 2-4 months per track  
-**Goal:** Gain deep domain expertise with proof through projects.  
+
+**Duration:** 2-4 months per track
+**Goal:** Gain deep domain expertise with proof through projects.
 **Outcome:** Domain-specific projects that demonstrate depth. Each track ends with a capstone designed to look like real work: clear problem framing, measurable results, and a reproducible or deployable system.
 
 Tracks:
+
 - Computer Vision (classification, detection)
 - Data Science (statistical modeling, BI)
 - NLP & LLMs (transformers, fine-tuning, agents)
@@ -112,7 +119,7 @@ To work on the curriculum or docs locally, you can either run the Docusaurus sit
 4. **Build the static site**
 
    ```bash
-   npm run build
+   NODE_OPTIONS="--localstorage-file=/tmp/docusaurus-localstorage" npm run build
    ```
 
 5. **Preview the production build**
@@ -122,6 +129,29 @@ To work on the curriculum or docs locally, you can either run the Docusaurus sit
    ```
 
    This serves the built site (by default on `http://localhost:3000`) so you can verify production output.
+
+---
+
+## Versioning Workflow
+
+Use the GitHub Actions workflow **1. Bump Version** to create a release.
+Docs snapshots are optional and disabled by default.
+
+Steps:
+
+1. Run **1. Bump Version** and choose `patch`, `minor`, or `major`.
+2. The workflow bumps `package.json`, commits, and tags `vX.Y.Z`.
+3. **2. Build and Publish** runs on the tag to build and create a GitHub release.
+4. **3. Update Changelog** updates `CHANGELOG.md` after the release.
+5. **Publish Docs** deploys the updated docs to GitHub Pages.
+
+Local script (manual alternative):
+
+```bash
+./scripts/bump-version.sh -b=patch -c -t -p
+
+Optional: include docs snapshot by adding `-d`.
+```
 
 ### Run Locally with Docker
 
@@ -149,6 +179,22 @@ From the repo root:
    docker compose down
    ```
 
+---
+
+## Deployment & Ops Notes
+
+### Configuration
+
+Runtime configuration is handled via `docusaurus.config.ts`, `sidebars.ts`, and
+environment variables used by `compose.yml` (for example, `PORT`).
+
+### Troubleshooting
+
+- Verify dependencies: `npm install`
+- If build fails with localStorage errors, use the localstorage flag:
+  `NODE_OPTIONS="--localstorage-file=/tmp/docusaurus-localstorage" npm run build`
+- Check container logs: `docker compose logs`
+
 ### Editing Curriculum Content
 
 - Most curriculum content lives under the `docs/` directory as `.mdx` files:
@@ -164,7 +210,7 @@ From the repo root:
 
 ## Learning Philosophy
 
-- **Learning by Doing**: We reject tutorial-only learning. Build continuously.  
+- **Learning by Doing**: We reject tutorial-only learning. Build continuously.
   In the Academy, this is reinforced through scenario projects and mentor reviews.
 - **Longitudinal Growth**: Real expertise compounds through progressive difficulty and repetition.
 - **Community-Driven**: Learn with peers, ask questions, and contribute improvements.

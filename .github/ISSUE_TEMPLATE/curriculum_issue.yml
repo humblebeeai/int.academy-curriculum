@@ -1,0 +1,51 @@
+name: Curriculum Issue
+description: Report problems or improvements for a specific module/track
+title: "[Curriculum]: "
+labels: ["curriculum", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for issues tied to a specific module or track.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which area is affected?
+      options:
+        - Engineering Fundamentals
+        - Core Systems
+        - Specializations
+        - Resources
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Issue Description
+      description: Describe the issue and impact on learners.
+      placeholder: |
+        Example: The listed resource is outdated and no longer accessible.
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: Link or file path
+      placeholder: "docs/softlanding/core-systems/03-networking.mdx"
+    validations:
+      required: false
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: Suggest an update or replacement if possible.
+      placeholder: "Replace with <new resource link> and update the description."
+    validations:
+      required: false
