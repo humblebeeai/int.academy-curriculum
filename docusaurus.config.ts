@@ -10,9 +10,9 @@ const config: Config = {
   favicon: "img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
-  future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
-  },
+  // future: {
+  //   v4: true, // Improve compatibility with the upcoming Docusaurus v4
+  // },
 
 // The compatibility with Docusaurus v4 is currently being tested, but enabling the future flag causes some issues with the current version. We will enable it once we are ready to migrate to v4.
 
