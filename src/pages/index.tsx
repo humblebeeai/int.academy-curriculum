@@ -113,11 +113,8 @@ function HomepageHeader() {
               className={styles.telegramButton}
             >
               <MessageCircle size={18} />
-              Join Community
+              Join Our Community
             </Link>
-            <span className={styles.heroCtaText}>
-              Connect with learners and contributors
-            </span>
           </motion.div>
         </motion.div>
       </div>

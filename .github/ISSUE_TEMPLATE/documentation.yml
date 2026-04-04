@@ -1,0 +1,49 @@
+name: Documentation Issue
+description: Report documentation problems or suggest improvements
+title: "[Docs]: "
+labels: ["documentation", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help improve the documentation by reporting issues or suggestions.
+
+  - type: dropdown
+    id: doc-type
+    attributes:
+      label: Documentation Area
+      options:
+        - README
+        - Architecture
+        - Contributing
+        - Docs Content
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: File path or URL
+      placeholder: "README.md or docs/engineering-fundamentals/index.mdx"
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Issue Description
+      description: What is wrong or unclear?
+      placeholder: "The setup steps are missing the build flag."
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested-fix
+    attributes:
+      label: Suggested Fix
+      description: Proposed wording or change.
+      placeholder: "Add the NODE_OPTIONS localstorage flag to the build step."
+    validations:
+      required: false

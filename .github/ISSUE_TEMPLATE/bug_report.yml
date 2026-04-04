@@ -1,0 +1,59 @@
+name: Bug Report
+description: Report a bug or unexpected behavior in the curriculum site
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Please search existing issues first.
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Bug Description
+      description: Describe what happened and what you expected to happen.
+      placeholder: |
+        Expected: The page loads with the correct section.
+        Actual: The page shows a broken link error.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Steps to Reproduce
+      description: Provide steps to reproduce the issue.
+      placeholder: |
+        1. Go to /docs/engineering-fundamentals
+        2. Click "Data Manipulation"
+        3. Observe broken image
+      render: markdown
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: Page path or file path (if known)
+      placeholder: "docs/engineering-fundamentals/data-manipulation.mdx"
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / Console Output
+      description: Paste any relevant errors or console logs.
+      render: shell
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission Checklist
+      options:
+        - label: I searched existing issues to avoid duplicates
+          required: true
