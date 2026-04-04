@@ -1,51 +1,8 @@
-# LICENSE OVERVIEW
+# LICENSE
 
-This repository dual-licenses its contents to serve both the educational community and the open-source software community:
+This repository is licensed under **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**.
 
-1.  **Educational Content** (Guides, Curriculum, documentation files) is licensed under **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**.
-2.  **Source Code** (React components, scripts, configuration) is licensed under the **MIT License**.
+Applies to all project content and code unless stated otherwise for third-party materials.
 
----
-
-## EDUCATIONAL CONTENT LICENSE (CC BY-NC-SA 4.0)
-
-**Applies to:** Directory `docs/`, `blog/`, and all `.md`/`.mdx` files.
-
-Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
-
-You are free to:
-*   **Share** — copy and redistribute the material in any medium or format
-*   **Adapt** — remix, transform, and build upon the material for any purpose, excluding commercial use.
-
-Under the following terms:
-*   **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
-*   **ShareAlike** — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
-*   **No additional restrictions** — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
-
-[Read the full license text here](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode)
-
----
-
-## SOURCE CODE LICENSE (MIT License)
-
-**Applies to:** Directory `src/`, configuration files (e.g., `docusaurus.config.ts`, `package.json`), scripts, and GitHub actions.
-
-Copyright (c) 2024 HumbleBeeAI
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+- License summary: https://creativecommons.org/licenses/by-nc-sa/4.0/
+- Full legal text: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode

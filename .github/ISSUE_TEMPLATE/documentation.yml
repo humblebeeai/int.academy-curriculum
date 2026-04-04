@@ -8,7 +8,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Help us improve RedTeam Core documentation! Clear docs make the project accessible to everyone.
+        Help us improve HumbleBeeAI Academy documentation! Clear docs make the project accessible to everyone.
 
   - type: dropdown
     id: doc-type

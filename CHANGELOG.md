@@ -9,7 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [1.0.0] - 2026-04-04
 
 ### Added
-- Dual-licensing system (MIT + AGPLv3)
+- Licensing policy updates
 - Community section and Telegram links across documents
 - Reviewers and builders section
 - YouTube video for curriculum overview in Roadmap section
@@ -58,7 +58,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [0.2.0] - 2026-04-04
 
 ### Added
-- Dual-licensing system (MIT + AGPLv3)
+- Licensing policy updates
 - Community section and Telegram links across documents
 - Reviewers and builders section
 - YouTube video for curriculum overview in Roadmap section

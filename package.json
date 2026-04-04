@@ -8,7 +8,7 @@
     "type": "git",
     "url": "https://github.com/humblebeeai/int.academy-curriculum.git"
   },
-  "license": "MIT",
+  "license": "CC-BY-NC-SA-4.0",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",

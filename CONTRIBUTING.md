@@ -122,10 +122,9 @@ Final approvals are handled by HumbleBeeAI department heads and core maintainers
 
 ## Licensing
 
-- **Educational content** (`docs/`, `.md`/`.mdx` files): [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-- **Source code** (components, config, scripts): [MIT License](https://opensource.org/licenses/MIT)
+- **Project content and code**: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-By submitting a contribution, you agree that your content contributions are licensed under CC BY-NC-SA 4.0 and your code contributions are licensed under the MIT License.
+By submitting a contribution, you agree that your contributions are licensed under CC BY-NC-SA 4.0.
 
 ---
 
