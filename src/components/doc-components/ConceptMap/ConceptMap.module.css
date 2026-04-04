@@ -1,64 +1,64 @@
- .container {
-    margin: 2rem 0;
-    padding: 1.5rem;
-    background-color: var(--ifm-background-surface-color);
-    border: 1px solid var(--ifm-color-emphasis-200);
-    border-radius: 0.75rem;
+.container {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 0.75rem;
 }
 
 .title {
-    font-size: 1.125rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--ifm-color-primary);
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ifm-color-primary);
 }
 
 .mermaidWrapper {
-    display: flex;
-    justify-content: center;
-    margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
 }
 
 .legend {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--ifm-color-emphasis-200);
-    font-size: 0.875rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  font-size: 0.875rem;
 }
 
 .legendItem {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--ifm-color-emphasis-700);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ifm-color-emphasis-700);
 }
 
 .colorDot {
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 0.25rem;
-    border: 1px solid transparent;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
 }
 
 /* Specific Legend Colors matching the graph definition */
 .prerequisite {
-    background-color: #e3f2fd;
-    border-color: #1976d2;
+  background-color: #e3f2fd;
+  border-color: #1976d2;
 }
 
 .current {
-    background-color: #fff3e0;
-    border-color: #f57c00;
+  background-color: #fff3e0;
+  border-color: #f57c00;
 }
 
 .advanced {
-    background-color: #fce4ec;
-    border-color: #c2185b;
+  background-color: #fce4ec;
+  border-color: #c2185b;
 }

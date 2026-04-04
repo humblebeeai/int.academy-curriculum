@@ -43,15 +43,15 @@
   border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.2));
   border-radius: 1rem;
   margin: 0 auto 1.5rem;
-  color: var(--accent-gold, #FFF500);
-  box-shadow: 
+  color: var(--accent-gold, #fff500);
+  box-shadow:
     var(--shadow-md),
     0 0 20px rgba(255, 245, 0, 0.1);
   transition: all 0.3s ease;
 }
 
 .sectionIconWrapper:hover {
-  box-shadow: 
+  box-shadow:
     var(--shadow-lg),
     0 0 30px rgba(255, 245, 0, 0.2);
 }
@@ -61,7 +61,10 @@
   font-weight: 800;
   margin-bottom: 1rem;
   color: var(--ifm-font-color-base);
-  background: var(--gradient-warm-text, linear-gradient(135deg, #FFF500 0%, #FFB902 100%));
+  background: var(
+    --gradient-warm-text,
+    linear-gradient(135deg, #fff500 0%, #ffb902 100%)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -93,8 +96,12 @@
 }
 
 .faqItem:hover {
-  border-color: color-mix(in srgb, var(--accent-gold, #FFF500) 40%, transparent);
-  box-shadow: 
+  border-color: color-mix(
+    in srgb,
+    var(--accent-gold, #fff500) 40%,
+    transparent
+  );
+  box-shadow:
     var(--shadow-md),
     0 0 20px rgba(255, 245, 0, 0.08);
   transform: translateY(-2px);
@@ -118,11 +125,11 @@
 }
 
 .faqQuestion:hover {
-  color: var(--accent-gold, #FFF500);
+  color: var(--accent-gold, #fff500);
 }
 
 .faqQuestionOpen {
-  color: var(--accent-gold, #FFF500);
+  color: var(--accent-gold, #fff500);
 }
 
 .faqChevron {
@@ -133,7 +140,7 @@
 
 .faqChevronOpen {
   transform: rotate(180deg);
-  color: var(--accent-gold, #FFF500);
+  color: var(--accent-gold, #fff500);
 }
 
 .faqAnswer {
@@ -150,8 +157,12 @@
 
 /* Active state - when answer is visible */
 .faqItem:has(.faqQuestionOpen) {
-  border-color: color-mix(in srgb, var(--accent-gold, #FFF500) 50%, transparent);
-  box-shadow: 
+  border-color: color-mix(
+    in srgb,
+    var(--accent-gold, #fff500) 50%,
+    transparent
+  );
+  box-shadow:
     var(--shadow-md),
     0 0 25px rgba(255, 245, 0, 0.1);
 }

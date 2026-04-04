@@ -25,6 +25,7 @@ HumbleBeeAI was built to eliminate these barriers through structured learning, h
 **The curriculum is the map. The Academy is the applied layer.**
 
 - **Open Curriculum (this repo)**:
+
   - Self-paced learning path and resources
   - Clear sequencing and project-driven progression
   - Community discussion and contributions
@@ -40,11 +41,13 @@ HumbleBeeAI was built to eliminate these barriers through structured learning, h
 ## Curriculum Structure
 
 ### Engineering Fundamentals
-**Duration:** 2-4 months (self-paced)  
-**Goal:** Build the engineering fundamentals that make everything else possible.  
+
+**Duration:** 2-4 months (self-paced)
+**Goal:** Build the engineering fundamentals that make everything else possible.
 **Outcome:** Strong fundamentals in tools, math, and data workflows so you can build confidently without getting stuck on basics.
 
 Modules:
+
 - Terminal & Algorithmic Basics
 - Calculus & Algebra
 - Probability & Statistics
@@ -52,22 +55,26 @@ Modules:
 - IoT Activation
 
 ### Soft Landing
-**Duration:** 3-6 months (self-paced)  
-**Goal:** Master ML foundations and the system skills required to deploy reliably.  
+
+**Duration:** 3-6 months (self-paced)
+**Goal:** Master ML foundations and the system skills required to deploy reliably.
 **Outcome:** Build end-to-end ML systems: training, evaluation, deployment, and reliability basics using modern tooling.
 
 Modules:
+
 - Math & ML Fundamentals (PyTorch, optimization, gradient descent)
 - Intro to AI Engineering (deep learning, transformers/LLMs, clean code)
 - Systems & Networking (deployment fundamentals, security, cloud mental models)
 - Fullstack Toolkit (APIs, databases, product-shaped systems)
 
 ### Phase 3: Specializations (Soft Landing)
-**Duration:** 2-4 months per track  
-**Goal:** Gain deep domain expertise with proof through projects.  
+
+**Duration:** 2-4 months per track
+**Goal:** Gain deep domain expertise with proof through projects.
 **Outcome:** Domain-specific projects that demonstrate depth. Each track ends with a capstone designed to look like real work: clear problem framing, measurable results, and a reproducible or deployable system.
 
 Tracks:
+
 - Computer Vision (classification, detection)
 - Data Science (statistical modeling, BI)
 - NLP & LLMs (transformers, fine-tuning, agents)
@@ -181,13 +188,6 @@ From the repo root:
 Runtime configuration is handled via `docusaurus.config.ts`, `sidebars.ts`, and
 environment variables used by `compose.yml` (for example, `PORT`).
 
-### Health & Liveness
-
-In production (nginx), the following endpoints are available:
-
-- `GET /ping` returns `{ "status": "pong" }`
-- `GET /health` returns `{ "status": "ok", "services": { "docs": "ok" } }`
-
 ### Troubleshooting
 
 - Verify dependencies: `npm install`
@@ -210,7 +210,7 @@ In production (nginx), the following endpoints are available:
 
 ## Learning Philosophy
 
-- **Learning by Doing**: We reject tutorial-only learning. Build continuously.  
+- **Learning by Doing**: We reject tutorial-only learning. Build continuously.
   In the Academy, this is reinforced through scenario projects and mentor reviews.
 - **Longitudinal Growth**: Real expertise compounds through progressive difficulty and repetition.
 - **Community-Driven**: Learn with peers, ask questions, and contribute improvements.

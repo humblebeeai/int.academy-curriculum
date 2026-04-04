@@ -202,7 +202,9 @@ export function LearningRoadmap() {
 
                 {/* Phase Card */}
                 <motion.div
-                  className={`${styles.phaseCard} ${activePhase === phase.id ? styles.phaseCardActive : ""}`}
+                  className={`${styles.phaseCard} ${
+                    activePhase === phase.id ? styles.phaseCardActive : ""
+                  }`}
                   style={
                     {
                       "--phase-color": phase.color,

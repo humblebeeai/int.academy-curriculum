@@ -123,7 +123,7 @@ export function ParticleBackground({ className }: ParticleBackgroundProps) {
       pauseOnBlur: true,
       pauseOnOutsideViewport: true,
     }),
-    []
+    [],
   );
 
   if (!init) {

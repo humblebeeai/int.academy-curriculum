@@ -1,58 +1,58 @@
 .grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1.5rem;
-    margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
 }
 
 @media (min-width: 640px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (min-width: 1024px) {
-    .grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .card {
-    padding: 1.25rem;
-    border: 1px solid var(--ifm-color-emphasis-200);
-    border-radius: 0.75rem;
-    background: var(--ifm-card-background-color);
-    transition: all var(--duration-normal) var(--ease-standard);
+  padding: 1.25rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 0.75rem;
+  background: var(--ifm-card-background-color);
+  transition: all var(--duration-normal) var(--ease-standard);
 }
 
 .card:hover {
-    box-shadow: var(--shadow-md);
-    border-color: var(--ifm-color-primary-light);
-    transform: var(--hover-lift-sm);
+  box-shadow: var(--shadow-md);
+  border-color: var(--ifm-color-primary-light);
+  transform: var(--hover-lift-sm);
 }
 
 .iconWrapper {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 0.5rem;
-    background: var(--ifm-background-surface-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    color: var(--ifm-color-primary);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background: var(--ifm-background-surface-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary);
 }
 
 .title {
-    font-size: 1rem;
-    font-weight: 700;
-    margin: 0 0 0.5rem 0;
-    color: var(--ifm-color-emphasis-800);
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: var(--ifm-color-emphasis-800);
 }
 
 .description {
-    font-size: 0.875rem;
-    color: var(--ifm-color-emphasis-600);
-    margin: 0;
-    line-height: 1.6;
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-600);
+  margin: 0;
+  line-height: 1.6;
 }

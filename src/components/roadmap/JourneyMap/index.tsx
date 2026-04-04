@@ -133,7 +133,9 @@ export function JourneyMap() {
           return (
             <motion.div
               key={phase.id}
-              className={`${styles.phaseStop} ${isEven ? styles.phaseLeft : styles.phaseRight}`}
+              className={`${styles.phaseStop} ${
+                isEven ? styles.phaseLeft : styles.phaseRight
+              }`}
               initial={{ opacity: 0, x: isEven ? -60 : 60 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{
@@ -144,7 +146,9 @@ export function JourneyMap() {
             >
               {/* Phase Card */}
               <motion.div
-                className={`${styles.journeyCard} ${isExpanded ? styles.journeyCardExpanded : ""}`}
+                className={`${styles.journeyCard} ${
+                  isExpanded ? styles.journeyCardExpanded : ""
+                }`}
                 style={
                   {
                     "--phase-color": phase.color,
