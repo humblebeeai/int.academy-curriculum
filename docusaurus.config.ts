@@ -9,9 +9,10 @@ const config: Config = {
   tagline: "Community-Driven Open-Source AI Curriculum",
   favicon: "img/favicon.ico",
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
-  future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+  customFields: {
+    future: {
+      v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    },
   },
 
   url: "https://academy.humblebee.ai",
@@ -24,9 +25,10 @@ const config: Config = {
 
   markdown: {
     mermaid: true,
-    hooks: {
-      onBrokenMarkdownLinks: "warn",
-    },
+    // hooks: {
+    //   onBrokenMarkdownLinks: "warn",
+    // },
+    // Note: The onBrokenMarkdownLinks hook is currently not working as expected, so we will rely on the onBrokenLinks config for now. We will revisit this once the issue is resolved.
   },
 
   themes: ["@docusaurus/theme-mermaid"],
@@ -183,8 +185,8 @@ const config: Config = {
         <div class="oer-license">
           <p>
             <strong>Open Educational Resource</strong><br/>
-            Content licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>.
-            Code is unlicensed.
+            Content licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. 
+            Project materials are shared under the same license.
           </p>
           <p>
             © ${new Date().getFullYear()} HumbleBeeAI Academy. Built with ❤️ by the community.
