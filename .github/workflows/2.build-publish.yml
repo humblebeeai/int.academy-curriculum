@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build
-        run: node --localstorage-file=/tmp/docusaurus-localstorage node_modules/@docusaurus/core/bin/docusaurus.mjs build
+        run: npm run build
       - name: Create GitHub release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
