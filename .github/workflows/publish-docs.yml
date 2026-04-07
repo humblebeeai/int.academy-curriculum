@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build
-        run: npm run build
+        run: node --localstorage-file=/tmp/docusaurus-localstorage node_modules/@docusaurus/core/bin/docusaurus.mjs build
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
