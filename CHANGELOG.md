@@ -6,6 +6,181 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [1.0.4] - 2026-04-07
+
+- chore: bump version to v1.0.4
+- ci: restore npm build in workflows
+- docs: update changelog for v1.0.3
+- chore: bump version to v1.0.3
+- ci: fix docusaurus build in CI
+- docs: update changelog for v1.0.2
+- chore: bump version to v1.0.2
+- docs: update changelog for v1.0.1
+- docs: update changelog for v1.0.1
+- chore: bump version to v1.0.1
+- fix: make version bump use npm semver
+- docs: update changelog for v1.0.0
+- Fix peer dependency conflict: downgrade React to v18.3.1 for Docusaurus compatibility
+- Update package.json to match package-lock.json versions
+- Downgrade React to v18.3.1 and fix Docusaurus config
+- Remove NODE_OPTIONS from build step in publish-docs workflow
+- chore(license): switch project to CC BY-NC-SA
+- chore(release): prepare v1.0.0
+- chore: remove local dev notes
+- chore: apply formatting fixes
+- chore: clean up dockerignore duplicates
+- chore: rename ui to primitives and expand pre-commit hooks
+- docs(licensing): Set up dual-licensing system
+- chore: remove custom health endpoints
+- chore: align repo with checklist
+- chore: add issue templates
+- removed local dev docs
+- ci: remove docs versioning storage
+- chore: add predeploy checks
+- ci: add versioning automation
+- fix: update Telegram button styles and text for better visibility (#63)
+- docs: add docs versioning guide
+- docs: add docs versioning snapshot
+- refactor: reorganize components and docs assets
+- fix: update bio for Oybek Eraliyev in Reviewers Section
+- feat: add community section and Telegram link across multiple documents
+- feat: add motivational message for learners in contributing guidelines
+- fix: update SQL resource link to an intermediate course on HackerRank
+- a few copy changes
+- feat: add YouTube video for curriculum overview in Roadmap section
+- fix: improve formatting and remove outdated GitHub link in Reviewers Section
+- feat: added reviewers and builders section
+- fix: update links to point to resource pages for specializations and modules
+- fix: updated the naming for specializations resources pages
+- style: enhance Academy Card with warm gold accents and add featured badge
+- Refactor code structure for improved readability and maintainability
+- contirbutors guide text improvement
+- contirbutors guide text improvement
+- refactor: update sidebar label and change link text in HomepageHeader
+- refactor: replace external link with internal link to contributors guide in HomepageHeader
+- refactor: rename "Resources" to "Additional Resources" in configuration
+- refactor: remove capstone links and time estimates from specialization tracks
+- refactor: update curriculum content and structure based on feedback, specifically the softlandin section
+- refactor: refactored engineering fundamentals program based on the reviews as well chaged the name to AI Engineering Roadmap
+- Feat/copy and text adj (#46)
+- licencing
+- added contributors guide page, some improvements in the text
+- landing page's initial copy is finalized
+- feat: rename and refactor On Demand Mentorship section for clarity and improved content
+- feat: update JourneyMap and index styles for improved layout and responsiveness
+- feat: rename modules for clarity and consistency across curriculum documentation
+- feat: rename modules and update content for clarity and consistency
+- feat: update outcomes section title and improve text formatting for clarity
+- feat: add tab switcher component with styles and update outcomes section for clarity
+- feat: restructure landing page sections and enhance styling for clarity and engagement
+- feat: update architecture documentation, remove outdated sections, and add new curriculum overview
+- feat: update FAQ section with new questions and answers for clarity
+- feat: update curriculum overview with structured pathway and mission statement
+- Feat: Refactor styles and update color palette across components
+- feat: update learning philosophy section by removing outdated content and refining feature descriptions
+- feat: update curriculum content by removing redundant information and adding new mentorship features
+- feat: remove HorizontalStepper component and related styles, update RoadmapShowcase to use JourneyMap directly
+- feat: add roadmap components including HorizontalStepper and JourneyMap
+- feat: Revamp homepage design with glassmorphism and animated gradient orbs
+- feat: add Learning Roadmap and Particle Background components
+- refactor: Clean up navbar configuration and improve CSS consistency
+- feat: Add Generative AI specialization track and update related documentation
+- refactor:curriculum documentation and components. Made changes in landing page
+- Refactor: Remove Interactive Roadmap and associated styles
+- refactor: Update curriculum terminology and remove outdated files
+- feat: add new resource on dimensionality reduction to Data Science curriculum
+- refactor curriculum structure and documentation (#36)
+- refactor: update curriculum terminology and improve descriptions across documentation
+- feat: swap resource cards for Linear Algebra and update descriptions
+- school name is changed to Engineering Fundamentals
+- feat: refactor roadmap tree structure and improve code formatting
+- feat: update HackerRank resource to intermediate level and enhance roadmap animations
+- feat: remove Database Management System section and renumber subsequent sections
+- feat: add interactive tree-based roadmap page with styles and functionality
+- feat: added links for resources for ds and cv capstones
+- feat: add video resource for basic command line introduction in computational thinking module
+- feat: refactor Software Engineering track titles and enhance TCP/IP model section
+- feat: enhance capstone documentation with improved structure and icons
+- feat: update capstone titles and links for consistency across specializations
+- feat: more structured sidebar for capstone project
+- Update docs/softlanding/specializations/capstones/data-science-capstone.mdx
+- Update docs/softlanding/specializations/capstones/nlp-capstone.mdx
+- Update docs/softlanding/specializations/capstones/data-science-capstone.mdx
+- feat: add cross-references to related modules in networking and fullstack toolkit documentation
+- feat: update IDE recommendations and add beginner resources for Visual Studio Code
+- feat: add capstone project pages
+- fix: enhance sidebar styling for improved visibility and usability
+- fix:small ui fixes in school program page
+- fix: update difficulty level for LLM resources to intermediate
+- fix: improve formatting and consistency in NLP curriculum sections
+- feat: restructure NLP curriculum with updated sections and action items
+- fix: improve formatting and consistency in prerequisites table in index.mdx
+- feat: add resources for unsupervised learning and data visualization techniques
+- fix: update curriculum terminology and licensing details across documentation
+- fix: update section title and improve formatting in index.mdx
+- fix: update ecosystem title and fix minor formatting issues in index.tsx
+- feat: add additional beginner AI related  resources
+- Feat: add beginner resources for Cursor and Antigravity IDEs in computational thinking module
+- Feat: update IDE recommendations and improve clarity in computational thinking module
+- Feat/imroving nlp module (#26)
+- Feat/imroving computer vison module (#25)
+- contribution and local run explanation
+- fix:removed all the comming soon rubrics from the documentation (#24)
+- fix:corrected the inconsistecies in the url generation of the md files
+- there was inconsistency in the styling in teh section of school intro page where some texts were supposed to be in bold but only ** ** were showing. fixed the issue (#21)
+- Update documentation files to improve clarity, organization, and formatting  (#19)
+- fix: removed doubling text in specialization traks module
+- fix: changed the order of foundation and mentorship blocks and removed redundant sections in pre-reqs table
+- fix: update favicon from SVG to ICO format
+- Expands the data engineering curriculum with new resources (#18)
+- feat: expand soft landing prerequisites with additional modules and resources
+- feat: enhance prerequisites table with additional details and links
+- feat: add prerequisites table for school program
+- Refactor/errors and inconsistencies (#15)
+- feat: update images for better quality ones and with consistent size
+- fix:update time estimates in modules 3 and 4
+- feat:added extra self check resource for linux basics source
+- Fix capitalization inconsistencies across documentation and configuration files, updating references from "HumblebeeAI" to "HumbleBeeAI" for improved branding alignment.
+- Update module links in core systems documentation to include .mdx file extension for consistency and improved navigation.
+- Refactor README for clarity and structure, updating the curriculum overview and mission statement. Consolidate sections on curriculum phases, learning philosophy, and contributions, while enhancing visual engagement with improved formatting and organization.
+- Infrastructure Overhaul – Curriculum v2 Core, CI/CD, and Community Health (#12)
+- feat: Add Foundation Program documentation, link it in the curriculum outline, and expand mentorship guidelines.
+- final updates to the content and images
+- docs: Rewrite README with tabular curriculum and best practices
+- Updated Data Science related content
+- Update license to Apache 2.0 and add attribution
+- Fix dependencies: add framer-motion and lucide-react
+- Restore homepage design from commit 18bd781
+- feat: Revise curriculum details for Computer Vision track
+- Revert "Changed the visuals"
+- Revert "feat: redesign homepage with modern UI and enhanced navigation"
+- Changed the visuals
+- fix: add missing front matter to curriculum outline
+- Removed the images and uploaded new ones
+- refine: improve homepage layout and navigation
+- refactor: add images and reduce the context to be more concise
+- feat: redesign homepage with modern UI and enhanced navigation
+- Uploaded photos and changed the content
+- docs: update software-engineering track documentation
+- feat: Enhance 02-advanced-ai module with detailed learning resources and add banner image
+- feat: Revise NLP track curriculum to enhance focus on Large Language Models, adding detailed sections on NLP basics, transformers, retrieval-augmented generation, prompt engineering, AI agents orchestration, and fine-tuning methods.
+- feat: Add .dockerignore and update Dockerfile to Node.js 22 with streamlined build process.
+- feat: Introduce new school modules for computational thinking, calculus, and probability, and enhance softlanding curriculum with updated metadata and navigation.
+- fix: Correct file paths in Dockerfile for package.json and other resources
+- feat: Relocate and update mentorship content, and expand resources with new sections.
+- feat: Set curriculum capstone projects and track statuses to "Coming Soon" and update mentorship section to reflect content under development.
+- docs: update NLP track resources by adding links for Ragas, AI agent systems, and prompt engineering, and removing the 12-Factor App architecture reference.
+- refactor: Consolidate website files to root, expand curriculum content, and add new category configuration.
+- fix: links that direct to the edit page in github.com
+- feat: prepare for deployment
+- docs: Reorganize Softlanding core systems into modular files and update track curricula.
+- feat: Add a comprehensive curriculum outline and enhance program structure with flow diagrams and updated descriptions.
+- Fix background color
+- feat: Add Softlanding and School program categories and adjust Resources sidebar position.
+- refactor: Relocate curriculum content, remove old files, and update Docusaurus configuration and README links.
+- initial commit
+
+
 ## [1.0.3] - 2026-04-07
 
 - chore: bump version to v1.0.3
