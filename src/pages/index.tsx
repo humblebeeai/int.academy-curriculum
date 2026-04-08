@@ -19,7 +19,7 @@ import {
   GitPullRequest,
   Linkedin,
   Github,
-  Twitter,
+  Instagram,
   MessageCircle,
 } from "lucide-react";
 
@@ -645,15 +645,15 @@ function ReviewersSection() {
                         <Github size={20} />
                       </a>
                     )}
-                    {maintainer.socials.twitter && (
+                    {maintainer.socials.instagram && (
                       <a
-                        href={maintainer.socials.twitter}
+                        href={maintainer.socials.instagram}
                         target="_blank"
                         rel="noopener noreferrer"
                         className={styles.socialLink}
-                        aria-label={`${maintainer.name} Twitter`}
+                        aria-label={`${maintainer.name} Instagram`}
                       >
-                        <Twitter size={20} />
+                        <Instagram size={20} />
                       </a>
                     )}
                   </div>
