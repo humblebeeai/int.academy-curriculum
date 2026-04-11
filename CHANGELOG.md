@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [1.0.6] - 2026-04-11
+
+- chore: bump version to v1.0.6
+- fix: correct issue form schema for question template
+- docs: update changelog for v1.0.5
+
+
 ## [1.0.5] - 2026-04-08
 
 - chore: bump version to v1.0.5
