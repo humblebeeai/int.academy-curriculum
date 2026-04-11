@@ -215,3 +215,9 @@ dist
 
 # Valid Docusaurus build output
 build/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
