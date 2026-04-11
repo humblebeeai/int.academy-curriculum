@@ -52,7 +52,7 @@ Modules:
 - Calculus & Algebra
 - Probability & Statistics
 - Data Manipulation
-- IoT Activation
+
 
 ### Soft Landing
 
@@ -230,8 +230,8 @@ Join our Telegram community to connect with fellow learners and contributors:
 
 ## License
 
-- Curriculum content: **CC BY-NC-SA 4.0**
-- Code in this repo: **Unlicensed**
+- Curriculum structure and code in this repo: **CC BY-NC-SA 4.0**
+- Third party sources: **Under their original licence**
 
 ---
 
