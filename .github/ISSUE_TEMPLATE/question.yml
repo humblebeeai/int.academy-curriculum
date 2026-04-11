@@ -34,4 +34,5 @@ body:
     attributes:
       label: Context
       description: Any background that helps answer the question.
+    validations:
       required: false
