@@ -1,0 +1,56 @@
+name: 5. Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      deployments: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to Cloudflare Pages
+        id: deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          command: pages deploy ./build --project-name=academy-curriculum
+
+      - name: Comment preview URL on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const deploymentUrl = '${{ steps.deploy.outputs.deployment-url }}';
+            const aliasUrl = '${{ steps.deploy.outputs.pages-deployment-alias-url }}';
+            const url = aliasUrl || deploymentUrl;
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## Cloudflare Pages Preview\n\n| | |\n|---|---|\n| **Preview URL** | ${url} |\n| **Production** | https://roadmap.humblebee.ai/ |`
+            });
