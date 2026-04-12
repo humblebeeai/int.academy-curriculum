@@ -1,4 +1,4 @@
-name: 5. Deploy to Cloudflare Workers
+name: 4. Deploy to Cloudflare Pages
 
 on:
   push:
@@ -31,14 +31,13 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to Cloudflare Workers
+      - name: Deploy to Cloudflare Pages
         id: deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          command: deploy
+          command: pages deploy ./build --project-name=academy-curriculum --commit-dirty=true
 
       - name: Comment preview URL on PR
         if: github.event_name == 'pull_request'
@@ -46,10 +45,11 @@ jobs:
         with:
           script: |
             const deploymentUrl = '${{ steps.deploy.outputs.deployment-url }}';
-            const url = deploymentUrl;
+            const aliasUrl = '${{ steps.deploy.outputs.pages-deployment-alias-url }}';
+            const url = aliasUrl || deploymentUrl;
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `## Cloudflare Preview\n\n| | |\n|---|---|\n| **Preview URL** | ${url} |\n| **Production** | https://roadmap.humblebee.ai/ |`
+              body: `## Cloudflare Pages Preview\n\n| | |\n|---|---|\n| **Preview URL** | ${url} |\n| **Production** | https://roadmap.humblebee.ai |`
             });
