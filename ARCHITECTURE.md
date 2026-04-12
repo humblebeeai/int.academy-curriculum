@@ -150,14 +150,25 @@ npm run typecheck
 
 ## Deployment
 
-The site is deployed as a Docker container behind Nginx:
+The production site is deployed to Cloudflare Workers using the static assets configuration in `wrangler.jsonc`.
 
 ```bash
-# Build and run
-docker compose up --build -d
+# Build locally
+npm ci
+npm run build
 
-# Access at http://localhost:8000
+# Manual deploy
+npm run deploy
 ```
+
+GitHub Actions handles automatic deployment on pushes to `main` via `.github/workflows/4.deploy-cloudflare.yml`.
+
+Required GitHub repository secrets:
+
+1. `CLOUDFLARE_API_TOKEN`
+2. `CLOUDFLARE_ACCOUNT_ID`
+
+The Dockerfile remains available for alternate container-based hosting and local testing.
 
 The Dockerfile uses a multi-stage build:
 

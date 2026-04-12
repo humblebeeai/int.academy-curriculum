@@ -143,7 +143,7 @@ Steps:
 2. The workflow bumps `package.json`, commits, and tags `vX.Y.Z`.
 3. **2. Build and Publish** runs on the tag to build and create a GitHub release.
 4. **3. Update Changelog** updates `CHANGELOG.md` after the release.
-5. **Publish Docs** deploys the updated docs to GitHub Pages.
+5. **Deploy to Cloudflare Workers** publishes the site using the checked-in `wrangler.jsonc` configuration.
 
 Local script (manual alternative):
 
