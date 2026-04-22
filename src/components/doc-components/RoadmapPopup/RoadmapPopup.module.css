@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 5rem;
   right: 1.2rem;
-  height: 3.5rem;
+  height: 3.75rem;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -30,9 +30,9 @@
 }
 
 .iconWrapper {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
+  width: 2.75rem;
+  height: 2.75rem;
+  /* border-radius: 50%; */
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -41,9 +41,10 @@
 }
 
 .icon {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 85%; /* Slightly smaller to give the triangle room to breathe */
+  height: 85%;
+  object-fit: contain;
+  transform: translateY(-1px); /* Shift up slightly to balance the visual weight of the triangle base */
 }
 
 .textWrapper {
