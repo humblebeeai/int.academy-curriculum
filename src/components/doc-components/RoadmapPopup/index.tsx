@@ -5,7 +5,7 @@ import styles from './RoadmapPopup.module.css';
 
 export default function RoadmapPopup() {
   const [isHovered, setIsHovered] = useState(false);
-  const iconUrl = useBaseUrl('/img/iconkumush.png');
+  const iconUrl = useBaseUrl('/img/hbai-logo.png');
 
   // transition settings for a premium spring feel (no bounce, high precision)
   const springConfig = {
@@ -57,7 +57,7 @@ export default function RoadmapPopup() {
         transition={springConfig}
       >
         <span className={styles.text}>
-          ask roadmap questions
+          Ask AI about roadmap
         </span>
       </motion.div>
     </motion.a>
