@@ -13,6 +13,7 @@ const config: Config = {
     future: {
       v4: true, // Improve compatibility with the upcoming Docusaurus v4
     },
+    chatLink: process.env.REACT_APP_CHAT_LINK,
   },
 
   url: "https://academy.humblebee.ai",

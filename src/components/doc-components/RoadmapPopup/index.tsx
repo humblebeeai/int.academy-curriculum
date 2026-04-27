@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './RoadmapPopup.module.css';
 
 export default function RoadmapPopup() {
+  const { siteConfig } = useDocusaurusContext();
+  const chatLink = siteConfig.customFields?.chatLink as string;
   const [isHovered, setIsHovered] = useState(false);
   const iconUrl = useBaseUrl('/img/hbai-logo.png');
 
@@ -16,7 +19,7 @@ export default function RoadmapPopup() {
 
   return (
     <motion.a
-      href="https://dev-kumushai-dashboard.humblebee.ai/chat/17f6e28b-9a0e-4326-a176-c45530c4b8b6"
+      href={chatLink}
       target="_blank"
       rel="noopener noreferrer"
       className={styles.popupContainer}
