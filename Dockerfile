@@ -3,6 +3,10 @@ FROM node:22-alpine AS builder
 
 WORKDIR /app
 
+# Add ARG for build-time environment variables
+ARG REACT_APP_CHAT_LINK
+ENV REACT_APP_CHAT_LINK=$REACT_APP_CHAT_LINK
+
 # Copy dependency definitions
 COPY package.json package-lock.json ./
 

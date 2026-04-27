@@ -3,6 +3,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        - REACT_APP_CHAT_LINK=${REACT_APP_CHAT_LINK}
     image: internal-academy-docs:latest
     container_name: internal-academy-docs
     ports:
