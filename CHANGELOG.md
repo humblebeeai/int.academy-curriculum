@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [1.0.7] - 2026-04-30
+
+- chore: bump version to v1.0.7
+- feat: replace roadmap link with chat widget
+- feat: add chat link configuration and update RoadmapPopup to use dynamic chat link
+- Update RoadmapPopup styles and content; replace icon and modify text
+- Add Chat popup button that redirects to Dedicated KumushAI chatbot
+- Revise license and curriculum structure in README (#75)
+- Add Cloudflare Workers configuration (#74)
+- docs: update changelog for v1.0.6
+
+
 ## [1.0.6] - 2026-04-11
 
 - chore: bump version to v1.0.6
