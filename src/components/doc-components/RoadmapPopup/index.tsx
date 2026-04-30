@@ -46,12 +46,54 @@ const renderWithLineBreaks = (text: string) =>
     index === 0 ? line : [<br key={`br-${index}`} />, line]
   );
 
+const renderInlineText = (text: string, keyPrefix: string) => {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g).filter(Boolean);
+  return parts.map((part, index) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return (
+        <strong key={`${keyPrefix}-b-${index}`}>
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    return <span key={`${keyPrefix}-t-${index}`}>{part}</span>;
+  });
+};
+
+const renderBotBlock = (block: string, keyPrefix: string) => {
+  const lines = block.split('\n').map((line) => line.trim()).filter(Boolean);
+  const isList = lines.every((line) => /^([\-*]|\d+\.|\.)\s+/.test(line));
+
+  if (isList) {
+    const isOrdered = lines.some((line) => /^\d+\./.test(line));
+    const items = lines.map((line) => line.replace(/^([\-*]|\d+\.|\.)\s+/, ''));
+    const ListTag = isOrdered ? 'ol' : 'ul';
+
+    return (
+      <ListTag className={styles.list} key={`${keyPrefix}-list`}>
+        {items.map((item, index) => (
+          <li key={`${keyPrefix}-item-${index}`} className={styles.listItem}>
+            {renderInlineText(item, `${keyPrefix}-item-${index}`)}
+          </li>
+        ))}
+      </ListTag>
+    );
+  }
+
+  return (
+    <p className={styles.paragraph} key={`${keyPrefix}-p`}>
+      {renderInlineText(block, `${keyPrefix}-p`)}
+    </p>
+  );
+};
+
 export default function RoadmapPopup() {
   const iconUrl = useBaseUrl('/img/hbai-logo.png');
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isConnected, setIsConnected] = useState(false);
+  const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
   const wsRef = useRef<WebSocket | null>(null);
   const sessionIdRef = useRef<string>(crypto.randomUUID());
@@ -69,6 +111,12 @@ export default function RoadmapPopup() {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  useEffect(() => {
+    if (!inputRef.current) return;
+    inputRef.current.style.height = 'auto';
+    inputRef.current.style.height = `${inputRef.current.scrollHeight}px`;
+  }, [inputValue]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -278,11 +326,9 @@ export default function RoadmapPopup() {
                       <span className={styles.typingDot} />
                     </span>
                   ) : (
-                    splitParagraphs(message.content).map((paragraph, index) => (
-                      <p className={styles.paragraph} key={`${message.id}-p-${index}`}>
-                        {renderWithLineBreaks(paragraph)}
-                      </p>
-                    ))
+                    splitParagraphs(message.content).map((paragraph, index) =>
+                      renderBotBlock(paragraph, `${message.id}-${index}`)
+                    )
                   )
                 ) : (
                   <span>{renderWithLineBreaks(message.content)}</span>
@@ -299,6 +345,7 @@ export default function RoadmapPopup() {
             placeholder="Ask about the roadmap"
             value={inputValue}
             onChange={(event) => setInputValue(event.target.value)}
+            ref={inputRef}
             rows={1}
             onKeyDown={(event) => {
               if (event.key === 'Enter' && !event.shiftKey) {

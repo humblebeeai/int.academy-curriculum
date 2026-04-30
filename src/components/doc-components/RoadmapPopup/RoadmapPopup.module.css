@@ -167,6 +167,19 @@
   margin-bottom: 0;
 }
 
+.list {
+  margin: 0 0 0.6rem 0;
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.listItem {
+  margin: 0;
+  color: inherit;
+}
+
 .typingDots {
   display: inline-flex;
   align-items: center;
@@ -224,6 +237,8 @@
   font-size: 0.9rem;
   resize: none;
   min-height: 2.4rem;
+  max-height: 9rem;
+  overflow-y: auto;
 }
 
 .input:focus {
