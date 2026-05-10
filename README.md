@@ -188,6 +188,11 @@ From the repo root:
 Runtime configuration is handled via `docusaurus.config.ts`, `sidebars.ts`, and
 environment variables used by `compose.yml` (for example, `PORT`).
 
+Chat widget endpoint is configured with `REACT_APP_CHAT_LINK`.
+
+- Copy `.env.example` to `.env`
+- Set `REACT_APP_CHAT_LINK` to your chatbot websocket URL (for example, `wss://api.kumush.ai/api/v1/chat/<chatbot-id>/ws`)
+
 ### Troubleshooting
 
 - Verify dependencies: `npm install`
