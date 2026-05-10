@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './RoadmapPopup.module.css';
 
-const CHAT_ENDPOINT = 'wss://api.kumush.ai/api/v1/chat/98a9d603-ec1d-4d47-a172-ffa4b9f6c390/ws';
+const DEFAULT_CHAT_ENDPOINT = 'wss://api.kumush.ai/api/v1/chat/98a9d603-ec1d-4d47-a172-ffa4b9f6c390/ws';
 
 type Message = {
   id: string;
@@ -88,7 +89,11 @@ const renderBotBlock = (block: string, keyPrefix: string) => {
 };
 
 export default function RoadmapPopup() {
+  const { siteConfig } = useDocusaurusContext();
   const iconUrl = useBaseUrl('/img/hbai-logo.png');
+  const chatEndpoint =
+    (siteConfig.customFields?.chatLink as string | undefined)?.trim() ||
+    DEFAULT_CHAT_ENDPOINT;
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
@@ -195,7 +200,7 @@ export default function RoadmapPopup() {
     if (wsRef.current || typeof window === 'undefined') return;
 
     wsRef.current = new WebSocket(
-      `${CHAT_ENDPOINT}?session_id=${sessionIdRef.current}`
+      `${chatEndpoint}?session_id=${sessionIdRef.current}`
     );
 
     wsRef.current.onopen = () => {
