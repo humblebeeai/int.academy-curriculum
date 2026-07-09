@@ -49,7 +49,7 @@ HumbleBeeAI was built to eliminate these barriers through structured learning, h
 Modules:
 
 - Terminal & Algorithmic Basics
-- Calculus & Algebra
+- Linear Algebra
 - Probability & Statistics
 - Data Manipulation
 
@@ -203,7 +203,7 @@ Chat widget endpoint is configured with `REACT_APP_CHAT_LINK`.
 ### Editing Curriculum Content
 
 - Most curriculum content lives under the `docs/` directory as `.mdx` files:
-  - Engineering Fundamentals: `docs/engineering-fundamentals/index.mdx`, `docs/engineering-fundamentals/terminal-algorithmic-basics.mdx`, `docs/engineering-fundamentals/calculus-algebra.mdx`, etc.
+  - Engineering Fundamentals: `docs/engineering-fundamentals/index.mdx`, `docs/engineering-fundamentals/terminal-algorithmic-basics.mdx`, `docs/engineering-fundamentals/linear-algebra.mdx`, etc.
   - Softlanding / Core Systems: `docs/softlanding/core-systems/**/*.mdx`
   - Specializations: `docs/softlanding/specializations/**/*.mdx`
   - Shared resources: `docs/resources.mdx`, `docs/index.mdx`, etc.
