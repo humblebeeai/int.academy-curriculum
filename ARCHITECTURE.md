@@ -29,7 +29,7 @@ Key dependencies:
 │   │   ├── _category_.yml
 │   │   ├── index.mdx                        # EF introduction, prerequisites, time estimates
 │   │   ├── terminal-algorithmic-basics.mdx  # Module 1: CLI, Git, algorithms
-│   │   ├── calculus-algebra.mdx             # Module 2: Calculus & Linear Algebra
+│   │   ├── linear-algebra.mdx               # Module 2: Linear Algebra
 │   │   ├── probability-statistics.mdx       # Module 3: Probability & Statistics
 │   │   ├── data-manipulation.mdx            # Module 4: Pandas, SQL, Git
 │   │   └── iot-activation.mdx               # Module 5: IoT & Teachable Machine

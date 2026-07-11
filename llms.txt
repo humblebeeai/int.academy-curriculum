@@ -20,7 +20,7 @@ The default progression:
 ## Documentation
 
 - [Curriculum Overview](https://academy.humblebee.ai/docs): Mission, target outcomes, architecture
-- [Engineering Fundamentals](https://academy.humblebee.ai/docs/engineering-fundamentals): Computational thinking, calculus, probability, data manipulation, IoT
+- [Engineering Fundamentals](https://academy.humblebee.ai/docs/engineering-fundamentals): Computational thinking, linear algebra, probability, data manipulation, IoT
 - [Soft Landing Program](https://academy.humblebee.ai/docs/softlanding): Core Systems and Specialization Tracks
 - [Core Systems](https://academy.humblebee.ai/docs/softlanding/core-systems): Math & ML, Intro to AI Engineering, Networking, Infra Basics
 - [Specialization Tracks](https://academy.humblebee.ai/docs/softlanding/specializations): Track overview and comparison

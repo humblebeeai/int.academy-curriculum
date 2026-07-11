@@ -2,7 +2,7 @@
 sidebar_position: 5
 sidebar_label: 4. Data Manipulation
 title: Module 4 - Data Manipulation
-description: Python, Pandas, and Tools
+description: NumPy, Pandas, SQL, and Tools
 ---
 
 import { ResourceCard, TimeEstimate } from "@site/src/components";
@@ -19,16 +19,55 @@ Manipulate and prepare real-world data for analysis and machine learning.
 This page focuses on the practical skills needed to turn raw, messy data into clean, structured inputs that models and analyses can actually use.
 
 <TimeEstimate
-  minHours={10}
-  maxHours={14}
+  minHours={18}
+  maxHours={26}
   breakdownBy={{
+    NumPy: 4,
     Pandas: 8,
-    SQL: 6,
-    Git: 4,
+    SQL: 8,
+    Git: 3,
   }}
 />
 
-## <Database /> 1. Pandas & Data Cleaning
+## <Database /> 1. NumPy Foundations
+
+<ResourceCard
+  type="course"
+  title="NumPy: The Absolute Basics for Beginners"
+  url="https://numpy.org/doc/stable/user/absolute_beginners.html"
+  duration="1-2 hours"
+  difficulty="beginner"
+  why="Official NumPy guide covering arrays, indexing, slicing, shapes, broadcasting, and basic operations before learners move into Pandas."
+/>
+
+<ResourceCard
+  type="practice"
+  title="CodeSignal: NumPy Basics"
+  url="https://codesignal.com/learn/courses/numpy-basics"
+  duration="3 hours"
+  difficulty="beginner"
+  why="Structured practice with short coding tasks for array creation, operations, indexing, reshaping, boolean masks, and statistics. Account may be required."
+/>
+
+**Why it matters:**
+
+NumPy is the foundation under most Python data and machine learning work. Pandas, scikit-learn, PyTorch, and many scientific Python tools rely on the same ideas: arrays, shapes, indexing, vectorized operations, and numerical aggregation.
+
+Before learners clean real datasets with Pandas, they should understand how numerical data is represented and transformed efficiently.
+
+**What to expect:**
+
+Learners will:
+
+- Create and inspect NumPy arrays
+- Understand array shape, dimension, size, and dtype
+- Use indexing, slicing, boolean masks, and reshaping
+- Apply vectorized operations instead of slow Python loops
+- Compute basic statistics and aggregations
+
+By the end of this section, learners will be ready to understand why Pandas operations feel array-like and how numerical data flows into machine learning workflows.
+
+## <Database /> 2. Pandas & Data Cleaning
 
 <ResourceCard
   type="course"
@@ -57,7 +96,7 @@ Learners will:
 
 By the end of this section, learners will be able to clean and manipulate real-world datasets with concise, readable code.
 
-## <Database /> 2. SQL
+## <Database /> 3. SQL
 
 <ResourceCard
   type="tutorial"
@@ -87,7 +126,7 @@ Learners will:
 
 By completing this section, learners will be able to extract and manipulate data directly from databases used in production environments.
 
-## <GitBranch /> 3. Software Engineering Tools
+## <GitBranch /> 4. Software Engineering Tools
 
 <ResourceCard
   type="practice"
@@ -120,6 +159,8 @@ This section ensures learners can manage their code and data work reliably, both
 
 ## <GitBranch /> Completion Checklist
 
+- [ ] Completed **NumPy: The Absolute Basics for Beginners** and practiced array creation, indexing, slicing, reshaping, boolean masks, and basic aggregations.
+- [ ] Completed at least one NumPy practice path: **CodeSignal NumPy Basics**, **Keith Galli's NumPy Tutorial**, or **Patrick Loeber's NumPy Crash Course**.
 - [ ] Completed the **Kaggle: Pandas Micro-Course**, including all core lessons and exercises, and earned the official course certificate from Kaggle.
 - [ ] Completed the **SQL Tutorial - Essential SQL For The Beginners** ([SQL Tutorial](https://www.sqltutorial.org/)) and practiced all query types including JOINs, aggregations, and subqueries.
 - [ ] Completed the **W3Docs Git Basics Quiz** ([Git Basics Quiz](https://www.w3docs.com/quiz-start/git)) with a score of at least **85%** and earned the Git certificate.
