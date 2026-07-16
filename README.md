@@ -153,6 +153,24 @@ Local script (manual alternative):
 Optional: include docs snapshot by adding `-d`.
 ```
 
+### Curriculum snapshots
+
+Curriculum snapshots are separate from package releases. Run the GitHub Actions
+workflow **Publish Curriculum Version** after a meaningful curriculum update.
+The workflow creates a date-based snapshot, publishes it in the curriculum
+version dropdown, and removes snapshots older than 365 days.
+
+Maintainer instructions: [Curriculum Versioning Guide](./CURRICULUM_VERSIONING.md).
+
+Local equivalent:
+
+```bash
+npm run curriculum:version -- --date YYYY-MM-DD
+```
+
+Do not create curriculum snapshots for dependency updates, infrastructure
+changes, styling-only changes, or minor typo fixes.
+
 ### Run Locally with Docker
 
 If you prefer not to install Node locally, you can use the provided `Dockerfile` and `compose.yml`.

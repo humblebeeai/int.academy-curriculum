@@ -19,6 +19,8 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
+    "curriculum:version": "node scripts/curriculum-version.mjs",
+    "curriculum:prune": "node scripts/curriculum-version.mjs --prune-only",
     "typecheck": "tsc",
     "preview": "npm run build && wrangler dev"
   },
