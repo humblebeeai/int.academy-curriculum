@@ -7,6 +7,11 @@ on:
       - main
     paths:
       - "docs/**"
+      - "versioned_docs/**"
+      - "versioned_sidebars/**"
+      - "versions.json"
+      - "curriculum-versions.json"
+      - "static/curriculum-versions/**"
       - "docusaurus.config.ts"
       - "sidebars.ts"
 

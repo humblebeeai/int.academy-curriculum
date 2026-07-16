@@ -1,0 +1,157 @@
+---
+sidebar_position: 1
+title: Resources
+description: CNNs, YOLO, and Visual Intelligence
+---
+
+import { TimeEstimate, ResourceCard } from "@site/src/components";
+import { Eye, Target, BookOpen, Rocket, FileText } from "lucide-react";
+import Link from "@docusaurus/Link";
+
+# <Eye /> Computer Vision Track
+
+![Computer Vision Track](/curriculum-versions/2026-02-15/vision.png)
+
+## <Target /> Goal
+
+**Focus**: Teaching machines to see and recognize.
+
+## <BookOpen /> Curriculum
+
+### Core Computer Vision & Deep Learning
+
+Topics:
+
+- Image representation (pixels, channels, tensors)
+- Convolutional Neural Networks (CNNs)
+- Filters, kernels, padding, stride
+- Feature extraction and hierarchical representations
+- Activation functions (ReLU, sigmoid, softmax)
+- Loss functions for vision tasks
+- Backpropagation in CNNs
+- Optimization methods (SGD, Momentum, Adam)
+- Regularization (dropout, data augmentation, batch normalization)
+- Transfer learning and fine-tuning
+
+<ResourceCard
+  type="course"
+  title="CS231n: Convolutional Neural Networks for Visual Recognition (Winter 2016) Lectures 4–7"
+  url="https://youtube.com/playlist?list=PLkt2uSq6rBVctENoVBg1TpCC7OQi31AlC"
+  duration="8-10 hours"
+  difficulty="advanced"
+  why="This section builds a deep conceptual and practical understanding of how modern computer vision systems work. Learners move from raw pixel data to high-level visual representations, understanding how convolutional networks learn spatial patterns and semantic features from images. Emphasis is placed on understanding: How convolution replaces hand-crafted feature engineering, How visual features evolve across CNN layers, Why architectural choices (kernel size, depth, pooling) matter, How training dynamics affect vision model performance, How pre-trained models can be adapted to new vision tasks."
+/>
+
+### Hands-On Deep Learning with PyTorch
+
+Topics:
+
+- PyTorch tensor operations and automatic differentiation
+- Building neural networks using nn.Module
+- Forward and backward passes in practice
+- Loss functions and optimization loops
+- Training and evaluation workflows
+- GPU acceleration and device management
+- Debugging and inspecting training behavior
+- Saving, loading, and reusing trained models
+
+<ResourceCard
+  type="tutorial"
+  title="UvA Deep Learning 1 (PyTorch) – Tutorials 3–6"
+  url="https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial2/Introduction_to_PyTorch.html"
+  duration="6-8 hours"
+  difficulty="intermediate"
+  why="This section translates deep learning theory into real implementation skills using PyTorch. Learners move from abstract model definitions to full training pipelines, gaining hands-on experience with how models are actually trained, evaluated, and debugged in practice. Emphasis is placed on understanding: How PyTorch’s autograd system enables learning, How training loops control optimization behavior, Why loss curves and gradients matter, How to detect and fix common training issues, How to structure reproducible deep learning experiments."
+/>
+
+### Object Detection Models & Architectures
+
+Topics:
+
+- Object detection vs image classification
+- Bounding boxes and localization
+- Intersection over Union (IoU)
+- Anchor boxes and grid-based detection
+- Region proposal methods
+- One-stage vs two-stage detectors
+- Detection loss functions
+- Evaluation metrics (mAP, precision, recall)
+
+<ResourceCard
+  type="course"
+  title="CS231n Lectures (8~14)"
+  url="https://youtube.com/playlist?list=PLkt2uSq6rBVctENoVBg1TpCC7OQi31AlC"
+  duration="6-8 hours"
+  difficulty="advanced"
+  why="This section introduces the fundamental problem of object detection and explains how models locate and classify multiple objects within a single image. Learners study how detection differs from classification and why specialized architectures are required. Emphasis is placed on understanding: Why sliding window methods are inefficient, How region proposals improve detection, Why object localization is harder than classification, How detection performance is evaluated."
+/>
+
+### Single-Stage Detectors (YOLO Family)
+
+Topics:
+
+- YOLO problem formulation
+- Grid-based prediction
+- Anchor boxes
+- Bounding box regression
+- YOLO loss function
+- Real-time detection constraints
+
+<ResourceCard
+  type="paper"
+  title="YOLOv1 & YOLOv2"
+  url="https://youtube.com/playlist?list=PLhhyoLH6Ijfw0TpCTVTNk42NN08H6UvNq&si=2JKnCG1Or5OF2ZJY"
+  duration="6-8 hours"
+  difficulty="advanced"
+  why="This section focuses on real-time object detection using single-stage architectures. Learners understand how YOLO reframes detection as a regression problem and why it enables fast inference suitable for edge and production systems. Emphasis is placed on understanding: Why YOLO is fast, How grids and anchors work, Trade-offs between speed and precision, Common failure cases of YOLO."
+/>
+
+### Practical Object Detection (YOLOv11)
+
+Topics:
+
+- Dataset preparation for detection
+- Annotation formats
+- Training detection models
+- Inference pipelines
+- Model evaluation (mAP)
+- Deployment considerations
+
+<ResourceCard
+  type="tutorial"
+  title="Ultralytics YOLO 11 Documentation"
+  url="https://docs.ultralytics.com/models/yolo11/"
+  duration="8-10 hours"
+  difficulty="advanced"
+  why="This section bridges theory and practice by training and evaluating real object detection models. Learners gain hands-on experience building detection pipelines used in real-world applications. Emphasis is placed on understanding: How training data affects detection quality, How to debug poor detections, How to deploy detection models, How detection models behave in production."
+/>
+
+### Evaluation Metrics for Object Detection
+
+**Understanding Detection Performance:**
+
+<ResourceCard
+  type="article"
+  title="mAP (Mean Average Precision) Explained"
+  url="https://jonathan-hui.medium.com/map-mean-average-precision-for-object-detection-45c121a31173"
+  duration="1-2 hours"
+  difficulty="intermediate"
+  why="mAP is the standard metric for object detection. This article explains how precision-recall curves translate to average precision and why mAP is the go-to metric for comparing detection models."
+/>
+
+<ResourceCard
+  type="guide"
+  title="YOLO Performance Metrics"
+  url="https://docs.ultralytics.com/guides/yolo-performance-metrics/#class-wise-metrics"
+  duration="1 hour"
+  difficulty="beginner"
+  why="Ultralytics' official guide to YOLO-specific metrics including mAP, IoU, precision, recall, F1-score, and confusion matrix interpretation for detection models."
+/>
+
+<Link to="/docs/2026-02-15/softlanding/specializations/data-science/resources">
+  See Data Science track for more metrics →
+</Link>
+
+## <Rocket /> Capstone
+
+Apply your computer vision knowledge to a real-world project: **Pokemon Card Border Detection System**. Build a complete pipeline from data collection to deployment.

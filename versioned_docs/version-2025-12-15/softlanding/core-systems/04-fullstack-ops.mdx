@@ -1,0 +1,137 @@
+---
+sidebar_position: 4
+sidebar_label: 4. Fullstack Toolkit
+title: Fullstack Toolkit
+description: Docker, FastAPI, and Frontend Basics
+---
+
+# Fullstack & Operations Toolkit
+
+![Fullstack Dev Environment](/curriculum-versions/2025-12-15/fullstack.png)
+
+## Goal
+
+Bridge the gap between AI development and production. Learn to wrap models in APIs, create web interfaces, and deploy containerized applications.
+
+## 1. The Web Stack
+
+### Core Concepts
+**Resource**: [HTML, CSS, JS Crash Course](https://youtu.be/_GTMOmRrqkU?si=dseu6OPizoJzKUKY) | [DOM Manipulation](https://youtu.be/y17RuWkWdn8?si=rOEQNB2ezsxwp2cq)
+
+Understand the technologies that power web applications to build interfaces for your AI models.
+
+**Key Topics:**
+- **HTML/CSS**: Structure and styling of web pages.
+- **JavaScript**: Interactivity and API calls.
+- **DOM**: Dynamically updating content without page reloads.
+
+**Action Items:**
+1. Build a simple HTML form for user input.
+2. Use JavaScript to handle form submission.
+3. Display mock results dynamically using DOM manipulation.
+
+---
+
+## 2. Serving AI with FastAPI
+
+### Core Concepts
+**Resource**: [FastAPI Full Course](https://youtu.be/SORiTsvnU28?si=wsiLhTJ66QN_zZH3)
+
+Transform Python AI models into production-ready web services.
+
+**Key Topics:**
+- **FastAPI**: Endpoints, Path Operations, Pydantic Models.
+- **Integration**: Loading models efficiently (startup event).
+- **CORS**: Allowing frontend communication.
+
+**Action Items:**
+1. Create a FastAPI app with a prediction endpoint.
+2. Load your trained model once at startup.
+3. Connect your frontend from Module 1 to the API.
+
+**Code Snippet (Model Loading):**
+```python
+@app.post("/predict")
+async def predict(request: PredictionRequest):
+    prediction = model.predict(request.text)
+    return {"prediction": prediction}
+```
+
+---
+
+## 3. DevOps & Deployment
+
+### Core Concepts
+**Resource**: [Docker 101](https://www.docker.com/101-tutorial/) | [SSH Crash Course](https://youtu.be/P0Fk-K2eZF8?si=nBCJVP7NU4GU5UIQ)
+
+Package your application for consistency and deploy it to the cloud.
+
+**Key Topics:**
+- **Docker**: Containers, Dockerfiles, Docker Compose.
+- **SSH**: Secure remote server management.
+- **Deployment**: Cloud servers (DigitalOcean/AWS) vs. PaaS (Railway/Render).
+
+**Action Items:**
+1. Write a `Dockerfile` for your FastAPI app.
+2. Build and run the container locally.
+3. Deploy to a cloud provider (e.g., DigitalOcean Droplet or Railway).
+
+**Dockerfile Example:**
+```dockerfile
+FROM python:3.10-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . .
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+```
+
+---
+
+## Completion Checklist
+
+- [ ] Build an HTML page with interactive JavaScript.
+- [ ] Create a FastAPI app with Pydantic validation.
+- [ ] Serve an AI model via HTTP API.
+- [ ] Build and run a Docker container.
+- [ ] Deploy to a cloud server (or PaaS).
+
+**Capstone Exercise**: Build and deploy a complete AI app (Frontend + Backend + Docker).
+
+---
+
+## Common Pitfalls
+
+- **CORS Errors**: Add `CORSMiddleware` to FastAPI.
+- **Slow Predictions**: Load models at startup, not per request.
+- **Large Images**: Use `.dockerignore` and slim base images.
+- **Connection Issues**: Check security groups and port mappings.
+
+---
+
+## Support & Next Steps
+
+**Channels**: `#frontend-help`, `#api-development`, `#devops`
+**Office Hours**: Thursdays 2-5 PM
+
+**Next Step**: [Choose Your Specialization Track →](../tracks/00-overview.mdx)
+
+---
+
+## Quick Reference
+
+```bash
+# FastAPI
+uvicorn main:app --reload              # Dev
+uvicorn main:app --host 0.0.0.0        # Prod
+
+# Docker
+docker build -t myapp .                # Build
+docker run -p 8000:8000 myapp          # Run
+docker ps                              # List
+docker logs <id>                       # Logs
+
+# SSH
+ssh user@ip                            # Connect
+scp file.txt user@ip:~/                # Copy
+```

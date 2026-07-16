@@ -1,0 +1,163 @@
+---
+sidebar_position: 4
+title: Software Engineering
+description: Distributed Systems and Scalability
+---
+
+# Software Engineering Track
+
+![Monitors and a laptop](/curriculum-versions/2025-12-15/software_eng.png)
+
+## Goal
+
+Build production-grade, scalable systems. Learn the architecture patterns, tools, and practices that distinguish hobby projects from enterprise software.
+
+## 1. Networking Fundamentals
+
+### Core Concepts
+**Resource**: [Computer Networking Course](https://www.youtube.com/playlist?list=PLIhvC56v63IJVXv0GJcl9vO5Z6znCVb1P)
+
+Understand how data travels to debug and optimize effectively.
+
+**Key Topics:**
+- **OSI Model**: Layers 3-7 (Network to Application).
+- **Protocols**: TCP/IP, DNS, HTTP/HTTPS.
+- **Performance**: Load balancing, CDNs, SSL/TLS.
+
+**Action Items:**
+1. Watch videos on OSI model and HTTP.
+2. Use `ping`, `traceroute`, and `curl` to trace requests.
+3. Analyze a website's traffic using Browser DevTools.
+
+## 2. Architecture Principles
+
+### Core Concepts
+**Resource**: [The 12-Factor App](https://12factor.net/) | [Beyond the Twelve-Factor App](https://www.oreilly.com/library/view/beyond-the-twelve-factor/9781492042631/)
+
+Learn the battle-tested patterns that make applications scalable, maintainable, and cloud-ready.
+
+**Key Topics:**
+- **12-Factor App**: Config, Backing Services, Disposability, Dev/Prod Parity.
+- **Cloud-Native**: API-first design, Telemetry, Authentication strategies.
+- **Scalability**: Stateless processes, Horizontal scaling.
+
+**Action Items:**
+1. Read the 12-Factor App methodology.
+2. Audit a previous project against the 12 factors.
+3. Draft an architecture document for a new service.
+
+## 3. API Design & Implementation
+
+### Core Concepts
+**Resource**: [REST API Tutorial](https://restfulapi.net/) | [FastAPI Official Tutorial](https://fastapi.tiangolo.com/learn/)
+
+Master RESTful API design and build high-performance endpoints using modern Python frameworks.
+
+**Key Topics:**
+- **REST**: Resources, HTTP Methods, Status Codes, Versioning.
+- **FastAPI**: Path operations, Pydantic models, Async endpoints.
+- **Documentation**: Automatic OpenAPI (Swagger UI) generation.
+
+**Action Items:**
+1. Design a REST API schema for a blog or library.
+2. Build a CRUD API using FastAPI with Pydantic validation.
+3. Implement JWT authentication and error handling.
+
+## 4. Database Design & Management
+
+### Core Concepts
+**Resource**: [SQLBolt](https://sqlbolt.com/) | [MongoDB University](https://learn.mongodb.com/learning-paths/introduction-to-mongodb) | [Alembic](https://alembic.sqlalchemy.org/en/latest/tutorial.html)
+
+Design efficient schemas and manage data integrity.
+
+**Key Topics:**
+- **Design**: ERD, Normalization (1NF-3NF), Indexing.
+- **SQL**: Joins, Transactions, ACID properties.
+- **NoSQL**: Document model, Aggregation pipelines.
+- **Migrations**: Version control for database schemas.
+
+**Action Items:**
+1. Create an ERD for an e-commerce system.
+2. Implement the schema in PostgreSQL and write complex queries.
+3. Set up Alembic for automated migrations.
+
+## 5. Testing Strategies
+
+### Core Concepts
+**Resource**: [pytest Documentation](https://docs.pytest.org/en/stable/) | [FastAPI Testing](https://fastapi.tiangolo.com/tutorial/testing/)
+
+Write automated tests to catch bugs early and refactor with confidence.
+
+**Key Topics:**
+- **Types**: Unit, Integration, End-to-End.
+- **Tools**: pytest fixtures, mocking, coverage reports.
+- **TDD**: Writing tests before implementation.
+
+**Action Items:**
+1. Write unit tests for all API endpoints.
+2. Achieve 80%+ code coverage.
+3. Configure tests to run on every commit.
+
+## 6. DevOps & Deployment
+
+### Core Concepts
+**Resource**: [GitHub Actions](https://docs.github.com/en/actions) | [Docker Compose](https://docs.docker.com/compose/)
+
+Automate deployment and ensure reproducibility with containers.
+
+**Key Topics:**
+- **CI/CD**: Automated testing, linting, and deployment pipelines.
+- **Docker**: Containerizing applications for consistency.
+- **Orchestration**: Managing multi-container apps with Docker Compose.
+
+**Action Items:**
+1. Create a GitHub Actions workflow to run tests on PRs.
+2. Containerize the FastAPI app and database.
+3. Deploy the stack using Docker Compose.
+
+## 7. Specialization (Choose One)
+
+### Option A: Mobile Development (Flutter/Swift)
+**Resource**: [Flutter Codelabs](https://docs.flutter.dev/codelabs)
+**Goal**: Build a mobile app consuming your API.
+**Key Topics**: Widgets, State Management, API Integration.
+
+### Option B: Full-Stack Web (React/Vue)
+**Resource**: [React Tutorial](https://react.dev/learn) | [Vue Guide](https://vuejs.org/guide/introduction.html)
+**Goal**: Build a responsive web app consuming your API.
+**Key Topics**: Components, Hooks/Composition API, Routing.
+
+**Project Requirement:**
+- Implement a frontend (Mobile or Web) for your API.
+- Include authentication and data visualization.
+
+## Capstone Project
+
+**Duration**: 4-6 weeks | **Mentor-Led**
+
+Build a production-grade application combining all modules:
+- Microservices architecture with REST APIs.
+- SQL database, Docker containerization, and CI/CD.
+- Mobile or Web frontend.
+
+**Evaluation**: Code quality, Test coverage (>80%), Documentation, Deployment.
+
+## Track Completion Checklist
+
+- [ ] Explain HTTP request lifecycle.
+- [ ] Design scalable REST APIs (12-factor).
+- [ ] Normalize database schemas (3NF).
+- [ ] Write complex SQL queries.
+- [ ] Achieve 80%+ test coverage.
+- [ ] Deploy with Docker Compose and CI/CD.
+- [ ] Build a full-stack application.
+
+## Support & Resources
+
+**Channels**: `#software-arch`, `#backend-dev`, `#devops-help`
+**Office Hours**: Wednesdays 3-6 PM
+
+**Next Steps**:
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- Cloud Certifications (AWS/GCP)
+- Technical Interview Prep
