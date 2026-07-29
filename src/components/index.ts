@@ -8,3 +8,4 @@ export { default as FAQSection } from "./home/FAQSection";
 export { default as ParticleBackground } from "./primitives/ParticleBackground";
 export { default as LearningRoadmap } from "./home/LearningRoadmap";
 export { default as RoadmapShowcase } from "./roadmap/RoadmapShowcase";
+export { default as RoadmapPopup } from "./doc-components/RoadmapPopup";

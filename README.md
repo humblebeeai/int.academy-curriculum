@@ -49,10 +49,10 @@ HumbleBeeAI was built to eliminate these barriers through structured learning, h
 Modules:
 
 - Terminal & Algorithmic Basics
-- Calculus & Algebra
+- Linear Algebra
 - Probability & Statistics
 - Data Manipulation
-- IoT Activation
+
 
 ### Soft Landing
 
@@ -188,6 +188,11 @@ From the repo root:
 Runtime configuration is handled via `docusaurus.config.ts`, `sidebars.ts`, and
 environment variables used by `compose.yml` (for example, `PORT`).
 
+Chat widget endpoint is configured with `REACT_APP_CHAT_LINK`.
+
+- Copy `.env.example` to `.env`
+- Set `REACT_APP_CHAT_LINK` to your chatbot websocket URL (for example, `wss://api.kumush.ai/api/v1/chat/<chatbot-id>/ws`)
+
 ### Troubleshooting
 
 - Verify dependencies: `npm install`
@@ -198,7 +203,7 @@ environment variables used by `compose.yml` (for example, `PORT`).
 ### Editing Curriculum Content
 
 - Most curriculum content lives under the `docs/` directory as `.mdx` files:
-  - Engineering Fundamentals: `docs/engineering-fundamentals/index.mdx`, `docs/engineering-fundamentals/terminal-algorithmic-basics.mdx`, `docs/engineering-fundamentals/calculus-algebra.mdx`, etc.
+  - Engineering Fundamentals: `docs/engineering-fundamentals/index.mdx`, `docs/engineering-fundamentals/terminal-algorithmic-basics.mdx`, `docs/engineering-fundamentals/linear-algebra.mdx`, etc.
   - Softlanding / Core Systems: `docs/softlanding/core-systems/**/*.mdx`
   - Specializations: `docs/softlanding/specializations/**/*.mdx`
   - Shared resources: `docs/resources.mdx`, `docs/index.mdx`, etc.
@@ -230,8 +235,8 @@ Join our Telegram community to connect with fellow learners and contributors:
 
 ## License
 
-- Curriculum content: **CC BY-NC-SA 4.0**
-- Code in this repo: **Unlicensed**
+- Curriculum structure and code in this repo: **CC BY-NC-SA 4.0**
+- Third party sources: **Under their original licence**
 
 ---
 

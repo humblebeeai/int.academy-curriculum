@@ -1,6 +1,6 @@
 {
   "name": "humblebeeai-academy-curriculum",
-  "version": "0.1.0",
+  "version": "1.0.7",
   "private": true,
   "description": "Open Source AI Engineering Curriculum by HumbleBeeAI Academy",
   "author": "HumbleBeeAI Academy",
@@ -8,23 +8,24 @@
     "type": "git",
     "url": "https://github.com/humblebeeai/int.academy-curriculum.git"
   },
-  "license": "UNLICENSED",
+  "license": "CC-BY-NC-SA-4.0",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy",
+    "deploy": "npm run build && wrangler deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "preview": "npm run build && wrangler dev"
   },
   "dependencies": {
-    "@docusaurus/core": "3.9.2",
-    "@docusaurus/preset-classic": "3.9.2",
-    "@docusaurus/theme-mermaid": "^3.9.2",
+    "@docusaurus/core": "^3.5.2",
+    "@docusaurus/preset-classic": "^3.5.2",
+    "@docusaurus/theme-mermaid": "^3.5.2",
     "@mdx-js/react": "^3.0.0",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.9.1",
@@ -32,15 +33,19 @@
     "framer-motion": "^12.23.26",
     "lucide-react": "^0.561.0",
     "prism-react-renderer": "^2.3.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.9.2",
     "@docusaurus/tsconfig": "3.9.2",
     "@docusaurus/types": "3.9.2",
-    "typescript": "~5.6.2"
+    "typescript": "~5.6.2",
+    "wrangler": "^4.81.1"
+  },
+  "overrides": {
+    "webpackbar": "7.0.0"
   },
   "browserslist": {
     "production": [

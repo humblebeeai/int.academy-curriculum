@@ -48,8 +48,7 @@ Prevents the most common long-term failure: specializing too early.
 - Algorithmic thinking via HackerRank Problem Solving
 - Deliverables: 15 HackerRank problems solved, can navigate directories, search with grep
 
-#### Module 2: Calculus & Linear Algebra (160-180 hours)
-- Calculus 1 (Khan Academy): limits, continuity, derivatives, applications
+#### Module 2: Linear Algebra (60-70 hours)
 - Linear Algebra (Khan Academy): vectors, matrices, transformations
 - 3Blue1Brown visual series for intuition
 - Deliverables: Khan Academy final exams >= 80%

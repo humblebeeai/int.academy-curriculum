@@ -79,12 +79,12 @@ if ! command -v npm >/dev/null 2>&1; then
 fi
 
 _CURRENT_VERSION="$(node -p "require('./package.json').version")"
-_NEW_VERSION="$(node -p "const [maj,min,pat]='${_CURRENT_VERSION}'.split('.').map(Number); const bump='${_BUMP_TYPE}'; if(bump==='major'){console.log([maj+1,0,0].join('.'))} else if(bump==='minor'){console.log([maj,min+1,0].join('.'))} else {console.log([maj,min,pat+1].join('.'))}")"
-
 echo "[INFO]: Current version: ${_CURRENT_VERSION}"
-echo "[INFO]: New version: ${_NEW_VERSION}"
 
-npm version "${_NEW_VERSION}" --no-git-tag-version
+npm version "${_BUMP_TYPE}" --no-git-tag-version
+
+_NEW_VERSION="$(node -p "require('./package.json').version")"
+echo "[INFO]: New version: ${_NEW_VERSION}"
 
 if [ "${_DO_DOCS}" == true ]; then
   npx docusaurus docs:version "${_NEW_VERSION}"
