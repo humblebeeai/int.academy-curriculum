@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-08-09
+
+- chore: bump version to v1.2.0
+- fix: prevent horizontal scrollbar in curriculum version dropdown
+- chore: remove December 2025 and January 2026 curriculum versions
+- feat(docs): add curriculum version history (#90)
+- feat: add new api services to docs
+- Update index.mdx
+- docs: add matplotlib visualization resource
+- docs: update curriculum foundations
+- fix: clear chatbot endpoint in .env.example for configuration update
+- fix: configure chatbot endpoint via env for RoadmapPopup
+- fix: update webpackbar override and refine RoadmapPopup rendering
+- docs: update changelog for v1.0.7
+
+
 ## [1.0.7] - 2026-04-30
 
 - chore: bump version to v1.0.7
