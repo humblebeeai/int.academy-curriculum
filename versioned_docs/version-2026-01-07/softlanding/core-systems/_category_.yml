@@ -1,7 +1,0 @@
-position: 2
-label: "Core Systems"
-collapsible: true
-collapsed: false
-link:
-  type: doc
-  id: softlanding/core-systems
