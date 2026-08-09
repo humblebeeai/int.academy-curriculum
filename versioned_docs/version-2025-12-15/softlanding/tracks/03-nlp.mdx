@@ -1,0 +1,89 @@
+---
+sidebar_position: 3
+title: NLP & LLMs
+description: Transformers, Agents, and Language Models
+---
+
+# NLP & LLM Track
+
+![NLP & LLM Track](/curriculum-versions/2025-12-15/nlp.png)
+
+## Goal
+**Focus**: Master the complete lifecycle of Large Language Models-from foundational architectures and embeddings to building production-ready applications with RAG, agents, and fine-tuning. 
+
+Learn how language models understand, generate, and reason with text, and develop the skills to evaluate, optimize, and deploy LLM systems in real-world scenarios.
+
+## Curriculum
+
+### **NLP Basics**
+*   **[Word2Vec Paper](https://arxiv.org/abs/1301.3781)**
+
+**Why it's important:**
+Word2Vec introduced the concept of dense word embeddings that capture semantic relationships. While modern models use contextual embeddings, understanding Word2Vec provides insight into how meaning is represented numerically and forms the foundation for all modern embedding techniques.
+
+**What to expect:**
+Learn about Skip-gram and CBOW architectures, negative sampling, and how words with similar meanings end up close in vector space. Classic examples like "king - man + woman = queen" demonstrate learned relationships. This is your introduction to representing language as numbers.
+
+### **Transformers & Attention Mechanisms**
+*   **[Tutorial 6: Transformers and MHAttention](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial6/Transformers_and_MHAttention.html)**
+*   **[Attention is all you need](https://arxiv.org/abs/1706.03762)**
+
+**Why it's important:**
+The Transformer architecture revolutionized NLP and enabled models like GPT, BERT, and Claude. Understanding multi-head attention mechanisms is crucial for knowing how models process and relate information. This paper is the foundation of every modern LLM.
+
+**What to expect:**
+Interactive code walkthrough implementing transformers from scratch. You'll visualize attention patterns, understand positional encoding, and see how self-attention enables parallel processing of sequences. The paper provides the theoretical foundation with detailed explanations of encoder-decoder structure and why transformers replaced RNNs.
+
+### **Neural Networks Fundamentals**
+*   **[Neural Networks: Zero to Hero](https://youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ&si=IaLn9SKculhENlak)**: From Chapter 7 to 10.
+
+**Why it's important:**
+Andrej Karpathy builds neural networks from first principles with minimal dependencies. This foundation helps you understand what's happening under the hood of high-level libraries and modern LLMs.
+
+**What to expect:**
+Step-by-step implementation of neural networks, backpropagation, and character-level language models. Expect to write lots of code and gain intuition for gradient descent and neural network training, LLMs.
+
+#### **Retrieval-Augmented Generation (RAG)**
+*   **[Build a RAG System with LangChain](https://python.langchain.com/docs/2025-12-15/tutorials/)**
+*   **[Ragas: Automated Evaluation of Retrieval Augmented Generation](https://arxiv.org/pdf/2309.15217)**
+
+**Why it's important:**
+Retrieval Augmented Generation (RAG) is one of the most practical applications of LLMs, enabling AI systems to answer questions using your own documents and data. LangChain provides the tools to build production-ready RAG systems, while RAGAS gives you the metrics to evaluate them properly.
+
+**What to expect:**
+You'll build a complete RAG pipeline from scratch: loading documents, chunking text, creating embeddings, storing vectors, implementing retrieval, and generating answers. You'll learn about semantic search, vector databases, and how to handle large document collections. Then you'll master evaluation using metrics like context precision, answer relevancy, and faithfulness to benchmark retrieval quality and LLM response accuracy systematically.
+
+### **Prompt Engineering**
+*   **[Basics Guide to Generative AI and Prompt Engineering!](https://learnprompting.org/docs/2025-12-15/introduction)**
+
+**Why it's important:**
+Effective prompting is the primary interface for controlling LLM behavior. Good prompt engineering dramatically improves output quality, consistency, and task success rates without model fine-tuning.
+
+**What to expect:**
+Comprehensive guide covering prompt structure, few-shot learning, chain-of-thought reasoning, role-playing, and advanced techniques. You'll learn to design prompts that minimize hallucinations and maximize reliability.
+
+### **AI Agents Orchestration**
+*   **[Multi AI Agent Systems with crewAI](https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/)**
+
+**Why it's important:**
+Single-agent systems are limited. Multi-agent architectures enable collaboration, specialization, and more complex reasoning patterns. CrewAI demonstrates how to orchestrate multiple AI agents working together.
+
+**What to expect:**
+Short course covering agent roles, task delegation, inter-agent communication, and building systems where agents have different responsibilities. You'll build crews for research, writing, and analysis tasks.
+
+### **Fine-Tuning Methods**
+*   **[Fine-Tuning Course by DeepLearning.AI](https://www.deeplearning.ai/short-courses/finetuning-large-language-models/)**
+*   **[LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685)**
+*   **[QLoRA: Efficient Finetuning of Quantized LLMs](https://arxiv.org/abs/2305.14314)**
+*   **[Unsloth: An open-source framework for LLM fine-tuning and reinforcement learning](https://docs.unsloth.ai/)**
+
+**Why it's important:**
+Fine-tuning adapts pre-trained models to specific tasks and domains with limited compute. Techniques like LoRA and QLoRA make it feasible to customize billion-parameter models on consumer hardware, enabling personalized AI systems without training from scratch.
+
+**What to expect:**
+You'll learn instruction-tuning for following user commands, Parameter-Efficient Fine-Tuning (PEFT) methods that update only a small fraction of weights, LoRA's low-rank decomposition approach, and QLoRA's quantization for 4-bit fine-tuning. The DeepLearning.AI course provides hands-on practice, while papers explain the theory. Unsloth gives you a production-ready framework supporting multiple fine-tuning methods with optimized hyperparameters.
+
+
+### Capstone
+*   **Project**: Provided by Mentor.
+*   **Status**: *Not open source yet (Coming Soon)*

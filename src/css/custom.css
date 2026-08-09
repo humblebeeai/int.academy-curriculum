@@ -895,3 +895,28 @@ details > *:not(summary) {
     max-width: 320px;
   }
 }
+@media (min-width: 997px) {
+  .navbar__link.curriculum-version-dropdown::before {
+    color: var(--ifm-color-emphasis-700);
+    content: "Curriculum: ";
+    font-weight: 400;
+  }
+
+  .dropdown:has(> .navbar__link.curriculum-version-dropdown) .dropdown__menu {
+    box-sizing: border-box;
+    left: var(--ifm-navbar-item-padding-horizontal);
+    max-width: calc(
+      100% - var(--ifm-navbar-item-padding-horizontal) -
+        var(--ifm-navbar-item-padding-horizontal)
+    );
+    min-width: calc(
+      100% - var(--ifm-navbar-item-padding-horizontal) -
+        var(--ifm-navbar-item-padding-horizontal)
+    );
+    right: auto;
+    width: calc(
+      100% - var(--ifm-navbar-item-padding-horizontal) -
+        var(--ifm-navbar-item-padding-horizontal)
+    );
+  }
+}

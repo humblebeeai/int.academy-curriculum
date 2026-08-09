@@ -1,0 +1,58 @@
+name: Publish Curriculum Version
+
+on:
+  workflow_dispatch:
+    inputs:
+      publication_date:
+        description: "Snapshot date in YYYY-MM-DD format; leave empty to use today (UTC)"
+        required: false
+        type: string
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  version_curriculum:
+    name: Version Curriculum
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install dependencies
+        run: npm ci
+      - name: Create curriculum snapshot
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          PUBLICATION_DATE: ${{ inputs.publication_date }}
+        run: |
+          VERSION_DATE="${PUBLICATION_DATE:-$(date -u +%F)}"
+          npm run curriculum:version -- --date "$VERSION_DATE"
+      - name: Remove expired curriculum snapshots
+        if: github.event_name == 'schedule'
+        run: npm run curriculum:prune
+      - name: Detect changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Build
+        if: steps.changes.outputs.changed == 'true'
+        run: npm run build
+      - name: Commit curriculum versions
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add curriculum-versions.json versions.json versioned_docs versioned_sidebars static/curriculum-versions
+          git commit -m "docs: update curriculum version archive"
+          git push origin HEAD

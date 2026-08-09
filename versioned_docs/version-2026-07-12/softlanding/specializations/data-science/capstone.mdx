@@ -1,0 +1,362 @@
+---
+sidebar_position: 2
+title: Capstone
+description: AI-Powered Dynamic Hotel Pricing System
+---
+
+import {
+  BarChart3,
+  Package,
+  CheckCircle2,
+  XCircle,
+  Download,
+} from "lucide-react";
+
+# <BarChart3 /> Capstone: Hotel Dynamic Pricing Challenge
+
+**AI-Powered Dynamic Pricing System for Hotel Revenue Optimization**
+
+---
+
+## Real-World Problem Statement
+
+Hotels face a critical challenge: **determining optimal room prices in real-time** to maximize revenue while maintaining occupancy. Manual pricing decisions are:
+
+- Time-consuming for management teams
+- Based on incomplete market information
+- Unable to respond quickly to competitor pricing changes or demand fluctuations
+- Inconsistent and prone to human bias
+
+This project builds an **AI-powered dynamic pricing system** that:
+
+1. **Analyzes historical booking patterns** to understand demand trends
+2. **Monitors competitor pricing** from competing hotels in real-time
+3. **Integrates external data** (weather, local events, holidays) that influence demand
+4. **Forecasts demand** using time-series analysis
+5. **Recommends optimal prices** to maximize revenue and occupancy
+
+### Target Users
+
+- Hotel managers and revenue managers
+- Chain hotels with multiple properties
+- Boutique hotels seeking to optimize pricing
+- Hotel booking platforms needing price recommendations
+
+---
+
+## Project Scope
+
+### <CheckCircle2 className="inline" /> In Scope (What You Will Build)
+
+- Data cleaning and preprocessing pipeline
+- Exploratory data analysis (EDA) on historical booking data
+- Feature engineering for demand prediction
+- Time-series forecasting model implementation
+- Competitor price tracking system (web scraper)
+- Integration of external data (weather, events, holidays)
+- Machine learning model for price optimization
+- REST API for price recommendations with documentation
+
+### <XCircle className="inline" /> Out of Scope (Not Required)
+
+- Automatic price updates directly to hotel booking system
+- Mobile application development
+- Multi-property management system
+- Real-time market sentiment analysis
+- Advanced reinforcement learning algorithms
+- Cloud infrastructure (local implementation sufficient)
+- Production database optimization
+- Full-featured admin dashboard for monitoring and manual overrides (beyond a simple read-only results dashboard)
+- Alert system for unusual market conditions
+
+---
+
+## Expected Time to Complete
+
+**Total Duration: 10-14 days (~2 weeks)**
+
+| Phase                                      | Duration       | Activities                                                    |
+| ------------------------------------------ | -------------- | ------------------------------------------------------------- |
+| **Phase 1: Data Preparation**              | 1-2 days       | Load, clean, normalize historical data; perform EDA           |
+| **Phase 2: Data Collection & Integration** | 2-3 days       | Web scraping, weather/events integration, competitor tracking |
+| **Phase 3: Algorithm Development**         | 3-4 days       | Build time-series forecasting model, train, test, optimize    |
+| **Phase 4: Implementation**                | 2-3 days       | REST API development, testing, and documentation              |
+| **Phase 5: Testing & Documentation**       | 2-3 days       | Model validation, API testing, comprehensive documentation    |
+| **Total**                                  | **10-14 days** | ~2 weeks                                                      |
+
+---
+
+## Prerequisites
+
+### Required Knowledge
+
+- Python programming (intermediate level)
+- Pandas and NumPy for data manipulation
+- Data analysis and visualization (Matplotlib, Seaborn)
+- Machine learning basics
+- Time-series forecasting concepts
+- Web scraping (BeautifulSoup/Selenium)
+- REST API development (Flask/FastAPI)
+- Git version control basics
+
+### Hardware Requirements
+
+- **RAM**: 8GB minimum
+- **Storage**: ~2GB for historical data and models
+- **Internet Connection**: Required for competitor scraping and external data APIs
+- **CPU**: Modern multi-core processor recommended
+
+---
+
+## Project Structure
+
+```
+ds.challenge-hotelpricing/
+├── README.md                 # This file
+└── data/
+    └── bookings.csv         # Historical booking and pricing data
+```
+
+---
+
+## Available Data
+
+### `bookings.csv` - Historical Booking Data
+
+**<Download className="inline" /> [Download Dataset](https://drive.google.com/file/d/1cybqBl3PCnX8cfG6-gZeL8vHl1H447a5/view?usp=drive_link)**
+
+Contains hotel booking records with the following columns:
+
+- **customer** - Customer ID (anonymized)
+- **booking_date** - Date and time when the booking was made
+- **category** - Room category at time of booking
+- **check_in** - Check-in date and time
+- **check_out** - Check-out date and time
+- **adults** - Number of adult guests
+- **accommodation** - Accommodation cost per night
+- **services** - Additional services cost
+- **room_category** - Room type category
+- **quantity** - Quantity of rooms
+
+### Competitor Data (Self-Selected)
+
+Learners are encouraged to **choose their own competing hotels** for price comparison analysis. This allows you to:
+
+- Select competitors based on your target market and strategy
+- Practice web scraping and data collection techniques
+- Work with real-time pricing data from actual hotel booking platforms
+- Validate your model against actual competitor behavior
+
+---
+
+## Key Analysis Questions
+
+Answer these questions during your EDA phase:
+
+- What are the booking patterns by day of week, month, and season?
+- Which room categories are most popular?
+- What is the average lead time between booking and check-in?
+- Are there pricing patterns based on occupancy?
+- What factors correlate with higher room rates?
+- How do competitor prices influence demand?
+
+---
+
+## <Package /> Deliverables
+
+> **Important:** Your code must be tracked on GitHub throughout the project. Commit frequently with meaningful messages from day one. Your commit history will be reviewed as part of the evaluation. It demonstrates your development process and professional practices.
+
+### 1. Cleaned Dataset
+
+- Processed and normalized data ready for modeling
+- Data quality report documenting cleaning decisions
+- Merged dataset combining historical, competitor, and external data
+
+### 2. EDA Report
+
+- Jupyter notebook with comprehensive visualizations and insights
+- Statistical analysis of demand patterns, pricing trends, seasonality
+- Correlation analysis between features and room rates
+
+### 3. Web Scraper
+
+- Automated competitor price collection system
+- Scheduler for hourly/daily updates
+- Data validation and error handling
+
+### 4. Pricing Model
+
+- Trained Prophet forecasting model with evaluation metrics
+- Model performance analysis and validation results
+- Baseline accuracy benchmarks
+
+### 5. REST API
+
+- Endpoints for price recommendations
+- Health check and status endpoints
+- API documentation (Swagger/OpenAPI)
+
+### 6. Documentation
+
+- Complete technical documentation
+- Installation and setup guide
+- Configuration options explained
+- Usage examples with curl/Python
+
+---
+
+## Evaluation Rubric
+
+### Sufficient (Pass)
+
+| Criteria          | Requirements                                                                   |
+| ----------------- | ------------------------------------------------------------------------------ |
+| **Functionality** | Data loads and processes without errors; time-series model trains successfully |
+| **EDA**           | Basic exploration with 3+ visualizations showing patterns                      |
+| **Code Quality**  | Code runs without errors, basic organization                                   |
+| **Documentation** | README with installation and basic usage                                       |
+| **Testing**       | Model evaluated on held-out test data with metrics                             |
+
+### Good (Competent)
+
+| Criteria          | Requirements                                                                       |
+| ----------------- | ---------------------------------------------------------------------------------- |
+| **Functionality** | Web scraper working; API returns price recommendations; dashboard displays results |
+| **EDA**           | Comprehensive analysis with 8+ visualizations; clear insights documented           |
+| **Code Quality**  | Modular design, configuration via environment variables, error handling            |
+| **Documentation** | Comprehensive README with architecture explanation and examples                    |
+| **Testing**       | Works on different room categories and time periods                                |
+| **Extras**        | Clean REST API documentation, basic web dashboard                                  |
+
+### Excellent (Exceptional)
+
+| Criteria          | Requirements                                                                   |
+| ----------------- | ------------------------------------------------------------------------------ |
+| **Functionality** | Robust system handling real-time data; competitor tracking; event integration  |
+| **EDA**           | Deep statistical analysis; correlation studies; forecasting visualizations     |
+| **Code Quality**  | Clean architecture with type hints, logging, comprehensive error handling      |
+| **Documentation** | Full docs with diagrams, usage examples, troubleshooting, theory explanation   |
+| **Testing**       | Comprehensive test suite; validated across multiple scenarios                  |
+| **Extras**        | Docker deployment, API with health checks, performance metrics, data pipelines |
+| **Innovation**    | Additional ML models, advanced features (dynamic discount strategies, etc.)    |
+
+---
+
+## Checkpoint Milestones
+
+Use these checkpoints to track your progress:
+
+### Checkpoint 1 (Day 3)
+
+- [ ] Development environment set up
+- [ ] Historical data loaded and explored
+- [ ] Initial EDA plots created (booking patterns, seasonality)
+- [ ] Data quality issues identified and documented
+
+### Checkpoint 2 (Day 6)
+
+- [ ] Data cleaning complete
+- [ ] Competitor hotels selected for analysis
+- [ ] Web scraper prototype working (for your chosen competitors)
+- [ ] External data sources identified and integrated
+
+### Checkpoint 3 (Day 10)
+
+- [ ] Time-series forecasting model trained successfully
+- [ ] Forecast validation complete
+- [ ] Price recommendation logic implemented
+- [ ] REST API endpoints functional and documented
+- [ ] Web scraper tested with real data
+
+### Checkpoint 4 (Day 14)
+
+- [ ] All components integrated and tested
+- [ ] Comprehensive model evaluation metrics documented
+- [ ] Complete API documentation and examples
+- [ ] Full project README with architecture diagram
+- [ ] Git repository with meaningful commit history
+
+---
+
+## Research Starting Points
+
+You'll need to research and decide on approaches for:
+
+1. **Time-Series Forecasting**: How to best predict demand?
+
+   - Consider: Prophet, ARIMA, LSTM, seasonal decomposition
+
+2. **Competitor Price Integration**: How to efficiently collect and process competitor data?
+
+   - Consider: Web scraping libraries, scheduling, data validation
+
+3. **Feature Engineering**: Which factors drive prices?
+
+   - Consider: Seasonality, day-of-week effects, lead time, occupancy patterns
+
+4. **Optimization Algorithm**: How to translate forecasts into prices?
+
+   - Consider: Revenue management techniques, dynamic pricing strategies, constraint optimization
+
+5. **Dashboard Technology**: What framework for the user interface?
+   - Consider: Flask + Jinja, Streamlit, Dash, React.js
+
+### Useful Resources
+
+- [Time-Series Forecasting Overview](https://otexts.com/fpp2/) - Forecasting: Principles and Practice
+- [Prophet Documentation](https://facebook.github.io/prophet/)
+- [Statsmodels (ARIMA, Exponential Smoothing)](https://www.statsmodels.org/)
+- [TensorFlow/Keras for LSTM](https://www.tensorflow.org/)
+- [Pandas Documentation](https://pandas.pydata.org/docs/2026-07-12/)
+- [Scikit-learn Documentation](https://scikit-learn.org/stable/)
+- [Beautiful Soup Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [Flask Documentation](https://flask.palletsprojects.com/)
+- [Revenue Management Papers](https://scholar.google.com/) - search for hotel pricing optimization
+
+---
+
+## Tips for Success
+
+1. **Start Simple**: Get basic EDA and forecasting working before building complex integrations
+
+2. **Visualize Everything**: Create plots to understand demand patterns, seasonal trends, and competitor dynamics
+
+3. **Validate Your Model**: Use cross-validation and test on multiple time periods to ensure robustness
+
+4. **Handle Failures Gracefully**: Implement error handling for web scraping failures and API timeouts
+
+5. **Keep Configuration Flexible**: Use environment variables for API keys, database connections, scraping schedules
+
+6. **Document Your Decisions**: Write comments explaining why you chose specific approaches (Prophet vs. ARIMA, etc.)
+
+7. **Track Metrics Carefully**: Monitor revenue impact, occupancy rates, and pricing accuracy
+
+---
+
+## Data Scenarios to Test
+
+Your system should handle:
+
+- Seasonal demand variations (low/peak seasons)
+- Competitor pricing changes
+- Special events affecting demand
+- Different room categories
+- Limited historical data (model robustness)
+
+---
+
+## Extension Ideas (Optional)
+
+If you finish early or want extra challenge:
+
+1. **Multi-Model Ensemble**: Combine Prophet with other ML models for better accuracy
+2. **Discount Strategy Optimization**: Calculate optimal discounts based on occupancy targets
+3. **Competitor Response Modeling**: Predict competitor reactions to your price changes
+4. **Dynamic Bundles**: Recommend room + service package pricing
+5. **Performance Simulation**: Backtest pricing strategy against historical data
+6. **Real-Time Alerts**: Email/SMS notifications for unusual market conditions
+7. **A/B Testing Framework**: Compare pricing strategies in controlled experiments
+
+---
+
+**Good luck with your challenge!** This project combines data science, machine learning, and software engineering - skills highly valued in the industry.
