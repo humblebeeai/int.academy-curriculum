@@ -1,0 +1,350 @@
+---
+sidebar_position: 1
+title: Resources
+description: Distributed Systems and Scalability
+---
+
+import { ResourceCard, TimeEstimate } from "@site/src/components";
+import {
+  Code2,
+  Target,
+  Wifi,
+  Layers,
+  Rocket,
+  Database,
+  ClipboardCheck,
+  Settings,
+  HelpCircle,
+  FileText,
+} from "lucide-react";
+import Link from "@docusaurus/Link";
+
+# <Code2 /> AI Software Engineering Track
+
+![Monitors and a laptop](../../../assets/images/software_eng.png)
+
+## <Target /> Goal
+
+Build production-grade, scalable systems. Learn the architecture patterns, tools, and practices that distinguish hobby projects from enterprise software.
+
+## <Wifi /> 1. Networking Fundamentals
+
+### Core Concepts
+
+<ResourceCard
+  type="course"
+  title="Computer Networking Course"
+  url="https://www.youtube.com/playlist?list=PLIhvC56v63IJVXv0GJcl9vO5Z6znCVb1P"
+  duration="8-10 hours"
+  difficulty="intermediate"
+  why="Systematic walkthrough of OSI layers, protocols, and performance so you can reason about production traffic."
+/>
+
+Alternatively, complete the full [Systems & Networking module](/docs/2026-07-09/softlanding/core-systems/networking) for deeper understanding.
+
+Understand how data travels to debug and optimize effectively.
+
+**Key Topics:**
+
+- **OSI Model**: Layers 3-7 (Network to Application).
+- **Protocols**: TCP/IP, DNS, HTTP/HTTPS.
+- **Performance**: Load balancing, CDNs, SSL/TLS.
+
+### The TCP/IP Model
+
+<ResourceCard
+  type="video"
+  title="TCP/IP vs OSI Models"
+  url="https://youtu.be/CRdL1PcherM"
+  duration="30-45 minutes"
+  difficulty="beginner"
+  why="Gives you the layer-by-layer framework you’ll use every time you debug a network issue in production."
+/>
+
+The mental framework for debugging. If you can't connect, check the layers from bottom to top.
+
+1. **Link Layer**: Physical hardware (Ethernet, WiFi).
+2. **Internet Layer**: Routing across networks (IP addresses).
+3. **Transport Layer**: Reliable delivery (TCP) or fast streaming (UDP).
+4. **Application Layer**: User-facing protocols (HTTP, SSH).
+
+### TCP/IP in Practice
+
+<ResourceCard
+  type="video"
+  title="Real-World TCP/IP"
+  url="https://youtu.be/3kfO61Mensg"
+  duration="30-45 minutes"
+  difficulty="intermediate"
+  why="Connects theory to real packets and traffic patterns so TCP handshakes and UDP trade-offs make sense."
+/>
+
+- **TCP Handshake**: SYN, SYN-ACK, ACK. Ensures reliable connections (used by HTTP/Web).
+- **UDP**: "Fire and forget". Faster but less reliable (used for video streaming).
+
+**Action Items:**
+
+1. Watch videos on OSI model and HTTP.
+2. Use `ping`, `traceroute`, and `curl` to trace requests.
+3. Analyze a website's traffic using Browser DevTools.
+4. Memorize the 4 layers of the TCP/IP model.
+5. Use **Wireshark** (optional) to observe a TCP handshake in real-time.
+
+---
+
+## <Layers /> 2. Architecture Principles
+
+### Core Concepts
+
+<ResourceCard
+  type="article"
+  title="The Twelve-Factor App"
+  url="https://12factor.net/"
+  duration="2-3 hours"
+  difficulty="beginner"
+  why="Canonical checklist for building cloud-native services that are easy to scale and operate."
+/>
+
+<ResourceCard
+  type="book"
+  title="Beyond the Twelve-Factor App"
+  url="https://www.oreilly.com/library/view/beyond-the-twelve-factor/9781492042631/"
+  duration="6-8 hours"
+  difficulty="intermediate"
+  why="Modernizes 12-factor ideas with deeper coverage of observability, security, and cloud-native patterns."
+/>
+
+Learn the battle-tested patterns that make applications scalable, maintainable, and cloud-ready.
+
+**Key Topics:**
+
+- **12-Factor App**: Config, Backing Services, Disposability, Dev/Prod Parity.
+- **Cloud-Native**: API-first design, Telemetry, Authentication strategies.
+- **Scalability**: Stateless processes, Horizontal scaling.
+
+**Action Items:**
+
+1. Read the 12-Factor App methodology.
+2. Audit a previous project against the 12 factors.
+3. Draft an architecture document for a new service.
+
+## <Rocket /> 3. API Design & Implementation
+
+### Core Concepts
+
+<ResourceCard
+  type="guide"
+  title="REST API Tutorial"
+  url="https://restfulapi.net/"
+  duration="2-3 hours"
+  difficulty="beginner"
+  why="Clear reference for core REST concepts: resources, verbs, status codes, and versioning."
+/>
+
+<ResourceCard
+  type="tutorial"
+  title="FastAPI Official Tutorial"
+  url="https://fastapi.tiangolo.com/learn/"
+  duration="4-6 hours"
+  difficulty="intermediate"
+  why="Authoritative guide to building typed, high-performance APIs in FastAPI."
+/>
+
+Master RESTful API design and build high-performance endpoints using modern Python frameworks.
+
+**Key Topics:**
+
+- **REST**: Resources, HTTP Methods, Status Codes, Versioning.
+- **FastAPI**: Path operations, Pydantic models, Async endpoints.
+- **Documentation**: Automatic OpenAPI (Swagger UI) generation.
+
+**Action Items:**
+
+1. Design a REST API schema for a blog or library.
+2. Build a CRUD API using FastAPI with Pydantic validation.
+3. Implement JWT authentication and error handling.
+
+## <Database /> 4. Database Design & Management
+
+### Core Concepts
+
+<ResourceCard
+  type="tutorial"
+  title="SQLBolt"
+  url="https://sqlbolt.com/"
+  duration="3-4 hours"
+  difficulty="beginner"
+  why="Interactive lessons to practice core SQL queries and joins."
+/>
+
+<ResourceCard
+  type="docs"
+  title="Alembic Tutorial"
+  url="https://alembic.sqlalchemy.org/en/latest/tutorial.html"
+  duration="2-3 hours"
+  difficulty="intermediate"
+  why="Shows how to manage schema migrations safely in production using Alembic."
+/>
+
+Design efficient schemas and manage data integrity.
+
+**Key Topics:**
+
+- **Design**: ERD, Normalization (1NF-3NF), Indexing.
+- **SQL**: Joins, Transactions, ACID properties.
+- **Migrations**: Version control for database schemas.
+
+**Action Items:**
+
+1. Create an ERD for an e-commerce system.
+2. Implement the schema in PostgreSQL and write complex queries.
+3. Set up Alembic for automated migrations.
+
+## <ClipboardCheck /> 5. Testing Strategies
+
+### Core Concepts
+
+<ResourceCard
+  type="docs"
+  title="pytest Documentation"
+  url="https://docs.pytest.org/en/stable/"
+  duration="3-4 hours"
+  difficulty="intermediate"
+  why="Primary reference for writing expressive unit and integration tests in Python."
+/>
+
+<ResourceCard
+  type="tutorial"
+  title="FastAPI Testing Tutorial"
+  url="https://fastapi.tiangolo.com/tutorial/testing/"
+  duration="1-2 hours"
+  difficulty="intermediate"
+  why="Shows how to structure API tests with FastAPI’s TestClient and pytest."
+/>
+
+Write automated tests to catch bugs early and refactor with confidence.
+
+**Key Topics:**
+
+- **Types**: Unit, Integration, End-to-End.
+- **Tools**: pytest fixtures, mocking, coverage reports.
+- **TDD**: Writing tests before implementation.
+
+**Action Items:**
+
+1. Write unit tests for all API endpoints.
+2. Achieve 80%+ code coverage.
+3. Configure tests to run on every commit.
+
+## <Settings /> 6. DevOps & Deployment
+
+### Core Concepts
+
+<ResourceCard
+  type="docs"
+  title="GitHub Actions Documentation"
+  url="https://docs.github.com/en/actions"
+  duration="3-4 hours"
+  difficulty="intermediate"
+  why="Teaches you how to wire CI/CD pipelines for testing, linting, and deployment."
+/>
+
+<ResourceCard
+  type="docs"
+  title="Docker Compose Documentation"
+  url="https://docs.docker.com/compose/"
+  duration="2-3 hours"
+  difficulty="intermediate"
+  why="Explains how to orchestrate multi-container stacks (API + DB + workers) in development and staging."
+/>
+
+Automate deployment and ensure reproducibility with containers.
+
+**Key Topics:**
+
+- **CI/CD**: Automated testing, linting, and deployment pipelines.
+- **Docker**: Containerizing applications for consistency.
+- **Orchestration**: Managing multi-container apps with Docker Compose.
+
+**Action Items:**
+
+1. Create a GitHub Actions workflow to run tests on PRs.
+2. Containerize the FastAPI app and database.
+3. Deploy the stack using Docker Compose.
+
+## <Target /> 7. Specialization (Choose One)
+
+### Option A: Mobile Development (Flutter/Swift)
+
+<ResourceCard
+  type="tutorial"
+  title="Flutter Codelabs"
+  url="https://docs.flutter.dev/codelabs"
+  duration="6-8 hours"
+  difficulty="beginner"
+  why="Guided labs for building mobile apps that consume your backend APIs."
+/>
+**Goal**: Build a mobile app consuming your API. **Key Topics**: Widgets, State Management,
+API Integration.
+
+### Option B: Full-Stack Web (React/Vue)
+
+<ResourceCard
+  type="tutorial"
+  title="React Tutorial"
+  url="https://react.dev/learn"
+  duration="4-6 hours"
+  difficulty="beginner"
+  why="Modern introduction to React components, hooks, and state management."
+/>
+
+<ResourceCard
+  type="guide"
+  title="Vue Guide"
+  url="https://vuejs.org/guide/introduction.html"
+  duration="3-4 hours"
+  difficulty="beginner"
+  why="Official Vue guide for building reactive frontends that talk to your APIs."
+/>
+**Goal**: Build a responsive web app consuming your API. **Key Topics**: Components,
+Hooks/Composition API, Routing.
+
+Note: For deeper integration and deployment practices, see the [Infra Basics module](/docs/2026-07-09/softlanding/core-systems/infra-basics).
+
+**Project Requirement:**
+
+- Implement a frontend (Mobile or Web) for your API.
+- Include authentication and data visualization.
+
+## <Rocket /> Capstone Project
+
+Build a full-stack production application with microservices, databases, containerization, CI/CD, and a frontend.
+
+## <ClipboardCheck /> Track Completion Checklist
+
+- [ ] Explain HTTP request lifecycle.
+- [ ] Design scalable REST APIs (12-factor).
+- [ ] Normalize database schemas (3NF).
+- [ ] Write complex SQL queries.
+- [ ] Achieve 80%+ test coverage.
+- [ ] Deploy with Docker Compose and CI/CD.
+- [ ] Build a full-stack application.
+
+## <HelpCircle /> Support & Resources
+
+**Channels**: `#software-arch`, `#backend-dev`, `#devops-help`
+**Office Hours**: Wednesdays 3-6 PM
+
+**Next Steps**:
+
+<ResourceCard
+  type="guide"
+  title="System Design Primer"
+  url="https://github.com/donnemartin/system-design-primer"
+  duration="8-10 hours"
+  difficulty="advanced"
+  why="Comprehensive guide to classic system design problems and patterns used in interviews and real systems."
+/>
+
+- Cloud Certifications (AWS/GCP)
+- Technical Interview Prep

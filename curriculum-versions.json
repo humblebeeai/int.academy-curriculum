@@ -1,0 +1,30 @@
+[
+  {
+    "name": "2026-07-12",
+    "label": "July 12, 2026",
+    "path": "/docs/2026-07-12/",
+    "publishedAt": "2026-07-12",
+    "sourceRef": "7d1fab42dca77b51b6d0aa0ff22da0c366427afe"
+  },
+  {
+    "name": "2026-07-09",
+    "label": "July 9, 2026",
+    "path": "/docs/2026-07-09/",
+    "publishedAt": "2026-07-09",
+    "sourceRef": "3a335afb777a7f86df0be79cbc526551c951a750"
+  },
+  {
+    "name": "2026-04-08",
+    "label": "April 2026",
+    "path": "/docs/2026-04-08/",
+    "publishedAt": "2026-04-08",
+    "sourceRef": "8bdc063"
+  },
+  {
+    "name": "2026-02-15",
+    "label": "February 2026",
+    "path": "/docs/2026-02-15/",
+    "publishedAt": "2026-02-15",
+    "sourceRef": "45ea536"
+  }
+]

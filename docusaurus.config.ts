@@ -1,6 +1,7 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import curriculumVersions from "./curriculum-versions.json";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -44,8 +45,18 @@ const config: Config = {
           lastVersion: "current",
           versions: {
             current: {
-              label: "Next",
+              label: "Current",
             },
+            ...Object.fromEntries(
+              curriculumVersions.map(({ name, label }) => [
+                name,
+                {
+                  label,
+                  banner: "unmaintained" as const,
+                  badge: true,
+                },
+              ]),
+            ),
           },
         },
         blog: {
@@ -92,6 +103,17 @@ const config: Config = {
       },
       hideOnScroll: false,
       items: [
+        {
+          type: "docsVersionDropdown",
+          position: "right",
+          className: "curriculum-version-dropdown",
+          dropdownItemsAfter: [
+            {
+              to: "/versions",
+              label: "Curriculum version history",
+            },
+          ],
+        },
         {
           href: "https://academy.humblebee.ai",
           label: "Academy",
@@ -154,6 +176,10 @@ const config: Config = {
         {
           title: "Additional Resources",
           items: [
+            {
+              label: "Curriculum Version History",
+              to: "/versions",
+            },
             {
               label: "Learning Resources",
               to: "/docs/resources",

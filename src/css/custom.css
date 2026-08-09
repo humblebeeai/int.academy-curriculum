@@ -895,3 +895,15 @@ details > *:not(summary) {
     max-width: 320px;
   }
 }
+@media (min-width: 997px) {
+  .navbar__link.curriculum-version-dropdown::before {
+    color: var(--ifm-color-emphasis-700);
+    content: "Curriculum: ";
+    font-weight: 400;
+  }
+
+  .dropdown:has(> .navbar__link.curriculum-version-dropdown) .dropdown__menu {
+    white-space: nowrap;
+    width: max-content;
+  }
+}
