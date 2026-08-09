@@ -26,19 +26,5 @@
     "path": "/docs/2026-02-15/",
     "publishedAt": "2026-02-15",
     "sourceRef": "45ea536"
-  },
-  {
-    "name": "2026-01-07",
-    "label": "January 2026",
-    "path": "/docs/2026-01-07/curriculum-outline",
-    "publishedAt": "2026-01-07",
-    "sourceRef": "09fee5c"
-  },
-  {
-    "name": "2025-12-15",
-    "label": "December 2025",
-    "path": "/docs/2025-12-15/curriculum-outline",
-    "publishedAt": "2025-12-15",
-    "sourceRef": "939d52f"
   }
 ]
