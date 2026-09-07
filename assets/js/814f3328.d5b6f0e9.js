@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkhumblebeeai_academy_curriculum=globalThis.webpackChunkhumblebeeai_academy_curriculum||[]).push([[7472],{55513(e){e.exports=JSON.parse('{"title":"Recent posts","items":[]}')}}]);

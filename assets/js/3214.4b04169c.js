@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkhumblebeeai_academy_curriculum=globalThis.webpackChunkhumblebeeai_academy_curriculum||[]).push([[3214],{53214(e,a,c){c.d(a,{createPacketServices:()=>u.$});var u=c(75893);c(72519)}}]);

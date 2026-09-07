@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkhumblebeeai_academy_curriculum=globalThis.webpackChunkhumblebeeai_academy_curriculum||[]).push([[6282],{86282(e,a,u){u.d(a,{createTreemapServices:()=>c.d});var c=u(76609);u(72519)}}]);
