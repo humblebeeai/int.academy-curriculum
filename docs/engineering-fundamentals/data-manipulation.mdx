@@ -1,197 +1,197 @@
 ---
-sidebar_position: 5
-sidebar_label: 4. Data Manipulation
-title: Module 4 - Data Manipulation
-description: NumPy, Pandas, Matplotlib, SQL, and Tools
+title: "Data Foundations"
+sidebar_label: "3. Data Foundations"
+sidebar_position: 4
+toc_max_heading_level: 2
 ---
 
-import { ResourceCard, TimeEstimate } from "@site/src/components";
-import { Database, GitBranch, FileText } from "lucide-react";
+import { ResourceCard, CurriculumModule, ModuleIntro, SkillShowcase, SectionLinks } from "@site/src/components";
 
-# Module 4: Data Manipulation
+import moduleImage from "../assets/images/data_engineering.png";
 
-![Data Manipulation - Python Code and Data Pipelines](../assets/images/data_engineering.png)
+# Data Foundations
 
-## <Database /> Goal
+<CurriculumModule>
 
-Manipulate and prepare real-world data for analysis and machine learning.
-
-This page focuses on the practical skills needed to turn raw, messy data into clean, structured inputs that models and analyses can actually use.
-
-<TimeEstimate
-  minHours={20}
-  maxHours={28}
-  breakdownBy={{
-    NumPy: 4,
-    Pandas: 8,
-    Matplotlib: 2,
-    SQL: 8,
-    Git: 3,
-  }}
+<ModuleIntro
+  stageLabel="Engineering Fundamentals"
+  stageHref="/docs/engineering-fundamentals"
+  moduleNumber={3}
+  kind="required"
+  icon="Database"
+  summary="Turn raw data into something you can query, analyze, and explain. Begin with NumPy, then work through cleaning, SQL, and exploratory analysis."
+  image={{ src: moduleImage, alt: "Illustration of raw data moving through preparation steps into a data pipeline.", width: 1536, height: 1024 }}
 />
 
-## <Database /> 1. NumPy Foundations
+<SkillShowcase decorativeIcons skills={[{"iconString": "Database", "title": "Prepare data", "description": "Inspect and transform arrays and clean tabular datasets."}, {"iconString": "Search", "title": "Query data", "description": "Answer analytical questions with joins, CTEs, and window functions."}, {"iconString": "BarChart3", "title": "Communicate findings", "description": "Create clear charts and explain evidence and limitations."}]} />
+
+
+<SectionLinks items={[{"title": "NumPy Foundations", "href": "#numpy"}, {"title": "Pandas and Data Cleaning", "href": "#pandas-cleaning"}, {"title": "SQL", "href": "#sql"}, {"title": "Exploratory Analysis and Visualization", "href": "#exploratory-analysis"}]} />
+
+## NumPy Foundations {#numpy}
+
+### Before you start
+
+Basic Python and environment setup.
+
+### What you’ll learn
+
+- Creating and inspecting arrays
+- Shapes, dimensions, sizes, and data types
+- Indexing and slicing
+- Boolean masks
+- Reshaping and transposing
+- Broadcasting
+- Vectorized operations
+- Aggregations and the axis parameter
+
+### Learn and practise
 
 <ResourceCard
-  type="course"
+  showFullDescription
   title="NumPy: The Absolute Basics for Beginners"
   url="https://numpy.org/doc/stable/user/absolute_beginners.html"
-  duration="1-2 hours"
-  difficulty="beginner"
-  why="Official NumPy guide covering arrays, indexing, slicing, shapes, broadcasting, and basic operations before learners move into Pandas."
+  type="documentation"
+  description="Required. Complete this introductory guide, covering array creation, shapes, indexing, and basic operations before the linear algebra notebooks."
 />
 
 <ResourceCard
-  type="practice"
+  showFullDescription
   title="CodeSignal: NumPy Basics"
   url="https://codesignal.com/learn/courses/numpy-basics"
-  duration="3 hours"
-  difficulty="beginner"
-  why="Structured practice with short coding tasks for array creation, operations, indexing, reshaping, boolean masks, and statistics. Account may be required."
+  type="course"
+  description="Required. Complete the course and its practice exercises; demonstrate filtering, reshaping, transforming, and summarizing multidimensional arrays."
 />
 
-**Why it matters:**
+### What you’ll build
 
-NumPy is the foundation under most Python data and machine learning work. Pandas, scikit-learn, PyTorch, and many scientific Python tools rely on the same ideas: arrays, shapes, indexing, vectorized operations, and numerical aggregation.
+You can filter, reshape, transform, and summarize multidimensional data using NumPy without unnecessary Python loops.
 
-Before learners clean real datasets with Pandas, they should understand how numerical data is represented and transformed efficiently.
+## Pandas and Data Cleaning {#pandas-cleaning}
 
-**What to expect:**
+### Before you start
 
-Learners will:
+Basic Python, environment setup, and introductory NumPy.
 
-- Create and inspect NumPy arrays
-- Understand array shape, dimension, size, and dtype
-- Use indexing, slicing, boolean masks, and reshaping
-- Apply vectorized operations instead of slow Python loops
-- Compute basic statistics and aggregations
+### What you’ll learn
 
-By the end of this section, learners will be ready to understand why Pandas operations feel array-like and how numerical data flows into machine learning workflows.
+- Series and DataFrames
+- Loading and exporting tabular data
+- Inspecting rows, columns, and data types
+- Selecting, filtering, and sorting
+- Grouping and aggregation
+- Missing values
+- Duplicate records
+- Incorrect data types
+- Inconsistent categories
+- Creating and transforming columns
+- Merging and concatenating datasets
 
-## <Database /> 2. Pandas & Data Cleaning
+### Learn and practise
 
 <ResourceCard
-  type="course"
-  title="Kaggle: Pandas Micro-Course"
+  showFullDescription
+  title="Kaggle Learn: Pandas"
   url="https://www.kaggle.com/learn/pandas"
-  duration="6-8 hours"
-  difficulty="beginner"
-  why="Hands-on notebooks to load, clean, and transform tabular data quickly with Pandas."
-/>
-
-**Why it matters:**
-
-Most real-world datasets are incomplete, inconsistent, and poorly formatted. Before any modeling or analysis can happen, data must be inspected, cleaned, and transformed.
-
-Pandas is the primary tool used in Python for working with tabular data at scale, and it forms the backbone of most data pipelines.
-
-**What to expect:**
-
-Learners will:
-
-- Load and explore large CSV and tabular datasets
-- Filter, sort, and aggregate data efficiently
-- Handle missing values and inconsistent formats
-- Create new features from existing columns
-- Apply vectorized operations for performance
-
-By the end of this section, learners will be able to clean and manipulate real-world datasets with concise, readable code.
-
-## <Database /> 3. Basic Data Visualization with Matplotlib
-
-<ResourceCard
   type="course"
-  title="CodeSignal: Introduction to Basic Plots with Matplotlib"
-  url="https://codesignal.com/learn/courses/introduction-to-basic-plots-with-matplotlib"
-  duration="2 hours"
-  difficulty="beginner"
-  why="Short hands-on practice for turning cleaned data into basic line, bar, scatter, and other beginner-friendly plots with Matplotlib. Account may be required."
+  description="Required. Complete the course and all exercises, including selection, grouping, aggregation, and combining tabular data."
 />
 
-**Why it matters:**
+<ResourceCard
+  showFullDescription
+  title="Kaggle Learn: Data Cleaning"
+  url="https://www.kaggle.com/learn/data-cleaning"
+  type="course"
+  description="Required. Complete the course and all exercises; produce an analysis-ready dataset and explain important cleaning decisions."
+/>
 
-After learners clean and transform data, they need to inspect it visually. Basic plots help reveal trends, outliers, distributions, and relationships that are hard to catch from tables alone.
+### What you’ll build
 
-Matplotlib is also the lowest-level plotting foundation behind many Python visualization tools, so learning it early makes later Seaborn, Pandas plotting, and ML evaluation charts easier to understand.
+You can identify data-quality problems, produce an analysis-ready dataset, and explain every important cleaning decision.
 
-**What to expect:**
+## SQL {#sql}
 
-Learners will:
+### Before you start
 
-- Create basic plots with Matplotlib
-- Choose simple chart types for different data questions
-- Label axes and titles clearly
-- Use plots to explain patterns in cleaned data
-- Build confidence before moving into advanced visualization libraries
+Basic data-handling concepts; no database experience is required.
 
-By the end of this section, learners will be able to create simple visual checks for datasets before moving into SQL-heavy work or later machine learning evaluation.
+### What you’ll learn
 
-## <Database /> 4. SQL
+- Relational tables and keys
+- SELECT, aliases, and calculated columns
+- WHERE and ORDER BY
+- Aggregate functions
+- GROUP BY and HAVING
+- Inner and outer joins
+- Subqueries
+- Common table expressions
+- CASE
+- NULL handling
+- Basic window functions
+- Indexing intuition
+
+### Learn and practise
 
 <ResourceCard
-  type="tutorial"
-  title="SQL Tutorial - Essential SQL For The Beginners"
+  showFullDescription
+  title="SQLTutorial.org"
   url="https://www.sqltutorial.org/"
-  duration="8-10 hours"
-  difficulty="beginner"
-  why="Comprehensive SQL fundamentals covering queries, joins, aggregations, and data manipulation for working with relational databases."
+  type="tutorial"
+  description="Required. Work through the tutorial, including examples and quizzes for the SQL topics listed in this section."
 />
-
-**Why it matters:**
-
-Most production data lives in relational databases. SQL is the universal language for querying, filtering, aggregating, and transforming data at scale.
-
-Whether extracting features for machine learning or generating reports, SQL fluency is essential for working with real-world data systems.
-
-**What to expect:**
-
-Learners will:
-
-- Write SELECT queries to retrieve and filter data
-- Use JOIN operations to combine data from multiple tables
-- Perform aggregations with GROUP BY and HAVING
-- Create, update, and delete records with INSERT, UPDATE, DELETE
-- Work with subqueries and common table expressions (CTEs)
-- Understand indexing and query optimization basics
-
-By completing this section, learners will be able to extract and manipulate data directly from databases used in production environments.
-
-## <GitBranch /> 5. Software Engineering Tools
 
 <ResourceCard
+  showFullDescription
+  title="HackerRank SQL"
+  url="https://www.hackerrank.com/domains/sql"
   type="practice"
-  title="Git Branching Game"
-  url="https://learngitbranching.js.org/"
-  duration="2-3 hours"
-  difficulty="beginner"
-  why="Interactive puzzles that teach branching and merging so version control feels natural."
+  description="Required. Practise the Basic and Intermediate SQL challenges."
 />
 
-**Why it matters:**
+### What you’ll build
 
-Data work is collaborative and iterative. Without version control, experiments are lost, results are overwritten, and collaboration breaks down.
+You can answer analytical questions involving filtering, aggregation, joins, CTEs, conditional logic, and window functions.
 
-Git is the industry-standard tool for tracking changes, experimenting safely, and working in teams.
+## Exploratory Analysis and Visualization {#exploratory-analysis}
 
-**What to expect:**
+### Before you start
 
-Learners will:
+Pandas and data cleaning, plus core descriptive statistics.
 
-- Understand repositories, commits, and branches
-- Save and version their work using git
-- Push and pull changes from remote repositories
-- Merge branches and resolve simple conflicts
-- Develop safe workflows for experimentation
+### What you’ll learn
 
-This section ensures learners can manage their code and data work reliably, both individually and in team settings.
+- Understanding what rows and columns represent
+- Inspecting dataset structure and quality
+- Descriptive statistics
+- Distributions and unusual values
+- Outlier investigation
+- Relationships between variables
+- Comparing groups
+- Selecting appropriate chart types
+- Histograms, bar charts, line charts, and scatter plots
+- Labels, titles, legends, and readable presentation
+- Communicating findings and limitations
 
----
+### Learn and practise
 
-## <GitBranch /> Completion Checklist
+<ResourceCard
+  showFullDescription
+  title="Kaggle Learn: Data Visualization"
+  url="https://www.kaggle.com/learn/data-visualization"
+  type="course"
+  description="Required. Complete the course, including its exercises and final project; communicate findings and limitations through readable charts."
+/>
 
-- [ ] Completed **NumPy: The Absolute Basics for Beginners** and practiced array creation, indexing, slicing, reshaping, boolean masks, and basic aggregations.
-- [ ] Completed at least one NumPy practice path: **CodeSignal NumPy Basics**, **Keith Galli's NumPy Tutorial**, or **Patrick Loeber's NumPy Crash Course**.
-- [ ] Completed the **Kaggle: Pandas Micro-Course**, including all core lessons and exercises, and earned the official course certificate from Kaggle.
-- [ ] Completed **CodeSignal: Introduction to Basic Plots with Matplotlib** and created basic plots from cleaned data.
-- [ ] Completed the **SQL Tutorial - Essential SQL For The Beginners** ([SQL Tutorial](https://www.sqltutorial.org/)) and practiced all query types including JOINs, aggregations, and subqueries.
-- [ ] Completed the **W3Docs Git Basics Quiz** ([Git Basics Quiz](https://www.w3docs.com/quiz-start/git)) with a score of at least **85%** and earned the Git certificate.
+### What you’ll build
+
+Produce a concise exploratory analysis containing appropriate visualizations, evidence-supported findings, and clearly stated limitations.
+
+## Workload
+
+Use the provisional estimates where supplied. Other workloads remain pending pilot. Include implementation, debugging, review, and revision.
+
+## Finish this module
+
+Keep the required outputs and explain your decisions. Diagnose a relevant failure during review and revise incomplete evidence after feedback. Resource completion supports progress; the stated practical requirements determine completion.
+
+</CurriculumModule>

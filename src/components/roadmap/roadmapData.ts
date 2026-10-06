@@ -33,14 +33,14 @@ export const phases: Phase[] = [
     id: "fundamentals",
     title: "Engineering Fundamentals",
     subtitle: "Build Your Foundation",
-    duration: "2-4 months",
+    duration: "Plan with your cohort",
     description:
-      "Master terminal, Git, Data Manipulation and the math that powers AI. This phase builds the bedrock skills every professional AI engineer needs.",
+      "Complete developer tools, Math for AI, and Data Foundations, then choose two electives.",
     skills: [
       { icon: Terminal, name: "Terminal & CLI" },
       { icon: GitBranch, name: "Git & Version Control" },
       { icon: Calculator, name: "Math for AI" },
-      { icon: Database, name: "Data Manipulation" },
+      { icon: Database, name: "Data Foundations" },
     ],
     link: "/docs/engineering-fundamentals",
     color: "var(--accent-gold)",
@@ -49,15 +49,15 @@ export const phases: Phase[] = [
     id: "core-systems",
     title: "Core Systems",
     subtitle: "Master ML Foundations",
-    duration: "3-6 months",
+    duration: "Plan with your cohort",
     description:
-      "Deep dive into PyTorch, neural networks, systems engineering, and deployment. Build end-to-end ML systems from training to production.",
+      "Complete five required modules, choose two electives, and deliver an evaluated AI service.",
     skills: [
       { icon: BrainCircuit, name: "Deep Learning" },
       { icon: Server, name: "Systems & Docker" },
       { icon: Globe, name: "API & Deployment" },
     ],
-    link: "/docs/softlanding",
+    link: "/docs/softlanding/core-systems",
     color: "var(--accent-amber)",
   },
   {

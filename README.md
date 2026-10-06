@@ -42,30 +42,33 @@ HumbleBeeAI was built to eliminate these barriers through structured learning, h
 
 ### Engineering Fundamentals
 
-**Duration:** 2-4 months (self-paced)
+**Workload:** Agree a study schedule with your cohort or mentor.
 **Goal:** Build the engineering fundamentals that make everything else possible.
 **Outcome:** Strong fundamentals in tools, math, and data workflows so you can build confidently without getting stuck on basics.
 
 Modules:
 
 - Terminal & Algorithmic Basics
-- Linear Algebra
-- Probability & Statistics
-- Data Manipulation
+- Math for AI (linear algebra, probability, and statistics)
+- Data Foundations
+- Electives: complete two sections
 
 
 ### Soft Landing
 
-**Duration:** 3-6 months (self-paced)
+**Workload:** Includes implementation, evaluation, debugging, and review.
 **Goal:** Master ML foundations and the system skills required to deploy reliably.
 **Outcome:** Build end-to-end ML systems: training, evaluation, deployment, and reliability basics using modern tooling.
 
 Modules:
 
-- Math & ML Fundamentals (PyTorch, optimization, gradient descent)
-- Intro to AI Engineering (deep learning, transformers/LLMs, clean code)
-- Systems & Networking (deployment fundamentals, security, cloud mental models)
-- Fullstack Toolkit (APIs, databases, product-shaped systems)
+- Software Engineering for AI
+- Applied ML & Deep Learning
+- LLM Applications
+- Systems, Networking & Data
+- APIs, Containers & Deployment
+- Electives: complete two sections
+- Integrated Project & Handover
 
 ### Phase 3: Specializations (Soft Landing)
 
@@ -134,16 +137,14 @@ To work on the curriculum or docs locally, you can either run the Docusaurus sit
 
 ## Versioning Workflow
 
-### Proposed curriculum
+### Current curriculum
 
-The proposed Engineering Fundamentals and Core Systems curriculum lives in
-`draft_docs/` and is available at `/draft` after deployment. Every Draft page
-is labelled and excluded from search indexing. Current and dated snapshots
-remain separate.
+The revised curriculum lives in `docs/` and is published at `/docs` as Current.
+The previous curriculum is archived as October 6, 2026 in version history.
+Former `/draft` URLs redirect to their corresponding Current pages.
 
-See [Draft curriculum review and release](./DRAFT_CURRICULUM.md) for source
-mapping, revisions, review checks, and the later promotion process.
-After building, run `npm run draft:check` to verify Draft publication behavior.
+See [Curriculum changes](./CURRICULUM_CHANGES.md) for source mapping and review decisions.
+After building, run `npm run curriculum:check` to verify publication and redirects.
 
 Use the GitHub Actions workflow **1. Bump Version** to create a release.
 Docs snapshots are optional and disabled by default.

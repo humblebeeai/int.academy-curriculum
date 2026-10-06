@@ -1,0 +1,122 @@
+---
+title: "APIs, Containers & Deployment"
+sidebar_label: "5. APIs, Containers & Deployment"
+sidebar_position: 5
+toc_max_heading_level: 3
+---
+
+import { ResourceCard, CurriculumModule, ModuleIntro, SkillShowcase, SectionLinks } from "@site/src/components";
+
+import moduleImage from "../../assets/images/fullstack.png";
+
+# APIs, Containers & Deployment
+
+<CurriculumModule>
+
+<ModuleIntro
+  stageLabel="Core Systems"
+  stageHref="/docs/softlanding/core-systems"
+  moduleNumber={5}
+  kind="required"
+  icon="Container"
+  summary="Make your AI component usable as a service. Build a validated API, test it, containerize it, and deploy it to an agreed environment."
+  image={{ src: moduleImage, alt: "Illustration connecting an application, backend, database, and deployment pipeline.", width: 1536, height: 1024 }}
+/>
+
+<SkillShowcase decorativeIcons skills={[{"iconString": "Code", "title": "Build an API", "description": "Validate inputs and outputs and handle errors."}, {"iconString": "Container", "title": "Package your service", "description": "Build and run a reproducible container."}, {"iconString": "Rocket", "title": "Deliver working software", "description": "Automate tests and demonstrate a deployed service."}]} />
+
+
+<SectionLinks items={[{"title": "Learn", "href": "#learn"}, {"title": "Resources", "href": "#resources"}, {"title": "Practice", "href": "#practice"}, {"title": "What to submit", "href": "#expected-output"}]} />
+
+## APIs, Containers, and Deployment {#r6}
+
+make your AI component usable as a service.
+
+**Before you start:** [Software Engineering for AI](/docs/softlanding/core-systems/software-engineering#r1) and [Systems, Networking & Data](/docs/softlanding/core-systems/systems-networking-data#r5), plus a working inference function from [applied ML](/docs/softlanding/core-systems/applied-ml-deep-learning#r2), [deep learning](/docs/softlanding/core-systems/applied-ml-deep-learning#r3), or [LLM Applications](/docs/softlanding/core-systems/llm-applications#r4).
+
+### Learn
+
+- FastAPI routes, Pydantic request/response models, validation, error responses, and basic CORS.
+- Load reusable model resources efficiently; use current FastAPI lifecycle guidance.
+- Separate inference logic from HTTP handling; test both.
+- Build a Docker image, configure runtime values, and run the service locally.
+- Automate tests in a basic workflow, deploy to an assigned environment, and inspect health and logs.
+
+### Resources
+
+<ResourceCard
+  showFullDescription
+  title="APIs Explained in 6 Minutes"
+  url="https://www.youtube.com/watch?v=hltLrjabkiY"
+  type="video"
+  description="Required. Introductory API concepts."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="How to Use FastAPI: A Detailed Python Tutorial"
+  url="https://www.youtube.com/watch?v=SORiTsvnU28"
+  type="video"
+  description="Required. Use it for the first app and endpoint examples. Check current documentation for implementation details."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="FastAPI: Tutorial — User Guide"
+  url="https://fastapi.tiangolo.com/tutorial/"
+  type="tutorial"
+  description="Required. Select request bodies, response models, error handling, testing, and deployment sections."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="Docker 101 Tutorial"
+  url="https://www.docker.com/101-tutorial/"
+  type="tutorial"
+  description="Required. Complete the runnable tutorial, then adapt it to your own service."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="GitHub Actions: Building and testing Python"
+  url="https://docs.github.com/en/actions/tutorials/build-and-test-code/python"
+  type="documentation"
+  description="Required. Automate your tests on a push or pull request. Prior Engineering Fundamentals GitHub Actions practice can be reused and extended."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="HTML, CSS, and JavaScript in 30 minutes"
+  url="https://www.youtube.com/watch?v=_GTMOmRrqkU"
+  type="video"
+  description="Further reading. For a small browser client."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="Learn DOM Manipulation in 18 Minutes"
+  url="https://www.youtube.com/watch?v=y17RuWkWdn8"
+  type="video"
+  description="Further reading. For displaying API results in that client."
+/>
+
+### Practice
+
+- Expose your model or LLM feature through a validated endpoint and provide example requests.
+- Test a valid request, an invalid input, and an inference failure; add a basic health endpoint.
+- Build and run a Docker image; verify configuration and logs from a fresh run.
+- Add an automated test workflow and deploy the service. Use a small browser client or command-line client to demonstrate it.
+
+### Expected output
+
+A deployed service, a Dockerfile, passing tests, an automated test workflow, and setup/use instructions. Include model or LLM evaluation results separately from software test results. Deployment may use Academy infrastructure or an agreed hosted environment.
+
+## Workload
+
+Use the provisional estimates where supplied. Other workloads remain pending pilot. Include implementation, debugging, review, and revision.
+
+## Finish this module
+
+Keep the required outputs and explain your decisions. Diagnose a relevant failure during review and revise incomplete evidence after feedback. Resource completion supports progress; the stated practical requirements determine completion.
+
+</CurriculumModule>

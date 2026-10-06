@@ -35,25 +35,7 @@ const config: Config = {
 
   themes: ["@docusaurus/theme-mermaid"],
 
-  plugins: [
-    [
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "draft",
-        path: "draft_docs",
-        routeBasePath: "draft",
-        sidebarPath: "./sidebars.ts",
-        versions: {
-          current: {
-            label: "Draft",
-            banner: "unreleased",
-            badge: true,
-            noIndex: true,
-          },
-        },
-      },
-    ],
-  ],
+  plugins: ["./plugins/legacy-draft-redirects.mjs"],
 
   presets: [
     [
@@ -129,10 +111,6 @@ const config: Config = {
           position: "right",
           className: "curriculum-version-dropdown",
           dropdownItemsAfter: [
-            {
-              to: "/draft",
-              label: "Draft curriculum",
-            },
             {
               to: "/versions",
               label: "Curriculum version history",
