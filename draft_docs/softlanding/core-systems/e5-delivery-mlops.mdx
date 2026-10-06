@@ -1,0 +1,43 @@
+---
+title: "E5. Delivery, Monitoring, and MLOps"
+sidebar_label: "E5. Delivery, Monitoring, and MLOps"
+sidebar_position: 12
+---
+
+# E5. Delivery, Monitoring, and MLOps
+
+Purpose: make changes observable and releases recoverable. Prerequisites: [R1](/draft/softlanding/core-systems/r1-software-engineering), [R5](/draft/softlanding/core-systems/r5-systems-data), [R6](/draft/softlanding/core-systems/r6-apis-deployment); [R2](/draft/softlanding/core-systems/r2-applied-ml)–[R4](/draft/softlanding/core-systems/r4-llm-applications) provide the evaluation for your AI component.
+
+## Learn
+
+- Extend automated tests into a release workflow.
+- Version application releases and model or prompt artifacts.
+- Observe request latency, errors, and AI behavior using logs, metrics, and traces.
+- Keep software regression tests and model/LLM evaluation visible.
+- Deploy a new release, detect a failure, and restore a known working version.
+
+## Resources
+
+- [GitHub Actions: Building and testing Python](https://docs.github.com/en/actions/tutorials/build-and-test-code/python) — Extend [R6](/draft/softlanding/core-systems/r6-apis-deployment)'s basic workflow into build/release checks appropriate to your environment.
+- [Docker 101 Tutorial](https://www.docker.com/101-tutorial/) — Roadmap resource; reuse image-building skills and apply explicit release tags.
+- [OpenTelemetry Python: Getting Started by Example](https://opentelemetry.io/docs/languages/python/getting-started/) — Added runnable reference; instrument a small service and inspect a request trace.
+- [MLflow: Experiment Tracking](https://mlflow.org/docs/latest/ml/tracking/) — Added reference; connect model artifacts and evaluation results to a versioned run. LLM projects can instead version their prompts/configuration and evaluation results.
+
+## Practice
+
+- Automate tests and build an identifiable release artifact.
+- Record latency and error behavior for a normal request and an induced failure.
+- Deploy an updated release, verify its behavior, and demonstrate restoration of the previous working version.
+- Rerun the same AI evaluation after a model or prompt change and report regressions.
+
+## Expected output
+
+A release workflow, an observable service, a versioned evaluation record, and a demonstrated recovery procedure. Use one environment; the learning outcome is a reliable delivery process.
+
+## Workload
+
+Workload estimate pending pilot. Include practice, debugging, review, and revision in your study time.
+
+## Submission evidence and completion checks
+
+Keep the expected output, runnable instructions, test/evaluation results where applicable, and your explanation of a meaningful failure. Submit through review and record the resulting revision. Explain your approach and diagnose a relevant failure during review. Revise incomplete evidence after feedback; resource completion alone does not establish competence.

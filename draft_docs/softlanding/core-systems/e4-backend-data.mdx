@@ -1,0 +1,42 @@
+---
+title: "E4. Backend Architecture and Data Systems"
+sidebar_label: "E4. Backend Architecture and Data Systems"
+sidebar_position: 11
+---
+
+# E4. Backend Architecture and Data Systems
+
+Purpose: extend an AI service with reliable persistence and background work. Prerequisites: [R1](/draft/softlanding/core-systems/r1-software-engineering), [R5](/draft/softlanding/core-systems/r5-systems-data), [R6](/draft/softlanding/core-systems/r6-apis-deployment), and Engineering Fundamentals SQL.
+
+## Learn
+
+- Relational schema design, constraints, transactions, indexes, and query inspection.
+- Separate request handling from a background task; track job state and handle retries.
+- Use caching deliberately and explain invalidation or expiry.
+- Define clear responsibilities between API, inference, database, and worker components.
+
+## Resources
+
+- [PostgreSQL: Tutorial](https://www.postgresql.org/docs/current/tutorial.html) — Added practical reference; focus on tables, queries, joins, updates, foreign keys, and transactions. Extend into indexes for your own queries.
+- [Celery: First Steps](https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html) — Added runnable worker example; implement one background task and inspect completion/failure.
+- [Redis: Quick Starts](https://redis.io/docs/latest/develop/get-started/) — Added practice; use Python access and an expiring cache for one suitable operation.
+- [FastAPI: Tutorial — User Guide](https://fastapi.tiangolo.com/tutorial/) — Retained application technology; use current reference sections for the API and dependencies around your data layer.
+
+## Practice
+
+- Persist requests, results, or jobs in PostgreSQL using constraints suited to the data.
+- Move a slow operation to a worker and expose a way to inspect its status.
+- Make retry behavior safe for your chosen operation and test a failed job.
+- Add one justified cache or index and compare behavior before and after.
+
+## Expected output
+
+A service with a database and worker, a system diagram, tests for a meaningful failure path, and an explanation of the chosen schema and performance change.
+
+## Workload
+
+Workload estimate pending pilot. Include practice, debugging, review, and revision in your study time.
+
+## Submission evidence and completion checks
+
+Keep the expected output, runnable instructions, test/evaluation results where applicable, and your explanation of a meaningful failure. Submit through review and record the resulting revision. Explain your approach and diagnose a relevant failure during review. Revise incomplete evidence after feedback; resource completion alone does not establish competence.

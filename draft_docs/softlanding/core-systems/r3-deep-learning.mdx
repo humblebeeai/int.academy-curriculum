@@ -1,0 +1,42 @@
+---
+title: "R3. Deep Learning and Pretrained Models"
+sidebar_label: "R3. Deep Learning and Pretrained Models"
+sidebar_position: 3
+---
+
+# R3. Deep Learning and Pretrained Models
+
+Purpose: understand a training loop and use a pretrained model deliberately. Prerequisite: [R2](/draft/softlanding/core-systems/r2-applied-ml), NumPy, matrix operations, and the [derivatives bridge](/draft/softlanding/core-systems/derivatives-bridge).
+
+## Learn
+
+- Weights, activations, losses, gradient descent, and forward/backward propagation.
+- Tensors, shapes, broadcasting, autograd, nn.Module, and train/evaluation modes.
+- Write a small training loop, diagnose training failures, and save/reload model weights.
+- Distinguish training, pretrained inference, and fine-tuning. Develop an introductory transformer mental model.
+
+## Resources
+
+- [Andrew Ng: Neural-network foundations](https://www.youtube.com/watch?v=CS4cs9xVecg&list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0&index=1) — Study neurons, forward/backward propagation, loss, and gradient descent; use the relevant Course 1 and Course 2 sections rather than completing both courses in full.
+- [CS231n Winter 2016 lectures](https://www.youtube.com/playlist?list=PLkt2uSq6rBVctENoVBg1TpCC7OQi31AlC) — Roadmap resource; lectures 2, 3, and 4 on classification, optimization, and backpropagation. Use them to reinforce gaps identified during implementation.
+- [UvA Tutorial 2: Introduction to PyTorch](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial2/Introduction_to_PyTorch.html) — Roadmap resource and main practical anchor. Run the notebook, then change its data or network and explain the changes.
+- [Hugging Face LLM Course: Transformer models](https://huggingface.co/learn/llm-course/en/chapter1/1) — Added resource; selected introductory sections on pipelines and transformer architectures. Run a pretrained inference example.
+
+## Practice
+
+- Train a small neural network on a manageable dataset and plot training and validation behavior.
+- Create one controlled training failure, such as an unsuitable learning rate or a shape mismatch, then diagnose and repair it.
+- Save the weights, reload them in a separate inference script, and verify the output.
+- Use a pretrained model for a task and explain the model's inputs, outputs, and limitations.
+
+## Expected output
+
+A small training implementation, a saved model, a separate inference example, and a debugging note. You can explain each part of the training loop and distinguish model learning from inference.
+
+## Workload
+
+Workload estimate pending pilot. Include practice, debugging, review, and revision in your study time.
+
+## Submission evidence and completion checks
+
+Keep the expected output, runnable instructions, test/evaluation results where applicable, and your explanation of a meaningful failure. Submit through review and record the resulting revision. Explain your approach and diagnose a relevant failure during review. Revise incomplete evidence after feedback; resource completion alone does not establish competence.

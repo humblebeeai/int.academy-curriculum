@@ -1,0 +1,43 @@
+---
+title: "E2. Agents and Tool-Based Workflows"
+sidebar_label: "E2. Agents and Tool-Based Workflows"
+sidebar_position: 9
+---
+
+# E2. Agents and Tool-Based Workflows
+
+Purpose: complete a defined task through tool use while keeping execution understandable and testable. Prerequisites: [R1](/draft/softlanding/core-systems/r1-software-engineering), [R4](/draft/softlanding/core-systems/r4-llm-applications), and API basics from [R6](/draft/softlanding/core-systems/r6-apis-deployment).
+
+## Learn
+
+- Distinguish a predefined workflow from an agent that chooses actions.
+- Define tools with clear inputs, outputs, validation, and failure behavior.
+- Manage context, intermediate state, step/time limits, and recovery.
+- Use scoped permissions and explicit approval points for actions that need them.
+- Understand MCP's role in connecting applications to tools and data.
+
+## Resources
+
+- [Anthropic: Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents) — Added architecture reference; focus on choosing a simple design and defining tools.
+- [Hugging Face: AI Agents Course](https://huggingface.co/learn/agents-course/en/unit0/introduction) — Added practice; study Unit 1 and one relevant framework section. Adapt its examples into a bounded task.
+- [Model Context Protocol: Introduction](https://modelcontextprotocol.io/docs/getting-started/intro) — Added reference; explain client/server roles and tool integration. Implement a small read-only MCP integration if it fits your project.
+- [Anthropic: Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) — Added evaluation reference; test final task outcomes as well as tool calls and traces.
+
+## Practice
+
+- Choose a bounded task, such as searching approved records and producing a validated report.
+- Implement tools and a workflow or agent; log calls and enforce stopping limits.
+- Test invalid arguments, unavailable tools, repeated actions, and incomplete tasks.
+- Compare with a simple baseline and explain whether agentic control improves the result.
+
+## Expected output
+
+A working tool-based workflow, an evaluation set, execution traces, and a design explanation. Optional MCP implementation deepens this elective; a framework certificate alone does not complete it.
+
+## Workload
+
+Workload estimate pending pilot. Include practice, debugging, review, and revision in your study time.
+
+## Submission evidence and completion checks
+
+Keep the expected output, runnable instructions, test/evaluation results where applicable, and your explanation of a meaningful failure. Submit through review and record the resulting revision. Explain your approach and diagnose a relevant failure during review. Revise incomplete evidence after feedback; resource completion alone does not establish competence.

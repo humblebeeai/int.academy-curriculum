@@ -1,0 +1,42 @@
+name: Check Draft Curriculum
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "draft_docs/**"
+      - "docs/**"
+      - "versioned_docs/**"
+      - "versioned_sidebars/**"
+      - "versions.json"
+      - "curriculum-versions.json"
+      - "src/theme/**"
+      - "src/pages/versions.tsx"
+      - "docusaurus.config.ts"
+      - "sidebars.ts"
+      - "scripts/check-draft.mjs"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/check-draft.yml"
+      - ".github/workflows/publish-docs.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Type check
+        run: npm run typecheck
+      - name: Build
+        run: npm run build
+      - name: Verify Draft publication behavior
+        run: npm run draft:check

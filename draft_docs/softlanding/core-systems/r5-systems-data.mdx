@@ -1,0 +1,47 @@
+---
+title: "R5. Systems, Networking, and Data Foundations"
+sidebar_label: "R5. Systems, Networking, and Data Foundations"
+sidebar_position: 5
+---
+
+# R5. Systems, Networking, and Data Foundations
+
+Purpose: understand and debug the path from a request to an application and its data. Prerequisite: Engineering Fundamentals terminal and basic SQL; [R1](/draft/softlanding/core-systems/r1-software-engineering).
+
+## Learn
+
+- Switch/router intuition, IP addresses, public/private networks, CIDR, and ports.
+- HTTP requests and responses, status codes, headers, HTTPS concepts, and DNS resolution.
+- Linux processes, permissions, environment variables, logs, and SSH keys.
+- Distinguish a stopped process, wrong listening address, wrong port, DNS issue, and blocked connection.
+- Connect Python to a database using parameterized queries and a basic transaction.
+
+## Resources
+
+- [NetworkChuck: Networking series](https://www.youtube.com/playlist?list=PLIhvC56v63IJVXv0GJcl9vO5Z6znCVb1P) — Roadmap resource; introductory videos 1–3 on networks, switches, and routers.
+- [NetworkChuck: What is an IP address?](https://www.youtube.com/watch?v=5WfiTHiU4x8) — Roadmap resource; understand address basics, then practice public/private address identification and simple CIDR examples.
+- [SSH Keys](https://www.youtube.com/watch?v=dPAw4opzN9g) — Roadmap resource; understand keys and authentication. Practice remote access in an assigned environment.
+- [MIT Missing Semester: Command-line Environment](https://missing.csail.mit.edu/2020/command-line/) — Added practical reference; use job control and remote machines sections, including exercises.
+- [MDN: Overview of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview) — Added required reference for requests, responses, headers, and the client/server relationship.
+- [Cloudflare: What is DNS?](https://www.cloudflare.com/learning/dns/what-is-dns/) — Added reference for DNS resolution; inspect a lookup and relate it to an HTTP request.
+- [Python sqlite3 tutorial](https://docs.python.org/3/library/sqlite3.html) — Added runnable database practice; create a local database, insert/query records with parameters, and commit a transaction.
+
+## Practice
+
+- Inspect your interface, address, route, listening ports, and a running application's process.
+- Use an HTTP client such as curl to inspect successful and failing requests. Diagnose mentor-provided faults in an isolated lab.
+- Connect to an assigned machine using SSH, or complete the equivalent local SSH lab.
+- Persist application records in SQLite and verify the data after restarting the process.
+- Adapt the roadmap's architecture-diagram exercise: show client, public entry point, application, and database; label allowed traffic and exposure.
+
+## Expected output
+
+A network/request-flow diagram, a short troubleshooting record, and a working database integration. You can explain each connection and distinguish local application failures from network failures.
+
+## Workload
+
+Workload estimate pending pilot. Include practice, debugging, review, and revision in your study time.
+
+## Submission evidence and completion checks
+
+Keep the expected output, runnable instructions, test/evaluation results where applicable, and your explanation of a meaningful failure. Submit through review and record the resulting revision. Explain your approach and diagnose a relevant failure during review. Revise incomplete evidence after feedback; resource completion alone does not establish competence.

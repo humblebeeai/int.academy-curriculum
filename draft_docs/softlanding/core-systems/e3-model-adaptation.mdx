@@ -1,0 +1,41 @@
+---
+title: "E3. Model Adaptation and Experimentation"
+sidebar_label: "E3. Model Adaptation and Experimentation"
+sidebar_position: 10
+---
+
+# E3. Model Adaptation and Experimentation
+
+Purpose: determine whether adapting a pretrained model improves a defined task. Prerequisites: [R2](/draft/softlanding/core-systems/r2-applied-ml) and [R3](/draft/softlanding/core-systems/r3-deep-learning); use [R4](/draft/softlanding/core-systems/r4-llm-applications) for LLM-oriented projects.
+
+## Learn
+
+- Transfer learning and fine-tuning; select a model and dataset appropriate to the task and available compute.
+- Prepare data, preserve an untouched test set, and establish the pretrained baseline.
+- Track configurations, metrics, artifacts, and reproducible run information.
+- Compare quality and resource use, and analyze regressions.
+
+## Resources
+
+- [Hugging Face LLM Course: Fine-tuning a pretrained model](https://huggingface.co/learn/llm-course/en/chapter3/1) — Added hands-on route; use the chapter's sequence to adapt a small model. A modest classification task is sufficient.
+- [MLflow: Experiment Tracking](https://mlflow.org/docs/latest/ml/tracking/) — Added runnable reference; record parameters, metrics, and artifacts locally.
+- [UvA Tutorial 2: Introduction to PyTorch](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial2/Introduction_to_PyTorch.html) — Retained roadmap reference; revisit model structure, autograd, and training/evaluation behavior as needed.
+
+## Practice
+
+- Evaluate the unchanged pretrained model on a fixed task.
+- Adapt it using a manageable training run and record at least two useful configuration comparisons.
+- Compare on the same evaluation data, inspect improvements and regressions, and preserve the resulting model artifact.
+- Reproduce inference from the saved artifact without rerunning training.
+
+## Expected output
+
+A baseline comparison, tracked experiments, a model artifact, and a short adaptation report. An improvement is not guaranteed: a well-supported explanation of a failed adaptation demonstrates useful engineering judgment.
+
+## Workload
+
+Workload estimate pending pilot. Include practice, debugging, review, and revision in your study time.
+
+## Submission evidence and completion checks
+
+Keep the expected output, runnable instructions, test/evaluation results where applicable, and your explanation of a meaningful failure. Submit through review and record the resulting revision. Explain your approach and diagnose a relevant failure during review. Revise incomplete evidence after feedback; resource completion alone does not establish competence.

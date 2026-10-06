@@ -1,0 +1,42 @@
+---
+title: "E1. Retrieval and RAG"
+sidebar_label: "E1. Retrieval and RAG"
+sidebar_position: 8
+---
+
+# E1. Retrieval and RAG
+
+Purpose: build a service that retrieves relevant evidence before answering. Prerequisites: [R1](/draft/softlanding/core-systems/r1-software-engineering), [R4](/draft/softlanding/core-systems/r4-llm-applications), and basic API skills from [R6](/draft/softlanding/core-systems/r6-apis-deployment).
+
+## Learn
+
+- Document ingestion, metadata, chunking, embeddings, similarity search, and keyword-search baselines.
+- Provide retrieved context and source references to the model.
+- Evaluate retrieval separately from answer correctness and grounding.
+- Compare a meaningful change such as chunk size, retrieval depth, or a hybrid strategy.
+
+## Resources
+
+- [Sentence Transformers: Semantic Search](https://www.sbert.net/examples/sentence_transformer/applications/semantic-search/README.html) — Added runnable starting point; build and inspect retrieval over a small collection.
+- [Hugging Face: Simple RAG for GitHub issues](https://huggingface.co/learn/cookbook/en/rag_zephyr_langchain) — Added notebook; adapt the retrieval-to-answer pattern to your documents. Choose an available model that fits your environment.
+- [Hugging Face: RAG Evaluation](https://huggingface.co/learn/cookbook/en/rag_evaluation) — Added reference; use separate retrieval and answer checks. Review a sample manually rather than relying only on an automated judge.
+- [Hugging Face: Advanced RAG](https://huggingface.co/learn/cookbook/en/advanced_rag) — Optional extension; select a technique to investigate after your baseline works.
+
+## Practice
+
+- Build a small knowledge base from public or approved documents and retain source identifiers.
+- Create evaluation questions with expected supporting documents, including questions the collection cannot answer.
+- Compare a baseline with one retrieval change; inspect retrieved passages and answer failures.
+- Expose the result through your application with source references and a clear insufficient-evidence response.
+
+## Expected output
+
+A working retrieval/answer feature, evaluation questions, retrieval and answer results, and a short comparison of your chosen change.
+
+## Workload
+
+Workload estimate pending pilot. Include practice, debugging, review, and revision in your study time.
+
+## Submission evidence and completion checks
+
+Keep the expected output, runnable instructions, test/evaluation results where applicable, and your explanation of a meaningful failure. Submit through review and record the resulting revision. Explain your approach and diagnose a relevant failure during review. Revise incomplete evidence after feedback; resource completion alone does not establish competence.

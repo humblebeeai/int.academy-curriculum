@@ -19,6 +19,20 @@ export default function DocVersionBanner({ className }: Props): ReactNode {
     return null;
   }
 
+  if (activePlugin.pluginId === "draft") {
+    return (
+      <div
+        className={`${className ?? ""} theme-doc-version-banner alert alert--warning margin-bottom--md`}
+        role="status"
+      >
+        <strong>Draft curriculum — requirements may change during review.</strong>
+        <div className="margin-top--sm">
+          <Link to="/docs">View the Current curriculum</Link>
+        </div>
+      </div>
+    );
+  }
+
   const latestDoc =
     latestDocSuggestion ??
     latestVersionSuggestion.docs.find(
