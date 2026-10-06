@@ -5,8 +5,7 @@ sidebar_position: 3
 toc_max_heading_level: 2
 ---
 
-import { ResourceCard, DraftModule, ModuleIntro, SkillShowcase, SectionLinks } from "@site/src/components";
-
+import { ResourceCard, DraftModule, ModuleIntro, SectionLinks } from "@site/src/components";
 import moduleImage from "../assets/images/math_ml.jpg";
 
 # Math for AI
@@ -19,34 +18,22 @@ import moduleImage from "../assets/images/math_ml.jpg";
   moduleNumber={2}
   kind="required"
   icon="Calculator"
-  summary="Use vectors and matrices to understand AI computations, then learn to reason about uncertainty and interpret statistical evidence."
+  summary="Understand AI computations with linear algebra, and reason about uncertainty with probability and statistics."
   image={{ src: moduleImage, alt: "Illustration of matrix grids and connected nodes representing mathematical computations.", width: 1536, height: 1024 }}
 />
 
-<SkillShowcase decorativeIcons skills={[{"iconString": "Calculator", "title": "Compute with NumPy", "description": "Work with vectors, matrices, and tensor shapes."}, {"iconString": "BarChart3", "title": "Reason about uncertainty", "description": "Use probability and interpret distributions and inference."}, {"iconString": "NotebookPen", "title": "Explain your results", "description": "Submit four notebooks, required unit tests, and Academy verification."}]} />
+**Before you start:** basic algebra and introductory [NumPy](/draft/engineering-fundamentals/data-manipulation#numpy). Calculus is not required.
 
-:::info Before you start
-You need basic algebra. Complete the introductory [NumPy topics](/draft/engineering-fundamentals/data-manipulation#numpy) before the linear algebra notebooks. Calculus is not required.
-:::
-
-
-<SectionLinks items={[{"title": "Linear algebra", "href": "#linear-algebra"}, {"title": "Probability & statistics", "href": "#probability-statistics"}, {"title": "Finish this module", "href": "#completion"}]} />
+<SectionLinks items={[{title: "Linear algebra", href: "#linear-algebra"}, {title: "Probability & statistics", href: "#probability-statistics"}, {title: "Finish this module", href: "#completion"}]} />
 
 ## Linear algebra {#linear-algebra}
-
-
-### Before you start
-
-Connect mathematical operations to practical AI computations. Complete foundational algebra and introductory NumPy array creation, shapes, dimensions, indexing, and operations first.
-
-### Main resource
 
 <ResourceCard
   showFullDescription
   title="Jon Krohn — Linear Algebra for Machine Learning"
   url="https://www.jonkrohn.com/posts/2021/5/9/linear-algebra-for-machine-learning-complete-math-course-on-youtube"
   type="video"
-  description="Required. Study the course sections corresponding to Units 1–5 below; complete the short exercises and accompanying Python notebooks."
+  description="Study the sections matching the five topics below and complete their short exercises."
 />
 
 <ResourceCard
@@ -54,295 +41,55 @@ Connect mathematical operations to practical AI computations. Complete foundatio
   title="Python notebooks"
   url="https://github.com/jonkrohn/ML-foundations"
   type="book"
-  description="Required. Run the accompanying linear algebra notebooks and complete the four notebook evidence areas below."
+  description="Run the linear algebra examples, then submit the four notebooks listed below."
 />
 
-### Unit 1: Vectors and tensors
+| Topic | What to learn |
+| --- | --- |
+| Vectors and tensors | Shapes, addition, scaling, norms, dot products, distance, and cosine similarity |
+| Matrices | Operations, multiplication, transpose, identity/diagonal/symmetric matrices, transformations, and compatible shapes |
+| Linear systems | `Ax = b`, inverse, rank, independence, pseudoinverse, and exact versus least-squares solutions |
+| SVD and PCA | Eigenvectors/eigenvalues, eigendecomposition, SVD, low-rank approximation, and PCA |
+| AI computations | Samples/features, batches, weight matrices, embeddings, attention shapes, broadcasting, and dimension errors |
 
-- Scalars, vectors, matrices, and tensors
-- Tensor dimensions and shapes
-- Vector addition and scaling
-- Norms and unit vectors
-- Dot product
-- Distance and cosine similarity
+Practise with NumPy and small hand calculations. Focus on understanding and application; formal proofs, abstract vector-space theory, change of basis, Gram–Schmidt, detailed subspace theory, large hand calculations, and decomposition derivations are outside scope.
 
-You should be able to represent and manipulate these objects using NumPy.
+**Submit four small notebooks:**
 
-### Unit 2: Matrices and transformations
+1. Vectors, norms, dot products, and similarity.
+2. Matrix transformations and shape compatibility.
+3. Linear systems and least squares.
+4. SVD, low-rank approximation, and PCA.
 
-- Matrix operations
-- Matrix multiplication
-- Transpose
-- Identity, diagonal, and symmetric matrices
-- Matrices as transformations
-- Shape compatibility
-
-You should be able to predict matrix multiplication output shapes and explain what a matrix transformation does.
-
-### Unit 3: Linear systems and approximation
-
-- Systems of linear equations
-- `Ax = b`
-- Matrix inverse
-- Rank and linear independence
-- Exact versus approximate solutions
-- Pseudoinverse
-- Least-squares regression
-
-You should understand when a system can be solved and why least squares is used when an exact solution is unavailable.
-
-### Unit 4: Eigenvectors, SVD, and PCA
-
-- Eigenvectors and eigenvalues
-- Eigendecomposition
-- Singular value decomposition
-- Low-rank approximation
-- Principal component analysis
-
-You should understand these concepts visually and apply them using NumPy. Long manual calculations are not required.
-
-### Unit 5: Linear algebra in AI
-
-- Dataset shapes: samples and features
-- Neural-network weight matrices
-- Batch dimensions
-- Embedding vectors and similarity
-- Basic attention matrix shapes
-- Broadcasting and dimension errors
-
-You should be able to follow tensor shapes through a small AI computation and diagnose common shape mistakes.
-
-### Required practice
-
-- Short exercises from the Jon Krohn course
-- Four small Python notebooks
-- Tensor-shape and debugging questions
-- Small hand calculations using two- or three-dimensional examples
-- There is no integrated project.
-
-### Passing requirements
-
-Demonstrate that you can:
-
-- Work with vectors, matrices, and tensor shapes
-- Perform and interpret dot products and matrix multiplication
-- Understand linear systems, rank, and least squares
-- Explain the purpose of eigenvectors, SVD, and PCA
-- Implement the main operations with NumPy
-- Track tensor shapes in basic AI examples
-
-### Not required
-
-- Formal proofs
-- Abstract vector-space theory
-- Change-of-basis calculations
-- Gram–Schmidt calculations
-- Detailed row, column, and null-space theory
-- Large determinants or inverses by hand
-- Deriving eigendecomposition or SVD algorithms
-### Notebook evidence
-
-Submit four small notebooks covering (1) vectors, norms, dot products, and similarity; (2) matrix transformations and shape compatibility; (3) systems and least squares; and (4) SVD, low-rank approximation, and PCA. Include a small AI tensor-shape exercise and repair a dimension error. These notebooks are verification exercises, not an integrated project.
-
-### Workload
-
-Source estimate: 14–18 hours, provisional until piloted. Include practice, debugging, review, and revision in your study time.
-
-### Submission evidence and completion checks
-
-Submit the four runnable notebooks, short hand calculations, and shape/debugging answers. Explain each listed passing requirement. Explain your approach and diagnose a relevant failure during review. Revise incomplete evidence after feedback; resource completion alone does not establish competence.
+Include an AI tensor-shape exercise and repair a dimension error. These are verification exercises, not an integrated project.
 
 ## Probability & statistics {#probability-statistics}
-
-
-### Before you start
-
-Interpret uncertainty and statistical evidence. Foundational algebra is required; calculus is not required.
 
 <ResourceCard
   showFullDescription
   title="Khan Academy Statistics and Probability"
   url="https://www.khanacademy.org/math/statistics-probability"
   type="course"
-  description="Required. Complete Units 1–5 and 7–12; pass every required unit test with at least 80%. Unit 6 is excluded. The full-course challenge is not the mandatory final assessment."
+  description="Complete Units 1–5 and 7–12. Pass every required unit test with at least 80%."
 />
 
-### Core Statistics
+| Units | Focus |
+| --- | --- |
+| 1–5 | Categorical data, charts, summary statistics, normal distributions, correlation, and regression |
+| 7–9 | Probability rules, counting, permutations/combinations, and random variables |
+| 10–12 | Sampling distributions, confidence intervals, and one-sample significance tests |
 
-Every Engineering Fundamentals learner must complete the following units:
-
-#### Unit 1 — Analyzing Categorical Data
-
-Required competencies:
-
-- Interpret frequency tables
-- Interpret relative-frequency tables
-- Work with two-way tables
-- Compare categorical distributions
-- Identify associations between categorical variables
-
-#### Unit 2 — Displaying and Comparing Quantitative Data
-
-Required competencies:
-
-- Read and create dot plots
-- Read and create histograms
-- Interpret box plots
-- Compare distributions
-- Describe center, spread, shape, and unusual values
-- Select an appropriate data display
-
-#### Unit 3 — Summarizing Quantitative Data
-
-Required competencies:
-
-- Calculate and interpret mean and median
-- Understand quartiles and interquartile range
-- Calculate and interpret variance and standard deviation
-- Understand the effect of outliers
-- Select appropriate measures of center and spread
-
-#### Unit 4 — Modeling Data Distributions
-
-Required competencies:
-
-- Understand density curves
-- Standardize values using z-scores
-- Interpret percentiles
-- Work with normal distributions
-- Apply the empirical rule
-- Compare observations from different distributions
-
-#### Unit 5 — Exploring Bivariate Numerical Data
-
-Required competencies:
-
-- Read scatterplots
-- Identify direction, form, and strength
-- Understand correlation
-- Distinguish correlation from causation
-- Use and interpret trend lines
-- Interpret residuals
-- Identify unusual observations
-
-#### Unit 6 — Study Design
-
-Status: Excluded
-
-This unit is not required for Engineering Fundamentals.
-
-Learners do not need to complete:
-
-- Statistical-question lessons
-- Sampling methods
-- Surveys
-- Observational-study design
-- Experimental design
-- Study-design quizzes
-- The Unit 6 test
-
-#### Unit 7 — Probability
-
-Required competencies:
-
-- Understand sample spaces and events
-- Calculate basic probabilities
-- Use addition and multiplication rules
-- Work with compound events
-- Understand conditional probability
-- Recognize independent and dependent events
-- Use simulations to estimate probability
-
-#### Unit 8 — Counting, Permutations, and Combinations
-
-Required competencies:
-
-- Apply the fundamental counting principle
-- Distinguish permutations from combinations
-- Calculate permutations
-- Calculate combinations
-- Use counting techniques in probability problems
-
-#### Unit 9 — Random Variables
-
-Required competencies:
-
-- Understand discrete and continuous random variables
-- Create and interpret probability distributions
-- Calculate expected value
-- Calculate and interpret variance and standard deviation
-- Transform and combine random variables
-- Understand binomial random variables
-- Understand geometric random variables
-
-#### Unit 10 — Sampling Distributions
-
-Required competencies:
-
-- Distinguish populations, samples, parameters, and statistics
-- Understand sampling variability
-- Interpret sampling distributions
-- Work with sample proportions
-- Work with sample means
-- Understand standard error
-- Apply normal approximations where appropriate
-- Understand the Central Limit Theorem conceptually
-The excluded Unit 6 material should not be directly assessed here.
-
-#### Unit 11 — Confidence Intervals
-
-Required competencies:
-
-- Understand point estimates and intervals
-- Interpret confidence levels
-- Understand margin of error
-- Construct and interpret confidence intervals
-- Check the mathematical conditions for an interval
-- Understand how sample size affects precision
-- Avoid common confidence-interval interpretation errors
-
-#### Unit 12 — Significance Tests
-
-Required competencies:
-
-- State null and alternative hypotheses
-- Understand test statistics
-- Interpret p-values
-- Select a significance level
-- Make evidence-based conclusions
-- Understand Type I and Type II errors
-- Recognize statistical versus practical significance
-- Perform the one-sample tests included in the Khan Academy unit
-
-### Core Completion Requirements
-
-To pass the required Statistics component, you must:
-
-- Complete Units 1–5 and 7–12.
-- Pass every required Khan Academy unit test with a score of at least 80%.
-- Demonstrate the ability to interpret results, not only perform calculations.
-- Pass an Academy verification assessment covering only the required units.
-- The Khan Academy full-course challenge should not be used as the mandatory final assessment because it may include excluded Unit 6 and elective Units 13–16.
-
-### Submission evidence
-
-Submit required unit-test results and an interpretation exercise covering sampling distributions, confidence intervals, and a one-sample significance test. The Academy verification covers only required units. Revise gaps identified during review.
-
-### Elective: Advanced Statistical Inference
-
-[Advanced Statistical Inference](/draft/engineering-fundamentals/electives#advanced-statistical-inference) contains Units 13–16 and is completed only when all four units are finished.
-
-### Workload
-
-Workload estimate pending pilot. Include practice, debugging, review, and revision in your study time.
+**Skip Unit 6 (Study Design), including its quizzes and test.** It is also excluded from Academy verification. Units 13–16 belong to the [Advanced Statistical Inference elective](/draft/engineering-fundamentals/electives#advanced-statistical-inference).
 
 ## Finish this module {#completion}
 
-- Submit four runnable linear algebra notebooks, your short calculations, and tensor-shape/debugging answers.
-- Complete statistics Units 1–5 and 7–12 with at least 80% on every required unit test.
-- Pass the Academy statistics verification and explain your results.
-- Revise any gaps identified during review.
+- Submit your four runnable notebooks, short calculations, and shape/debugging answers. Explain the operations and diagnose a relevant failure.
+- Submit statistics unit-test results showing **at least 80% on every required unit**.
+- Submit an interpretation exercise on sampling distributions, confidence intervals, and a one-sample significance test. Pass the **Academy verification covering only Units 1–5 and 7–12**; the full-course challenge is not the final assessment.
+- Revise gaps after feedback.
 
-**Continue:** [Data Foundations](/draft/engineering-fundamentals/data-manipulation). For deeper inference, choose [Advanced Statistical Inference](/draft/engineering-fundamentals/electives#advanced-statistical-inference) as an elective after completing the statistics section.
+Linear algebra’s source estimate is 14–18 hours, pending pilot. Statistics workload remains pending pilot; allow time for practice and review.
+
+**Next:** [Data Foundations](/draft/engineering-fundamentals/data-manipulation).
 
 </DraftModule>
