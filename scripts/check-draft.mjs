@@ -24,6 +24,9 @@ for (const path of pages) {
   assert(html.includes('Draft curriculum — requirements may change during review.'), `${label}: missing Draft banner`);
   assert.match(html, /href="\/docs"[^>]*>View the Current curriculum/, `${label}: missing Current link`);
   assert.match(html, /href="\/draft"[^>]*>Draft curriculum/, `${label}: missing Draft menu entry`);
+  for (const [, anchor] of html.matchAll(/href="#([^"]+)"/g)) {
+    assert(html.includes(`id="${decodeURIComponent(anchor)}"`), `${label}: missing in-page section #${anchor}`);
+  }
   for (const [, href] of html.matchAll(/href="(\/draft[^"?]*)"/g)) {
     const [route, anchor] = href.split('#');
     const target = resolve(build, route.slice(1));
@@ -34,8 +37,8 @@ for (const path of pages) {
 }
 assert(!readFileSync(resolve(build, 'sitemap.xml'), 'utf8').includes('/draft'), 'Draft must not appear in sitemap.');
 
-const efRequired = ['terminal-algorithmic-basics', 'linear-algebra', 'probability-statistics', 'data-manipulation'];
-const efOptional = ['optional-data-visualization', 'optional-github-actions', 'optional-advanced-sql', 'optional-bash-automation', 'optional-algorithms', 'advanced-statistical-inference'];
+const efRequired = ['terminal-algorithmic-basics', 'math-for-ai', 'data-manipulation'];
+const efElectives = ['elective-data-visualization', 'elective-github-actions', 'elective-advanced-sql', 'elective-bash-automation', 'elective-algorithms', 'advanced-statistical-inference'];
 const coreRequired = ['software-engineering', 'applied-ml-deep-learning', 'llm-applications', 'systems-networking-data', 'apis-containers-deployment'];
 const electives = ['e1-retrieval-rag', 'e2-agents-tools', 'e3-model-adaptation', 'e4-backend-data', 'e5-delivery-mlops'];
 const generated = resolve(root, '.docusaurus/docusaurus-plugin-content-docs/draft/p');
@@ -47,22 +50,24 @@ function category(items, label) {
     if (nested) return nested;
   }
 }
-function checkStage(label, prefix, required, optional, optionalLabel, extra = []) {
+function checkStage(label, prefix, required, electiveModules, electiveLabel, extra = []) {
   const stage = category(version.docsSidebars.tutorialSidebar, label);
   assert(stage, `Missing sidebar stage ${label}`);
   const visible = stage.items.filter((item) => !item.unlisted);
-  assert.deepEqual(visible.map((item) => item.docId), [...required, ...optional, ...extra].map((slug) => `${prefix}/${slug}`), `${label}: required and optional modules must be direct siblings in order`);
+  assert.deepEqual(visible.map((item) => item.docId), [...required, ...electiveModules, ...extra].map((slug) => `${prefix}/${slug}`), `${label}: required modules and electives must be direct siblings in order`);
   const overview = readFileSync(resolve(build, stage.href.slice(1), 'index.html'), 'utf8');
-  for (const slug of [...required, ...optional]) assert(overview.includes(`/draft/${prefix}/${slug}`), `${label}: overview missing ${slug}`);
-  for (const slug of optional) {
+  for (const slug of [...required, ...electiveModules]) assert(overview.includes(`/draft/${prefix}/${slug}`), `${label}: overview missing ${slug}`);
+  for (const slug of electiveModules) {
     const item = visible.find((entry) => entry.docId === `${prefix}/${slug}`);
-    assert(item.label.startsWith(`${optionalLabel} · `), `${slug}: missing visible ${optionalLabel} label`);
+    assert(item.label.startsWith(`${electiveLabel} · `), `${slug}: missing visible ${electiveLabel} label`);
   }
-  for (const slug of [...required, ...optional]) {
+  for (const slug of [...required, ...electiveModules]) {
     const source = readFileSync(resolve(root, `draft_docs/${prefix}/${slug}.mdx`), 'utf8');
     const html = readFileSync(resolve(build, `draft/${prefix}/${slug}/index.html`), 'utf8');
     const article = html.match(/<article[^>]*>([\s\S]*?)<\/article>/)?.[1];
     assert(article, `${slug}: missing rendered article`);
+    assert(!/\bOptional\b/.test(article), `${slug}: use Elective for module choices and Further reading for supporting resources`);
+    assert(article.includes(`/draft/${prefix}`), `${slug}: missing stage return link`);
     const decoded = article.replaceAll('&amp;', '&').replaceAll('&#x27;', "'").replaceAll('&quot;', '"');
     const cards = [...source.matchAll(/<ResourceCard\s+([\s\S]*?)\/>/g)];
     assert(cards.length, `${slug}: missing clickable learning resources`);
@@ -75,7 +80,7 @@ function checkStage(label, prefix, required, optional, optionalLabel, extra = []
     }
   }
 }
-checkStage('Engineering Fundamentals', 'engineering-fundamentals', efRequired, efOptional, 'Optional');
+checkStage('Engineering Fundamentals', 'engineering-fundamentals', efRequired, efElectives, 'Elective');
 checkStage('Core Systems', 'softlanding/core-systems', coreRequired, electives, 'Elective', ['handover']);
 for (const [slug, anchors] of Object.entries({
   'software-engineering': ['r1'], 'applied-ml-deep-learning': ['r2', 'derivatives-preparation', 'r3'],
@@ -87,6 +92,10 @@ for (const [slug, anchors] of Object.entries({
 }
 const coreOverview = readFileSync(resolve(draft, 'softlanding/core-systems/index.html'), 'utf8');
 assert(coreOverview.includes('exactly two electives'), 'Core Systems must require exactly two electives.');
+const efOverview = readFileSync(resolve(draft, 'engineering-fundamentals/index.html'), 'utf8');
+assert(efOverview.includes('Complete exactly two electives') && efOverview.includes('three required modules and two electives'), 'Engineering Fundamentals must require two electives.');
+const math = readFileSync(resolve(draft, 'engineering-fundamentals/math-for-ai/index.html'), 'utf8');
+for (const anchor of ['linear-algebra', 'probability-statistics', 'completion']) assert(math.includes(`id="${anchor}"`), `Math for AI: missing ${anchor}`);
 
 const current = readFileSync(resolve(build, 'docs/index.html'), 'utf8');
 assert(!current.includes('Draft curriculum — requirements may change during review.'), 'Current must not display Draft banner.');
@@ -98,4 +107,4 @@ for (const { name } of metadata) {
   assert(historical.includes('This snapshot is preserved for comparison and is no longer updated.'), `Historical banner missing for ${name}`);
   assert(!historical.includes('Draft curriculum — requirements may change during review.'), `Historical version ${name} shows Draft banner`);
 }
-console.log(`Verified ${pages.length} Draft pages: banners, noindex, menu entry, local routes and anchors, four EF groups with six optional siblings, five Core groups covering R1–R6 with five elective siblings, rendered resource links and scopes, sitemap exclusion, and Current/historical isolation.`);
+console.log(`Verified ${pages.length} Draft pages: banners, noindex, menu entry, local routes and anchors, three EF modules with six elective siblings, five Core groups covering R1–R6 with five elective siblings, rendered resource links and scopes, sitemap exclusion, and Current/historical isolation.`);

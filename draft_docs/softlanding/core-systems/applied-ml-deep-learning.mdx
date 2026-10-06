@@ -1,20 +1,27 @@
 ---
 title: "Applied ML & Deep Learning"
-sidebar_label: "Applied ML & Deep Learning"
+sidebar_label: "2. Applied ML & Deep Learning"
 sidebar_position: 2
+toc_max_heading_level: 2
 ---
 
 import { ResourceCard } from "@site/src/components";
 
 # Applied ML & Deep Learning
 
-**Status: Required.**
+[Core Systems](/draft/softlanding/core-systems) → Module 2
 
 Choose and evaluate models, then understand training and pretrained inference. Complete Engineering Fundamentals and begin Software Engineering for AI first.
 
-## R2 Applied ML and Evaluation {#r2}
+**Resources:** [ML resources](#ml-resources) · [Deep learning resources](#dl-resources)
 
-Purpose: choose and assess models using evidence. Prerequisite: Engineering Fundamentals data manipulation, statistics, and linear algebra; begin [R1](/draft/softlanding/core-systems/software-engineering#r1) alongside this module.
+**Jump to:** [Applied ML and evaluation](#r2) · [Derivatives Preparation for Deep Learning](#derivatives-preparation) · [Deep learning and pretrained models](#r3)
+
+## Applied ML and evaluation {#r2}
+
+choose and assess models using evidence.
+
+**Before you start:** Engineering Fundamentals data manipulation, statistics, and linear algebra; begin [Software Engineering for AI](/draft/softlanding/core-systems/software-engineering#r1) alongside this module.
 
 ### Learn
 
@@ -24,7 +31,7 @@ Purpose: choose and assess models using evidence. Prerequisite: Engineering Fund
 - Classification metrics: precision, recall, F1, confusion matrix, ROC-AUC, and precision–recall evaluation. Choose metrics based on the task.
 - Regression metrics at an introductory level; overfitting, underfitting, and error analysis.
 
-### Resources
+### Resources {#ml-resources}
 
 <ResourceCard
   title="IBM: What is machine learning?"
@@ -44,7 +51,7 @@ Purpose: choose and assess models using evidence. Prerequisite: Engineering Fund
   title="StatQuest: Logistic Regression"
   url="https://www.youtube.com/playlist?list=PLblh5JKOoLUKxzEP5HA2d-Li7IJkHfXSe"
   type="video"
-  description="Required. Study the main ideas and the relationship between scores, probabilities, and classification. Detailed derivations are optional support."
+  description="Required. Study the main ideas and the relationship between scores, probabilities, and classification. Detailed derivations are supporting material."
 />
 
 <ResourceCard
@@ -67,7 +74,7 @@ See the [StatQuest topic index](https://statquest.org/video_index.html) for addi
   title="StatQuest: Support Vector Machines"
   url="https://www.youtube.com/playlist?list=PLblh5JKOoLUL3IJ4-yor0HzkqDQ3JmJkc"
   type="video"
-  description="Required. Study the decision-boundary and margin intuition. Detailed derivations are optional support."
+  description="Required. Study the decision-boundary and margin intuition. Detailed derivations are supporting material."
 />
 
 <ResourceCard
@@ -104,11 +111,11 @@ A reproducible modeling notebook or script, a results comparison, and a short er
 
 ## Derivatives Preparation for Deep Learning {#derivatives-preparation}
 
-### Purpose and prerequisites
+### Before you start
 
-Prepare for R3 after Engineering Fundamentals algebra, linear algebra, and R2. Derivatives are taught here; they are not required to enter Core Systems.
+Complete Math for AI and the applied ML section before this preparation. Derivatives are taught here; they are not required to enter Core Systems.
 
-### Required learning and resources
+### Learn and practise
 
 <ResourceCard
   title="Khan Academy differential calculus"
@@ -119,15 +126,17 @@ Prepare for R3 after Engineering Fundamentals algebra, linear algebra, and R2. D
 
 ### Practice
 
-For a scalar squared-error function, compare a small finite-difference slope with the derivative at several points. Apply a few gradient-descent updates and plot the loss. Explain how an overly large step can increase loss. For a two-parameter example, explain why a gradient has one component per parameter. Revisit this example with PyTorch autograd in R3.
+For a scalar squared-error function, compare a small finite-difference slope with the derivative at several points. Apply a few gradient-descent updates and plot the loss. Explain how an overly large step can increase loss. For a two-parameter example, explain why a gradient has one component per parameter. Revisit this example with PyTorch autograd in deep learning.
 
 ### Preparation evidence
 
-Keep the derivative notebook, loss plot, and explanation of the learning-rate failure. Explain the update direction before beginning the R3 training loop.
+Keep the derivative notebook, loss plot, and explanation of the learning-rate failure. Explain the update direction before beginning the deep learning training loop.
 
-## R3 Deep Learning and Pretrained Models {#r3}
+## Deep learning and pretrained models {#r3}
 
-Purpose: understand a training loop and use a pretrained model deliberately. Prerequisite: [R2](/draft/softlanding/core-systems/applied-ml-deep-learning#r2), NumPy, matrix operations, and the [derivatives bridge](/draft/softlanding/core-systems/applied-ml-deep-learning#derivatives-preparation).
+understand a training loop and use a pretrained model deliberately.
+
+**Before you start:** [applied ML](/draft/softlanding/core-systems/applied-ml-deep-learning#r2), NumPy, matrix operations, and the [derivatives preparation](/draft/softlanding/core-systems/applied-ml-deep-learning#derivatives-preparation).
 
 ### Learn
 
@@ -136,7 +145,7 @@ Purpose: understand a training loop and use a pretrained model deliberately. Pre
 - Write a small training loop, diagnose training failures, and save/reload model weights.
 - Distinguish training, pretrained inference, and fine-tuning. Develop an introductory transformer mental model.
 
-### Resources
+### Resources {#dl-resources}
 
 <ResourceCard
   title="Andrew Ng: Neural-network foundations"
@@ -181,6 +190,6 @@ A small training implementation, a saved model, a separate inference example, an
 
 Use the provisional estimates where supplied. Other workloads remain pending pilot. Include implementation, debugging, review, and revision.
 
-## Completion review
+## Finish this module
 
 Keep the required outputs and explain your decisions. Diagnose a relevant failure during review and revise incomplete evidence after feedback. Resource completion supports progress; the stated practical requirements determine completion.
