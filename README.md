@@ -134,6 +134,17 @@ To work on the curriculum or docs locally, you can either run the Docusaurus sit
 
 ## Versioning Workflow
 
+### Proposed curriculum
+
+The proposed Engineering Fundamentals and Core Systems curriculum lives in
+`draft_docs/` and is available at `/draft` after deployment. Every Draft page
+is labelled and excluded from search indexing. Current and dated snapshots
+remain separate.
+
+See [Draft curriculum review and release](./DRAFT_CURRICULUM.md) for source
+mapping, revisions, review checks, and the later promotion process.
+After building, run `npm run draft:check` to verify Draft publication behavior.
+
 Use the GitHub Actions workflow **1. Bump Version** to create a release.
 Docs snapshots are optional and disabled by default.
 

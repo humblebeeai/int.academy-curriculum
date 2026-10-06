@@ -126,3 +126,16 @@
   font-weight: 700;
   letter-spacing: 0.05em;
 }
+
+.fullDescription {
+  display: block;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  overflow: visible;
+}
+
+.link:has(.fullDescription) .title { flex-wrap: wrap; }
+.link:has(.fullDescription) .externalIcon { opacity: .65; flex-shrink: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .link:has(.fullDescription) .card { transition: none; transform: none; }
+}

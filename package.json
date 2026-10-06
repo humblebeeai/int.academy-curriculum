@@ -22,6 +22,7 @@
     "curriculum:version": "node scripts/curriculum-version.mjs",
     "curriculum:prune": "node scripts/curriculum-version.mjs --prune-only",
     "typecheck": "tsc",
+    "draft:check": "node scripts/check-draft.mjs",
     "preview": "npm run build && wrangler dev"
   },
   "dependencies": {

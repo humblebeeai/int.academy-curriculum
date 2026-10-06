@@ -7,6 +7,9 @@ on:
       - main
     paths:
       - "docs/**"
+      - "draft_docs/**"
+      - "src/theme/**"
+      - "src/pages/versions.tsx"
       - "versioned_docs/**"
       - "versioned_sidebars/**"
       - "versions.json"
@@ -14,6 +17,9 @@ on:
       - "static/curriculum-versions/**"
       - "docusaurus.config.ts"
       - "sidebars.ts"
+      - "scripts/check-draft.mjs"
+      - "package.json"
+      - "package-lock.json"
 
 jobs:
   deploy:
@@ -34,6 +40,8 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Check Draft curriculum publication
+        run: npm run draft:check
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:

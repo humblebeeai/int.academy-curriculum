@@ -1,0 +1,346 @@
+---
+title: "Electives"
+sidebar_label: "Electives · Choose two"
+sidebar_position: 6
+toc_max_heading_level: 2
+---
+
+import { ResourceCard, DraftModule, ModuleIntro, SectionLinks } from "@site/src/components";
+
+# Electives
+
+<DraftModule>
+
+<ModuleIntro stageLabel="Core Systems" stageHref="/draft/softlanding/core-systems" kind="elective" icon="SlidersHorizontal" summary="Complete exactly two electives. Choose the skills you want to develop, check their prerequisites, and complete the work in both chosen sections." />
+
+<SectionLinks label="Choose your electives" items={[{"title": "Retrieval and RAG", "href": "#e1-retrieval-rag"}, {"title": "Agents and Tool-Based Workflows", "href": "#e2-agents-tools"}, {"title": "Model Adaptation and Experimentation", "href": "#e3-model-adaptation"}, {"title": "Backend Architecture and Data Systems", "href": "#e4-backend-data"}, {"title": "Delivery, Monitoring, and MLOps", "href": "#e5-delivery-mlops"}]} />
+
+## Retrieval and RAG {#e1-retrieval-rag}
+
+Build a service that retrieves relevant evidence before answering.
+
+**Before you start:** [Software Engineering for AI](/draft/softlanding/core-systems/software-engineering#r1), [LLM Applications](/draft/softlanding/core-systems/llm-applications#r4), and basic API skills from [APIs, Containers & Deployment](/draft/softlanding/core-systems/apis-containers-deployment#r6).
+
+### Learn
+
+- Document ingestion, metadata, chunking, embeddings, similarity search, and keyword-search baselines.
+- Provide retrieved context and source references to the model.
+- Evaluate retrieval separately from answer correctness and grounding.
+- Compare a meaningful change such as chunk size, retrieval depth, or a hybrid strategy.
+
+### Resources
+
+<ResourceCard
+  showFullDescription
+  title="Sentence Transformers: Semantic Search"
+  url="https://www.sbert.net/examples/sentence_transformer/applications/semantic-search/README.html"
+  type="article"
+  description="Required within this elective. Build and inspect retrieval over a small collection."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="Hugging Face: Simple RAG for GitHub issues"
+  url="https://huggingface.co/learn/cookbook/en/rag_zephyr_langchain"
+  type="article"
+  description="Required within this elective. Adapt the retrieval-to-answer pattern to your documents. Choose an available model that fits your environment."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="Hugging Face: RAG Evaluation"
+  url="https://huggingface.co/learn/cookbook/en/rag_evaluation"
+  type="article"
+  description="Required within this elective. Use separate retrieval and answer checks. Review a sample manually rather than relying only on an automated judge."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="Hugging Face: Advanced RAG"
+  url="https://huggingface.co/learn/cookbook/en/advanced_rag"
+  type="article"
+  description="Further reading. Select a technique to investigate after your baseline works."
+/>
+
+### Practice
+
+- Build a small knowledge base from public or approved documents and retain source identifiers.
+- Create evaluation questions with expected supporting documents, including questions the collection cannot answer.
+- Compare a baseline with one retrieval change; inspect retrieved passages and answer failures.
+- Expose the result through your application with source references and a clear insufficient-evidence response.
+
+### Expected output
+
+A working retrieval/answer feature, evaluation questions, retrieval and answer results, and a short comparison of your chosen change.
+
+### Workload
+
+Workload estimate pending pilot. Include practice, debugging, review, and revision in your study time.
+
+### Submission evidence and completion checks
+
+Keep the expected output, runnable instructions, test/evaluation results where applicable, and your explanation of a meaningful failure. Submit through review and record the resulting revision. Explain your approach and diagnose a relevant failure during review. Revise incomplete evidence after feedback; resource completion alone does not establish competence.
+
+## Agents and Tool-Based Workflows {#e2-agents-tools}
+
+Complete a defined task through tool use while keeping execution understandable and testable.
+
+**Before you start:** [Software Engineering for AI](/draft/softlanding/core-systems/software-engineering#r1), [LLM Applications](/draft/softlanding/core-systems/llm-applications#r4), and API basics from [APIs, Containers & Deployment](/draft/softlanding/core-systems/apis-containers-deployment#r6).
+
+### Learn
+
+- Distinguish a predefined workflow from an agent that chooses actions.
+- Define tools with clear inputs, outputs, validation, and failure behavior.
+- Manage context, intermediate state, step/time limits, and recovery.
+- Use scoped permissions and explicit approval points for actions that need them.
+- Understand MCP's role in connecting applications to tools and data.
+
+### Resources
+
+<ResourceCard
+  showFullDescription
+  title="Anthropic: Building Effective Agents"
+  url="https://www.anthropic.com/engineering/building-effective-agents"
+  type="article"
+  description="Required within this elective. Focus on choosing a simple design and defining tools."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="Hugging Face: AI Agents Course"
+  url="https://huggingface.co/learn/agents-course/en/unit0/introduction"
+  type="course"
+  description="Required within this elective. Study Unit 1 and one relevant framework section. Adapt its examples into a bounded task."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="Model Context Protocol: Introduction"
+  url="https://modelcontextprotocol.io/docs/getting-started/intro"
+  type="documentation"
+  description="Required within this elective. Explain client/server roles and tool integration. Implement a small read-only MCP integration if it fits your project."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="Anthropic: Demystifying evals for AI agents"
+  url="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+  type="article"
+  description="Required within this elective. Test final task outcomes as well as tool calls and traces."
+/>
+
+### Practice
+
+- Choose a bounded task, such as searching approved records and producing a validated report.
+- Implement tools and a workflow or agent; log calls and enforce stopping limits.
+- Test invalid arguments, unavailable tools, repeated actions, and incomplete tasks.
+- Compare with a simple baseline and explain whether agentic control improves the result.
+
+### Expected output
+
+A working tool-based workflow, an evaluation set, execution traces, and a design explanation. An MCP implementation can deepen this elective; a framework certificate alone does not complete it.
+
+### Workload
+
+Workload estimate pending pilot. Include practice, debugging, review, and revision in your study time.
+
+### Submission evidence and completion checks
+
+Keep the expected output, runnable instructions, test/evaluation results where applicable, and your explanation of a meaningful failure. Submit through review and record the resulting revision. Explain your approach and diagnose a relevant failure during review. Revise incomplete evidence after feedback; resource completion alone does not establish competence.
+
+## Model Adaptation and Experimentation {#e3-model-adaptation}
+
+Determine whether adapting a pretrained model improves a defined task.
+
+**Before you start:** [applied ML](/draft/softlanding/core-systems/applied-ml-deep-learning#r2) and [deep learning](/draft/softlanding/core-systems/applied-ml-deep-learning#r3); use [LLM Applications](/draft/softlanding/core-systems/llm-applications#r4) for LLM-oriented projects.
+
+### Learn
+
+- Transfer learning and fine-tuning; select a model and dataset appropriate to the task and available compute.
+- Prepare data, preserve an untouched test set, and establish the pretrained baseline.
+- Track configurations, metrics, artifacts, and reproducible run information.
+- Compare quality and resource use, and analyze regressions.
+
+### Resources
+
+<ResourceCard
+  showFullDescription
+  title="Hugging Face LLM Course: Fine-tuning a pretrained model"
+  url="https://huggingface.co/learn/llm-course/en/chapter3/1"
+  type="course"
+  description="Required within this elective. Follow the chapter's hands-on sequence to adapt a small model. A modest classification task is sufficient."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="MLflow: Experiment Tracking"
+  url="https://mlflow.org/docs/latest/ml/tracking/"
+  type="article"
+  description="Required within this elective. Record parameters, metrics, and artifacts locally."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="UvA Tutorial 2: Introduction to PyTorch"
+  url="https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial2/Introduction_to_PyTorch.html"
+  type="tutorial"
+  description="Required within this elective. Revisit model structure, autograd, and training/evaluation behavior as needed."
+/>
+
+### Practice
+
+- Evaluate the unchanged pretrained model on a fixed task.
+- Adapt it using a manageable training run and record at least two useful configuration comparisons.
+- Compare on the same evaluation data, inspect improvements and regressions, and preserve the resulting model artifact.
+- Reproduce inference from the saved artifact without rerunning training.
+
+### Expected output
+
+A baseline comparison, tracked experiments, a model artifact, and a short adaptation report. An improvement is not guaranteed: a well-supported explanation of a failed adaptation demonstrates useful engineering judgment.
+
+### Workload
+
+Workload estimate pending pilot. Include practice, debugging, review, and revision in your study time.
+
+### Submission evidence and completion checks
+
+Keep the expected output, runnable instructions, test/evaluation results where applicable, and your explanation of a meaningful failure. Submit through review and record the resulting revision. Explain your approach and diagnose a relevant failure during review. Revise incomplete evidence after feedback; resource completion alone does not establish competence.
+
+## Backend Architecture and Data Systems {#e4-backend-data}
+
+Extend an AI service with reliable persistence and background work.
+
+**Before you start:** [Software Engineering for AI](/draft/softlanding/core-systems/software-engineering#r1), [Systems, Networking & Data](/draft/softlanding/core-systems/systems-networking-data#r5), [APIs, Containers & Deployment](/draft/softlanding/core-systems/apis-containers-deployment#r6), and Engineering Fundamentals SQL.
+
+### Learn
+
+- Relational schema design, constraints, transactions, indexes, and query inspection.
+- Separate request handling from a background task; track job state and handle retries.
+- Use caching deliberately and explain invalidation or expiry.
+- Define clear responsibilities between API, inference, database, and worker components.
+
+### Resources
+
+<ResourceCard
+  showFullDescription
+  title="PostgreSQL: Tutorial"
+  url="https://www.postgresql.org/docs/current/tutorial.html"
+  type="tutorial"
+  description="Required within this elective. Focus on tables, queries, joins, updates, foreign keys, and transactions. Extend into indexes for your own queries."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="Celery: First Steps"
+  url="https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html"
+  type="documentation"
+  description="Required within this elective. Use the runnable worker example: implement one background task and inspect completion/failure."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="Redis: Quick Starts"
+  url="https://redis.io/docs/latest/develop/get-started/"
+  type="article"
+  description="Required within this elective. Use Python access and an expiring cache for one suitable operation."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="FastAPI: Tutorial — User Guide"
+  url="https://fastapi.tiangolo.com/tutorial/"
+  type="tutorial"
+  description="Required within this elective. Use current reference sections for the API and dependencies around your data layer."
+/>
+
+### Practice
+
+- Persist requests, results, or jobs in PostgreSQL using constraints suited to the data.
+- Move a slow operation to a worker and expose a way to inspect its status.
+- Make retry behavior safe for your chosen operation and test a failed job.
+- Add one justified cache or index and compare behavior before and after.
+
+### Expected output
+
+A service with a database and worker, a system diagram, tests for a meaningful failure path, and an explanation of the chosen schema and performance change.
+
+### Workload
+
+Workload estimate pending pilot. Include practice, debugging, review, and revision in your study time.
+
+### Submission evidence and completion checks
+
+Keep the expected output, runnable instructions, test/evaluation results where applicable, and your explanation of a meaningful failure. Submit through review and record the resulting revision. Explain your approach and diagnose a relevant failure during review. Revise incomplete evidence after feedback; resource completion alone does not establish competence.
+
+## Delivery, Monitoring, and MLOps {#e5-delivery-mlops}
+
+Make changes observable and releases recoverable.
+
+**Before you start:** [Software Engineering for AI](/draft/softlanding/core-systems/software-engineering#r1), [Systems, Networking & Data](/draft/softlanding/core-systems/systems-networking-data#r5), [APIs, Containers & Deployment](/draft/softlanding/core-systems/apis-containers-deployment#r6); [ML evaluation](/draft/softlanding/core-systems/applied-ml-deep-learning#r2) and [LLM evaluation](/draft/softlanding/core-systems/llm-applications#r4) provide the evaluation for your AI component.
+
+### Learn
+
+- Extend automated tests into a release workflow.
+- Version application releases and model or prompt artifacts.
+- Observe request latency, errors, and AI behavior using logs, metrics, and traces.
+- Keep software regression tests and model/LLM evaluation visible.
+- Deploy a new release, detect a failure, and restore a known working version.
+
+### Resources
+
+<ResourceCard
+  showFullDescription
+  title="GitHub Actions: Building and testing Python"
+  url="https://docs.github.com/en/actions/tutorials/build-and-test-code/python"
+  type="documentation"
+  description="Required within this elective. Extend the APIs, Containers & Deployment module's basic workflow into build/release checks appropriate to your environment."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="Docker 101 Tutorial"
+  url="https://www.docker.com/101-tutorial/"
+  type="tutorial"
+  description="Required within this elective. Reuse image-building skills and apply explicit release tags."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="OpenTelemetry Python: Getting Started by Example"
+  url="https://opentelemetry.io/docs/languages/python/getting-started/"
+  type="article"
+  description="Required within this elective. Instrument a small service and inspect a request trace."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="MLflow: Experiment Tracking"
+  url="https://mlflow.org/docs/latest/ml/tracking/"
+  type="article"
+  description="Required within this elective. Connect model artifacts and evaluation results to a versioned run. LLM projects can instead version their prompts/configuration and evaluation results."
+/>
+
+### Practice
+
+- Automate tests and build an identifiable release artifact.
+- Record latency and error behavior for a normal request and an induced failure.
+- Deploy an updated release, verify its behavior, and demonstrate restoration of the previous working version.
+- Rerun the same AI evaluation after a model or prompt change and report regressions.
+
+### Expected output
+
+A release workflow, an observable service, a versioned evaluation record, and a demonstrated recovery procedure. Use one environment; the learning outcome is a reliable delivery process.
+
+### Workload
+
+Workload estimate pending pilot. Include practice, debugging, review, and revision in your study time.
+
+### Submission evidence and completion checks
+
+Keep the expected output, runnable instructions, test/evaluation results where applicable, and your explanation of a meaningful failure. Submit through review and record the resulting revision. Explain your approach and diagnose a relevant failure during review. Revise incomplete evidence after feedback; resource completion alone does not establish competence.
+
+## Finish this module {#completion}
+
+Complete two sections and submit the evidence required by each. Keep their results and explanations separate, even when both use the same project. Revise incomplete work after review.
+
+</DraftModule>

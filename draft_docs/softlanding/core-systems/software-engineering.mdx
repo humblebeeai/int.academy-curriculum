@@ -1,0 +1,107 @@
+---
+title: "Software Engineering for AI"
+sidebar_label: "1. Software Engineering for AI"
+sidebar_position: 1
+toc_max_heading_level: 3
+---
+
+import { ResourceCard, DraftModule, ModuleIntro, SkillShowcase, SectionLinks } from "@site/src/components";
+
+import moduleImage from "../../assets/images/software_eng.png";
+
+# Software Engineering for AI
+
+<DraftModule>
+
+<ModuleIntro
+  stageLabel="Core Systems"
+  stageHref="/draft/softlanding/core-systems"
+  moduleNumber={1}
+  kind="required"
+  icon="Code2"
+  summary="Build code that is understandable, testable, and easy for someone else to run. Keep applying these habits throughout Core Systems."
+  image={{ src: moduleImage, alt: "Illustration of application components and a build, test, deploy, and monitor workflow.", width: 1536, height: 1024 }}
+/>
+
+<SkillShowcase decorativeIcons skills={[{"iconString": "Code", "title": "Structure your project", "description": "Separate application logic, configuration, and tests."}, {"iconString": "TestTube", "title": "Verify behavior", "description": "Test normal cases and meaningful failures."}, {"iconString": "GitBranch", "title": "Collaborate and review", "description": "Use pull requests and verify AI-assisted changes."}]} />
+
+
+<SectionLinks items={[{"title": "Learn", "href": "#learn"}, {"title": "Resources", "href": "#resources"}, {"title": "Practice", "href": "#practice"}, {"title": "What to submit", "href": "#expected-output"}]} />
+
+## Engineering workflow {#r1}
+
+make your code understandable, testable, and easy for someone else to run.
+
+**Before you start:** Engineering Fundamentals Python, Git, terminal, and debugging skills.
+
+### Learn
+
+- Separate data preparation, model/inference logic, application code, and tests.
+- Manage dependencies and configuration; keep credentials outside committed code.
+- Write focused functions, meaningful names, useful errors, and logs that help diagnosis.
+- Use unit and integration tests to check behavior, including invalid inputs.
+- Work through issues, branches, pull requests, and review feedback.
+- Use a coding assistant with a clear task, relevant repository context, and acceptance criteria; inspect its diff and verify the result.
+
+### Resources
+
+<ResourceCard
+  showFullDescription
+  title="Clean Code: A Handbook of Agile Software Craftsmanship"
+  url="https://www.oreilly.com/library/view/clean-code/9780136083238/"
+  type="book"
+  description="Further reading. If access is available. Focus on chapters 2, 3, 4, 7, and 9 for naming, functions, comments, error handling, and tests. Free resources below support the required practice."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="uv: Working on projects"
+  url="https://docs.astral.sh/uv/guides/projects/"
+  type="documentation"
+  description="Required. Create a project, add dependencies, and run it in a reproducible environment."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="pytest: Get Started"
+  url="https://docs.pytest.org/en/stable/getting-started.html"
+  type="documentation"
+  description="Required. Write tests and assertions, then use fixtures where shared setup is needed."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="GitHub: Reviewing and testing AI-generated suggestions"
+  url="https://docs.github.com/en/copilot/responsible-use/inline-suggestions"
+  type="documentation"
+  description="Required. Focus on intended uses, limitations, and verification. Apply the principles to your available coding assistant."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="LeetCode: Programming Skills"
+  url="https://leetcode.com/studyplan/programming-skills/"
+  type="article"
+  description="Further reading. For specific implementation gaps. This does not replace the project task."
+/>
+
+### Practice
+
+- Refactor a notebook into a small Python project with a documented command to run it.
+- Write tests for normal inputs, boundary cases, and a realistic failure.
+- Implement one bounded change using an AI assistant. Review each changed file, test the result, and record an issue you corrected or a suggestion you rejected.
+- Submit the change through a pull request and respond to review.
+
+### Expected output
+
+A runnable repository, meaningful tests, setup instructions, and a reviewed change. You can explain the code and fix a bug during discussion. If a coding assistant is unavailable, review a mentor-provided generated patch and complete the same verification task.
+
+## Workload
+
+Use the provisional estimates where supplied. Other workloads remain pending pilot. Include implementation, debugging, review, and revision.
+
+## Finish this module
+
+Keep the required outputs and explain your decisions. Diagnose a relevant failure during review and revise incomplete evidence after feedback. Resource completion supports progress; the stated practical requirements determine completion.
+
+</DraftModule>

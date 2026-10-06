@@ -11,9 +11,10 @@ export interface Skill {
 
 export interface SkillShowcaseProps {
   skills: Skill[];
+  decorativeIcons?: boolean;
 }
 
-export default function SkillShowcase({ skills }: SkillShowcaseProps) {
+export default function SkillShowcase({ skills, decorativeIcons = false }: SkillShowcaseProps) {
   return (
     <div className={styles.grid}>
       {skills.map((skill, index) => {
@@ -24,7 +25,7 @@ export default function SkillShowcase({ skills }: SkillShowcaseProps) {
         return (
           <div key={index} className={styles.card}>
             <div className={styles.iconWrapper}>
-              <IconComponent size={24} strokeWidth={2.5} />
+              <IconComponent aria-hidden={decorativeIcons || undefined} size={24} strokeWidth={2.5} />
             </div>
 
             <h4 className={styles.title}>{skill.title}</h4>

@@ -1,0 +1,197 @@
+---
+title: "Data Foundations"
+sidebar_label: "3. Data Foundations"
+sidebar_position: 4
+toc_max_heading_level: 2
+---
+
+import { ResourceCard, DraftModule, ModuleIntro, SkillShowcase, SectionLinks } from "@site/src/components";
+
+import moduleImage from "../assets/images/data_engineering.png";
+
+# Data Foundations
+
+<DraftModule>
+
+<ModuleIntro
+  stageLabel="Engineering Fundamentals"
+  stageHref="/draft/engineering-fundamentals"
+  moduleNumber={3}
+  kind="required"
+  icon="Database"
+  summary="Turn raw data into something you can query, analyze, and explain. Begin with NumPy, then work through cleaning, SQL, and exploratory analysis."
+  image={{ src: moduleImage, alt: "Illustration of raw data moving through preparation steps into a data pipeline.", width: 1536, height: 1024 }}
+/>
+
+<SkillShowcase decorativeIcons skills={[{"iconString": "Database", "title": "Prepare data", "description": "Inspect and transform arrays and clean tabular datasets."}, {"iconString": "Search", "title": "Query data", "description": "Answer analytical questions with joins, CTEs, and window functions."}, {"iconString": "BarChart3", "title": "Communicate findings", "description": "Create clear charts and explain evidence and limitations."}]} />
+
+
+<SectionLinks items={[{"title": "NumPy Foundations", "href": "#numpy"}, {"title": "Pandas and Data Cleaning", "href": "#pandas-cleaning"}, {"title": "SQL", "href": "#sql"}, {"title": "Exploratory Analysis and Visualization", "href": "#exploratory-analysis"}]} />
+
+## NumPy Foundations {#numpy}
+
+### Before you start
+
+Basic Python and environment setup.
+
+### What you’ll learn
+
+- Creating and inspecting arrays
+- Shapes, dimensions, sizes, and data types
+- Indexing and slicing
+- Boolean masks
+- Reshaping and transposing
+- Broadcasting
+- Vectorized operations
+- Aggregations and the axis parameter
+
+### Learn and practise
+
+<ResourceCard
+  showFullDescription
+  title="NumPy: The Absolute Basics for Beginners"
+  url="https://numpy.org/doc/stable/user/absolute_beginners.html"
+  type="documentation"
+  description="Required. Complete this introductory guide, covering array creation, shapes, indexing, and basic operations before the linear algebra notebooks."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="CodeSignal: NumPy Basics"
+  url="https://codesignal.com/learn/courses/numpy-basics"
+  type="course"
+  description="Required. Complete the course and its practice exercises; demonstrate filtering, reshaping, transforming, and summarizing multidimensional arrays."
+/>
+
+### What you’ll build
+
+You can filter, reshape, transform, and summarize multidimensional data using NumPy without unnecessary Python loops.
+
+## Pandas and Data Cleaning {#pandas-cleaning}
+
+### Before you start
+
+Basic Python, environment setup, and introductory NumPy.
+
+### What you’ll learn
+
+- Series and DataFrames
+- Loading and exporting tabular data
+- Inspecting rows, columns, and data types
+- Selecting, filtering, and sorting
+- Grouping and aggregation
+- Missing values
+- Duplicate records
+- Incorrect data types
+- Inconsistent categories
+- Creating and transforming columns
+- Merging and concatenating datasets
+
+### Learn and practise
+
+<ResourceCard
+  showFullDescription
+  title="Kaggle Learn: Pandas"
+  url="https://www.kaggle.com/learn/pandas"
+  type="course"
+  description="Required. Complete the course and all exercises, including selection, grouping, aggregation, and combining tabular data."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="Kaggle Learn: Data Cleaning"
+  url="https://www.kaggle.com/learn/data-cleaning"
+  type="course"
+  description="Required. Complete the course and all exercises; produce an analysis-ready dataset and explain important cleaning decisions."
+/>
+
+### What you’ll build
+
+You can identify data-quality problems, produce an analysis-ready dataset, and explain every important cleaning decision.
+
+## SQL {#sql}
+
+### Before you start
+
+Basic data-handling concepts; no database experience is required.
+
+### What you’ll learn
+
+- Relational tables and keys
+- SELECT, aliases, and calculated columns
+- WHERE and ORDER BY
+- Aggregate functions
+- GROUP BY and HAVING
+- Inner and outer joins
+- Subqueries
+- Common table expressions
+- CASE
+- NULL handling
+- Basic window functions
+- Indexing intuition
+
+### Learn and practise
+
+<ResourceCard
+  showFullDescription
+  title="SQLTutorial.org"
+  url="https://www.sqltutorial.org/"
+  type="tutorial"
+  description="Required. Work through the tutorial, including examples and quizzes for the SQL topics listed in this section."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="HackerRank SQL"
+  url="https://www.hackerrank.com/domains/sql"
+  type="practice"
+  description="Required. Practise the Basic and Intermediate SQL challenges."
+/>
+
+### What you’ll build
+
+You can answer analytical questions involving filtering, aggregation, joins, CTEs, conditional logic, and window functions.
+
+## Exploratory Analysis and Visualization {#exploratory-analysis}
+
+### Before you start
+
+Pandas and data cleaning, plus core descriptive statistics.
+
+### What you’ll learn
+
+- Understanding what rows and columns represent
+- Inspecting dataset structure and quality
+- Descriptive statistics
+- Distributions and unusual values
+- Outlier investigation
+- Relationships between variables
+- Comparing groups
+- Selecting appropriate chart types
+- Histograms, bar charts, line charts, and scatter plots
+- Labels, titles, legends, and readable presentation
+- Communicating findings and limitations
+
+### Learn and practise
+
+<ResourceCard
+  showFullDescription
+  title="Kaggle Learn: Data Visualization"
+  url="https://www.kaggle.com/learn/data-visualization"
+  type="course"
+  description="Required. Complete the course, including its exercises and final project; communicate findings and limitations through readable charts."
+/>
+
+### What you’ll build
+
+Produce a concise exploratory analysis containing appropriate visualizations, evidence-supported findings, and clearly stated limitations.
+
+## Workload
+
+Use the provisional estimates where supplied. Other workloads remain pending pilot. Include implementation, debugging, review, and revision.
+
+## Finish this module
+
+Keep the required outputs and explain your decisions. Diagnose a relevant failure during review and revise incomplete evidence after feedback. Resource completion supports progress; the stated practical requirements determine completion.
+
+</DraftModule>
