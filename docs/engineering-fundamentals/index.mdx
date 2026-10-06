@@ -1,117 +1,101 @@
 ---
+title: "Engineering Fundamentals"
+sidebar_label: "Engineering Fundamentals"
 sidebar_position: 1
-title: Introduction
-description: Build your engineering fundamentals from the ground up
+toc_max_heading_level: 2
 ---
 
-import { TimeEstimate } from "@site/src/components";
-import {
-  GraduationCap,
-  Target,
-  AlertTriangle,
-  Layers,
-  Clock,
-  Rocket,
-  HelpCircle,
-  Brain,
-  Calculator,
-  BarChart3,
-  Database,
-  Terminal,
-  GitBranch,
-  Puzzle,
-  Cpu,
-  ExternalLink,
-} from "lucide-react";
+import { CurriculumModule, ModuleGrid } from "@site/src/components";
 
 # Engineering Fundamentals
 
-## Prerequisites to Join Engineering Fundamentals
+<CurriculumModule>
 
-| Module      | Section                       | Learning Source                                                              | Public Testing Source                                                                                                          |
-| ----------- | ----------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| English     | Language Proficiency          | CEFR-aligned English curriculum                                              | CEFR B2-equivalent exam (IELTS / TOEFL / Cambridge)                                                                            |
-| Mathematics | Foundational Math Proficiency | Middle-school level mathematics                                              | Not available                                                                                                                  |
-| Programming | Python Fundamentals           | [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/) | [HackerRank Python (Basic) Certification <ExternalLink size={12} />](https://www.hackerrank.com/skills-directory/python_basic) |
+Build the skills you’ll use throughout AI engineering: write and debug Python, work with other developers, understand the mathematics, and prepare data for analysis.
 
----
+**Start with [Terminal & Algorithmic Basics](/docs/engineering-fundamentals/terminal-algorithmic-basics).** If you’re new to the curriculum, check the entry requirements below first.
 
-## <Target /> What You're Building Here
+## Your learning path {#modules}
 
-Welcome to the starting line of your AI engineering journey. If you're here, you likely fall into one of these categories:
+Complete these three modules. Each page links to its learning resources, practice tasks, and completion requirements.
 
-- **Complete beginner** - You've never written code before
-- **Self-taught coder** - You know some Python but have gaps in fundamentals
-- **Career changer** - Coming from a non-technical background
-- **CS student** - Want to transition specifically into AI engineering
+<ModuleGrid items={[{"title": "Terminal & Algorithmic Basics", "href": "/docs/engineering-fundamentals/terminal-algorithmic-basics", "kind": "required", "icon": "Terminal", "outcome": "Use the terminal, set up Python, collaborate with Git, debug code, and solve algorithmic problems.", "number": 1}, {"title": "Math for AI", "href": "/docs/engineering-fundamentals/math-for-ai", "kind": "required", "icon": "Calculator", "outcome": "Use vectors and matrices in AI computations, reason about probability, and interpret statistical evidence.", "number": 2}, {"title": "Data Foundations", "href": "/docs/engineering-fundamentals/data-manipulation", "kind": "required", "icon": "Database", "outcome": "Prepare and query data with NumPy, Pandas, and SQL; explain findings with clear visualizations.", "number": 3}]} />
 
-**No matter where you're starting from, this phase will give you the bedrock skills that every professional AI engineer needs.**
-
----
-
-## <AlertTriangle /> The Hard Truth About Basics
-
-### Why Most People Skip This (And Regret It Later)
-
-I get it. You want to jump straight to training neural networks. You see job postings asking for "PyTorch, TensorFlow, LLMs" and think: _"Why am I learning command line basics?"_
-
-**Here's what happens if you skip foundations:**
-
-**Month 3:** Your model training fails. The error message says "CUDA out of memory."
-You have no idea what that means or how to debug it.
-
-**Month 6:** You need to preprocess 10GB of text data.
-Your Python script crashes. You don't know how to profile memory or optimize loops.
-
-**Month 9:** You're in a technical interview. They ask you to explain backpropagation.
-You've used PyTorch's `.backward()` but can't explain what's mathematically happening.
-
-**The result?** You become a "prompt engineer" who can use AI tools but can't build or debug them. That's not the engineer companies pay $150K+ to hire.
-
-:::tip The Compounding Effect of Foundations
-
-**Every hour invested in Engineering Fundamentals saves you 10 hours of frustration in Soft Landing.**
-
-Think of it like building a house. You can't start with the walls if the foundation is cracked. These fundamentals aren't "boring basics" – they're the difference between:
-
-- **Copying code from Stack Overflow** vs. **Understanding how to fix it**
-- **Following tutorials blindly** vs. **Building systems from scratch**
-- **Getting stuck for days** vs. **Debugging in minutes**
-
-Senior engineers aren't "smarter" – they just have rock-solid fundamentals.
-
+:::tip Where to begin
+Start with the developer tools in Module 1. Study the introductory [NumPy section](/docs/engineering-fundamentals/data-manipulation#numpy) before the linear algebra notebooks in Math for AI. You can continue algorithm practice alongside the other modules.
 :::
 
----
+## Before you start {#prerequisites}
 
-## <Clock /> Time Commitment & Expectations
+You need basic Python, foundational algebra, and enough English to follow technical instructions. You do not need calculus or prior experience with data libraries.
 
-<TimeEstimate
-  minHours={150}
-  maxHours={210}
-  breakdownBy={{
-    "Terminal & Algorithmic Basics": 18,
-    "Linear Algebra": 70,
-    "Probability & Statistics": 75,
-    "Data Manipulation": 25,
-  }}
-/>
+<details>
+<summary>Check your entry skills</summary>
 
----
 
-## <HelpCircle /> Are You Ready?
+#### Basic Python Programming
 
-### Self-Assessment Checklist
+Before starting the stage, learners should be able to:
 
-Confirm you are ready to commit before startup.
+- Use variables, common data types and basic operators.
+- Write conditional statements and loops.
+- Define functions with parameters and return values.
+- Work with lists, dictionaries, sets and strings.
+- Import and use a Python module.
+- Run, modify and explain a short Python program.
 
-- [ ] I can commit at least 10 hours/week for the next 3-6 months.
-- [ ] I am willing to struggle through confusion before breakthroughs happen.
-- [ ] I will seek help when stuck (Discord, documentation) rather than giving up.
-- [ ] I accept this will feel hard initially, and that is normal.
+Advanced algorithms, object-oriented design and experience with data libraries are not entry requirements.
 
----
+#### Foundational Mathematics
 
-## <Rocket /> Begin Your Journey
+Learners should be comfortable with:
 
-If you are ready to begin, use the **Next** button at the bottom of the page to proceed to Module 1.
+- Arithmetic, fractions, decimals and percentages.
+- Ratios, powers and square roots.
+- Variables and algebraic expressions.
+- Rearranging and solving simple linear equations.
+- Reading coordinates and simple graphs.
+
+Calculus is not required. Linear algebra, probability and statistics are developed during the stage.
+
+#### English Reading
+
+You should be able to follow written instructions, understand programming problem statements and use introductory documentation in English. You may use a dictionary to clarify unfamiliar vocabulary.
+
+#### Readiness Verification
+
+A short Python exercise and foundational mathematics check should confirm readiness. Learners should explain their approach and adapt a solution when given a small change.
+
+Identified gaps should be addressed through preparatory practice before beginning the modules that depend on those skills.
+
+#### Preparation Within the Stage
+
+Before beginning the linear algebra notebooks, learners must complete introductory NumPy topics covering array creation, shapes, dimensions, indexing and basic array operations.
+
+This preparation is part of Engineering Fundamentals. Terminal skills, Git, debugging, Pandas, SQL and the remaining NumPy topics are also taught within the stage.
+
+
+</details>
+
+A short Python exercise and mathematics check confirm readiness. Address any gaps before starting the modules that depend on them.
+
+<span id="optional-modules" />
+
+## Electives {#electives}
+
+Choose an elective when you want to explore a skill further. Start after completing its prerequisites. Complete exactly two electives to finish Engineering Fundamentals.
+
+<ModuleGrid items={[{"title": "Electives · Choose two", "href": "/docs/engineering-fundamentals/electives", "kind": "elective", "icon": "SlidersHorizontal", "outcome": "Explore 6 choices and complete two. Each section includes prerequisites, resources, practice, and completion requirements."}]} />
+## Finish this stage {#completion}
+
+Complete all three required modules and two electives. Keep your code, notebooks, explanations, and assessment results ready for review. Demonstrate the skills on each module page and revise any gaps after feedback.
+
+Statistics requires at least 80% on every assigned unit test and a separate Academy verification. Other modules use their stated practical requirements; there is no overall percentage score.
+
+**Next stage:** [Core Systems](/docs/softlanding/core-systems).
+
+## Plan your study time
+
+Include time for practice, debugging, feedback, and revision. Estimates supplied in the guide are provisional; other workloads remain pending pilot. Agree a schedule with your cohort or mentor.
+
+</CurriculumModule>

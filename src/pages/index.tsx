@@ -256,7 +256,7 @@ function AboutSection() {
               <ul className={styles.aboutList}>
                 <li>
                   <CheckCircle size={16} />A structured AI learning roadmap with
-                  curated references and optional projects.
+                  curated references, practical work, and an integrated AI service project.
                 </li>
               </ul>
 

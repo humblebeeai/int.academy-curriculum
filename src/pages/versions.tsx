@@ -22,11 +22,6 @@ export default function CurriculumVersionHistory(): ReactNode {
           Otherwise, it opens the selected version&apos;s curriculum home page.
         </p>
 
-        <p>
-          The <a href="/draft">Draft curriculum</a> is an editable proposal for
-          review. Its requirements may change; it is separate from Current and
-          the dated snapshots below.
-        </p>
 
         <h2>Available snapshots</h2>
         <div className="table-responsive">

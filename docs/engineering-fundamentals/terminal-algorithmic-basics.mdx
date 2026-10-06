@@ -1,194 +1,314 @@
 ---
+title: "Terminal & Algorithmic Basics"
+sidebar_label: "1. Terminal & Algorithmic Basics"
 sidebar_position: 2
-sidebar_label: 1. Terminal & Algorithmic Basics
-title: Module 1 - Terminal & Algorithmic Basics
-description: CLI, Git, and Algorithms
+toc_max_heading_level: 2
 ---
 
-import {
-  SkillShowcase,
-  DifficultyTag,
-  TimeEstimate,
-  ResourceCard,
-} from "@site/src/components";
-import { Skill } from "@site/src/components/doc-components/SkillShowcase";
-import {
-  Cpu,
-  Target,
-  ListChecks,
-  TerminalSquare,
-  BrainCircuit,
-  ClipboardCheck,
-  FileText,
-  ExternalLink,
-} from "lucide-react";
+import { ResourceCard, CurriculumModule, ModuleIntro, SkillShowcase, SectionLinks } from "@site/src/components";
 
-# Module 1: The Developer's Environment
+# Terminal & Algorithmic Basics
 
-:::tip From the Curriculum Team
-We built this after watching 500+ students go from "What's a terminal?" to deploying production ML systems. These aren't random topics—they're the exact bottlenecks that stop people from becoming senior engineers.
-:::
+<CurriculumModule>
 
-## <Target /> By the End of This Module...
-
-<SkillShowcase
-  skills={[
-    {
-      iconString: "Terminal",
-      title: "Command Line Fluency",
-      description:
-        "Navigate servers, manage files, and run scripts on remote machines without needing a mouse.",
-    },
-    {
-      iconString: "BrainCircuit",
-      title: "Algorithmic Logic",
-      description:
-        "Break down complex problems into step-by-step logic that computers can execute efficiently.",
-    },
-    {
-      iconString: "Wrench",
-      title: "Pro Environment",
-      description:
-        "Set up a professional IDE environment with the right tools and extensions for Python and Data Science.",
-    },
-  ]}
+<ModuleIntro
+  stageLabel="Engineering Fundamentals"
+  stageHref="/docs/engineering-fundamentals"
+  moduleNumber={1}
+  kind="required"
+  icon="Terminal"
+  summary="Learn the tools and reasoning you’ll use throughout the curriculum. Set up your workspace, practise Git and debugging, and keep solving algorithmic problems alongside the other modules."
 />
 
-<TimeEstimate
-  minHours={15}
-  maxHours={20}
-  breakdownBy={{
-    "Environment Setup": 4,
-    "Command Line Practice": 6,
-    "HackerRank Algorithmic Logic": 10,
-  }}
-/>
+<SkillShowcase decorativeIcons skills={[{"iconString": "Terminal", "title": "Use your workspace", "description": "Navigate files, set up Python, and run your code."}, {"iconString": "GitBranch", "title": "Work with others", "description": "Use branches, pull requests, and review feedback."}, {"iconString": "Code", "title": "Solve and debug", "description": "Explain solutions, check edge cases, and repair failures."}]} />
 
----
 
-## <TerminalSquare /> 1. Setup & Command Line Interface
+<SectionLinks items={[{"title": "Terminal and Filesystem", "href": "#terminal"}, {"title": "Python Environment Setup", "href": "#environment-setup"}, {"title": "Git and GitHub", "href": "#git-github"}, {"title": "Debugging Fundamentals", "href": "#debugging"}, {"title": "Algorithms and Problem Solving", "href": "#algorithms"}]} />
 
-### <Cpu size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> Development Environment Setup
+## Terminal and Filesystem {#terminal}
 
-Your Integrated Development Environment (IDE) is your primary workspace for writing, debugging, and organizing code. We recommend Visual Studio Code for its versatility and extensive customization.
+### Before you start
 
-- **VS Code** offers versatility and extensive customization with thousands of extensions for Python, data science, and general development.
+Navigate and manipulate a local filesystem. No terminal experience is required.
+
+### Learn and practise
 
 <ResourceCard
-  type="video"
-  title="Learn Visual Studio Code in 7min (Official Beginner Tutorial)"
-  url="https://youtu.be/B-s71n0dHUk?si=S0-nl3st-pLDTp3Y"
-  duration="7 min"
-  difficulty="beginner"
-  why="Official beginner tutorial for setting up and using Visual Studio Code."
-/>
-
-<ResourceCard
-  type="video"
-  title="Using Git with Visual Studio Code (Official Beginner Tutorial)"
-  url="https://youtu.be/i_23KUAEtUM?si=b49o7Gn-wydlN3p-"
-  duration="10 min"
-  difficulty="beginner"
-  why="Official tutorial for using Git version control with Visual Studio Code."
-/>
-
-:::note Why This Matters (Real Talk)
-You might be tempted to skip the command line module and rely solely on your IDE's GUI. **Don't.** When your model breaks on a remote GPU server at 2 AM, the terminal is your only friend.
-:::
-
-**Your Mission:**
-
-1. Install Visual Studio Code.
-2. Install **Required Extensions/Tools**: Python support, Jupyter integration, Git integration.
-3. Install **Recommended**: Linting tools, error highlighting, and AI assistance features if available.
-
-- [ ] Professional IDE installed and configured with essential extensions.
-
----
-
-### <TerminalSquare size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> Command Line Mastery
-
-<ResourceCard
-  type="video"
-  title="Intro to BASH // Command Line for Beginners"
-  url="https://www.youtube.com/watch?v=cgVbqxtx3hU"
-  duration="6 min"
-  difficulty="beginner"
-  why="Quick introduction to essential command line basics before diving into comprehensive practice."
-/>
-
-<ResourceCard
-  type="course"
-  title="Linux Journey - Command Line"
+  showFullDescription
+  title="Linux Journey: Command Line"
   url="https://labex.io/linuxjourney/courses/command-line"
-  duration="3-4 hours"
-  difficulty="beginner"
-  why="Hands-on walkthrough of core commands you'll use daily on servers: navigation, file ops, and permissions."
+  type="practice"
+  description="Required. Complete the assigned lessons and practice in this section."
 />
 
-**Why It's Critical:**
-Commands learned here work on Linux servers (where 99% of AI models run), Mac terminals, and Windows WSL.
+- The Shell
+- pwd
+- cd
+- ls
+- touch
+- file
+- cat
+- less
+- history
+- cp
+- mv
+- mkdir
+- rm
+- find
+- help
+- man
+- whatis
+- alias
+- exit
 
-<div className="difficulty-tags-center">
-  <DifficultyTag level="beginner" time="2 hours">
-    Navigation (cd, ls)
-  </DifficultyTag>
-  <DifficultyTag level="intermediate" time="4 hours">
-    File Ops (cp, mv, rm)
-  </DifficultyTag>
-  <DifficultyTag level="advanced" time="2 hours">
-    Permissions (chmod)
-  </DifficultyTag>
-</div>
+Completion requires doing the interactive exercises, not only reading the lessons.
 
-**Action Plan:**
+We won’t add permissions, grep, pipelines, process management, or other Linux topics to this unit unless another module specifically requires them. Estimated time: 3–4 hours.
 
-1. Complete **"Command Line"** (Lessons 1-8)
+## Python Environment Setup {#environment-setup}
 
-:::caution Common Trap (rm -rf)
-Be very careful with `rm -rf`. It deletes everything forever. Always use `ls` first to see where you are before deleting.
-:::
+### Before you start
 
-:::tip Self-Check (Practical Skills)
-Linux Journey includes **built-in labs** for each lesson.
-If you can complete those labs without hints, you already have real command-line skills.
-:::
+Run Python scripts and notebooks in an isolated environment. Complete terminal basics first; you should already be able to explain a short Python program.
 
-- [ ] Completed "Command Line" lessons 1-8.
-
----
-
-## <BrainCircuit /> 2. Algorithmic Thinking
-
-### <ListChecks size={16} style={{ verticalAlign: 'text-bottom', marginRight: '0.35rem' }} /> Problem-Solving Fundamentals
+### Learn and practise
 
 <ResourceCard
-  type="practice"
-  title="HackerRank: Problem Solving (Intermediate)"
-  url="https://www.hackerrank.com/skills-directory/problem_solving_intermediate"
-  duration="4-6 hours"
-  difficulty="intermediate"
-  why="Structured practice to build algorithmic thinking with immediate feedback and test cases."
+  showFullDescription
+  title="Python tutorial on virtual environments and packages"
+  url="https://docs.python.org/3/tutorial/venv.html"
+  type="tutorial"
+  description="Required. Create and activate a virtual environment; install packages and record dependencies. Use the activation commands for your platform."
 />
 
-**Why This Resource**
-These challenges force you to think algorithmically before writing code. You'll recognize patterns (loops, sorting, searching) that appear in every AI project.
+<ResourceCard
+  showFullDescription
+  title="JupyterLab installation guide"
+  url="https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html"
+  type="documentation"
+  description="Required. Install JupyterLab in your project environment and select the matching notebook kernel."
+/>
 
-:::tip **Suggested Workflow:**
+Learn to check the Python version, create and activate a virtual environment, install packages, record dependencies, and select the same environment as a notebook kernel. Exclude the environment directory from Git. Core Systems later introduces uv project management.
 
-1. **Understand**: Restate the problem.
-2. **Plan**: Write pseudocode comments.
-3. **Code**: Implement solution.
-4. **Debug**: Test edge cases.
-   :::
+### Practice
 
----
+Create a project directory, then create a virtual environment:
 
-## <ClipboardCheck /> Completion Checklist
+```bash
+python -m venv .venv
+```
 
-Before calling this module "Done", verified by your mentor:
+Activate it using the command for your platform in the Python tutorial. Use `python -m pip` to install NumPy, Pandas, and JupyterLab. Run a script that prints a small NumPy array, then run the same computation in a notebook. Record dependencies in `requirements.txt` and add `.venv/` to `.gitignore`.
 
-- [ ] Navigate to any directory using only `cd` and `ls`.
-- [ ] Search for text across multiple files using `grep -r`.
-- [ ] **Milestone**: 15 HackerRank problems solved total.
-- [ ] Can explain your algorithm solution in plain English before coding.
+Recreate the environment in a second practice directory from your dependency file. Intentionally select an interpreter without NumPy and explain the resulting import failure before correcting it.
+
+## Git and GitHub {#git-github}
+
+Source estimate: 5–6 hours, provisional until piloted.
+
+### Goal
+
+Use Git and GitHub to track changes and contribute through a basic collaborative workflow.
+
+### Learning resources
+
+<ResourceCard
+  showFullDescription
+  title="GitHub Skills"
+  url="https://skills.github.com/"
+  type="article"
+  description="Required. Complete the assigned lessons and practice in this section."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="Introduction to Git"
+  url="https://github.com/skills/introduction-to-git"
+  type="practice"
+  description="Required. Complete Introduction to Git, including commits, history, branches, and collaboration basics."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="Introduction to GitHub"
+  url="https://github.com/skills/introduction-to-github"
+  type="practice"
+  description="Required. Complete Introduction to GitHub, including branches, commits, and a pull request."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="Resolve Merge Conflicts"
+  url="https://github.com/skills/resolve-merge-conflicts"
+  type="practice"
+  description="Required. Complete the merge-conflict exercise and apply the workflow in your assessment repository."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="Learn Git Branching"
+  url="https://learngitbranching.js.org/"
+  type="article"
+  description="Required. Covering commits, branches, merging, and remotes."
+/>
+
+### Required topics
+
+- Repositories
+- Working tree and staging area
+- git status
+- git diff
+- git add
+- git commit
+- Meaningful commit messages
+- git log
+- Creating and switching branches
+- Merging
+- Basic conflict resolution
+- Cloning repositories
+- Remote repositories
+- Fetching, pulling, and pushing
+- .gitignore
+- Pull requests
+- Basic code review
+
+### Assessment
+
+The learner must:
+
+- Clone a repository.
+- Create a feature branch.
+- Make and inspect changes.
+- Create meaningful commits.
+- Push the branch to GitHub.
+- Open a pull request.
+- Resolve an intentionally created merge conflict.
+- Complete the merge.
+- Advanced rebasing, cherry-picking, Git internals, GitHub Actions, and release management are not required.
+
+### Prerequisites
+
+Complete terminal basics and environment setup.
+
+## Debugging Fundamentals {#debugging}
+
+Source estimate: 2–3 hours, provisional until piloted.
+
+### Goal
+
+Systematically locate, understand, and fix ordinary Python errors.
+
+### Learning resources
+
+Use selected sections from:
+
+<ResourceCard
+  showFullDescription
+  title="LabEx — Code Debugging Techniques"
+  url="https://labex.io/tutorials/code-debugging-techniques-132737"
+  type="practice"
+  description="Required. Tracebacks, print debugging, and the exercise"
+/>
+
+<ResourceCard
+  showFullDescription
+  title="VS Code Python debugging tutorial"
+  url="https://code.visualstudio.com/docs/python/python-tutorial#_configure-and-run-the-debugger"
+  type="tutorial"
+  description="Required. Breakpoints, stepping, and inspecting variables"
+/>
+
+### Required topics
+
+- Syntax errors
+- Runtime errors
+- Logic errors
+- Reading Python tracebacks
+- Reproducing a failure
+- Isolating the failing code
+- Inspecting values with print
+- Setting basic IDE breakpoints
+- Stepping through code
+- Inspecting variables
+- Verifying fixes with normal and edge-case inputs
+
+### Assessment
+
+The learner receives a small Python program containing:
+
+- One runtime error
+- One logic error
+- One edge-case failure
+- The learner must reproduce, explain, and fix all three problems.
+- Logging, command-line debuggers, advanced breakpoints, and production observability are not required.
+
+### Prerequisites
+
+Basic Python and a working local environment.
+
+## Algorithms and Problem Solving {#algorithms}
+
+### Before you start
+
+Develop reasoning about data structures, algorithm choices, and edge cases. Basic Python and debugging skills are required.
+
+### Learn and practise
+
+### Week 1 — Basic Problem-Solving Patterns
+
+<ResourceCard
+  showFullDescription
+  title="Week 1 challenges"
+  url="https://www.hackerrank.com/interview/preparation-kits/one-month-preparation-kit/one-month-week-one/challenges"
+  type="practice"
+  description="Required. Complete this week’s challenges as part of the full four-week preparation kit."
+/>
+
+### Week 2 — Algorithmic Reasoning
+
+<ResourceCard
+  showFullDescription
+  title="Week 2 challenges"
+  url="https://www.hackerrank.com/interview/preparation-kits/one-month-preparation-kit/one-month-week-two/challenges"
+  type="practice"
+  description="Required. Complete this week’s challenges as part of the full four-week preparation kit."
+/>
+
+### Week 3 — Core Data Structures
+
+<ResourceCard
+  showFullDescription
+  title="Week 3 challenges"
+  url="https://www.hackerrank.com/interview/preparation-kits/one-month-preparation-kit/one-month-week-three/challenges"
+  type="practice"
+  description="Required. Complete this week’s challenges as part of the full four-week preparation kit."
+/>
+
+### Week 4 — Intermediate and Advanced Algorithms
+
+<ResourceCard
+  showFullDescription
+  title="Week 4 challenges"
+  url="https://www.hackerrank.com/interview/preparation-kits/one-month-preparation-kit/one-month-week-four/challenges"
+  type="practice"
+  description="Required. Complete this week’s challenges as part of the full four-week preparation kit."
+/>
+
+### What you’ll build
+
+Complete the full [HackerRank One Month Preparation Kit](https://www.hackerrank.com/interview/preparation-kits/one-month-preparation-kit/one-month-week-one/challenges).
+
+### Practice and evidence
+
+Complete all four weeks of the [HackerRank One Month Preparation Kit](https://www.hackerrank.com/interview/preparation-kits/one-month-preparation-kit/). Keep a completion record and explain selected solutions, including edge cases and time/space complexity. The resource name is not an Academy calendar promise.
+
+## Workload
+
+Use the provisional estimates where supplied. Other workloads remain pending pilot. Include implementation, debugging, review, and revision.
+
+## Finish this module
+
+Keep the required outputs and explain your decisions. Diagnose a relevant failure during review and revise incomplete evidence after feedback. Resource completion supports progress; the stated practical requirements determine completion.
+
+</CurriculumModule>

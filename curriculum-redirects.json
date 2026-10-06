@@ -1,0 +1,278 @@
+[
+  {
+    "from": "/draft",
+    "to": "/docs"
+  },
+  {
+    "from": "/draft/contributors-guide",
+    "to": "/docs/contributors-guide"
+  },
+  {
+    "from": "/draft/engineering-fundamentals",
+    "to": "/docs/engineering-fundamentals"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/advanced-statistical-inference",
+    "to": "/docs/engineering-fundamentals/advanced-statistical-inference"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/algorithms",
+    "to": "/docs/engineering-fundamentals/algorithms"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/data-manipulation",
+    "to": "/docs/engineering-fundamentals/data-manipulation"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/debugging",
+    "to": "/docs/engineering-fundamentals/debugging"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/elective-advanced-sql",
+    "to": "/docs/engineering-fundamentals/elective-advanced-sql"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/elective-algorithms",
+    "to": "/docs/engineering-fundamentals/elective-algorithms"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/elective-bash-automation",
+    "to": "/docs/engineering-fundamentals/elective-bash-automation"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/elective-data-visualization",
+    "to": "/docs/engineering-fundamentals/elective-data-visualization"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/elective-github-actions",
+    "to": "/docs/engineering-fundamentals/elective-github-actions"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/electives",
+    "to": "/docs/engineering-fundamentals/electives"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/environment-setup",
+    "to": "/docs/engineering-fundamentals/environment-setup"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/exploratory-analysis",
+    "to": "/docs/engineering-fundamentals/exploratory-analysis"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/extensions",
+    "to": "/docs/engineering-fundamentals/extensions"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/git-github",
+    "to": "/docs/engineering-fundamentals/git-github"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/linear-algebra",
+    "to": "/docs/engineering-fundamentals/linear-algebra"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/math-for-ai",
+    "to": "/docs/engineering-fundamentals/math-for-ai"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/numpy",
+    "to": "/docs/engineering-fundamentals/numpy"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/optional-advanced-sql",
+    "to": "/docs/engineering-fundamentals/optional-advanced-sql"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/optional-algorithms",
+    "to": "/docs/engineering-fundamentals/optional-algorithms"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/optional-bash-automation",
+    "to": "/docs/engineering-fundamentals/optional-bash-automation"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/optional-data-visualization",
+    "to": "/docs/engineering-fundamentals/optional-data-visualization"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/optional-github-actions",
+    "to": "/docs/engineering-fundamentals/optional-github-actions"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/pandas-cleaning",
+    "to": "/docs/engineering-fundamentals/pandas-cleaning"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/probability-statistics",
+    "to": "/docs/engineering-fundamentals/probability-statistics"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/sql",
+    "to": "/docs/engineering-fundamentals/sql"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/terminal",
+    "to": "/docs/engineering-fundamentals/terminal"
+  },
+  {
+    "from": "/draft/engineering-fundamentals/terminal-algorithmic-basics",
+    "to": "/docs/engineering-fundamentals/terminal-algorithmic-basics"
+  },
+  {
+    "from": "/draft/resources",
+    "to": "/docs/resources"
+  },
+  {
+    "from": "/draft/softlanding",
+    "to": "/docs/softlanding"
+  },
+  {
+    "from": "/draft/softlanding/core-systems",
+    "to": "/docs/softlanding/core-systems"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/01-math-ml",
+    "to": "/docs/softlanding/core-systems/01-math-ml"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/apis-containers-deployment",
+    "to": "/docs/softlanding/core-systems/apis-containers-deployment"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/applied-ml-deep-learning",
+    "to": "/docs/softlanding/core-systems/applied-ml-deep-learning"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/completion",
+    "to": "/docs/softlanding/core-systems/completion"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/derivatives-bridge",
+    "to": "/docs/softlanding/core-systems/derivatives-bridge"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/e1-retrieval-rag",
+    "to": "/docs/softlanding/core-systems/e1-retrieval-rag"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/e2-agents-tools",
+    "to": "/docs/softlanding/core-systems/e2-agents-tools"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/e3-model-adaptation",
+    "to": "/docs/softlanding/core-systems/e3-model-adaptation"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/e4-backend-data",
+    "to": "/docs/softlanding/core-systems/e4-backend-data"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/e5-delivery-mlops",
+    "to": "/docs/softlanding/core-systems/e5-delivery-mlops"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/electives",
+    "to": "/docs/softlanding/core-systems/electives"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/handover",
+    "to": "/docs/softlanding/core-systems/handover"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/infra-basics",
+    "to": "/docs/softlanding/core-systems/infra-basics"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/integrated-project",
+    "to": "/docs/softlanding/core-systems/integrated-project"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/intro-to-ai-engineering",
+    "to": "/docs/softlanding/core-systems/intro-to-ai-engineering"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/llm-applications",
+    "to": "/docs/softlanding/core-systems/llm-applications"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/networking",
+    "to": "/docs/softlanding/core-systems/networking"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/r1-software-engineering",
+    "to": "/docs/softlanding/core-systems/r1-software-engineering"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/r2-applied-ml",
+    "to": "/docs/softlanding/core-systems/r2-applied-ml"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/r3-deep-learning",
+    "to": "/docs/softlanding/core-systems/r3-deep-learning"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/r4-llm-applications",
+    "to": "/docs/softlanding/core-systems/r4-llm-applications"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/r5-systems-data",
+    "to": "/docs/softlanding/core-systems/r5-systems-data"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/r6-apis-deployment",
+    "to": "/docs/softlanding/core-systems/r6-apis-deployment"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/software-engineering",
+    "to": "/docs/softlanding/core-systems/software-engineering"
+  },
+  {
+    "from": "/draft/softlanding/core-systems/systems-networking-data",
+    "to": "/docs/softlanding/core-systems/systems-networking-data"
+  },
+  {
+    "from": "/draft/softlanding/specializations",
+    "to": "/docs/softlanding/specializations"
+  },
+  {
+    "from": "/draft/softlanding/specializations/computer-vision/capstone",
+    "to": "/docs/softlanding/specializations/computer-vision/capstone"
+  },
+  {
+    "from": "/draft/softlanding/specializations/computer-vision/resources",
+    "to": "/docs/softlanding/specializations/computer-vision/resources"
+  },
+  {
+    "from": "/draft/softlanding/specializations/data-science/capstone",
+    "to": "/docs/softlanding/specializations/data-science/capstone"
+  },
+  {
+    "from": "/draft/softlanding/specializations/data-science/resources",
+    "to": "/docs/softlanding/specializations/data-science/resources"
+  },
+  {
+    "from": "/draft/softlanding/specializations/generative-ai/capstone",
+    "to": "/docs/softlanding/specializations/generative-ai/capstone"
+  },
+  {
+    "from": "/draft/softlanding/specializations/generative-ai/resources",
+    "to": "/docs/softlanding/specializations/generative-ai/resources"
+  },
+  {
+    "from": "/draft/softlanding/specializations/nlp/capstone",
+    "to": "/docs/softlanding/specializations/nlp/capstone"
+  },
+  {
+    "from": "/draft/softlanding/specializations/nlp/resources",
+    "to": "/docs/softlanding/specializations/nlp/resources"
+  },
+  {
+    "from": "/draft/softlanding/specializations/software-engineering/capstone",
+    "to": "/docs/softlanding/specializations/software-engineering/capstone"
+  },
+  {
+    "from": "/draft/softlanding/specializations/software-engineering/resources",
+    "to": "/docs/softlanding/specializations/software-engineering/resources"
+  }
+]
