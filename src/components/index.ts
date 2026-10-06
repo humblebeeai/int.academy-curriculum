@@ -10,4 +10,4 @@ export { default as LearningRoadmap } from "./home/LearningRoadmap";
 export { default as RoadmapShowcase } from "./roadmap/RoadmapShowcase";
 export { default as RoadmapPopup } from "./doc-components/RoadmapPopup";
 
-export { DraftModule, ModuleIntro, ModuleGrid, SectionLinks } from "./doc-components/DraftLayout";
+export { DraftModule, ModuleIntro, ModuleGrid, SectionLinks, OverviewVideo } from "./doc-components/DraftLayout";

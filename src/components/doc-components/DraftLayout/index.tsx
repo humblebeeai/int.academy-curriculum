@@ -83,3 +83,16 @@ export function SectionLinks({ items, label = "In this module" }: { items: { tit
     <div className={styles.sectionLinks}>{items.map(({ title, href }) => <Link key={href} to={href}>{title}</Link>)}</div>
   </nav>;
 }
+
+export function OverviewVideo({ videoId, title }: { videoId: string; title: string }) {
+  return <div className={styles.videoBlock}>
+    <div className={styles.videoFrame}>
+      <iframe src={`https://www.youtube.com/embed/${videoId}`} title={title} loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen />
+    </div>
+    <a href={`https://www.youtube.com/watch?v=${videoId}`} target="_blank" rel="noopener noreferrer" className={styles.videoLink}>
+      Watch the roadmap introduction on YouTube <ArrowRight size={16} aria-hidden="true" />
+    </a>
+  </div>;
+}

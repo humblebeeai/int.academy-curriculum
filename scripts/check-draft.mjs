@@ -38,9 +38,11 @@ for (const path of pages) {
 assert(!readFileSync(resolve(build, 'sitemap.xml'), 'utf8').includes('/draft'), 'Draft must not appear in sitemap.');
 
 const efRequired = ['terminal-algorithmic-basics', 'math-for-ai', 'data-manipulation'];
-const efElectives = ['elective-data-visualization', 'elective-github-actions', 'elective-advanced-sql', 'elective-bash-automation', 'elective-algorithms', 'advanced-statistical-inference'];
+const efElectiveSections = ['data-visualization', 'github-actions', 'advanced-sql', 'bash-automation', 'algorithms', 'advanced-statistical-inference'];
+const efElectives = ['electives'];
 const coreRequired = ['software-engineering', 'applied-ml-deep-learning', 'llm-applications', 'systems-networking-data', 'apis-containers-deployment'];
-const electives = ['e1-retrieval-rag', 'e2-agents-tools', 'e3-model-adaptation', 'e4-backend-data', 'e5-delivery-mlops'];
+const coreElectiveSections = ['e1-retrieval-rag', 'e2-agents-tools', 'e3-model-adaptation', 'e4-backend-data', 'e5-delivery-mlops'];
+const electives = ['electives'];
 const generated = resolve(root, '.docusaurus/docusaurus-plugin-content-docs/draft/p');
 const version = readdirSync(generated).map((file) => JSON.parse(readFileSync(resolve(generated, file), 'utf8'))).find((data) => data.version?.pluginId === 'draft').version;
 function category(items, label) {
@@ -81,8 +83,8 @@ function checkStage(label, prefix, required, electiveModules, electiveLabel, ext
     }
   }
 }
-checkStage('Engineering Fundamentals', 'engineering-fundamentals', efRequired, efElectives, 'Elective');
-checkStage('Core Systems', 'softlanding/core-systems', coreRequired, electives, 'Elective', ['handover']);
+checkStage('Engineering Fundamentals', 'engineering-fundamentals', efRequired, efElectives, 'Electives');
+checkStage('Core Systems', 'softlanding/core-systems', coreRequired, electives, 'Electives', ['handover']);
 for (const [slug, anchors] of Object.entries({
   'software-engineering': ['r1'], 'applied-ml-deep-learning': ['r2', 'derivatives-preparation', 'r3'],
   'llm-applications': ['r4'], 'systems-networking-data': ['r5'], 'apis-containers-deployment': ['r6'],
@@ -116,10 +118,23 @@ for (const [route, asset] of Object.entries(illustrations)) {
   const src = img.match(/src="([^"]+)"/)[1];
   assert(existsSync(resolve(build, src.slice(1))), `${route}: missing built image ${src}`);
 }
-for (const [overview, count] of [[efOverview, 9], [coreOverview, 10]]) {
+for (const [overview, count] of [[efOverview, 4], [coreOverview, 6]]) {
   assert.equal([...overview.matchAll(/data-draft-module-grid="true"/g)].length, 2, 'Stage overview must have required and elective grids.');
   assert.equal([...overview.matchAll(/class="[^"]*moduleCard_[^"]*"/g)].length, count, 'Stage grid must retain all module destinations.');
 }
+
+for (const [prefix, sections] of [['engineering-fundamentals', efElectiveSections], ['softlanding/core-systems', coreElectiveSections]]) {
+  const html = readFileSync(resolve(draft, `${prefix}/electives/index.html`), 'utf8');
+  assert(html.includes('Complete exactly two electives'), `${prefix}: elective module must require two choices`);
+  for (const section of sections) assert(html.includes(`id="${section}"`), `${prefix}: missing elective section ${section}`);
+}
+function visibleCoreEntries(items) {
+  return items.filter((item) => !item.unlisted).flatMap((item) => [item, ...(item.items ? visibleCoreEntries(item.items) : [])]).filter((item) => item.label === 'Core Systems');
+}
+assert.equal(visibleCoreEntries(version.docsSidebars.tutorialSidebar).length, 1, 'Core Systems must have one visible sidebar entry.');
+const introduction = readFileSync(resolve(draft, 'index.html'), 'utf8');
+assert(introduction.includes('src="https://www.youtube.com/embed/PskcGbCAb0w"'), 'Restore the original introduction video with its native thumbnail.');
+assert(introduction.includes('href="https://www.youtube.com/watch?v=PskcGbCAb0w"'), 'Keep a direct YouTube introduction link.');
 
 const current = readFileSync(resolve(build, 'docs/index.html'), 'utf8');
 const currentResources = readFileSync(resolve(build, 'docs/engineering-fundamentals/data-manipulation/index.html'), 'utf8');
@@ -134,4 +149,4 @@ for (const { name } of metadata) {
   assert(historical.includes('This snapshot is preserved for comparison and is no longer updated.'), `Historical banner missing for ${name}`);
   assert(!historical.includes('Draft curriculum — requirements may change during review.'), `Historical version ${name} shows Draft banner`);
 }
-console.log(`Verified ${pages.length} Draft pages: banners, noindex, menu entry, local routes and anchors, three EF modules with six elective siblings, five Core groups covering R1–R6 with five elective siblings, illustrations and module grids, rendered resource links and full scopes, sitemap exclusion, and Current/historical isolation.`);
+console.log(`Verified ${pages.length} Draft pages: banners, noindex, menu entry, local routes and anchors, three EF modules and five Core modules covering R1–R6, one elective module per stage with two choices required, one Core Systems sidebar entry, original introduction video, illustrations and module grids, rendered resource links and full scopes, sitemap exclusion, and Current/historical isolation.`);
