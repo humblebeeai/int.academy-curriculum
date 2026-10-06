@@ -5,7 +5,11 @@ sidebar_position: 2
 toc_max_heading_level: 2
 ---
 
+import { DraftModule, ModuleGrid } from "@site/src/components";
+
 # Core Systems
+
+<DraftModule>
 
 Build a small AI application that someone else can run, evaluate, and use. Learn the engineering, modeling, and deployment skills along the way.
 
@@ -17,14 +21,7 @@ Complete [Engineering Fundamentals](/draft/engineering-fundamentals) or demonstr
 
 ## Your learning path {#modules}
 
-| Module | What you’ll be able to do |
-| --- | --- |
-| [1. Software Engineering for AI](/draft/softlanding/core-systems/software-engineering) | Project structure, tests, collaboration, verified AI-assisted work |
-| [2. Applied ML & Deep Learning](/draft/softlanding/core-systems/applied-ml-deep-learning) | Evaluation, classical models, training, PyTorch, pretrained inference |
-| [3. LLM Applications](/draft/softlanding/core-systems/llm-applications) | Structured outputs, context, evaluation, failure handling |
-| [4. Systems, Networking & Data](/draft/softlanding/core-systems/systems-networking-data) | HTTP/DNS, Linux, SSH, troubleshooting, persistence |
-| [5. APIs, Containers & Deployment](/draft/softlanding/core-systems/apis-containers-deployment) | FastAPI, Docker, automated tests, deployment |
-
+<ModuleGrid items={[{"title": "Software Engineering for AI", "href": "/draft/softlanding/core-systems/software-engineering", "kind": "required", "icon": "Code2", "outcome": "Project structure, tests, collaboration, verified AI-assisted work", "number": 1}, {"title": "Applied ML & Deep Learning", "href": "/draft/softlanding/core-systems/applied-ml-deep-learning", "kind": "required", "icon": "Brain", "outcome": "Evaluation, classical models, training, PyTorch, pretrained inference", "number": 2}, {"title": "LLM Applications", "href": "/draft/softlanding/core-systems/llm-applications", "kind": "required", "icon": "MessageSquare", "outcome": "Structured outputs, context, evaluation, failure handling", "number": 3}, {"title": "Systems, Networking & Data", "href": "/draft/softlanding/core-systems/systems-networking-data", "kind": "required", "icon": "Network", "outcome": "HTTP/DNS, Linux, SSH, troubleshooting, persistence", "number": 4}, {"title": "APIs, Containers & Deployment", "href": "/draft/softlanding/core-systems/apis-containers-deployment", "kind": "required", "icon": "Container", "outcome": "FastAPI, Docker, automated tests, deployment", "number": 5}]} />
 ## How to work through the stage
 
 Start Software Engineering for AI and keep using its habits throughout the stage. Complete Applied ML before deep learning, including the short derivatives preparation before the deep learning section. Systems can run alongside modeling work. Begin APIs and deployment after systems and a working inference function from ML, deep learning, or LLM applications.
@@ -35,14 +32,7 @@ Build the integrated project incrementally. Retain the separate ML evaluation an
 
 Complete exactly two electives after completing their prerequisites. Use them to add a capability to your project. Further reading within a required module does not count as an elective.
 
-| Elective module | Prerequisites |
-| --- | --- |
-| [Retrieval and RAG](/draft/softlanding/core-systems/e1-retrieval-rag) | Software Engineering, LLM Applications, and API basics |
-| [Agents and Tool-Based Workflows](/draft/softlanding/core-systems/e2-agents-tools) | Software Engineering, LLM Applications, and API basics |
-| [Model Adaptation and Experimentation](/draft/softlanding/core-systems/e3-model-adaptation) | Applied ML & Deep Learning; LLM Applications for LLM projects |
-| [Backend Architecture and Data Systems](/draft/softlanding/core-systems/e4-backend-data) | Software Engineering, Systems & Data, APIs, and SQL |
-| [Delivery, Monitoring, and MLOps](/draft/softlanding/core-systems/e5-delivery-mlops) | Software Engineering, Systems & Data, APIs, and AI evaluation |
-
+<ModuleGrid items={[{"title": "Retrieval and RAG", "href": "/draft/softlanding/core-systems/e1-retrieval-rag", "kind": "elective", "icon": "Search", "outcome": "Retrieve relevant evidence before answering.", "prerequisites": "Software Engineering, LLM Applications, and API basics"}, {"title": "Agents and Tool-Based Workflows", "href": "/draft/softlanding/core-systems/e2-agents-tools", "kind": "elective", "icon": "Bot", "outcome": "Complete a bounded task through tool use.", "prerequisites": "Software Engineering, LLM Applications, and API basics"}, {"title": "Model Adaptation and Experimentation", "href": "/draft/softlanding/core-systems/e3-model-adaptation", "kind": "elective", "icon": "SlidersHorizontal", "outcome": "Evaluate whether adapting a model improves your task.", "prerequisites": "Applied ML & Deep Learning; LLM Applications for LLM projects"}, {"title": "Backend Architecture and Data Systems", "href": "/draft/softlanding/core-systems/e4-backend-data", "kind": "elective", "icon": "Database", "outcome": "Add reliable persistence and background work.", "prerequisites": "Software Engineering, Systems & Data, APIs, and SQL"}, {"title": "Delivery, Monitoring, and MLOps", "href": "/draft/softlanding/core-systems/e5-delivery-mlops", "kind": "elective", "icon": "Activity", "outcome": "Make releases observable and recoverable.", "prerequisites": "Software Engineering, Systems & Data, APIs, and AI evaluation"}]} />
 Choose based on a capability and a project where you can practice it. Examples: Retrieval + Agents for grounded workflows; Model Adaptation + MLOps for experimentation and delivery; Backend + MLOps for reliability. Other combinations are valid when supported by your project.
 
 Electives introduce capabilities explored more deeply in specialization. Keep each to one defined feature, an evaluation approach, and an explanation of tradeoffs. Both electives may extend one project, but document their outcomes and evidence separately.
@@ -54,3 +44,5 @@ Deliver the [Integrated Project & Handover](/draft/softlanding/core-systems/hand
 ## Plan your study time
 
 Use the provisional estimates where supplied. Other workloads remain pending pilot. Include implementation, debugging, review, and revision.
+
+</DraftModule>

@@ -71,6 +71,7 @@ function checkStage(label, prefix, required, electiveModules, electiveLabel, ext
     const decoded = article.replaceAll('&amp;', '&').replaceAll('&#x27;', "'").replaceAll('&quot;', '"');
     const cards = [...source.matchAll(/<ResourceCard\s+([\s\S]*?)\/>/g)];
     assert(cards.length, `${slug}: missing clickable learning resources`);
+    assert.equal([...article.matchAll(/data-resource-scope="full"/g)].length, cards.length, `${slug}: every resource must show its full assigned scope`);
     for (const [, props] of cards) {
       const attributes = Object.fromEntries([...props.matchAll(/(title|url|description)=("(?:[^"\\]|\\.)*")/g)].map(([, key, value]) => [key, JSON.parse(value)]));
       assert(attributes.description?.length > 20, `${slug}: resource missing assigned scope`);
@@ -97,7 +98,33 @@ assert(efOverview.includes('Complete exactly two electives') && efOverview.inclu
 const math = readFileSync(resolve(draft, 'engineering-fundamentals/math-for-ai/index.html'), 'utf8');
 for (const anchor of ['linear-algebra', 'probability-statistics', 'completion']) assert(math.includes(`id="${anchor}"`), `Math for AI: missing ${anchor}`);
 
+const illustrations = {
+  'engineering-fundamentals/math-for-ai': 'math_ml',
+  'engineering-fundamentals/data-manipulation': 'data_engineering',
+  'softlanding/core-systems/software-engineering': 'software_eng',
+  'softlanding/core-systems/applied-ml-deep-learning': 'advanced_ai',
+  'softlanding/core-systems/llm-applications': 'nlp',
+  'softlanding/core-systems/systems-networking-data': 'systems',
+  'softlanding/core-systems/apis-containers-deployment': 'fullstack',
+};
+for (const [route, asset] of Object.entries(illustrations)) {
+  const html = readFileSync(resolve(draft, `${route}/index.html`), 'utf8');
+  const img = [...html.matchAll(/<img[^>]*>/g)].map(([tag]) => tag).find((tag) => tag.includes(`/assets/images/${asset}-`));
+  assert(img, `${route}: missing matching illustration ${asset}`);
+  assert(/alt="Illustration[^"]+"/.test(img), `${route}: missing descriptive image alt text`);
+  assert(img.includes('width="1536"') && img.includes('height="1024"'), `${route}: reserve image dimensions`);
+  const src = img.match(/src="([^"]+)"/)[1];
+  assert(existsSync(resolve(build, src.slice(1))), `${route}: missing built image ${src}`);
+}
+for (const [overview, count] of [[efOverview, 9], [coreOverview, 10]]) {
+  assert.equal([...overview.matchAll(/data-draft-module-grid="true"/g)].length, 2, 'Stage overview must have required and elective grids.');
+  assert.equal([...overview.matchAll(/class="[^"]*moduleCard_[^"]*"/g)].length, count, 'Stage grid must retain all module destinations.');
+}
+
 const current = readFileSync(resolve(build, 'docs/index.html'), 'utf8');
+const currentResources = readFileSync(resolve(build, 'docs/engineering-fundamentals/data-manipulation/index.html'), 'utf8');
+assert(!currentResources.includes('data-resource-scope="full"') && !currentResources.includes('moduleCard_'), 'Current resource pages must retain their original presentation.');
+assert(!current.includes('data-draft-module-grid') && !current.includes('data-resource-scope="full"'), 'Draft presentation must not leak into Current.');
 assert(!current.includes('Draft curriculum — requirements may change during review.'), 'Current must not display Draft banner.');
 assert(!/<meta[^>]*name="robots"[^>]*content="[^"]*noindex/.test(current), 'Current must remain indexable.');
 const metadata = JSON.parse(readFileSync(resolve(root, 'curriculum-versions.json'), 'utf8'));
@@ -107,4 +134,4 @@ for (const { name } of metadata) {
   assert(historical.includes('This snapshot is preserved for comparison and is no longer updated.'), `Historical banner missing for ${name}`);
   assert(!historical.includes('Draft curriculum — requirements may change during review.'), `Historical version ${name} shows Draft banner`);
 }
-console.log(`Verified ${pages.length} Draft pages: banners, noindex, menu entry, local routes and anchors, three EF modules with six elective siblings, five Core groups covering R1–R6 with five elective siblings, rendered resource links and scopes, sitemap exclusion, and Current/historical isolation.`);
+console.log(`Verified ${pages.length} Draft pages: banners, noindex, menu entry, local routes and anchors, three EF modules with six elective siblings, five Core groups covering R1–R6 with five elective siblings, illustrations and module grids, rendered resource links and full scopes, sitemap exclusion, and Current/historical isolation.`);

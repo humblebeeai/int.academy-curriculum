@@ -5,15 +5,13 @@ sidebar_position: 6
 toc_max_heading_level: 2
 ---
 
-import { ResourceCard } from "@site/src/components";
+import { ResourceCard, DraftModule, ModuleIntro } from "@site/src/components";
 
 # Retrieval and RAG
 
-[← Core Systems modules](/draft/softlanding/core-systems)
+<DraftModule>
 
-**Elective module.** Choose two Core Systems electives and complete their practical work.
-
-build a service that retrieves relevant evidence before answering.
+<ModuleIntro stageLabel="Core Systems" stageHref="/draft/softlanding/core-systems" kind="elective" icon="Search" summary="Build a service that retrieves relevant evidence before answering. Choose this as one of your two Core Systems electives." />
 
 **Before you start:** [Software Engineering for AI](/draft/softlanding/core-systems/software-engineering#r1), [LLM Applications](/draft/softlanding/core-systems/llm-applications#r4), and basic API skills from [APIs, Containers & Deployment](/draft/softlanding/core-systems/apis-containers-deployment#r6).
 
@@ -27,6 +25,7 @@ build a service that retrieves relevant evidence before answering.
 ## Resources
 
 <ResourceCard
+  showFullDescription
   title="Sentence Transformers: Semantic Search"
   url="https://www.sbert.net/examples/sentence_transformer/applications/semantic-search/README.html"
   type="article"
@@ -34,6 +33,7 @@ build a service that retrieves relevant evidence before answering.
 />
 
 <ResourceCard
+  showFullDescription
   title="Hugging Face: Simple RAG for GitHub issues"
   url="https://huggingface.co/learn/cookbook/en/rag_zephyr_langchain"
   type="article"
@@ -41,6 +41,7 @@ build a service that retrieves relevant evidence before answering.
 />
 
 <ResourceCard
+  showFullDescription
   title="Hugging Face: RAG Evaluation"
   url="https://huggingface.co/learn/cookbook/en/rag_evaluation"
   type="article"
@@ -48,6 +49,7 @@ build a service that retrieves relevant evidence before answering.
 />
 
 <ResourceCard
+  showFullDescription
   title="Hugging Face: Advanced RAG"
   url="https://huggingface.co/learn/cookbook/en/advanced_rag"
   type="article"
@@ -72,3 +74,5 @@ Workload estimate pending pilot. Include practice, debugging, review, and revisi
 ## Submission evidence and completion checks
 
 Keep the expected output, runnable instructions, test/evaluation results where applicable, and your explanation of a meaningful failure. Submit through review and record the resulting revision. Explain your approach and diagnose a relevant failure during review. Revise incomplete evidence after feedback; resource completion alone does not establish competence.
+
+</DraftModule>

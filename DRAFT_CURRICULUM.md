@@ -31,6 +31,12 @@ Source documents supplied for this revision:
 | Integrated project, learning approach, completion | Integrated Project & Handover | Baseline, evaluation, persistence, deployment, review revision; five completion dimensions; responsible AI use; access alternatives |
 | Existing specializations | Copied specialization pages | Requirements unchanged; local links use `/draft` |
 
+## Draft presentation
+
+The Draft uses existing artwork for Math for AI, Data Foundations, and all five required Core Systems modules. Illustrations retain their full composition, descriptive alt text, and intrinsic dimensions. Terminal, electives, and handover use topic icons. Required modules have three practical outcome cards and section/resource shortcuts. Stage overviews present required modules and electives as clickable cards; both stages still require exactly two electives.
+
+Draft layout styles are scoped through CSS Modules. Resource cards opt into full descriptions so assigned scope and access notes remain visible; Current and historical resource cards retain their original behavior. Existing resource URLs, assessments, and compatibility routes remain unchanged. Responsive visual review at 390px, 768px, and 1440px remains part of the pre-merge review.
+
 ## Revisions made beyond the guides
 
 - Engineering Fundamentals has three required modules and requires exactly two electives, as requested during review. Linear algebra and probability/statistics are combined in Math for AI. This elective requirement supersedes the source guide’s extension classification.

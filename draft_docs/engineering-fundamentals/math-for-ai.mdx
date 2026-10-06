@@ -5,19 +5,32 @@ sidebar_position: 3
 toc_max_heading_level: 2
 ---
 
-import { ResourceCard } from "@site/src/components";
+import { ResourceCard, DraftModule, ModuleIntro, SkillShowcase, SectionLinks } from "@site/src/components";
+
+import moduleImage from "../assets/images/math_ml.jpg";
 
 # Math for AI
 
-[Engineering Fundamentals](/draft/engineering-fundamentals) → Module 2
+<DraftModule>
 
-Use vectors and matrices to understand AI computations, then learn to reason about uncertainty and evaluate statistical evidence. You’ll practise with NumPy notebooks and Khan Academy exercises.
+<ModuleIntro
+  stageLabel="Engineering Fundamentals"
+  stageHref="/draft/engineering-fundamentals"
+  moduleNumber={2}
+  kind="required"
+  icon="Calculator"
+  summary="Use vectors and matrices to understand AI computations, then learn to reason about uncertainty and interpret statistical evidence."
+  image={{ src: moduleImage, alt: "Illustration of matrix grids and connected nodes representing mathematical computations.", width: 1536, height: 1024 }}
+/>
+
+<SkillShowcase decorativeIcons skills={[{"iconString": "Calculator", "title": "Compute with NumPy", "description": "Work with vectors, matrices, and tensor shapes."}, {"iconString": "BarChart3", "title": "Reason about uncertainty", "description": "Use probability and interpret distributions and inference."}, {"iconString": "NotebookPen", "title": "Explain your results", "description": "Submit four notebooks, required unit tests, and Academy verification."}]} />
 
 :::info Before you start
 You need basic algebra. Complete the introductory [NumPy topics](/draft/engineering-fundamentals/data-manipulation#numpy) before the linear algebra notebooks. Calculus is not required.
 :::
 
-**Jump to:** [Linear algebra](#linear-algebra) · [Probability & statistics](#probability-statistics) · [Finish this module](#completion)
+
+<SectionLinks items={[{"title": "Linear algebra", "href": "#linear-algebra"}, {"title": "Probability & statistics", "href": "#probability-statistics"}, {"title": "Finish this module", "href": "#completion"}]} />
 
 ## Linear algebra {#linear-algebra}
 
@@ -29,6 +42,7 @@ Connect mathematical operations to practical AI computations. Complete foundatio
 ### Main resource
 
 <ResourceCard
+  showFullDescription
   title="Jon Krohn — Linear Algebra for Machine Learning"
   url="https://www.jonkrohn.com/posts/2021/5/9/linear-algebra-for-machine-learning-complete-math-course-on-youtube"
   type="video"
@@ -36,6 +50,7 @@ Connect mathematical operations to practical AI computations. Complete foundatio
 />
 
 <ResourceCard
+  showFullDescription
   title="Python notebooks"
   url="https://github.com/jonkrohn/ML-foundations"
   type="book"
@@ -145,6 +160,7 @@ Submit the four runnable notebooks, short hand calculations, and shape/debugging
 Interpret uncertainty and statistical evidence. Foundational algebra is required; calculus is not required.
 
 <ResourceCard
+  showFullDescription
   title="Khan Academy Statistics and Probability"
   url="https://www.khanacademy.org/math/statistics-probability"
   type="course"
@@ -328,3 +344,5 @@ Workload estimate pending pilot. Include practice, debugging, review, and revisi
 - Revise any gaps identified during review.
 
 **Continue:** [Data Foundations](/draft/engineering-fundamentals/data-manipulation). For deeper inference, choose [Advanced Statistical Inference](/draft/engineering-fundamentals/advanced-statistical-inference) as an elective after completing the statistics section.
+
+</DraftModule>

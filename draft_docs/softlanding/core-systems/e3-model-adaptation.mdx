@@ -5,15 +5,13 @@ sidebar_position: 8
 toc_max_heading_level: 2
 ---
 
-import { ResourceCard } from "@site/src/components";
+import { ResourceCard, DraftModule, ModuleIntro } from "@site/src/components";
 
 # Model Adaptation and Experimentation
 
-[← Core Systems modules](/draft/softlanding/core-systems)
+<DraftModule>
 
-**Elective module.** Choose two Core Systems electives and complete their practical work.
-
-determine whether adapting a pretrained model improves a defined task.
+<ModuleIntro stageLabel="Core Systems" stageHref="/draft/softlanding/core-systems" kind="elective" icon="SlidersHorizontal" summary="Determine whether adapting a pretrained model improves a defined task. Choose this as one of your two Core Systems electives." />
 
 **Before you start:** [applied ML](/draft/softlanding/core-systems/applied-ml-deep-learning#r2) and [deep learning](/draft/softlanding/core-systems/applied-ml-deep-learning#r3); use [LLM Applications](/draft/softlanding/core-systems/llm-applications#r4) for LLM-oriented projects.
 
@@ -27,6 +25,7 @@ determine whether adapting a pretrained model improves a defined task.
 ## Resources
 
 <ResourceCard
+  showFullDescription
   title="Hugging Face LLM Course: Fine-tuning a pretrained model"
   url="https://huggingface.co/learn/llm-course/en/chapter3/1"
   type="course"
@@ -34,6 +33,7 @@ determine whether adapting a pretrained model improves a defined task.
 />
 
 <ResourceCard
+  showFullDescription
   title="MLflow: Experiment Tracking"
   url="https://mlflow.org/docs/latest/ml/tracking/"
   type="article"
@@ -41,6 +41,7 @@ determine whether adapting a pretrained model improves a defined task.
 />
 
 <ResourceCard
+  showFullDescription
   title="UvA Tutorial 2: Introduction to PyTorch"
   url="https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial2/Introduction_to_PyTorch.html"
   type="tutorial"
@@ -65,3 +66,5 @@ Workload estimate pending pilot. Include practice, debugging, review, and revisi
 ## Submission evidence and completion checks
 
 Keep the expected output, runnable instructions, test/evaluation results where applicable, and your explanation of a meaningful failure. Submit through review and record the resulting revision. Explain your approach and diagnose a relevant failure during review. Revise incomplete evidence after feedback; resource completion alone does not establish competence.
+
+</DraftModule>

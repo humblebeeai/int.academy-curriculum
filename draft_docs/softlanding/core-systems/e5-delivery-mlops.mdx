@@ -5,15 +5,13 @@ sidebar_position: 10
 toc_max_heading_level: 2
 ---
 
-import { ResourceCard } from "@site/src/components";
+import { ResourceCard, DraftModule, ModuleIntro } from "@site/src/components";
 
 # Delivery, Monitoring, and MLOps
 
-[← Core Systems modules](/draft/softlanding/core-systems)
+<DraftModule>
 
-**Elective module.** Choose two Core Systems electives and complete their practical work.
-
-make changes observable and releases recoverable.
+<ModuleIntro stageLabel="Core Systems" stageHref="/draft/softlanding/core-systems" kind="elective" icon="Activity" summary="Make changes observable and releases recoverable. Choose this as one of your two Core Systems electives." />
 
 **Before you start:** [Software Engineering for AI](/draft/softlanding/core-systems/software-engineering#r1), [Systems, Networking & Data](/draft/softlanding/core-systems/systems-networking-data#r5), [APIs, Containers & Deployment](/draft/softlanding/core-systems/apis-containers-deployment#r6); [ML evaluation](/draft/softlanding/core-systems/applied-ml-deep-learning#r2) and [LLM evaluation](/draft/softlanding/core-systems/llm-applications#r4) provide the evaluation for your AI component.
 
@@ -28,6 +26,7 @@ make changes observable and releases recoverable.
 ## Resources
 
 <ResourceCard
+  showFullDescription
   title="GitHub Actions: Building and testing Python"
   url="https://docs.github.com/en/actions/tutorials/build-and-test-code/python"
   type="documentation"
@@ -35,6 +34,7 @@ make changes observable and releases recoverable.
 />
 
 <ResourceCard
+  showFullDescription
   title="Docker 101 Tutorial"
   url="https://www.docker.com/101-tutorial/"
   type="tutorial"
@@ -42,6 +42,7 @@ make changes observable and releases recoverable.
 />
 
 <ResourceCard
+  showFullDescription
   title="OpenTelemetry Python: Getting Started by Example"
   url="https://opentelemetry.io/docs/languages/python/getting-started/"
   type="article"
@@ -49,6 +50,7 @@ make changes observable and releases recoverable.
 />
 
 <ResourceCard
+  showFullDescription
   title="MLflow: Experiment Tracking"
   url="https://mlflow.org/docs/latest/ml/tracking/"
   type="article"
@@ -73,3 +75,5 @@ Workload estimate pending pilot. Include practice, debugging, review, and revisi
 ## Submission evidence and completion checks
 
 Keep the expected output, runnable instructions, test/evaluation results where applicable, and your explanation of a meaningful failure. Submit through review and record the resulting revision. Explain your approach and diagnose a relevant failure during review. Revise incomplete evidence after feedback; resource completion alone does not establish competence.
+
+</DraftModule>

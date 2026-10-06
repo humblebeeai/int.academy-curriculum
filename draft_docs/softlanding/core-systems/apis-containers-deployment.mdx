@@ -5,13 +5,28 @@ sidebar_position: 5
 toc_max_heading_level: 3
 ---
 
-import { ResourceCard } from "@site/src/components";
+import { ResourceCard, DraftModule, ModuleIntro, SkillShowcase, SectionLinks } from "@site/src/components";
+
+import moduleImage from "../../assets/images/fullstack.png";
 
 # APIs, Containers & Deployment
 
-[Core Systems](/draft/softlanding/core-systems) → Module 5
+<DraftModule>
 
-**Jump to:** [Learn](#learn) · [Resources](#resources) · [Practice](#practice) · [What to submit](#expected-output)
+<ModuleIntro
+  stageLabel="Core Systems"
+  stageHref="/draft/softlanding/core-systems"
+  moduleNumber={5}
+  kind="required"
+  icon="Container"
+  summary="Make your AI component usable as a service. Build a validated API, test it, containerize it, and deploy it to an agreed environment."
+  image={{ src: moduleImage, alt: "Illustration connecting an application, backend, database, and deployment pipeline.", width: 1536, height: 1024 }}
+/>
+
+<SkillShowcase decorativeIcons skills={[{"iconString": "Code", "title": "Build an API", "description": "Validate inputs and outputs and handle errors."}, {"iconString": "Container", "title": "Package your service", "description": "Build and run a reproducible container."}, {"iconString": "Rocket", "title": "Deliver working software", "description": "Automate tests and demonstrate a deployed service."}]} />
+
+
+<SectionLinks items={[{"title": "Learn", "href": "#learn"}, {"title": "Resources", "href": "#resources"}, {"title": "Practice", "href": "#practice"}, {"title": "What to submit", "href": "#expected-output"}]} />
 
 ## APIs, Containers, and Deployment {#r6}
 
@@ -30,6 +45,7 @@ make your AI component usable as a service.
 ### Resources
 
 <ResourceCard
+  showFullDescription
   title="APIs Explained in 6 Minutes"
   url="https://www.youtube.com/watch?v=hltLrjabkiY"
   type="video"
@@ -37,6 +53,7 @@ make your AI component usable as a service.
 />
 
 <ResourceCard
+  showFullDescription
   title="How to Use FastAPI: A Detailed Python Tutorial"
   url="https://www.youtube.com/watch?v=SORiTsvnU28"
   type="video"
@@ -44,6 +61,7 @@ make your AI component usable as a service.
 />
 
 <ResourceCard
+  showFullDescription
   title="FastAPI: Tutorial — User Guide"
   url="https://fastapi.tiangolo.com/tutorial/"
   type="tutorial"
@@ -51,6 +69,7 @@ make your AI component usable as a service.
 />
 
 <ResourceCard
+  showFullDescription
   title="Docker 101 Tutorial"
   url="https://www.docker.com/101-tutorial/"
   type="tutorial"
@@ -58,6 +77,7 @@ make your AI component usable as a service.
 />
 
 <ResourceCard
+  showFullDescription
   title="GitHub Actions: Building and testing Python"
   url="https://docs.github.com/en/actions/tutorials/build-and-test-code/python"
   type="documentation"
@@ -65,6 +85,7 @@ make your AI component usable as a service.
 />
 
 <ResourceCard
+  showFullDescription
   title="HTML, CSS, and JavaScript in 30 minutes"
   url="https://www.youtube.com/watch?v=_GTMOmRrqkU"
   type="video"
@@ -72,6 +93,7 @@ make your AI component usable as a service.
 />
 
 <ResourceCard
+  showFullDescription
   title="Learn DOM Manipulation in 18 Minutes"
   url="https://www.youtube.com/watch?v=y17RuWkWdn8"
   type="video"
@@ -96,3 +118,5 @@ Use the provisional estimates where supplied. Other workloads remain pending pil
 ## Finish this module
 
 Keep the required outputs and explain your decisions. Diagnose a relevant failure during review and revise incomplete evidence after feedback. Resource completion supports progress; the stated practical requirements determine completion.
+
+</DraftModule>

@@ -5,13 +5,28 @@ sidebar_position: 3
 toc_max_heading_level: 3
 ---
 
-import { ResourceCard } from "@site/src/components";
+import { ResourceCard, DraftModule, ModuleIntro, SkillShowcase, SectionLinks } from "@site/src/components";
+
+import moduleImage from "../../assets/images/nlp.png";
 
 # LLM Applications
 
-[Core Systems](/draft/softlanding/core-systems) → Module 3
+<DraftModule>
 
-**Jump to:** [Learn](#learn) · [Resources](#resources) · [Practice](#practice) · [What to submit](#expected-output)
+<ModuleIntro
+  stageLabel="Core Systems"
+  stageHref="/draft/softlanding/core-systems"
+  moduleNumber={3}
+  kind="required"
+  icon="MessageSquare"
+  summary="Build an LLM feature with clear inputs, validated outputs, and an evaluation that reveals where it succeeds and fails."
+  image={{ src: moduleImage, alt: "Illustration of a layered language model processing streams of tokens.", width: 1536, height: 1024 }}
+/>
+
+<SkillShowcase decorativeIcons skills={[{"iconString": "MessageSquare", "title": "Frame a task", "description": "Define context and a useful output contract."}, {"iconString": "Braces", "title": "Validate responses", "description": "Use structured outputs and handle invalid results."}, {"iconString": "ClipboardCheck", "title": "Evaluate behavior", "description": "Run test cases and inspect failures and limitations."}]} />
+
+
+<SectionLinks items={[{"title": "Learn", "href": "#learn"}, {"title": "Resources", "href": "#resources"}, {"title": "Practice", "href": "#practice"}, {"title": "What to submit", "href": "#expected-output"}]} />
 
 ## LLM Application Fundamentals {#r4}
 
@@ -31,6 +46,7 @@ build an LLM feature with a clear contract and measurable behavior.
 ### Resources
 
 <ResourceCard
+  showFullDescription
   title="Karpathy: Intro to Large Language Models"
   url="https://www.youtube.com/watch?v=zjkBMFhNj_g"
   type="video"
@@ -38,6 +54,7 @@ build an LLM feature with a clear contract and measurable behavior.
 />
 
 <ResourceCard
+  showFullDescription
   title="Karpathy: How I use LLMs"
   url="https://www.youtube.com/watch?v=EWvNQjAaOHw"
   type="video"
@@ -45,6 +62,7 @@ build an LLM feature with a clear contract and measurable behavior.
 />
 
 <ResourceCard
+  showFullDescription
   title="Hugging Face: Structured Outputs"
   url="https://huggingface.co/docs/inference-providers/guides/structured-output"
   type="article"
@@ -52,6 +70,7 @@ build an LLM feature with a clear contract and measurable behavior.
 />
 
 <ResourceCard
+  showFullDescription
   title="Anthropic: Demystifying evals for AI agents"
   url="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
   type="article"
@@ -76,3 +95,5 @@ Use the provisional estimates where supplied. Other workloads remain pending pil
 ## Finish this module
 
 Keep the required outputs and explain your decisions. Diagnose a relevant failure during review and revise incomplete evidence after feedback. Resource completion supports progress; the stated practical requirements determine completion.
+
+</DraftModule>

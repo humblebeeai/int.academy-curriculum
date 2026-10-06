@@ -5,15 +5,25 @@ sidebar_position: 2
 toc_max_heading_level: 2
 ---
 
-import { ResourceCard } from "@site/src/components";
+import { ResourceCard, DraftModule, ModuleIntro, SkillShowcase, SectionLinks } from "@site/src/components";
 
 # Terminal & Algorithmic Basics
 
-[Engineering Fundamentals](/draft/engineering-fundamentals) → Module 1
+<DraftModule>
 
-Learn the tools and reasoning used throughout the curriculum. Start with terminal and environment setup, then Git and debugging. Continue algorithm practice alongside mathematics and data modules. Basic Python is an entry requirement.
+<ModuleIntro
+  stageLabel="Engineering Fundamentals"
+  stageHref="/draft/engineering-fundamentals"
+  moduleNumber={1}
+  kind="required"
+  icon="Terminal"
+  summary="Learn the tools and reasoning you’ll use throughout the curriculum. Set up your workspace, practise Git and debugging, and keep solving algorithmic problems alongside the other modules."
+/>
 
-**Jump to:** [Terminal and Filesystem](#terminal) · [Python Environment Setup](#environment-setup) · [Git and GitHub](#git-github) · [Debugging Fundamentals](#debugging) · [Algorithms and Problem Solving](#algorithms)
+<SkillShowcase decorativeIcons skills={[{"iconString": "Terminal", "title": "Use your workspace", "description": "Navigate files, set up Python, and run your code."}, {"iconString": "GitBranch", "title": "Work with others", "description": "Use branches, pull requests, and review feedback."}, {"iconString": "Code", "title": "Solve and debug", "description": "Explain solutions, check edge cases, and repair failures."}]} />
+
+
+<SectionLinks items={[{"title": "Terminal and Filesystem", "href": "#terminal"}, {"title": "Python Environment Setup", "href": "#environment-setup"}, {"title": "Git and GitHub", "href": "#git-github"}, {"title": "Debugging Fundamentals", "href": "#debugging"}, {"title": "Algorithms and Problem Solving", "href": "#algorithms"}]} />
 
 ## Terminal and Filesystem {#terminal}
 
@@ -24,6 +34,7 @@ Navigate and manipulate a local filesystem. No terminal experience is required.
 ### Learn and practise
 
 <ResourceCard
+  showFullDescription
   title="Linux Journey: Command Line"
   url="https://labex.io/linuxjourney/courses/command-line"
   type="practice"
@@ -63,6 +74,7 @@ Run Python scripts and notebooks in an isolated environment. Complete terminal b
 ### Learn and practise
 
 <ResourceCard
+  showFullDescription
   title="Python tutorial on virtual environments and packages"
   url="https://docs.python.org/3/tutorial/venv.html"
   type="tutorial"
@@ -70,6 +82,7 @@ Run Python scripts and notebooks in an isolated environment. Complete terminal b
 />
 
 <ResourceCard
+  showFullDescription
   title="JupyterLab installation guide"
   url="https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html"
   type="documentation"
@@ -101,6 +114,7 @@ Use Git and GitHub to track changes and contribute through a basic collaborative
 ### Learning resources
 
 <ResourceCard
+  showFullDescription
   title="GitHub Skills"
   url="https://skills.github.com/"
   type="article"
@@ -108,6 +122,7 @@ Use Git and GitHub to track changes and contribute through a basic collaborative
 />
 
 <ResourceCard
+  showFullDescription
   title="Introduction to Git"
   url="https://github.com/skills/introduction-to-git"
   type="practice"
@@ -115,6 +130,7 @@ Use Git and GitHub to track changes and contribute through a basic collaborative
 />
 
 <ResourceCard
+  showFullDescription
   title="Introduction to GitHub"
   url="https://github.com/skills/introduction-to-github"
   type="practice"
@@ -122,6 +138,7 @@ Use Git and GitHub to track changes and contribute through a basic collaborative
 />
 
 <ResourceCard
+  showFullDescription
   title="Resolve Merge Conflicts"
   url="https://github.com/skills/resolve-merge-conflicts"
   type="practice"
@@ -129,6 +146,7 @@ Use Git and GitHub to track changes and contribute through a basic collaborative
 />
 
 <ResourceCard
+  showFullDescription
   title="Learn Git Branching"
   url="https://learngitbranching.js.org/"
   type="article"
@@ -186,6 +204,7 @@ Systematically locate, understand, and fix ordinary Python errors.
 Use selected sections from:
 
 <ResourceCard
+  showFullDescription
   title="LabEx — Code Debugging Techniques"
   url="https://labex.io/tutorials/code-debugging-techniques-132737"
   type="practice"
@@ -193,6 +212,7 @@ Use selected sections from:
 />
 
 <ResourceCard
+  showFullDescription
   title="VS Code Python debugging tutorial"
   url="https://code.visualstudio.com/docs/python/python-tutorial#_configure-and-run-the-debugger"
   type="tutorial"
@@ -238,6 +258,7 @@ Develop reasoning about data structures, algorithm choices, and edge cases. Basi
 ### Week 1 — Basic Problem-Solving Patterns
 
 <ResourceCard
+  showFullDescription
   title="Week 1 challenges"
   url="https://www.hackerrank.com/interview/preparation-kits/one-month-preparation-kit/one-month-week-one/challenges"
   type="practice"
@@ -247,6 +268,7 @@ Develop reasoning about data structures, algorithm choices, and edge cases. Basi
 ### Week 2 — Algorithmic Reasoning
 
 <ResourceCard
+  showFullDescription
   title="Week 2 challenges"
   url="https://www.hackerrank.com/interview/preparation-kits/one-month-preparation-kit/one-month-week-two/challenges"
   type="practice"
@@ -256,6 +278,7 @@ Develop reasoning about data structures, algorithm choices, and edge cases. Basi
 ### Week 3 — Core Data Structures
 
 <ResourceCard
+  showFullDescription
   title="Week 3 challenges"
   url="https://www.hackerrank.com/interview/preparation-kits/one-month-preparation-kit/one-month-week-three/challenges"
   type="practice"
@@ -265,6 +288,7 @@ Develop reasoning about data structures, algorithm choices, and edge cases. Basi
 ### Week 4 — Intermediate and Advanced Algorithms
 
 <ResourceCard
+  showFullDescription
   title="Week 4 challenges"
   url="https://www.hackerrank.com/interview/preparation-kits/one-month-preparation-kit/one-month-week-four/challenges"
   type="practice"
@@ -286,3 +310,5 @@ Use the provisional estimates where supplied. Other workloads remain pending pil
 ## Finish this module
 
 Keep the required outputs and explain your decisions. Diagnose a relevant failure during review and revise incomplete evidence after feedback. Resource completion supports progress; the stated practical requirements determine completion.
+
+</DraftModule>

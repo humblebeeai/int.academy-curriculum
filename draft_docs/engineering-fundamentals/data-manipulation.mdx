@@ -5,15 +5,28 @@ sidebar_position: 4
 toc_max_heading_level: 2
 ---
 
-import { ResourceCard } from "@site/src/components";
+import { ResourceCard, DraftModule, ModuleIntro, SkillShowcase, SectionLinks } from "@site/src/components";
+
+import moduleImage from "../assets/images/data_engineering.png";
 
 # Data Foundations
 
-[Engineering Fundamentals](/draft/engineering-fundamentals) → Module 3
+<DraftModule>
 
-Prepare, query, and explain data using one connected workflow. Begin with NumPy; complete its introductory array topics before the linear algebra notebooks. Carry your cleaned Pandas dataset into exploratory analysis.
+<ModuleIntro
+  stageLabel="Engineering Fundamentals"
+  stageHref="/draft/engineering-fundamentals"
+  moduleNumber={3}
+  kind="required"
+  icon="Database"
+  summary="Turn raw data into something you can query, analyze, and explain. Begin with NumPy, then work through cleaning, SQL, and exploratory analysis."
+  image={{ src: moduleImage, alt: "Illustration of raw data moving through preparation steps into a data pipeline.", width: 1536, height: 1024 }}
+/>
 
-**Jump to:** [NumPy Foundations](#numpy) · [Pandas and Data Cleaning](#pandas-cleaning) · [SQL](#sql) · [Exploratory Analysis and Visualization](#exploratory-analysis)
+<SkillShowcase decorativeIcons skills={[{"iconString": "Database", "title": "Prepare data", "description": "Inspect and transform arrays and clean tabular datasets."}, {"iconString": "Search", "title": "Query data", "description": "Answer analytical questions with joins, CTEs, and window functions."}, {"iconString": "BarChart3", "title": "Communicate findings", "description": "Create clear charts and explain evidence and limitations."}]} />
+
+
+<SectionLinks items={[{"title": "NumPy Foundations", "href": "#numpy"}, {"title": "Pandas and Data Cleaning", "href": "#pandas-cleaning"}, {"title": "SQL", "href": "#sql"}, {"title": "Exploratory Analysis and Visualization", "href": "#exploratory-analysis"}]} />
 
 ## NumPy Foundations {#numpy}
 
@@ -35,6 +48,7 @@ Basic Python and environment setup.
 ### Learn and practise
 
 <ResourceCard
+  showFullDescription
   title="NumPy: The Absolute Basics for Beginners"
   url="https://numpy.org/doc/stable/user/absolute_beginners.html"
   type="documentation"
@@ -42,6 +56,7 @@ Basic Python and environment setup.
 />
 
 <ResourceCard
+  showFullDescription
   title="CodeSignal: NumPy Basics"
   url="https://codesignal.com/learn/courses/numpy-basics"
   type="course"
@@ -75,6 +90,7 @@ Basic Python, environment setup, and introductory NumPy.
 ### Learn and practise
 
 <ResourceCard
+  showFullDescription
   title="Kaggle Learn: Pandas"
   url="https://www.kaggle.com/learn/pandas"
   type="course"
@@ -82,6 +98,7 @@ Basic Python, environment setup, and introductory NumPy.
 />
 
 <ResourceCard
+  showFullDescription
   title="Kaggle Learn: Data Cleaning"
   url="https://www.kaggle.com/learn/data-cleaning"
   type="course"
@@ -116,6 +133,7 @@ Basic data-handling concepts; no database experience is required.
 ### Learn and practise
 
 <ResourceCard
+  showFullDescription
   title="SQLTutorial.org"
   url="https://www.sqltutorial.org/"
   type="tutorial"
@@ -123,6 +141,7 @@ Basic data-handling concepts; no database experience is required.
 />
 
 <ResourceCard
+  showFullDescription
   title="HackerRank SQL"
   url="https://www.hackerrank.com/domains/sql"
   type="practice"
@@ -156,6 +175,7 @@ Pandas and data cleaning, plus core descriptive statistics.
 ### Learn and practise
 
 <ResourceCard
+  showFullDescription
   title="Kaggle Learn: Data Visualization"
   url="https://www.kaggle.com/learn/data-visualization"
   type="course"
@@ -173,3 +193,5 @@ Use the provisional estimates where supplied. Other workloads remain pending pil
 ## Finish this module
 
 Keep the required outputs and explain your decisions. Diagnose a relevant failure during review and revise incomplete evidence after feedback. Resource completion supports progress; the stated practical requirements determine completion.
+
+</DraftModule>

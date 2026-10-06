@@ -5,15 +5,13 @@ sidebar_position: 9
 toc_max_heading_level: 2
 ---
 
-import { ResourceCard } from "@site/src/components";
+import { ResourceCard, DraftModule, ModuleIntro } from "@site/src/components";
 
 # Backend Architecture and Data Systems
 
-[← Core Systems modules](/draft/softlanding/core-systems)
+<DraftModule>
 
-**Elective module.** Choose two Core Systems electives and complete their practical work.
-
-extend an AI service with reliable persistence and background work.
+<ModuleIntro stageLabel="Core Systems" stageHref="/draft/softlanding/core-systems" kind="elective" icon="Database" summary="Extend an AI service with reliable persistence and background work. Choose this as one of your two Core Systems electives." />
 
 **Before you start:** [Software Engineering for AI](/draft/softlanding/core-systems/software-engineering#r1), [Systems, Networking & Data](/draft/softlanding/core-systems/systems-networking-data#r5), [APIs, Containers & Deployment](/draft/softlanding/core-systems/apis-containers-deployment#r6), and Engineering Fundamentals SQL.
 
@@ -27,6 +25,7 @@ extend an AI service with reliable persistence and background work.
 ## Resources
 
 <ResourceCard
+  showFullDescription
   title="PostgreSQL: Tutorial"
   url="https://www.postgresql.org/docs/current/tutorial.html"
   type="tutorial"
@@ -34,6 +33,7 @@ extend an AI service with reliable persistence and background work.
 />
 
 <ResourceCard
+  showFullDescription
   title="Celery: First Steps"
   url="https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html"
   type="documentation"
@@ -41,6 +41,7 @@ extend an AI service with reliable persistence and background work.
 />
 
 <ResourceCard
+  showFullDescription
   title="Redis: Quick Starts"
   url="https://redis.io/docs/latest/develop/get-started/"
   type="article"
@@ -48,6 +49,7 @@ extend an AI service with reliable persistence and background work.
 />
 
 <ResourceCard
+  showFullDescription
   title="FastAPI: Tutorial — User Guide"
   url="https://fastapi.tiangolo.com/tutorial/"
   type="tutorial"
@@ -72,3 +74,5 @@ Workload estimate pending pilot. Include practice, debugging, review, and revisi
 ## Submission evidence and completion checks
 
 Keep the expected output, runnable instructions, test/evaluation results where applicable, and your explanation of a meaningful failure. Submit through review and record the resulting revision. Explain your approach and diagnose a relevant failure during review. Revise incomplete evidence after feedback; resource completion alone does not establish competence.
+
+</DraftModule>

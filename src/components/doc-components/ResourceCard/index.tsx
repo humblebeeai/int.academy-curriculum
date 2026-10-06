@@ -28,6 +28,7 @@ export interface ResourceCardProps {
   url: string;
   duration?: string;
   description?: string;
+  showFullDescription?: boolean;
   difficulty?: "beginner" | "intermediate" | "advanced";
 }
 
@@ -53,6 +54,7 @@ export default function ResourceCard({
   duration,
   description,
   difficulty,
+  showFullDescription = false,
 }: ResourceCardProps) {
   const Icon = TypeIcons[type] || Link;
 
@@ -75,7 +77,7 @@ export default function ResourceCard({
         <ExternalLink size={14} className={styles.externalIcon} />
       </h4>
 
-      {description && <p className={styles.description}>{description}</p>}
+      {description && <p data-resource-scope={showFullDescription ? "full" : undefined} className={clsx(styles.description, showFullDescription && styles.fullDescription)}>{description}</p>}
 
       {duration && (
         <div className={styles.meta}>

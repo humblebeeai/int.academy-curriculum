@@ -5,7 +5,11 @@ sidebar_position: 1
 toc_max_heading_level: 2
 ---
 
+import { DraftModule, ModuleGrid } from "@site/src/components";
+
 # Engineering Fundamentals
+
+<DraftModule>
 
 Build the skills you’ll use throughout AI engineering: write and debug Python, work with other developers, understand the mathematics, and prepare data for analysis.
 
@@ -15,11 +19,7 @@ Build the skills you’ll use throughout AI engineering: write and debug Python,
 
 Complete these three modules. Each page links to its learning resources, practice tasks, and completion requirements.
 
-| Module | What you’ll be able to do |
-| --- | --- |
-| [1. Terminal & Algorithmic Basics](/draft/engineering-fundamentals/terminal-algorithmic-basics) | Use the terminal, set up Python, collaborate with Git, debug code, and solve algorithmic problems. |
-| [2. Math for AI](/draft/engineering-fundamentals/math-for-ai) | Use vectors and matrices in AI computations, reason about probability, and interpret statistical evidence. |
-| [3. Data Foundations](/draft/engineering-fundamentals/data-manipulation) | Prepare and query data with NumPy, Pandas, and SQL; explain findings with clear visualizations. |
+<ModuleGrid items={[{"title": "Terminal & Algorithmic Basics", "href": "/draft/engineering-fundamentals/terminal-algorithmic-basics", "kind": "required", "icon": "Terminal", "outcome": "Use the terminal, set up Python, collaborate with Git, debug code, and solve algorithmic problems.", "number": 1}, {"title": "Math for AI", "href": "/draft/engineering-fundamentals/math-for-ai", "kind": "required", "icon": "Calculator", "outcome": "Use vectors and matrices in AI computations, reason about probability, and interpret statistical evidence.", "number": 2}, {"title": "Data Foundations", "href": "/draft/engineering-fundamentals/data-manipulation", "kind": "required", "icon": "Database", "outcome": "Prepare and query data with NumPy, Pandas, and SQL; explain findings with clear visualizations.", "number": 3}]} />
 
 :::tip Where to begin
 Start with the developer tools in Module 1. Study the introductory [NumPy section](/draft/engineering-fundamentals/data-manipulation#numpy) before the linear algebra notebooks in Math for AI. You can continue algorithm practice alongside the other modules.
@@ -60,7 +60,7 @@ Calculus is not required. Linear algebra, probability and statistics are develop
 
 #### English Reading
 
-You should be able to follow written instructions, understand programming problem statements and use introductory documentation in English. They may use a dictionary to clarify unfamiliar vocabulary.
+You should be able to follow written instructions, understand programming problem statements and use introductory documentation in English. You may use a dictionary to clarify unfamiliar vocabulary.
 
 #### Readiness Verification
 
@@ -85,15 +85,7 @@ A short Python exercise and mathematics check confirm readiness. Address any gap
 
 Choose an elective when you want to explore a skill further. Start after completing its prerequisites. Complete exactly two electives to finish Engineering Fundamentals.
 
-| Elective | Before you start |
-| --- | --- |
-| [Data Visualization](/draft/engineering-fundamentals/elective-data-visualization) | Data cleaning, descriptive statistics, and basic charts |
-| [GitHub Actions & CI](/draft/engineering-fundamentals/elective-github-actions) | Git/GitHub and a runnable Python project |
-| [Advanced SQL](/draft/engineering-fundamentals/elective-advanced-sql) | Joins, CTEs, and basic window functions |
-| [Bash Automation](/draft/engineering-fundamentals/elective-bash-automation) | Terminal commands and a working Python environment |
-| [Algorithms & Problem Solving](/draft/engineering-fundamentals/elective-algorithms) | Required HackerRank preparation kit and debugging practice |
-| [Advanced Statistical Inference](/draft/engineering-fundamentals/advanced-statistical-inference) | Probability and statistics in Math for AI |
-
+<ModuleGrid items={[{"title": "Data Visualization", "href": "/draft/engineering-fundamentals/elective-data-visualization", "kind": "elective", "icon": "BarChart3", "outcome": "Create clear static and interactive charts.", "prerequisites": "Data cleaning, descriptive statistics, and basic charts"}, {"title": "GitHub Actions & CI", "href": "/draft/engineering-fundamentals/elective-github-actions", "kind": "elective", "icon": "GitBranch", "outcome": "Run automated checks on your Python project.", "prerequisites": "Git/GitHub and a runnable Python project"}, {"title": "Advanced SQL", "href": "/draft/engineering-fundamentals/elective-advanced-sql", "kind": "elective", "icon": "Database", "outcome": "Write stronger analytical queries.", "prerequisites": "Joins, CTEs, and basic window functions"}, {"title": "Bash Automation", "href": "/draft/engineering-fundamentals/elective-bash-automation", "kind": "elective", "icon": "Terminal", "outcome": "Automate a repeatable command-line workflow.", "prerequisites": "Terminal commands and a working Python environment"}, {"title": "Algorithms & Problem Solving", "href": "/draft/engineering-fundamentals/elective-algorithms", "kind": "elective", "icon": "Code2", "outcome": "Develop and explain stronger problem-solving approaches.", "prerequisites": "Required HackerRank preparation kit and debugging practice"}, {"title": "Advanced Statistical Inference", "href": "/draft/engineering-fundamentals/advanced-statistical-inference", "kind": "elective", "icon": "Calculator", "outcome": "Compare groups and interpret advanced inference.", "prerequisites": "Probability and statistics in Math for AI"}]} />
 ## Finish this stage {#completion}
 
 Complete all three required modules and two electives. Keep your code, notebooks, explanations, and assessment results ready for review. Demonstrate the skills on each module page and revise any gaps after feedback.
@@ -105,3 +97,5 @@ Statistics requires at least 80% on every assigned unit test and a separate Acad
 ## Plan your study time
 
 Include time for practice, debugging, feedback, and revision. Estimates supplied in the guide are provisional; other workloads remain pending pilot. Agree a schedule with your cohort or mentor.
+
+</DraftModule>
