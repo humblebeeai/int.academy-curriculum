@@ -1,12 +1,16 @@
 ---
-title: "E4. Backend Architecture and Data Systems"
-sidebar_label: "E4. Backend Architecture and Data Systems"
-sidebar_position: 11
+title: "Backend Architecture and Data Systems"
+sidebar_label: "Elective · Backend Architecture and Data Systems"
+sidebar_position: 9
 ---
 
-# E4. Backend Architecture and Data Systems
+import { ResourceCard } from "@site/src/components";
 
-Purpose: extend an AI service with reliable persistence and background work. Prerequisites: [R1](/draft/softlanding/core-systems/r1-software-engineering), [R5](/draft/softlanding/core-systems/r5-systems-data), [R6](/draft/softlanding/core-systems/r6-apis-deployment), and Engineering Fundamentals SQL.
+# Backend Architecture and Data Systems
+
+**Status: Elective.** Complete exactly two of the five Core Systems electives.
+
+Purpose: extend an AI service with reliable persistence and background work. Prerequisites: [R1](/draft/softlanding/core-systems/software-engineering#r1), [R5](/draft/softlanding/core-systems/systems-networking-data#r5), [R6](/draft/softlanding/core-systems/apis-containers-deployment#r6), and Engineering Fundamentals SQL.
 
 ## Learn
 
@@ -17,10 +21,33 @@ Purpose: extend an AI service with reliable persistence and background work. Pre
 
 ## Resources
 
-- [PostgreSQL: Tutorial](https://www.postgresql.org/docs/current/tutorial.html) — Added practical reference; focus on tables, queries, joins, updates, foreign keys, and transactions. Extend into indexes for your own queries.
-- [Celery: First Steps](https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html) — Added runnable worker example; implement one background task and inspect completion/failure.
-- [Redis: Quick Starts](https://redis.io/docs/latest/develop/get-started/) — Added practice; use Python access and an expiring cache for one suitable operation.
-- [FastAPI: Tutorial — User Guide](https://fastapi.tiangolo.com/tutorial/) — Retained application technology; use current reference sections for the API and dependencies around your data layer.
+<ResourceCard
+  title="PostgreSQL: Tutorial"
+  url="https://www.postgresql.org/docs/current/tutorial.html"
+  type="tutorial"
+  description="Required within this elective. Focus on tables, queries, joins, updates, foreign keys, and transactions. Extend into indexes for your own queries."
+/>
+
+<ResourceCard
+  title="Celery: First Steps"
+  url="https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html"
+  type="documentation"
+  description="Required within this elective. Use the runnable worker example: implement one background task and inspect completion/failure."
+/>
+
+<ResourceCard
+  title="Redis: Quick Starts"
+  url="https://redis.io/docs/latest/develop/get-started/"
+  type="article"
+  description="Required within this elective. Use Python access and an expiring cache for one suitable operation."
+/>
+
+<ResourceCard
+  title="FastAPI: Tutorial — User Guide"
+  url="https://fastapi.tiangolo.com/tutorial/"
+  type="tutorial"
+  description="Required within this elective. Use current reference sections for the API and dependencies around your data layer."
+/>
 
 ## Practice
 

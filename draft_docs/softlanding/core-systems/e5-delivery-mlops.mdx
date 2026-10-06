@@ -1,12 +1,16 @@
 ---
-title: "E5. Delivery, Monitoring, and MLOps"
-sidebar_label: "E5. Delivery, Monitoring, and MLOps"
-sidebar_position: 12
+title: "Delivery, Monitoring, and MLOps"
+sidebar_label: "Elective · Delivery, Monitoring, and MLOps"
+sidebar_position: 10
 ---
 
-# E5. Delivery, Monitoring, and MLOps
+import { ResourceCard } from "@site/src/components";
 
-Purpose: make changes observable and releases recoverable. Prerequisites: [R1](/draft/softlanding/core-systems/r1-software-engineering), [R5](/draft/softlanding/core-systems/r5-systems-data), [R6](/draft/softlanding/core-systems/r6-apis-deployment); [R2](/draft/softlanding/core-systems/r2-applied-ml)–[R4](/draft/softlanding/core-systems/r4-llm-applications) provide the evaluation for your AI component.
+# Delivery, Monitoring, and MLOps
+
+**Status: Elective.** Complete exactly two of the five Core Systems electives.
+
+Purpose: make changes observable and releases recoverable. Prerequisites: [R1](/draft/softlanding/core-systems/software-engineering#r1), [R5](/draft/softlanding/core-systems/systems-networking-data#r5), [R6](/draft/softlanding/core-systems/apis-containers-deployment#r6); [R2](/draft/softlanding/core-systems/applied-ml-deep-learning#r2)–[R4](/draft/softlanding/core-systems/llm-applications#r4) provide the evaluation for your AI component.
 
 ## Learn
 
@@ -18,10 +22,33 @@ Purpose: make changes observable and releases recoverable. Prerequisites: [R1](/
 
 ## Resources
 
-- [GitHub Actions: Building and testing Python](https://docs.github.com/en/actions/tutorials/build-and-test-code/python) — Extend [R6](/draft/softlanding/core-systems/r6-apis-deployment)'s basic workflow into build/release checks appropriate to your environment.
-- [Docker 101 Tutorial](https://www.docker.com/101-tutorial/) — Roadmap resource; reuse image-building skills and apply explicit release tags.
-- [OpenTelemetry Python: Getting Started by Example](https://opentelemetry.io/docs/languages/python/getting-started/) — Added runnable reference; instrument a small service and inspect a request trace.
-- [MLflow: Experiment Tracking](https://mlflow.org/docs/latest/ml/tracking/) — Added reference; connect model artifacts and evaluation results to a versioned run. LLM projects can instead version their prompts/configuration and evaluation results.
+<ResourceCard
+  title="GitHub Actions: Building and testing Python"
+  url="https://docs.github.com/en/actions/tutorials/build-and-test-code/python"
+  type="documentation"
+  description="Required within this elective. Extend the APIs, Containers & Deployment module's basic workflow into build/release checks appropriate to your environment."
+/>
+
+<ResourceCard
+  title="Docker 101 Tutorial"
+  url="https://www.docker.com/101-tutorial/"
+  type="tutorial"
+  description="Required within this elective. Reuse image-building skills and apply explicit release tags."
+/>
+
+<ResourceCard
+  title="OpenTelemetry Python: Getting Started by Example"
+  url="https://opentelemetry.io/docs/languages/python/getting-started/"
+  type="article"
+  description="Required within this elective. Instrument a small service and inspect a request trace."
+/>
+
+<ResourceCard
+  title="MLflow: Experiment Tracking"
+  url="https://mlflow.org/docs/latest/ml/tracking/"
+  type="article"
+  description="Required within this elective. Connect model artifacts and evaluation results to a versioned run. LLM projects can instead version their prompts/configuration and evaluation results."
+/>
 
 ## Practice
 

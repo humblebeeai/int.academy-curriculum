@@ -1,44 +1,10 @@
 ---
 title: "R4. LLM Application Fundamentals"
 sidebar_label: "R4. LLM Application Fundamentals"
-sidebar_position: 4
+sidebar_position: 99
+unlisted: true
 ---
 
 # R4. LLM Application Fundamentals
 
-Purpose: build an LLM feature with a clear contract and measurable behavior. Prerequisite: [R1](/draft/softlanding/core-systems/r1-software-engineering); use [R3](/draft/softlanding/core-systems/r3-deep-learning)'s transformer introduction for background.
-
-## Learn
-
-- Tokens, context limits, message roles, prompts, and selecting a suitable model for a task.
-- Hosted model calls or local inference; configuration, timeouts, retries, and response handling.
-- Structured outputs and schema validation; valid structure alone does not establish factual correctness.
-- Embeddings, retrieval, and tool calling at a conceptual level. Full RAG and agent implementations belong to electives.
-- Build a fixed evaluation set, inspect errors, and compare quality, latency, and cost or local resource use.
-- Handle sensitive inputs deliberately and recognize untrusted instructions in supplied content.
-
-## Resources
-
-- [Karpathy: Intro to Large Language Models](https://www.youtube.com/watch?v=zjkBMFhNj_g) — Roadmap video; its actual title is Intro to Large Language Models. Focus on training/inference, model behavior, and limitations.
-- [Karpathy: How I use LLMs](https://www.youtube.com/watch?v=EWvNQjAaOHw) — Roadmap resource; selected examples of task framing and practical use. Apply one pattern and evaluate the result.
-- [Hugging Face: Structured Outputs](https://huggingface.co/docs/inference-providers/guides/structured-output) — Added runnable guide; study JSON schemas and validation. Use one model/provider that supports your chosen setup.
-- [Anthropic: Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) — Added reference; use the introductory evaluation concepts: test inputs, success criteria, grading, and regression checks. Advanced agent sections support [E2](/draft/softlanding/core-systems/e2-agents-tools).
-
-## Practice
-
-- Build a small extraction or classification feature with a documented input/output schema.
-- Create a fixed set of representative, ambiguous, and invalid inputs with expected behavior.
-- Compare two prompts or model configurations; record task accuracy, invalid outputs, latency, and token/cost information where available.
-- Handle a timeout, malformed response, or unavailable model without presenting it as a successful result.
-
-## Expected output
-
-A working LLM feature, validated response handling, an evaluation script and results, and an explanation of failures. A local model or Academy-provided endpoint can support the task; compare local resource use when no per-call pricing applies.
-
-## Workload
-
-Workload estimate pending pilot. Include practice, debugging, review, and revision in your study time.
-
-## Submission evidence and completion checks
-
-Keep the expected output, runnable instructions, test/evaluation results where applicable, and your explanation of a meaningful failure. Submit through review and record the resulting revision. Explain your approach and diagnose a relevant failure during review. Revise incomplete evidence after feedback; resource completion alone does not establish competence.
+This subject is now part of a grouped module. Continue to the [learning section](/draft/softlanding/core-systems/llm-applications#r4).

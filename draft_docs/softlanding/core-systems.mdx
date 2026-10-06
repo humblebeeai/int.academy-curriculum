@@ -1,86 +1,53 @@
 ---
-title: "Core Systems Overview"
-sidebar_label: "Core Systems Overview"
+title: "Core Systems"
+sidebar_label: "Core Systems"
 sidebar_position: 2
 ---
 
-# Core Systems Overview
+# Core Systems
 
-Build the shared skills to turn AI ideas into tested, working applications. Complete all six required modules, choose two of five electives, and bring your learning together in one integrated project.
-
-## Purpose
-
-Core Systems connects Engineering Fundamentals to specialization. You will learn how models behave, how software is organized, how services communicate, and how to deliver an application that another person can run and inspect.
-
-## Goals
-
-- Develop sound judgment about model selection, evaluation, and failure analysis.
-- Write maintainable Python projects and use AI development tools with deliberate review and verification.
-- Build with classical ML, a small neural network, and pretrained models or LLMs.
-- Understand the systems that connect a model to users: HTTP, networks, processes, databases, APIs, and containers.
-- Practice testing, deployment, troubleshooting, documentation, and revision after feedback.
-
-## Expected outcomes
-
-By the end, you can explain your model or LLM choice, evaluate its behavior, implement a service around it, test the important paths, deploy it, and diagnose common failures. Your repository will show both working results and the reasoning behind your decisions.
+Core Systems connects Engineering Fundamentals to specialization. Complete five required modules covering all six R1–R6 learning requirements, exactly two electives, and the integrated project.
 
 ## Prerequisites
 
-Enter after completing Engineering Fundamentals or demonstrating equivalent skills through the Academy's direct-entry process. Before starting, you should be able to:
-
-- Write and debug Python functions, work with common data structures, and handle files.
-- Use the terminal, manage an environment, and collaborate with Git.
-- Manipulate data with NumPy and pandas; write basic SQL and inspect data with plots.
-- Use basic linear algebra, probability, and statistics to follow model explanations. Complete the derivatives bridge before R3.
-- Review gaps before taking a dependent module. You do not need prior FastAPI, Docker, PyTorch, or LLM application experience.
-
-## How the stage works
-
-- Required: complete R1–R6, including their practice tasks and expected outputs.
-- Electives: complete exactly two of E1–E5. Choose based on your interests and intended specialization.
-- Integrated project: deliver one usable AI service, then revise it after review.
-- Resources support the work. Watching a video or finishing a tutorial alone does not demonstrate the module's outcomes.
-
-## Using the resources
-
-Each module specifies what to study and what to build. Follow the assigned sections; complete additional material when it helps your project. Tutorials are starting points: change the dataset, inputs, behavior, or tests so your submission demonstrates your own understanding.
-
-The guide preserves the roadmap's resources for overlapping topics and adds documentation and runnable tutorials for the expanded scope. Some resources are labelled optional support; they do not count as an elective.
-
-The six-module organization below replaces the earlier four-module roadmap.
+Complete [Engineering Fundamentals](/draft/engineering-fundamentals) or demonstrate equivalent skills through the Academy direct-entry review. You should be able to write and debug Python, use a local environment and Git, manipulate data with NumPy/Pandas, query SQL, interpret plots, and use basic linear algebra, probability, and statistics. Derivatives preparation is provided within deep learning; no prior FastAPI, Docker, PyTorch, or LLM application experience is required.
 
 ## Required modules
 
-Everyone completes all six modules. Begin R1 first and continue using its engineering habits throughout the stage.
+| Required module | Guide requirements | Focus |
+| --- | --- | --- |
+| [Software Engineering for AI](/draft/softlanding/core-systems/software-engineering) | R1 | Project structure, tests, collaboration, verified AI-assisted work |
+| [Applied ML & Deep Learning](/draft/softlanding/core-systems/applied-ml-deep-learning) | R2 and R3 | Evaluation, classical models, training, PyTorch, pretrained inference |
+| [LLM Applications](/draft/softlanding/core-systems/llm-applications) | R4 | Structured outputs, context, evaluation, failure handling |
+| [Systems, Networking & Data](/draft/softlanding/core-systems/systems-networking-data) | R5 | HTTP/DNS, Linux, SSH, troubleshooting, persistence |
+| [APIs, Containers & Deployment](/draft/softlanding/core-systems/apis-containers-deployment) | R6 | FastAPI, Docker, automated tests, deployment |
 
-- [R1. Software Engineering for AI — project structure, tests, collaboration, and AI-assisted development.](/draft/softlanding/core-systems/r1-software-engineering)
-- [R2. Applied ML and Evaluation — models, baselines, correct splits, metrics, and error analysis.](/draft/softlanding/core-systems/r2-applied-ml)
-- [R3. Deep Learning and Pretrained Models — a small training loop, debugging, and pretrained inference.](/draft/softlanding/core-systems/r3-deep-learning)
-- [R4. LLM Application Fundamentals — validated outputs, context, evaluation, latency, and cost.](/draft/softlanding/core-systems/r4-llm-applications)
-- [R5. Systems, Networking, and Data — processes, HTTP/DNS, SSH, connectivity, and persistence.](/draft/softlanding/core-systems/r5-systems-data)
-- [R6. APIs, Containers, and Deployment — turn an AI component into a tested, deployed service.](/draft/softlanding/core-systems/r6-apis-deployment)
+## Learning sequence
 
-## Suggested progression
+Start Software Engineering for AI and keep using its habits throughout the stage. Complete Applied ML before deep learning, including the short derivatives preparation before R3. Systems can run alongside modeling work. Begin APIs and deployment after systems and a working inference function from ML, deep learning, or LLM applications.
 
-Work through R1 and R2, then R3 and R4. R5 can run alongside the modeling work. Start R6 once you have a working inference function and enough networking knowledge to understand requests and connections.
+Build the integrated project incrementally. Retain the separate R2 and R3 exercises even if the final project uses an LLM. Required exercises may share a repository with clear directories and run instructions.
 
-Build the integrated project incrementally as you learn. Required exercises can live in the same repository, with clear directories and run instructions.
+## Electives {#electives}
 
-## What carries forward from the roadmap
+The following are sibling modules within Core Systems. Complete exactly two after their prerequisites. An optional resource within a required module does not count as an elective.
 
-- ML Fundamentals: IBM's introduction, StatQuest, Andrew Ng, and the evaluation-metrics reference.
-- Intro to AI Engineering: CS231n lectures 2–4, UvA Tutorial 2, Karpathy's videos, and selected Clean Code topics. LeetCode remains optional consolidation.
-- Systems & Networking: NetworkChuck's introductory lessons, IP addressing, network diagnostics, and the architecture-diagram exercise.
-- Infra Basics: API and FastAPI videos, Docker 101, SSH concepts, and optional HTML/DOM starters.
+| Elective module | Prerequisites |
+| --- | --- |
+| [Retrieval and RAG](/draft/softlanding/core-systems/e1-retrieval-rag) | Software Engineering, LLM Applications, and API basics |
+| [Agents and Tool-Based Workflows](/draft/softlanding/core-systems/e2-agents-tools) | Software Engineering, LLM Applications, and API basics |
+| [Model Adaptation and Experimentation](/draft/softlanding/core-systems/e3-model-adaptation) | Applied ML & Deep Learning; LLM Applications for LLM projects |
+| [Backend Architecture and Data Systems](/draft/softlanding/core-systems/e4-backend-data) | Software Engineering, Systems & Data, APIs, and SQL |
+| [Delivery, Monitoring, and MLOps](/draft/softlanding/core-systems/e5-delivery-mlops) | Software Engineering, Systems & Data, APIs, and AI evaluation |
 
-## What is added
+Choose based on a capability and a project where you can practice it. Examples: Retrieval + Agents for grounded workflows; Model Adaptation + MLOps for experimentation and delivery; Backend + MLOps for reliability. Other combinations are valid when supported by your project.
 
-Applied model-evaluation exercises, project/dependency management, automated tests, verified AI-assisted changes, LLM structured outputs and evaluation, explicit HTTP/DNS lessons, database integration, and a basic automated test workflow.
+Electives introduce capabilities explored more deeply in specialization. Keep each to one defined feature, an evaluation approach, and an explanation of tradeoffs. Both electives may extend one project, but document their outcomes and evidence separately.
 
-## Electives and handover
+## Project and completion
 
-Complete [exactly two electives](/draft/softlanding/core-systems/electives), deliver the [integrated project](/draft/softlanding/core-systems/integrated-project), and meet the [completion expectations](/draft/softlanding/core-systems/completion). Start the [derivatives bridge](/draft/softlanding/core-systems/derivatives-bridge) before R3.
+Deliver the [Integrated Project & Handover](/draft/softlanding/core-systems/handover), revise it after review, and meet the completion checks. Watching tutorials alone does not establish the outcomes. Continue into [specialization](/draft/softlanding/specializations) afterward.
 
 ## Workload
 
-Workload estimate pending pilot. Include practice, debugging, review, and revision in your study time.
+Use the provisional estimates where supplied. Other workloads remain pending pilot. Include implementation, debugging, review, and revision.

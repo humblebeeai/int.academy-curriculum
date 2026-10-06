@@ -1,12 +1,16 @@
 ---
-title: "E1. Retrieval and RAG"
-sidebar_label: "E1. Retrieval and RAG"
-sidebar_position: 8
+title: "Retrieval and RAG"
+sidebar_label: "Elective · Retrieval and RAG"
+sidebar_position: 6
 ---
 
-# E1. Retrieval and RAG
+import { ResourceCard } from "@site/src/components";
 
-Purpose: build a service that retrieves relevant evidence before answering. Prerequisites: [R1](/draft/softlanding/core-systems/r1-software-engineering), [R4](/draft/softlanding/core-systems/r4-llm-applications), and basic API skills from [R6](/draft/softlanding/core-systems/r6-apis-deployment).
+# Retrieval and RAG
+
+**Status: Elective.** Complete exactly two of the five Core Systems electives.
+
+Purpose: build a service that retrieves relevant evidence before answering. Prerequisites: [R1](/draft/softlanding/core-systems/software-engineering#r1), [R4](/draft/softlanding/core-systems/llm-applications#r4), and basic API skills from [R6](/draft/softlanding/core-systems/apis-containers-deployment#r6).
 
 ## Learn
 
@@ -17,10 +21,33 @@ Purpose: build a service that retrieves relevant evidence before answering. Prer
 
 ## Resources
 
-- [Sentence Transformers: Semantic Search](https://www.sbert.net/examples/sentence_transformer/applications/semantic-search/README.html) — Added runnable starting point; build and inspect retrieval over a small collection.
-- [Hugging Face: Simple RAG for GitHub issues](https://huggingface.co/learn/cookbook/en/rag_zephyr_langchain) — Added notebook; adapt the retrieval-to-answer pattern to your documents. Choose an available model that fits your environment.
-- [Hugging Face: RAG Evaluation](https://huggingface.co/learn/cookbook/en/rag_evaluation) — Added reference; use separate retrieval and answer checks. Review a sample manually rather than relying only on an automated judge.
-- [Hugging Face: Advanced RAG](https://huggingface.co/learn/cookbook/en/advanced_rag) — Optional extension; select a technique to investigate after your baseline works.
+<ResourceCard
+  title="Sentence Transformers: Semantic Search"
+  url="https://www.sbert.net/examples/sentence_transformer/applications/semantic-search/README.html"
+  type="article"
+  description="Required within this elective. Build and inspect retrieval over a small collection."
+/>
+
+<ResourceCard
+  title="Hugging Face: Simple RAG for GitHub issues"
+  url="https://huggingface.co/learn/cookbook/en/rag_zephyr_langchain"
+  type="article"
+  description="Required within this elective. Adapt the retrieval-to-answer pattern to your documents. Choose an available model that fits your environment."
+/>
+
+<ResourceCard
+  title="Hugging Face: RAG Evaluation"
+  url="https://huggingface.co/learn/cookbook/en/rag_evaluation"
+  type="article"
+  description="Required within this elective. Use separate retrieval and answer checks. Review a sample manually rather than relying only on an automated judge."
+/>
+
+<ResourceCard
+  title="Hugging Face: Advanced RAG"
+  url="https://huggingface.co/learn/cookbook/en/advanced_rag"
+  type="article"
+  description="Optional. Select a technique to investigate after your baseline works."
+/>
 
 ## Practice
 

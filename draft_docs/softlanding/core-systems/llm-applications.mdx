@@ -1,0 +1,73 @@
+---
+title: "LLM Applications"
+sidebar_label: "LLM Applications"
+sidebar_position: 3
+---
+
+import { ResourceCard } from "@site/src/components";
+
+# LLM Applications
+
+**Status: Required.**
+
+## R4. LLM Application Fundamentals {#r4}
+
+Purpose: build an LLM feature with a clear contract and measurable behavior. Prerequisite: [R1](/draft/softlanding/core-systems/software-engineering#r1); use [R3](/draft/softlanding/core-systems/applied-ml-deep-learning#r3)'s transformer introduction for background.
+
+### Learn
+
+- Tokens, context limits, message roles, prompts, and selecting a suitable model for a task.
+- Hosted model calls or local inference; configuration, timeouts, retries, and response handling.
+- Structured outputs and schema validation; valid structure alone does not establish factual correctness.
+- Embeddings, retrieval, and tool calling at a conceptual level. Full RAG and agent implementations belong to electives.
+- Build a fixed evaluation set, inspect errors, and compare quality, latency, and cost or local resource use.
+- Handle sensitive inputs deliberately and recognize untrusted instructions in supplied content.
+
+### Resources
+
+<ResourceCard
+  title="Karpathy: Intro to Large Language Models"
+  url="https://www.youtube.com/watch?v=zjkBMFhNj_g"
+  type="video"
+  description="Required. Focus on training/inference, model behavior, and limitations."
+/>
+
+<ResourceCard
+  title="Karpathy: How I use LLMs"
+  url="https://www.youtube.com/watch?v=EWvNQjAaOHw"
+  type="video"
+  description="Required. Selected examples of task framing and practical use. Apply one pattern and evaluate the result."
+/>
+
+<ResourceCard
+  title="Hugging Face: Structured Outputs"
+  url="https://huggingface.co/docs/inference-providers/guides/structured-output"
+  type="article"
+  description="Required. Study JSON schemas and validation. Use one model/provider that supports your chosen setup."
+/>
+
+<ResourceCard
+  title="Anthropic: Demystifying evals for AI agents"
+  url="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+  type="article"
+  description="Required. Use the introductory evaluation concepts: test inputs, success criteria, grading, and regression checks. Advanced agent sections support the Agents and Tool-Based Workflows elective."
+/>
+
+### Practice
+
+- Build a small extraction or classification feature with a documented input/output schema.
+- Create a fixed set of representative, ambiguous, and invalid inputs with expected behavior.
+- Compare two prompts or model configurations; record task accuracy, invalid outputs, latency, and token/cost information where available.
+- Handle a timeout, malformed response, or unavailable model without presenting it as a successful result.
+
+### Expected output
+
+A working LLM feature, validated response handling, an evaluation script and results, and an explanation of failures. A local model or Academy-provided endpoint can support the task; compare local resource use when no per-call pricing applies.
+
+## Workload
+
+Use the provisional estimates where supplied. Other workloads remain pending pilot. Include implementation, debugging, review, and revision.
+
+## Completion review
+
+Keep the required outputs and explain your decisions. Diagnose a relevant failure during review and revise incomplete evidence after feedback. Resource completion supports progress; the stated practical requirements determine completion.
