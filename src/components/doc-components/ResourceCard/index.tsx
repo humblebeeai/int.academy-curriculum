@@ -62,6 +62,17 @@ function scopeOf(description?: string): Scope | undefined {
   return undefined;
 }
 
+// Must match previewKey in scripts/fetch-resource-previews.mjs.
+function previewKey(url: string) {
+  try {
+    const parsed = new URL(url);
+    const host = parsed.hostname.toLowerCase().replace(/^(www|m)\./, "");
+    return `${host}${parsed.pathname.replace(/\/$/, "")}${parsed.search}`;
+  } catch {
+    return url;
+  }
+}
+
 function hostOf(url: string) {
   try {
     return new URL(url).hostname.replace(/^www\./, "");
@@ -80,7 +91,7 @@ function Preview({ url, type, Icon }: { url: string; type: string; Icon: React.C
     const element = imageRef.current;
     if (element?.complete && element.naturalWidth === 0) setFailed(true);
   }, []);
-  const image = previewImages[url];
+  const image = previewImages[previewKey(url)];
   const isVideo = type === "video" || type === "talk";
   return (
     <div className={styles.preview} aria-hidden="true">

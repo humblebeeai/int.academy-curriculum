@@ -12,13 +12,24 @@ const output = resolve(root, 'src/data/resource-previews.json');
 function mdxFiles(directory) {
   return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
     const path = resolve(directory, entry.name);
-    if (entry.isDirectory()) return entry.name === 'specializations' ? [] : mdxFiles(path);
+    if (entry.isDirectory()) return mdxFiles(path);
     return entry.name.endsWith('.mdx') ? [path] : [];
   });
 }
 
 const urls = [...new Set(mdxFiles(resolve(root, 'docs')).flatMap((file) =>
   [...readFileSync(file, 'utf8').matchAll(/<ResourceCard\s[\s\S]*?url="([^"]+)"[\s\S]*?\/>/g)].map(([, url]) => url)))].sort();
+
+// Must match previewKey in src/components/doc-components/ResourceCard/index.tsx.
+export function previewKey(url) {
+  try {
+    const parsed = new URL(url);
+    const host = parsed.hostname.toLowerCase().replace(/^(www|m)\./, '');
+    return `${host}${parsed.pathname.replace(/\/$/, '')}${parsed.search}`;
+  } catch {
+    return url;
+  }
+}
 
 const decode = (value) => value.replaceAll('&amp;', '&').replaceAll('&#x2F;', '/').replaceAll('&#47;', '/');
 
@@ -47,7 +58,7 @@ let missing = 0;
 for (const url of urls) {
   try {
     const image = await previewFor(url);
-    if (image) previews[url] = image;
+    if (image) previews[previewKey(url)] = image;
     else missing += 1;
     console.log(`${image ? 'ok  ' : 'none'} ${url}`);
   } catch (error) {
