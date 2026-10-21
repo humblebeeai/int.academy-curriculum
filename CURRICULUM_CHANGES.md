@@ -22,7 +22,7 @@ Source documents supplied for this revision:
 | Five EF extensions plus advanced inference | One Engineering Fundamentals Electives module with six sections | Prerequisites, assigned resources, practice, evidence; exactly two required; inference Units 13–16 together form one elective |
 | Core purpose and prerequisites | Soft Landing and Core Systems introductions | Equivalent direct entry; five grouped modules cover all six guide requirements |
 | R1 | Software Engineering for AI | Readable Python, testing/debugging, refactoring, reviewed changes and handover; one project per learner direction; uv optional |
-| R2 and R3 | Applied ML & Deep Learning | Separate R2/R3 outcomes and exercises; derivatives preparation before R3 |
+| R2 and R3 | Applied ML & Deep Learning | Separate R2/R3 outcomes and exercises; derivatives preparation replaced by an optional calculus refresher |
 | R4 | LLM Fundamentals and Agent Workflows | LLM concepts, transformer mental model, limitations; coding-agent workflow with project instructions, a skill, and automated verification. Hands-on LLM API, RAG, and agent development moved to electives E1/E2 |
 | R5 | Systems, Networking & Data | HTTP/DNS, Linux, SSH, troubleshooting, persistence |
 | R6 | APIs, Containers & Deployment | FastAPI, Docker, automated tests, deployment |
@@ -47,9 +47,7 @@ Curriculum layout styles are scoped through CSS Modules. Resource cards opt into
 - Added a required Python environment exercise before dependent notebooks and
   scripts: isolated environment, dependencies, kernel selection, recreation,
   and an import-failure diagnosis. R1 requires recreating a working environment; uv is optional.
-- Added a derivatives preparation section before R3 within Applied ML & Deep Learning. Derivatives are no longer required at
-  stage entry. Practice covers finite differences, gradient direction, and a
-  learning-rate failure; a complete calculus course is not required.
+- Replaced the derivatives preparation section with an optional Khan Academy calculus refresher in deep learning resources; derivatives are not required at stage entry.
 - Specified the four linear algebra notebook evidence areas without introducing
   an integrated EF project.
 - Added explicit submission and review checks. Statistics retains its numeric
@@ -67,7 +65,7 @@ Curriculum layout styles are scoped through CSS Modules. Resource cards opt into
 The Word hyperlink targets are preserved, except direct GitHub Skills course
 links replace the course catalog, the Andrew Ng resource links directly to
 its lecture source, and the StatQuest model topics have direct playlist/video links. Added setup references use Python and JupyterLab
-documentation. The derivatives bridge uses selected Khan Academy calculus.
+documentation.
 
 Khan Academy's Statistics and Probability course must be selected rather than
 AP Statistics. Unit 15 and Unit 16 are present in the provider's current index;
@@ -149,11 +147,11 @@ Each row corresponds to a rendered resource card. Scope and access notes appear 
 | [Applied ML & Deep Learning](/docs/softlanding/core-systems/applied-ml-deep-learning) | [Model Evaluation Metrics](https://www.analyticsvidhya.com/blog/2019/08/11-important-model-evaluation-error-metrics/) | Required. Use the classification section as a companion reference. Use official scikit-learn documentation for implementation. |
 | [Applied ML & Deep Learning](/docs/softlanding/core-systems/applied-ml-deep-learning) | [scikit-learn: Getting Started](https://scikit-learn.org/stable/getting_started.html) | Required. For estimators, preprocessing, pipelines, and evaluation. |
 | [Applied ML & Deep Learning](/docs/softlanding/core-systems/applied-ml-deep-learning) | [scikit-learn: Common pitfalls](https://scikit-learn.org/stable/common_pitfalls.html) | Required. Study inconsistent preprocessing and data leakage. |
-| [Applied ML & Deep Learning](/docs/softlanding/core-systems/applied-ml-deep-learning) | [Khan Academy differential calculus](https://www.khanacademy.org/math/differential-calculus) | Required. Lessons on derivative intuition, the power rule, and the chain rule. Study slope as a local rate of change, partial-derivative intuition, gradients, and the update direction in gradient descent. Formal proofs and a complete calculus course are not required. |
 | [Applied ML & Deep Learning](/docs/softlanding/core-systems/applied-ml-deep-learning) | [Andrew Ng: Neural-network foundations](https://www.youtube.com/watch?v=CS4cs9xVecg&list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0&index=1) | Required. Study neurons, forward/backward propagation, loss, and gradient descent; use the relevant Course 1 and Course 2 sections rather than completing both courses in full. |
 | [Applied ML & Deep Learning](/docs/softlanding/core-systems/applied-ml-deep-learning) | [CS231n Winter 2016 lectures](https://www.youtube.com/playlist?list=PLkt2uSq6rBVctENoVBg1TpCC7OQi31AlC) | Required. Lectures 2, 3, and 4 on classification, optimization, and backpropagation. Use them to reinforce gaps identified during implementation. |
 | [Applied ML & Deep Learning](/docs/softlanding/core-systems/applied-ml-deep-learning) | [UvA Tutorial 2: Introduction to PyTorch](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial2/Introduction_to_PyTorch.html) | Required. Use this as the main practical anchor. Run the notebook, then change its data or network and explain the changes. |
 | [Applied ML & Deep Learning](/docs/softlanding/core-systems/applied-ml-deep-learning) | [Hugging Face LLM Course: Transformer models](https://huggingface.co/learn/llm-course/en/chapter1/1) | Required. Selected introductory sections on pipelines and transformer architectures. Run a pretrained inference example. |
+| [Applied ML & Deep Learning](/docs/softlanding/core-systems/applied-ml-deep-learning) | [Khan Academy differential calculus](https://www.khanacademy.org/math/differential-calculus) | Further reading. A quick refresher if gradients or backpropagation feel unfamiliar: derivative intuition, the chain rule, and what a gradient tells you. Not required for this module. |
 | [LLM Applications and RAG](/docs/softlanding/core-systems/electives#e1-retrieval-rag) | [Claude Academy: Building with the Claude API](https://academy.claude.com/courses/building-with-the-claude-api) | Required selected sections. Complete the introductory API material through structured responses, the prompting and evaluation sections, and the retrieval lessons through embedding search and BM25. The remaining course sections are not required for this elective. |
 | [LLM Applications and RAG](/docs/softlanding/core-systems/electives#e1-retrieval-rag) | [Claude Academy: Implementing the RAG flow](https://academy.claude.com/courses/building-with-the-claude-api/implementing-the-rag-flow) | Required within this elective. Work through the preceding chunking and embedding lessons, implement the retrieval example, and adapt it to your own documents. Extend the returned passages into a sourced answer. |
 | [LLM Applications and RAG](/docs/softlanding/core-systems/electives#e1-retrieval-rag) | [Hugging Face: RAG Evaluation](https://huggingface.co/learn/cookbook/en/rag_evaluation) | Required within this elective. Use separate retrieval and answer checks; review a sample manually. An automated model judge is not required. |

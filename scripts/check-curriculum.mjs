@@ -92,12 +92,13 @@ function checkStage(label, prefix, required, electiveModules, electiveLabel, ext
 checkStage('Engineering Fundamentals', 'engineering-fundamentals', efRequired, efElectives, 'Electives');
 checkStage('Core Systems', 'softlanding/core-systems', coreRequired, electives, 'Electives');
 for (const [slug, anchors] of Object.entries({
-  'software-engineering': ['r1'], 'applied-ml-deep-learning': ['r2', 'derivatives-preparation', 'r3'],
+  'software-engineering': ['r1'], 'applied-ml-deep-learning': ['r2', 'r3'],
   'llm-applications': ['r4', 'llm-fundamentals', 'agent-assisted-engineering'], 'systems-networking-data': ['r5'], 'apis-containers-deployment': ['r6'],
 })) {
   const html = readFileSync(resolve(docs, `softlanding/core-systems/${slug}/index.html`), 'utf8');
   for (const anchor of anchors) assert(html.includes(`id="${anchor}"`), `${slug}: missing learning section ${anchor}`);
 }
+assert(!readFileSync(resolve(docs, 'softlanding/core-systems/applied-ml-deep-learning/index.html'), 'utf8').includes('id="derivatives-preparation"'), 'Derivatives preparation is no longer part of Applied ML & Deep Learning.');
 const coreOverview = readFileSync(resolve(docs, 'softlanding/core-systems/index.html'), 'utf8');
 assert(coreOverview.includes('exactly two electives'), 'Core Systems must require exactly two electives.');
 assert(coreOverview.includes('id="completion"') && !coreOverview.includes('/docs/softlanding/core-systems/handover'), 'Core Systems completion belongs on the overview, without a handover project.');
