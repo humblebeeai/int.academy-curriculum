@@ -4,8 +4,8 @@
 
 /* Section banners: each h2 opens a clearly separated block. */
 .page h2 {
-  margin-top: 3.5rem;
-  padding: .9rem 1.25rem;
+  margin-top: 3rem;
+  padding: .7rem 1.1rem;
   border: 1px solid var(--curriculum-border);
   border-left: 4px solid var(--accent-gold);
   border-radius: 12px;
@@ -19,26 +19,29 @@
   font-size: 1.35rem;
 }
 
-/* Sub-block labels: Learn, Resources, Practice, Expected output. */
+/* Block labels. plugins/remark-curriculum-layout.mjs tags h3s by their text
+   (Learn, Resources, Practice, Expected output, Before you start, Goal). */
 .page {
   --icon-learn: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff500' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 7v14'/><path d='M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z'/></svg>");
   --icon-resources: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff500' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'/><path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'/></svg>");
   --icon-practice: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff500' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'/></svg>");
   --icon-output: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff500' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><circle cx='12' cy='12' r='6'/><circle cx='12' cy='12' r='2'/></svg>");
   --icon-check: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff500' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6 9 17l-5-5'/></svg>");
+  --icon-goal: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff500' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.33 2q2 0 3.67-.78a.5.5 0 0 1 .7.46v10.15a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.5'/></svg>");
+  --icon-prereq: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff500' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><path d='M12 16v-4'/><path d='M12 8h.01'/></svg>");
 }
-.page h3:is([id="learn"], [id^="learn-"], [id="resources"], [id^="resources-"], [id="practice"], [id^="practice-"], [id="expected-output"], [id^="expected-output-"]) {
+.page h3[data-block] {
   display: flex;
   align-items: center;
   gap: .55rem;
-  margin-top: 2rem;
+  margin: 1.75rem 0 .75rem;
   font-size: .8rem;
   font-weight: 700;
   letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--ifm-color-emphasis-700);
 }
-.page h3:is([id="learn"], [id^="learn-"], [id="resources"], [id^="resources-"], [id="practice"], [id^="practice-"], [id="expected-output"], [id^="expected-output-"])::before {
+.page h3[data-block]::before {
   content: "";
   flex-shrink: 0;
   width: 1.75rem;
@@ -47,16 +50,18 @@
   background: var(--section-icon) center / 1rem no-repeat, rgba(255, 245, 0, .1);
   box-shadow: inset 0 0 0 1px var(--glass-border-accent);
 }
-.page h3:is([id="learn"], [id^="learn-"]) { --section-icon: var(--icon-learn); }
-.page h3:is([id="resources"], [id^="resources-"]) { --section-icon: var(--icon-resources); }
-.page h3:is([id="practice"], [id^="practice-"]) { --section-icon: var(--icon-practice); }
-.page h3:is([id="expected-output"], [id^="expected-output-"]) { --section-icon: var(--icon-output); }
+.page h3[data-block="learn"] { --section-icon: var(--icon-learn); }
+.page h3[data-block="resources"] { --section-icon: var(--icon-resources); }
+.page h3[data-block="practice"] { --section-icon: var(--icon-practice); }
+.page h3[data-block="output"] { --section-icon: var(--icon-output); }
+.page h3[data-block="prereq"] { --section-icon: var(--icon-prereq); }
+.page h3[data-block="goal"] { --section-icon: var(--icon-goal); }
 .page h3 :global(.hash-link) { margin-left: .25rem; }
 
-/* Learn: checklist. */
-.page h3:is([id="learn"], [id^="learn-"]) + ul { list-style: none; padding-left: 0; }
-.page h3:is([id="learn"], [id^="learn-"]) + ul > li { position: relative; padding-left: 1.75rem; margin-bottom: .45rem; }
-.page h3:is([id="learn"], [id^="learn-"]) + ul > li::before {
+/* Learn: checklist (unless the list is shown as chips or columns). */
+.page h3[data-block="learn"] + ul:not([data-list]) { list-style: none; padding-left: 0; }
+.page h3[data-block="learn"] + ul:not([data-list]) > li { position: relative; padding-left: 1.75rem; margin-bottom: .45rem; }
+.page h3[data-block="learn"] + ul:not([data-list]) > li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -67,13 +72,13 @@
 }
 
 /* Practice: numbered steps. */
-.page h3:is([id="practice"], [id^="practice-"]) + ul { list-style: none; padding-left: 0; counter-reset: step; }
-.page h3:is([id="practice"], [id^="practice-"]) + ul > li { counter-increment: step; position: relative; padding: .7rem .9rem .7rem 3rem; margin-bottom: .5rem; border: 1px solid var(--curriculum-border); border-radius: 10px; background: var(--ifm-background-surface-color); }
-.page h3:is([id="practice"], [id^="practice-"]) + ul > li::before {
+.page h3[data-block="practice"] + ul { list-style: none; padding-left: 0; counter-reset: step; }
+.page h3[data-block="practice"] + ul > li { counter-increment: step; position: relative; padding: .6rem .9rem .6rem 3rem; margin-bottom: .5rem; border: 1px solid var(--curriculum-border); border-radius: 10px; background: var(--ifm-background-surface-color); }
+.page h3[data-block="practice"] + ul > li::before {
   content: counter(step);
   position: absolute;
   left: .8rem;
-  top: .7rem;
+  top: .6rem;
   width: 1.5rem;
   height: 1.5rem;
   display: grid;
@@ -84,30 +89,59 @@
   color: #111;
   background: var(--accent-gold);
 }
-.page h3:is([id="practice"], [id^="practice-"]) ~ table { font-size: .9rem; }
+.page h3[data-block="practice"] ~ table { font-size: .9rem; }
 
-/* Expected output: the deliverable stands out. */
-.page h3:is([id="expected-output"], [id^="expected-output-"]) + :is(p, ul) {
+/* Expected output / assessment: the deliverable stands out. */
+.page h3[data-block="output"] + :is(p, ul) {
   padding: 1rem 1.25rem;
   border: 1px solid var(--glass-border-accent);
   border-radius: 12px;
   background: var(--gradient-warm-subtle), var(--ifm-background-surface-color);
   color: var(--ifm-color-emphasis-900);
 }
-.page h3:is([id="expected-output"], [id^="expected-output-"]) + ul { padding-left: 2.5rem; }
+.page h3[data-block="output"] + ul { padding-left: 2.5rem; }
+/* An intro line followed by a list ("The learner must:") forms one box. */
+.page h3[data-block="output"] + p:has(+ ul) { margin-bottom: 0; padding-bottom: .35rem; border-bottom: 0; border-radius: 12px 12px 0 0; }
+.page h3[data-block="output"] + p + ul {
+  margin-top: 0;
+  padding: .25rem 1.25rem 1rem 2.5rem;
+  border: 1px solid var(--glass-border-accent);
+  border-top: 0;
+  border-radius: 0 0 12px 12px;
+  background: var(--gradient-warm-subtle), var(--ifm-background-surface-color);
+  color: var(--ifm-color-emphasis-900);
+}
+
+/* "Before you start" lines: a slim strip separate from the lead text. */
+.page p[data-block="prereq"] {
+  position: relative;
+  padding: .6rem .9rem .6rem 2.6rem;
+  border: 1px solid var(--curriculum-border);
+  border-radius: 10px;
+  background: var(--ifm-background-surface-color);
+  font-size: .9rem;
+  color: var(--ifm-color-emphasis-800);
+}
+.page p[data-block="prereq"]::before {
+  content: "";
+  position: absolute;
+  left: .85rem;
+  top: .8rem;
+  width: 1rem;
+  height: 1rem;
+  background: var(--icon-prereq) center / contain no-repeat;
+}
 
 /* Long lists marked by plugins/remark-curriculum-layout.mjs. */
 .page ul[data-list="chips"] { list-style: none; padding-left: 0; display: flex; flex-wrap: wrap; gap: .5rem; margin: .75rem 0 1.25rem; }
 .page ul[data-list="chips"] > li { margin: 0; padding: .3rem .75rem; border: 1px solid var(--curriculum-border); border-radius: 999px; background: var(--ifm-background-surface-color); font-size: .875rem; line-height: 1.4; }
-.page ul[data-list="chips"] > li::before { content: none; }
 .page ul[data-list="chips"] > li p { margin: 0; }
 .page ul[data-list="columns"] { columns: 2; column-gap: 2rem; }
 .page ul[data-list="columns"] > li { break-inside: avoid; }
 
-/* Resources: grid built by plugins/remark-curriculum-layout.mjs. */
-.page [data-resource-grid] { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1rem 0 1.5rem; }
-.page [data-resource-grid] > a { display: flex; }
-.page [data-resource-grid] > a > div { margin: 0; width: 100%; }
+/* Resources: consecutive cards stacked as compact rows. */
+.page [data-resource-grid] { display: flex; flex-direction: column; gap: .75rem; margin: .75rem 0 1.5rem; }
+.page [data-resource-grid] > a > div { margin: 0; }
 
 .page > h3 { margin-top: 1.75rem; }
 .page > h4 { margin-top: 1.25rem; }
@@ -141,7 +175,6 @@
   .page h2 { margin-top: 2rem; }
   .summary { font-size: 1rem; }
   .moduleCard { padding: 1rem; }
-  .page [data-resource-grid] { grid-template-columns: minmax(0, 1fr); }
   .page ul[data-list="columns"] { columns: 1; }
   .page h2 { padding: .75rem 1rem; }
 }

@@ -87,12 +87,11 @@ function Preview({ url, type, Icon }: { url: string; type: string; Icon: React.C
       {image && !failed ? (
         <img ref={imageRef} src={image} alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer" onError={() => setFailed(true)} />
       ) : (
-        <div className={styles.previewFallback}>
-          <Icon size={28} />
-          <span>{hostOf(url)}</span>
+        <div className={styles.previewFallback} title={hostOf(url)}>
+          <Icon size={22} />
         </div>
       )}
-      {isVideo && image && !failed && <span className={styles.play}><Play size={18} fill="currentColor" /></span>}
+      {isVideo && image && !failed && <span className={styles.play}><Play size={10} fill="currentColor" /></span>}
     </div>
   );
 }
@@ -118,7 +117,7 @@ export default function ResourceCard({
         </div>
         {scope && (
           <span className={styles.scopeBadges}>
-            <span className={clsx(styles.scopeBadge, styles[scope.tone])}>{scope.label}</span>
+            {scope.tone === "further" && <span className={clsx(styles.scopeBadge, styles.further)}>{scope.label}</span>}
             {scope.selected && <span className={clsx(styles.scopeBadge, styles.selected)}>Selected scope</span>}
           </span>
         )}
@@ -154,7 +153,7 @@ export default function ResourceCard({
       data-resource-card="true"
       data-scope={scope?.tone}
     >
-      <div className={styles.card}>
+      <div className={clsx(styles.card, showFullDescription && styles.row)}>
         {showFullDescription && <Preview url={url} type={type} Icon={Icon} />}
         <div className="resource-card-inner">{CardContent}</div>
       </div>
