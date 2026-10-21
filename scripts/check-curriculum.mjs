@@ -44,7 +44,7 @@ assert(!sitemap.includes('/draft'), 'Legacy Draft redirects must not appear in s
 assert(sitemap.includes('/docs/engineering-fundamentals/math-for-ai'), 'Current modules must appear in sitemap.');
 
 const efRequired = ['terminal-algorithmic-basics', 'math-for-ai', 'data-manipulation'];
-const efElectiveSections = ['data-visualization', 'github-actions', 'advanced-sql', 'bash-automation', 'algorithms', 'advanced-statistical-inference'];
+const efElectiveSections = ['data-visualization', 'github-actions', 'advanced-sql', 'algorithms', 'advanced-statistical-inference'];
 const efElectives = ['electives'];
 const coreRequired = ['software-engineering', 'applied-ml-deep-learning', 'llm-applications', 'systems-networking-data', 'apis-containers-deployment'];
 const coreElectiveSections = ['e1-retrieval-rag', 'e2-agents-tools', 'e3-model-adaptation', 'e4-backend-data', 'e5-delivery-mlops'];
@@ -134,6 +134,7 @@ for (const [prefix, sections] of [['engineering-fundamentals', efElectiveSection
   assert(html.includes('Complete exactly two electives'), `${prefix}: elective module must require two choices`);
   for (const section of sections) assert(html.includes(`id="${section}"`), `${prefix}: missing elective section ${section}`);
 }
+assert(!readFileSync(resolve(docs, 'engineering-fundamentals/electives/index.html'), 'utf8').includes('id="bash-automation"'), 'Bash Scripting and Automation is no longer an EF elective.');
 function visibleCoreEntries(items) {
   return items.filter((item) => !item.unlisted).flatMap((item) => [item, ...(item.items ? visibleCoreEntries(item.items) : [])]).filter((item) => item.label === 'Core Systems');
 }
