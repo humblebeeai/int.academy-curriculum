@@ -134,8 +134,16 @@
   overflow: visible;
 }
 
-.link:has(.fullDescription) .title { flex-wrap: wrap; }
-.link:has(.fullDescription) .externalIcon { opacity: .65; flex-shrink: 0; }
+.link:has(.fullDescription) .title { display: block; }
+.link:has(.fullDescription) .externalIcon { opacity: .65; display: inline-block; margin-left: .35rem; vertical-align: -1px; }
 @media (prefers-reduced-motion: reduce) {
   .link:has(.fullDescription) .card { transition: none; transform: none; }
 }
+
+.scopeBadges { display: inline-flex; flex-wrap: wrap; gap: .35rem; justify-content: flex-end; }
+.scopeBadge { font-size: .7rem; font-weight: 600; letter-spacing: .02em; padding: .15rem .55rem; border-radius: 999px; border: 1px solid var(--curriculum-border, var(--ifm-color-emphasis-200)); white-space: nowrap; }
+.scopeBadge.required { color: var(--accent-gold); border-color: var(--glass-border-accent); background: rgba(255, 245, 0, .08); }
+.scopeBadge.selected { color: var(--accent-amber-light); border-color: rgba(255, 185, 2, .3); background: rgba(255, 185, 2, .08); }
+.scopeBadge.further { color: var(--ifm-color-emphasis-600); background: var(--ifm-background-surface-color); }
+.link[data-scope="further"] .card { background: transparent; border-style: dashed; }
+.link[data-scope="further"] .title { color: var(--ifm-color-emphasis-800); }

@@ -80,7 +80,7 @@ export function ModuleGrid({ items }: { items: ModuleGridItem[] }) {
 export function SectionLinks({ items, label = "In this module" }: { items: { title: string; href: string }[]; label?: string }) {
   return <nav className={styles.sectionNav} aria-label={label}>
     <span className={styles.sectionLabel}>{label}</span>
-    <div className={styles.sectionLinks}>{items.map(({ title, href }) => <Link key={href} to={href}>{title}</Link>)}</div>
+    <div className={styles.sectionLinks}>{items.map(({ title, href }, index) => <Link key={href} to={href}><span className={styles.sectionNumber} aria-hidden="true">{index + 1}</span>{title}</Link>)}</div>
   </nav>;
 }
 
