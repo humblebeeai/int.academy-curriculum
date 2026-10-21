@@ -68,7 +68,6 @@ Modules:
 - Systems, Networking & Data
 - APIs, Containers & Deployment
 - Electives: complete two sections
-- Integrated Project & Handover
 
 ### Phase 3: Specializations (Soft Landing)
 

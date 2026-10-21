@@ -90,17 +90,17 @@ function checkStage(label, prefix, required, electiveModules, electiveLabel, ext
   }
 }
 checkStage('Engineering Fundamentals', 'engineering-fundamentals', efRequired, efElectives, 'Electives');
-checkStage('Core Systems', 'softlanding/core-systems', coreRequired, electives, 'Electives', ['handover']);
+checkStage('Core Systems', 'softlanding/core-systems', coreRequired, electives, 'Electives');
 for (const [slug, anchors] of Object.entries({
   'software-engineering': ['r1'], 'applied-ml-deep-learning': ['r2', 'derivatives-preparation', 'r3'],
   'llm-applications': ['r4'], 'systems-networking-data': ['r5'], 'apis-containers-deployment': ['r6'],
-  'handover': ['project', 'completion'],
 })) {
   const html = readFileSync(resolve(docs, `softlanding/core-systems/${slug}/index.html`), 'utf8');
   for (const anchor of anchors) assert(html.includes(`id="${anchor}"`), `${slug}: missing learning section ${anchor}`);
 }
 const coreOverview = readFileSync(resolve(docs, 'softlanding/core-systems/index.html'), 'utf8');
 assert(coreOverview.includes('exactly two electives'), 'Core Systems must require exactly two electives.');
+assert(coreOverview.includes('id="completion"') && !coreOverview.includes('/docs/softlanding/core-systems/handover'), 'Core Systems completion belongs on the overview, without a handover project.');
 const efOverview = readFileSync(resolve(docs, 'engineering-fundamentals/index.html'), 'utf8');
 assert(efOverview.includes('Complete exactly two electives') && efOverview.includes('three required modules and two electives'), 'Engineering Fundamentals must require two electives.');
 const math = readFileSync(resolve(docs, 'engineering-fundamentals/math-for-ai/index.html'), 'utf8');
