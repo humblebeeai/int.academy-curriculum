@@ -2,7 +2,7 @@
 title: "Software Engineering for AI"
 sidebar_label: "1. Software Engineering for AI"
 sidebar_position: 1
-toc_max_heading_level: 3
+toc_max_heading_level: 2
 ---
 
 import { ResourceCard, CurriculumModule, ModuleIntro, SkillShowcase, SectionLinks } from "@site/src/components";
@@ -19,89 +19,222 @@ import moduleImage from "../../assets/images/software_eng.png";
   moduleNumber={1}
   kind="required"
   icon="Code2"
-  summary="Build code that is understandable, testable, and easy for someone else to run. Keep applying these habits throughout Core Systems."
+  summary="Write Python code that another person can understand, test, change, and run. Apply these habits to software, data analysis, computer vision, and AI projects throughout Core Systems."
   image={{ src: moduleImage, alt: "Illustration of application components and a build, test, deploy, and monitor workflow.", width: 1536, height: 1024 }}
 />
 
-<SkillShowcase decorativeIcons skills={[{"iconString": "Code", "title": "Structure your project", "description": "Separate application logic, configuration, and tests."}, {"iconString": "TestTube", "title": "Verify behavior", "description": "Test normal cases and meaningful failures."}, {"iconString": "GitBranch", "title": "Collaborate and review", "description": "Use pull requests and verify AI-assisted changes."}]} />
+<SkillShowcase decorativeIcons skills={[{"iconString": "Code", "title": "Write maintainable code", "description": "Use clear names, focused functions, and simple module boundaries."}, {"iconString": "TestTube", "title": "Verify and improve behavior", "description": "Test useful cases, diagnose failures, and refactor safely."}, {"iconString": "Users", "title": "Make your work usable by others", "description": "Document setup, submit reviewable changes, and respond to feedback."}]} />
 
+<SectionLinks items={[{"title": "Readable Python", "href": "#r1"}, {"title": "Testing and debugging", "href": "#testing-and-debugging"}, {"title": "Refactoring", "href": "#refactoring-and-project-structure"}, {"title": "Collaboration and handover", "href": "#collaboration-and-handover"}]} />
 
-<SectionLinks items={[{"title": "Learn", "href": "#learn"}, {"title": "Resources", "href": "#resources"}, {"title": "Practice", "href": "#practice"}, {"title": "What to submit", "href": "#expected-output"}]} />
+## 1. Readable Python {#r1}
 
-## Engineering workflow {#r1}
+Make the purpose and behavior of your code easy to follow.
 
-make your code understandable, testable, and easy for someone else to run.
-
-**Before you start:** Engineering Fundamentals Python, Git, terminal, and debugging skills.
+**Before you start:** [Engineering Fundamentals](/docs/engineering-fundamentals) Python, Git, terminal, environments, and debugging skills.
 
 ### Learn
 
-- Separate data preparation, model/inference logic, application code, and tests.
-- Manage dependencies and configuration; keep credentials outside committed code.
-- Write focused functions, meaningful names, useful errors, and logs that help diagnosis.
-- Use unit and integration tests to check behavior, including invalid inputs.
-- Work through issues, branches, pull requests, and review feedback.
-- Use a coding assistant with a clear task, relevant repository context, and acceptance criteria; inspect its diff and verify the result.
+- Choose meaningful names and write functions with a clear responsibility.
+- Make inputs, outputs, assumptions, and side effects explicit. Avoid hidden dependencies on global state or notebook execution order.
+- Use comments to explain decisions and docstrings to describe how to use a function.
+- Read simple classes: instances, attributes, `__init__`, and instance methods. Recognize when state belongs together in an object and when a function is sufficient.
 
 ### Resources
 
 <ResourceCard
   showFullDescription
-  title="Clean Code: A Handbook of Agile Software Craftsmanship"
-  url="https://www.oreilly.com/library/view/clean-code/9780136083238/"
-  type="book"
-  description="Further reading. If access is available. Focus on chapters 2, 3, 4, 7, and 9 for naming, functions, comments, error handling, and tests. Free resources below support the required practice."
+  title="Carpentries — Python Code Style Conventions"
+  url="https://carpentries-incubator.github.io/python-intermediate-development/15-coding-conventions.html"
+  type="tutorial"
+  description="Required. Focus on naming, readable layout, comments, and docstrings; apply the ideas to your code."
 />
 
 <ResourceCard
   showFullDescription
-  title="uv: Working on projects"
-  url="https://docs.astral.sh/uv/guides/projects/"
-  type="documentation"
-  description="Required. Create a project, add dependencies, and run it in a reproducible environment."
-/>
-
-<ResourceCard
-  showFullDescription
-  title="pytest: Get Started"
-  url="https://docs.pytest.org/en/stable/getting-started.html"
-  type="documentation"
-  description="Required. Write tests and assertions, then use fixtures where shared setup is needed."
-/>
-
-<ResourceCard
-  showFullDescription
-  title="GitHub: Reviewing and testing AI-generated suggestions"
-  url="https://docs.github.com/en/copilot/responsible-use/inline-suggestions"
-  type="documentation"
-  description="Required. Focus on intended uses, limitations, and verification. Apply the principles to your available coding assistant."
-/>
-
-<ResourceCard
-  showFullDescription
-  title="LeetCode: Programming Skills"
-  url="https://leetcode.com/studyplan/programming-skills/"
-  type="article"
-  description="Further reading. For specific implementation gaps. This does not replace the project task."
+  title="Harvard CS50P — Object-Oriented Programming"
+  url="https://cs50.harvard.edu/python/weeks/8/"
+  type="video"
+  description="Required, selected scope. Video and worked examples. Use the introductory classes, instance variables, __init__, and instance methods material. Later sections on decorators, class methods, inheritance, and operator overloading are further reading."
 />
 
 ### Practice
 
-- Refactor a notebook into a small Python project with a documented command to run it.
-- Write tests for normal inputs, boundary cases, and a realistic failure.
-- Implement one bounded change using an AI assistant. Review each changed file, test the result, and record an issue you corrected or a suggestion you rejected.
-- Submit the change through a pull request and respond to review.
+Choose one small project and keep improving it throughout the module. Start with an existing script or notebook, or build a small file-processing task if you need a starting point.
+
+| Your direction | Example project |
+| --- | --- |
+| Software engineering | File processing or input-validation utility |
+| AI / ML | Dataset validation or preprocessing helper |
+| Computer vision | Image-loading, resizing, and input-checking utility |
+| GenAI | Parser and validator for saved structured responses |
+| Data science | Data-cleaning and aggregation workflow |
+
+Clarify its inputs and expected outputs. Improve confusing names, extract a focused function, and document an important assumption. Explain a simple class from the teaching examples, including the state it stores and what a method changes.
 
 ### Expected output
 
-A runnable repository, meaningful tests, setup instructions, and a reviewed change. You can explain the code and fix a bug during discussion. If a coding assistant is unavailable, review a mentor-provided generated patch and complete the same verification task.
+A small working project with understandable functions and documented behavior. You can explain its control flow and the difference between a function and an instance method.
+
+## 2. Testing and debugging {#testing-and-debugging}
+
+Check behavior deliberately and use failures to find the cause of a bug.
+
+**Before you start:** your working project from [section 1](#r1).
+
+### Learn
+
+- Distinguish a unit test from a small integration test that checks connected parts.
+- Use pytest to express expected results and expected exceptions.
+- Choose normal, boundary, and invalid-input cases from the code's intended behavior.
+- Use fixtures when setup is shared and parametrization when the same rule needs several examples.
+- Reproduce a failure, inspect the relevant state, fix the cause, and retain a regression test.
+- Validate inputs and handle expected failures clearly. Preserve useful error context rather than silently continuing.
+
+### Resources
+
+<ResourceCard
+  showFullDescription
+  title="Harvard CS50P — Unit Tests"
+  url="https://cs50.harvard.edu/python/weeks/5/"
+  type="video"
+  description="Required. Video and notes. Follow the worked examples for assertions, pytest, and test organization."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="Harvard CS50P — Refueling"
+  url="https://cs50.harvard.edu/python/psets/5/test_fuel/"
+  type="practice"
+  description="Required. Complete the local implementation and tests, including checking that a deliberately incorrect version fails. External submission is not required."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="freeCodeCamp — Testing in Python with Pytest"
+  url="https://www.freecodecamp.org/news/testing-in-python-with-pytest/"
+  type="course"
+  description="Required, selected scope. Video course. Use the Fixtures chapter and the parametrization material in Mark & Parametrize. Other chapters are further reading."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="Carpentries — Diagnosing Issues and Improving Robustness"
+  url="https://carpentries-incubator.github.io/python-intermediate-development/24-diagnosing-issues-improving-robustness.html"
+  type="tutorial"
+  description="Required, selected scope. Worked tutorial. Focus on Corner or Edge Cases and Defensive Programming. Use the debugger walkthrough as a refresher."
+/>
+
+### Practice
+
+Apply the testing approach to your project. Cover ordinary behavior, a meaningful boundary, and a realistic failure. Add a small integration test for its main flow. Use fixed sample inputs so tests run predictably and independently of live services.
+
+Find or deliberately introduce a realistic bug. Show a failing test, diagnose the cause, and demonstrate the fix.
+
+### Expected output
+
+A repeatable test command, tests that check meaningful behavior, and a regression test that catches the demonstrated bug. You can explain what the suite checks and what it leaves unchecked.
+
+## 3. Refactoring and project structure {#refactoring-and-project-structure}
+
+Improve the structure of working code while preserving its intended behavior.
+
+**Before you start:** a working version and baseline tests from [section 2](#testing-and-debugging).
+
+### Learn
+
+- Separate input/output operations from transformations or calculations.
+- Group related logic into modules with understandable interfaces.
+- Reduce duplication and long functions through small, justified changes.
+- Distinguish a structural refactor from an intentional behavior change.
+- Use existing tests and representative outputs to check that a refactor preserves behavior.
+
+### Resources
+
+<ResourceCard
+  showFullDescription
+  title="Carpentries — Code Decoupling & Abstractions"
+  url="https://carpentries-incubator.github.io/python-intermediate-development/33-code-decoupling-abstractions.html"
+  type="tutorial"
+  description="Required, selected scope. Worked tutorial. Study the opening example separating data loading from analysis and complete an equivalent separation in your project. Later polymorphism and mock-object material is further reading."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="Carpentries — Code Refactoring"
+  url="https://carpentries-incubator.github.io/python-intermediate-development/34-code-refactoring.html"
+  type="tutorial"
+  description="Required, selected scope. Worked tutorial. Focus on Writing Tests Before Refactoring and Separating Pure and Impure Code. Use the examples as a guide for the task below; the full Carpentries course is not assigned."
+/>
+
+### Practice
+
+Refactor your project in small steps. Separate reusable logic from file access, display, or other external interactions. Keep an obvious entry point and place tests separately from implementation code. If you use a notebook, make reusable logic importable from it.
+
+Run the baseline tests after each meaningful change. Explain one structural decision and its tradeoff.
+
+### Expected output
+
+A clear project structure, reusable logic, and evidence that the refactor preserved the tested behavior.
+
+## 4. Collaboration and handover {#collaboration-and-handover}
+
+Make a change that another person can review and a project they can run.
+
+**Before you start:** your refactored project and test suite.
+
+### Learn
+
+- Describe a bounded change and its acceptance criteria in an issue or pull request.
+- Review a diff for correctness, clarity, test quality, and unintended changes.
+- Give actionable feedback and revise your work after review.
+- Record the Python version, dependencies, configuration, sample inputs, and commands needed to run and test the project.
+- Recreate a usable environment using your chosen tool. Keep credentials outside committed code.
+
+### Resources
+
+<ResourceCard
+  showFullDescription
+  title="Carpentries — Code Review"
+  url="https://carpentries-incubator.github.io/python-intermediate-development/41-code-review.html"
+  type="tutorial"
+  description="Required, selected scope. Focus on pull requests, changes that are easy to review, and effective review comments."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="Carpentries — Preparing Software for Reuse and Release"
+  url="https://carpentries-incubator.github.io/python-intermediate-development/42-software-reuse.html"
+  type="tutorial"
+  description="Required, selected scope. Focus on Documenting Code to Improve Reusability, including the README."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="Dartmouth Libraries — Python Setup Tutorial"
+  url="https://dartmouth-libraries.github.io/python-setup/"
+  type="tutorial"
+  description="Further reading. Guided tutorial. Use the project-creation and existing-project walkthroughs if choosing uv. The guide also links to a pip + venv alternative. uv is optional; a documented workflow using pip + venv, conda, or another suitable tool is acceptable."
+/>
+
+### Practice
+
+Submit a bounded change through a pull request with a short explanation and verification evidence. Review a peer's change and respond to feedback on your own. A mentor can act as reviewer when peer review is unavailable.
+
+Write a README covering setup, dependencies, configuration, sample data, run and test commands, and expected output. Ask the reviewer to follow it in a fresh environment and fix any missing steps. Review AI-assisted code with the same criteria whenever you use it.
+
+### Expected output
+
+A reviewed and revised pull request, useful review feedback, and a repository another person can set up, run, and test using the README.
 
 ## Workload
 
-Use the provisional estimates where supplied. Other workloads remain pending pilot. Include implementation, debugging, review, and revision.
+Workload remains pending pilot. Include learning, implementation, debugging, review, and revision. Required resource assignments refer only to the stated scope.
 
 ## Finish this module
 
-Keep the required outputs and explain your decisions. Diagnose a relevant failure during review and revise incomplete evidence after feedback. Resource completion supports progress; the stated practical requirements determine completion.
+Keep one repository containing your implementation, tests, README, and reviewed changes. During review, explain a design choice, diagnose a relevant failure, and show how your tests detect it. Revise incomplete evidence after feedback.
+
+Resource completion supports learning; the practical outputs determine completion. Keep applying these habits in subsequent Core Systems modules.
 
 </CurriculumModule>
