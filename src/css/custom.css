@@ -924,3 +924,11 @@ details > *:not(summary) {
   .theme-doc-markdown h1,
   article header h1 { font-size: 1.9rem; line-height: 1.2; }
 }
+
+/* Mobile drawer: trim stacked padding and nesting indent so items sit further left. */
+@media (max-width: 996px) {
+  .navbar-sidebar__item { padding: .5rem .25rem; }
+  .navbar-sidebar .menu { padding: 0; }
+  .navbar-sidebar .menu__link { padding-left: .5rem; padding-right: .5rem; }
+  .navbar-sidebar .menu__list .menu__list { padding-left: .5rem; }
+}
