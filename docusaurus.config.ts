@@ -2,7 +2,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 import curriculumVersions from "./curriculum-versions.json";
-import remarkResourceGrid from "./plugins/remark-resource-grid.mjs";
+import remarkCurriculumLayout from "./plugins/remark-curriculum-layout.mjs";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -45,7 +45,7 @@ const config: Config = {
         docs: {
           path: "docs",
           sidebarPath: "./sidebars.ts",
-          remarkPlugins: [remarkResourceGrid],
+          remarkPlugins: [remarkCurriculumLayout],
           lastVersion: "current",
           versions: {
             current: {
