@@ -161,6 +161,13 @@
 .play { position: absolute; left: .35rem; bottom: .35rem; display: grid; place-items: center; width: 1.3rem; height: 1.3rem; border-radius: 999px; color: #111; background: var(--accent-gold); box-shadow: 0 2px 6px rgba(0, 0, 0, .45); }
 .link[data-scope="further"] .preview { opacity: .7; }
 @media (max-width: 600px) {
-  .row { gap: .75rem; padding: .75rem; }
-  .preview { width: 96px; height: 54px; }
+  /* Thumbnail beside the type and title; description uses the full width. */
+  .row { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 0 .75rem; padding: .75rem; }
+  .row :global(.resource-card-inner), .row .content { display: contents; }
+  .preview { grid-column: 1; grid-row: 1 / span 2; width: 72px; height: 40px; border-radius: 6px; align-self: start; }
+  .row .header { grid-column: 2; flex-wrap: wrap; gap: .35rem; margin-bottom: .1rem; }
+  .row .title { grid-column: 2; font-size: .95rem; }
+  .row .description { grid-column: 1 / -1; margin-top: .5rem; }
+  .row .meta { grid-column: 1 / -1; margin-top: .35rem; }
+  .play { width: 1rem; height: 1rem; left: .2rem; bottom: .2rem; }
 }

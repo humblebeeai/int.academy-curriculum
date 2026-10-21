@@ -56,3 +56,12 @@
   margin: 0;
   line-height: 1.6;
 }
+
+/* Phones: compact rows with the icon beside the text. */
+@media (max-width: 639px) {
+  .grid { gap: .6rem; margin: 1.25rem 0; }
+  .card { display: grid; grid-template-columns: 2.25rem minmax(0, 1fr); column-gap: .85rem; padding: .85rem 1rem; }
+  .iconWrapper { grid-row: 1 / span 2; width: 2.25rem; height: 2.25rem; margin: 0; }
+  .title { margin-bottom: .2rem; font-size: .95rem; }
+  .description { font-size: .85rem; line-height: 1.5; }
+}

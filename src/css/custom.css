@@ -907,3 +907,20 @@ details > *:not(summary) {
     width: max-content;
   }
 }
+
+/* Mobile: one-line breadcrumbs (scroll sideways if needed) and a smaller page title. */
+@media (max-width: 996px) {
+  .theme-doc-breadcrumbs .breadcrumbs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    white-space: nowrap;
+  }
+  .theme-doc-breadcrumbs .breadcrumbs::-webkit-scrollbar { display: none; }
+  .theme-doc-breadcrumbs .breadcrumbs__item { flex-shrink: 0; }
+}
+@media (max-width: 600px) {
+  .theme-doc-markdown h1,
+  article header h1 { font-size: 1.9rem; line-height: 1.2; }
+}

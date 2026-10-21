@@ -1897,3 +1897,8 @@
     font-size: 0.95rem;
   }
 }
+
+/* Slide-in animations start off-screen; keep them from widening the page on phones. */
+.homeMain {
+  overflow-x: clip;
+}
