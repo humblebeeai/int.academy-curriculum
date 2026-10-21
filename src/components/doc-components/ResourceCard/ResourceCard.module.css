@@ -134,8 +134,33 @@
   overflow: visible;
 }
 
-.link:has(.fullDescription) .title { flex-wrap: wrap; }
-.link:has(.fullDescription) .externalIcon { opacity: .65; flex-shrink: 0; }
+.link:has(.fullDescription) .title { display: block; }
+.link:has(.fullDescription) .externalIcon { opacity: .65; display: inline-block; margin-left: .35rem; vertical-align: -1px; }
 @media (prefers-reduced-motion: reduce) {
   .link:has(.fullDescription) .card { transition: none; transform: none; }
+}
+
+.scopeBadges { display: inline-flex; flex-wrap: wrap; gap: .35rem; justify-content: flex-end; }
+.scopeBadge { font-size: .7rem; font-weight: 600; letter-spacing: .02em; padding: .15rem .55rem; border-radius: 999px; border: 1px solid var(--curriculum-border, var(--ifm-color-emphasis-200)); white-space: nowrap; }
+.scopeBadge.required { color: var(--accent-gold); border-color: var(--glass-border-accent); background: rgba(255, 245, 0, .08); }
+.scopeBadge.selected { color: var(--accent-amber-light); border-color: rgba(255, 185, 2, .3); background: rgba(255, 185, 2, .08); }
+.scopeBadge.further { color: var(--ifm-color-emphasis-600); background: var(--ifm-background-surface-color); }
+.link[data-scope="further"] .card { background: transparent; border-style: dashed; }
+.link[data-scope="further"] .title { color: var(--ifm-color-emphasis-800); }
+
+/* Curriculum cards: compact row with a small preview on the left. */
+.row { display: flex; align-items: flex-start; gap: 1rem; padding: .85rem 1rem; margin: 0; }
+.row :global(.resource-card-inner) { flex: 1; min-width: 0; }
+.row .header { margin-bottom: .2rem; }
+.row .type { font-size: .7rem; }
+.row .title { font-size: 1rem; margin: 0 0 .25rem; }
+.row .description { margin: 0; font-size: .85rem; }
+.preview { position: relative; flex-shrink: 0; width: 128px; height: 72px; border-radius: 8px; overflow: hidden; border: 1px solid var(--ifm-color-emphasis-200); background: var(--ifm-background-surface-color); }
+.preview img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.previewFallback { display: grid; place-items: center; height: 100%; color: var(--accent-gold); background: radial-gradient(circle at 30% 20%, rgba(255, 245, 0, .14), transparent 65%), linear-gradient(135deg, #1d1d1d, #151515); }
+.play { position: absolute; left: .35rem; bottom: .35rem; display: grid; place-items: center; width: 1.3rem; height: 1.3rem; border-radius: 999px; color: #111; background: var(--accent-gold); box-shadow: 0 2px 6px rgba(0, 0, 0, .45); }
+.link[data-scope="further"] .preview { opacity: .7; }
+@media (max-width: 600px) {
+  .row { gap: .75rem; padding: .75rem; }
+  .preview { width: 96px; height: 54px; }
 }

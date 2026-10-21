@@ -23,6 +23,7 @@
     "curriculum:prune": "node scripts/curriculum-version.mjs --prune-only",
     "typecheck": "tsc",
     "curriculum:check": "node scripts/check-curriculum.mjs",
+    "curriculum:previews": "node scripts/fetch-resource-previews.mjs",
     "preview": "npm run build && wrangler dev"
   },
   "dependencies": {
