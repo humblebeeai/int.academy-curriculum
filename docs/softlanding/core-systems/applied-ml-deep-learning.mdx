@@ -19,7 +19,7 @@ import moduleImage from "../../assets/images/advanced_ai.png";
   moduleNumber={2}
   kind="required"
   icon="Brain"
-  summary="Choose and evaluate models, then understand training and pretrained inference. Start with applied ML and complete the derivatives preparation before deep learning."
+  summary="Choose and evaluate models, then understand training and pretrained inference. Start with applied ML, then move on to deep learning."
   image={{ src: moduleImage, alt: "Illustration of connected AI computation layers and code panels.", width: 1536, height: 1024 }}
 />
 
@@ -27,7 +27,7 @@ import moduleImage from "../../assets/images/advanced_ai.png";
 
 
 
-<SectionLinks items={[{"title": "ML resources", "href": "#ml-resources"}, {"title": "Deep learning resources", "href": "#dl-resources"}, {"title": "Applied ML and evaluation", "href": "#r2"}, {"title": "Derivatives Preparation for Deep Learning", "href": "#derivatives-preparation"}, {"title": "Deep learning and pretrained models", "href": "#r3"}]} />
+<SectionLinks items={[{"title": "ML resources", "href": "#ml-resources"}, {"title": "Deep learning resources", "href": "#dl-resources"}, {"title": "Applied ML and evaluation", "href": "#r2"}, {"title": "Deep learning and pretrained models", "href": "#r3"}]} />
 
 ## Applied ML and evaluation {#r2}
 
@@ -130,35 +130,11 @@ See the [StatQuest topic index](https://statquest.org/video_index.html) for addi
 
 A reproducible modeling notebook or script, a results comparison, and a short error-analysis note. You can justify the split, baseline, metric, and model choice, and identify a leakage risk.
 
-## Derivatives Preparation for Deep Learning {#derivatives-preparation}
-
-### Before you start
-
-Complete Math for AI and the applied ML section before this preparation. Derivatives are taught here; they are not required to enter Core Systems.
-
-### Learn and practise
-
-<ResourceCard
-  showFullDescription
-  title="Khan Academy differential calculus"
-  url="https://www.khanacademy.org/math/differential-calculus"
-  type="course"
-  description="Required. Lessons on derivative intuition, the power rule, and the chain rule. Study slope as a local rate of change, partial-derivative intuition, gradients, and the update direction in gradient descent. Formal proofs and a complete calculus course are not required."
-/>
-
-### Practice
-
-For a scalar squared-error function, compare a small finite-difference slope with the derivative at several points. Apply a few gradient-descent updates and plot the loss. Explain how an overly large step can increase loss. For a two-parameter example, explain why a gradient has one component per parameter. Revisit this example with PyTorch autograd in deep learning.
-
-### Preparation evidence
-
-Keep the derivative notebook, loss plot, and explanation of the learning-rate failure. Explain the update direction before beginning the deep learning training loop.
-
 ## Deep learning and pretrained models {#r3}
 
 understand a training loop and use a pretrained model deliberately.
 
-**Before you start:** [applied ML](/docs/softlanding/core-systems/applied-ml-deep-learning#r2), NumPy, matrix operations, and the [derivatives preparation](/docs/softlanding/core-systems/applied-ml-deep-learning#derivatives-preparation).
+**Before you start:** [applied ML](/docs/softlanding/core-systems/applied-ml-deep-learning#r2), NumPy, and matrix operations.
 
 ### Learn
 
@@ -199,6 +175,14 @@ understand a training loop and use a pretrained model deliberately.
   url="https://huggingface.co/learn/llm-course/en/chapter1/1"
   type="course"
   description="Required. Selected introductory sections on pipelines and transformer architectures. Run a pretrained inference example."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="Khan Academy differential calculus"
+  url="https://www.khanacademy.org/math/differential-calculus"
+  type="course"
+  description="Further reading. A quick refresher if gradients or backpropagation feel unfamiliar: derivative intuition, the chain rule, and what a gradient tells you. Not required for this module."
 />
 
 ### Practice
