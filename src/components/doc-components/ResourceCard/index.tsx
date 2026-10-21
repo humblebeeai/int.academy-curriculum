@@ -11,6 +11,7 @@ import {
 import clsx from "clsx";
 import styles from "./ResourceCard.module.css";
 import previews from "@site/src/data/resource-previews.json";
+import { previewKey } from "@site/src/data/previewKey.mjs";
 
 const previewImages: Record<string, string> = previews;
 
@@ -51,26 +52,16 @@ const TypeIcons = {
   talk: Video,
 };
 
-type Scope = { label: string; selected: boolean; tone: "required" | "further" };
+type Scope = "further" | "selected";
 
 // Curriculum descriptions start with their assigned scope, e.g.
-// "Required, selected scope." or "Further reading." Surface it as a badge.
+// "Required, selected scope." or "Further reading." Plain "Required" is the
+// default and gets no badge; only the exceptions are surfaced.
 function scopeOf(description?: string): Scope | undefined {
   const lead = description?.split(".")[0] ?? "";
-  if (/^Further reading/i.test(lead)) return { label: "Further reading", selected: false, tone: "further" };
-  if (/^Required/i.test(lead)) return { label: "Required", selected: /selected/i.test(lead), tone: "required" };
+  if (/^Further reading/i.test(lead)) return "further";
+  if (/^Required/i.test(lead) && /selected/i.test(lead)) return "selected";
   return undefined;
-}
-
-// Must match previewKey in scripts/fetch-resource-previews.mjs.
-function previewKey(url: string) {
-  try {
-    const parsed = new URL(url);
-    const host = parsed.hostname.toLowerCase().replace(/^(www|m)\./, "");
-    return `${host}${parsed.pathname.replace(/\/$/, "")}${parsed.search}`;
-  } catch {
-    return url;
-  }
 }
 
 function hostOf(url: string) {
@@ -87,9 +78,11 @@ function Preview({ url, type, Icon }: { url: string; type: string; Icon: React.C
   const [failed, setFailed] = useState(false);
   const imageRef = useRef<HTMLImageElement>(null);
   // The image can fail before hydration attaches onError; check once mounted.
+  // A lazy image that hasn't started loading has no currentSrc, so it is not
+  // mistaken for a failure; later errors still reach onError.
   useEffect(() => {
     const element = imageRef.current;
-    if (element?.complete && element.naturalWidth === 0) setFailed(true);
+    if (element?.complete && element.currentSrc && element.naturalWidth === 0) setFailed(true);
   }, []);
   const image = previewImages[previewKey(url)];
   const isVideo = type === "video" || type === "talk";
@@ -128,8 +121,7 @@ export default function ResourceCard({
         </div>
         {scope && (
           <span className={styles.scopeBadges}>
-            {scope.tone === "further" && <span className={clsx(styles.scopeBadge, styles.further)}>{scope.label}</span>}
-            {scope.selected && <span className={clsx(styles.scopeBadge, styles.selected)}>Selected scope</span>}
+            <span className={clsx(styles.scopeBadge, styles[scope])}>{scope === "further" ? "Further reading" : "Selected scope"}</span>
           </span>
         )}
         {difficulty && (
@@ -162,7 +154,7 @@ export default function ResourceCard({
       rel="noopener noreferrer"
       className={styles.link}
       data-resource-card="true"
-      data-scope={scope?.tone}
+      data-scope={scope}
     >
       <div className={clsx(styles.card, showFullDescription && styles.row)}>
         {showFullDescription && <Preview url={url} type={type} Icon={Icon} />}
