@@ -93,7 +93,7 @@ checkStage('Engineering Fundamentals', 'engineering-fundamentals', efRequired, e
 checkStage('Core Systems', 'softlanding/core-systems', coreRequired, electives, 'Electives');
 for (const [slug, anchors] of Object.entries({
   'software-engineering': ['r1'], 'applied-ml-deep-learning': ['r2', 'derivatives-preparation', 'r3'],
-  'llm-applications': ['r4'], 'systems-networking-data': ['r5'], 'apis-containers-deployment': ['r6'],
+  'llm-applications': ['r4', 'llm-fundamentals', 'agent-assisted-engineering'], 'systems-networking-data': ['r5'], 'apis-containers-deployment': ['r6'],
 })) {
   const html = readFileSync(resolve(docs, `softlanding/core-systems/${slug}/index.html`), 'utf8');
   for (const anchor of anchors) assert(html.includes(`id="${anchor}"`), `${slug}: missing learning section ${anchor}`);

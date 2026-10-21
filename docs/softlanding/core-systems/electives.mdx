@@ -13,37 +13,39 @@ import { ResourceCard, CurriculumModule, ModuleIntro, SectionLinks } from "@site
 
 <ModuleIntro stageLabel="Core Systems" stageHref="/docs/softlanding/core-systems" kind="elective" icon="SlidersHorizontal" summary="Complete exactly two electives. Choose the skills you want to develop, check their prerequisites, and complete the work in both chosen sections." />
 
-<SectionLinks label="Choose your electives" items={[{"title": "Retrieval and RAG", "href": "#e1-retrieval-rag"}, {"title": "Agents and Tool-Based Workflows", "href": "#e2-agents-tools"}, {"title": "Model Adaptation and Experimentation", "href": "#e3-model-adaptation"}, {"title": "Backend Architecture and Data Systems", "href": "#e4-backend-data"}, {"title": "Delivery, Monitoring, and MLOps", "href": "#e5-delivery-mlops"}]} />
+<SectionLinks label="Choose your electives" items={[{"title": "LLM Applications and RAG", "href": "#e1-retrieval-rag"}, {"title": "Agent Development and Tool Integration", "href": "#e2-agents-tools"}, {"title": "Model Adaptation and Experimentation", "href": "#e3-model-adaptation"}, {"title": "Backend Architecture and Data Systems", "href": "#e4-backend-data"}, {"title": "Delivery, Monitoring, and MLOps", "href": "#e5-delivery-mlops"}]} />
 
-## Retrieval and RAG {#e1-retrieval-rag}
+## LLM Applications and RAG {#e1-retrieval-rag}
 
-Build a service that retrieves relevant evidence before answering.
+Build an LLM feature that retrieves relevant evidence, returns validated results, and shows where its answers succeed or fail.
 
-**Before you start:** [Software Engineering for AI](/docs/softlanding/core-systems/software-engineering#r1), [LLM Applications](/docs/softlanding/core-systems/llm-applications#r4), and basic API skills from [APIs, Containers & Deployment](/docs/softlanding/core-systems/apis-containers-deployment#r6).
+**Before you start:** [Software Engineering for AI](/docs/softlanding/core-systems/software-engineering#r1), [LLM Fundamentals and Agent Workflows](/docs/softlanding/core-systems/llm-applications#llm-fundamentals), and basic API skills from [APIs, Containers & Deployment](/docs/softlanding/core-systems/apis-containers-deployment#r6).
 
 ### Learn
 
-- Document ingestion, metadata, chunking, embeddings, similarity search, and keyword-search baselines.
-- Provide retrieved context and source references to the model.
-- Evaluate retrieval separately from answer correctness and grounding.
-- Compare a meaningful change such as chunk size, retrieval depth, or a hybrid strategy.
+- Make model requests, manage messages and context, and handle timeouts, unavailable models, and invalid responses.
+- Frame tasks clearly, generate structured outputs, and validate the response schema separately from factual correctness.
+- Prepare documents with source metadata; use chunking, embeddings, similarity search, and a lexical-search baseline.
+- Supply retrieved context, preserve source references, and handle questions with insufficient supporting evidence.
+- Evaluate retrieval separately from answer correctness, grounding, and citation support.
+- Compare one meaningful change and record quality, latency, and available usage or cost information.
 
 ### Resources
 
 <ResourceCard
   showFullDescription
-  title="Sentence Transformers: Semantic Search"
-  url="https://www.sbert.net/examples/sentence_transformer/applications/semantic-search/README.html"
-  type="article"
-  description="Required within this elective. Build and inspect retrieval over a small collection."
+  title="Claude Academy: Building with the Claude API"
+  url="https://academy.claude.com/courses/building-with-the-claude-api"
+  type="course"
+  description="Required selected sections. Complete the introductory API material through structured responses, the prompting and evaluation sections, and the retrieval lessons through embedding search and BM25. The remaining course sections are not required for this elective."
 />
 
 <ResourceCard
   showFullDescription
-  title="Hugging Face: Simple RAG for GitHub issues"
-  url="https://huggingface.co/learn/cookbook/en/rag_zephyr_langchain"
-  type="article"
-  description="Required within this elective. Adapt the retrieval-to-answer pattern to your documents. Choose an available model that fits your environment."
+  title="Claude Academy: Implementing the RAG flow"
+  url="https://academy.claude.com/courses/building-with-the-claude-api/implementing-the-rag-flow"
+  type="tutorial"
+  description="Required within this elective. Work through the preceding chunking and embedding lessons, implement the retrieval example, and adapt it to your own documents. Extend the returned passages into a sourced answer."
 />
 
 <ResourceCard
@@ -51,27 +53,20 @@ Build a service that retrieves relevant evidence before answering.
   title="Hugging Face: RAG Evaluation"
   url="https://huggingface.co/learn/cookbook/en/rag_evaluation"
   type="article"
-  description="Required within this elective. Use separate retrieval and answer checks. Review a sample manually rather than relying only on an automated judge."
-/>
-
-<ResourceCard
-  showFullDescription
-  title="Hugging Face: Advanced RAG"
-  url="https://huggingface.co/learn/cookbook/en/advanced_rag"
-  type="article"
-  description="Further reading. Select a technique to investigate after your baseline works."
+  description="Required within this elective. Use separate retrieval and answer checks; review a sample manually. An automated model judge is not required."
 />
 
 ### Practice
 
-- Build a small knowledge base from public or approved documents and retain source identifiers.
-- Create evaluation questions with expected supporting documents, including questions the collection cannot answer.
-- Compare a baseline with one retrieval change; inspect retrieved passages and answer failures.
-- Expose the result through your application with source references and a clear insufficient-evidence response.
+- Implement a small model-call feature with a documented response schema and failure handling.
+- Build a knowledge base from public or approved documents and preserve source identifiers.
+- Create evaluation questions with expected supporting passages, including questions the collection cannot answer.
+- Compare a baseline with one change to chunking, retrieval depth, or search strategy; inspect retrieval and answer failures separately.
+- Expose the feature through your application with source references and a clear insufficient-evidence response.
 
 ### Expected output
 
-A working retrieval/answer feature, evaluation questions, retrieval and answer results, and a short comparison of your chosen change.
+A working LLM/retrieval feature, validated response handling, evaluation questions, separate retrieval and answer results, and a short comparison explaining the chosen change and a meaningful failure.
 
 ### Workload
 
@@ -79,66 +74,67 @@ Workload estimate pending pilot. Include practice, debugging, review, and revisi
 
 ### Submission evidence and completion checks
 
-Keep the expected output, runnable instructions, test/evaluation results where applicable, and your explanation of a meaningful failure. Submit through review and record the resulting revision. Explain your approach and diagnose a relevant failure during review. Revise incomplete evidence after feedback; resource completion alone does not establish competence.
+Keep the expected output, runnable instructions, test/evaluation results, and your explanation of a meaningful failure. Submit through review and record the resulting revision. Explain your approach and diagnose a relevant failure during review. Revise incomplete evidence after feedback; resource completion alone does not establish competence.
 
-## Agents and Tool-Based Workflows {#e2-agents-tools}
+## Agent Development and Tool Integration {#e2-agents-tools}
 
-Complete a defined task through tool use while keeping execution understandable and testable.
+Build a bounded agent or tool-based workflow that completes a defined task with understandable execution and verifiable results.
 
-**Before you start:** [Software Engineering for AI](/docs/softlanding/core-systems/software-engineering#r1), [LLM Applications](/docs/softlanding/core-systems/llm-applications#r4), and API basics from [APIs, Containers & Deployment](/docs/softlanding/core-systems/apis-containers-deployment#r6).
+**Before you start:** [Software Engineering for AI](/docs/softlanding/core-systems/software-engineering#r1), [LLM Fundamentals and Agent Workflows](/docs/softlanding/core-systems/llm-applications#llm-fundamentals), and basic API skills from [APIs, Containers & Deployment](/docs/softlanding/core-systems/apis-containers-deployment#r6). The introductory model-call material below provides the LLM preparation; completing the LLM Applications and RAG elective is not a prerequisite.
 
 ### Learn
 
-- Distinguish a predefined workflow from an agent that chooses actions.
-- Define tools with clear inputs, outputs, validation, and failure behavior.
-- Manage context, intermediate state, step/time limits, and recovery.
-- Use scoped permissions and explicit approval points for actions that need them.
-- Understand MCP's role in connecting applications to tools and data.
+- Make a basic model request and distinguish a fixed workflow from an agent that selects its next action.
+- Define tools with clear descriptions, argument schemas, validation, results, and failure behavior.
+- Execute tool requests through a controlled loop; manage task state, stopping limits, and recovery.
+- Use scoped access and explicit approval points for actions that need them.
+- Understand MCP clients, servers, and tools; inspect or implement a small integration when it fits your work.
+- Evaluate task outcomes and execution traces, then compare with a simpler workflow using the same underlying tools.
 
 ### Resources
 
 <ResourceCard
   showFullDescription
-  title="Anthropic: Building Effective Agents"
-  url="https://www.anthropic.com/engineering/building-effective-agents"
-  type="article"
-  description="Required within this elective. Focus on choosing a simple design and defining tools."
-/>
-
-<ResourceCard
-  showFullDescription
-  title="Hugging Face: AI Agents Course"
-  url="https://huggingface.co/learn/agents-course/en/unit0/introduction"
+  title="Claude Academy: Building with the Claude API"
+  url="https://academy.claude.com/courses/building-with-the-claude-api"
   type="course"
-  description="Required within this elective. Study Unit 1 and one relevant framework section. Adapt its examples into a bounded task."
+  description="Required selected sections. Complete the basic request material if not already covered, then the introductory tool-use sequence through multi-turn execution. Apply tool definitions and result handling to one bounded task."
 />
 
 <ResourceCard
   showFullDescription
-  title="Model Context Protocol: Introduction"
-  url="https://modelcontextprotocol.io/docs/getting-started/intro"
-  type="documentation"
-  description="Required within this elective. Explain client/server roles and tool integration. Implement a small read-only MCP integration if it fits your work."
+  title="Claude Academy: Workflows vs agents"
+  url="https://academy.claude.com/courses/building-with-the-claude-api/workflows-vs-agents"
+  type="tutorial"
+  description="Required within this elective. Study the surrounding agent/workflow lessons and compare fixed control flow with model-directed tool use. Advanced orchestration patterns are further reading."
+/>
+
+<ResourceCard
+  showFullDescription
+  title="Claude Academy: Introduction to Model Context Protocol"
+  url="https://academy.claude.com/courses/introduction-to-model-context-protocol"
+  type="course"
+  description="Required selected lessons. Study the architecture, clients, tool definitions, and inspector. Adapt the practical example when an MCP connection fits your work; resources, prompts, and advanced protocol features are further reading."
 />
 
 <ResourceCard
   showFullDescription
   title="Anthropic: Demystifying evals for AI agents"
-  url="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+  url="https://www.anthropic.com/research/demystifying-evals-for-ai-agents"
   type="article"
-  description="Required within this elective. Test final task outcomes as well as tool calls and traces."
+  description="Required within this elective. Use task outcomes, tool-call records, and repeated trials to inspect behavior."
 />
 
 ### Practice
 
-- Choose a bounded task, such as searching approved records and producing a validated report.
-- Implement tools and a workflow or agent; log calls and enforce stopping limits.
-- Test invalid arguments, unavailable tools, repeated actions, and incomplete tasks.
-- Compare with a simple baseline and explain whether agentic control improves the result.
+- Choose a bounded task, such as finding relevant records and producing a validated report. Define success before implementation.
+- Implement tools and a workflow or agent; log calls, validate arguments, and enforce stopping limits.
+- Test unavailable tools, invalid arguments, repeated actions, and incomplete tasks. Add a small read-only MCP integration if it suits the task.
+- Compare against a simpler baseline and explain whether agentic control improves the result.
 
 ### Expected output
 
-A working tool-based workflow, an evaluation set, execution traces, and a design explanation. An MCP implementation can deepen this elective; a framework certificate alone does not complete it.
+A working tool-based application, validated tools, an evaluation set, execution traces, and a design explanation. Show a successful task and a controlled failure. An MCP implementation can deepen the elective; a framework certificate alone does not complete it.
 
 ### Workload
 
@@ -146,13 +142,13 @@ Workload estimate pending pilot. Include practice, debugging, review, and revisi
 
 ### Submission evidence and completion checks
 
-Keep the expected output, runnable instructions, test/evaluation results where applicable, and your explanation of a meaningful failure. Submit through review and record the resulting revision. Explain your approach and diagnose a relevant failure during review. Revise incomplete evidence after feedback; resource completion alone does not establish competence.
+Keep the expected output, runnable instructions, test/evaluation results, and your explanation of a meaningful failure. Submit through review and record the resulting revision. Explain your approach and diagnose a relevant failure during review. Revise incomplete evidence after feedback; resource completion alone does not establish competence.
 
 ## Model Adaptation and Experimentation {#e3-model-adaptation}
 
 Determine whether adapting a pretrained model improves a defined task.
 
-**Before you start:** [applied ML](/docs/softlanding/core-systems/applied-ml-deep-learning#r2) and [deep learning](/docs/softlanding/core-systems/applied-ml-deep-learning#r3); use [LLM Applications](/docs/softlanding/core-systems/llm-applications#r4) for LLM-oriented projects.
+**Before you start:** [applied ML](/docs/softlanding/core-systems/applied-ml-deep-learning#r2) and [deep learning](/docs/softlanding/core-systems/applied-ml-deep-learning#r3); use [LLM Fundamentals and Agent Workflows](/docs/softlanding/core-systems/llm-applications#llm-fundamentals) for LLM-oriented projects.
 
 ### Learn
 
@@ -276,7 +272,7 @@ Keep the expected output, runnable instructions, test/evaluation results where a
 
 Make changes observable and releases recoverable.
 
-**Before you start:** [Software Engineering for AI](/docs/softlanding/core-systems/software-engineering#r1), [Systems, Networking & Data](/docs/softlanding/core-systems/systems-networking-data#r5), [APIs, Containers & Deployment](/docs/softlanding/core-systems/apis-containers-deployment#r6); [ML evaluation](/docs/softlanding/core-systems/applied-ml-deep-learning#r2) and [LLM evaluation](/docs/softlanding/core-systems/llm-applications#r4) provide the evaluation for your AI component.
+**Before you start:** [Software Engineering for AI](/docs/softlanding/core-systems/software-engineering#r1), [Systems, Networking & Data](/docs/softlanding/core-systems/systems-networking-data#r5), [APIs, Containers & Deployment](/docs/softlanding/core-systems/apis-containers-deployment#r6); [ML evaluation](/docs/softlanding/core-systems/applied-ml-deep-learning#r2) or the LLM evaluation in [LLM Applications and RAG](#e1-retrieval-rag) provides the evaluation for your AI component.
 
 ### Learn
 
