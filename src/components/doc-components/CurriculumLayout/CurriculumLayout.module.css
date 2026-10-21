@@ -165,18 +165,30 @@
 .sectionNav { margin: 1.5rem 0 2rem; padding: 1rem; border: 1px solid var(--curriculum-border); border-radius: 12px; background: var(--ifm-background-surface-color); }
 .sectionLabel { display: block; font-size: .8rem; font-weight: 600; color: var(--ifm-color-emphasis-700); margin-bottom: .65rem; }
 .sectionLinks { display: flex; flex-wrap: wrap; gap: .5rem; }
-.sectionLinks a { display: inline-flex; align-items: center; min-height: 44px; padding: .5rem .75rem; border: 1px solid var(--curriculum-border); border-radius: 8px; color: var(--ifm-font-color-base); font-size: .875rem; text-decoration: none; }
+.sectionLinks a { display: inline-flex; align-items: center; min-height: 44px; padding: .5rem .75rem; border: 1px solid var(--curriculum-border); border-radius: 8px; color: var(--ifm-font-color-base); font-size: .875rem; text-decoration: none; gap: .5rem; }
 .sectionLinks a:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
-.sectionLinks a { gap: .5rem; }
 .sectionNumber { display: inline-grid; place-items: center; width: 1.4rem; height: 1.4rem; border-radius: 999px; font-size: .7rem; font-weight: 700; color: #111; background: var(--accent-gold); flex-shrink: 0; }
 .moduleCard:focus-visible, .sectionLinks a:focus-visible, .returnLink:focus-visible { outline: 2px solid var(--accent-gold); outline-offset: 3px; }
 @media (max-width: 767px) {
   .grid { grid-template-columns: minmax(0, 1fr); }
-  .page h2 { margin-top: 2rem; }
   .summary { font-size: 1rem; }
   .moduleCard { padding: 1rem; }
   .page ul[data-list="columns"] { columns: 1; }
-  .page h2 { padding: .75rem 1rem; }
+  .page h2 { font-size: 1.3rem; padding: .6rem .85rem; margin-top: 2.25rem; }
+  .page h3[data-block] { margin-top: 1.4rem; }
+  .sectionNav { margin: 1.25rem 0 1.5rem; padding: .75rem 0 .75rem .75rem; }
+  .sectionLinks {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    /* The end padding is wider than the fade, so the last chip is fully visible once scrolled. */
+    padding-right: 2.5rem;
+    scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 2rem), transparent);
+    mask-image: linear-gradient(90deg, #000 calc(100% - 2rem), transparent);
+  }
+  .sectionLinks::-webkit-scrollbar { display: none; }
+  .sectionLinks a { flex-shrink: 0; white-space: nowrap; scroll-snap-align: start; }
 }
 @media (prefers-reduced-motion: reduce) {
   .page *, .grid * { transition: none !important; animation: none !important; transform: none !important; }

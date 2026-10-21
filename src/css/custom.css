@@ -907,3 +907,30 @@ details > *:not(summary) {
     width: max-content;
   }
 }
+
+/* Mobile: one-line breadcrumbs (scroll sideways if needed) and a smaller page title. */
+@media (max-width: 996px) {
+  .theme-doc-breadcrumbs .breadcrumbs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    white-space: nowrap;
+  }
+  .theme-doc-breadcrumbs .breadcrumbs::-webkit-scrollbar { display: none; }
+  .theme-doc-breadcrumbs .breadcrumbs__item { flex-shrink: 0; }
+}
+@media (max-width: 600px) {
+  .theme-doc-markdown h1,
+  article header h1 { font-size: 1.9rem; line-height: 1.2; }
+}
+
+/* Mobile drawer: trim stacked padding and nesting indent so items sit further left. */
+@media (max-width: 996px) {
+  /* Panels match the 300px drawer above (Docusaurus defaults to 83vw). */
+  :root { --ifm-navbar-sidebar-width: min(300px, 100vw); }
+  .navbar-sidebar__item { padding: .5rem .25rem; }
+  .navbar-sidebar .menu { padding: 0; }
+  .navbar-sidebar .menu__link { padding-left: .5rem; padding-right: .5rem; }
+  .navbar-sidebar .menu__list .menu__list { padding-left: .5rem; }
+}

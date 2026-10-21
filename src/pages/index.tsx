@@ -768,7 +768,7 @@ export default function Home(): ReactNode {
       description="Free, open-source AI engineering curriculum. Community-driven learning materials for production-ready skills in Deep Learning, AI Software Engineering, Computer Vision, and NLP."
     >
       <HomepageHeader />
-      <main>
+      <main className={styles.homeMain}>
         <WhoThisIsForSection />
         <AboutSection />
         <OutcomesSection />
