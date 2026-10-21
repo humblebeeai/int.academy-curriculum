@@ -64,7 +64,7 @@ Modules:
 
 - Software Engineering for AI
 - Applied ML & Deep Learning
-- LLM Applications
+- LLM Fundamentals & Agent Workflows
 - Systems, Networking & Data
 - APIs, Containers & Deployment
 - Electives: complete two sections
