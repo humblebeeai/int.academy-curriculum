@@ -927,6 +927,8 @@ details > *:not(summary) {
 
 /* Mobile drawer: trim stacked padding and nesting indent so items sit further left. */
 @media (max-width: 996px) {
+  /* Panels match the 300px drawer above (Docusaurus defaults to 83vw). */
+  :root { --ifm-navbar-sidebar-width: min(300px, 100vw); }
   .navbar-sidebar__item { padding: .5rem .25rem; }
   .navbar-sidebar .menu { padding: 0; }
   .navbar-sidebar .menu__link { padding-left: .5rem; padding-right: .5rem; }
